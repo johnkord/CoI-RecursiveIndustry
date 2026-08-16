@@ -1,11 +1,19 @@
 Recursive Industry changelog
 ============================
 
+0.19.0d - Complete Relay removal
+--------------------------------
+
+- Removed the 30 MW Orbital Power Relay prototype and building ID entirely.
+- Orbital Breakthrough and the power toolbar now expose only the 240 MW Array.
+- Pre-release saves containing a placed Relay are not compatible with this
+  version; start a new campaign or remove the Relay before upgrading.
+
 0.19.0c - Orbital power choice correction
 -----------------------------------------
 
 - Removed the dominated 30 MW Orbital Power Relay from new-game research.
-- Kept its prototype registered only so existing pre-release saves can load.
+- Retained its prototype temporarily for existing pre-release saves.
 - Orbital Breakthrough now unlocks only the 240 MW Orbital Power Array.
 - Renamed the public support-duration setting for the Array and corrected its
   one-Dossier-per-cycle description.

@@ -20,6 +20,12 @@ Enable Recursive Industry when creating a new campaign. Adding it to or removing
 it from an existing normal save is unsupported. Stable prototype IDs are treated
 as save contracts and should not be renamed casually.
 
+Version 0.19.0d intentionally removes the pre-release
+`RecursiveIndustry_OrbitalPowerRelay` prototype. A pre-release save containing a
+placed Relay cannot load normally with 0.19.0d. Remove the Relay while running
+0.19.0c before upgrading, or start a new campaign. No stable release save contract
+is affected because both versions precede 1.0.
+
 Captain of Industry recovery saves may recover part of a factory after missing or
 incompatible mods, but recovery is lossy and is not a substitute for supported mod
 migration.

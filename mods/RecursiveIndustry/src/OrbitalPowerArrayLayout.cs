@@ -1,6 +1,6 @@
 namespace RecursiveIndustry;
 
-internal static class OrbitalPowerRelayLayout
+internal static class OrbitalPowerArrayLayout
 {
     public const string PrefabPath = SystemsIntegrationLayout.PrefabPath;
     public const string SoundPath = SystemsIntegrationLayout.SoundPath;

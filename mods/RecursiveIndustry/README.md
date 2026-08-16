@@ -2,9 +2,10 @@
 
 This directory is the build and packaging root for Recursive Industry.
 
-The current source version is **0.19.0c**, a pre-release balance correction that
-removes the dominated 30 MW Orbital Power Relay from new-game progression. It is
-pre-release source, not a stable public package.
+The current source version is **0.19.0d**, which removes the dominated 30 MW
+Orbital Power Relay as a prototype and buildable entity. Orbital power now has one
+modded building: the 240 MW Array. This is pre-release source, not a stable public
+package.
 
 ## Requirements
 

@@ -1,0 +1,61 @@
+# Playtesting
+
+## Current build
+
+Use the exact GitHub pre-release:
+
+- version: `0.19.0c`;
+- release: https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.19.0c;
+- file: `RecursiveIndustry-0.19.0c.zip`;
+- size: 1,726,534 bytes;
+- SHA-256: `ACF2447F36D090E260BCDBA601DF12EDAC7CB1C53446CEF878FA4A75624FC0E5`.
+
+Do not use GitHub's automatic source-code archives as the player package.
+
+## Install
+
+1. Exit Captain of Industry.
+2. Remove or move any older `RecursiveIndustry` folder from
+   `%APPDATA%/Captain of Industry/Mods`.
+3. Extract the release ZIP into the Mods directory.
+4. Confirm the result contains
+   `%APPDATA%/Captain of Industry/Mods/RecursiveIndustry/manifest.json`.
+5. Start a new single-player campaign with Recursive Industry enabled.
+
+Captain of Industry 0.8.7 and Trains expansion 1.0.0 or newer are required.
+Supporter edition is optional. Adding or removing the mod from an existing normal
+save is unsupported.
+
+## Useful feedback
+
+Play naturally. Do not try to manufacture a specific outcome or prove every item
+in one session. Useful reports explain:
+
+- what you were trying to accomplish;
+- the product, building, research card, or displayed recipe quantities involved;
+- what constraint drove your choice;
+- what you expected and what happened instead;
+- whether the normal UI explained a shortage or stalled state;
+- whether a conventional machine remained a credible fallback;
+- whether any icon, port, model, or recipe row was confusing; and
+- whether ordinary operation required repeated manual intervention.
+
+For crashes or registration failures, include:
+
+- exact game and mod versions;
+- every enabled mod and DLC;
+- reproduction steps; and
+- a sanitized log excerpt from `%APPDATA%/Captain of Industry/Logs`.
+
+Use the repository's bug-report template. Remove personal filesystem paths before
+posting logs.
+
+## Evidence boundary
+
+Public pre-release feedback is valuable defect discovery. It is not automatically
+counted as independent final-candidate evidence because testers may read public
+source, issues, and design documentation. The later stable-release gate uses one
+frozen archive and separately managed, uncoached campaigns.
+
+Never share personal information, account identifiers, or private saves as part
+of a report.

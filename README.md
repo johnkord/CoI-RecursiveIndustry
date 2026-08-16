@@ -10,9 +10,14 @@ Recursive Industry is a Captain of Industry endgame mod about building a physica
 AI economy, from accelerator racks and validated models to autonomous industry,
 planetary coordination, and frontier-scale megaprojects.
 
-> **Development status:** Pre-release. The source is available for review and
-> contribution, but no stable public package has been declared. Integrated author
-> and independent player testing remain before 1.0.
+> **Development status:** Public playtest pre-release. Version 0.19.0c is available
+> for ordinary testing and feedback, but it is not stable 1.0. Integrated author
+> and independent final-candidate testing remain.
+
+[Download Recursive Industry 0.19.0c Playtest](https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.19.0c)
+
+Player ZIP SHA-256:
+`ACF2447F36D090E260BCDBA601DF12EDAC7CB1C53446CEF878FA4A75624FC0E5`
 
 ## What it adds
 
@@ -47,9 +52,10 @@ not a global speed multiplier or a free-resource automation mod.
 
 ## Installation
 
-When a release is available:
+For the current playtest:
 
-1. Download the release ZIP from GitHub Releases or COI Hub.
+1. Download `RecursiveIndustry-0.19.0c.zip` from the
+  [GitHub pre-release](https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.19.0c).
 2. Extract it into `%APPDATA%/Captain of Industry/Mods`.
 3. Confirm the resulting path is
    `%APPDATA%/Captain of Industry/Mods/RecursiveIndustry/manifest.json`.
@@ -100,6 +106,7 @@ redistributed.
 - [Building and packaging](docs/BUILDING.md)
 - [Compatibility](docs/COMPATIBILITY.md)
 - [Verification](docs/VERIFICATION.md)
+- [Playtesting](docs/PLAYTESTING.md)
 - [Roadmap](docs/ROADMAP.md)
 
 ## Contributing and support

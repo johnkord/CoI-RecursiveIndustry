@@ -13,6 +13,7 @@ Recursive Industry.
 | [DEVELOPMENT_WORKFLOW.md](DEVELOPMENT_WORKFLOW.md) | Public/private source-of-truth and promotion workflow |
 | [COMPATIBILITY.md](COMPATIBILITY.md) | Game, DLC, save, and platform support |
 | [VERIFICATION.md](VERIFICATION.md) | Public confidence claims and remaining gates |
+| [PLAYTESTING.md](PLAYTESTING.md) | Exact playtest download, installation, and useful feedback |
 | [ROADMAP.md](ROADMAP.md) | Release sequence and intentionally deferred scope |
 | [PUBLISHING.md](PUBLISHING.md) | GitHub and COI Hub listing copy and release checklist |
 

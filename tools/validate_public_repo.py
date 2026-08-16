@@ -48,6 +48,7 @@ REQUIRED_DOCS = {
     "DEVELOPMENT_WORKFLOW.md",
     "PROGRESSION.md",
     "PUBLISHING.md",
+    "PLAYTESTING.md",
     "README.md",
     "ROADMAP.md",
     "VERIFICATION.md",
@@ -264,6 +265,8 @@ def validate_source_contract(errors: list[str], root: Path) -> None:
     required = {
         "RecursiveIndustry.cs",
         "RecursiveIndustryResearchData.cs",
+        "OrbitalPowerArrayData.cs",
+        "OrbitalPowerArrayLayout.cs",
         "UniversalIndustryCatalog.cs",
         "UniversalIndustryCatalog.g.cs",
         "UniversalIndustryData.cs",
@@ -274,6 +277,16 @@ def validate_source_contract(errors: list[str], root: Path) -> None:
     if missing:
         errors.append(f"required source files missing: {sorted(missing)}")
     combined = "\n".join(path.read_text(encoding="utf-8") for path in files)
+    relay_named_files = [path.name for path in files if "Relay" in path.name]
+    if relay_named_files:
+        errors.append(f"Orbital Power Relay source files remain: {relay_named_files}")
+    for relay_token in (
+        "OrbitalPowerRelay",
+        "Orbital Power Relay",
+        "RecursiveIndustry_OrbitalPowerRelay",
+    ):
+        if relay_token in combined:
+            errors.append(f"removed Orbital Power Relay token remains: {relay_token}")
     for forbidden in ("Harmony", "System.Net", "HttpClient", "WebRequest", "TcpClient", "UdpClient"):
         if forbidden in combined:
             errors.append(f"forbidden runtime surface in C# source: {forbidden}")
@@ -298,17 +311,15 @@ def validate_source_contract(errors: list[str], root: Path) -> None:
                 errors.append(f"universal runtime contract missing: {token}")
 
     research_path = source / "RecursiveIndustryResearchData.cs"
-    orbital_path = source / "OrbitalPowerRelayData.cs"
+    orbital_path = source / "OrbitalPowerArrayData.cs"
     if research_path.is_file():
         research = research_path.read_text(encoding="utf-8")
-        if "RecursiveIndustryIds.Power.OrbitalPowerRelay" in research:
-            errors.append("legacy Orbital Power Relay must not be research-unlocked")
         if "RecursiveIndustryIds.Power.OrbitalPowerArray" not in research:
             errors.append("Orbital Breakthrough must unlock the Orbital Power Array")
     if orbital_path.is_file():
         orbital = orbital_path.read_text(encoding="utf-8")
-        if "RecursiveIndustryIds.Power.OrbitalPowerRelay" not in orbital:
-            errors.append("legacy Relay prototype must remain registered for old saves")
+        if "RecursiveIndustryIds.Power.OrbitalPowerArray" not in orbital:
+            errors.append("Orbital Power Array prototype is missing")
         if 'GetInt("orbital_power_array_seconds", 360)' not in orbital:
             errors.append("Orbital Power Array support-duration config drift")
 

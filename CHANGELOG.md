@@ -6,6 +6,20 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.19.0d] - 2026-08-16
+
+### Removed
+
+- Removed the Orbital Power Relay prototype, stable ID, and build-menu entity
+  entirely. Orbital power now has one modded building: the 240 MW Array.
+
+### Compatibility
+
+- Pre-release saves containing a placed Orbital Power Relay cannot load this
+  version normally. Start a new campaign or remove the Relay before upgrading.
+
+## [0.19.0c] - 2026-08-16
+
 ### Changed
 
 - Removed the strictly dominated 30 MW Orbital Power Relay from new-game
@@ -33,3 +47,5 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Final balance, comprehension, and cross-surface visual judgment remain subject
   to integrated author and independent player testing.
 - Custom world-space building models are outside the gameplay-first 1.0 scope.
+
+[0.19.0c]: https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.19.0c

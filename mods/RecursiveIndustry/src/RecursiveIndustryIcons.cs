@@ -32,7 +32,7 @@ internal static partial class RecursiveIndustryIcons
     public const string AiOperationsIII = Root + "ai_operations_iii.png";
     public const string PlanetaryCoordinationCenter = Root + "planetary_coordination_center.png";
 
-    public const string OrbitalPowerRelay = Root + "orbital_power_relay.png";
+    public const string OrbitalPowerArray = Root + "orbital_power_relay.png";
 
     public const string AutonomousHauler = Root + "autonomous_hauler.png";
     public const string AutonomousDumpHauler = Root + "autonomous_dump_hauler.png";

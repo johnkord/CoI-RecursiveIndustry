@@ -4,6 +4,19 @@ Recursive Industry is not yet declared stable. Use this document to prepare the
 GitHub and COI Hub release after the integrated author and independent player
 gates pass.
 
+## Current public pre-release
+
+GitHub pre-release `v0.19.0c` is live for ordinary playtesting:
+
+- release: `https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.19.0c`;
+- source commit: `0a76824c35d6cd604a6424154176996fefef9ce3`;
+- player ZIP: 1,726,534 bytes;
+- SHA-256: `ACF2447F36D090E260BCDBA601DF12EDAC7CB1C53446CEF878FA4A75624FC0E5`;
+- status: pre-release, not COI Hub stable publication.
+
+The hosted asset has been anonymously downloaded and verified byte-for-byte. Do
+not replace it. Any fix creates a new version, tag, and release asset.
+
 ## Repository metadata
 
 **Repository:** `johnkord/CoI-RecursiveIndustry`
@@ -99,7 +112,7 @@ Do not use sandbox-only compositions as the only gameplay media.
    dotnet build mods/RecursiveIndustry/RecursiveIndustry.csproj -c Release `
      /p:DeployToModsFolder=false
    python tools/package_mod.py mods/RecursiveIndustry
-  python tools/audit_release_zip.py
+    python tools/audit_release_zip.py
    Get-FileHash dist/RecursiveIndustry-1.0.0.zip -Algorithm SHA256
    ```
 
@@ -116,4 +129,4 @@ Do not use sandbox-only compositions as the only gameplay media.
 - Accept the COI Hub terms and COI-Open selection through the author's account.
 - Complete the campaign judgments and independent player sessions.
 - Capture and approve final in-game screenshots.
-- Press **Publish** on the GitHub Release and COI Hub listing.
+- Accept and publish the final 1.0 COI Hub listing.

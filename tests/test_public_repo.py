@@ -46,14 +46,15 @@ class PublicRepositoryTests(unittest.TestCase):
         )
         self.assertIsNone(reason)
 
-    def test_orbital_breakthrough_unlocks_only_the_array(self) -> None:
+    def test_orbital_relay_is_completely_removed(self) -> None:
         source = ROOT / "mods" / "RecursiveIndustry" / "src"
         research = (source / "RecursiveIndustryResearchData.cs").read_text(
             encoding="utf-8"
         )
-        orbital = (source / "OrbitalPowerRelayData.cs").read_text(
+        orbital = (source / "OrbitalPowerArrayData.cs").read_text(
             encoding="utf-8"
         )
+        ids = (source / "RecursiveIndustryIds.Power.cs").read_text(encoding="utf-8")
         config = json.loads(
             (ROOT / "mods" / "RecursiveIndustry" / "config.json").read_text(
                 encoding="utf-8"
@@ -61,7 +62,11 @@ class PublicRepositoryTests(unittest.TestCase):
         )
         self.assertNotIn("RecursiveIndustryIds.Power.OrbitalPowerRelay", research)
         self.assertIn("RecursiveIndustryIds.Power.OrbitalPowerArray", research)
-        self.assertIn("RecursiveIndustryIds.Power.OrbitalPowerRelay", orbital)
+        self.assertNotIn("OrbitalPowerRelay", orbital)
+        self.assertNotIn("OrbitalPowerRelay", ids)
+        self.assertFalse((source / "OrbitalPowerRelayData.cs").exists())
+        self.assertFalse((source / "OrbitalPowerRelayLayout.cs").exists())
+        self.assertIn("RecursiveIndustryIds.Power.OrbitalPowerArray", orbital)
         self.assertIn("orbital_power_array_seconds", config)
         self.assertNotIn("orbital_power_relay_seconds", config)
 

@@ -2,12 +2,14 @@
 
 ## Gameplay-first 1.0
 
-1. Complete one integrated author campaign covering the existing feature set.
-2. Fix only demonstrated gameplay, balance, copy, presentation, or compatibility
+1. Collect ordinary issue reports on public pre-release 0.19.0d without expanding
+   scope.
+2. Complete one integrated author campaign covering the existing feature set.
+3. Fix only demonstrated gameplay, balance, copy, presentation, or compatibility
    defects.
-3. Freeze one deterministic 1.0 candidate.
-4. Run independent, uncoached single-player campaigns on that exact archive.
-5. Publish the tested bytes on GitHub Releases and COI Hub.
+4. Freeze one deterministic 1.0 candidate.
+5. Run independent, uncoached single-player campaigns on that exact archive.
+6. Publish the tested bytes on GitHub Releases and COI Hub.
 
 No new gameplay domain belongs in this sequence.
 

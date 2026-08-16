@@ -1,4 +1,4 @@
-Recursive Industry 0.19.0c pre-release
+Recursive Industry 0.19.0d pre-release
 =====================================
 
 A Captain of Industry endgame mod about building a physical AI economy, from
@@ -19,6 +19,8 @@ Requirements
 - Supporter edition 1.1.0 or newer is optional.
 - Enable the mod when creating a new campaign. Adding it to or removing it from
   an existing normal save is unsupported.
+- Pre-release saves containing a placed Orbital Power Relay are incompatible;
+  remove it before upgrading or start a new campaign.
 
 Install
 -------

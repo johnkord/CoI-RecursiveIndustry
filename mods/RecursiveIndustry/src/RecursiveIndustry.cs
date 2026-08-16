@@ -38,7 +38,7 @@ public sealed class RecursiveIndustry : DataOnlyMod
         registrator.RegisterData<AutonomousCapitalFabricationData>();
         registrator.RegisterData<PlanetaryCoordinationData>();
         registrator.RegisterData<OrbitalIndustryData>();
-        registrator.RegisterData<OrbitalPowerRelayData>();
+        registrator.RegisterData<OrbitalPowerArrayData>();
         registrator.RegisterData<RecursiveFrontierData>();
         registrator.RegisterData<UniversalIndustryData>();
         registrator.RegisterDataWithInterface<IResearchNodesData>();

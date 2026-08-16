@@ -42,6 +42,9 @@ not appear. The completed log passed strict audit with two known vanilla warning
 and no errors, fatals, unknown warnings, missing assets, port mismatches, or
 overflows. The tested player ZIP SHA-256 is
 `ACF2447F36D090E260BCDBA601DF12EDAC7CB1C53446CEF878FA4A75624FC0E5`.
+The source is tagged `v0.19.0c` at commit `0a76824`; the same bytes are hosted on
+the matching GitHub pre-release. The closed smoke log is 39,411 bytes with
+SHA-256 `7DAD2DF44761B53335A2EF06258E5769BA2A0FD8A515BC096A8544FF0475297B`.
 
 ## Remaining before stable 1.0
 
@@ -50,6 +53,9 @@ overflows. The tested player ZIP SHA-256 is
   compatibility findings.
 - Independent uncoached campaigns on one exact frozen archive.
 - Final clean-install, hash, compatibility, and Hub-hosted smoke checks.
+
+Ordinary reports from the public pre-release are useful for defect discovery but
+do not automatically count as independent, uncoached final-candidate evidence.
 
 Private tester responses and detailed expectation rubrics are intentionally not
 published before those sessions because doing so would coach discovery.
