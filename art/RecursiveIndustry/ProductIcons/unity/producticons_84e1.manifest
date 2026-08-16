@@ -1,0 +1,30 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.66f1
+CRC: 3241097165
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: cbe16dfaffe62958b8f5e95146d94d42
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 7c190b1a5d5fe3811b377d663567e8fc
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/RecursiveIndustry/ProductIcons/recursive_rack_iii.png
+- Assets/RecursiveIndustry/ProductIcons/frontier_rack_ii.png
+- Assets/RecursiveIndustry/ProductIcons/model_archive.png
+- Assets/RecursiveIndustry/ProductIcons/accelerator_rack_i.png
+- Assets/RecursiveIndustry/ProductIcons/spent_accelerator.png
+- Assets/RecursiveIndustry/ProductIcons/dataset_archive.png
+- Assets/RecursiveIndustry/ProductIcons/accelerator_module.png
+- Assets/RecursiveIndustry/ProductIcons/validated_control_package.png
+Dependencies: []

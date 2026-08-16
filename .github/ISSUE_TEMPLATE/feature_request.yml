@@ -1,0 +1,47 @@
+name: Feature request
+description: Propose a bounded addition or design change
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Planning problem
+      description: What player decision, bottleneck, or comprehension problem needs attention?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+    validations:
+      required: true
+
+  - type: textarea
+    id: tradeoff
+    attributes:
+      label: Required tradeoff
+      description: What material, power, maintenance, validation, labor, logistics, or opportunity cost keeps this bounded?
+    validations:
+      required: true
+
+  - type: textarea
+    id: fallback
+    attributes:
+      label: Conventional fallback
+      description: When should the vanilla or existing route remain preferable?
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Design boundaries
+      options:
+        - label: This does not require free resources or a positive recycling loop.
+          required: true
+        - label: This does not require automatic building placement or custom dispatch.
+          required: true
+        - label: I searched existing issues and the public roadmap.
+          required: true

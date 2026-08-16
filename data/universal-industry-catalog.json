@@ -1,0 +1,1580 @@
+{
+  "schema_version": 1,
+  "game": {
+    "display_version": "0.8.7",
+    "build": 613
+  },
+  "direct_binding_rule": "checked(source MachineRecipeBinding.Multiplier * 4)",
+  "facilities": [
+    {
+      "key": "comminution_hub",
+      "name": "Autonomous Comminution Hub",
+      "portfolio": "bulk_materials",
+      "power_mw": 12,
+      "baseline_computing": 512,
+      "selected_computing": 64,
+      "workers": 0,
+      "maintenance_t3": 15,
+      "cp4": 1000,
+      "electronics4": 128,
+      "baseline_packages": 64,
+      "selected_packages": 32,
+      "programs": 4,
+      "dossiers": 0,
+      "calibration": 0,
+      "direct_bindings": [
+        {
+          "recipe_id": "BauxiteMilling",
+          "source_machine_id": "CrusherLarge"
+        },
+        {
+          "recipe_id": "CopperOreCrushing",
+          "source_machine_id": "CrusherLarge"
+        },
+        {
+          "recipe_id": "GoldOreCrushing",
+          "source_machine_id": "CrusherLarge"
+        },
+        {
+          "recipe_id": "GoldMilling",
+          "source_machine_id": "CrusherLarge"
+        },
+        {
+          "recipe_id": "GravelCrushing",
+          "source_machine_id": "CrusherLarge"
+        },
+        {
+          "recipe_id": "IlmeniteMilling",
+          "source_machine_id": "CrusherLarge"
+        },
+        {
+          "recipe_id": "IronOreCrushing",
+          "source_machine_id": "CrusherLarge"
+        },
+        {
+          "recipe_id": "QuartzCrushing",
+          "source_machine_id": "CrusherLarge"
+        },
+        {
+          "recipe_id": "QuartzMilling",
+          "source_machine_id": "CrusherLarge"
+        },
+        {
+          "recipe_id": "RockCrushing",
+          "source_machine_id": "CrusherLarge"
+        },
+        {
+          "recipe_id": "SlagCrushing",
+          "source_machine_id": "CrusherLarge"
+        },
+        {
+          "recipe_id": "UraniumCrushing",
+          "source_machine_id": "CrusherLarge"
+        }
+      ]
+    },
+    {
+      "key": "mineral_products_works",
+      "name": "Autonomous Mineral Products Works",
+      "portfolio": "bulk_materials",
+      "power_mw": 15,
+      "baseline_computing": 768,
+      "selected_computing": 96,
+      "workers": 0,
+      "maintenance_t3": 18,
+      "cp4": 1200,
+      "electronics4": 128,
+      "baseline_packages": 64,
+      "selected_packages": 32,
+      "programs": 6,
+      "dossiers": 0,
+      "calibration": 0,
+      "direct_bindings": [
+        {
+          "recipe_id": "AluminaCalcificationGas",
+          "source_machine_id": "RotaryKilnGas"
+        },
+        {
+          "recipe_id": "AluminaCalcificationHydrogen",
+          "source_machine_id": "RotaryKilnGas"
+        },
+        {
+          "recipe_id": "CementProduction",
+          "source_machine_id": "RotaryKiln"
+        },
+        {
+          "recipe_id": "CementProductionGas",
+          "source_machine_id": "RotaryKilnGas"
+        },
+        {
+          "recipe_id": "CementProductionHydrogen",
+          "source_machine_id": "RotaryKilnGas"
+        },
+        {
+          "recipe_id": "ConcreteMixingGravelM",
+          "source_machine_id": "ConcreteMixerT3"
+        },
+        {
+          "recipe_id": "ConcreteMixingGravel",
+          "source_machine_id": "ConcreteMixerT3"
+        },
+        {
+          "recipe_id": "ConcreteMixingSlagM",
+          "source_machine_id": "ConcreteMixerT3"
+        },
+        {
+          "recipe_id": "ConcreteMixingSlag",
+          "source_machine_id": "ConcreteMixerT3"
+        }
+      ]
+    },
+    {
+      "key": "primary_smelter",
+      "name": "Adaptive Primary Smelter",
+      "portfolio": "metallurgy",
+      "power_mw": 36,
+      "baseline_computing": 2048,
+      "selected_computing": 256,
+      "workers": 0,
+      "maintenance_t3": 36,
+      "cp4": 2400,
+      "electronics4": 256,
+      "baseline_packages": 128,
+      "selected_packages": 64,
+      "programs": 12,
+      "dossiers": 0,
+      "calibration": 0,
+      "direct_bindings": [
+        {
+          "recipe_id": "AluminumSmeltingScrapArcT2",
+          "source_machine_id": "ArcFurnace2"
+        },
+        {
+          "recipe_id": "CopperSmeltingArc",
+          "source_machine_id": "ArcFurnace2"
+        },
+        {
+          "recipe_id": "CopperSmeltingArcScrap",
+          "source_machine_id": "ArcFurnace2"
+        },
+        {
+          "recipe_id": "CopperSmeltingT2",
+          "source_machine_id": "SmeltingFurnaceT2"
+        },
+        {
+          "recipe_id": "CopperSmeltingT2Scrap",
+          "source_machine_id": "SmeltingFurnaceT2"
+        },
+        {
+          "recipe_id": "GlassSmeltingArc",
+          "source_machine_id": "ArcFurnace2"
+        },
+        {
+          "recipe_id": "GlassSmeltingArcWithBroken",
+          "source_machine_id": "ArcFurnace2"
+        },
+        {
+          "recipe_id": "GlassSmeltingT2",
+          "source_machine_id": "SmeltingFurnaceT2"
+        },
+        {
+          "recipe_id": "GlassSmeltingT2WithBroken",
+          "source_machine_id": "SmeltingFurnaceT2"
+        },
+        {
+          "recipe_id": "IlmeniteSmeltingArc2",
+          "source_machine_id": "ArcFurnace2"
+        },
+        {
+          "recipe_id": "IronSmeltingArc",
+          "source_machine_id": "ArcFurnace2"
+        },
+        {
+          "recipe_id": "IronSmeltingArcScrap",
+          "source_machine_id": "ArcFurnace2"
+        },
+        {
+          "recipe_id": "IronSmeltingT2",
+          "source_machine_id": "SmeltingFurnaceT2"
+        },
+        {
+          "recipe_id": "IronSmeltingT2Scrap",
+          "source_machine_id": "SmeltingFurnaceT2"
+        },
+        {
+          "recipe_id": "SiliconSmeltingArc2",
+          "source_machine_id": "ArcFurnace2"
+        },
+        {
+          "recipe_id": "SteelSmeltingT2",
+          "source_machine_id": "OxygenFurnaceT2"
+        },
+        {
+          "recipe_id": "TitaniumSmeltingArc2",
+          "source_machine_id": "ArcFurnace2"
+        }
+      ]
+    },
+    {
+      "key": "precision_metals_works",
+      "name": "Precision Metals and Glass Works",
+      "portfolio": "metallurgy",
+      "power_mw": 40,
+      "baseline_computing": 1536,
+      "selected_computing": 192,
+      "workers": 8,
+      "maintenance_t3": 30,
+      "cp4": 2000,
+      "electronics4": 256,
+      "baseline_packages": 128,
+      "selected_packages": 64,
+      "programs": 10,
+      "dossiers": 0,
+      "calibration": 0,
+      "direct_bindings": [
+        {
+          "recipe_id": "AluminaCrystallization",
+          "source_machine_id": "SiliconCrystallizer"
+        },
+        {
+          "recipe_id": "AluminumCasting",
+          "source_machine_id": "CasterT2"
+        },
+        {
+          "recipe_id": "AluminumElectrolysis",
+          "source_machine_id": "AluminumCell"
+        },
+        {
+          "recipe_id": "CopperCasting",
+          "source_machine_id": "CasterT2"
+        },
+        {
+          "recipe_id": "CopperElectrolysisProcess",
+          "source_machine_id": "CopperElectrolysis"
+        },
+        {
+          "recipe_id": "CopperElectrolysisWithWater",
+          "source_machine_id": "CopperElectrolysis"
+        },
+        {
+          "recipe_id": "GlassCastingT2",
+          "source_machine_id": "GlassMakerT2"
+        },
+        {
+          "recipe_id": "GoldScrapSmelting",
+          "source_machine_id": "GoldFurnace"
+        },
+        {
+          "recipe_id": "GoldSettling",
+          "source_machine_id": "SettlingTank"
+        },
+        {
+          "recipe_id": "GoldSmelting",
+          "source_machine_id": "GoldFurnace"
+        },
+        {
+          "recipe_id": "IronCasting",
+          "source_machine_id": "CasterT2"
+        },
+        {
+          "recipe_id": "RedMudSettling",
+          "source_machine_id": "SettlingTank"
+        },
+        {
+          "recipe_id": "RedMudSettlingAcid",
+          "source_machine_id": "SettlingTank"
+        },
+        {
+          "recipe_id": "SiliconCrystallization",
+          "source_machine_id": "SiliconCrystallizer"
+        },
+        {
+          "recipe_id": "SiliconTreatment",
+          "source_machine_id": "SiliconReactor"
+        },
+        {
+          "recipe_id": "SteelCastingCooled",
+          "source_machine_id": "CasterCooledT2"
+        },
+        {
+          "recipe_id": "TitaniumAlloyCastingT2",
+          "source_machine_id": "CasterCooledT2"
+        },
+        {
+          "recipe_id": "TitaniumAlloyMixing",
+          "source_machine_id": "AlloyMixer"
+        }
+      ]
+    },
+    {
+      "key": "refinery_complex",
+      "name": "Autonomous Refinery Complex",
+      "portfolio": "refinery",
+      "power_mw": 30,
+      "baseline_computing": 2048,
+      "selected_computing": 256,
+      "workers": 0,
+      "maintenance_t3": 36,
+      "cp4": 2400,
+      "electronics4": 256,
+      "baseline_packages": 128,
+      "selected_packages": 64,
+      "programs": 12,
+      "dossiers": 0,
+      "calibration": 0,
+      "direct_bindings": [
+        {
+          "recipe_id": "CrudeOilRefiningT1",
+          "source_machine_id": "DistillationTowerT1"
+        },
+        {
+          "recipe_id": "CrudeOilRefiningT2",
+          "source_machine_id": "DistillationTowerT2"
+        },
+        {
+          "recipe_id": "DieselReforming",
+          "source_machine_id": "HydroCrackerT1"
+        },
+        {
+          "recipe_id": "FuelGasReforming",
+          "source_machine_id": "HydroCrackerT1"
+        },
+        {
+          "recipe_id": "HeavyDistillateRefining",
+          "source_machine_id": "DistillationTowerT3"
+        },
+        {
+          "recipe_id": "HeavyOilCracking",
+          "source_machine_id": "HydroCrackerT1"
+        },
+        {
+          "recipe_id": "HeavyOilCrackingToNaphtha",
+          "source_machine_id": "HydroCrackerT1"
+        },
+        {
+          "recipe_id": "NaphthaReforming",
+          "source_machine_id": "HydroCrackerT1"
+        },
+        {
+          "recipe_id": "NaphthaReformingToGas",
+          "source_machine_id": "HydroCrackerT1"
+        },
+        {
+          "recipe_id": "PlasticMaking",
+          "source_machine_id": "PolymerizationPlant"
+        },
+        {
+          "recipe_id": "PlasticMakingEthanol",
+          "source_machine_id": "PolymerizationPlant"
+        },
+        {
+          "recipe_id": "RubberProductionDiesel",
+          "source_machine_id": "VacuumDistillationTower"
+        },
+        {
+          "recipe_id": "RubberProductionDieselWithCoal",
+          "source_machine_id": "VacuumDistillationTower"
+        },
+        {
+          "recipe_id": "RubberProductionEthanol",
+          "source_machine_id": "VacuumDistillationTower"
+        },
+        {
+          "recipe_id": "RubberProductionNaphtha",
+          "source_machine_id": "VacuumDistillationTower"
+        },
+        {
+          "recipe_id": "RubberProductionNaphthaAlt",
+          "source_machine_id": "VacuumDistillationTower"
+        },
+        {
+          "recipe_id": "SourWaterStripping",
+          "source_machine_id": "SourWaterStripper"
+        }
+      ]
+    },
+    {
+      "key": "gas_fertilizer_complex",
+      "name": "Autonomous Gas and Fertilizer Complex",
+      "portfolio": "chemistry",
+      "power_mw": 24,
+      "baseline_computing": 1536,
+      "selected_computing": 192,
+      "workers": 8,
+      "maintenance_t3": 27,
+      "cp4": 1800,
+      "electronics4": 192,
+      "baseline_packages": 96,
+      "selected_packages": 48,
+      "programs": 10,
+      "dossiers": 0,
+      "calibration": 0,
+      "direct_bindings": [
+        {
+          "recipe_id": "AirSeparation",
+          "source_machine_id": "AirSeparator"
+        },
+        {
+          "recipe_id": "AmmoniaElectrolysis",
+          "source_machine_id": "ElectrolyzerT2"
+        },
+        {
+          "recipe_id": "AmmoniaSynthesis",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "BrineElectrolysis",
+          "source_machine_id": "ElectrolyzerT2"
+        },
+        {
+          "recipe_id": "CarbonToEthanolProduction",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "ChemicalFuelProduction",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "EthanolCookingOilReforming",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "FertilizerProductionFromOrganic",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "FertilizerProduction",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "FuelGasSynthesis",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "GraphiteProductionCo2",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "GraphiteProduction",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "HydrogenProductionFromSteamSp",
+          "source_machine_id": "HydrogenReformer"
+        },
+        {
+          "recipe_id": "HydrogenReforming",
+          "source_machine_id": "HydrogenReformer"
+        },
+        {
+          "recipe_id": "WaterElectrolysis",
+          "source_machine_id": "ElectrolyzerT2"
+        }
+      ]
+    },
+    {
+      "key": "materials_chemistry_complex",
+      "name": "Autonomous Materials Chemistry Complex",
+      "portfolio": "chemistry",
+      "power_mw": 24,
+      "baseline_computing": 1536,
+      "selected_computing": 192,
+      "workers": 8,
+      "maintenance_t3": 27,
+      "cp4": 1800,
+      "electronics4": 192,
+      "baseline_packages": 96,
+      "selected_packages": 48,
+      "programs": 10,
+      "dossiers": 0,
+      "calibration": 0,
+      "direct_bindings": [
+        {
+          "recipe_id": "AcidMixMixing",
+          "source_machine_id": "IndustrialMixerT2"
+        },
+        {
+          "recipe_id": "BauxiteDigestion",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "BrineProduction",
+          "source_machine_id": "IndustrialMixerT2"
+        },
+        {
+          "recipe_id": "Fertilizer2Production",
+          "source_machine_id": "IndustrialMixerT2"
+        },
+        {
+          "recipe_id": "FilterMediaMixingM",
+          "source_machine_id": "IndustrialMixerT2"
+        },
+        {
+          "recipe_id": "FilterMediaMixing",
+          "source_machine_id": "IndustrialMixerT2"
+        },
+        {
+          "recipe_id": "GlassMixMixing",
+          "source_machine_id": "IndustrialMixerT2"
+        },
+        {
+          "recipe_id": "GlassMixMixingWithAcid",
+          "source_machine_id": "IndustrialMixerT2"
+        },
+        {
+          "recipe_id": "SulfurNeutralization",
+          "source_machine_id": "IndustrialMixerT2"
+        },
+        {
+          "recipe_id": "TitaniumChlorideReduction",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "TitaniumChlorination",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "TitaniumPurification",
+          "source_machine_id": "DistillationTowerT3"
+        }
+      ]
+    },
+    {
+      "key": "medical_chemistry_complex",
+      "name": "Autonomous Medical and Precision Chemistry Complex",
+      "portfolio": "chemistry",
+      "power_mw": 18,
+      "baseline_computing": 1024,
+      "selected_computing": 128,
+      "workers": 16,
+      "maintenance_t3": 21,
+      "cp4": 1400,
+      "electronics4": 192,
+      "baseline_packages": 96,
+      "selected_packages": 48,
+      "programs": 8,
+      "dossiers": 0,
+      "calibration": 0,
+      "direct_bindings": [
+        {
+          "recipe_id": "AnestheticsProduction",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "DiamondPasteFromCookingOil",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "DiamondPasteFromHeavyOil",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "DisinfectantProduction",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "MedicalEquipmentAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "MedicalSupplies2Assembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "MedicalSupplies3Assembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "MedicalSuppliesAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "MorphineProduction",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "PaperProduction",
+          "source_machine_id": "ChemicalPlant2"
+        }
+      ]
+    },
+    {
+      "key": "food_processing_campus",
+      "name": "Autonomous Food Processing Campus",
+      "portfolio": "food_bioprocessing",
+      "power_mw": 12,
+      "baseline_computing": 1024,
+      "selected_computing": 128,
+      "workers": 24,
+      "maintenance_t3": 18,
+      "cp4": 1200,
+      "electronics4": 128,
+      "baseline_packages": 64,
+      "selected_packages": 32,
+      "programs": 8,
+      "dossiers": 0,
+      "calibration": 0,
+      "direct_bindings": [
+        {
+          "recipe_id": "MeatProcessing",
+          "source_machine_id": "FoodProcessor"
+        },
+        {
+          "recipe_id": "MeatProcessingTrimmings",
+          "source_machine_id": "FoodProcessor"
+        },
+        {
+          "recipe_id": "SausageProduction",
+          "source_machine_id": "FoodProcessor"
+        },
+        {
+          "recipe_id": "SnackProductionCorn",
+          "source_machine_id": "FoodProcessor"
+        },
+        {
+          "recipe_id": "SnackProductionPotato",
+          "source_machine_id": "FoodProcessor"
+        },
+        {
+          "recipe_id": "SugarRefiningCane",
+          "source_machine_id": "FoodProcessor"
+        },
+        {
+          "recipe_id": "TofuProduction",
+          "source_machine_id": "FoodProcessor"
+        }
+      ]
+    },
+    {
+      "key": "food_pack_campus",
+      "name": "Autonomous Food Pack Campus",
+      "portfolio": "food_bioprocessing",
+      "power_mw": 9,
+      "baseline_computing": 768,
+      "selected_computing": 96,
+      "workers": 16,
+      "maintenance_t3": 12,
+      "cp4": 800,
+      "electronics4": 96,
+      "baseline_packages": 48,
+      "selected_packages": 24,
+      "programs": 4,
+      "dossiers": 0,
+      "calibration": 0,
+      "direct_bindings": [
+        {
+          "recipe_id": "BreadProduction",
+          "source_machine_id": "BakingUnit"
+        },
+        {
+          "recipe_id": "CakeProduction",
+          "source_machine_id": "BakingUnit"
+        },
+        {
+          "recipe_id": "CanolaMilling",
+          "source_machine_id": "FoodMill"
+        },
+        {
+          "recipe_id": "CornMilling",
+          "source_machine_id": "FoodMill"
+        },
+        {
+          "recipe_id": "FoodPackEggsAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "FoodPackMeatAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "FoodPackTofuAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "SoybeanMilling",
+          "source_machine_id": "FoodMill"
+        },
+        {
+          "recipe_id": "WheatMilling",
+          "source_machine_id": "FoodMill"
+        }
+      ]
+    },
+    {
+      "key": "crop_soil_bioprocessing",
+      "name": "Autonomous Crop and Soil Bioprocessing Center",
+      "portfolio": "food_bioprocessing",
+      "power_mw": 12,
+      "baseline_computing": 768,
+      "selected_computing": 96,
+      "workers": 16,
+      "maintenance_t3": 15,
+      "cp4": 1000,
+      "electronics4": 128,
+      "baseline_packages": 64,
+      "selected_packages": 32,
+      "programs": 6,
+      "dossiers": 0,
+      "calibration": 0,
+      "direct_bindings": [
+        {
+          "recipe_id": "AnimalFeedCompost",
+          "source_machine_id": "IndustrialMixerT2"
+        },
+        {
+          "recipe_id": "AnimalFeedFromCorn",
+          "source_machine_id": "IndustrialMixerT2"
+        },
+        {
+          "recipe_id": "AnimalFeedFromPotato",
+          "source_machine_id": "IndustrialMixerT2"
+        },
+        {
+          "recipe_id": "AnimalFeedFromSoybean",
+          "source_machine_id": "IndustrialMixerT2"
+        },
+        {
+          "recipe_id": "AnimalFeedFromWheat",
+          "source_machine_id": "IndustrialMixerT2"
+        },
+        {
+          "recipe_id": "AntibioticsFermentation",
+          "source_machine_id": "FermentationTank"
+        },
+        {
+          "recipe_id": "BiomassCompost",
+          "source_machine_id": "IndustrialMixerT2"
+        },
+        {
+          "recipe_id": "CornToEthanolFermentation",
+          "source_machine_id": "FermentationTank"
+        },
+        {
+          "recipe_id": "DirtMixing",
+          "source_machine_id": "IndustrialMixerT2"
+        },
+        {
+          "recipe_id": "MeatTrimmingsCompost",
+          "source_machine_id": "IndustrialMixerT2"
+        },
+        {
+          "recipe_id": "OrganicFertilizerProductionDirt",
+          "source_machine_id": "IndustrialMixerT2"
+        },
+        {
+          "recipe_id": "OrganicFertilizerProduction",
+          "source_machine_id": "IndustrialMixerT2"
+        },
+        {
+          "recipe_id": "SugarToEthanolFermentation",
+          "source_machine_id": "FermentationTank"
+        }
+      ]
+    },
+    {
+      "key": "bioenergy_center",
+      "name": "Autonomous Bioenergy Digestion Center",
+      "portfolio": "circular_utilities",
+      "power_mw": 12,
+      "baseline_computing": 768,
+      "selected_computing": 96,
+      "workers": 16,
+      "maintenance_t3": 15,
+      "cp4": 1000,
+      "electronics4": 128,
+      "baseline_packages": 64,
+      "selected_packages": 32,
+      "programs": 6,
+      "dossiers": 0,
+      "calibration": 0,
+      "direct_bindings": [
+        {
+          "recipe_id": "CharcoalBurning",
+          "source_machine_id": "CharcoalMaker"
+        },
+        {
+          "recipe_id": "CornDigestion",
+          "source_machine_id": "AnaerobicDigester"
+        },
+        {
+          "recipe_id": "EggsDigestion",
+          "source_machine_id": "AnaerobicDigester"
+        },
+        {
+          "recipe_id": "FruitDigestion",
+          "source_machine_id": "AnaerobicDigester"
+        },
+        {
+          "recipe_id": "MeatTrimmingsDigestion",
+          "source_machine_id": "AnaerobicDigester"
+        },
+        {
+          "recipe_id": "PoppyDigestion",
+          "source_machine_id": "AnaerobicDigester"
+        },
+        {
+          "recipe_id": "PotatoDigestion",
+          "source_machine_id": "AnaerobicDigester"
+        },
+        {
+          "recipe_id": "SludgeDigestion",
+          "source_machine_id": "AnaerobicDigester"
+        },
+        {
+          "recipe_id": "SoybeanDigestion",
+          "source_machine_id": "AnaerobicDigester"
+        },
+        {
+          "recipe_id": "SugarCaneDigestion",
+          "source_machine_id": "AnaerobicDigester"
+        },
+        {
+          "recipe_id": "VegetablesDigestion",
+          "source_machine_id": "AnaerobicDigester"
+        },
+        {
+          "recipe_id": "WheatDigestion",
+          "source_machine_id": "AnaerobicDigester"
+        }
+      ]
+    },
+    {
+      "key": "water_utility",
+      "name": "Autonomous Water Recovery and Desalination Complex",
+      "portfolio": "circular_utilities",
+      "power_mw": 18,
+      "baseline_computing": 1024,
+      "selected_computing": 128,
+      "workers": 16,
+      "maintenance_t3": 21,
+      "cp4": 1400,
+      "electronics4": 192,
+      "baseline_packages": 96,
+      "selected_packages": 48,
+      "programs": 8,
+      "dossiers": 0,
+      "calibration": 0,
+      "direct_bindings": [
+        {
+          "recipe_id": "BrineMaking",
+          "source_machine_id": "EvaporationPondHeated"
+        },
+        {
+          "recipe_id": "DesalinationFromDepleted",
+          "source_machine_id": "ThermalDesalinator"
+        },
+        {
+          "recipe_id": "DesalinationFromHP",
+          "source_machine_id": "ThermalDesalinator"
+        },
+        {
+          "recipe_id": "DesalinationFromLP",
+          "source_machine_id": "ThermalDesalinator"
+        },
+        {
+          "recipe_id": "DesalinationFromSP",
+          "source_machine_id": "ThermalDesalinator"
+        },
+        {
+          "recipe_id": "SaltMakingFromBrine",
+          "source_machine_id": "EvaporationPondHeated"
+        },
+        {
+          "recipe_id": "SaltMaking",
+          "source_machine_id": "EvaporationPondHeated"
+        },
+        {
+          "recipe_id": "ToxicSlurryTreatment",
+          "source_machine_id": "WaterTreatmentPlant"
+        },
+        {
+          "recipe_id": "WaterChilling",
+          "source_machine_id": "WaterChiller"
+        },
+        {
+          "recipe_id": "WaterTreatment",
+          "source_machine_id": "WaterTreatmentPlant"
+        },
+        {
+          "recipe_id": "WaterTreatmentT2",
+          "source_machine_id": "WaterTreatmentPlant"
+        }
+      ]
+    },
+    {
+      "key": "thermal_emissions_utility",
+      "name": "Autonomous Thermal and Emissions Utility",
+      "portfolio": "circular_utilities",
+      "power_mw": 18,
+      "baseline_computing": 1024,
+      "selected_computing": 128,
+      "workers": 16,
+      "maintenance_t3": 21,
+      "cp4": 1400,
+      "electronics4": 192,
+      "baseline_packages": 96,
+      "selected_packages": 48,
+      "programs": 8,
+      "dossiers": 0,
+      "calibration": 0,
+      "direct_bindings": [
+        {
+          "recipe_id": "ExhaustFiltering",
+          "source_machine_id": "ExhaustScrubber"
+        },
+        {
+          "recipe_id": "ExhaustFilteringLime",
+          "source_machine_id": "ExhaustScrubber"
+        },
+        {
+          "recipe_id": "IncinerationOfWaste",
+          "source_machine_id": "IncinerationPlant"
+        },
+        {
+          "recipe_id": "IncinerationOfWasteHydrogen",
+          "source_machine_id": "IncinerationPlant"
+        },
+        {
+          "recipe_id": "IncinerationOfWastePressed",
+          "source_machine_id": "IncinerationPlant"
+        },
+        {
+          "recipe_id": "IncinerationOfWastePressedHydrogen",
+          "source_machine_id": "IncinerationPlant"
+        },
+        {
+          "recipe_id": "SteamDepletedCondensationT2",
+          "source_machine_id": "CoolingTowerT2"
+        },
+        {
+          "recipe_id": "SteamHpCondensationT2",
+          "source_machine_id": "CoolingTowerT2"
+        },
+        {
+          "recipe_id": "SteamLpCondensationT2",
+          "source_machine_id": "CoolingTowerT2"
+        },
+        {
+          "recipe_id": "SteamSpCondensationT2",
+          "source_machine_id": "CoolingTowerT2"
+        }
+      ]
+    },
+    {
+      "key": "materials_recovery_center",
+      "name": "Autonomous Materials Recovery Center",
+      "portfolio": "circular_utilities",
+      "power_mw": 15,
+      "baseline_computing": 1024,
+      "selected_computing": 128,
+      "workers": 16,
+      "maintenance_t3": 18,
+      "cp4": 1200,
+      "electronics4": 160,
+      "baseline_packages": 80,
+      "selected_packages": 40,
+      "programs": 8,
+      "dossiers": 0,
+      "calibration": 0,
+      "direct_bindings": [
+        {
+          "recipe_id": "PressingOfAluminumScrap",
+          "source_machine_id": "Compactor"
+        },
+        {
+          "recipe_id": "PressingOfCopperScrap",
+          "source_machine_id": "Compactor"
+        },
+        {
+          "recipe_id": "PressingOfGoldScrap",
+          "source_machine_id": "Compactor"
+        },
+        {
+          "recipe_id": "PressingOfIronScrap",
+          "source_machine_id": "Compactor"
+        },
+        {
+          "recipe_id": "PressingOfRecyclables",
+          "source_machine_id": "Compactor"
+        },
+        {
+          "recipe_id": "PressingOfWaste",
+          "source_machine_id": "Compactor"
+        },
+        {
+          "recipe_id": "ShreddingAluminumScrap",
+          "source_machine_id": "Shredder"
+        },
+        {
+          "recipe_id": "ShreddingCopperScrap",
+          "source_machine_id": "Shredder"
+        },
+        {
+          "recipe_id": "ShreddingGoldScrap",
+          "source_machine_id": "Shredder"
+        },
+        {
+          "recipe_id": "ShreddingIronScrap",
+          "source_machine_id": "Shredder"
+        },
+        {
+          "recipe_id": "ShreddingPolyCells",
+          "source_machine_id": "Shredder"
+        },
+        {
+          "recipe_id": "ShreddingRetiredWaste",
+          "source_machine_id": "Shredder"
+        },
+        {
+          "recipe_id": "ShreddingSaplings",
+          "source_machine_id": "Shredder"
+        },
+        {
+          "recipe_id": "ShreddingWaste",
+          "source_machine_id": "Shredder"
+        },
+        {
+          "recipe_id": "ShreddingWood",
+          "source_machine_id": "Shredder"
+        }
+      ]
+    },
+    {
+      "key": "nuclear_fuel_complex",
+      "name": "Autonomous Nuclear Fuel Cycle Complex",
+      "portfolio": "nuclear_fuel_cycle",
+      "power_mw": 48,
+      "baseline_computing": 4096,
+      "selected_computing": 512,
+      "workers": 40,
+      "maintenance_t3": 48,
+      "cp4": 3200,
+      "electronics4": 512,
+      "baseline_packages": 256,
+      "selected_packages": 128,
+      "programs": 16,
+      "dossiers": 16,
+      "calibration": 1,
+      "direct_bindings": [
+        {
+          "recipe_id": "BlanketFuelFromDepleted",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "BlanketFuelFromYellowcake",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "BlanketFuelReprocessing",
+          "source_machine_id": "UraniumEnrichmentPlant"
+        },
+        {
+          "recipe_id": "BlanketFuelReprocessingToPu",
+          "source_machine_id": "UraniumEnrichmentPlant"
+        },
+        {
+          "recipe_id": "BlanketFuelReprocessingToU30",
+          "source_machine_id": "UraniumEnrichmentPlant"
+        },
+        {
+          "recipe_id": "CoreFuelFromEnriched",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "CoreFuelFromPu",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "CoreFuelReprocessing",
+          "source_machine_id": "NuclearReprocessingPlant"
+        },
+        {
+          "recipe_id": "FluorideLeaching",
+          "source_machine_id": "SettlingTank"
+        },
+        {
+          "recipe_id": "MoxRodsAssemblyT1",
+          "source_machine_id": "ChemicalPlant2"
+        },
+        {
+          "recipe_id": "ReprocessedUraniumEnrichment",
+          "source_machine_id": "UraniumEnrichmentPlant"
+        },
+        {
+          "recipe_id": "SpentFuelReprocessing",
+          "source_machine_id": "NuclearReprocessingPlant"
+        },
+        {
+          "recipe_id": "SpentFuelToBlanket",
+          "source_machine_id": "NuclearReprocessingPlant"
+        },
+        {
+          "recipe_id": "SpentMoxToBlanket",
+          "source_machine_id": "NuclearReprocessingPlant"
+        },
+        {
+          "recipe_id": "UraniumEnrichment",
+          "source_machine_id": "UraniumEnrichmentPlant"
+        },
+        {
+          "recipe_id": "UraniumEnrichment20",
+          "source_machine_id": "UraniumEnrichmentPlant"
+        },
+        {
+          "recipe_id": "UraniumLeaching",
+          "source_machine_id": "SettlingTank"
+        },
+        {
+          "recipe_id": "UraniumRodsAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        }
+      ]
+    },
+    {
+      "key": "precision_components_fab",
+      "name": "Autonomous Precision Components Fab",
+      "portfolio": "advanced_fabrication",
+      "power_mw": 24,
+      "baseline_computing": 2048,
+      "selected_computing": 256,
+      "workers": 16,
+      "maintenance_t3": 30,
+      "cp4": 2000,
+      "electronics4": 320,
+      "baseline_packages": 160,
+      "selected_packages": 80,
+      "programs": 12,
+      "dossiers": 0,
+      "calibration": 0,
+      "direct_bindings": [
+        {
+          "recipe_id": "DiamondSynthesis",
+          "source_machine_id": "DiamondReactor"
+        },
+        {
+          "recipe_id": "Electronics4Assembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "ElectronicsAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "LensMaking",
+          "source_machine_id": "LensMaker"
+        },
+        {
+          "recipe_id": "PCBAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "ServerAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "SolarCellAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "SolarCellMonoAssemblyT1",
+          "source_machine_id": "AssemblyRoboticT2"
+        }
+      ]
+    },
+    {
+      "key": "general_manufacturing_fab",
+      "name": "Autonomous General Manufacturing Fab",
+      "portfolio": "advanced_fabrication",
+      "power_mw": 18,
+      "baseline_computing": 1536,
+      "selected_computing": 192,
+      "workers": 24,
+      "maintenance_t3": 24,
+      "cp4": 1600,
+      "electronics4": 256,
+      "baseline_packages": 128,
+      "selected_packages": 64,
+      "programs": 10,
+      "dossiers": 0,
+      "calibration": 0,
+      "direct_bindings": [
+        {
+          "recipe_id": "ConsumerElectronicsAssemblyT1",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "CrewSuppliesAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "HouseholdAppliancesAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "HouseholdGoodsAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "LabEquipment1Assembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "LabEquipment2Assembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "LabEquipment3Assembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "LabEquipment4Assembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "LuxuryGoodsAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "MechPartsSteelAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "MechPartsIronAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "OfficeSuppliesAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "RailPartsAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        }
+      ]
+    },
+    {
+      "key": "orbital_fabrication_fab",
+      "name": "Autonomous Orbital Fabrication Fab",
+      "portfolio": "advanced_fabrication",
+      "power_mw": 30,
+      "baseline_computing": 2048,
+      "selected_computing": 256,
+      "workers": 24,
+      "maintenance_t3": 30,
+      "cp4": 2400,
+      "electronics4": 384,
+      "baseline_packages": 192,
+      "selected_packages": 96,
+      "programs": 14,
+      "dossiers": 0,
+      "calibration": 0,
+      "direct_bindings": [
+        {
+          "recipe_id": "AsteroidBoosterPartsAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "CompactReactorAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "CompositeCoreAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "CompositeCoreBasicAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "CompositePanelAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "ProbePartsAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "StationPartsAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
+          "recipe_id": "StationPartsBasicAssembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        }
+      ]
+    }
+  ],
+  "integrated_recipes": [
+    {
+      "key": "integrated_concrete",
+      "name": "Integrated Concrete Campus",
+      "machine": "mineral_products_works",
+      "batch_scale": 6,
+      "duration_seconds": 120,
+      "sources": [
+        {
+          "recipe_id": "CementProductionGas",
+          "multiplier": 1
+        },
+        {
+          "recipe_id": "ConcreteMixingGravel",
+          "multiplier": 2
+        }
+      ]
+    },
+    {
+      "key": "integrated_steel",
+      "name": "Integrated Steel Cell",
+      "machine": "primary_smelter",
+      "batch_scale": 6,
+      "duration_seconds": 120,
+      "sources": [
+        {
+          "recipe_id": "IronSmeltingArc",
+          "multiplier": 2
+        },
+        {
+          "recipe_id": "SteelSmeltingT2",
+          "multiplier": 1
+        },
+        {
+          "recipe_id": "SteelCastingCooled",
+          "multiplier": 2
+        }
+      ]
+    },
+    {
+      "key": "integrated_refinery",
+      "name": "Integrated Crude Fractionation",
+      "machine": "refinery_complex",
+      "batch_scale": 12,
+      "duration_seconds": 120,
+      "sources": [
+        {
+          "recipe_id": "CrudeOilRefiningT1",
+          "multiplier": 1
+        },
+        {
+          "recipe_id": "CrudeOilRefiningT2",
+          "multiplier": 1
+        },
+        {
+          "recipe_id": "HeavyDistillateRefining",
+          "multiplier": 1
+        }
+      ]
+    },
+    {
+      "key": "integrated_fertilizer",
+      "name": "Integrated Fertilizer Synthesis",
+      "machine": "gas_fertilizer_complex",
+      "batch_scale": 8,
+      "duration_seconds": 120,
+      "sources": [
+        {
+          "recipe_id": "AirSeparation",
+          "multiplier": 2
+        },
+        {
+          "recipe_id": "HydrogenReforming",
+          "multiplier": 1
+        },
+        {
+          "recipe_id": "AmmoniaSynthesis",
+          "multiplier": 3
+        },
+        {
+          "recipe_id": "FertilizerProduction",
+          "multiplier": 3
+        }
+      ]
+    },
+    {
+      "key": "integrated_food_pack_eggs",
+      "name": "Integrated Egg Food Packs",
+      "machine": "food_pack_campus",
+      "batch_scale": 15,
+      "duration_seconds": 120,
+      "sources": [
+        {
+          "recipe_id": "WheatMilling",
+          "multiplier": 1
+        },
+        {
+          "recipe_id": "BreadProduction",
+          "multiplier": 1
+        },
+        {
+          "recipe_id": "FoodPackEggsAssembly",
+          "multiplier": 2
+        }
+      ]
+    },
+    {
+      "key": "integrated_food_pack_meat",
+      "name": "Integrated Poultry Food Packs",
+      "machine": "food_pack_campus",
+      "batch_scale": 3,
+      "duration_seconds": 120,
+      "sources": [
+        {
+          "recipe_id": "WheatMilling",
+          "multiplier": 5
+        },
+        {
+          "recipe_id": "BreadProduction",
+          "multiplier": 5
+        },
+        {
+          "recipe_id": "MeatProcessing",
+          "multiplier": 6
+        },
+        {
+          "recipe_id": "FoodPackMeatAssembly",
+          "multiplier": 10
+        }
+      ]
+    },
+    {
+      "key": "integrated_food_pack_tofu",
+      "name": "Integrated Plant Food Packs",
+      "machine": "food_pack_campus",
+      "batch_scale": 15,
+      "duration_seconds": 240,
+      "sources": [
+        {
+          "recipe_id": "TofuProduction",
+          "multiplier": 3
+        },
+        {
+          "recipe_id": "FoodPackTofuAssembly",
+          "multiplier": 4
+        }
+      ]
+    },
+    {
+      "key": "integrated_water_recovery",
+      "name": "Integrated Water and Sludge Recovery",
+      "machine": "water_utility",
+      "batch_scale": 8,
+      "duration_seconds": 120,
+      "sources": [
+        {
+          "recipe_id": "WaterTreatmentT2",
+          "multiplier": 1
+        },
+        {
+          "recipe_id": "SludgeDigestion",
+          "multiplier": 1
+        }
+      ]
+    },
+    {
+      "key": "integrated_uranium_rods",
+      "name": "Integrated Uranium Fuel Front End",
+      "machine": "nuclear_fuel_complex",
+      "batch_scale": 16,
+      "duration_seconds": 120,
+      "sources": [
+        {
+          "recipe_id": "UraniumLeaching",
+          "multiplier": 2
+        },
+        {
+          "recipe_id": "UraniumEnrichment",
+          "multiplier": 2
+        },
+        {
+          "recipe_id": "UraniumRodsAssembly",
+          "multiplier": 1
+        }
+      ]
+    },
+    {
+      "key": "integrated_electronics4",
+      "name": "Integrated Precision Electronics IV",
+      "machine": "precision_components_fab",
+      "batch_scale": 8,
+      "duration_seconds": 120,
+      "sources": [
+        {
+          "recipe_id": "LensMaking",
+          "multiplier": 2
+        },
+        {
+          "recipe_id": "Electronics4Assembly",
+          "multiplier": 1
+        }
+      ]
+    }
+  ],
+  "precision_recipes": [
+    {
+      "key": "precision_cement",
+      "name": "Precision Cement",
+      "machine": "mineral_products_works",
+      "source_recipe_id": "CementProductionHydrogen"
+    },
+    {
+      "key": "precision_steel",
+      "name": "Precision Steel",
+      "machine": "primary_smelter",
+      "source_recipe_id": "SteelCastingCooled"
+    },
+    {
+      "key": "precision_fertilizer",
+      "name": "Precision Fertilizer",
+      "machine": "gas_fertilizer_complex",
+      "source_recipe_id": "FertilizerProduction"
+    },
+    {
+      "key": "precision_medical_supplies",
+      "name": "Precision Medical Supplies",
+      "machine": "medical_chemistry_complex",
+      "source_recipe_id": "MedicalSupplies3Assembly"
+    },
+    {
+      "key": "precision_food_pack_eggs",
+      "name": "Precision Food Pack Eggs",
+      "machine": "food_pack_campus",
+      "source_recipe_id": "FoodPackEggsAssembly"
+    },
+    {
+      "key": "precision_food_pack_meat",
+      "name": "Precision Food Pack Meat",
+      "machine": "food_pack_campus",
+      "source_recipe_id": "FoodPackMeatAssembly"
+    },
+    {
+      "key": "precision_food_pack_tofu",
+      "name": "Precision Food Pack Tofu",
+      "machine": "food_pack_campus",
+      "source_recipe_id": "FoodPackTofuAssembly"
+    },
+    {
+      "key": "precision_water_recovery",
+      "name": "Precision Water Recovery",
+      "machine": "water_utility",
+      "source_recipe_id": "WaterTreatmentT2"
+    },
+    {
+      "key": "precision_uranium_rods",
+      "name": "Precision Uranium Rods",
+      "machine": "nuclear_fuel_complex",
+      "source_recipe_id": "UraniumRodsAssembly"
+    },
+    {
+      "key": "precision_electronics4",
+      "name": "Precision Electronics4",
+      "machine": "precision_components_fab",
+      "source_recipe_id": "Electronics4Assembly"
+    }
+  ],
+  "research_keys": [
+    "autonomous_materials_systems",
+    "autonomous_process_systems",
+    "autonomous_essential_systems",
+    "autonomous_nuclear_operations",
+    "autonomous_advanced_manufacturing"
+  ]
+}

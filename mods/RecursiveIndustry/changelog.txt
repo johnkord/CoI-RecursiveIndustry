@@ -1,0 +1,23 @@
+Recursive Industry changelog
+============================
+
+0.19.0b - Pre-release source preparation
+----------------------------------------
+
+- Published the curated mod source, original art, generators, and economy model.
+- Added public build, compatibility, contribution, security, and verification docs.
+- Renamed the visible Epoch V subtitle from Self-Expanding Frontier to Recursive
+  Frontier to describe bounded reinvestment without implying automatic expansion.
+- Gameplay vectors remain those of the 0.19.0a integrated author candidate.
+
+0.19.0a - Integrated author candidate
+-------------------------------------
+
+- Added nineteen specialist universal-industry facilities and five research
+  branches.
+- Added 234 Direct bindings, ten Integrated recipes, and ten Precision recipes.
+- Added supported-abundance policies, autonomous mobility improvements, and the
+  240 MW Orbital Power Array.
+- Rebalanced Computing and Package demand while preserving 415 MW of Direct
+  process power.
+- Added original visual identities for all new universal facilities.

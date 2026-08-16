@@ -1,0 +1,1152 @@
+{
+  "schema_version": 1,
+  "generator": "Deterministic System.Drawing flat-symbol generator",
+  "generator_path": "tools/generate_recursive_industry_ui_icons.ps1",
+  "generator_sha256": "D887BB08739DD3C047095DDD47C3E77C32D6877958CEAB12E75480DBD41A75B8",
+  "generated_date": "2026-08-15",
+  "unity_version": "6000.0.66f1",
+  "visual_review": {
+    "status": "PASS_AUTHOR_PROOF_REVIEW",
+    "tested_sizes_px": [
+      24,
+      32,
+      48
+    ],
+    "backgrounds": [
+      "light",
+      "dark"
+    ],
+    "size_proof": {
+      "path": "art/RecursiveIndustry/UiIcons/proofs/all-ui-icons-size-proof.png",
+      "size_bytes": 474757,
+      "sha256": "A6E57AB1F8C0738BA42AC0C0B9035C368CC9BD1AD04F67C5DBBAE5E584FDFE8C"
+    },
+    "grayscale_proof": {
+      "path": "art/RecursiveIndustry/UiIcons/proofs/all-ui-icons-grayscale-proof.png",
+      "size_bytes": 446750,
+      "sha256": "DF69AC867273C3635551584EA9F606D122DF3A195139E7A04EFF7C08A1BFB6DC"
+    }
+  },
+  "bundle": {
+    "name": "uiicons_5287",
+    "path": "mods/RecursiveIndustry/AssetBundles/uiicons_5287",
+    "size_bytes": 2062218,
+    "sha256": "37E1FFDAA29DD959FFA3812359354A5D0723FB9B2DA71529ED08F77D2613BBD2",
+    "crc": 2745060646,
+    "dependencies": [],
+    "unity_manifest": "art/RecursiveIndustry/UiIcons/unity/uiicons_5287.manifest",
+    "unity_manifest_sha256": "5A70200681691C816834CB4A6815CA975734B9E381E5D9A0F008789E51230CC1"
+  },
+  "icons": [
+    {
+      "name": "experiment_program",
+      "constant": "ExperimentProgram",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/experiment_program.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/experiment_program-master.png",
+        "size_bytes": 28036,
+        "sha256": "5A8C0C9B14525ECC3F0C5A1C2245C2FDE5DC1142026B3C8625FEC277E229C63F"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/experiment_program.png",
+        "size_bytes": 16084,
+        "sha256": "F77E8049526078FF3373B589881DD3A54C1749F87C57BB1EC3ED4C4DEE0211E5"
+      }
+    },
+    {
+      "name": "validated_research_dossier",
+      "constant": "ValidatedResearchDossier",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/validated_research_dossier.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/validated_research_dossier-master.png",
+        "size_bytes": 29173,
+        "sha256": "C56F8EF93771CF38593FFBC7B3DFA85C196B10310A8667B1D4C2EF916D75F2D2"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/validated_research_dossier.png",
+        "size_bytes": 18001,
+        "sha256": "58D0F4124DA2C0EF2B4CD2D3234ADD4C42861CD950A8D06DB6FCD93DD2E7FCE0"
+      }
+    },
+    {
+      "name": "frontier_program",
+      "constant": "FrontierProgram",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/frontier_program.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/frontier_program-master.png",
+        "size_bytes": 41771,
+        "sha256": "8280C7A2F356C48EA0117CB17F8200FDF4DBD5963ABD6EF133FAA770A46E45AB"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/frontier_program.png",
+        "size_bytes": 27828,
+        "sha256": "52BC128FEC3A28E2498A5A7130A1A23A92B57EBF012CA554498867D18133F79A"
+      }
+    },
+    {
+      "name": "frontier_expansion_project",
+      "constant": "FrontierExpansionProject",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/frontier_expansion_project.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/frontier_expansion_project-master.png",
+        "size_bytes": 31996,
+        "sha256": "3435B47735A0F268F69729C58FEA6241433763CBE8E8BB4C264FA0371717534A"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/frontier_expansion_project.png",
+        "size_bytes": 22361,
+        "sha256": "323965153645B6F3BA2AC1CCA2924FD8995CBD4E64C1A525D041E8E8AE7F1D73"
+      }
+    },
+    {
+      "name": "orbital_power_calibration",
+      "constant": "OrbitalPowerCalibration",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/orbital_power_calibration.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/orbital_power_calibration-master.png",
+        "size_bytes": 44198,
+        "sha256": "79B5CAFC09FBB6BAAE49434D234ED6F5EA0A273C667FD0B7E1ED4EC1031905C8"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/orbital_power_calibration.png",
+        "size_bytes": 34431,
+        "sha256": "2D8CD6BCBD9C1298F72685B41CD2BFA24D7BA028BFE9241F3EF287F13D552908"
+      }
+    },
+    {
+      "name": "accelerator_works",
+      "constant": "AcceleratorWorks",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/accelerator_works.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/accelerator_works-master.png",
+        "size_bytes": 26394,
+        "sha256": "22D29D49A7BB40C368424140E3923852EBE0C7231764D8879A21169A81BD7595"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/accelerator_works.png",
+        "size_bytes": 14749,
+        "sha256": "C71FAD5C18F521BFDE57CFC3CCA4E6B6CA3FDDDBE5BB83956F4C036AF1285D88"
+      }
+    },
+    {
+      "name": "curation_office",
+      "constant": "CurationOffice",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/curation_office.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/curation_office-master.png",
+        "size_bytes": 27729,
+        "sha256": "99180D4D6E5AEADE1845F6B286DB0E4B207F25011B1D8EE070626AE347351A9C"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/curation_office.png",
+        "size_bytes": 14842,
+        "sha256": "E568FCFD7680489DA0B03F28560C6CD6F06CA23DCA23A105C0E11B33AAAD73F2"
+      }
+    },
+    {
+      "name": "model_development_center",
+      "constant": "ModelDevelopmentCenter",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/model_development_center.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/model_development_center-master.png",
+        "size_bytes": 33519,
+        "sha256": "DF25B86688B8DD49E9646FA3A6D236CD9CFB6631D71FCF2A4FEE24271839128B"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/model_development_center.png",
+        "size_bytes": 22668,
+        "sha256": "5FCDBC98487D505E5C1D460EA676D41F9A4A335204C193C7E5D171B1F1D96671"
+      }
+    },
+    {
+      "name": "ai_electronics_cell",
+      "constant": "AiElectronicsCell",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/ai_electronics_cell.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/ai_electronics_cell-master.png",
+        "size_bytes": 30986,
+        "sha256": "63DE5E05D7385779B1292EFAB747434759F87C28D39E434D02811A7F667E932F"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/ai_electronics_cell.png",
+        "size_bytes": 20756,
+        "sha256": "B8043ECF4B1D238DB057469E31747239708F8214E8D41005B491FA9035BC99BD"
+      }
+    },
+    {
+      "name": "electronics_reclaimer",
+      "constant": "ElectronicsReclaimer",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/electronics_reclaimer.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/electronics_reclaimer-master.png",
+        "size_bytes": 37865,
+        "sha256": "EE554F130ED9794EFDF300E0EECD288E9353A733C175E21DFF3E01458CEFA760"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/electronics_reclaimer.png",
+        "size_bytes": 24718,
+        "sha256": "D2520CBD55E59E446842593E53B27350C83ADCE2866B8AA2136698E155240F24"
+      }
+    },
+    {
+      "name": "ai_science_institute",
+      "constant": "AiScienceInstitute",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/ai_science_institute.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/ai_science_institute-master.png",
+        "size_bytes": 38547,
+        "sha256": "C92427DEAC4BA44EB8C4BEAB4AA9D5A1B2F958940CBC0A6F85F9FC3674266F34"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/ai_science_institute.png",
+        "size_bytes": 26907,
+        "sha256": "98657ED9776305BB4BCAA3EAD58F05AFF9B6F1630569A35F15DC5196D142F4A0"
+      }
+    },
+    {
+      "name": "pilot_science_complex",
+      "constant": "PilotScienceComplex",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/pilot_science_complex.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/pilot_science_complex-master.png",
+        "size_bytes": 30488,
+        "sha256": "87EEE224D91FC477B39446BDDCE4C8116D549884FCDF91CE629125F739115937"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/pilot_science_complex.png",
+        "size_bytes": 19504,
+        "sha256": "6FC35191F08F6A8A24751098A98CFEDCCDF57A89760C5CB5C5C81AAFEF0D687B"
+      }
+    },
+    {
+      "name": "systems_integration_complex",
+      "constant": "SystemsIntegrationComplex",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/systems_integration_complex.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/systems_integration_complex-master.png",
+        "size_bytes": 38788,
+        "sha256": "B6CE36ACCBD8BF9882D3911488AE0B40E9D5AE80075B2E8C433E66981B9DB24F"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/systems_integration_complex.png",
+        "size_bytes": 28924,
+        "sha256": "AFE8E87082B28A296F54C6C14E9AB4680556486F94AA6E767E8A5DF0F205C21C"
+      }
+    },
+    {
+      "name": "autonomous_microchip_complex",
+      "constant": "AutonomousMicrochipComplex",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_microchip_complex.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_microchip_complex-master.png",
+        "size_bytes": 35138,
+        "sha256": "C8C837733935AF7B9C3935038A97FD872D78E0522E92FDAB9043E5E8E70995BA"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_microchip_complex.png",
+        "size_bytes": 19459,
+        "sha256": "2B2E4D73FCD0D6C2E17F3506FAA3ED74A16078490B836972326894F959DF7715"
+      }
+    },
+    {
+      "name": "autonomous_electronics_integration_complex",
+      "constant": "AutonomousElectronicsIntegrationComplex",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_electronics_integration_complex.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_electronics_integration_complex-master.png",
+        "size_bytes": 38084,
+        "sha256": "5BBC55F55387963E1B2BDD26D233358A982327EA5D0F4C87C94425D3EA5876D8"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_electronics_integration_complex.png",
+        "size_bytes": 23472,
+        "sha256": "C788DF7850BE9B3C23AD5E82CACF3F1D0A78283DC99534810D00ECAD7AB05BBC"
+      }
+    },
+    {
+      "name": "autonomous_capital_fabrication_matrix",
+      "constant": "AutonomousCapitalFabricationMatrix",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_capital_fabrication_matrix.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_capital_fabrication_matrix-master.png",
+        "size_bytes": 33585,
+        "sha256": "F837105B97935085E5832F9CEC8EE4284D5E68FDD05102E3908942D92C751F2E"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_capital_fabrication_matrix.png",
+        "size_bytes": 19625,
+        "sha256": "328F2F9EB4E12E0DAFEE8B8B69013F7FC6D4F7659DE48E33D7690B653CE70D8F"
+      }
+    },
+    {
+      "name": "orbital_mission_complex",
+      "constant": "OrbitalMissionComplex",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/orbital_mission_complex.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/orbital_mission_complex-master.png",
+        "size_bytes": 38762,
+        "sha256": "3B9444BE19BD1CFCDC459B8C57A0AC7E7543AB4319E026AF6A8E5A6769030076"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/orbital_mission_complex.png",
+        "size_bytes": 29354,
+        "sha256": "3DF57136356D417D90F086D68E8DD15336036FBC7C7CC6F348CDAE9D34731A11"
+      }
+    },
+    {
+      "name": "frontier_project_complex",
+      "constant": "FrontierProjectComplex",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/frontier_project_complex.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/frontier_project_complex-master.png",
+        "size_bytes": 33390,
+        "sha256": "A7500904292B09D2CE2320DC6737853133CDADD46C13F3B2116ECA4870A41492"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/frontier_project_complex.png",
+        "size_bytes": 18704,
+        "sha256": "335FE74F326689D5AA143BF15E7A3EF30943EE690F79775B9F4B2257867EF441"
+      }
+    },
+    {
+      "name": "recursive_integration_array",
+      "constant": "RecursiveIntegrationArray",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/recursive_integration_array.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/recursive_integration_array-master.png",
+        "size_bytes": 40028,
+        "sha256": "26CA8EAB7B06C4CB83D79E706852CC5D8DFD921797AF95601AD98902F8EA9433"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/recursive_integration_array.png",
+        "size_bytes": 29083,
+        "sha256": "70B509A8C17BB021C93C951D458BB3C02176D069648405432149EF601FB0E9A9"
+      }
+    },
+    {
+      "name": "autonomous_construction_nexus",
+      "constant": "AutonomousConstructionNexus",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_construction_nexus.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_construction_nexus-master.png",
+        "size_bytes": 28499,
+        "sha256": "76C9546CC21E716395F7BEBF4F9FE785987CB8ADB882E0B65CA7C139999DD84B"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_construction_nexus.png",
+        "size_bytes": 15596,
+        "sha256": "41C490B78E99B6647D9C2D10EAE806AE6991DE8178755BEB651566EEEE446BE3"
+      }
+    },
+    {
+      "name": "ai_operations_i",
+      "constant": "AiOperationsI",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/ai_operations_i.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/ai_operations_i-master.png",
+        "size_bytes": 23993,
+        "sha256": "AC3BA54236C39CD0FD54F3E52F14D87340333CC280824F5C29874A65E52126BD"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/ai_operations_i.png",
+        "size_bytes": 13221,
+        "sha256": "80002CD5C9B00762E832E424D320B538AAF90842B9C38559CAE6A109FE4820CB"
+      }
+    },
+    {
+      "name": "ai_operations_ii",
+      "constant": "AiOperationsII",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/ai_operations_ii.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/ai_operations_ii-master.png",
+        "size_bytes": 25829,
+        "sha256": "A17E1C5349CA65371F6909679DAD020613E4E3B5D20D2CAD2D2EDFD79594269E"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/ai_operations_ii.png",
+        "size_bytes": 15350,
+        "sha256": "74538E4C32808BE4C2C97B9159763C98209E312A64C807C1A7E645E66C882B3E"
+      }
+    },
+    {
+      "name": "ai_operations_iii",
+      "constant": "AiOperationsIII",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/ai_operations_iii.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/ai_operations_iii-master.png",
+        "size_bytes": 30636,
+        "sha256": "A64E05A10C581201A9D85E274CE3BBE1C3E6ADE8CC1FD4ED18A8844D8284543B"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/ai_operations_iii.png",
+        "size_bytes": 18729,
+        "sha256": "9B3F6C9CEACF8008FF99E46D9AB6E8AAFDB0E1FD3CD896F9B41A892F32150BD5"
+      }
+    },
+    {
+      "name": "planetary_coordination_center",
+      "constant": "PlanetaryCoordinationCenter",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/planetary_coordination_center.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/planetary_coordination_center-master.png",
+        "size_bytes": 43491,
+        "sha256": "58ADDDEFDCEEDAB607CA4E4DF26D30142B9E3C2010CA72406152873571234751"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/planetary_coordination_center.png",
+        "size_bytes": 38132,
+        "sha256": "80F154416A3BB2673D6A6E17BF557B6702050818BC89C41F5D2098AF1BE24C64"
+      }
+    },
+    {
+      "name": "orbital_power_relay",
+      "constant": "OrbitalPowerRelay",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/orbital_power_relay.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/orbital_power_relay-master.png",
+        "size_bytes": 27254,
+        "sha256": "E600B8A3E3E61014720BE156146838FE67146EDAF9413ED8016618E5F4686A46"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/orbital_power_relay.png",
+        "size_bytes": 22253,
+        "sha256": "6C59090220F150611AD733EC091A906875028142F5DB06AA8887373CBAAE9C34"
+      }
+    },
+    {
+      "name": "autonomous_hauler",
+      "constant": "AutonomousHauler",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_hauler.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_hauler-master.png",
+        "size_bytes": 23209,
+        "sha256": "508AC93B674FB9370620EAEEF67983370D79DAC487088746A63EDBAD2F22F067"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_hauler.png",
+        "size_bytes": 14996,
+        "sha256": "5EB124307EA703BB43A658AA26116592793783ACFC83C6CCC976076ED0439B66"
+      }
+    },
+    {
+      "name": "autonomous_dump_hauler",
+      "constant": "AutonomousDumpHauler",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_dump_hauler.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_dump_hauler-master.png",
+        "size_bytes": 24274,
+        "sha256": "3358F6DF5056458CB2144D7D318E52AE1819611378DC118E981ACD6AA1F7D4C8"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_dump_hauler.png",
+        "size_bytes": 16961,
+        "sha256": "535B1275F3DCAE53847ABD3043E73A0C26FB50F63B10C9364B7690580A337B00"
+      }
+    },
+    {
+      "name": "autonomous_tank_hauler",
+      "constant": "AutonomousTankHauler",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_tank_hauler.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_tank_hauler-master.png",
+        "size_bytes": 27424,
+        "sha256": "2D6BB56C8B07C98FB1B2178335A7605AAFC9378A2A9F95539F39921C8F7ADB78"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_tank_hauler.png",
+        "size_bytes": 21162,
+        "sha256": "07810E158CE4EB8CB7FF2F8C4A6B2147608128F9866C526E628467227097E350"
+      }
+    },
+    {
+      "name": "autonomous_amphibious_hauler",
+      "constant": "AutonomousAmphibiousHauler",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_amphibious_hauler.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_amphibious_hauler-master.png",
+        "size_bytes": 22864,
+        "sha256": "E1D10DDC82B6CD4A365B1196778639457F93C0E47E779D67CFA97010AC4D5B5D"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_amphibious_hauler.png",
+        "size_bytes": 16092,
+        "sha256": "66F2FC5006279EC300C819996E4858427A0D25F4A2DFB8E87D8AA0AA8050D426"
+      }
+    },
+    {
+      "name": "autonomous_amphibious_excavator",
+      "constant": "AutonomousAmphibiousExcavator",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_amphibious_excavator.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_amphibious_excavator-master.png",
+        "size_bytes": 35795,
+        "sha256": "F99C53267EB26C9E3444804CB1C5B32FE873D98CEE715A4CB9C1417C298ACFA8"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_amphibious_excavator.png",
+        "size_bytes": 30504,
+        "sha256": "D0E16AAB8DE9F2A9D2B950DD3D63736552208DD286D7563090DA2B9C76B53900"
+      }
+    },
+    {
+      "name": "autonomous_mega_excavator",
+      "constant": "AutonomousMegaExcavator",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_mega_excavator.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_mega_excavator-master.png",
+        "size_bytes": 33080,
+        "sha256": "637EBD3229CBA00092E507D9CE1EC35FF255F7ECB314E3394C3317C8FC96CE48"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_mega_excavator.png",
+        "size_bytes": 26613,
+        "sha256": "7AF0FE1C3ED9A8CDD5418B9C395069C7F35AFA47E86B3E160DF2E99000F0861B"
+      }
+    },
+    {
+      "name": "autonomous_large_tree_harvester",
+      "constant": "AutonomousLargeTreeHarvester",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_large_tree_harvester.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_large_tree_harvester-master.png",
+        "size_bytes": 34412,
+        "sha256": "8908D2CDEE1B6B07F35B41244FA991291AF083E0F38503207DB9F688DDC4FA45"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_large_tree_harvester.png",
+        "size_bytes": 27565,
+        "sha256": "A0117DC20880B0E893D8465936C8B88775DE451BF9DDAE282C04191FE90A1226"
+      }
+    },
+    {
+      "name": "autonomous_tree_planter",
+      "constant": "AutonomousTreePlanter",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_tree_planter.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_tree_planter-master.png",
+        "size_bytes": 31075,
+        "sha256": "95C48AE55EE1179246C186B37EA317C4FDDFA84E83ABCF8A4D612358C051E698"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_tree_planter.png",
+        "size_bytes": 20130,
+        "sha256": "D9B21359B2AA929EF843AB6EF714AF286A8F459EB7BADA824C8C21FC6A9C51C7"
+      }
+    },
+    {
+      "name": "autonomous_steam_locomotive_i",
+      "constant": "AutonomousSteamLocomotiveI",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_steam_locomotive_i.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_steam_locomotive_i-master.png",
+        "size_bytes": 31341,
+        "sha256": "DD8FD905061FEDF7B0B8F6A150C6365C2FD1ABEDF2806DF33F6628FD74B67966"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_steam_locomotive_i.png",
+        "size_bytes": 23550,
+        "sha256": "604D2D4394EE5DCD3BB25DE560D0DC756D0D3CA76EE43A4E739CB34018F6A4C3"
+      }
+    },
+    {
+      "name": "autonomous_steam_locomotive_ii",
+      "constant": "AutonomousSteamLocomotiveII",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_steam_locomotive_ii.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_steam_locomotive_ii-master.png",
+        "size_bytes": 32344,
+        "sha256": "4D12BED033ABC2FD92DD1BFBF709FC3AA91D6F9A118160664A5A809FD12C8575"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_steam_locomotive_ii.png",
+        "size_bytes": 24981,
+        "sha256": "10AD52E5231D2FD44F70849153FD92C2FBA917510C800CCD9E0B324C13EE15FB"
+      }
+    },
+    {
+      "name": "autonomous_diesel_locomotive_i",
+      "constant": "AutonomousDieselLocomotiveI",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_diesel_locomotive_i.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_diesel_locomotive_i-master.png",
+        "size_bytes": 29204,
+        "sha256": "5EED3B20096D70ECF78BB50AF4C392EF07A1826A7AAE4F63014C68DBE66C03F7"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_diesel_locomotive_i.png",
+        "size_bytes": 21152,
+        "sha256": "1703EC76FDA26966F2732DC01ACBCE99D6EAC152398E191DFB28FD6C595E039E"
+      }
+    },
+    {
+      "name": "autonomous_diesel_locomotive_ii",
+      "constant": "AutonomousDieselLocomotiveII",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_diesel_locomotive_ii.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_diesel_locomotive_ii-master.png",
+        "size_bytes": 30216,
+        "sha256": "39C88A106852A08ED4531C85405766A9854A257B49C212FB702EF6956330F681"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_diesel_locomotive_ii.png",
+        "size_bytes": 22606,
+        "sha256": "645F7726623FDA0D85FD29CE358E48BA19C50DF29E4A848F5928B0E1BB5796C4"
+      }
+    },
+    {
+      "name": "autonomous_hydrogen_locomotive_i",
+      "constant": "AutonomousHydrogenLocomotiveI",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_hydrogen_locomotive_i.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_hydrogen_locomotive_i-master.png",
+        "size_bytes": 31391,
+        "sha256": "BCDE16327EDA3F9D4AF06233CB1D4FAF164A0E8B60557F23AB2B0144D243D06D"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_hydrogen_locomotive_i.png",
+        "size_bytes": 24340,
+        "sha256": "726A2986B431B98C6ACD4FB719D963F10B7A7B2D87FCF4DFBFE03E4AFEE6C191"
+      }
+    },
+    {
+      "name": "autonomous_hydrogen_locomotive_ii",
+      "constant": "AutonomousHydrogenLocomotiveII",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_hydrogen_locomotive_ii.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_hydrogen_locomotive_ii-master.png",
+        "size_bytes": 32391,
+        "sha256": "2C711A271F053440BEC7B35DF9F718CB1F35B51513105FD72EC7165F88E44157"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_hydrogen_locomotive_ii.png",
+        "size_bytes": 25757,
+        "sha256": "599402F593D36DE797A554632F27C514DD0C687B65CA66FF7FC5E2542AC058EF"
+      }
+    },
+    {
+      "name": "autonomous_steam_tender_i",
+      "constant": "AutonomousSteamTenderI",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_steam_tender_i.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_steam_tender_i-master.png",
+        "size_bytes": 24931,
+        "sha256": "810BF7AAD132D623E1888E887646579E1AC3B0BD22533750960BC8E6864ABBD9"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_steam_tender_i.png",
+        "size_bytes": 20594,
+        "sha256": "EC725CF5D5495A4EAF7240AD87ED20AED4FA32F1C6C21F8ECC53DFA3C742286D"
+      }
+    },
+    {
+      "name": "autonomous_steam_tender_ii",
+      "constant": "AutonomousSteamTenderII",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_steam_tender_ii.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_steam_tender_ii-master.png",
+        "size_bytes": 25778,
+        "sha256": "38BFF1E7232E9B33908EF04AB7070CC618989437EF1A507191DC33638516E622"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_steam_tender_ii.png",
+        "size_bytes": 22079,
+        "sha256": "B9DE4524AFD26691633AC8B80CEC1C0656C2B0CC8DE72B7ED21A2E25F664C2C5"
+      }
+    },
+    {
+      "name": "autonomous_electric_locomotive_i",
+      "constant": "AutonomousElectricLocomotiveI",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_electric_locomotive_i.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_electric_locomotive_i-master.png",
+        "size_bytes": 31319,
+        "sha256": "7A1EC52716DB5BDDB24F6160285EAEE971FBE492B4C1F61526058CD7DF066797"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_electric_locomotive_i.png",
+        "size_bytes": 23112,
+        "sha256": "E95CC804E3D20BC1156F68C344E4E63A9A507754F22FB57B8DE90D9833D4D9B4"
+      }
+    },
+    {
+      "name": "autonomous_electric_locomotive_ii",
+      "constant": "AutonomousElectricLocomotiveII",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_electric_locomotive_ii.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_electric_locomotive_ii-master.png",
+        "size_bytes": 32321,
+        "sha256": "6433ADFD069679538B0A4CE8182515A6A54F994AAEDCBA8F3585ABFF061EBFAD"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_electric_locomotive_ii.png",
+        "size_bytes": 24551,
+        "sha256": "34A85BD97E8B51DCF1C55F660024599DE7041775CE74AF9F14958268E7AB08EB"
+      }
+    },
+    {
+      "name": "autonomous_fireless_steam_locomotive",
+      "constant": "AutonomousFirelessSteamLocomotive",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_fireless_steam_locomotive.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_fireless_steam_locomotive-master.png",
+        "size_bytes": 33362,
+        "sha256": "4052B2A47E8F7BE8415DA81042DC8E981C12A6F1BAAE108AA37DE5B36116D965"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_fireless_steam_locomotive.png",
+        "size_bytes": 26641,
+        "sha256": "BBC9DA5B40DAA7739302DF73A5831CA2EEB48EBC0F74F6533DE891D4E73ED2CB"
+      }
+    },
+    {
+      "name": "autonomous_turbine_locomotive",
+      "constant": "AutonomousTurbineLocomotive",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_turbine_locomotive.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_turbine_locomotive-master.png",
+        "size_bytes": 35360,
+        "sha256": "0E73206F886F8D05BACA348A97EEB1EED80E5A95436BA4A537AFCC1DD2EA9747"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_turbine_locomotive.png",
+        "size_bytes": 28171,
+        "sha256": "DE059BD9D6FE1FE52FC29CC37FC08F8B67A22EE5CA9F45D083D6CF718118931D"
+      }
+    },
+    {
+      "name": "autonomous_turbine_tender",
+      "constant": "AutonomousTurbineTender",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_turbine_tender.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_turbine_tender-master.png",
+        "size_bytes": 25531,
+        "sha256": "20236CFA81C23768A43DDB3B9BC9C2C36B8FADA51B36FCB49CCC132CB9BFE1B1"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_turbine_tender.png",
+        "size_bytes": 21428,
+        "sha256": "D22840B731F9F7DBA965E937F84406199E480C0ABCAEB549A17A55BEBC1B843F"
+      }
+    },
+    {
+      "name": "autonomous_nuclear_locomotive_cab",
+      "constant": "AutonomousNuclearLocomotiveCab",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_nuclear_locomotive_cab.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_nuclear_locomotive_cab-master.png",
+        "size_bytes": 25459,
+        "sha256": "D0FBC64329EC083550BC4A9B7AD02C36451B1BFFCDF5B2E0FC66B618DB747391"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_nuclear_locomotive_cab.png",
+        "size_bytes": 17514,
+        "sha256": "A1E212B4C734461A12C0893B6708551B8D4CE37C81C7A1A2EB79DF8A2F90A1A3"
+      }
+    },
+    {
+      "name": "autonomous_nuclear_locomotive_reactor",
+      "constant": "AutonomousNuclearLocomotiveReactor",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_nuclear_locomotive_reactor.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_nuclear_locomotive_reactor-master.png",
+        "size_bytes": 31484,
+        "sha256": "B359AC796C6F57B083B8CB4D35CC6490CC08D57E0B99405B4E898A2096DA6763"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_nuclear_locomotive_reactor.png",
+        "size_bytes": 25190,
+        "sha256": "AF5E1801B4DAA29CAA35DD02287B4B70210495CA793346685452DD7ED8BE4F38"
+      }
+    },
+    {
+      "name": "autonomous_nuclear_locomotive_condenser",
+      "constant": "AutonomousNuclearLocomotiveCondenser",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_nuclear_locomotive_condenser.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_nuclear_locomotive_condenser-master.png",
+        "size_bytes": 25026,
+        "sha256": "755260ECC1D1DA123562A7C0CC582BA44DA37CC6D48DDCA4A4B95C399B3F2BF3"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_nuclear_locomotive_condenser.png",
+        "size_bytes": 13349,
+        "sha256": "D9D01A25506BE333097FD255424C5E4B5A6908B1684055B90CCF05343B2E01C9"
+      }
+    },
+    {
+      "name": "autonomous_captains_locomotive",
+      "constant": "AutonomousCaptainsLocomotive",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/autonomous_captains_locomotive.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/autonomous_captains_locomotive-master.png",
+        "size_bytes": 30534,
+        "sha256": "C5AD7B05C8ED622F228BFCE0E275550EC3BB6FDA9A1C8A5AC3ED51B273CAA0B6"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/autonomous_captains_locomotive.png",
+        "size_bytes": 22482,
+        "sha256": "AD84234AFA6714F8AE1F47556C78849A28EF385D712B377416698752B2E6C82A"
+      }
+    },
+    {
+      "name": "fleet_optimization",
+      "constant": "FleetOptimization",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/fleet_optimization.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/fleet_optimization-master.png",
+        "size_bytes": 25192,
+        "sha256": "F200ADAE021F5D2851DA6187C2D1B76E5CFAF3A6C886E5081DB0F68281659D21"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/fleet_optimization.png",
+        "size_bytes": 19307,
+        "sha256": "90DDC3EC5AA09FB505ED235F47E3077179EDAA4A516F8ABC5042244BF90D7EC8"
+      }
+    },
+    {
+      "name": "predictive_maintenance",
+      "constant": "PredictiveMaintenance",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/predictive_maintenance.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/predictive_maintenance-master.png",
+        "size_bytes": 23318,
+        "sha256": "91B74D2BAF03BD12122CA35B5A41C166EA48925FDD3D1AA0053AB998B0BFF3CC"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/predictive_maintenance.png",
+        "size_bytes": 15512,
+        "sha256": "BD40D33F25860D5B5C14C99FB7934263D6C7960E2F829D8063E3B288A88863BE"
+      }
+    },
+    {
+      "name": "planetary_extraction",
+      "constant": "PlanetaryExtraction",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/planetary_extraction.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/planetary_extraction-master.png",
+        "size_bytes": 42006,
+        "sha256": "FD26D92355FBD14BCD5771F76015D4FF0DB961879801A118BCE5B68CC9029338"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/planetary_extraction.png",
+        "size_bytes": 42200,
+        "sha256": "01066F4661173A2B62F90ACAE3A995B3B9CEF24FF267790CADB99E9EA26C9DC3"
+      }
+    },
+    {
+      "name": "contract_coordination",
+      "constant": "ContractCoordination",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/contract_coordination.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/contract_coordination-master.png",
+        "size_bytes": 28872,
+        "sha256": "24C53CD0B689402177BF4427BC10970A9F04CBB693A79A7C604A89ACCD89AE7A"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/contract_coordination.png",
+        "size_bytes": 15650,
+        "sha256": "2D2FBD7EA0B365A19D769AF13FAA561CBC6E7CE2FDCC615D19165A2E6D6C7A91"
+      }
+    },
+    {
+      "name": "orbital_lift_coordination",
+      "constant": "OrbitalLiftCoordination",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/orbital_lift_coordination.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/orbital_lift_coordination-master.png",
+        "size_bytes": 36790,
+        "sha256": "9640CB00B64941ABC3200BCFC19819F7344B2BCE93D76E02DC8D389178859892"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/orbital_lift_coordination.png",
+        "size_bytes": 27256,
+        "sha256": "928739AA717F8A7F54A926CD3E3A833308DC3A57867127EE5AE218FAFDA10477"
+      }
+    },
+    {
+      "name": "comminution_hub",
+      "constant": "ComminutionHub",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/comminution_hub.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/comminution_hub-master.png",
+        "size_bytes": 26266,
+        "sha256": "18147D4C3A6744788517D60774C4A6524DAAF1D78B1B4CB9F827D9973FC228EA"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/comminution_hub.png",
+        "size_bytes": 14986,
+        "sha256": "CCCBE2926ACA331AC66735F5E1529F4E4EF97E286B12A1C8B41BF9FB2FAB3265"
+      }
+    },
+    {
+      "name": "mineral_products_works",
+      "constant": "MineralProductsWorks",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/mineral_products_works.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/mineral_products_works-master.png",
+        "size_bytes": 24912,
+        "sha256": "504E80FEF488E8AA70E61F11F9DBCCD7D77FFABA6496D82BE88FB17426A9AF98"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/mineral_products_works.png",
+        "size_bytes": 20292,
+        "sha256": "DE74EAA11FB0E6EF74A660EA4061B1A7E25662A63C82AFABF0028D3F395566D4"
+      }
+    },
+    {
+      "name": "primary_smelter",
+      "constant": "PrimarySmelter",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/primary_smelter.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/primary_smelter-master.png",
+        "size_bytes": 26005,
+        "sha256": "C055148BF6E5E027E24D64618934595FE2544603CAB8B2B50F75D1D618CFEF6C"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/primary_smelter.png",
+        "size_bytes": 20228,
+        "sha256": "24565AA9AB554A16BA2573FF17B6C6EC8919360B09B25057C1B43081B9A2F29C"
+      }
+    },
+    {
+      "name": "precision_metals_works",
+      "constant": "PrecisionMetalsWorks",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/precision_metals_works.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/precision_metals_works-master.png",
+        "size_bytes": 26961,
+        "sha256": "46DE909F3F4845A66F7D1C0AB93DBF8F157012C9F9D8FBC4ED79AACB60F27DF5"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/precision_metals_works.png",
+        "size_bytes": 21517,
+        "sha256": "90B54E7DC2FF072499A968BCD4EF843B5106529EC0B7DD53822C98A00AEAB6E6"
+      }
+    },
+    {
+      "name": "refinery_complex",
+      "constant": "RefineryComplex",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/refinery_complex.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/refinery_complex-master.png",
+        "size_bytes": 25378,
+        "sha256": "9E8B4C49D414A6254CC07DE3F2349856AE2F2490270D81F00E8EC4DA0B64E903"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/refinery_complex.png",
+        "size_bytes": 15937,
+        "sha256": "E60CFB2E4804F1EB94179DB8D3673519795C8CD50B79D0950F1374B94F6ADE7B"
+      }
+    },
+    {
+      "name": "gas_fertilizer_complex",
+      "constant": "GasFertilizerComplex",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/gas_fertilizer_complex.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/gas_fertilizer_complex-master.png",
+        "size_bytes": 28282,
+        "sha256": "26B92E18140948EF87203582C617BF54F405D54B66609A6B539500CFDB015127"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/gas_fertilizer_complex.png",
+        "size_bytes": 23119,
+        "sha256": "2687DA1E8A9BE84BA93ADC0D87EA6A3486AE13DBD7A900352F2EEB19F8F389E6"
+      }
+    },
+    {
+      "name": "materials_chemistry_complex",
+      "constant": "MaterialsChemistryComplex",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/materials_chemistry_complex.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/materials_chemistry_complex-master.png",
+        "size_bytes": 22928,
+        "sha256": "8CE97288196F211323C00D95BA69998BC17234FDFAC58A7125F1ADAAAF70159C"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/materials_chemistry_complex.png",
+        "size_bytes": 16660,
+        "sha256": "7B69621EA5AF22BCA3B70BFC4D5963D70BCA1325FFB4E957F798A971330DCF53"
+      }
+    },
+    {
+      "name": "medical_chemistry_complex",
+      "constant": "MedicalChemistryComplex",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/medical_chemistry_complex.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/medical_chemistry_complex-master.png",
+        "size_bytes": 21255,
+        "sha256": "D35E2B0190696D1191845DA6B46789C9C363C16ED754C555F8F1D140B66CA9BF"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/medical_chemistry_complex.png",
+        "size_bytes": 14521,
+        "sha256": "DCCE8830BA627C67383B309AFEE49D6E0D041AFC7879D3C20DD9E9B7DDB12D0E"
+      }
+    },
+    {
+      "name": "food_processing_campus",
+      "constant": "FoodProcessingCampus",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/food_processing_campus.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/food_processing_campus-master.png",
+        "size_bytes": 28279,
+        "sha256": "49684FF37C72F7DF3559C3A77484369A41F3A9D019D73D1A5437572910B6AFD4"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/food_processing_campus.png",
+        "size_bytes": 21667,
+        "sha256": "1E7A7DFAABE10531C33C44CF110AE4E8F421905A1DBA4F258E41F07E49A3310F"
+      }
+    },
+    {
+      "name": "food_pack_campus",
+      "constant": "FoodPackCampus",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/food_pack_campus.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/food_pack_campus-master.png",
+        "size_bytes": 22974,
+        "sha256": "DA28F93F3A297B6080DF91E88A2B669875F6C46F37F274343C6D04BDD9B103DA"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/food_pack_campus.png",
+        "size_bytes": 16755,
+        "sha256": "A36D4E40024F188D557E8B63321B9506C37408520578408E1E94E7F9524240CC"
+      }
+    },
+    {
+      "name": "crop_soil_bioprocessing",
+      "constant": "CropSoilBioprocessing",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/crop_soil_bioprocessing.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/crop_soil_bioprocessing-master.png",
+        "size_bytes": 26707,
+        "sha256": "1CB685FC7A11624ED98EABF51731BF0D9A569ABB78E704EAD1E57382BDF68E61"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/crop_soil_bioprocessing.png",
+        "size_bytes": 19001,
+        "sha256": "E5517BFBA5A4FD0B4F752F4AD1FC6D702D925E64022BD20C258BA94358A34757"
+      }
+    },
+    {
+      "name": "bioenergy_center",
+      "constant": "BioenergyCenter",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/bioenergy_center.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/bioenergy_center-master.png",
+        "size_bytes": 25523,
+        "sha256": "12AA9080A9B1EEC2B263018AF7E7293417E0B90D0213F92893901D6C4CDED368"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/bioenergy_center.png",
+        "size_bytes": 19595,
+        "sha256": "5A5EEE87EB07EEE95C14725CBC919A25083CA06E7CC4F81E858CE49964D16856"
+      }
+    },
+    {
+      "name": "water_utility",
+      "constant": "WaterUtility",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/water_utility.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/water_utility-master.png",
+        "size_bytes": 23452,
+        "sha256": "23ABD9BF93E807F3DED1B9C642C831A8AC501111F316827C83A4AD7416D0FA1F"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/water_utility.png",
+        "size_bytes": 16996,
+        "sha256": "4C8DBA112789059BEE25E86ADEDB168EB3E80BBE86A02ED3C45F638ED6CFE7E4"
+      }
+    },
+    {
+      "name": "thermal_emissions_utility",
+      "constant": "ThermalEmissionsUtility",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/thermal_emissions_utility.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/thermal_emissions_utility-master.png",
+        "size_bytes": 22669,
+        "sha256": "BE659541940895BBC8EB7434E210C0C9201629AF9EC4D743DF033BC30CDC6DA5"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/thermal_emissions_utility.png",
+        "size_bytes": 14615,
+        "sha256": "F1DBC6318C87505AB2EAA215A88FA9F5D8BDE112CF39A75645ED50E0C6C3FB60"
+      }
+    },
+    {
+      "name": "materials_recovery_center",
+      "constant": "MaterialsRecoveryCenter",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/materials_recovery_center.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/materials_recovery_center-master.png",
+        "size_bytes": 26314,
+        "sha256": "5F1C5B9203E2766639E8AA2B7ABA5B511DC5C81891EE9E5119C60D77D02DA241"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/materials_recovery_center.png",
+        "size_bytes": 19030,
+        "sha256": "8CB6037A254AE8C38FA7E731234A87E947A10E1420318236A0EEDFB667216300"
+      }
+    },
+    {
+      "name": "nuclear_fuel_complex",
+      "constant": "NuclearFuelComplex",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/nuclear_fuel_complex.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/nuclear_fuel_complex-master.png",
+        "size_bytes": 28235,
+        "sha256": "262B64ED7976ACCCB22AFE3E177FB0BF4891ED56B79E5793EA5B1C08B308945E"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/nuclear_fuel_complex.png",
+        "size_bytes": 24223,
+        "sha256": "CEA81221CD3009898A8BF73C3DF5CEB87C6CBDAF4B6D04D88C677F36D65832F2"
+      }
+    },
+    {
+      "name": "precision_components_fab",
+      "constant": "PrecisionComponentsFab",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/precision_components_fab.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/precision_components_fab-master.png",
+        "size_bytes": 22255,
+        "sha256": "29779FCCDB84471B78F25FDDB947563986BAFF78D7658B43B9890AFC8858F49D"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/precision_components_fab.png",
+        "size_bytes": 14366,
+        "sha256": "80A46785F05164E0B48B8507D19FC5C93860B2AA23A4311731EE544DC8DEAE32"
+      }
+    },
+    {
+      "name": "general_manufacturing_fab",
+      "constant": "GeneralManufacturingFab",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/general_manufacturing_fab.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/general_manufacturing_fab-master.png",
+        "size_bytes": 28415,
+        "sha256": "2FD704CF5C082FD289CC294CC8A510AC388F51F78095396AECEC97553CAC2632"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/general_manufacturing_fab.png",
+        "size_bytes": 23359,
+        "sha256": "F7CAD67B0F247AD6BAC40D63BEE68A3FECC6F77A66B2ABDD5915F8F6EE7D9FDC"
+      }
+    },
+    {
+      "name": "orbital_fabrication_fab",
+      "constant": "OrbitalFabricationFab",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/orbital_fabrication_fab.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/orbital_fabrication_fab-master.png",
+        "size_bytes": 26498,
+        "sha256": "B6246FA99F64979AD8CDB11D1D8A5090AF83E7B40C10F7FA491CF6B38C574FDF"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/orbital_fabrication_fab.png",
+        "size_bytes": 19057,
+        "sha256": "3D9D77A4BAA79995AE86200F507F5A4C0B3877C339B2B27E8CA919C547F30780"
+      }
+    }
+  ]
+}

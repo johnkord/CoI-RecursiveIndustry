@@ -1,0 +1,29 @@
+# Changelog
+
+All notable public changes to Recursive Industry will be documented here.
+
+The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+
+## [Unreleased]
+
+### Added
+
+- Public source repository, contributor documentation, and policy-safe packaging.
+- Physical accelerator hardware, Dataset and Model Archives, validated control,
+  AI Operations, Applied Science, and Recursive Epoch progression.
+- Autonomous road, heavy-equipment, and rail variants using native game behavior.
+- Planetary coordination, orbital science and power, and two bounded World
+  Exchange contracts.
+- Nineteen high-power industrial megafacilities with Direct, Integrated, and
+  Precision production choices.
+- Original product, transported-cargo, building, vehicle, train, and policy art.
+- Offline repository validation and deterministic player packaging.
+
+### Known limitations
+
+- No public stable release has been declared yet.
+- Enable the mod when creating a new campaign. Adding or removing it from an
+  existing save is unsupported.
+- Final balance, comprehension, and cross-surface visual judgment remain subject
+  to integrated author and independent player testing.
+- Custom world-space building models are outside the gameplay-first 1.0 scope.

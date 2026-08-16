@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "generator": "Deterministic System.Drawing flat-symbol generator",
+  "generator_path": "tools/generate_recursive_industry_flat_icons.ps1",
+  "generator_sha256": "5E63280022045E3B39E5C1EBFFBE6B5CE6CA5F7DD2868D44492D7EED607D57F8",
+  "generated_date": "2026-08-10",
+  "unity_version": "6000.0.66f1",
+  "visual_status": "V2 flat-symbol set passed R4 author inspection; independent blind legibility remains open",
+  "bundle": {
+    "name": "producticons_84e1",
+    "path": "mods/RecursiveIndustry/AssetBundles/producticons_84e1",
+    "size_bytes": 181321,
+    "sha256": "643B5043D5A4B384E44B4C8B1976018309949B2D9D9FE4006649419617F9D34B",
+    "crc": 3241097165,
+    "dependencies": [],
+    "unity_manifest": "art/RecursiveIndustry/ProductIcons/unity/producticons_84e1.manifest",
+    "unity_manifest_sha256": "FF5928CDCB650019ED51105DD655D77C5589065F6091442CDC2F0F79929415DD"
+  },
+  "icons": [
+    {
+      "product": "Accelerator Module",
+      "constant": "AcceleratorModuleIcon",
+      "unity_path": "Assets/RecursiveIndustry/ProductIcons/accelerator_module.png",
+      "master": "art/RecursiveIndustry/ProductIcons/masters/accelerator_module-master.png",
+      "master_size_bytes": 27737,
+      "master_sha256": "A18FCB60EB17F609CA636832FC57A9EE5F6550D697DBB3C22DB9CAFEBAFC50FE",
+      "export": "art/RecursiveIndustry/ProductIcons/exports/accelerator_module.png",
+      "export_size_bytes": 8271,
+      "export_sha256": "0F9E162FEEA46F43664DBDCB67E3121DEEAD43DEB6B4AE5E12B24150D7CC6EA9"
+    },
+    {
+      "product": "Accelerator Rack I",
+      "constant": "AcceleratorRackIIcon",
+      "unity_path": "Assets/RecursiveIndustry/ProductIcons/accelerator_rack_i.png",
+      "master": "art/RecursiveIndustry/ProductIcons/masters/accelerator_rack_i-master.png",
+      "master_size_bytes": 31670,
+      "master_sha256": "8852FA942E5BAFBDCEE8B7BA7AA5F695E4B22189F18D989E516461F3842ADC16",
+      "export": "art/RecursiveIndustry/ProductIcons/exports/accelerator_rack_i.png",
+      "export_size_bytes": 12724,
+      "export_sha256": "A5A972E7B67E3DE40656C40540E9CE15BCE77C1D4F6A7D1BBEC2BCC96C417145"
+    },
+    {
+      "product": "Frontier Rack II",
+      "constant": "FrontierRackIIIcon",
+      "unity_path": "Assets/RecursiveIndustry/ProductIcons/frontier_rack_ii.png",
+      "master": "art/RecursiveIndustry/ProductIcons/masters/frontier_rack_ii-master.png",
+      "master_size_bytes": 28794,
+      "master_sha256": "1EBBFC17BA990ADD3AA3E9DD070A274D4927F60B61C9B534F955B18E976FB525",
+      "export": "art/RecursiveIndustry/ProductIcons/exports/frontier_rack_ii.png",
+      "export_size_bytes": 12394,
+      "export_sha256": "319C5B7EB1938CCCCA4F02AFB77C07071202AC5C9851954B67B42020E097CAFD"
+    },
+    {
+      "product": "Recursive Rack III",
+      "constant": "RecursiveRackIIIIcon",
+      "unity_path": "Assets/RecursiveIndustry/ProductIcons/recursive_rack_iii.png",
+      "master": "art/RecursiveIndustry/ProductIcons/masters/recursive_rack_iii-master.png",
+      "master_size_bytes": 25988,
+      "master_sha256": "92CD4D45D7CD34FFC688632B018B235240D617DB6E2283A45E01E5F41B84317F",
+      "export": "art/RecursiveIndustry/ProductIcons/exports/recursive_rack_iii.png",
+      "export_size_bytes": 12285,
+      "export_sha256": "1302F6383AF4BFF39BDB3FB982A8DFBAC70CE55E0612B0716167537794D799D8"
+    },
+    {
+      "product": "Dataset Archive",
+      "constant": "DatasetArchiveIcon",
+      "unity_path": "Assets/RecursiveIndustry/ProductIcons/dataset_archive.png",
+      "master": "art/RecursiveIndustry/ProductIcons/masters/dataset_archive-master.png",
+      "master_size_bytes": 24039,
+      "master_sha256": "03B438DDDC42B948C2029F4C96972F68E0DF39A8E0A8D8F4DF006AEBA5F5CBE3",
+      "export": "art/RecursiveIndustry/ProductIcons/exports/dataset_archive.png",
+      "export_size_bytes": 14682,
+      "export_sha256": "186BBCB40304D26D140D411BAB7B29A432FBB20A15D0DD41366ECB01F69F8DAF"
+    },
+    {
+      "product": "Model Archive",
+      "constant": "ModelArchiveIcon",
+      "unity_path": "Assets/RecursiveIndustry/ProductIcons/model_archive.png",
+      "master": "art/RecursiveIndustry/ProductIcons/masters/model_archive-master.png",
+      "master_size_bytes": 57200,
+      "master_sha256": "A583F5950CB226BEA8A5CCC08A8D7525A8B1EFCBDB1C3A983548AD60F5AA2974",
+      "export": "art/RecursiveIndustry/ProductIcons/exports/model_archive.png",
+      "export_size_bytes": 48352,
+      "export_sha256": "3EB88771D59F2B93ED7A71D27DB6E9E592D584D13C703A885988F7A2AA7B68AA"
+    },
+    {
+      "product": "Validated Control Package",
+      "constant": "ValidatedControlPackageIcon",
+      "unity_path": "Assets/RecursiveIndustry/ProductIcons/validated_control_package.png",
+      "master": "art/RecursiveIndustry/ProductIcons/masters/validated_control_package-master.png",
+      "master_size_bytes": 27292,
+      "master_sha256": "9736250CAF9B474380D9A556B4999651D06B74DEBAA6818F6445D7C2C3BCCA78",
+      "export": "art/RecursiveIndustry/ProductIcons/exports/validated_control_package.png",
+      "export_size_bytes": 18144,
+      "export_sha256": "D836644F08957FE51A9AF30157952C983487D429B88CF0B7364FF60A891B3A8C"
+    },
+    {
+      "product": "Spent Accelerator",
+      "constant": "SpentAcceleratorIcon",
+      "unity_path": "Assets/RecursiveIndustry/ProductIcons/spent_accelerator.png",
+      "master": "art/RecursiveIndustry/ProductIcons/masters/spent_accelerator-master.png",
+      "master_size_bytes": 36374,
+      "master_sha256": "DE9838859E10E963A5CD7D3A379842FFD6B09AEDBC170FAC5F041FF13A1BFFB1",
+      "export": "art/RecursiveIndustry/ProductIcons/exports/spent_accelerator.png",
+      "export_size_bytes": 21180,
+      "export_sha256": "88B0BB007459C054585CD756A2004EA33ECBD93E9286272B182A6C5349C4E96D"
+    }
+  ]
+}

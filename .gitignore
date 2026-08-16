@@ -1,0 +1,38 @@
+# .NET build outputs
+bin/
+obj/
+*.user
+*.suo
+
+# Local packages and release staging
+dist/
+*.zip
+
+# Proprietary game assemblies and local links
+Mafi*.dll
+UnityEngine*.dll
+Captain of Industry_Data/
+DLCs/
+
+# Unity workspace output
+Library/
+Temp/
+Logs/
+UserSettings/
+
+# Python
+__pycache__/
+*.pyc
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pfx
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+.vs/
+.vscode/

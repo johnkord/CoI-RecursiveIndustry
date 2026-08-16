@@ -1,0 +1,15 @@
+{
+  "id": "RecursiveIndustry",
+  "version": "0.19.0b",
+  "display_name": "Recursive Industry",
+  "description_short": "Endgame AI infrastructure, Recursive Epochs, and universal industry.",
+  "description_long": "Build a physical endgame AI economy, transform logistics and nineteen specialized industrial facilities, choose Direct, Integrated, or high-power Precision production, coordinate planetary and orbital expansion, and use two bounded World Exchange contracts.",
+  "authors": "John Kordich",
+  "links": [ "https://github.com/johnkord/CoI-RecursiveIndustry" ],
+  "primary_dlls": [ "RecursiveIndustry.dll" ],
+  "mod_dependencies": [ "COI-TrainsDlc >= 1.0.0" ],
+  "optional_mod_dependencies": [ "COI-SupporterDlc >= 1.1.0" ],
+  "min_game_version": "0.8.6c",
+  "max_verified_game_version": "0.8.7",
+  "non_locking_dll_load": true
+}

@@ -1,0 +1,96 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.66f1
+CRC: 2745060646
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 7b56c09af79a665019c8831e02867de7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 7dd3a3d2b9d002100ebbda0156cbbb37
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/RecursiveIndustry/UiIcons/comminution_hub.png
+- Assets/RecursiveIndustry/UiIcons/orbital_fabrication_fab.png
+- Assets/RecursiveIndustry/UiIcons/primary_smelter.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_turbine_tender.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_electric_locomotive_ii.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_diesel_locomotive_i.png
+- Assets/RecursiveIndustry/UiIcons/refinery_complex.png
+- Assets/RecursiveIndustry/UiIcons/systems_integration_complex.png
+- Assets/RecursiveIndustry/UiIcons/medical_chemistry_complex.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_nuclear_locomotive_reactor.png
+- Assets/RecursiveIndustry/UiIcons/planetary_coordination_center.png
+- Assets/RecursiveIndustry/UiIcons/frontier_expansion_project.png
+- Assets/RecursiveIndustry/UiIcons/frontier_project_complex.png
+- Assets/RecursiveIndustry/UiIcons/planetary_extraction.png
+- Assets/RecursiveIndustry/UiIcons/contract_coordination.png
+- Assets/RecursiveIndustry/UiIcons/recursive_integration_array.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_tank_hauler.png
+- Assets/RecursiveIndustry/UiIcons/precision_components_fab.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_turbine_locomotive.png
+- Assets/RecursiveIndustry/UiIcons/experiment_program.png
+- Assets/RecursiveIndustry/UiIcons/water_utility.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_capital_fabrication_matrix.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_steam_locomotive_ii.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_captains_locomotive.png
+- Assets/RecursiveIndustry/UiIcons/model_development_center.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_tree_planter.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_diesel_locomotive_ii.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_hydrogen_locomotive_i.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_steam_locomotive_i.png
+- Assets/RecursiveIndustry/UiIcons/general_manufacturing_fab.png
+- Assets/RecursiveIndustry/UiIcons/orbital_lift_coordination.png
+- Assets/RecursiveIndustry/UiIcons/pilot_science_complex.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_electronics_integration_complex.png
+- Assets/RecursiveIndustry/UiIcons/curation_office.png
+- Assets/RecursiveIndustry/UiIcons/fleet_optimization.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_nuclear_locomotive_condenser.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_construction_nexus.png
+- Assets/RecursiveIndustry/UiIcons/crop_soil_bioprocessing.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_steam_tender_ii.png
+- Assets/RecursiveIndustry/UiIcons/materials_recovery_center.png
+- Assets/RecursiveIndustry/UiIcons/ai_operations_ii.png
+- Assets/RecursiveIndustry/UiIcons/bioenergy_center.png
+- Assets/RecursiveIndustry/UiIcons/food_pack_campus.png
+- Assets/RecursiveIndustry/UiIcons/accelerator_works.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_amphibious_excavator.png
+- Assets/RecursiveIndustry/UiIcons/gas_fertilizer_complex.png
+- Assets/RecursiveIndustry/UiIcons/orbital_power_relay.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_mega_excavator.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_hydrogen_locomotive_ii.png
+- Assets/RecursiveIndustry/UiIcons/precision_metals_works.png
+- Assets/RecursiveIndustry/UiIcons/orbital_power_calibration.png
+- Assets/RecursiveIndustry/UiIcons/validated_research_dossier.png
+- Assets/RecursiveIndustry/UiIcons/thermal_emissions_utility.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_amphibious_hauler.png
+- Assets/RecursiveIndustry/UiIcons/frontier_program.png
+- Assets/RecursiveIndustry/UiIcons/ai_operations_i.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_large_tree_harvester.png
+- Assets/RecursiveIndustry/UiIcons/food_processing_campus.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_dump_hauler.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_microchip_complex.png
+- Assets/RecursiveIndustry/UiIcons/orbital_mission_complex.png
+- Assets/RecursiveIndustry/UiIcons/mineral_products_works.png
+- Assets/RecursiveIndustry/UiIcons/electronics_reclaimer.png
+- Assets/RecursiveIndustry/UiIcons/predictive_maintenance.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_nuclear_locomotive_cab.png
+- Assets/RecursiveIndustry/UiIcons/ai_operations_iii.png
+- Assets/RecursiveIndustry/UiIcons/ai_science_institute.png
+- Assets/RecursiveIndustry/UiIcons/nuclear_fuel_complex.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_electric_locomotive_i.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_steam_tender_i.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_hauler.png
+- Assets/RecursiveIndustry/UiIcons/materials_chemistry_complex.png
+- Assets/RecursiveIndustry/UiIcons/ai_electronics_cell.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_fireless_steam_locomotive.png
+Dependencies: []

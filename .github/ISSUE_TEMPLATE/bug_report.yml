@@ -1,0 +1,82 @@
+name: Bug report
+description: Report a reproducible Recursive Industry defect
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include personal information. Attach logs only after checking them for private paths or names.
+
+  - type: input
+    id: game-version
+    attributes:
+      label: Captain of Industry version
+      placeholder: "0.8.7 Build 613"
+    validations:
+      required: true
+
+  - type: input
+    id: mod-version
+    attributes:
+      label: Recursive Industry version
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: installation
+    attributes:
+      label: Installation source
+      options:
+        - COI Hub
+        - GitHub release ZIP
+        - Built from source
+    validations:
+      required: true
+
+  - type: textarea
+    id: other-mods
+    attributes:
+      label: Other enabled mods and DLC
+      description: Trains expansion is required; include every other enabled mod.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Identify visible products and recipe quantities rather than internal recipe IDs.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log excerpt or file
+      description: Logs are under %APPDATA%/Captain of Industry/Logs. Remove personal filesystem paths before posting.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I reproduced this with Recursive Industry enabled on a supported new campaign.
+          required: true
+        - label: I searched existing issues for this problem.
+          required: true

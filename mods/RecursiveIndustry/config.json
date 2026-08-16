@@ -1,0 +1,212 @@
+{
+  "rack_i_accelerator_modules": {
+    "default": 4,
+    "min": 1,
+    "max": 32,
+    "is_integer": true,
+    "description": "Accelerator Modules consumed when building Rack I. Applied when prototypes register."
+  },
+  "rack_ii_accelerator_modules": {
+    "default": 8,
+    "min": 1,
+    "max": 64,
+    "is_integer": true,
+    "description": "Accelerator Modules added when upgrading Rack I to Rack II."
+  },
+  "rack_iii_accelerator_modules": {
+    "default": 16,
+    "min": 1,
+    "max": 128,
+    "is_integer": true,
+    "description": "Accelerator Modules added when upgrading Rack II to Rack III."
+  },
+  "rack_i_build_seconds": {
+    "default": 120,
+    "min": 30,
+    "max": 1800,
+    "is_integer": true,
+    "description": "Rack I construction duration."
+  },
+  "rack_ii_upgrade_seconds": {
+    "default": 240,
+    "min": 30,
+    "max": 3600,
+    "is_integer": true,
+    "description": "Rack I to Rack II conversion duration."
+  },
+  "rack_iii_upgrade_seconds": {
+    "default": 360,
+    "min": 30,
+    "max": 7200,
+    "is_integer": true,
+    "description": "Rack II to Rack III conversion duration."
+  },
+  "curation_seconds": {
+    "default": 120,
+    "min": 30,
+    "max": 1800,
+    "is_integer": true,
+    "description": "Dataset Archive curation duration."
+  },
+  "hardware_training_seconds": {
+    "default": 240,
+    "min": 30,
+    "max": 7200,
+    "is_integer": true,
+    "description": "Hardware-intensive Model Archive campaign duration."
+  },
+  "curation_adaptation_seconds": {
+    "default": 120,
+    "min": 30,
+    "max": 7200,
+    "is_integer": true,
+    "description": "Curation-intensive Model Archive campaign duration."
+  },
+  "validation_seconds": {
+    "default": 180,
+    "min": 30,
+    "max": 3600,
+    "is_integer": true,
+    "description": "Validated Control Package campaign duration."
+  },
+  "validation_packages_per_batch": {
+    "default": 8,
+    "min": 1,
+    "max": 64,
+    "is_integer": true,
+    "description": "Validated Control Packages produced per validation campaign."
+  },
+  "precision_electronics_seconds": {
+    "default": 180,
+    "min": 15,
+    "max": 3600,
+    "is_integer": true,
+    "description": "Material-precision Electronics III campaign duration."
+  },
+  "throughput_electronics_seconds": {
+    "default": 60,
+    "min": 15,
+    "max": 1800,
+    "is_integer": true,
+    "description": "Urgent-throughput Electronics III campaign duration."
+  },
+  "experiment_program_seconds": {
+    "default": 240,
+    "min": 30,
+    "max": 7200,
+    "is_integer": true,
+    "description": "AI Science Institute Experiment Program campaign duration."
+  },
+  "experiment_programs_per_batch": {
+    "default": 4,
+    "min": 1,
+    "max": 32,
+    "is_integer": true,
+    "description": "Experiment Programs produced per AI Science Institute campaign."
+  },
+  "pilot_validation_seconds": {
+    "default": 360,
+    "min": 30,
+    "max": 7200,
+    "is_integer": true,
+    "description": "Pilot Science Complex physical validation duration."
+  },
+  "validated_dossiers_per_batch": {
+    "default": 1,
+    "min": 1,
+    "max": 16,
+    "is_integer": true,
+    "description": "Validated Research Dossiers produced per physical validation campaign."
+  },
+  "frontier_program_seconds": {
+    "default": 720,
+    "min": 60,
+    "max": 14400,
+    "is_integer": true,
+    "description": "Systems Integration Complex Frontier Program campaign duration."
+  },
+  "autonomous_microchip_seconds": {
+    "default": 60,
+    "min": 15,
+    "max": 3600,
+    "is_integer": true,
+    "description": "Autonomous Microchip Complex integrated fabrication duration."
+  },
+  "orbital_science_seconds": {
+    "default": 3600,
+    "min": 600,
+    "max": 14400,
+    "is_integer": true,
+    "description": "Orbital Payload & Mission Complex science campaign duration."
+  },
+  "orbital_power_relay_seconds": {
+    "default": 360,
+    "min": 60,
+    "max": 3600,
+    "is_integer": true,
+    "description": "Orbital Power Relay Dossier support duration."
+  },
+  "frontier_project_seconds": {
+    "default": 7200,
+    "min": 1200,
+    "max": 28800,
+    "is_integer": true,
+    "description": "Frontier Project Complex expansion-project duration."
+  },
+  "recursive_program_seconds": {
+    "default": 720,
+    "min": 120,
+    "max": 7200,
+    "is_integer": true,
+    "description": "Recursive Integration Array Frontier Program campaign duration."
+  },
+  "recursive_cp4_seconds": {
+    "default": 80,
+    "min": 20,
+    "max": 7200,
+    "is_integer": true,
+    "description": "Autonomous Construction Nexus Construction Parts IV Surge duration; Precision and Recovery take twice as long."
+  },
+  "recursive_vehicle_parts3_seconds": {
+    "default": 32,
+    "min": 8,
+    "max": 7200,
+    "is_integer": true,
+    "description": "Autonomous Construction Nexus Vehicle Parts III Surge duration; Precision and Recovery take twice as long."
+  },
+  "autonomous_electronics_intermediate_seconds": {
+    "default": 80,
+    "min": 20,
+    "max": 7200,
+    "is_integer": true,
+    "description": "Autonomous Electronics Integration intermediate-fabrication duration."
+  },
+  "autonomous_electronics_integrated_seconds": {
+    "default": 120,
+    "min": 30,
+    "max": 7200,
+    "is_integer": true,
+    "description": "Autonomous Electronics Integration direct-material duration."
+  },
+  "capital_matrix_construction_seconds": {
+    "default": 80,
+    "min": 20,
+    "max": 7200,
+    "is_integer": true,
+    "description": "Capital Fabrication Matrix construction-family batch duration."
+  },
+  "capital_matrix_vehicle_parts_seconds": {
+    "default": 64,
+    "min": 16,
+    "max": 7200,
+    "is_integer": true,
+    "description": "Capital Fabrication Matrix Vehicle Parts batch duration."
+  },
+  "capital_matrix_vehicle_parts2_seconds": {
+    "default": 128,
+    "min": 32,
+    "max": 7200,
+    "is_integer": true,
+    "description": "Capital Fabrication Matrix Vehicle Parts II batch duration."
+  }
+}

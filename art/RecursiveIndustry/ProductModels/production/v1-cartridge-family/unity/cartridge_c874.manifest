@@ -1,0 +1,45 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.66f1
+CRC: 1674389815
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f219adcdf7b1e1330cfb19387d665c59
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3219c50854ff2a782d7e36576b5dbf5b
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 1cafb0c5dce3a5c3fb5049e120d02e26
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/RecursiveIndustry/ProductModels/Cartridge/cartridge-LOD0.obj
+- Assets/RecursiveIndustry/ProductModels/Cartridge/recursive_rack_iii-albedo.png
+- Assets/RecursiveIndustry/ProductModels/Cartridge/validated_control_package-albedo.png
+- Assets/RecursiveIndustry/ProductModels/Cartridge/frontier_rack_ii-albedo.png
+- Assets/RecursiveIndustry/ProductModels/Cartridge/dataset_archive-albedo.png
+- Assets/RecursiveIndustry/ProductModels/Cartridge/accelerator_rack_i-albedo.png
+- Assets/RecursiveIndustry/ProductModels/Cartridge/cartridge-normals.png
+- Assets/RecursiveIndustry/ProductModels/Cartridge/spent_accelerator-albedo.png
+- Assets/RecursiveIndustry/ProductModels/Cartridge/accelerator_module-albedo.png
+- Assets/RecursiveIndustry/ProductModels/Cartridge/cartridge-smoothmetal.png
+- Assets/RecursiveIndustry/ProductModels/Cartridge/model_archive-albedo.png
+Dependencies: []

@@ -1,0 +1,21 @@
+changelog:
+  exclude:
+    labels:
+      - skip-changelog
+  categories:
+    - title: Gameplay
+      labels:
+        - gameplay
+        - balance
+        - enhancement
+    - title: Compatibility and fixes
+      labels:
+        - bug
+        - compatibility
+    - title: Presentation
+      labels:
+        - art
+        - documentation
+    - title: Other changes
+      labels:
+        - "*"

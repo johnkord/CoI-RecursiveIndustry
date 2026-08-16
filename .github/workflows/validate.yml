@@ -1,0 +1,31 @@
+name: Validate public source
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate repository boundary
+        run: python tools/validate_public_repo.py
+
+      - name: Check generated universal source
+        run: python tools/generate_recursive_industry_universal_source.py
+
+      - name: Run public tests
+        run: python -m unittest discover -s tests -p "test_*.py"

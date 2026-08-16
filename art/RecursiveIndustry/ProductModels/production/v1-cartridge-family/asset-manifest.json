@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "status": "PASS_PRODUCTION_RUNTIME_INSPECTION",
+  "generated_date": "2026-08-11",
+  "game_target": {
+    "display_version": "0.8.7",
+    "build": 613,
+    "steam_build_id": 24602913
+  },
+  "generator": {
+    "path": "tools/generate_recursive_industry_product_models.ps1",
+    "size_bytes": 10126,
+    "sha256": "2D809ED2595F633D79A4BABBD198F38E399319D7E769E8CB15AF92AA47441DC8",
+    "deterministic_regeneration": "PASS"
+  },
+  "unity_importer": {
+    "path": "tools/unity/RecursiveIndustryProductionModelImporter.cs",
+    "size_bytes": 7521,
+    "sha256": "59A4B215055DA853BBB0813C0F7FA95DA81DBB4F391966EE36A7CFD7331BC5F0"
+  },
+  "production_source": {
+    "path": "mods/RecursiveIndustry/src/RecursiveIndustryProductData.cs",
+    "size_bytes": 7181,
+    "sha256": "5C999FE223D7F4CA629E92B7384D80220ECAF7EB3AD50FF6681E4A715B6E8108"
+  },
+  "icon_manifest": {
+    "path": "art/RecursiveIndustry/ProductIcons/asset-manifest.json"
+  },
+  "mesh": {
+    "path": "art/RecursiveIndustry/ProductModels/production/v1-cartridge-family/assets/cartridge-LOD0.obj",
+    "unity_path": "Assets/RecursiveIndustry/ProductModels/Cartridge/cartridge-LOD0.obj",
+    "size_bytes": 3245,
+    "sha256": "7F6108F45431011CF8B79D8589E2FB09D80B523DFFE9FADDAC3E0B7325DEF325",
+    "vertex_count": 50,
+    "uv_count": 50,
+    "normal_count": 50,
+    "triangle_count": 32,
+    "normalized_bounds": {
+      "min": [-0.5, -0.5, -0.5],
+      "max": [0.5, 0.5, 0.5]
+    },
+    "lod_overrides": [0, 1, 2, 3, 4]
+  },
+  "shared_textures": [
+    {
+      "role": "normals",
+      "path": "art/RecursiveIndustry/ProductModels/production/v1-cartridge-family/assets/cartridge-normals.png",
+      "unity_path": "Assets/RecursiveIndustry/ProductModels/Cartridge/cartridge-normals.png",
+      "size_bytes": 2248,
+      "sha256": "31B6FB06C70C7770A7EA7D65F19E0CE4701D202896A02F6A5CC31CA298063F34"
+    },
+    {
+      "role": "smoothmetal",
+      "path": "art/RecursiveIndustry/ProductModels/production/v1-cartridge-family/assets/cartridge-smoothmetal.png",
+      "unity_path": "Assets/RecursiveIndustry/ProductModels/Cartridge/cartridge-smoothmetal.png",
+      "size_bytes": 2250,
+      "sha256": "E2D97296B2693DBB63969A100ABE08ABD6E4B6FD021369EA7294336F16A9723F"
+    }
+  ],
+  "products": [
+    {
+      "product": "Accelerator Module",
+      "icon_constant": "AcceleratorModuleIcon",
+      "albedo_constant": "AcceleratorModuleAlbedo",
+      "albedo_path": "art/RecursiveIndustry/ProductModels/production/v1-cartridge-family/assets/accelerator_module-albedo.png",
+      "unity_path": "Assets/RecursiveIndustry/ProductModels/Cartridge/accelerator_module-albedo.png",
+      "size_bytes": 13032,
+      "sha256": "D7A717A2E02EE0B1A3AF132DB12A8804561CD40F1B4C5F4AFE37701898B5DE16"
+    },
+    {
+      "product": "Accelerator Rack I",
+      "icon_constant": "AcceleratorRackIIcon",
+      "albedo_constant": "AcceleratorRackIAlbedo",
+      "albedo_path": "art/RecursiveIndustry/ProductModels/production/v1-cartridge-family/assets/accelerator_rack_i-albedo.png",
+      "unity_path": "Assets/RecursiveIndustry/ProductModels/Cartridge/accelerator_rack_i-albedo.png",
+      "size_bytes": 13890,
+      "sha256": "F890FB4E58EE93A4B7331E9BE171F5DC3EB384F2A6BD6EE8430AB0CE19389CB9"
+    },
+    {
+      "product": "Frontier Rack II",
+      "icon_constant": "FrontierRackIIIcon",
+      "albedo_constant": "FrontierRackIIAlbedo",
+      "albedo_path": "art/RecursiveIndustry/ProductModels/production/v1-cartridge-family/assets/frontier_rack_ii-albedo.png",
+      "unity_path": "Assets/RecursiveIndustry/ProductModels/Cartridge/frontier_rack_ii-albedo.png",
+      "size_bytes": 15460,
+      "sha256": "CB9AAF5E4702051316F67284E0630BB0593E08C687ADB7AB8FB207E6E0574C79"
+    },
+    {
+      "product": "Recursive Rack III",
+      "icon_constant": "RecursiveRackIIIIcon",
+      "albedo_constant": "RecursiveRackIIIAlbedo",
+      "albedo_path": "art/RecursiveIndustry/ProductModels/production/v1-cartridge-family/assets/recursive_rack_iii-albedo.png",
+      "unity_path": "Assets/RecursiveIndustry/ProductModels/Cartridge/recursive_rack_iii-albedo.png",
+      "size_bytes": 15056,
+      "sha256": "5787DDDD8757269EC7EBA892AEA167E92498D2A1E33A2AB1EDBA09559B6AA861"
+    },
+    {
+      "product": "Dataset Archive",
+      "icon_constant": "DatasetArchiveIcon",
+      "albedo_constant": "DatasetArchiveAlbedo",
+      "albedo_path": "art/RecursiveIndustry/ProductModels/production/v1-cartridge-family/assets/dataset_archive-albedo.png",
+      "unity_path": "Assets/RecursiveIndustry/ProductModels/Cartridge/dataset_archive-albedo.png",
+      "size_bytes": 16081,
+      "sha256": "3C8D87C555C6BF6EB9B4D8D576635CC562544EDD671C5BC8DE219F96B8363C1D"
+    },
+    {
+      "product": "Model Archive",
+      "icon_constant": "ModelArchiveIcon",
+      "albedo_constant": "ModelArchiveAlbedo",
+      "albedo_path": "art/RecursiveIndustry/ProductModels/production/v1-cartridge-family/assets/model_archive-albedo.png",
+      "unity_path": "Assets/RecursiveIndustry/ProductModels/Cartridge/model_archive-albedo.png",
+      "size_bytes": 42991,
+      "sha256": "2D9FB9B0734C553B126A7E2B0FA62CE2D454FAC658FA9DF0CE37BD034534B6C7"
+    },
+    {
+      "product": "Validated Control Package",
+      "icon_constant": "ValidatedControlPackageIcon",
+      "albedo_constant": "ValidatedControlPackageAlbedo",
+      "albedo_path": "art/RecursiveIndustry/ProductModels/production/v1-cartridge-family/assets/validated_control_package-albedo.png",
+      "unity_path": "Assets/RecursiveIndustry/ProductModels/Cartridge/validated_control_package-albedo.png",
+      "size_bytes": 19357,
+      "sha256": "5ABC32C66682530954A616E39B07F917C09115E2CF1FC41EED6AD3065246892D"
+    },
+    {
+      "product": "Spent Accelerator",
+      "icon_constant": "SpentAcceleratorIcon",
+      "albedo_constant": "SpentAcceleratorAlbedo",
+      "albedo_path": "art/RecursiveIndustry/ProductModels/production/v1-cartridge-family/assets/spent_accelerator-albedo.png",
+      "unity_path": "Assets/RecursiveIndustry/ProductModels/Cartridge/spent_accelerator-albedo.png",
+      "size_bytes": 21493,
+      "sha256": "0F3E66C3C4A88651A2B7A29D30237EB1CCA78FA5015825B85CF388653846060A"
+    }
+  ],
+  "proof_sheet": {
+    "path": "art/RecursiveIndustry/ProductModels/production/v1-cartridge-family/proofs/production-cartridge-sheet.png",
+    "size_bytes": 66888,
+    "sha256": "3C009C7B751C18ED4C0ABEFF066B580742F5E6BE0FB6F4023CBE2E045551A4FB",
+    "width": 1024,
+    "height": 512,
+    "order": [
+      "Accelerator Module",
+      "Accelerator Rack I",
+      "Frontier Rack II",
+      "Recursive Rack III",
+      "Dataset Archive",
+      "Model Archive",
+      "Validated Control Package",
+      "Spent Accelerator"
+    ]
+  },
+  "bundle": {
+    "name": "cartridge_c874",
+    "path": "mods/RecursiveIndustry/AssetBundles/cartridge_c874",
+    "size_bytes": 212932,
+    "sha256": "A5626CC7167A3B6F43FC2B1008DC144C1E258B7B432EE1EDBBB12304CC0A6AB1",
+    "unity_version": "6000.0.66f1",
+    "crc": 1674389815,
+    "dependencies": [],
+    "unity_manifest": "art/RecursiveIndustry/ProductModels/production/v1-cartridge-family/unity/cartridge_c874.manifest",
+    "unity_manifest_size_bytes": 1592,
+    "unity_manifest_sha256": "896049CF6D521BDAAC9B211394942AF8F707BC6117AAC255506F5FD111EDA3C3"
+  },
+  "mafi_manifest": {
+    "path": "mods/RecursiveIndustry/AssetBundles/mafi_bundles.manifest",
+    "size_bytes": 46,
+    "sha256": "2A8EFBE61E60F9D5023EDC9B425F4B8F2DEC22E2853E4DF455F65CE565DE04F5",
+    "bundles": [
+      "cartridge_c874",
+      "producticons_84e1",
+      "uiicons_5287"
+    ]
+  },
+  "runtime_gate": {
+    "status": "PASS",
+    "scope": "One integrated Build 613 inspection of all eight products on conveyor and storage surfaces.",
+    "mechanics_retest": false
+  }
+}

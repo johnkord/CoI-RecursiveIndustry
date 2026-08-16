@@ -1,0 +1,67 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>10</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>RecursiveIndustry</AssemblyName>
+    <RootNamespace>RecursiveIndustry</RootNamespace>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <Deterministic>true</Deterministic>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <EnableSourceLink>false</EnableSourceLink>
+    <EnableSourceControlManagerQueries>false</EnableSourceControlManagerQueries>
+
+    <CoiManagedDir>$(COI_ROOT)\Captain of Industry_Data\Managed</CoiManagedDir>
+    <CoiTrainsDlcDir>$(COI_ROOT)\DLCs\Mafi.TrainsDlc</CoiTrainsDlcDir>
+    <CoiModsDir>$(AppData)\Captain of Industry\Mods</CoiModsDir>
+    <DeployToModsFolder Condition="'$(DeployToModsFolder)' == ''">true</DeployToModsFolder>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Mafi">
+      <HintPath>$(CoiManagedDir)\Mafi.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Mafi.Core">
+      <HintPath>$(CoiManagedDir)\Mafi.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Mafi.Base">
+      <HintPath>$(CoiManagedDir)\Mafi.Base.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Mafi.TrainsDlc">
+      <HintPath>$(CoiTrainsDlcDir)\Mafi.TrainsDlc.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>$(CoiManagedDir)\netstandard.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="**/*.cs" />
+    <Compile Include="src/**/*.cs" />
+    <AssetBundleFiles Include="AssetBundles\**\*" />
+  </ItemGroup>
+
+  <Target Name="DeployMod" AfterTargets="Build" Condition="'$(DeployToModsFolder)' == 'true'">
+    <PropertyGroup>
+      <ModOut>$(CoiModsDir)\RecursiveIndustry</ModOut>
+    </PropertyGroup>
+    <MakeDir Directories="$(ModOut)" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\manifest.json" DestinationFolder="$(ModOut)" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\config.json" DestinationFolder="$(ModOut)" Condition="Exists('$(MSBuildProjectDirectory)\config.json')" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\readme.txt" DestinationFolder="$(ModOut)" Condition="Exists('$(MSBuildProjectDirectory)\readme.txt')" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModOut)" />
+    <Copy SourceFiles="$(TargetDir)$(AssemblyName).pdb" DestinationFolder="$(ModOut)" Condition="Exists('$(TargetDir)$(AssemblyName).pdb')" />
+    <MakeDir Directories="$(ModOut)\AssetBundles" Condition="'@(AssetBundleFiles)' != ''" />
+    <Copy SourceFiles="@(AssetBundleFiles)" DestinationFiles="@(AssetBundleFiles->'$(ModOut)\AssetBundles\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" Condition="'@(AssetBundleFiles)' != ''" />
+    <Message Importance="high" Text="Deployed RecursiveIndustry to $(ModOut)" />
+  </Target>
+
+</Project>
