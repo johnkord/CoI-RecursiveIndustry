@@ -13,6 +13,13 @@ from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 ROOT = Path(__file__).resolve().parents[1]
 FORBIDDEN_DLL_PREFIXES = ("Mafi", "UnityEngine")
 FIXED_TIMESTAMP = (2020, 1, 1, 0, 0, 0)
+CANONICAL_TEXT_FILES = {
+    "manifest.json",
+    "config.json",
+    "readme.txt",
+    "changelog.txt",
+    "mafi_bundles.manifest",
+}
 
 
 def load_manifest(mod_dir: Path) -> dict:
@@ -91,6 +98,14 @@ def package_entries(
     return entries
 
 
+def entry_payload(source: Path, archive_path: Path) -> bytes:
+    payload = source.read_bytes()
+    if archive_path.name not in CANONICAL_TEXT_FILES:
+        return payload
+    text = payload.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n")
+    return text.encode("utf-8")
+
+
 def write_zip(output: Path, entries: list[tuple[Path, Path]]) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
     with ZipFile(output, "w", compression=ZIP_DEFLATED, compresslevel=9) as archive:
@@ -98,7 +113,12 @@ def write_zip(output: Path, entries: list[tuple[Path, Path]]) -> None:
             info = ZipInfo(archive_path.as_posix(), date_time=FIXED_TIMESTAMP)
             info.compress_type = ZIP_DEFLATED
             info.external_attr = 0o100644 << 16
-            archive.writestr(info, source.read_bytes(), compress_type=ZIP_DEFLATED, compresslevel=9)
+            archive.writestr(
+                info,
+                entry_payload(source, archive_path),
+                compress_type=ZIP_DEFLATED,
+                compresslevel=9,
+            )
 
 
 def main(argv: list[str] | None = None) -> int:

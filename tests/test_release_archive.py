@@ -19,6 +19,7 @@ from audit_release_zip import (  # noqa: E402
     expected_entries,
     load_source_manifest,
 )
+from package_mod import entry_payload  # noqa: E402
 
 
 def write_fixture(path: Path, extra: str | None = None) -> None:
@@ -40,6 +41,19 @@ def write_fixture(path: Path, extra: str | None = None) -> None:
 
 
 class ReleaseArchiveTests(unittest.TestCase):
+    def test_packaged_text_is_line_ending_independent(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            lf = root / "lf.txt"
+            crlf = root / "crlf.txt"
+            lf.write_bytes(b"one\ntwo\n")
+            crlf.write_bytes(b"one\r\ntwo\r\n")
+            archive_path = Path("RecursiveIndustry/readme.txt")
+            self.assertEqual(
+                entry_payload(lf, archive_path),
+                entry_payload(crlf, archive_path),
+            )
+
     def test_exact_inventory_passes(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             path = Path(temp) / "candidate.zip"
