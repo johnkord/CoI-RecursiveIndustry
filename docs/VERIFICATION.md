@@ -35,6 +35,14 @@ candidate that passed 302 internal automated tests with three expected skips,
 both zero-warning builds, deterministic packaging, and deployed file parity.
 Those results do not replace the remaining player-experience gates.
 
+Pre-release `0.19.0c` also passes one exact-archive fresh/sandbox registration
+check on Captain of Industry 0.8.7 Build 613. Unlock All Research exposed only the
+240 MW Orbital Power Array at Orbital Breakthrough; the legacy 30 MW Relay did
+not appear. The completed log passed strict audit with two known vanilla warnings
+and no errors, fatals, unknown warnings, missing assets, port mismatches, or
+overflows. The tested player ZIP SHA-256 is
+`ACF2447F36D090E260BCDBA601DF12EDAC7CB1C53446CEF878FA4A75624FC0E5`.
+
 ## Remaining before stable 1.0
 
 - One complete integrated author campaign across the final scope.
