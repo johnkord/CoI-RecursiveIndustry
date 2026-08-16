@@ -4,11 +4,11 @@
 
 Use the exact GitHub pre-release:
 
-- version: `0.19.0c`;
-- release: https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.19.0c;
-- file: `RecursiveIndustry-0.19.0c.zip`;
-- size: 1,726,534 bytes;
-- SHA-256: `ACF2447F36D090E260BCDBA601DF12EDAC7CB1C53446CEF878FA4A75624FC0E5`.
+- version: `0.19.0d`;
+- release: https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.19.0d;
+- file: `RecursiveIndustry-0.19.0d.zip`;
+- size: 1,726,546 bytes;
+- SHA-256: `638AE395526DD40ADFE4751CB88EF4DEA43F5DCBA9B6B586BFE2C01FD2AE280E`.
 
 Do not use GitHub's automatic source-code archives as the player package.
 
@@ -25,6 +25,10 @@ Do not use GitHub's automatic source-code archives as the player package.
 Captain of Industry 0.8.7 and Trains expansion 1.0.0 or newer are required.
 Supporter edition is optional. Adding or removing the mod from an existing normal
 save is unsupported.
+
+Pre-release saves containing the removed Orbital Power Relay cannot load normally
+with 0.19.0d. Remove the Relay while running 0.19.0c before upgrading, or start a
+new campaign.
 
 ## Useful feedback
 

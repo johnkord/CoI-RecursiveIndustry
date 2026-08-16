@@ -49,3 +49,4 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Custom world-space building models are outside the gameplay-first 1.0 scope.
 
 [0.19.0c]: https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.19.0c
+[0.19.0d]: https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.19.0d

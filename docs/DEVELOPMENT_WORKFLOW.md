@@ -60,10 +60,10 @@ One public commit owns one candidate package. Build and package from a clean
 checkout of that commit, then record its DLL and ZIP hashes in private release
 evidence. Do not rebuild or overwrite an archive after testers receive it.
 
-Current baseline: public tag `v0.19.0c` points to source commit `0a76824`; its
-hosted nine-file playtest ZIP has SHA-256
-`ACF2447F36D090E260BCDBA601DF12EDAC7CB1C53446CEF878FA4A75624FC0E5`.
-Treat that tag and asset as immutable. Subsequent fixes require a new version.
+Version `v0.19.0c` is immutable superseded history. The current baseline is public
+`v0.19.0d`; its nine-file playtest ZIP has SHA-256
+`638AE395526DD40ADFE4751CB88EF4DEA43F5DCBA9B6B586BFE2C01FD2AE280E`.
+Treat both tags and assets as immutable. Subsequent fixes require a new version.
 
 After a public release:
 

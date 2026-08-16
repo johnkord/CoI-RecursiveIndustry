@@ -6,16 +6,15 @@ gates pass.
 
 ## Current public pre-release
 
-GitHub pre-release `v0.19.0c` is live for ordinary playtesting:
+GitHub pre-release `v0.19.0d` is the current ordinary-playtesting candidate:
 
-- release: `https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.19.0c`;
-- source commit: `0a76824c35d6cd604a6424154176996fefef9ce3`;
-- player ZIP: 1,726,534 bytes;
-- SHA-256: `ACF2447F36D090E260BCDBA601DF12EDAC7CB1C53446CEF878FA4A75624FC0E5`;
+- release: `https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.19.0d`;
+- player ZIP: 1,726,546 bytes;
+- SHA-256: `638AE395526DD40ADFE4751CB88EF4DEA43F5DCBA9B6B586BFE2C01FD2AE280E`;
 - status: pre-release, not COI Hub stable publication.
 
-The hosted asset has been anonymously downloaded and verified byte-for-byte. Do
-not replace it. Any fix creates a new version, tag, and release asset.
+Version 0.19.0c remains immutable superseded history. Do not replace either
+asset. Any further fix creates a new version, tag, and release asset.
 
 ## Repository metadata
 

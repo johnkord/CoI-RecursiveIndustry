@@ -35,16 +35,17 @@ candidate that passed 302 internal automated tests with three expected skips,
 both zero-warning builds, deterministic packaging, and deployed file parity.
 Those results do not replace the remaining player-experience gates.
 
-Pre-release `0.19.0c` also passes one exact-archive fresh/sandbox registration
+Pre-release `0.19.0c` passed Array-only research inspection but retained a hidden
+Relay prototype and is superseded. Pre-release `0.19.0d` removes the prototype,
+stable ID, and buildable entity entirely. Its exact archive passes fresh-world registration
 check on Captain of Industry 0.8.7 Build 613. Unlock All Research exposed only the
-240 MW Orbital Power Array at Orbital Breakthrough; the legacy 30 MW Relay did
-not appear. The completed log passed strict audit with two known vanilla warnings
+240 MW Orbital Power Array; the Relay was absent from the toolbar and global
+search. The completed log passed strict audit with three known vanilla warnings
 and no errors, fatals, unknown warnings, missing assets, port mismatches, or
 overflows. The tested player ZIP SHA-256 is
-`ACF2447F36D090E260BCDBA601DF12EDAC7CB1C53446CEF878FA4A75624FC0E5`.
-The source is tagged `v0.19.0c` at commit `0a76824`; the same bytes are hosted on
-the matching GitHub pre-release. The closed smoke log is 39,411 bytes with
-SHA-256 `7DAD2DF44761B53335A2EF06258E5769BA2A0FD8A515BC096A8544FF0475297B`.
+`638AE395526DD40ADFE4751CB88EF4DEA43F5DCBA9B6B586BFE2C01FD2AE280E`.
+The closed clean-world smoke log is 40,646 bytes with SHA-256
+`8BA6E85996A74868251A829D611C8FB2AC5A69407EEBF4B05C796D2298E82712`.
 
 ## Remaining before stable 1.0
 
