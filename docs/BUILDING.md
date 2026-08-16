@@ -49,7 +49,9 @@ dotnet build mods/RecursiveIndustry/RecursiveIndustry.csproj -c Release `
 ```
 
 All game references use `Private=false` so proprietary assemblies are not copied
-to the output.
+to the output. The project maps its checkout directory to a stable virtual
+compiler path, preventing absolute clone locations from changing deterministic
+DLL and PDB identities.
 
 ## Package
 

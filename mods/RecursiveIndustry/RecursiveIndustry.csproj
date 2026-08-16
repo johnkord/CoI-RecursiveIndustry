@@ -13,6 +13,7 @@
     <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
     <EnableSourceLink>false</EnableSourceLink>
     <EnableSourceControlManagerQueries>false</EnableSourceControlManagerQueries>
+    <PathMap>$(MSBuildProjectDirectory)=/_/mods/RecursiveIndustry</PathMap>
 
     <CoiManagedDir>$(COI_ROOT)\Captain of Industry_Data\Managed</CoiManagedDir>
     <CoiTrainsDlcDir>$(COI_ROOT)\DLCs\Mafi.TrainsDlc</CoiTrainsDlcDir>
