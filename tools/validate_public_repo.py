@@ -45,6 +45,7 @@ REQUIRED_DOCS = {
     "BUILDING.md",
     "COMPATIBILITY.md",
     "DESIGN.md",
+    "DEVELOPMENT_WORKFLOW.md",
     "PROGRESSION.md",
     "PUBLISHING.md",
     "README.md",

@@ -4,6 +4,10 @@ Contributions are welcome within Recursive Industry's gameplay contract: a
 physical, expensive, bounded AI economy that extends vanilla systems without
 creating free matter or replacing every conventional option.
 
+Player source is authored in this repository. See
+[the development workflow](docs/DEVELOPMENT_WORKFLOW.md) for the boundary between
+public source and private game-derived research/evidence.
+
 ## Before opening a pull request
 
 1. Open an issue for substantial gameplay, progression, compatibility, or asset
