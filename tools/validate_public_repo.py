@@ -297,6 +297,21 @@ def validate_source_contract(errors: list[str], root: Path) -> None:
             if token not in data:
                 errors.append(f"universal runtime contract missing: {token}")
 
+    research_path = source / "RecursiveIndustryResearchData.cs"
+    orbital_path = source / "OrbitalPowerRelayData.cs"
+    if research_path.is_file():
+        research = research_path.read_text(encoding="utf-8")
+        if "RecursiveIndustryIds.Power.OrbitalPowerRelay" in research:
+            errors.append("legacy Orbital Power Relay must not be research-unlocked")
+        if "RecursiveIndustryIds.Power.OrbitalPowerArray" not in research:
+            errors.append("Orbital Breakthrough must unlock the Orbital Power Array")
+    if orbital_path.is_file():
+        orbital = orbital_path.read_text(encoding="utf-8")
+        if "RecursiveIndustryIds.Power.OrbitalPowerRelay" not in orbital:
+            errors.append("legacy Relay prototype must remain registered for old saves")
+        if 'GetInt("orbital_power_array_seconds", 360)' not in orbital:
+            errors.append("Orbital Power Array support-duration config drift")
+
 
 def validate_markdown_links(errors: list[str], root: Path, files: Iterable[Path]) -> None:
     for path in files:
@@ -355,6 +370,10 @@ def validate(root: Path = ROOT) -> list[str]:
         config = load_json(root / "mods" / "RecursiveIndustry" / "config.json")
         if not config:
             errors.append("config.json cannot be empty")
+        if "orbital_power_array_seconds" not in config:
+            errors.append("Orbital Power Array config is missing")
+        if "orbital_power_relay_seconds" in config:
+            errors.append("legacy Orbital Power Relay config must not be player-facing")
     except (OSError, json.JSONDecodeError, ValueError) as exc:
         errors.append(str(exc))
     validate_bundle_inventory(errors, root)

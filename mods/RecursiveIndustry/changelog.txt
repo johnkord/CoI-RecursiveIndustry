@@ -1,6 +1,15 @@
 Recursive Industry changelog
 ============================
 
+0.19.0c - Orbital power choice correction
+-----------------------------------------
+
+- Removed the dominated 30 MW Orbital Power Relay from new-game research.
+- Kept its prototype registered only so existing pre-release saves can load.
+- Orbital Breakthrough now unlocks only the 240 MW Orbital Power Array.
+- Renamed the public support-duration setting for the Array and corrected its
+  one-Dossier-per-cycle description.
+
 0.19.0b - Pre-release source preparation
 ----------------------------------------
 

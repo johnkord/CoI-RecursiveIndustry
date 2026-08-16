@@ -2,9 +2,9 @@
 
 This directory is the build and packaging root for Recursive Industry.
 
-The current source version is **0.19.0b**, a metadata-only public-repository
-successor to the tested 0.19.0a author candidate. It is pre-release source, not a
-stable public package.
+The current source version is **0.19.0c**, a pre-release balance correction that
+removes the dominated 30 MW Orbital Power Relay from new-game progression. It is
+pre-release source, not a stable public package.
 
 ## Requirements
 

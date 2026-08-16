@@ -471,9 +471,7 @@ internal sealed class RecursiveIndustryResearchData : IResearchNodesData
                 "Orbital Breakthrough: Beamed Power",
                 RecursiveIndustryIds.Research.OrbitalBreakthrough,
                 costMonths: 216)
-            .Description("Completed Calibrations unlock a 30 MW Relay and a 240 MW Array. Both continuously consume Dossiers for targeting and control; the Array is the powerful endgame answer to autonomous industrial demand while terrestrial power remains the independent fallback.")
-            .AddLayoutEntityToUnlock(
-                RecursiveIndustryIds.Power.OrbitalPowerRelay)
+            .Description("Completed Calibrations unlock a 240 MW Orbital Power Array. It continuously consumes Dossiers for targeting and control while terrestrial power remains the independent fallback.")
             .AddLayoutEntityToUnlock(
                 RecursiveIndustryIds.Power.OrbitalPowerArray)
             .AddRequirementForLifetimeProduction(

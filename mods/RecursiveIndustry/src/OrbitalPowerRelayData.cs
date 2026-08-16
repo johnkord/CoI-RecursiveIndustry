@@ -16,8 +16,8 @@ internal sealed class OrbitalPowerRelayData : IModData
     public void RegisterData(ProtoRegistrator registrator)
     {
         RecursiveIndustry mod = (RecursiveIndustry)registrator.ActiveMod;
-        int supportSeconds =
-            mod.JsonConfig.GetInt("orbital_power_relay_seconds", 360);
+        int arraySupportSeconds =
+            mod.JsonConfig.GetInt("orbital_power_array_seconds", 360);
         ProductProto dossier = registrator.PrototypesDb.GetOrThrow<ProductProto>(
             RecursiveIndustryIds.Products.ValidatedResearchDossier);
         ProductProto electricity = registrator.PrototypesDb.GetOrThrow<ProductProto>(
@@ -42,7 +42,7 @@ internal sealed class OrbitalPowerRelayData : IModData
             Proto.CreateStr(
                 RecursiveIndustryIds.Power.OrbitalPowerRelay,
                 "Orbital Power Relay",
-                "Receives 30 MW of beamed orbital power while renewable validated Dossiers sustain targeting, calibration, and control.",
+                "Legacy 30 MW orbital receiver retained for existing saves. New campaigns unlock the Orbital Power Array instead.",
                 "title and description of the Recursive Industry orbital power reward"),
             registrator.LayoutParser.ParseLayoutOrThrow(
                 OrbitalPowerRelayLayout.Create()),
@@ -53,7 +53,7 @@ internal sealed class OrbitalPowerRelayData : IModData
             outputProduct: null,
             electricity,
             bufferCapacityMultiplier: 4,
-            supportSeconds.Seconds(),
+            360.Seconds(),
             DestroyReason.UsedAsFuel,
             ImmutableArray<AnimationParams>.Empty,
             new ElectricityGeneratorFromProductProto.Gfx(
@@ -86,7 +86,7 @@ internal sealed class OrbitalPowerRelayData : IModData
             Proto.CreateStr(
                 RecursiveIndustryIds.Power.OrbitalPowerArray,
                 "Orbital Power Array",
-                "Receives 240 MW of beamed orbital power while two renewable Dossiers per support cycle sustain constellation targeting, calibration, and control.",
+                "Receives 240 MW of beamed orbital power while one renewable Dossier per support cycle sustains constellation targeting, calibration, and control.",
                 "title and description of the Recursive Industry orbital power array"),
             registrator.LayoutParser.ParseLayoutOrThrow(
                 OrbitalPowerRelayLayout.Create()),
@@ -97,7 +97,7 @@ internal sealed class OrbitalPowerRelayData : IModData
             outputProduct: null,
             electricity,
             bufferCapacityMultiplier: 4,
-            supportSeconds.Seconds(),
+            arraySupportSeconds.Seconds(),
             DestroyReason.UsedAsFuel,
             ImmutableArray<AnimationParams>.Empty,
             new ElectricityGeneratorFromProductProto.Gfx(

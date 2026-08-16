@@ -1,4 +1,4 @@
-Recursive Industry 0.19.0b pre-release
+Recursive Industry 0.19.0c pre-release
 =====================================
 
 A Captain of Industry endgame mod about building a physical AI economy, from

@@ -139,12 +139,12 @@
     "is_integer": true,
     "description": "Orbital Payload & Mission Complex science campaign duration."
   },
-  "orbital_power_relay_seconds": {
+  "orbital_power_array_seconds": {
     "default": 360,
     "min": 60,
     "max": 3600,
     "is_integer": true,
-    "description": "Orbital Power Relay Dossier support duration."
+    "description": "Orbital Power Array Dossier support duration."
   },
   "frontier_project_seconds": {
     "default": 7200,

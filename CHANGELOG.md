@@ -6,6 +6,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- Removed the strictly dominated 30 MW Orbital Power Relay from new-game
+  progression. Orbital Breakthrough now unlocks only the 240 MW Array; the Relay
+  prototype remains registered solely for old pre-release saves.
+
 ### Added
 
 - Public source repository, contributor documentation, and policy-safe packaging.
