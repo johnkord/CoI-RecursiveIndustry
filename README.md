@@ -36,9 +36,10 @@ Player ZIP SHA-256:
 - Direct, Integrated, and Precision production choices. Precision preserves
   throughput while reducing feedstock by 12.5% at twice the energy per output.
 - A Data-only Fiber control plane. Direct production remains Fiber-free, while
-  seventeen Integrated chain-composition modes require live Industrial Control
-  Stream from Control Deployment Gateways. Precision efficiency remains
-  Fiber-free and pays through 200% recipe power.
+  twenty-four cross-stage compositions on eleven owners require live Industrial
+  Control Stream from Control Deployment Gateways. Twenty-one are universal
+  catalog modes and three remain on earlier specialist facilities. Precision
+  efficiency remains Fiber-free and pays through 200% recipe power.
 - Federated Deployment for endgame density: Backbone-rate Gateway operation and
   a long-batch Assurance Campus preserve exact Package and Stream yields while
   trading additional power, Computing, capital, and cadence for fewer buildings.
@@ -48,6 +49,9 @@ Player ZIP SHA-256:
   residuals and require continuous Stream.
 - A production-scale Electronics III Direct row on the late Precision Components
   Fab.
+- Stream-controlled raw Electronics III and Lab Equipment II through IV rows,
+  while local Electronics, Microchips, staged capital, Precision, and Nexus
+  production no longer burn a Package every batch.
 - A bounded reinvestment finale: Frontier Projects can accelerate future Programs
   or expand autonomous construction-capital production.
 

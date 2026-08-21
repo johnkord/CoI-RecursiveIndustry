@@ -30,8 +30,9 @@ Captain of Industry recovery saves may recover part of a factory after missing o
 incompatible mods, but recovery is lossy and is not a substitute for supported mod
 migration.
 
-Version 0.20.0a adds a Data input row to nine existing megafacilities and a Stream
-input to seventeen Integrated composition recipes. Precision rows remain Fiber-free.
+Version 0.20.0a adds Data input capacity to eleven existing facilities and a Stream
+input to twenty-four cross-stage composition recipes. Precision, local, staged,
+and recovery rows remain Fiber-free.
 Until a copy of an affected 0.19.0d save
 is tested and classified, migration into 0.20.0a is unsupported. Start a new
 campaign for the candidate. Do not add shadow machines solely to preserve a

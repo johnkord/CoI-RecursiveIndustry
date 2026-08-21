@@ -8,7 +8,7 @@ internal static class AutonomousElectronicsIntegrationLayout
     {
         return new[]
         {
-            "      D#vF#vB#vC#vE#v      ",
+            "      D#vF:vB#vC#vE#v      ",
             "   [2][2][2][2][2][2][2]   ",
             "A#>[2][2][3][3][3][2][2]>#X",
             "   [2][2][2][2][2][2][2]   ",

@@ -1724,6 +1724,31 @@
       ]
     },
     {
+      "key": "integrated_electronics3",
+      "name": "Integrated Electronics III",
+      "machine": "precision_components_fab",
+      "batch_scale": 1,
+      "duration_seconds": 120,
+      "sources": [
+        {
+          "recipe_id": "ElectronicsAssembly",
+          "multiplier": 4
+        },
+        {
+          "recipe_id": "PCBAssembly",
+          "multiplier": 6
+        },
+        {
+          "recipe_id": "Electronics2Assembly",
+          "multiplier": 12
+        },
+        {
+          "recipe_id": "Electronics3Assembly",
+          "multiplier": 12
+        }
+      ]
+    },
+    {
       "key": "integrated_electronics4",
       "name": "Integrated Precision Electronics IV",
       "machine": "precision_components_fab",
@@ -1741,6 +1766,69 @@
         {
           "recipe_id": "Electronics4Assembly",
           "multiplier": 2
+        }
+      ]
+    },
+    {
+      "key": "integrated_lab_equipment2",
+      "name": "Integrated Lab Equipment II",
+      "machine": "general_manufacturing_fab",
+      "batch_scale": 1,
+      "duration_seconds": 120,
+      "sources": [
+        {
+          "recipe_id": "LabEquipment1Assembly",
+          "multiplier": 15
+        },
+        {
+          "recipe_id": "LabEquipment2Assembly",
+          "multiplier": 30
+        }
+      ]
+    },
+    {
+      "key": "integrated_lab_equipment3",
+      "name": "Integrated Lab Equipment III",
+      "machine": "general_manufacturing_fab",
+      "batch_scale": 1,
+      "duration_seconds": 120,
+      "sources": [
+        {
+          "recipe_id": "LabEquipment1Assembly",
+          "multiplier": 15
+        },
+        {
+          "recipe_id": "LabEquipment2Assembly",
+          "multiplier": 30
+        },
+        {
+          "recipe_id": "LabEquipment3Assembly",
+          "multiplier": 30
+        }
+      ]
+    },
+    {
+      "key": "integrated_lab_equipment4",
+      "name": "Integrated Lab Equipment IV",
+      "machine": "general_manufacturing_fab",
+      "batch_scale": 1,
+      "duration_seconds": 180,
+      "sources": [
+        {
+          "recipe_id": "LabEquipment1Assembly",
+          "multiplier": 16
+        },
+        {
+          "recipe_id": "LabEquipment2Assembly",
+          "multiplier": 32
+        },
+        {
+          "recipe_id": "LabEquipment3Assembly",
+          "multiplier": 32
+        },
+        {
+          "recipe_id": "LabEquipment4Assembly",
+          "multiplier": 24
         }
       ]
     }

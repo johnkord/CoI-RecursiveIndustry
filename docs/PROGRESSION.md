@@ -45,7 +45,10 @@ forestry, planting, and train systems without introducing custom dispatch.
 
 Industrial Control Networks follows Recursive Epoch V and precedes all five
 universal-industry branches. It unlocks Industrial Control Stream, the Control
-Deployment Gateway, Access Fiber, Backbone Fiber, and the Fiber Junction.
+Deployment Gateway, Access Fiber, Backbone Fiber, and the Fiber Junction. It also
+activates the existing raw Electronics II and integrated Construction Parts III
+and Vehicle Parts II rows, which remain unavailable with their earlier machine
+research alone.
 
 Validated Control Packages remain countable signed releases. The Gateway deploys
 them as non-storable live service capacity. Direct recipes retain local control
@@ -65,9 +68,10 @@ for 256 lifetime Frontier Programs.
 
 The node unlocks the Deployment Assurance Campus and the Gateway's Backbone
 deployment row. The Campus supplies bulk Package demand at unchanged material
-ratios. Backbone deployment supplies seven concurrent composition owners at
-unchanged Stream-per-Package yield. Standard validators and local Gateway
-deployment remain available for bootstrap, small districts, and trim capacity.
+ratios. One Backbone deployment row supplies seven concurrent composition owners;
+two rows supply the complete eleven-owner network at unchanged Stream-per-Package
+yield. Standard validators and local Gateway deployment remain available for
+bootstrap and smaller districts.
 
 ## Universal industrial transformation
 
@@ -80,10 +84,15 @@ Five optional research branches unlock nineteen specialist megafacilities:
 - Advanced manufacturing.
 
 Each facility runs one selected recipe at a time. Direct rows reuse existing game
-recipes at four times the source binding quantity. Seventeen Integrated modes compose
-adjacent stages while retaining final wastes and byproducts. Ten Precision modes
+recipes at four times the source binding quantity. Twenty-one Integrated modes
+compose adjacent stages while retaining final wastes and byproducts. Ten Precision modes
 preserve Direct output rate with 12.5% less physical feedstock and twice the energy
 per output.
+
+Advanced Manufacturing adds raw Electronics III and Lab Equipment II through IV
+compositions. They cancel Electronics, PCB, Electronics II, and lower Lab tiers as
+appropriate. Fully raw Electronics IV is deliberately absent because its physical
+input union would erase too many independent domains and exceed the useful shell.
 
 Farms, reactors, power generation, Waste Sorting, and native Maintenance Depots
 remain on their specialized game paths.
@@ -101,6 +110,10 @@ The player spends each Project on one of two facilities:
 - **Recursive Integration Array:** increases Frontier Program production.
 - **Autonomous Construction Nexus:** produces Construction Parts IV or Vehicle
   Parts III through Surge, Precision, or Recovery routes.
+
+Nexus batches use installed control rather than recurring Packages. Precision
+retains Dossiers and Recovery retains Recyclables, preserving their distinct
+strategic costs.
 
 This is compounding industrial investment, not automatic expansion. The player
 still supplies and commissions every iteration.

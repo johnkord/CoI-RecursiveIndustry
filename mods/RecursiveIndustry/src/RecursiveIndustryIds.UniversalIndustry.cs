@@ -117,8 +117,20 @@ public static partial class RecursiveIndustryIds
         public static readonly RecipeID IntegratedUraniumRods =
             Ids.Recipes.CreateId("RecursiveIndustry_IntegratedUraniumRods");
 
+        public static readonly RecipeID IntegratedElectronics3 =
+            Ids.Recipes.CreateId("RecursiveIndustry_IntegratedElectronics3");
+
         public static readonly RecipeID IntegratedElectronics4 =
             Ids.Recipes.CreateId("RecursiveIndustry_IntegratedElectronics4");
+
+        public static readonly RecipeID IntegratedLabEquipment2 =
+            Ids.Recipes.CreateId("RecursiveIndustry_IntegratedLabEquipment2");
+
+        public static readonly RecipeID IntegratedLabEquipment3 =
+            Ids.Recipes.CreateId("RecursiveIndustry_IntegratedLabEquipment3");
+
+        public static readonly RecipeID IntegratedLabEquipment4 =
+            Ids.Recipes.CreateId("RecursiveIndustry_IntegratedLabEquipment4");
 
         public static readonly RecipeID PrecisionCement =
             Ids.Recipes.CreateId("RecursiveIndustry_PrecisionCement");

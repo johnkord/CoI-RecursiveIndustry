@@ -136,10 +136,10 @@ class ControlNetworkContractTests(unittest.TestCase):
             standard["construction_parts_iv"],
         )
 
-    def test_seventeen_controlled_compositions_match_the_public_catalog(self) -> None:
+    def test_twenty_four_controlled_compositions_match_both_owners(self) -> None:
         recipes = CONTROL["consumer_contract"]["recipes"]
-        self.assertEqual(len(recipes), 17)
-        self.assertEqual(len({recipe["stable_id"] for recipe in recipes}), 17)
+        self.assertEqual(len(recipes), 24)
+        self.assertEqual(len({recipe["stable_id"] for recipe in recipes}), 24)
         self.assertEqual({recipe["mode"] for recipe in recipes}, {"integrated"})
         self.assertTrue(
             all(recipe["cancelled_intermediates"] for recipe in recipes)
@@ -150,9 +150,17 @@ class ControlNetworkContractTests(unittest.TestCase):
             recipe["key"]: recipe
             for recipe in CATALOG["integrated_recipes"]
         }
-        self.assertEqual(set(contract_by_key), set(catalog_by_key))
-        for key, contract in contract_by_key.items():
-            catalog = catalog_by_key[key]
+        self.assertEqual(len(catalog_by_key), 21)
+        self.assertEqual(
+            set(contract_by_key) - set(catalog_by_key),
+            {
+                "integrated_electronics2",
+                "integrated_construction_parts3",
+                "integrated_vehicle_parts2",
+            },
+        )
+        for key, catalog in catalog_by_key.items():
+            contract = contract_by_key[key]
             self.assertEqual(contract["owner_key"], catalog["machine"])
             self.assertEqual(
                 contract["stable_id"],
@@ -166,6 +174,23 @@ class ControlNetworkContractTests(unittest.TestCase):
                 contract["effective_duration_seconds"],
                 catalog["duration_seconds"],
             )
+        self.assertEqual(
+            {
+                key: contract_by_key[key]["stable_id"]
+                for key in set(contract_by_key) - set(catalog_by_key)
+            },
+            {
+                "integrated_electronics2": (
+                    "Recipe_RecursiveIndustry_IntegrateElectronics2Direct"
+                ),
+                "integrated_construction_parts3": (
+                    "Recipe_RecursiveIndustry_IntegrateConstructionParts3"
+                ),
+                "integrated_vehicle_parts2": (
+                    "Recipe_RecursiveIndustry_IntegrateVehicleParts2"
+                ),
+            },
+        )
 
     def test_five_directed_refinery_slates_are_stream_controlled(self) -> None:
         expected = {
@@ -294,10 +319,10 @@ class ControlNetworkContractTests(unittest.TestCase):
                 recipe["effective_duration_seconds"],
             )
 
-    def test_nine_owners_fit_the_seven_row_shell_with_bounded_right_inputs(self) -> None:
+    def test_eleven_owners_fit_their_bounded_port_shells(self) -> None:
         owners = CONTROL["owners"]
         controlled_recipes = CONTROL["consumer_contract"]["recipes"]
-        self.assertEqual(len(owners), 9)
+        self.assertEqual(len(owners), 11)
         self.assertEqual(
             {owner["key"] for owner in owners},
             {recipe["owner_key"] for recipe in controlled_recipes},
@@ -328,6 +353,17 @@ class ControlNetworkContractTests(unittest.TestCase):
                 "nuclear_fuel_complex",
                 "precision_components_fab",
                 "general_manufacturing_fab",
+            },
+        )
+        self.assertEqual(
+            {
+                owner["key"]
+                for owner in owners
+                if not owner.get("catalog_facility", True)
+            },
+            {
+                "autonomous_electronics_integration_complex",
+                "autonomous_capital_fabrication_matrix",
             },
         )
 
@@ -366,9 +402,9 @@ class ControlNetworkContractTests(unittest.TestCase):
         gateway_per_minute = Fraction(gateway_rate * 60, gateway_seconds)
 
         self.assertEqual(rate, 60)
-        self.assertEqual(closure["optimized_owner_count"] * rate, 540)
-        self.assertEqual(closure["all_owner_demand_per_minute"], 540)
-        self.assertEqual(closure["minimum_gateway_count"], 3)
+        self.assertEqual(closure["optimized_owner_count"] * rate, 660)
+        self.assertEqual(closure["all_owner_demand_per_minute"], 660)
+        self.assertEqual(closure["minimum_gateway_count"], 4)
         self.assertEqual(closure["federated_gateway_count"], 2)
         self.assertEqual(200 // rate, closure["access_supported_facilities"])
         self.assertEqual(200 % rate, closure["access_spare_per_minute"])
@@ -382,16 +418,22 @@ class ControlNetworkContractTests(unittest.TestCase):
             Fraction(closure["minimum_gateway_count"] * 60),
             closure["unconstrained_gateway_packages_per_hour"],
         )
-        self.assertLess(
+        self.assertGreater(
             Fraction(closure["steady_state_packages_per_hour"]),
             closure["validator_capacity_packages_per_hour"],
         )
+        self.assertLess(
+            Fraction(closure["steady_state_packages_per_hour"]),
+            2 * closure["validator_capacity_packages_per_hour"],
+        )
         federated = closure["federated_topology"]
         local_only = closure["local_only_topology"]
-        self.assertEqual(federated["backbone_consumers"] * rate, 420)
-        self.assertEqual(federated["local_consumers"] * rate, 120)
-        self.assertEqual(federated["output_capacity_per_minute"], 630)
-        self.assertEqual(local_only["output_capacity_per_minute"], 630)
+        self.assertEqual(federated["backbone_consumers"] * rate, 660)
+        self.assertEqual(federated["local_consumers"] * rate, 0)
+        self.assertEqual(federated["output_capacity_per_minute"], 840)
+        self.assertEqual(federated["transport_capacity_per_minute"], 900)
+        self.assertEqual(local_only["output_capacity_per_minute"], 840)
+        self.assertEqual(local_only["transport_capacity_per_minute"], 900)
         self.assertEqual(
             Fraction(federated["steady_state_packages_per_hour"]),
             Fraction(local_only["steady_state_packages_per_hour"]),
@@ -404,17 +446,17 @@ class ControlNetworkContractTests(unittest.TestCase):
             + Fraction(scale_up["industrial_control_packages_per_hour"]),
             Fraction(scale_up["mature_core_with_control_packages_per_hour"]),
         )
-        self.assertEqual(scale_up["mature_core_with_control_standard_validators"], 5)
-        self.assertEqual(scale_up["mature_core_with_control_dense_capacity_per_hour"], 800)
+        self.assertEqual(scale_up["mature_core_with_control_standard_validators"], 4)
+        self.assertEqual(scale_up["mature_core_with_control_dense_capacity_per_hour"], 640)
         self.assertEqual(
             Fraction(scale_up["mature_core_with_control_packages_per_hour"])
             + scale_up["planetary_center_packages_per_hour"],
             Fraction(scale_up["mature_core_center_control_packages_per_hour"]),
         )
-        self.assertEqual(scale_up["mature_core_center_control_standard_validators"], 9)
+        self.assertEqual(scale_up["mature_core_center_control_standard_validators"], 8)
         self.assertEqual(
             scale_up["mature_core_center_control_dense_capacity_per_hour"],
-            1440,
+            1280,
         )
 
     def test_research_gate_and_children_are_catalog_bound(self) -> None:
@@ -427,7 +469,20 @@ class ControlNetworkContractTests(unittest.TestCase):
         )
         self.assertTrue(research["requires_space_points"])
         self.assertEqual(research["child_branch_keys"], CATALOG["research_keys"])
-        self.assertEqual(len(research["unlocks"]), 6)
+        self.assertEqual(
+            set(research["unlocks"]),
+            {
+                "RecursiveIndustry_IndustrialControlStream",
+                "RecursiveIndustry_ControlDeploymentGateway",
+                "RecursiveIndustry_DeployIndustrialControl",
+                "RecursiveIndustry_IntegrateElectronics2Direct",
+                "RecursiveIndustry_IntegrateConstructionParts3",
+                "RecursiveIndustry_IntegrateVehicleParts2",
+                "RecursiveIndustry_AccessFiber",
+                "RecursiveIndustry_BackboneFiber",
+                "RecursiveIndustry_FiberJunction",
+            },
+        )
         federated = CONTROL["federated_deployment"]
         self.assertEqual(federated["position"], {"x": 212, "y": 30})
         self.assertEqual(federated["duration_months"], 480)

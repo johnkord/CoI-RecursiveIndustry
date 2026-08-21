@@ -6,14 +6,14 @@ internal static class VerticalSliceProofLayout
     public const string SoundPath =
         "Assets/Base/Machines/Assembly/AssemblyT4/AssemblerSound.prefab";
 
-    public static string[] Create()
+    public static string[] Create(bool includeThirdInput = true)
     {
         return new[]
         {
             "   [4][4][4][4][4][4]   ",
             "A#>[4][4][4][4][4][4]>#X",
             "B#>[4][4][4][4][4][4]>#Y",
-            "C#>[5][5][4][4][4][4]>~Z",
+            (includeThirdInput ? "C#>" : "   ") + "[5][5][4][4][4][4]>~Z",
             "   [5][5][4][4][4][4]   ",
         };
     }

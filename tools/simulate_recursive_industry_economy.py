@@ -91,7 +91,6 @@ class Candidate:
     late_core_computing_scale: Fraction
     systems_packages_per_cycle: int
     integration_array_packages_per_cycle: int
-    nexus_tradeoff_packages_per_cycle: int
     array_dossiers_per_hour: int
 
 
@@ -196,7 +195,6 @@ CURRENT = Candidate(
     late_core_computing_scale=Fraction(1),
     systems_packages_per_cycle=32,
     integration_array_packages_per_cycle=72,
-    nexus_tradeoff_packages_per_cycle=4,
     array_dossiers_per_hour=20,
 )
 
@@ -210,7 +208,6 @@ MODERATE = Candidate(
     late_core_computing_scale=Fraction(3, 4),
     systems_packages_per_cycle=24,
     integration_array_packages_per_cycle=48,
-    nexus_tradeoff_packages_per_cycle=2,
     array_dossiers_per_hour=10,
 )
 
@@ -224,7 +221,6 @@ SELECTED = Candidate(
     late_core_computing_scale=Fraction(1, 2),
     systems_packages_per_cycle=16,
     integration_array_packages_per_cycle=32,
-    nexus_tradeoff_packages_per_cycle=1,
     array_dossiers_per_hour=10,
 )
 
@@ -238,7 +234,6 @@ OVERPOWERED = Candidate(
     late_core_computing_scale=Fraction(1, 4),
     systems_packages_per_cycle=8,
     integration_array_packages_per_cycle=16,
-    nexus_tradeoff_packages_per_cycle=1,
     array_dossiers_per_hour=5,
 )
 
@@ -387,7 +382,6 @@ def core_assets(candidate: Candidate, include_pcc: bool) -> list[Asset]:
             0,
             24,
             construction_packages=scaled_int(64, package_scale),
-            packages_per_hour=60,
         ),
         Asset(
             "Autonomous Electronics Integration Complex",
@@ -396,7 +390,6 @@ def core_assets(candidate: Candidate, include_pcc: bool) -> list[Asset]:
             0,
             20,
             construction_packages=scaled_int(64, package_scale),
-            packages_per_hour=45,
         ),
         Asset(
             "Autonomous Capital Fabrication Matrix",
@@ -405,7 +398,6 @@ def core_assets(candidate: Candidate, include_pcc: bool) -> list[Asset]:
             0,
             28,
             construction_packages=scaled_int(96, package_scale),
-            packages_per_hour=45,
         ),
         Asset(
             "Orbital Payload & Mission Complex",
@@ -443,10 +435,6 @@ def core_assets(candidate: Candidate, include_pcc: bool) -> list[Asset]:
             0,
             32,
             construction_packages=scaled_int(128, package_scale),
-            packages_per_hour=Fraction(
-                candidate.nexus_tradeoff_packages_per_cycle * 3600,
-                64,
-            ),
         ),
     ]
     if include_pcc:
@@ -460,6 +448,34 @@ def core_assets(candidate: Candidate, include_pcc: bool) -> list[Asset]:
             packages_per_hour=Fraction(candidate.pcc_packages_per_cycle * 3600, 360),
         ))
     return assets
+
+
+def legacy_control_assets(
+    candidate: Candidate,
+    optimized_keys: set[str],
+) -> list[Asset]:
+    scale = candidate.late_core_computing_scale
+    package_scale = candidate.late_core_package_scale
+    electronics_key = "autonomous_electronics_integration_complex"
+    capital_key = "autonomous_capital_fabrication_matrix"
+    return [
+        Asset(
+            "Autonomous Electronics Integration Complex",
+            12 if electronics_key in optimized_keys else 6,
+            scaled_int(512, scale),
+            0,
+            20,
+            construction_packages=scaled_int(64, package_scale),
+        ),
+        Asset(
+            "Autonomous Capital Fabrication Matrix",
+            16 if capital_key in optimized_keys else 8,
+            scaled_int(1024, scale),
+            0,
+            28,
+            construction_packages=scaled_int(96, package_scale),
+        ),
+    ]
 
 
 def evaluate(
@@ -654,13 +670,17 @@ def control_scenarios(
         ("three_facility_access", "access_fiber", owner_keys[:3], 200, False),
         ("seven_facility_backbone", "backbone_fiber", owner_keys[:7], 450, False),
         ("seven_facility_federated", "backbone_fiber", owner_keys[:7], 450, True),
-        ("all_nine_optimized", "access_plus_backbone", owner_keys, 650, False),
-        ("all_nine_federated", "access_plus_backbone", owner_keys, 650, True),
+        ("all_eleven_optimized", "two_backbone_fibers", owner_keys, 900, False),
+        ("all_eleven_federated", "two_backbone_fibers", owner_keys, 900, True),
     )
     results = []
     for name, transport, optimized, transport_capacity, federated in topologies:
         stream_demand = len(optimized) * rate
-        backbone_gateway_count = stream_demand // backbone_rate if federated else 0
+        backbone_gateway_count = (
+            ceil_fraction(Fraction(stream_demand, backbone_rate))
+            if federated and stream_demand
+            else 0
+        )
         remaining_demand = stream_demand - backbone_gateway_count * backbone_rate
         local_gateway_count = (
             ceil_fraction(Fraction(remaining_demand, gateway_per_minute))
@@ -681,6 +701,7 @@ def control_scenarios(
             "direct",
             optimized_keys=set(optimized),
         )
+        assets.extend(legacy_control_assets(candidate, set(optimized)))
         if gateway_count:
             assets.append(mixed_control_gateway_asset(
                 local_gateway_count,
@@ -899,11 +920,12 @@ def report() -> dict[str, object]:
             },
             "continuous_deployment": {
                 "recurring_packages": True,
-                "reason": "offices and mod-owned control recipes continuously deploy changing decisions",
+                "reason": "offices, signed deployment, and recurring research or orbital artifacts continuously apply changing decisions",
             },
             "autonomous_capital": {
                 "construction_packages": True,
-                "reason": "commission installed deterministic control; Direct vanilla bindings do not burn Packages per cycle",
+                "recurring_packages": False,
+                "reason": "commission installed deterministic control once; ordinary physical manufacturing does not burn Packages per batch",
             },
         },
         "candidates": [serialize(asdict(candidate)) for candidate in candidates],

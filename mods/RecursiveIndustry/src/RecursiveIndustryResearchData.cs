@@ -75,7 +75,7 @@ internal sealed class RecursiveIndustryResearchData : IResearchNodesData
                 "Validated Operations",
                 RecursiveIndustryIds.Research.ValidatedOperations,
                 costMonths: 192)
-            .Description("Converts the first Model into renewable deployment Packages. AI Operations spends workers, Computing, and Packages on shared Focus, while precision Electronics III provides a physical first application; vanilla production remains the resilient fallback.")
+            .Description("Converts the first Model into renewable deployment Packages. AI Operations spends workers, Computing, and Packages on shared Focus, while precision Electronics III uses installed control without a per-batch Package; vanilla production remains the resilient fallback.")
             .AddProductToUnlock(
                 RecursiveIndustryIds.Products.ValidatedControlPackage,
                 addIconToNode: true)
@@ -228,7 +228,7 @@ internal sealed class RecursiveIndustryResearchData : IResearchNodesData
                 "Recursive Epoch II: Lights-Out Industry",
                 RecursiveIndustryIds.Research.RecursiveEpochII,
                 costMonths: 288)
-            .Description("Consolidates a sustained twelve-stage Microchip line into one zero-worker complex. It wins on labor and footprint but concentrates raw inputs, 512 Computing, 8 MW, Packages, and maintenance; the conventional line remains safer at low demand.")
+            .Description("Consolidates a sustained twelve-stage Microchip line into one zero-worker complex. It wins on labor and footprint but concentrates raw inputs, 512 Computing, 8 MW, and maintenance; the conventional line remains safer at low demand.")
             .AddMachineToUnlock(
                 RecursiveIndustryIds.Machines.AutonomousMicrochipComplex)
             .AddRecipeToUnlock(
@@ -251,11 +251,13 @@ internal sealed class RecursiveIndustryResearchData : IResearchNodesData
                 "Autonomous Electronics Integration",
                 RecursiveIndustryIds.Research.AutonomousElectronicsIntegration,
                 costMonths: 360)
-            .Description("Consolidates sustained Electronics II demand. Staged integration gives 4x throughput while retaining PCB and Electronics logistics; direct integration gives 2x with fewer handoffs. Assembly V remains preferable for intermittent demand.")
+            .Description("Consolidates sustained Electronics II demand. The Package-free staged row gives 4x throughput while retaining PCB and Electronics logistics; Industrial Control later unlocks a 2x raw-material composition. Assembly V remains preferable for intermittent demand.")
             .AddMachineToUnlock(
                 RecursiveIndustryIds.Machines
                     .AutonomousElectronicsIntegrationComplex,
-                unlockAllRecipes: true)
+                unlockAllRecipes: false)
+            .AddRecipeToUnlock(
+                RecursiveIndustryIds.Recipes.IntegrateElectronics2Intermediates)
             .AddRequirementForLifetimeProduction(
                 RecursiveIndustryIds.Products.FrontierProgram,
                 8)
@@ -299,10 +301,20 @@ internal sealed class RecursiveIndustryResearchData : IResearchNodesData
                 "Autonomous Capital Fabrication",
                 RecursiveIndustryIds.Research.AutonomousCapitalFabrication,
                 costMonths: 480)
-            .Description("Consolidates sustained lower construction and vehicle-part production. Staged rows give 4x throughput; integrated rows give 2x with fewer handoffs and higher power. Ordinary Assemblies remain the low-capital fallback, while final tiers stay in the Nexus.")
+            .Description("Consolidates sustained lower construction and vehicle-part production. Package-free staged rows give 4x throughput; Industrial Control later unlocks 2x cross-stage compositions. Ordinary Assemblies remain the low-capital fallback, while final tiers stay in the Nexus.")
             .AddMachineToUnlock(
                 RecursiveIndustryIds.Machines.AutonomousCapitalFabricationMatrix,
-                unlockAllRecipes: true)
+                unlockAllRecipes: false)
+            .AddRecipeToUnlock(
+                RecursiveIndustryIds.Recipes.FabricateConstructionParts)
+            .AddRecipeToUnlock(
+                RecursiveIndustryIds.Recipes.FabricateConstructionParts2)
+            .AddRecipeToUnlock(
+                RecursiveIndustryIds.Recipes.FabricateConstructionParts3)
+            .AddRecipeToUnlock(
+                RecursiveIndustryIds.Recipes.FabricateVehicleParts)
+            .AddRecipeToUnlock(
+                RecursiveIndustryIds.Recipes.FabricateVehicleParts2)
             .AddRequirementForLifetimeProduction(
                 RecursiveIndustryIds.Products.FrontierProgram,
                 32)

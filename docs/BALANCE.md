@@ -14,12 +14,13 @@ Validated Control Packages are not applied uniformly:
 - Bootstrap and physical-evidence producers remain Package-free to avoid a
   circular first-validation dependency.
 - Autonomous capital consumes one-time commissioning Packages.
-- Offices and authored recipes that continuously deploy changing control consume
-  recurring Packages.
+- Offices, Gateway deployment, and recurring research or orbital artifacts
+  consume Packages because they apply signed releases over time.
 - Control Deployment Gateways convert recurring Packages into conserved live
   Industrial Control Stream.
-- Direct megafacility rows reuse vanilla recipe identities and do not add an
-  arbitrary recurring Package input after commissioning.
+- Ordinary physical manufacturing does not consume Packages after commissioning.
+  This includes Direct, local, staged, Precision, recovery, Electronics III,
+  Microchips, Electronics II, capital fabrication, and Construction Nexus rows.
 
 ## Selected universal economy
 
@@ -33,10 +34,10 @@ The current pre-release balance has:
 - 462 Maintenance III per month before policy effects.
 
 An ordinary research branch needs approximately three to four Rack III. Before
-Industrial Control, the mature core needs four dedicated Package validators;
-adding the 625,000-Focus Planetary Coordination Center raises that modeled
-district to eight. The complete Control network raises the composed boundaries
-to five and nine standard validators respectively.
+Industrial Control, the mature core consumes 408 Packages/hour and needs three
+standard validators. Adding the 625,000-Focus Planetary Coordination Center raises
+that modeled district to 1,048/hour and seven validators. The complete Control
+network raises the composed boundaries to four and eight validators respectively.
 
 ## Mode tradeoffs
 
@@ -73,19 +74,21 @@ CO2, Exhaust, Water, Fuel Gas, or Hydrogen residual.
 - Access Fiber carries 200 Stream per minute, enough for three continuously
   optimized facilities with 20 spare.
 - Backbone Fiber carries 450 per minute, enough for seven with 30 spare.
-- One Gateway produces 210 per minute. All nine optimization-capable owners
-  demand 540, so the reference network installs three Gateways.
+- One local Gateway produces 210 per minute. Eleven owners demand 660, so the
+  local-only comparison installs four Gateways and provides 840/minute.
 - Federated Deployment adds a 250%-power row producing 420 per minute from two
-  Packages. One Backbone-mode plus one local Gateway replaces the three local
-  Gateways, provides the same 630/minute capacity, and preserves 210 Stream per
-  Package. It uses 14 rather than 12 MW while reducing Gateway workers from 72
-  to 48.
-- Demand backpressure consumes $1080/7$, approximately 154.29, Packages per hour.
-  Three unconstrained Gateways would consume 180. One 160-Package/hour validator
-  closes steady-state demand with a narrow margin.
+  Packages. Two Backbone-mode Gateways replace four local Gateways, provide the
+  same 840/minute output over 900/minute of Fiber capacity, and preserve 210
+  Stream per Package. They use 20 rather than 16 MW while reducing Gateway
+  workers from 96 to 48 and Computing from 1,024 to 512.
+- Demand backpressure consumes $1320/7$, approximately 188.57, Packages per hour.
+  Both unconstrained topologies consume 240/hour. One standard validator is no
+  longer enough; two close the live network with useful margin.
 
-The selected all-nine terrestrial model closes at 4,208 Computing, 17 Rack III,
-170 coolant, 464 workers, and 714 Maintenance III per month before policy effects.
+The selected all-eleven local-Gateway model closes at 5,280 Computing, 21 Rack
+III, 210 coolant, 616 workers, and 834 Maintenance III per month before policy
+effects. The federated topology reduces those values to 4,768 Computing, 19 Rack
+III, 190 coolant, 568 workers, and 786 Maintenance III while spending 1 MW more.
 The simulator also evaluates 105, 210, and 420 Stream per Package, 128 and 256
 Computing per Gateway, and 2 and 4 MW per Gateway.
 
@@ -95,12 +98,13 @@ The Deployment Assurance Campus converts 16 Model Archives, 32 Lab Equipment
 IV, and 32 Electronics III into 128 Packages every 720 seconds. Its 640/hour
 output equals four standard validators and preserves their exact material ratios.
 
-One Campus plus one standard trim line supplies 800 Packages/hour for the
-768.54/hour mature-core-plus-Control boundary. Two Campuses plus one trim line
-supply 1,440/hour for the 1,408.54/hour Center boundary. The Campus halves
-validation workers but uses 4 MW, 256 Computing, 16 Maintenance III/month, and
-1,200 Construction Parts IV plus additional endgame capital. It is a density
-choice, not a material-efficiency upgrade.
+One Campus supplies 640 Packages/hour for the $4176/7$, approximately 596.57/hour,
+mature-core-plus-Control boundary. Two Campuses supply 1,280/hour for the
+$8656/7$, approximately 1,236.57/hour, Center boundary. Standard validators remain
+the lower-capital bootstrap and incremental choice rather than a mandatory trim
+line. Each Campus uses 4 MW, 256 Computing, 16 Maintenance III/month, and 1,200
+Construction Parts IV plus additional endgame capital. It is a density choice,
+not a material-efficiency upgrade.
 
 ## Electronics III correction
 
@@ -127,7 +131,7 @@ Two power boundaries are useful:
   to approximately 442 MW and 744.8 MW.
 
 The deliberately unrealistic all-content stress case still requires 34 Rack III,
-eight validators, and three to four Orbital Arrays. It is a support-explosion test,
+seven validators, and three to four Orbital Arrays. It is a support-explosion test,
 not a prescribed factory layout.
 
 Run the standard-library model from the repository root:
@@ -155,3 +159,9 @@ because it is a biological producer with Eggs and Carcass co-products.
 Integrated Mechanical Parts composes iron smelting, steelmaking, casting, and
 assembly to produce physical Mechanical Parts. Maintenance I to III remain native
 MaintenanceDepotProto services; Stream does not manufacture virtual Maintenance.
+
+Raw Electronics III composes Electronics, PCB, Electronics II, and Electronics
+III assembly. Lab Equipment II through IV progressively compose and cancel their
+lower Lab tiers. Raw Electronics IV remains excluded: preserving all of its
+independent physical domains would exceed the useful facility shell and remove
+too much logistics choice.

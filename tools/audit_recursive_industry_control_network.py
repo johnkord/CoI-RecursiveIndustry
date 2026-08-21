@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+from fractions import Fraction
 from pathlib import Path
 import re
 from typing import Any, Iterable
@@ -239,9 +240,12 @@ def audit_catalog(
     controlled = control["consumer_contract"]["recipes"]
     catalog_integrated = catalog.get("integrated_recipes", [])
     catalog_precision = catalog.get("precision_recipes", [])
+    controlled_by_key = {recipe["key"]: recipe for recipe in controlled}
+    catalog_keys = {recipe.get("key") for recipe in catalog_integrated}
     expected_custom = {
-        (recipe["key"], recipe["owner_key"])
-        for recipe in controlled
+        (key, controlled_by_key[key]["owner_key"])
+        for key in catalog_keys
+        if key in controlled_by_key
     }
     actual_custom = {
         (recipe.get("key"), recipe.get("machine"))
@@ -249,8 +253,21 @@ def audit_catalog(
     }
     if actual_custom != expected_custom:
         errors.append("controlled recipe keys or owners drift from the control contract")
-    if len(catalog_integrated) != 17:
-        errors.append("universal catalog must contain exactly 17 Integrated recipes")
+    if len(controlled) != 24 or len(controlled_by_key) != 24:
+        errors.append("control contract must contain 24 unique Stream recipes")
+    if control["consumer_contract"].get("universal_catalog_recipe_count") != 21:
+        errors.append("control contract must declare 21 universal compositions")
+    if control["consumer_contract"].get("authored_legacy_recipe_count") != 3:
+        errors.append("control contract must declare three authored legacy compositions")
+    if len(catalog_integrated) != 21:
+        errors.append("universal catalog must contain exactly 21 Integrated recipes")
+    legacy_keys = set(controlled_by_key) - catalog_keys
+    if legacy_keys != {
+        "integrated_electronics2",
+        "integrated_construction_parts3",
+        "integrated_vehicle_parts2",
+    }:
+        errors.append("authored legacy Stream recipe inventory drift")
     if len(catalog_precision) != 10:
         errors.append("universal catalog must retain exactly 10 Precision recipes")
     if control.get("precision_contract", {}).get("stream_inputs_per_recipe") != 0:
@@ -261,6 +278,62 @@ def audit_catalog(
         errors.append("Precision recipe inventory drift")
     if any(not recipe.get("cancelled_intermediates") for recipe in controlled):
         errors.append("every Stream recipe must cancel a transported intermediate")
+    if any(
+        recipe.get("stream_quantity") != recipe.get("effective_duration_seconds")
+        for recipe in controlled
+    ):
+        errors.append("every Stream recipe must consume one Stream per active second")
+
+    expected_advanced = {
+        "integrated_electronics3": {
+            "machine": "precision_components_fab",
+            "batch_scale": 1,
+            "duration_seconds": 120,
+            "sources": [
+                {"recipe_id": "ElectronicsAssembly", "multiplier": 4},
+                {"recipe_id": "PCBAssembly", "multiplier": 6},
+                {"recipe_id": "Electronics2Assembly", "multiplier": 12},
+                {"recipe_id": "Electronics3Assembly", "multiplier": 12},
+            ],
+        },
+        "integrated_lab_equipment2": {
+            "machine": "general_manufacturing_fab",
+            "batch_scale": 1,
+            "duration_seconds": 120,
+            "sources": [
+                {"recipe_id": "LabEquipment1Assembly", "multiplier": 15},
+                {"recipe_id": "LabEquipment2Assembly", "multiplier": 30},
+            ],
+        },
+        "integrated_lab_equipment3": {
+            "machine": "general_manufacturing_fab",
+            "batch_scale": 1,
+            "duration_seconds": 120,
+            "sources": [
+                {"recipe_id": "LabEquipment1Assembly", "multiplier": 15},
+                {"recipe_id": "LabEquipment2Assembly", "multiplier": 30},
+                {"recipe_id": "LabEquipment3Assembly", "multiplier": 30},
+            ],
+        },
+        "integrated_lab_equipment4": {
+            "machine": "general_manufacturing_fab",
+            "batch_scale": 1,
+            "duration_seconds": 180,
+            "sources": [
+                {"recipe_id": "LabEquipment1Assembly", "multiplier": 16},
+                {"recipe_id": "LabEquipment2Assembly", "multiplier": 32},
+                {"recipe_id": "LabEquipment3Assembly", "multiplier": 32},
+                {"recipe_id": "LabEquipment4Assembly", "multiplier": 24},
+            ],
+        },
+    }
+    catalog_by_key = {recipe["key"]: recipe for recipe in catalog_integrated}
+    for key, expected in expected_advanced.items():
+        actual = catalog_by_key.get(key)
+        if actual is None or any(
+            actual.get(field) != value for field, value in expected.items()
+        ):
+            errors.append(f"{key} exact source-chain contract drift")
 
     directed = control.get("directed_refinery_contract", {})
     directed_modes = directed.get("modes", [])
@@ -297,10 +370,18 @@ def audit_catalog(
             )
 
     expected_owners = {owner["key"] for owner in control["owners"]}
-    actual_owners = {recipe.get("machine") for recipe in catalog_integrated}
-    if actual_owners != expected_owners:
-        errors.append("exactly the nine contracted facilities must own controlled modes")
-    if len({facility.get("key") for facility in facilities} - actual_owners) != 10:
+    actual_controlled_owners = {recipe.get("owner_key") for recipe in controlled}
+    if len(expected_owners) != 11 or actual_controlled_owners != expected_owners:
+        errors.append("exactly the eleven contracted facilities must own Stream modes")
+    actual_catalog_owners = {recipe.get("machine") for recipe in catalog_integrated}
+    expected_catalog_owners = {
+        owner["key"]
+        for owner in control["owners"]
+        if owner.get("catalog_facility", True)
+    }
+    if len(actual_catalog_owners) != 9 or actual_catalog_owners != expected_catalog_owners:
+        errors.append("exactly nine universal facilities must own catalog compositions")
+    if len({facility.get("key") for facility in facilities} - actual_catalog_owners) != 10:
         errors.append("exactly ten facilities must remain without a Data port")
     right_side_owners = {
         owner["key"]
@@ -333,6 +414,59 @@ def audit_catalog(
             errors.append(f"{owner['key']} physical or right-side row contract drift")
         if outputs + right_inputs > physical_rows:
             errors.append(f"{owner['key']} right edge is oversubscribed")
+    return errors
+
+
+def audit_capacity(control: dict[str, Any]) -> list[str]:
+    errors: list[str] = []
+    consumer = control["consumer_contract"]
+    closure = control["capacity_closure"]
+    owner_count = len(control["owners"])
+    demand = owner_count * consumer["stream_units_per_active_minute"]
+    if consumer.get("concurrent_demand_basis") != "one active recipe per owner":
+        errors.append("Stream demand must be based on one active recipe per owner")
+    if (
+        owner_count != 11
+        or closure.get("optimized_owner_count") != owner_count
+        or closure.get("all_owner_demand_per_minute") != demand
+        or demand != 660
+    ):
+        errors.append("eleven-owner Stream demand must equal 660/minute")
+    gateway = control["gateway"]
+    stream_per_package = Fraction(
+        gateway["recipe"]["output"]["quantity"],
+        gateway["recipe"]["input"]["quantity"],
+    )
+    package_demand = Fraction(demand * 60, stream_per_package)
+    if (
+        stream_per_package != 210
+        or Fraction(closure.get("steady_state_packages_per_hour")) != package_demand
+        or package_demand != Fraction(1320, 7)
+    ):
+        errors.append("control network must consume 1320/7 Packages/hour")
+    federated = closure.get("federated_topology", {})
+    local = closure.get("local_only_topology", {})
+    if federated != {
+        "backbone_gateway_count": 2,
+        "local_gateway_count": 0,
+        "backbone_consumers": 11,
+        "local_consumers": 0,
+        "output_capacity_per_minute": 840,
+        "transport_capacity_per_minute": 900,
+        "packages_per_hour_at_full_output": 240,
+        "steady_state_packages_per_hour": "1320/7",
+        "power_mw": 20,
+        "computing": 512,
+        "workers": 48,
+        "maintenance_iii_per_month": 24,
+    }:
+        errors.append("two-Backbone federated topology drift")
+    if (
+        local.get("gateway_count") != 4
+        or local.get("output_capacity_per_minute") != 840
+        or local.get("transport_capacity_per_minute") != 900
+    ):
+        errors.append("four-local-Gateway comparison topology drift")
     return errors
 
 
@@ -405,6 +539,9 @@ def audit_research_source(text: str) -> list[str]:
             "RecursiveIndustryIds.Machines.ControlDeploymentGateway",
             "unlockAllRecipes: false",
             ".AddRecipeToUnlock(RecursiveIndustryIds.Recipes.DeployIndustrialControl)",
+            "RecursiveIndustryIds.Recipes.IntegrateElectronics2Direct",
+            "RecursiveIndustryIds.Recipes.IntegrateConstructionParts3",
+            "RecursiveIndustryIds.Recipes.IntegrateVehicleParts2",
             ".AddProtoToUnlock<TransportProto>(RecursiveIndustryIds.Infrastructure.AccessFiber)",
             ".AddProtoToUnlock<TransportProto>(RecursiveIndustryIds.Infrastructure.BackboneFiber)",
             ".AddLayoutEntityToUnlock(RecursiveIndustryIds.Infrastructure.FiberJunction)",
@@ -421,6 +558,10 @@ def audit_research_source(text: str) -> list[str]:
                 "RecursiveIndustryIds.Recipes.IntegratedRefineryHydrogen",
                 "RecursiveIndustryIds.Recipes.IntegratedRefineryPlastic",
                 "RecursiveIndustryIds.Recipes.IntegratedRefineryRubber",
+                "RecursiveIndustryIds.Recipes.IntegratedElectronics3",
+                "RecursiveIndustryIds.Recipes.IntegratedLabEquipment2",
+                "RecursiveIndustryIds.Recipes.IntegratedLabEquipment3",
+                "RecursiveIndustryIds.Recipes.IntegratedLabEquipment4",
         ),
     )
     federated_section = text[
@@ -440,6 +581,129 @@ def audit_research_source(text: str) -> list[str]:
     branch_section = text[text.find("ResearchNodeProto materials") :]
     if ".AddParent(recursiveEpochV)" in branch_section:
         errors.append("universal research branches must not parent Recursive Epoch V directly")
+    return errors
+
+
+def recipe_block(text: str, member: str) -> str | None:
+    match = re.search(
+        r"RecursiveIndustryIds\.Recipes\s*\.\s*" + re.escape(member),
+        text,
+    )
+    if match is None:
+        return None
+    end = text.find(".BindTo(", match.end())
+    if end < 0:
+        return None
+    end = text.find(";", end)
+    return text[match.start() : end + 1] if end >= 0 else None
+
+
+def audit_physical_recipe_semantics(source_files: dict[str, str]) -> list[str]:
+    errors: list[str] = []
+    recipes = {
+        "AIElectronicsCellData.cs": (
+            "PrecisionElectronics3",
+            "ThroughputElectronics3",
+        ),
+        "AutonomousMicrochipData.cs": ("IntegrateAutonomousMicrochips",),
+        "AutonomousElectronicsIntegrationData.cs": (
+            "IntegrateElectronics2Intermediates",
+            "IntegrateElectronics2Direct",
+        ),
+        "AutonomousCapitalFabricationData.cs": (
+            "FabricateConstructionParts",
+            "FabricateConstructionParts2",
+            "FabricateConstructionParts3",
+            "IntegrateConstructionParts3",
+            "FabricateVehicleParts",
+            "FabricateVehicleParts2",
+            "IntegrateVehicleParts2",
+        ),
+        "RecursiveFrontierData.cs": (
+            "ProduceRecursiveConstructionParts4",
+            "ProducePrecisionConstructionParts4",
+            "RecoverConstructionParts4",
+            "ProduceRecursiveVehicleParts3",
+            "ProducePrecisionVehicleParts3",
+            "RecoverVehicleParts3",
+        ),
+    }
+    stream_recipes = {
+        "IntegrateElectronics2Direct": ("SetPowerMultiplier(200.Percent())", "F"),
+        "IntegrateConstructionParts3": ("SetPowerMultiplier(200.Percent())", "E"),
+        "IntegrateVehicleParts2": ("SetPowerMultiplier(150.Percent())", "E"),
+    }
+    for filename, members in recipes.items():
+        text = source_files.get(filename, "")
+        for member in members:
+            block = recipe_block(text, member)
+            if block is None:
+                errors.append(f"could not locate ordinary manufacturing recipe {member}")
+                continue
+            if "ValidatedControlPackage" in block:
+                errors.append(f"{member} must not consume recurring Packages")
+            if member in stream_recipes:
+                power, port = stream_recipes[member]
+                if (
+                    "IndustrialControlStream" not in block
+                    or power not in block
+                    or (
+                        "RecursiveIndustryIds.Products.IndustrialControlStream, "
+                        f'"{port}"'
+                    ) not in block
+                ):
+                    errors.append(f"{member} Stream, Data port, or power contract drift")
+            elif "IndustrialControlStream" in block:
+                errors.append(f"{member} must remain Stream-free")
+    layout_contracts = {
+        "AIElectronicsCellData.cs": "VerticalSliceProofLayout.Create(includeThirdInput: false)",
+        "AutonomousMicrochipLayout.cs": '"      D@vF#vB#v   E@v      "',
+        "ConstructionNexusLayout.cs": '"   [4][4][4][4][4][4]   "',
+    }
+    for filename, token in layout_contracts.items():
+        if token not in source_files.get(filename, ""):
+            errors.append(f"{filename} obsolete Package port removal drift")
+    return errors
+
+
+def audit_legacy_research_source(text: str) -> list[str]:
+    errors: list[str] = []
+    electronics = text[
+        text.find("ResearchNodeProto autonomousElectronicsIntegration") :
+        text.find("ResearchNodeProto recursiveEpochIII")
+    ]
+    capital = text[
+        text.find("ResearchNodeProto autonomousCapitalFabrication") :
+        text.find("ResearchNodeProtoBuilder.State heavyEquipmentBuilder")
+    ]
+    for label, section, required, forbidden in (
+        (
+            "Autonomous Electronics Integration",
+            electronics,
+            ("unlockAllRecipes: false", "IntegrateElectronics2Intermediates"),
+            ("IntegrateElectronics2Direct",),
+        ),
+        (
+            "Autonomous Capital Fabrication",
+            capital,
+            (
+                "unlockAllRecipes: false",
+                "FabricateConstructionParts",
+                "FabricateConstructionParts2",
+                "FabricateConstructionParts3",
+                "FabricateVehicleParts",
+                "FabricateVehicleParts2",
+            ),
+            ("IntegrateConstructionParts3", "IntegrateVehicleParts2"),
+        ),
+    ):
+        if not section:
+            errors.append(f"could not locate {label} research section")
+            continue
+        require_tokens(errors, label, section, required)
+        for token in forbidden:
+            if token in section:
+                errors.append(f"{label} must not unlock late Stream recipe {token}")
     return errors
 
 
@@ -488,6 +752,7 @@ def audit(root: Path = ROOT) -> list[str]:
     if control.get("schema_version") != 1:
         errors.append("industrial-control-network schema must be 1")
     errors.extend(audit_catalog(catalog, control))
+    errors.extend(audit_capacity(control))
 
     combined = "\n".join(source_files.values())
     declarations = re.findall(r"class\s+DataProductProto\b", combined)
@@ -515,9 +780,14 @@ def audit(root: Path = ROOT) -> list[str]:
         errors.extend(audit_research_source(
             source_files["UniversalIndustryResearchData.cs"]
         ))
+    if "RecursiveIndustryResearchData.cs" in source_files:
+        errors.extend(audit_legacy_research_source(
+            source_files["RecursiveIndustryResearchData.cs"]
+        ))
     if "RecursiveIndustry.cs" in source_files:
         errors.extend(audit_registration_source(source_files["RecursiveIndustry.cs"]))
     errors.extend(audit_forbidden_runtime(source_files))
+    errors.extend(audit_physical_recipe_semantics(source_files))
 
     manifest = load_json(root / "mods" / "RecursiveIndustry" / "manifest.json")
     dependencies = manifest.get("mod_dependencies", []) + manifest.get(
@@ -537,8 +807,9 @@ def main() -> int:
         return 1
     print(
         "Recursive Industry Industrial Control network: PASS "
-            "(235 Direct, 17 compositions, 10 Fiber-free Precision, "
-        "9 Data owners, Backbone deployment, 640/h assurance)"
+        "(235 Direct, 21 universal plus 3 legacy compositions, "
+        "10 Fiber-free Precision, 11 Data owners, two-Backbone deployment, "
+        "640/h assurance)"
     )
     return 0
 

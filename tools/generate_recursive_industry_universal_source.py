@@ -28,8 +28,8 @@ def load_catalog() -> dict[str, Any]:
     research = value.get("research_keys")
     if not isinstance(facilities, list) or len(facilities) != 19:
         raise ValueError("public catalog must contain 19 facilities")
-    if not isinstance(integrated, list) or len(integrated) != 17:
-        raise ValueError("public catalog must contain 17 Integrated recipes")
+    if not isinstance(integrated, list) or len(integrated) != 21:
+        raise ValueError("public catalog must contain 21 Integrated recipes")
     if not isinstance(precision, list) or len(precision) != 10:
         raise ValueError("public catalog must contain 10 Precision recipes")
     if not isinstance(research, list) or len(research) != 5:

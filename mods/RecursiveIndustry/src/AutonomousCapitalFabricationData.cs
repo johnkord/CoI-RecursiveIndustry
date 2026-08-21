@@ -18,7 +18,7 @@ internal sealed class AutonomousCapitalFabricationData : IModData
             .Start(
                 "Autonomous Capital Fabrication Matrix",
                 RecursiveIndustryIds.Machines.AutonomousCapitalFabricationMatrix)
-            .Description("A zero-worker capital-goods facility with exact-ratio 4x staged fabrication for Construction Parts through tier III and Vehicle Parts through tier II. Slower integrated rows compress lower-tier logistics at 2x throughput while paying higher power.")
+            .Description("A zero-worker capital-goods facility. Staged rows use installed control without recurring Packages; late networked rows consume Stream to collapse transported lower tiers at higher power.")
             .SetCost(
                 Costs.Build
                     .CP4(1440)
@@ -46,16 +46,12 @@ internal sealed class AutonomousCapitalFabricationData : IModData
             .AddInput(256, Ids.Products.Steel)
             .AddInput(256, Ids.Products.Wood)
             .AddInput(384, Ids.Products.ConcreteSlab)
-            .AddInput(
-                1,
-                RecursiveIndustryIds.Products.ValidatedControlPackage)
             .AddOutput(512, Ids.Products.ConstructionParts)
             .BuildAndAdd()
             .WithCommonInputPorts(
                 (Ids.Products.Steel, "A"),
                 (Ids.Products.Wood, "B"),
-                (Ids.Products.ConcreteSlab, "C"),
-                (RecursiveIndustryIds.Products.ValidatedControlPackage, "D"))
+                (Ids.Products.ConcreteSlab, "C"))
             .WithCommonOutputPorts((Ids.Products.ConstructionParts, "X"))
             .BindTo(machine, constructionSeconds.Seconds());
 
@@ -63,15 +59,11 @@ internal sealed class AutonomousCapitalFabricationData : IModData
             .Start(RecursiveIndustryIds.Recipes.FabricateConstructionParts2)
             .AddInput(512, Ids.Products.ConstructionParts)
             .AddInput(256, Ids.Products.Electronics)
-            .AddInput(
-                1,
-                RecursiveIndustryIds.Products.ValidatedControlPackage)
             .AddOutput(256, Ids.Products.ConstructionParts2)
             .BuildAndAdd()
             .WithCommonInputPorts(
                 (Ids.Products.ConstructionParts, "A"),
-                (Ids.Products.Electronics, "B"),
-                (RecursiveIndustryIds.Products.ValidatedControlPackage, "C"))
+                (Ids.Products.Electronics, "B"))
             .WithCommonOutputPorts((Ids.Products.ConstructionParts2, "X"))
             .BindTo(machine, constructionSeconds.Seconds());
 
@@ -79,15 +71,11 @@ internal sealed class AutonomousCapitalFabricationData : IModData
             .Start(RecursiveIndustryIds.Recipes.FabricateConstructionParts3)
             .AddInput(256, Ids.Products.ConstructionParts2)
             .AddInput(128, Ids.Products.Steel)
-            .AddInput(
-                1,
-                RecursiveIndustryIds.Products.ValidatedControlPackage)
             .AddOutput(128, Ids.Products.ConstructionParts3)
             .BuildAndAdd()
             .WithCommonInputPorts(
                 (Ids.Products.ConstructionParts2, "A"),
-                (Ids.Products.Steel, "B"),
-                (RecursiveIndustryIds.Products.ValidatedControlPackage, "C"))
+                (Ids.Products.Steel, "B"))
             .WithCommonOutputPorts((Ids.Products.ConstructionParts3, "X"))
             .BindTo(machine, constructionSeconds.Seconds());
 
@@ -99,8 +87,8 @@ internal sealed class AutonomousCapitalFabricationData : IModData
             .AddInput(192, Ids.Products.ConcreteSlab)
             .AddInput(128, Ids.Products.Electronics)
             .AddInput(
-                1,
-                RecursiveIndustryIds.Products.ValidatedControlPackage)
+                constructionSeconds,
+                RecursiveIndustryIds.Products.IndustrialControlStream)
             .AddOutput(64, Ids.Products.ConstructionParts3)
             .BuildAndAdd()
             .WithCommonInputPorts(
@@ -108,7 +96,7 @@ internal sealed class AutonomousCapitalFabricationData : IModData
                 (Ids.Products.Wood, "B"),
                 (Ids.Products.ConcreteSlab, "C"),
                 (Ids.Products.Electronics, "D"),
-                (RecursiveIndustryIds.Products.ValidatedControlPackage, "E"))
+                (RecursiveIndustryIds.Products.IndustrialControlStream, "E"))
             .WithCommonOutputPorts((Ids.Products.ConstructionParts3, "X"))
             .BindTo(machine, constructionSeconds.Seconds());
 
@@ -116,15 +104,11 @@ internal sealed class AutonomousCapitalFabricationData : IModData
             .Start(RecursiveIndustryIds.Recipes.FabricateVehicleParts)
             .AddInput(384, Ids.Products.MechanicalParts)
             .AddInput(128, Ids.Products.Electronics)
-            .AddInput(
-                1,
-                RecursiveIndustryIds.Products.ValidatedControlPackage)
             .AddOutput(256, Ids.Products.VehicleParts)
             .BuildAndAdd()
             .WithCommonInputPorts(
                 (Ids.Products.MechanicalParts, "A"),
-                (Ids.Products.Electronics, "B"),
-                (RecursiveIndustryIds.Products.ValidatedControlPackage, "C"))
+                (Ids.Products.Electronics, "B"))
             .WithCommonOutputPorts((Ids.Products.VehicleParts, "X"))
             .BindTo(machine, vehiclePartsSeconds.Seconds());
 
@@ -133,16 +117,12 @@ internal sealed class AutonomousCapitalFabricationData : IModData
             .AddInput(256, Ids.Products.VehicleParts)
             .AddInput(128, Ids.Products.Steel)
             .AddInput(64, Ids.Products.Glass)
-            .AddInput(
-                1,
-                RecursiveIndustryIds.Products.ValidatedControlPackage)
             .AddOutput(128, Ids.Products.VehicleParts2)
             .BuildAndAdd()
             .WithCommonInputPorts(
                 (Ids.Products.VehicleParts, "A"),
                 (Ids.Products.Steel, "B"),
-                (Ids.Products.Glass, "C"),
-                (RecursiveIndustryIds.Products.ValidatedControlPackage, "D"))
+                (Ids.Products.Glass, "C"))
             .WithCommonOutputPorts((Ids.Products.VehicleParts2, "X"))
             .BindTo(machine, vehicleParts2Seconds.Seconds());
 
@@ -153,15 +133,15 @@ internal sealed class AutonomousCapitalFabricationData : IModData
             .AddInput(64, Ids.Products.Electronics)
             .AddInput(32, Ids.Products.Glass)
             .AddInput(
-                1,
-                RecursiveIndustryIds.Products.ValidatedControlPackage)
+                vehicleParts2Seconds,
+                RecursiveIndustryIds.Products.IndustrialControlStream)
             .AddOutput(64, Ids.Products.VehicleParts2)
             .BuildAndAdd()
             .WithCommonInputPorts(
                 (Ids.Products.Steel, "A"),
                 (Ids.Products.Electronics, "B"),
                 (Ids.Products.Glass, "C"),
-                (RecursiveIndustryIds.Products.ValidatedControlPackage, "D"))
+                (RecursiveIndustryIds.Products.IndustrialControlStream, "E"))
             .WithCommonOutputPorts((Ids.Products.VehicleParts2, "X"))
             .BindTo(machine, vehicleParts2Seconds.Seconds());
     }

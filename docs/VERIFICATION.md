@@ -17,8 +17,9 @@ that code and arithmetic cannot establish.
 - 80 UI identities, bundle paths, hashes, dependencies, and compact-size proofs.
 
 `python tools/audit_recursive_industry_control_network.py` independently checks
-235 Direct bindings, 17 controlled compositions, 10 Fiber-free Precision modes,
-nine Data-port owners, both Gateway rows, the separate Assurance Campus, Fiber
+235 Direct bindings, 21 generated plus 3 authored controlled compositions, 10
+Fiber-free Precision modes, eleven Data-port owners, both Gateway rows, the
+separate Assurance Campus, Package-free physical manufacturing, Fiber
 declarations, registration order, research parenting, exact yield parity, and
 excluded runtime surfaces.
 

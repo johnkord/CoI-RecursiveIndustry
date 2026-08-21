@@ -21,9 +21,19 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
-- Seventeen Integrated chain-composition modes consume one Industrial Control
-  Stream per active second after material transport duration flooring. Ten
-  Precision efficiency modes remain Fiber-free and retain their 200% power cost.
+- Twenty-four cross-stage compositions consume one Industrial Control Stream per
+  active second. Twenty-one belong to the universal catalog; raw Electronics II
+  and integrated Construction Parts III and Vehicle Parts II remain on their
+  earlier specialist facilities. Ten Precision modes remain Fiber-free.
+- Removed recurring Package inputs from eighteen ordinary physical-manufacturing
+  rows across Electronics III, Microchips, Electronics II, capital fabrication,
+  and the Construction Nexus. Packages remain construction capital and recurring
+  inputs only where signed deployment, Focus, research, or orbital artifacts are
+  actually applied.
+- Added Stream-controlled raw Electronics III and Lab Equipment II, III, and IV
+  compositions. They cancel their transported lower tiers, preserve exact source
+  vectors, run at 200% power, and leave Electronics IV as a practical partially
+  integrated endpoint rather than collapsing every advanced domain.
 - Backbone deployment converts 2 Packages into 420 Stream/60s, preserving the
   local row's exact 210 Stream-per-Package yield while allowing one Gateway to
   serve seven Backbone consumers.
@@ -45,7 +55,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Added the registered `Electronics3Assembly` recipe to the Precision Components
   Fab as the 235th Fiber-free Direct binding. The external recipe export names
   the same Assembly V row `Electronics3AssemblyRoboticT2`.
-- Corrected facility-wide typed port planning for four logical eight-input
+- Corrected facility-wide typed port planning for five logical eight-input
   owners. They retain the seven-row Chemical Plant II shell and place one input
   on an unused right-edge row; recipe vectors and ownership are unchanged.
 - Removed redundant 64-Program and 8-Dossier conditions from Federated
@@ -56,8 +66,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Compatibility
 
-- Version 0.20.0a changes nine megafacility layouts and twelve composition recipe
-  inputs. Migration from pre-release saves is not yet supported; start a new
+- Version 0.20.0a changes eleven facility layouts and twenty-four composition
+  recipe inputs. Migration from pre-release saves is not yet supported; start a new
   campaign for this candidate.
 
 ## [0.19.0d] - 2026-08-16

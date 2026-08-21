@@ -715,13 +715,45 @@ internal static class UniversalIndustryCatalog
             powerMultiplierPercent: 200,
             sources: new[] { new UniversalSourceRecipeSpec("UraniumLeaching", 2), new UniversalSourceRecipeSpec("UraniumEnrichment", 2), new UniversalSourceRecipeSpec("UraniumRodsAssembly", 1) }),
         new UniversalIntegratedRecipeSpec(
+            RecursiveIndustryIds.Recipes.IntegratedElectronics3,
+            "Integrated Electronics III",
+            "precision_components_fab",
+            batchScale: 1,
+            durationSeconds: 120,
+            powerMultiplierPercent: 200,
+            sources: new[] { new UniversalSourceRecipeSpec("ElectronicsAssembly", 4), new UniversalSourceRecipeSpec("PCBAssembly", 6), new UniversalSourceRecipeSpec("Electronics2Assembly", 12), new UniversalSourceRecipeSpec("Electronics3Assembly", 12) }),
+        new UniversalIntegratedRecipeSpec(
             RecursiveIndustryIds.Recipes.IntegratedElectronics4,
             "Integrated Precision Electronics IV",
             "precision_components_fab",
             batchScale: 4,
             durationSeconds: 120,
             powerMultiplierPercent: 200,
-            sources: new[] { new UniversalSourceRecipeSpec("Electronics3Assembly", 3), new UniversalSourceRecipeSpec("LensMaking", 4), new UniversalSourceRecipeSpec("Electronics4Assembly", 2) })
+            sources: new[] { new UniversalSourceRecipeSpec("Electronics3Assembly", 3), new UniversalSourceRecipeSpec("LensMaking", 4), new UniversalSourceRecipeSpec("Electronics4Assembly", 2) }),
+        new UniversalIntegratedRecipeSpec(
+            RecursiveIndustryIds.Recipes.IntegratedLabEquipment2,
+            "Integrated Lab Equipment II",
+            "general_manufacturing_fab",
+            batchScale: 1,
+            durationSeconds: 120,
+            powerMultiplierPercent: 200,
+            sources: new[] { new UniversalSourceRecipeSpec("LabEquipment1Assembly", 15), new UniversalSourceRecipeSpec("LabEquipment2Assembly", 30) }),
+        new UniversalIntegratedRecipeSpec(
+            RecursiveIndustryIds.Recipes.IntegratedLabEquipment3,
+            "Integrated Lab Equipment III",
+            "general_manufacturing_fab",
+            batchScale: 1,
+            durationSeconds: 120,
+            powerMultiplierPercent: 200,
+            sources: new[] { new UniversalSourceRecipeSpec("LabEquipment1Assembly", 15), new UniversalSourceRecipeSpec("LabEquipment2Assembly", 30), new UniversalSourceRecipeSpec("LabEquipment3Assembly", 30) }),
+        new UniversalIntegratedRecipeSpec(
+            RecursiveIndustryIds.Recipes.IntegratedLabEquipment4,
+            "Integrated Lab Equipment IV",
+            "general_manufacturing_fab",
+            batchScale: 1,
+            durationSeconds: 180,
+            powerMultiplierPercent: 200,
+            sources: new[] { new UniversalSourceRecipeSpec("LabEquipment1Assembly", 16), new UniversalSourceRecipeSpec("LabEquipment2Assembly", 32), new UniversalSourceRecipeSpec("LabEquipment3Assembly", 32), new UniversalSourceRecipeSpec("LabEquipment4Assembly", 24) })
     };
 
     public static readonly UniversalPrecisionRecipeSpec[] PrecisionRecipes =

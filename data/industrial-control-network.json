@@ -193,6 +193,9 @@
   "consumer_contract": {
     "stream_units_per_active_second": 1,
     "stream_units_per_active_minute": 60,
+    "universal_catalog_recipe_count": 21,
+    "authored_legacy_recipe_count": 3,
+    "concurrent_demand_basis": "one active recipe per owner",
     "minimum_transport_tier": "access_fiber",
     "recipes": [
       {
@@ -412,6 +415,20 @@
         ]
       },
       {
+        "key": "integrated_electronics3",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedElectronics3",
+        "mode": "integrated",
+        "owner_key": "precision_components_fab",
+        "effective_duration_seconds": 120,
+        "stream_quantity": 120,
+        "power_multiplier_percent": 200,
+        "cancelled_intermediates": [
+          "Electronics",
+          "PCB",
+          "Electronics II"
+        ]
+      },
+      {
         "key": "integrated_electronics4",
         "stable_id": "Recipe_RecursiveIndustry_IntegratedElectronics4",
         "mode": "integrated",
@@ -421,6 +438,84 @@
         "cancelled_intermediates": [
           "Electronics III",
           "Lens"
+        ]
+      },
+      {
+        "key": "integrated_lab_equipment2",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedLabEquipment2",
+        "mode": "integrated",
+        "owner_key": "general_manufacturing_fab",
+        "effective_duration_seconds": 120,
+        "stream_quantity": 120,
+        "power_multiplier_percent": 200,
+        "cancelled_intermediates": [
+          "Lab Equipment"
+        ]
+      },
+      {
+        "key": "integrated_lab_equipment3",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedLabEquipment3",
+        "mode": "integrated",
+        "owner_key": "general_manufacturing_fab",
+        "effective_duration_seconds": 120,
+        "stream_quantity": 120,
+        "power_multiplier_percent": 200,
+        "cancelled_intermediates": [
+          "Lab Equipment",
+          "Lab Equipment II"
+        ]
+      },
+      {
+        "key": "integrated_lab_equipment4",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedLabEquipment4",
+        "mode": "integrated",
+        "owner_key": "general_manufacturing_fab",
+        "effective_duration_seconds": 180,
+        "stream_quantity": 180,
+        "power_multiplier_percent": 200,
+        "cancelled_intermediates": [
+          "Lab Equipment",
+          "Lab Equipment II",
+          "Lab Equipment III"
+        ]
+      },
+      {
+        "key": "integrated_electronics2",
+        "stable_id": "Recipe_RecursiveIndustry_IntegrateElectronics2Direct",
+        "mode": "integrated",
+        "owner_key": "autonomous_electronics_integration_complex",
+        "effective_duration_seconds": 120,
+        "stream_quantity": 120,
+        "power_multiplier_percent": 200,
+        "cancelled_intermediates": [
+          "Electronics",
+          "PCB"
+        ]
+      },
+      {
+        "key": "integrated_construction_parts3",
+        "stable_id": "Recipe_RecursiveIndustry_IntegrateConstructionParts3",
+        "mode": "integrated",
+        "owner_key": "autonomous_capital_fabrication_matrix",
+        "effective_duration_seconds": 80,
+        "stream_quantity": 80,
+        "power_multiplier_percent": 200,
+        "cancelled_intermediates": [
+          "Construction Parts",
+          "Construction Parts II"
+        ]
+      },
+      {
+        "key": "integrated_vehicle_parts2",
+        "stable_id": "Recipe_RecursiveIndustry_IntegrateVehicleParts2",
+        "mode": "integrated",
+        "owner_key": "autonomous_capital_fabrication_matrix",
+        "effective_duration_seconds": 128,
+        "stream_quantity": 128,
+        "power_multiplier_percent": 150,
+        "cancelled_intermediates": [
+          "Mechanical Parts",
+          "Vehicle Parts"
         ]
       }
     ]
@@ -617,6 +712,24 @@
       "output_ports": 4,
       "physical_layout_rows": 7,
       "right_side_input_ports": 1
+    },
+    {
+      "key": "autonomous_electronics_integration_complex",
+      "catalog_facility": false,
+      "material_input_ports": 5,
+      "input_ports_with_data": 6,
+      "output_ports": 1,
+      "physical_layout_rows": 7,
+      "right_side_input_ports": 0
+    },
+    {
+      "key": "autonomous_capital_fabrication_matrix",
+      "catalog_facility": false,
+      "material_input_ports": 4,
+      "input_ports_with_data": 5,
+      "output_ports": 1,
+      "physical_layout_rows": 5,
+      "right_side_input_ports": 0
     }
   ],
   "direct_contract": {
@@ -683,6 +796,9 @@
       "RecursiveIndustry_IndustrialControlStream",
       "RecursiveIndustry_ControlDeploymentGateway",
       "RecursiveIndustry_DeployIndustrialControl",
+      "RecursiveIndustry_IntegrateElectronics2Direct",
+      "RecursiveIndustry_IntegrateConstructionParts3",
+      "RecursiveIndustry_IntegrateVehicleParts2",
       "RecursiveIndustry_AccessFiber",
       "RecursiveIndustry_BackboneFiber",
       "RecursiveIndustry_FiberJunction"
@@ -719,50 +835,52 @@
     ]
   },
   "capacity_closure": {
-    "optimized_owner_count": 9,
-    "all_owner_demand_per_minute": 540,
-    "minimum_gateway_count": 3,
+    "optimized_owner_count": 11,
+    "all_owner_demand_per_minute": 660,
+    "minimum_gateway_count": 4,
     "federated_gateway_count": 2,
-    "steady_state_packages_per_hour": "1080/7",
-    "unconstrained_gateway_packages_per_hour": 180,
+    "steady_state_packages_per_hour": "1320/7",
+    "unconstrained_gateway_packages_per_hour": 240,
     "validator_capacity_packages_per_hour": 160,
     "access_supported_facilities": 3,
     "access_spare_per_minute": 20,
     "backbone_supported_facilities": 7,
     "backbone_spare_per_minute": 30,
     "federated_topology": {
-      "backbone_gateway_count": 1,
-      "local_gateway_count": 1,
-      "backbone_consumers": 7,
-      "local_consumers": 2,
-      "output_capacity_per_minute": 630,
-      "packages_per_hour_at_full_output": 180,
-      "steady_state_packages_per_hour": "1080/7",
-      "power_mw": 14,
+      "backbone_gateway_count": 2,
+      "local_gateway_count": 0,
+      "backbone_consumers": 11,
+      "local_consumers": 0,
+      "output_capacity_per_minute": 840,
+      "transport_capacity_per_minute": 900,
+      "packages_per_hour_at_full_output": 240,
+      "steady_state_packages_per_hour": "1320/7",
+      "power_mw": 20,
       "computing": 512,
       "workers": 48,
       "maintenance_iii_per_month": 24
     },
     "local_only_topology": {
-      "gateway_count": 3,
-      "output_capacity_per_minute": 630,
-      "packages_per_hour_at_full_output": 180,
-      "steady_state_packages_per_hour": "1080/7",
-      "power_mw": 12,
-      "computing": 768,
-      "workers": 72,
-      "maintenance_iii_per_month": 36
+      "gateway_count": 4,
+      "output_capacity_per_minute": 840,
+      "transport_capacity_per_minute": 900,
+      "packages_per_hour_at_full_output": 240,
+      "steady_state_packages_per_hour": "1320/7",
+      "power_mw": 16,
+      "computing": 1024,
+      "workers": 96,
+      "maintenance_iii_per_month": 48
     },
     "package_scale_up": {
-      "selected_mature_core_packages_per_hour": "2457/4",
-      "industrial_control_packages_per_hour": "1080/7",
-      "mature_core_with_control_packages_per_hour": "21519/28",
-      "mature_core_with_control_standard_validators": 5,
-      "mature_core_with_control_dense_capacity_per_hour": 800,
+      "selected_mature_core_packages_per_hour": 408,
+      "industrial_control_packages_per_hour": "1320/7",
+      "mature_core_with_control_packages_per_hour": "4176/7",
+      "mature_core_with_control_standard_validators": 4,
+      "mature_core_with_control_dense_capacity_per_hour": 640,
       "planetary_center_packages_per_hour": 640,
-      "mature_core_center_control_packages_per_hour": "39439/28",
-      "mature_core_center_control_standard_validators": 9,
-      "mature_core_center_control_dense_capacity_per_hour": 1440
+      "mature_core_center_control_packages_per_hour": "8656/7",
+      "mature_core_center_control_standard_validators": 8,
+      "mature_core_center_control_dense_capacity_per_hour": 1280
     },
     "sensitivity": {
       "stream_per_package": [

@@ -48,13 +48,15 @@ Highlights
   Gateway that supplies live Industrial Control Stream.
 - Optional Federated Deployment adds a 420/minute Backbone Gateway row and a
   640-Packages/hour Deployment Assurance Campus without improving material yield.
-- Fiber-free Direct and Precision production. Seventeen Integrated chain recipes
-  consume 60 Industrial Control Stream per active minute; Precision pays only
-  through its 200% recipe power cost.
+- Fiber-free local, staged, Direct, Precision, and recovery production. Twenty-four
+  cross-stage compositions on eleven owners consume 60 Industrial Control Stream
+  per active minute; Precision pays only through its 200% recipe power cost.
 - Integrated Mechanical Parts supplies native Maintenance depots without
   replacing them. Integrated Crew Provisioning starts from Chicken Carcass;
   Chicken Farm remains separate.
 - Production-scale Electronics III on the late Precision Components Fab.
+- Raw Electronics III and Lab Equipment II through IV compositions, with ordinary
+  Electronics, Microchip, capital, and Nexus batches free of recurring Packages.
 - Directed refinery slates for Diesel, Fuel Gas and Hydrogen, deep Hydrogen,
   Plastic, and Rubber. They consume Stream, retain pollution and water outputs,
   and avoid Heavy, Medium, Light, and Naphtha output logistics.
@@ -70,10 +72,10 @@ Rack III. Precision modes preserve Direct output rate while reducing physical
 feedstock by 12.5% and doubling energy per output.
 
 Access Fiber supports three continuously optimized facilities. Backbone Fiber
-supports seven. The complete nine-owner reference network requires three
-local-mode Gateways or one Backbone-mode plus one local Gateway. Both consume
-approximately 154.29 Packages per hour under demand backpressure; the denser
-topology uses more power.
+supports seven. The complete eleven-owner reference network requires four
+local-mode Gateways or two Backbone-mode Gateways. Both consume approximately
+188.57 Packages per hour under demand backpressure; the denser topology uses more
+power but half the Gateway workers and Computing.
 
 The mod preserves conventional machines, material conservation, maintenance,
 validation, logistics, and selected human work. It does not place factories,

@@ -16,7 +16,7 @@ internal sealed class AutonomousMicrochipData : IModData
             .Start(
                 "Autonomous Microchip Complex",
                 RecursiveIndustryIds.Machines.AutonomousMicrochipComplex)
-            .Description("Integrates the complete twelve-stage microchip route into one lights-out fab that trades workers and footprint for extreme Computing, power, control validation, and concentrated inputs.")
+            .Description("Runs the native non-transported microchip stage family inside one lights-out cleanroom. Installed control replaces per-batch Packages; physical feedstocks, Computing, power, and maintenance remain.")
             .SetCost(
                 Costs.Build
                     .CP4(1440)
@@ -43,9 +43,6 @@ internal sealed class AutonomousMicrochipData : IModData
             .AddInput(32, Ids.Products.Water)
             .AddInput(24, Ids.Products.Gold)
             .AddInput(16, Ids.Products.Electronics2)
-            .AddInput(
-                1,
-                RecursiveIndustryIds.Products.ValidatedControlPackage)
             .AddOutput(48, Ids.Products.Microchips)
             .BuildAndAdd()
             .WithCommonInputPorts(
@@ -53,8 +50,7 @@ internal sealed class AutonomousMicrochipData : IModData
                 (Ids.Products.Acid, "D"),
                 (Ids.Products.Water, "E"),
                 (Ids.Products.Gold, "F"),
-                (Ids.Products.Electronics2, "B"),
-                (RecursiveIndustryIds.Products.ValidatedControlPackage, "C"))
+                (Ids.Products.Electronics2, "B"))
             .WithCommonOutputPorts((Ids.Products.Microchips, "X"))
             .BindTo(machine, durationSeconds.Seconds());
     }

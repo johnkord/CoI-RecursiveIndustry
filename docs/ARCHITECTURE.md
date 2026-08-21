@@ -19,14 +19,19 @@ Registration is divided into small `IModData` classes under
 - Multi-product recipes declare explicit common input and output port mappings.
 - Universal Direct rows bind existing `RecipeProto` identities instead of cloning
   hundreds of recipes.
-- Seventeen Integrated rows compose multiple source stages and cancel at least one
-  transported intermediate. They append Industrial Control Stream after resolving
-  their material transport duration.
+- Twenty-one generated Integrated rows compose multiple source stages and cancel
+  at least one transported intermediate. Three earlier authored compositions on
+  the Electronics Integration and Capital Fabrication facilities use the same
+  Stream contract, for twenty-four controlled recipes on eleven owners.
 - Integrated power defaults to 200%. The deeply collapsed Polymer and Elastomer
   refinery rows explicitly use 300% and 400%.
 - Ten Precision rows remain Fiber-free. They alter one source process for 12.5%
   lower feedstock per output at 200% recipe power.
 - Direct rows remain Fiber-free and preserve source recipe identity.
+- Packages commission autonomous capital and recur only for signed deployment,
+  Focus, research, and orbital artifacts. Ordinary physical production, including
+  local, staged, Precision, recovery, and Nexus rows, does not consume Packages
+  per batch.
 - Conventional source machines and recipes remain registered and usable.
 
 ## Data and Fiber
@@ -52,6 +57,11 @@ Deployment Assurance is a separate standard Machine, not a universal facility or
 Data owner. Its 720-second batch compresses four ordinary Package validators while
 preserving exact Model Archive, Lab Equipment IV, and Electronics III ratios.
 
+One owner consumes 60 Stream per active minute regardless of which controlled
+recipe it selects. The complete eleven-owner boundary therefore demands 660/min.
+Two Backbone Gateway rows provide 840/min over two 450/min Fiber paths. Recipe
+count never substitutes for concurrent owner count in capacity calculations.
+
 Stream never replaces special runtime families. Chicken Farm remains the source
 of Eggs and Chicken Carcass. Native Maintenance depots retain their virtual
 Maintenance output and hardcoded Computing behavior. Integrated Mechanical Parts
@@ -66,7 +76,7 @@ only collapses their upstream physical steel and assembly supply chain.
 `python tools/generate_recursive_industry_universal_source.py`, or regenerate with
 the `--write` flag. Registration
 fails closed if the catalog does not resolve exactly 19 facilities and 235 unique
-Direct bindings.
+Direct bindings, 21 Integrated compositions, and 10 Precision modes.
 
 At runtime, Direct binding quantities include the live source-machine multiplier.
 Transport duration is raised when necessary to keep each mapped highest-tier port
@@ -80,6 +90,8 @@ Primary Smelter, Food Pack, Nuclear Fuel, Precision Components, and General
 Manufacturing each need an eighth Data-inclusive input; they place one input on
 an otherwise unused right-edge row using Build 613's verified `<` input
 direction. Right-side outputs plus overflow inputs may never exceed seven.
+The two earlier authored owners use explicit Data ports in their existing layouts
+and are audited separately from this generated planner.
 
 ## Assets
 

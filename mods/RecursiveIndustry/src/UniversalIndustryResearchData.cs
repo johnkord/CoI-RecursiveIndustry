@@ -23,6 +23,12 @@ internal static class UniversalIndustryResearchData
                 RecursiveIndustryIds.Machines.ControlDeploymentGateway,
                 unlockAllRecipes: false)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.DeployIndustrialControl)
+            .AddRecipeToUnlock(
+                RecursiveIndustryIds.Recipes.IntegrateElectronics2Direct)
+            .AddRecipeToUnlock(
+                RecursiveIndustryIds.Recipes.IntegrateConstructionParts3)
+            .AddRecipeToUnlock(
+                RecursiveIndustryIds.Recipes.IntegrateVehicleParts2)
             .AddProtoToUnlock<TransportProto>(RecursiveIndustryIds.Infrastructure.AccessFiber)
             .AddProtoToUnlock<TransportProto>(RecursiveIndustryIds.Infrastructure.BackboneFiber)
             .AddLayoutEntityToUnlock(RecursiveIndustryIds.Infrastructure.FiberJunction)
@@ -152,11 +158,15 @@ internal static class UniversalIndustryResearchData
                 "Autonomous Advanced Manufacturing",
                 RecursiveIndustryIds.Research.AutonomousAdvancedManufacturing,
                 costMonths: 720)
-            .Description("Unlocks precision-component, general-manufacturing, and orbital fabs without duplicating existing Electronics Integration or Capital Fabrication recipe owners.")
+            .Description("Unlocks precision-component, general-manufacturing, and orbital fabs. New Stream compositions build Electronics III and Lab Equipment II through IV from their physical feedstocks without replacing the earlier Electronics Integration or Capital Fabrication owners.")
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.PrecisionComponentsFab)
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.GeneralManufacturingFab)
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.OrbitalFabricationFab)
+            .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedElectronics3)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedElectronics4)
+            .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedLabEquipment2)
+            .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedLabEquipment3)
+            .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedLabEquipment4)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedMechanicalParts)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.PrecisionElectronics4)
             .AddRequirementForLifetimeProduction(

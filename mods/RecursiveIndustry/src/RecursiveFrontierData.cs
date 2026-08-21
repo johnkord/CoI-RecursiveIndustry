@@ -156,15 +156,11 @@ internal sealed class RecursiveFrontierData : IModData
                 RecursiveIndustryIds.Recipes.ProduceRecursiveConstructionParts4)
             .AddInput(128, Ids.Products.ConstructionParts3)
             .AddInput(64, Ids.Products.Electronics2)
-            .AddInput(
-                1,
-                RecursiveIndustryIds.Products.ValidatedControlPackage)
             .AddOutput(64, Ids.Products.ConstructionParts4)
             .BuildAndAdd()
             .WithCommonInputPorts(
                 (Ids.Products.ConstructionParts3, "A"),
-                (Ids.Products.Electronics2, "B"),
-                (RecursiveIndustryIds.Products.ValidatedControlPackage, "C"))
+                (Ids.Products.Electronics2, "B"))
             .WithCommonOutputPorts((Ids.Products.ConstructionParts4, "X"))
             .BindTo(constructionNexus, constructionPartsSeconds.Seconds());
 
@@ -175,16 +171,12 @@ internal sealed class RecursiveFrontierData : IModData
             .AddInput(64, Ids.Products.Electronics2)
             .AddInput(
                 1,
-                RecursiveIndustryIds.Products.ValidatedControlPackage)
-            .AddInput(
-                1,
                 RecursiveIndustryIds.Products.ValidatedResearchDossier)
             .AddOutput(72, Ids.Products.ConstructionParts4)
             .BuildAndAdd()
             .WithCommonInputPorts(
                 (Ids.Products.ConstructionParts3, "A"),
                 (Ids.Products.Electronics2, "B"),
-                (RecursiveIndustryIds.Products.ValidatedControlPackage, "C"),
                 (RecursiveIndustryIds.Products.ValidatedResearchDossier, "D"))
             .WithCommonOutputPorts((Ids.Products.ConstructionParts4, "X"))
             .BindTo(constructionNexus, constructionTradeoffSeconds.Seconds());
@@ -193,16 +185,12 @@ internal sealed class RecursiveFrontierData : IModData
             .Start(RecursiveIndustryIds.Recipes.RecoverConstructionParts4)
             .AddInput(96, Ids.Products.ConstructionParts3)
             .AddInput(48, Ids.Products.Electronics2)
-            .AddInput(
-                1,
-                RecursiveIndustryIds.Products.ValidatedControlPackage)
             .AddInput(64, Ids.Products.Recyclables)
             .AddOutput(64, Ids.Products.ConstructionParts4)
             .BuildAndAdd()
             .WithCommonInputPorts(
                 (Ids.Products.ConstructionParts3, "A"),
                 (Ids.Products.Electronics2, "B"),
-                (RecursiveIndustryIds.Products.ValidatedControlPackage, "C"),
                 (Ids.Products.Recyclables, "E"))
             .WithCommonOutputPorts((Ids.Products.ConstructionParts4, "X"))
             .BindTo(constructionNexus, constructionTradeoffSeconds.Seconds());
@@ -212,15 +200,11 @@ internal sealed class RecursiveFrontierData : IModData
                 RecursiveIndustryIds.Recipes.ProduceRecursiveVehicleParts3)
             .AddInput(64, Ids.Products.VehicleParts2)
             .AddInput(16, Ids.Products.Electronics2)
-            .AddInput(
-                1,
-                RecursiveIndustryIds.Products.ValidatedControlPackage)
             .AddOutput(32, Ids.Products.VehicleParts3)
             .BuildAndAdd()
             .WithCommonInputPorts(
                 (Ids.Products.VehicleParts2, "A"),
-                (Ids.Products.Electronics2, "B"),
-                (RecursiveIndustryIds.Products.ValidatedControlPackage, "C"))
+                (Ids.Products.Electronics2, "B"))
             .WithCommonOutputPorts((Ids.Products.VehicleParts3, "X"))
             .BindTo(constructionNexus, vehiclePartsSeconds.Seconds());
 
@@ -230,16 +214,12 @@ internal sealed class RecursiveFrontierData : IModData
             .AddInput(16, Ids.Products.Electronics2)
             .AddInput(
                 1,
-                RecursiveIndustryIds.Products.ValidatedControlPackage)
-            .AddInput(
-                1,
                 RecursiveIndustryIds.Products.ValidatedResearchDossier)
             .AddOutput(36, Ids.Products.VehicleParts3)
             .BuildAndAdd()
             .WithCommonInputPorts(
                 (Ids.Products.VehicleParts2, "A"),
                 (Ids.Products.Electronics2, "B"),
-                (RecursiveIndustryIds.Products.ValidatedControlPackage, "C"),
                 (RecursiveIndustryIds.Products.ValidatedResearchDossier, "D"))
             .WithCommonOutputPorts((Ids.Products.VehicleParts3, "X"))
             .BindTo(constructionNexus, vehicleTradeoffSeconds.Seconds());
@@ -248,16 +228,12 @@ internal sealed class RecursiveFrontierData : IModData
             .Start(RecursiveIndustryIds.Recipes.RecoverVehicleParts3)
             .AddInput(48, Ids.Products.VehicleParts2)
             .AddInput(12, Ids.Products.Electronics2)
-            .AddInput(
-                1,
-                RecursiveIndustryIds.Products.ValidatedControlPackage)
             .AddInput(32, Ids.Products.Recyclables)
             .AddOutput(32, Ids.Products.VehicleParts3)
             .BuildAndAdd()
             .WithCommonInputPorts(
                 (Ids.Products.VehicleParts2, "A"),
                 (Ids.Products.Electronics2, "B"),
-                (RecursiveIndustryIds.Products.ValidatedControlPackage, "C"),
                 (Ids.Products.Recyclables, "E"))
             .WithCommonOutputPorts((Ids.Products.VehicleParts3, "X"))
             .BindTo(constructionNexus, vehicleTradeoffSeconds.Seconds());

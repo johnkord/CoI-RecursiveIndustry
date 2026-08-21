@@ -17,12 +17,12 @@ internal sealed class AIElectronicsCellData : IModData
 
         var machine = registrator.MachineProtoBuilder
             .Start("AI Electronics Cell", RecursiveIndustryIds.Machines.AIElectronicsCell)
-            .Description("Uses validated control packages and Computing to choose material-efficient or high-throughput Electronics III production.")
+            .Description("Uses installed validated control and Computing to choose material-efficient or high-throughput Electronics III production without consuming Packages per batch.")
             .SetCost(Costs.Build.CP4(120).Workers(8).MaintenanceT3(4))
             .SetElectricityConsumption(600.Kw())
             .SetComputingConsumption(Computing.FromTFlops(12))
             .SetCategories(Ids.ToolbarCategories.Production_General)
-            .SetLayout(VerticalSliceProofLayout.Create())
+            .SetLayout(VerticalSliceProofLayout.Create(includeThirdInput: false))
             .SetPrefabPath(VerticalSliceProofLayout.PrefabPath)
             .SetCustomIconPath(RecursiveIndustryIcons.AiElectronicsCell)
             .SetMachineSound(VerticalSliceProofLayout.SoundPath)
@@ -34,13 +34,11 @@ internal sealed class AIElectronicsCellData : IModData
             .Start(RecursiveIndustryIds.Recipes.PrecisionElectronics3)
             .AddInput(8, Ids.Products.Microchips)
             .AddInput(16, Ids.Products.Electronics2)
-            .AddInput(1, RecursiveIndustryIds.Products.ValidatedControlPackage)
             .AddOutput(12, Ids.Products.Electronics3)
             .BuildAndAdd()
             .WithCommonInputPorts(
                 (Ids.Products.Microchips, "A"),
-                (Ids.Products.Electronics2, "B"),
-                (RecursiveIndustryIds.Products.ValidatedControlPackage, "C"))
+                (Ids.Products.Electronics2, "B"))
             .BindTo(machine, precisionSeconds.Seconds());
 
         registrator.RecipeProtoBuilder
@@ -48,14 +46,12 @@ internal sealed class AIElectronicsCellData : IModData
             .SetPowerMultiplier(150.Percent())
             .AddInput(6, Ids.Products.Microchips)
             .AddInput(24, Ids.Products.Electronics2)
-            .AddInput(1, RecursiveIndustryIds.Products.ValidatedControlPackage)
             .AddOutput(12, Ids.Products.Electronics3)
             .AddOutput(4, Ids.Products.Waste)
             .BuildAndAdd()
             .WithCommonInputPorts(
                 (Ids.Products.Microchips, "A"),
-                (Ids.Products.Electronics2, "B"),
-                (RecursiveIndustryIds.Products.ValidatedControlPackage, "C"))
+                (Ids.Products.Electronics2, "B"))
             .WithCommonOutputPorts(
                 (Ids.Products.Electronics3, "X"),
                 (Ids.Products.Waste, "Z"))
