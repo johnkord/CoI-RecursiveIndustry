@@ -19,8 +19,43 @@ Registration is divided into small `IModData` classes under
 - Multi-product recipes declare explicit common input and output port mappings.
 - Universal Direct rows bind existing `RecipeProto` identities instead of cloning
   hundreds of recipes.
-- Integrated and Precision rows are the only twenty authored universal recipe IDs.
+- Seventeen Integrated rows compose multiple source stages and cancel at least one
+  transported intermediate. They append Industrial Control Stream after resolving
+  their material transport duration.
+- Integrated power defaults to 200%. The deeply collapsed Polymer and Elastomer
+  refinery rows explicitly use 300% and 400%.
+- Ten Precision rows remain Fiber-free. They alter one source process for 12.5%
+  lower feedstock per output at 200% recipe power.
+- Direct rows remain Fiber-free and preserve source recipe identity.
 - Conventional source machines and recipes remain registered and usable.
+
+## Data and Fiber
+
+`DataProductProto` is a direct `ProductProto` subclass with a distinct product
+type. Industrial Control Stream is non-storable, non-discardable, non-recyclable,
+and accepted only by the custom `:` port shape.
+
+Access Fiber clones Pipe II movement and carries 200 units per 60 seconds.
+Backbone Fiber clones Pipe III movement and carries 450. Both disable mixed
+products, render no transported cargo, and use per-product coloring. Access is
+the lower tier and upgrades to Backbone. The Fiber Junction uses the standard
+four-way `MiniZipperProto` path.
+
+The Control Deployment Gateway is a standard Machine. Its local row converts one
+countable Validated Control Package into 210 Stream over 60 seconds. Federated
+Deployment unlocks a 250%-power Backbone row that converts two Packages into 420
+Stream over the same duration. Both preserve 210 Stream per Package. No service,
+patch, packet graph, automatic recipe switch, or custom saved runtime state
+participates in production.
+
+Deployment Assurance is a separate standard Machine, not a universal facility or
+Data owner. Its 720-second batch compresses four ordinary Package validators while
+preserving exact Model Archive, Lab Equipment IV, and Electronics III ratios.
+
+Stream never replaces special runtime families. Chicken Farm remains the source
+of Eggs and Chicken Carcass. Native Maintenance depots retain their virtual
+Maintenance output and hardcoded Computing behavior. Integrated Mechanical Parts
+only collapses their upstream physical steel and assembly supply chain.
 
 ## Universal catalog
 
@@ -30,7 +65,7 @@ Registration is divided into small `IModData` classes under
 `data/universal-industry-catalog.json`. Check parity with
 `python tools/generate_recursive_industry_universal_source.py`, or regenerate with
 the `--write` flag. Registration
-fails closed if the catalog does not resolve exactly 19 facilities and 234 unique
+fails closed if the catalog does not resolve exactly 19 facilities and 235 unique
 Direct bindings.
 
 At runtime, Direct binding quantities include the live source-machine multiplier.
@@ -38,13 +73,22 @@ Transport duration is raised when necessary to keep each mapped highest-tier por
 within the game transport ceiling. Facility power is the greater of the authored
 envelope and 125% of four-source-machine equivalent power.
 
+Port planning is facility-wide and type-aware. For each product kind, it takes
+the maximum simultaneous product count across every row, then sums those maxima.
+The seven-row Chemical Plant II shell carries up to seven inputs on its left edge.
+Primary Smelter, Food Pack, Nuclear Fuel, Precision Components, and General
+Manufacturing each need an eighth Data-inclusive input; they place one input on
+an otherwise unused right-edge row using Build 613's verified `<` input
+direction. Right-side outputs plus overflow inputs may never exceed seven.
+
 ## Assets
 
 The player package contains three dependency-free bundles:
 
 - `producticons_84e1`: eight Foundation product UI icons.
 - `cartridge_c874`: one shared cartridge mesh, eight albedos, and shared PBR maps.
-- `uiicons_5287`: later products, entities, vehicles, trains, and policies.
+- `uiicons_5287`: 80 later products, entities, vehicles, trains, policies, and
+  Industrial Control identities.
 
 Original source art is under `art/RecursiveIndustry/`. Runtime code references
 compatible game prefabs by path but does not redistribute those assets.

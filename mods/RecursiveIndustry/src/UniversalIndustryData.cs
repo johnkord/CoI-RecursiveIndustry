@@ -17,11 +17,19 @@ internal sealed class UniversalIndustryData : IModData
     public void RegisterData(ProtoRegistrator registrator)
     {
         var directByRecipe = ResolveDirectBindings(registrator.PrototypesDb);
+        DataProductProto industrialControlStream = registrator.PrototypesDb
+            .GetOrThrow<DataProductProto>(
+                RecursiveIndustryIds.Products.IndustrialControlStream);
         var integrated = UniversalIndustryCatalog.IntegratedRecipes
-            .Select(spec => new ResolvedCustomRecipe(spec, Compose(spec, directByRecipe)))
+            .Select(spec => ResolveIntegratedRecipe(
+                spec,
+                directByRecipe,
+                industrialControlStream))
             .ToArray();
         var precision = UniversalIndustryCatalog.PrecisionRecipes
-            .Select(spec => new ResolvedCustomRecipe(spec, BuildPrecision(spec, directByRecipe)))
+            .Select(spec => ResolvePrecisionRecipe(
+                spec,
+                directByRecipe))
             .ToArray();
 
         int directCount = 0;
@@ -54,14 +62,14 @@ internal sealed class UniversalIndustryData : IModData
 
             foreach (ResolvedCustomRecipe recipe in custom)
             {
-                RegisterCustomRecipe(registrator, machine, recipe, ports, directByRecipe);
+                RegisterCustomRecipe(registrator, machine, recipe, ports);
             }
         }
 
-        if (directCount != 234)
+        if (directCount != 235)
         {
             throw new InvalidOperationException(
-                $"Universal Industry expected 234 direct bindings, registered {directCount}.");
+                $"Universal Industry expected 235 direct bindings, registered {directCount}.");
         }
         Log.Info(
             "RecursiveIndustry: Universal Industry registered "
@@ -113,6 +121,76 @@ internal sealed class UniversalIndustryData : IModData
         }
         throw new InvalidOperationException(
             $"Recipe '{recipe.Id}' is not bound to declared source machine '{machine.Id}'.");
+    }
+
+    private static ResolvedCustomRecipe ResolveIntegratedRecipe(
+        UniversalIntegratedRecipeSpec spec,
+        IReadOnlyDictionary<string, ResolvedDirectBinding> directByRecipe,
+        DataProductProto industrialControlStream)
+    {
+        RecipeVector materialVector = Compose(spec, directByRecipe);
+        Duration effectiveDuration = ResolveEffectiveDuration(
+            materialVector,
+            spec.DurationSeconds.Seconds());
+        return new ResolvedCustomRecipe(
+            spec,
+            AppendIndustrialControlInput(
+                materialVector,
+                industrialControlStream,
+                effectiveDuration),
+            effectiveDuration);
+    }
+
+    private static ResolvedCustomRecipe ResolvePrecisionRecipe(
+        UniversalPrecisionRecipeSpec spec,
+        IReadOnlyDictionary<string, ResolvedDirectBinding> directByRecipe)
+    {
+        RecipeVector materialVector = BuildPrecision(spec, directByRecipe);
+        Duration nominalDuration =
+            directByRecipe[spec.SourceRecipeId].SourceBinding.Duration * 2;
+        Duration effectiveDuration = ResolveEffectiveDuration(
+            materialVector,
+            nominalDuration);
+        return new ResolvedCustomRecipe(
+            spec,
+            materialVector,
+            effectiveDuration);
+    }
+
+    private static Duration ResolveEffectiveDuration(
+        RecipeVector materialVector,
+        Duration nominalDuration)
+    {
+        Duration materialTransportFloor = GetMaterialTransportDurationFloor(
+            materialVector,
+            multiplier: 1);
+        return nominalDuration < materialTransportFloor
+            ? materialTransportFloor
+            : nominalDuration;
+    }
+
+    private static RecipeVector AppendIndustrialControlInput(
+        RecipeVector materialVector,
+        DataProductProto industrialControlStream,
+        Duration effectiveDuration)
+    {
+        int streamQuantity = checked(effectiveDuration.SecondsFloored);
+        if (streamQuantity <= 0)
+        {
+            throw new InvalidOperationException(
+                "Industrial Control Stream quantity must be positive.");
+        }
+        return new RecipeVector(
+            materialVector.Inputs
+                .Concat(new[]
+                {
+                    new ProductAmount(
+                        industrialControlStream,
+                        streamQuantity,
+                        false),
+                })
+                .ToArray(),
+            materialVector.Outputs);
     }
 
     private static RecipeVector Compose(
@@ -262,7 +340,9 @@ internal sealed class UniversalIndustryData : IModData
             + " source_equivalent_power_kw=" + sourceEquivalentPowerKw
             + " maintenance=" + machine.Costs.Maintenance
             + " exact_same_tier_maintenance=" + exactMaintenance
-            + " layout_rows=" + ports.RequiredRows
+            + " logical_port_rows=" + ports.RequiredRows
+            + " layout_rows=" + ports.LayoutRows.Length
+            + " right_side_inputs=" + ports.RightSideInputPorts
             + " presentation=" + (useChemicalPlantBasis ? "chemical_plant_ii" : "assembly_v"));
         return machine;
     }
@@ -303,23 +383,27 @@ internal sealed class UniversalIndustryData : IModData
         ProtoRegistrator registrator,
         MachineProto machine,
         ResolvedCustomRecipe resolved,
-        UniversalPortPlan ports,
-        IReadOnlyDictionary<string, ResolvedDirectBinding> directByRecipe)
+        UniversalPortPlan ports)
     {
         RecipeProto.ID id;
         string name;
-        Duration duration;
+        string description;
+        int powerMultiplierPercent;
         if (resolved.Spec is UniversalIntegratedRecipeSpec integrated)
         {
             id = integrated.Id;
             name = integrated.Name;
-            duration = integrated.DurationSeconds.Seconds();
+            description = name
+                + ". Cross-stage composition requiring continuous Industrial Control Stream.";
+            powerMultiplierPercent = integrated.PowerMultiplierPercent;
         }
         else if (resolved.Spec is UniversalPrecisionRecipeSpec precision)
         {
             id = precision.Id;
             name = precision.Name;
-            duration = directByRecipe[precision.SourceRecipeId].SourceBinding.Duration * 2;
+            description = name
+                + ". Fiber-free high-power process optimization using 12.5% less feedstock per output.";
+            powerMultiplierPercent = 200;
         }
         else
         {
@@ -328,7 +412,7 @@ internal sealed class UniversalIndustryData : IModData
 
         RecipeProtoBuilder.State builder = registrator.RecipeProtoBuilder
             .Start(id)
-            .Description(name + ". High-power validated industrial optimization.");
+            .Description(description);
         foreach (ProductAmount input in resolved.Vector.Inputs)
         {
             builder.AddInput(input.Product, new Quantity(input.Quantity));
@@ -341,10 +425,17 @@ internal sealed class UniversalIndustryData : IModData
                 triggerAtStart: output.TriggerAtStart);
         }
         RecipeProto recipe = builder
-            .SetPowerMultiplier(200.Percent())
+            .SetPowerMultiplier(powerMultiplierPercent.Percent())
             .BuildAndAdd()
             .Recipe;
-        Bind(recipe, machine, duration, 1, null, resolved.Vector, ports);
+        Bind(
+            recipe,
+            machine,
+            resolved.EffectiveDuration,
+            1,
+            null,
+            resolved.Vector,
+            ports);
     }
 
     private static void Bind(
@@ -356,7 +447,15 @@ internal sealed class UniversalIndustryData : IModData
         RecipeVector vector,
         UniversalPortPlan ports)
     {
-        Duration transportFloor = GetTransportDurationFloor(vector, multiplier);
+        Duration materialTransportFloor = GetMaterialTransportDurationFloor(
+            vector,
+            multiplier);
+        Duration dataTransportFloor = GetDataTransportDurationFloor(
+            vector,
+            multiplier);
+        Duration transportFloor = materialTransportFloor < dataTransportFloor
+            ? dataTransportFloor
+            : materialTransportFloor;
         if (duration < transportFloor)
         {
             Log.Info(
@@ -372,7 +471,9 @@ internal sealed class UniversalIndustryData : IModData
             .BindTo(machine, duration, multiplier, minPartialUtilization);
     }
 
-    private static Duration GetTransportDurationFloor(RecipeVector vector, int multiplier)
+    private static Duration GetMaterialTransportDurationFloor(
+        RecipeVector vector,
+        int multiplier)
     {
         int requiredSeconds = 0;
         foreach (ProductAmount amount in vector.Inputs.Concat(vector.Outputs))
@@ -396,6 +497,23 @@ internal sealed class UniversalIndustryData : IModData
                 continue;
             }
             requiredSeconds = Math.Max(requiredSeconds, seconds);
+        }
+        return requiredSeconds.Seconds();
+    }
+
+    private static Duration GetDataTransportDurationFloor(
+        RecipeVector vector,
+        int multiplier)
+    {
+        int requiredSeconds = 0;
+        foreach (ProductAmount amount in vector.Inputs.Concat(vector.Outputs))
+        {
+            if (amount.Product is DataProductProto)
+            {
+                int quantity = checked(amount.Quantity * multiplier);
+                int seconds = CeilDiv(checked(quantity * 3), 10);
+                requiredSeconds = Math.Max(requiredSeconds, seconds);
+            }
         }
         return requiredSeconds.Seconds();
     }
@@ -426,15 +544,20 @@ internal sealed class UniversalIndustryData : IModData
     {
         public readonly object Spec;
         public readonly RecipeVector Vector;
+        public readonly Duration EffectiveDuration;
 
         public string MachineKey => Spec is UniversalIntegratedRecipeSpec integrated
             ? integrated.MachineKey
             : ((UniversalPrecisionRecipeSpec)Spec).MachineKey;
 
-        public ResolvedCustomRecipe(object spec, RecipeVector vector)
+        public ResolvedCustomRecipe(
+            object spec,
+            RecipeVector vector,
+            Duration effectiveDuration)
         {
             Spec = spec;
             Vector = vector;
+            EffectiveDuration = effectiveDuration;
         }
     }
 
@@ -508,7 +631,7 @@ internal sealed class UniversalIndustryData : IModData
     private sealed class UniversalPortPlan
     {
         private const string Names = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        private static readonly char[] KindOrder = { '#', '~', '\'', '@' };
+        private static readonly char[] KindOrder = { '#', '~', '\'', '@', ':' };
 
         private readonly Dictionary<char, string[]> m_inputPorts;
         private readonly Dictionary<char, string[]> m_outputPorts;
@@ -516,6 +639,7 @@ internal sealed class UniversalIndustryData : IModData
         public readonly string[] LayoutRows;
 
         public readonly int RequiredRows;
+        public readonly int RightSideInputPorts;
 
         private UniversalPortPlan(
             Dictionary<char, string[]> inputPorts,
@@ -528,6 +652,9 @@ internal sealed class UniversalIndustryData : IModData
             RequiredRows = Math.Max(
                 inputPorts.Values.Sum(names => names.Length),
                 outputPorts.Values.Sum(names => names.Length));
+            RightSideInputPorts = Math.Max(
+                0,
+                inputPorts.Values.Sum(names => names.Length) - layoutRows.Length);
         }
 
         public static UniversalPortPlan Create(IEnumerable<RecipeVector> vectors)
@@ -547,13 +674,17 @@ internal sealed class UniversalIndustryData : IModData
             var flatInputs = Flatten(inputs);
             var flatOutputs = Flatten(outputs);
             int rows = Math.Max(flatInputs.Count, flatOutputs.Count);
-            if (rows > 7)
-            {
-                throw new InvalidOperationException(
-                    $"Universal Industry layout needs {rows} port rows; Chemical Plant II supports 7.");
-            }
             bool useChemicalPlantBasis = rows > 5;
             int layoutRows = useChemicalPlantBasis ? 7 : Math.Max(rows, 5);
+            int rightSideInputs = Math.Max(0, flatInputs.Count - layoutRows);
+            if (flatOutputs.Count + rightSideInputs > layoutRows)
+            {
+                throw new InvalidOperationException(
+                    "Universal Industry layout needs " + flatOutputs.Count
+                    + " output and " + rightSideInputs
+                    + " right-side input edge slots; Chemical Plant II supports "
+                    + layoutRows + ".");
+            }
             string body = useChemicalPlantBasis
                 ? "[7][7][7][6][5][5][5]"
                 : "[4][4][4][4][4][4]";
@@ -563,10 +694,19 @@ internal sealed class UniversalIndustryData : IModData
                 string input = index < flatInputs.Count
                     ? flatInputs[index].name + flatInputs[index].kind + ">"
                     : "   ";
-                string output = index < flatOutputs.Count
-                    ? ">" + flatOutputs[index].kind + flatOutputs[index].name
-                    : "   ";
-                layout[index] = input + body + output;
+                string rightPort;
+                if (index < flatOutputs.Count)
+                {
+                    rightPort = ">" + flatOutputs[index].kind + flatOutputs[index].name;
+                }
+                else
+                {
+                    int rightInputIndex = layoutRows + index - flatOutputs.Count;
+                    rightPort = rightInputIndex < flatInputs.Count
+                        ? "<" + flatInputs[rightInputIndex].kind + flatInputs[rightInputIndex].name
+                        : "   ";
+                }
+                layout[index] = input + body + rightPort;
             }
             return new UniversalPortPlan(inputs, outputs, layout);
         }
@@ -665,6 +805,11 @@ internal sealed class UniversalIndustryData : IModData
             {
                 kind = default;
                 return false;
+            }
+            if (product is DataProductProto)
+            {
+                kind = ':';
+                return true;
             }
             if (product is CountableProductProto)
             {

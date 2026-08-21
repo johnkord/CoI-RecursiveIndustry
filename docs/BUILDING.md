@@ -26,12 +26,22 @@ Never copy those assemblies into this repository.
 ## Offline validation
 
 ```powershell
+python tools/audit_recursive_industry_control_network.py
 python tools/validate_public_repo.py
 python tools/generate_recursive_industry_universal_source.py
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
 This check requires no game installation and runs in public CI.
+
+After changing UI icon declarations or the generator, run
+`tools/generate_recursive_industry_ui_icons.ps1`, rebuild `uiicons_5287` with
+Unity 6000.0.66f1, then freeze the checked bundle metadata:
+
+```powershell
+python tools/freeze_recursive_industry_ui_icons.py --generated-date YYYY-MM-DD
+python tools/validate_public_repo.py
+```
 
 ## Compile
 

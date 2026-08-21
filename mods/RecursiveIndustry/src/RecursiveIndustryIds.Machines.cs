@@ -53,5 +53,11 @@ public static partial class RecursiveIndustryIds
 
         public static readonly MachineID AutonomousConstructionNexus =
             Ids.Machines.CreateId("RecursiveIndustry_AutonomousConstructionNexus");
+
+        public static readonly MachineID ControlDeploymentGateway =
+            Ids.Machines.CreateId("RecursiveIndustry_ControlDeploymentGateway");
+
+        public static readonly MachineID DeploymentAssuranceCampus =
+            Ids.Machines.CreateId("RecursiveIndustry_DeploymentAssuranceCampus");
     }
 }

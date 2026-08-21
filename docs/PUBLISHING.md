@@ -16,6 +16,10 @@ GitHub pre-release `v0.19.0d` is the current ordinary-playtesting candidate:
 Version 0.19.0c remains immutable superseded history. Do not replace either
 asset. Any further fix creates a new version, tag, and release asset.
 
+The working source is version 0.20.0a. It is not a hosted release until its exact
+source commit, deterministic ZIP, migration classification, and integrated
+Industrial Control evidence are bound. Never replace the 0.19.0d asset with it.
+
 ## Repository metadata
 
 **Repository:** `johnkord/CoI-RecursiveIndustry`
@@ -65,7 +69,9 @@ map, Endgame.
 > nuclear fuel, and advanced manufacturing.
 >
 > Choose conventional production or high-capital Direct, Integrated, and
-> Precision routes. Efficient production spends more power rather than erasing
+> Precision routes. Direct operation remains local and Fiber-free; optimized
+> modes reserve live Industrial Control Stream over Access or Backbone Fiber.
+> Efficient production spends more power rather than erasing
 > costs: raw materials, electricity, Computing, maintenance, logistics,
 > validation, and selected human work remain part of the planning problem.
 >
@@ -106,6 +112,7 @@ Do not use sandbox-only compositions as the only gameplay media.
 
    ```powershell
    python tools/generate_recursive_industry_universal_source.py
+  python tools/audit_recursive_industry_control_network.py
    python tools/validate_public_repo.py
    python -m unittest discover -s tests -p "test_*.py"
    dotnet build mods/RecursiveIndustry/RecursiveIndustry.csproj -c Release `

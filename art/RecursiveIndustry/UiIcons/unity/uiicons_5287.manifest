@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.66f1
-CRC: 2745060646
+CRC: 3378853088
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 7b56c09af79a665019c8831e02867de7
+    Hash: 80f388f6f0de32be1873d9e7be98bf8d
   TypeTreeHash:
     serializedVersion: 2
     Hash: 9f349c36d7a6532f767333f9299b3e74
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 7dd3a3d2b9d002100ebbda0156cbbb37
+    Hash: 70f3d207ae51792036b726d77f4f1534
 HashAppended: 0
 ClassTypes:
 - Class: 28
@@ -34,6 +34,7 @@ Assets:
 - Assets/RecursiveIndustry/UiIcons/frontier_project_complex.png
 - Assets/RecursiveIndustry/UiIcons/planetary_extraction.png
 - Assets/RecursiveIndustry/UiIcons/contract_coordination.png
+- Assets/RecursiveIndustry/UiIcons/deployment_assurance_campus.png
 - Assets/RecursiveIndustry/UiIcons/recursive_integration_array.png
 - Assets/RecursiveIndustry/UiIcons/autonomous_tank_hauler.png
 - Assets/RecursiveIndustry/UiIcons/precision_components_fab.png
@@ -41,6 +42,7 @@ Assets:
 - Assets/RecursiveIndustry/UiIcons/experiment_program.png
 - Assets/RecursiveIndustry/UiIcons/water_utility.png
 - Assets/RecursiveIndustry/UiIcons/autonomous_capital_fabrication_matrix.png
+- Assets/RecursiveIndustry/UiIcons/fiber_junction.png
 - Assets/RecursiveIndustry/UiIcons/autonomous_steam_locomotive_ii.png
 - Assets/RecursiveIndustry/UiIcons/autonomous_captains_locomotive.png
 - Assets/RecursiveIndustry/UiIcons/model_development_center.png
@@ -49,9 +51,11 @@ Assets:
 - Assets/RecursiveIndustry/UiIcons/autonomous_hydrogen_locomotive_i.png
 - Assets/RecursiveIndustry/UiIcons/autonomous_steam_locomotive_i.png
 - Assets/RecursiveIndustry/UiIcons/general_manufacturing_fab.png
+- Assets/RecursiveIndustry/UiIcons/backbone_fiber.png
 - Assets/RecursiveIndustry/UiIcons/orbital_lift_coordination.png
-- Assets/RecursiveIndustry/UiIcons/pilot_science_complex.png
+- Assets/RecursiveIndustry/UiIcons/access_fiber.png
 - Assets/RecursiveIndustry/UiIcons/autonomous_electronics_integration_complex.png
+- Assets/RecursiveIndustry/UiIcons/pilot_science_complex.png
 - Assets/RecursiveIndustry/UiIcons/curation_office.png
 - Assets/RecursiveIndustry/UiIcons/fleet_optimization.png
 - Assets/RecursiveIndustry/UiIcons/autonomous_nuclear_locomotive_condenser.png
@@ -77,9 +81,11 @@ Assets:
 - Assets/RecursiveIndustry/UiIcons/ai_operations_i.png
 - Assets/RecursiveIndustry/UiIcons/autonomous_large_tree_harvester.png
 - Assets/RecursiveIndustry/UiIcons/food_processing_campus.png
-- Assets/RecursiveIndustry/UiIcons/autonomous_dump_hauler.png
+- Assets/RecursiveIndustry/UiIcons/control_deployment_gateway.png
 - Assets/RecursiveIndustry/UiIcons/autonomous_microchip_complex.png
 - Assets/RecursiveIndustry/UiIcons/orbital_mission_complex.png
+- Assets/RecursiveIndustry/UiIcons/industrial_control_stream.png
+- Assets/RecursiveIndustry/UiIcons/autonomous_dump_hauler.png
 - Assets/RecursiveIndustry/UiIcons/mineral_products_works.png
 - Assets/RecursiveIndustry/UiIcons/electronics_reclaimer.png
 - Assets/RecursiveIndustry/UiIcons/predictive_maintenance.png

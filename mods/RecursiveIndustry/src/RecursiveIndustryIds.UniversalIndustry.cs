@@ -75,8 +75,26 @@ public static partial class RecursiveIndustryIds
         public static readonly RecipeID IntegratedSteel =
             Ids.Recipes.CreateId("RecursiveIndustry_IntegratedSteel");
 
+        public static readonly RecipeID IntegratedMechanicalParts =
+            Ids.Recipes.CreateId("RecursiveIndustry_IntegratedMechanicalParts");
+
         public static readonly RecipeID IntegratedRefinery =
             Ids.Recipes.CreateId("RecursiveIndustry_IntegratedRefinery");
+
+        public static readonly RecipeID IntegratedRefineryDiesel =
+            Ids.Recipes.CreateId("RecursiveIndustry_IntegratedRefineryDiesel");
+
+        public static readonly RecipeID IntegratedRefineryGas =
+            Ids.Recipes.CreateId("RecursiveIndustry_IntegratedRefineryGas");
+
+        public static readonly RecipeID IntegratedRefineryHydrogen =
+            Ids.Recipes.CreateId("RecursiveIndustry_IntegratedRefineryHydrogen");
+
+        public static readonly RecipeID IntegratedRefineryPlastic =
+            Ids.Recipes.CreateId("RecursiveIndustry_IntegratedRefineryPlastic");
+
+        public static readonly RecipeID IntegratedRefineryRubber =
+            Ids.Recipes.CreateId("RecursiveIndustry_IntegratedRefineryRubber");
 
         public static readonly RecipeID IntegratedFertilizer =
             Ids.Recipes.CreateId("RecursiveIndustry_IntegratedFertilizer");
@@ -86,6 +104,9 @@ public static partial class RecursiveIndustryIds
 
         public static readonly RecipeID IntegratedFoodPackMeat =
             Ids.Recipes.CreateId("RecursiveIndustry_IntegratedFoodPackMeat");
+
+        public static readonly RecipeID IntegratedCrewSupplies =
+            Ids.Recipes.CreateId("RecursiveIndustry_IntegratedCrewSupplies");
 
         public static readonly RecipeID IntegratedFoodPackTofu =
             Ids.Recipes.CreateId("RecursiveIndustry_IntegratedFoodPackTofu");

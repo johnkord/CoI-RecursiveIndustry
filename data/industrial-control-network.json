@@ -1,0 +1,790 @@
+{
+  "schema_version": 1,
+  "candidate_version": "0.20.0a",
+  "game": {
+    "display_version": "0.8.7",
+    "build": 613
+  },
+  "product": {
+    "registration_id": "RecursiveIndustry_IndustrialControlStream",
+    "stable_id": "Product_RecursiveIndustry_IndustrialControlStream",
+    "display_name": "Industrial Control Stream",
+    "class": "DataProductProto",
+    "product_type": "DataProductProto.ProductType",
+    "quantity_formatter": "NoUnitsQuantityFormatter.Instance",
+    "storable": false,
+    "discardable": false,
+    "waste": false,
+    "recyclable": false
+  },
+  "infrastructure": {
+    "port_shape": {
+      "registration_id": "RecursiveIndustry_Data",
+      "stable_id": "IoPortShape_RecursiveIndustry_Data",
+      "layout_character": ":",
+      "allowed_product_type": "DataProductProto.ProductType"
+    },
+    "transports": [
+      {
+        "key": "access_fiber",
+        "registration_id": "RecursiveIndustry_AccessFiber",
+        "stable_id": "Transport_RecursiveIndustry_AccessFiber",
+        "capacity_per_60_seconds": 200,
+        "mechanical_source": "Pipe II"
+      },
+      {
+        "key": "backbone_fiber",
+        "registration_id": "RecursiveIndustry_BackboneFiber",
+        "stable_id": "Transport_RecursiveIndustry_BackboneFiber",
+        "capacity_per_60_seconds": 450,
+        "mechanical_source": "Pipe III"
+      }
+    ],
+    "junction": {
+      "registration_id": "RecursiveIndustry_FiberJunction",
+      "stable_id": "LayoutEntity_RecursiveIndustry_FiberJunction",
+      "mechanical_source": "four-way MiniZipperProto"
+    },
+    "allow_mixed_products": false,
+    "tier_order": [
+      "access_fiber",
+      "backbone_fiber"
+    ]
+  },
+  "gateway": {
+    "machine": {
+      "registration_id": "RecursiveIndustry_ControlDeploymentGateway",
+      "stable_id": "Machine_RecursiveIndustry_ControlDeploymentGateway"
+    },
+    "recipe": {
+      "registration_id": "RecursiveIndustry_DeployIndustrialControl",
+      "stable_id": "Recipe_RecursiveIndustry_DeployIndustrialControl",
+      "input": {
+        "product_registration_id": "RecursiveIndustry_ValidatedControlPackage",
+        "quantity": 1
+      },
+      "output": {
+        "product_registration_id": "RecursiveIndustry_IndustrialControlStream",
+        "quantity": 210
+      },
+      "duration_seconds": 60
+    },
+    "backbone_recipe": {
+      "registration_id": "RecursiveIndustry_DeployBackboneIndustrialControl",
+      "stable_id": "Recipe_RecursiveIndustry_DeployBackboneIndustrialControl",
+      "input": {
+        "product_registration_id": "RecursiveIndustry_ValidatedControlPackage",
+        "quantity": 2
+      },
+      "output": {
+        "product_registration_id": "RecursiveIndustry_IndustrialControlStream",
+        "quantity": 420
+      },
+      "duration_seconds": 60,
+      "power_multiplier_percent": 250,
+      "effective_power_mw": 10,
+      "required_transport_key": "backbone_fiber"
+    },
+    "power_mw": 4,
+    "computing": 256,
+    "workers": 24,
+    "maintenance": {
+      "product_key": "Maintenance3",
+      "quantity_per_month": 12
+    },
+    "construction": [
+      {
+        "product_key": "ConstructionParts4",
+        "quantity": 640
+      },
+      {
+        "product_key": "Electronics4",
+        "quantity": 128
+      },
+      {
+        "product_key": "ValidatedControlPackage",
+        "quantity": 32
+      },
+      {
+        "product_key": "FrontierProgram",
+        "quantity": 4
+      },
+      {
+        "product_key": "ValidatedResearchDossier",
+        "quantity": 4
+      }
+    ],
+    "input_port_kind": "countable",
+    "output_port_kind": "data"
+  },
+  "deployment_assurance": {
+    "machine": {
+      "registration_id": "RecursiveIndustry_DeploymentAssuranceCampus",
+      "stable_id": "Machine_RecursiveIndustry_DeploymentAssuranceCampus"
+    },
+    "recipe": {
+      "registration_id": "RecursiveIndustry_BatchDeploymentAssurance",
+      "stable_id": "Recipe_RecursiveIndustry_BatchDeploymentAssurance",
+      "inputs": [
+        {
+          "product_key": "ModelArchive",
+          "quantity": 16
+        },
+        {
+          "product_key": "LabEquipment4",
+          "quantity": 32
+        },
+        {
+          "product_key": "Electronics3",
+          "quantity": 32
+        }
+      ],
+      "output": {
+        "product_key": "ValidatedControlPackage",
+        "quantity": 128
+      },
+      "duration_seconds": 720,
+      "packages_per_hour": 640
+    },
+    "power_mw": 4,
+    "computing": 256,
+    "workers": 48,
+    "maintenance": {
+      "product_key": "Maintenance3",
+      "quantity_per_month": 16
+    },
+    "construction": [
+      {
+        "product_key": "ConstructionParts4",
+        "quantity": 1200
+      },
+      {
+        "product_key": "Electronics4",
+        "quantity": 256
+      },
+      {
+        "product_key": "ValidatedControlPackage",
+        "quantity": 64
+      },
+      {
+        "product_key": "FrontierProgram",
+        "quantity": 16
+      },
+      {
+        "product_key": "ValidatedResearchDossier",
+        "quantity": 8
+      }
+    ],
+    "standard_validator_equivalence": {
+      "machine_count": 4,
+      "packages_per_hour": 640,
+      "model_archives_per_package": "1/8",
+      "lab_equipment_iv_per_package": "1/4",
+      "electronics_iii_per_package": "1/4",
+      "workers": 96,
+      "power_mw": "16/5",
+      "computing": 96,
+      "maintenance_iii_per_month": 20,
+      "construction_parts_iv": 640
+    },
+    "recurring_dossier_input": 0,
+    "design_role": "density and labor option, not material-yield upgrade"
+  },
+  "consumer_contract": {
+    "stream_units_per_active_second": 1,
+    "stream_units_per_active_minute": 60,
+    "minimum_transport_tier": "access_fiber",
+    "recipes": [
+      {
+        "key": "integrated_concrete",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedConcrete",
+        "mode": "integrated",
+        "owner_key": "mineral_products_works",
+        "effective_duration_seconds": 120,
+        "stream_quantity": 120,
+        "cancelled_intermediates": [
+          "Cement"
+        ]
+      },
+      {
+        "key": "integrated_steel",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedSteel",
+        "mode": "integrated",
+        "owner_key": "primary_smelter",
+        "effective_duration_seconds": 120,
+        "stream_quantity": 120,
+        "cancelled_intermediates": [
+          "Molten Iron",
+          "Molten Steel"
+        ]
+      },
+      {
+        "key": "integrated_mechanical_parts",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedMechanicalParts",
+        "mode": "integrated",
+        "owner_key": "general_manufacturing_fab",
+        "effective_duration_seconds": 120,
+        "stream_quantity": 120,
+        "cancelled_intermediates": [
+          "Molten Iron",
+          "Molten Steel",
+          "Steel"
+        ]
+      },
+      {
+        "key": "integrated_refinery",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedRefinery",
+        "mode": "integrated",
+        "owner_key": "refinery_complex",
+        "effective_duration_seconds": 120,
+        "stream_quantity": 120,
+        "power_multiplier_percent": 200,
+        "cancelled_intermediates": [
+          "Medium Oil",
+          "Light Oil"
+        ]
+      },
+      {
+        "key": "integrated_refinery_diesel",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedRefineryDiesel",
+        "mode": "integrated",
+        "owner_key": "refinery_complex",
+        "effective_duration_seconds": 120,
+        "stream_quantity": 120,
+        "power_multiplier_percent": 200,
+        "cancelled_intermediates": [
+          "Heavy Oil",
+          "Medium Oil",
+          "Light Oil",
+          "Naphtha",
+          "Fuel Gas"
+        ]
+      },
+      {
+        "key": "integrated_refinery_gas",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedRefineryGas",
+        "mode": "integrated",
+        "owner_key": "refinery_complex",
+        "effective_duration_seconds": 120,
+        "stream_quantity": 120,
+        "power_multiplier_percent": 200,
+        "cancelled_intermediates": [
+          "Heavy Oil",
+          "Medium Oil",
+          "Light Oil",
+          "Diesel",
+          "Naphtha"
+        ]
+      },
+      {
+        "key": "integrated_refinery_hydrogen",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedRefineryHydrogen",
+        "mode": "integrated",
+        "owner_key": "refinery_complex",
+        "effective_duration_seconds": 120,
+        "stream_quantity": 120,
+        "power_multiplier_percent": 200,
+        "cancelled_intermediates": [
+          "Heavy Oil",
+          "Medium Oil",
+          "Light Oil",
+          "Diesel",
+          "Naphtha",
+          "Fuel Gas"
+        ]
+      },
+      {
+        "key": "integrated_refinery_plastic",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedRefineryPlastic",
+        "mode": "integrated",
+        "owner_key": "refinery_complex",
+        "effective_duration_seconds": 60,
+        "stream_quantity": 60,
+        "power_multiplier_percent": 300,
+        "cancelled_intermediates": [
+          "Heavy Oil",
+          "Medium Oil",
+          "Light Oil",
+          "Diesel",
+          "Naphtha"
+        ]
+      },
+      {
+        "key": "integrated_refinery_rubber",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedRefineryRubber",
+        "mode": "integrated",
+        "owner_key": "refinery_complex",
+        "effective_duration_seconds": 120,
+        "stream_quantity": 120,
+        "power_multiplier_percent": 400,
+        "cancelled_intermediates": [
+          "Heavy Oil",
+          "Medium Oil",
+          "Light Oil",
+          "Diesel",
+          "Naphtha",
+          "Fuel Gas"
+        ]
+      },
+      {
+        "key": "integrated_fertilizer",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedFertilizer",
+        "mode": "integrated",
+        "owner_key": "gas_fertilizer_complex",
+        "effective_duration_seconds": 120,
+        "stream_quantity": 120,
+        "cancelled_intermediates": [
+          "Nitrogen",
+          "Ammonia"
+        ]
+      },
+      {
+        "key": "integrated_food_pack_eggs",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedFoodPackEggs",
+        "mode": "integrated",
+        "owner_key": "food_pack_campus",
+        "effective_duration_seconds": 120,
+        "stream_quantity": 120,
+        "cancelled_intermediates": [
+          "Flour",
+          "Bread"
+        ]
+      },
+      {
+        "key": "integrated_food_pack_meat",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedFoodPackMeat",
+        "mode": "integrated",
+        "owner_key": "food_pack_campus",
+        "effective_duration_seconds": 120,
+        "stream_quantity": 120,
+        "cancelled_intermediates": [
+          "Flour",
+          "Bread",
+          "Meat"
+        ]
+      },
+      {
+        "key": "integrated_crew_supplies",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedCrewSupplies",
+        "mode": "integrated",
+        "owner_key": "food_pack_campus",
+        "effective_duration_seconds": 150,
+        "stream_quantity": 150,
+        "cancelled_intermediates": [
+          "Flour",
+          "Bread",
+          "Meat",
+          "Food Pack"
+        ]
+      },
+      {
+        "key": "integrated_food_pack_tofu",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedFoodPackTofu",
+        "mode": "integrated",
+        "owner_key": "food_pack_campus",
+        "effective_duration_seconds": 240,
+        "stream_quantity": 240,
+        "cancelled_intermediates": [
+          "Tofu"
+        ]
+      },
+      {
+        "key": "integrated_water_recovery",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedWaterRecovery",
+        "mode": "integrated",
+        "owner_key": "water_utility",
+        "effective_duration_seconds": 120,
+        "stream_quantity": 120,
+        "cancelled_intermediates": [
+          "Sludge"
+        ]
+      },
+      {
+        "key": "integrated_uranium_rods",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedUraniumRods",
+        "mode": "integrated",
+        "owner_key": "nuclear_fuel_complex",
+        "effective_duration_seconds": 120,
+        "stream_quantity": 120,
+        "cancelled_intermediates": [
+          "Yellowcake",
+          "Enriched Uranium (4%)"
+        ]
+      },
+      {
+        "key": "integrated_electronics4",
+        "stable_id": "Recipe_RecursiveIndustry_IntegratedElectronics4",
+        "mode": "integrated",
+        "owner_key": "precision_components_fab",
+        "effective_duration_seconds": 120,
+        "stream_quantity": 120,
+        "cancelled_intermediates": [
+          "Electronics III",
+          "Lens"
+        ]
+      }
+    ]
+  },
+  "directed_refinery_contract": {
+    "owner_key": "refinery_complex",
+    "throughput_anchor": {
+      "direction": "input",
+      "product": "Crude Oil",
+      "source_recipe_id": "CrudeOilRefiningT1",
+      "multiplier": 2
+    },
+    "stream_units_per_active_minute": 60,
+    "forbidden_intermediate_outputs": [
+      "Heavy Oil",
+      "Medium Oil",
+      "Light Oil",
+      "Naphtha"
+    ],
+    "modes": [
+      {
+        "key": "integrated_refinery_diesel",
+        "duration_seconds": 120,
+        "stream_quantity": 120,
+        "power_multiplier_percent": 200,
+        "inputs": {
+          "Crude Oil": 240,
+          "Hydrogen": 54,
+          "Oxygen": 42,
+          "Steam (High)": 48
+        },
+        "outputs": {
+          "Diesel": 368,
+          "Sour Water": 72,
+          "Water": 14
+        }
+      },
+      {
+        "key": "integrated_refinery_gas",
+        "duration_seconds": 120,
+        "stream_quantity": 120,
+        "power_multiplier_percent": 200,
+        "inputs": {
+          "Crude Oil": 240,
+          "Steam (High)": 89
+        },
+        "outputs": {
+          "Fuel Gas": 372,
+          "Hydrogen": 74,
+          "Sour Water": 72
+        }
+      },
+      {
+        "key": "integrated_refinery_hydrogen",
+        "duration_seconds": 120,
+        "stream_quantity": 120,
+        "power_multiplier_percent": 200,
+        "inputs": {
+          "Crude Oil": 240,
+          "Steam (High)": 120
+        },
+        "outputs": {
+          "Carbon Dioxide": 372,
+          "Hydrogen": 508,
+          "Sour Water": 72
+        }
+      },
+      {
+        "key": "integrated_refinery_plastic",
+        "duration_seconds": 60,
+        "stream_quantity": 60,
+        "power_multiplier_percent": 300,
+        "inputs": {
+          "Chlorine": 92,
+          "Crude Oil": 120,
+          "Hydrogen": 9,
+          "Steam (High)": 33
+        },
+        "outputs": {
+          "Exhaust": 276,
+          "Fuel Gas": 48,
+          "Plastic": 414,
+          "Sour Water": 36
+        }
+      },
+      {
+        "key": "integrated_refinery_rubber",
+        "duration_seconds": 120,
+        "stream_quantity": 120,
+        "power_multiplier_percent": 400,
+        "inputs": {
+          "Crude Oil": 240,
+          "Hydrogen": 18,
+          "Oxygen": 30,
+          "Steam (High)": 48,
+          "Sulfur": 88
+        },
+        "outputs": {
+          "Rubber": 704,
+          "Sour Water": 72,
+          "Water": 10
+        }
+      }
+    ]
+  },
+  "precision_contract": {
+    "purpose": "high-power material efficiency within one source process",
+    "stream_inputs_per_recipe": 0,
+    "power_multiplier_percent": 200,
+    "input_per_output_ratio": "7/8 of Direct",
+    "throughput_vs_direct": "1/1",
+    "recipe_keys": [
+      "precision_cement",
+      "precision_steel",
+      "precision_fertilizer",
+      "precision_medical_supplies",
+      "precision_food_pack_eggs",
+      "precision_food_pack_meat",
+      "precision_food_pack_tofu",
+      "precision_water_recovery",
+      "precision_uranium_rods",
+      "precision_electronics4"
+    ]
+  },
+  "owners": [
+    {
+      "key": "mineral_products_works",
+      "material_input_ports": 6,
+      "input_ports_with_data": 7,
+      "output_ports": 3,
+      "physical_layout_rows": 7,
+      "right_side_input_ports": 0
+    },
+    {
+      "key": "primary_smelter",
+      "material_input_ports": 7,
+      "input_ports_with_data": 8,
+      "output_ports": 5,
+      "physical_layout_rows": 7,
+      "right_side_input_ports": 1
+    },
+    {
+      "key": "refinery_complex",
+      "material_input_ports": 5,
+      "input_ports_with_data": 6,
+      "output_ports": 7,
+      "physical_layout_rows": 7,
+      "right_side_input_ports": 0
+    },
+    {
+      "key": "gas_fertilizer_complex",
+      "material_input_ports": 5,
+      "input_ports_with_data": 6,
+      "output_ports": 5,
+      "physical_layout_rows": 7,
+      "right_side_input_ports": 0
+    },
+    {
+      "key": "food_pack_campus",
+      "material_input_ports": 7,
+      "input_ports_with_data": 8,
+      "output_ports": 4,
+      "physical_layout_rows": 7,
+      "right_side_input_ports": 1
+    },
+    {
+      "key": "water_utility",
+      "material_input_ports": 3,
+      "input_ports_with_data": 4,
+      "output_ports": 3,
+      "physical_layout_rows": 5,
+      "right_side_input_ports": 0
+    },
+    {
+      "key": "nuclear_fuel_complex",
+      "material_input_ports": 7,
+      "input_ports_with_data": 8,
+      "output_ports": 6,
+      "physical_layout_rows": 7,
+      "right_side_input_ports": 1
+    },
+    {
+      "key": "precision_components_fab",
+      "material_input_ports": 7,
+      "input_ports_with_data": 8,
+      "output_ports": 1,
+      "physical_layout_rows": 7,
+      "right_side_input_ports": 1
+    },
+    {
+      "key": "general_manufacturing_fab",
+      "material_input_ports": 7,
+      "input_ports_with_data": 8,
+      "output_ports": 4,
+      "physical_layout_rows": 7,
+      "right_side_input_ports": 1
+    }
+  ],
+  "direct_contract": {
+    "expected_binding_count": 235,
+    "stream_inputs_per_binding": 0,
+    "electronics_iii_binding": {
+      "recipe_id": "Electronics3Assembly",
+      "source_export_recipe_id": "Electronics3AssemblyRoboticT2",
+      "source_machine_id": "AssemblyRoboticT2",
+      "owner_key": "precision_components_fab",
+      "inputs": [
+        {
+          "product_key": "Microchips",
+          "quantity": 8
+        },
+        {
+          "product_key": "Electronics2",
+          "quantity": 16
+        }
+      ],
+      "outputs": [
+        {
+          "product_key": "Electronics3",
+          "quantity": 8
+        }
+      ],
+      "duration_seconds": 20,
+      "output_per_hour": 1440,
+      "representative_demand_per_hour": [
+        {
+          "consumer": "Electronics IV Fab",
+          "quantity": 1440
+        },
+        {
+          "consumer": "Server Fab",
+          "quantity": 1920
+        },
+        {
+          "consumer": "Lab Equipment IV Fab",
+          "quantity": 960
+        },
+        {
+          "consumer": "Maintenance III Depot",
+          "quantity": 360
+        },
+        {
+          "consumer": "Validated Control Package validator",
+          "quantity": 40
+        }
+      ]
+    }
+  },
+  "research": {
+    "registration_id": "RecursiveIndustry_IndustrialControlNetworks",
+    "display_name": "Industrial Control Networks",
+    "position": {
+      "x": 212,
+      "y": 24
+    },
+    "duration_months": 360,
+    "parent_registration_id": "RecursiveIndustry_RecursiveEpochV",
+    "requires_space_points": true,
+    "unlocks": [
+      "RecursiveIndustry_IndustrialControlStream",
+      "RecursiveIndustry_ControlDeploymentGateway",
+      "RecursiveIndustry_DeployIndustrialControl",
+      "RecursiveIndustry_AccessFiber",
+      "RecursiveIndustry_BackboneFiber",
+      "RecursiveIndustry_FiberJunction"
+    ],
+    "child_branch_keys": [
+      "autonomous_materials_systems",
+      "autonomous_process_systems",
+      "autonomous_essential_systems",
+      "autonomous_nuclear_operations",
+      "autonomous_advanced_manufacturing"
+    ]
+  },
+  "federated_deployment": {
+    "research_registration_id": "RecursiveIndustry_FederatedDeployment",
+    "display_name": "Federated Deployment",
+    "position": {
+      "x": 212,
+      "y": 30
+    },
+    "duration_months": 480,
+    "parent_registration_id": "RecursiveIndustry_IndustrialControlNetworks",
+    "requires_space_points": true,
+    "additional_lifetime_requirements": [],
+    "transitive_campaign_gate": {
+      "research_registration_id": "RecursiveIndustry_RecursiveEpochV",
+      "product_key": "FrontierProgram",
+      "quantity": 256,
+      "reason": "Industrial Control Networks already descends from Epoch V; repeating weaker lifetime conditions only blocks sandbox and migrated research states"
+    },
+    "unlocks": [
+      "RecursiveIndustry_DeploymentAssuranceCampus",
+      "RecursiveIndustry_BatchDeploymentAssurance",
+      "RecursiveIndustry_DeployBackboneIndustrialControl"
+    ]
+  },
+  "capacity_closure": {
+    "optimized_owner_count": 9,
+    "all_owner_demand_per_minute": 540,
+    "minimum_gateway_count": 3,
+    "federated_gateway_count": 2,
+    "steady_state_packages_per_hour": "1080/7",
+    "unconstrained_gateway_packages_per_hour": 180,
+    "validator_capacity_packages_per_hour": 160,
+    "access_supported_facilities": 3,
+    "access_spare_per_minute": 20,
+    "backbone_supported_facilities": 7,
+    "backbone_spare_per_minute": 30,
+    "federated_topology": {
+      "backbone_gateway_count": 1,
+      "local_gateway_count": 1,
+      "backbone_consumers": 7,
+      "local_consumers": 2,
+      "output_capacity_per_minute": 630,
+      "packages_per_hour_at_full_output": 180,
+      "steady_state_packages_per_hour": "1080/7",
+      "power_mw": 14,
+      "computing": 512,
+      "workers": 48,
+      "maintenance_iii_per_month": 24
+    },
+    "local_only_topology": {
+      "gateway_count": 3,
+      "output_capacity_per_minute": 630,
+      "packages_per_hour_at_full_output": 180,
+      "steady_state_packages_per_hour": "1080/7",
+      "power_mw": 12,
+      "computing": 768,
+      "workers": 72,
+      "maintenance_iii_per_month": 36
+    },
+    "package_scale_up": {
+      "selected_mature_core_packages_per_hour": "2457/4",
+      "industrial_control_packages_per_hour": "1080/7",
+      "mature_core_with_control_packages_per_hour": "21519/28",
+      "mature_core_with_control_standard_validators": 5,
+      "mature_core_with_control_dense_capacity_per_hour": 800,
+      "planetary_center_packages_per_hour": 640,
+      "mature_core_center_control_packages_per_hour": "39439/28",
+      "mature_core_center_control_standard_validators": 9,
+      "mature_core_center_control_dense_capacity_per_hour": 1440
+    },
+    "sensitivity": {
+      "stream_per_package": [
+        105,
+        210,
+        420
+      ],
+      "computing": [
+        128,
+        256
+      ],
+      "power_mw": [
+        2,
+        4
+      ]
+    }
+  },
+  "forbidden_runtime_surfaces": [
+    "automatic Direct fallback",
+    "reverse Stream learning recipe",
+    "generic packet service",
+    "Harmony",
+    "custom runtime state"
+  ]
+}

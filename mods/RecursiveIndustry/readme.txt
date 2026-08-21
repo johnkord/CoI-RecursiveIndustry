@@ -1,4 +1,4 @@
-Recursive Industry 0.19.0d pre-release
+Recursive Industry 0.20.0a pre-release candidate
 =====================================
 
 A Captain of Industry endgame mod about building a physical AI economy, from
@@ -19,8 +19,8 @@ Requirements
 - Supporter edition 1.1.0 or newer is optional.
 - Enable the mod when creating a new campaign. Adding it to or removing it from
   an existing normal save is unsupported.
-- Pre-release saves containing a placed Orbital Power Relay are incompatible;
-  remove it before upgrading or start a new campaign.
+- Pre-release migration into 0.20.0a is not supported. Existing megafacility
+  layouts and optimized recipe inputs changed; start a new campaign.
 
 Install
 -------
@@ -44,7 +44,20 @@ Highlights
 - Planetary coordination, orbital science and power, and two optional world
   contracts.
 - Nineteen high-power specialist megafacilities covering the physical economy.
-- Direct, Integrated, and Precision production choices without a low-power mode.
+- Data-only Access and Backbone Fiber, a Fiber Junction, and a Control Deployment
+  Gateway that supplies live Industrial Control Stream.
+- Optional Federated Deployment adds a 420/minute Backbone Gateway row and a
+  640-Packages/hour Deployment Assurance Campus without improving material yield.
+- Fiber-free Direct and Precision production. Seventeen Integrated chain recipes
+  consume 60 Industrial Control Stream per active minute; Precision pays only
+  through its 200% recipe power cost.
+- Integrated Mechanical Parts supplies native Maintenance depots without
+  replacing them. Integrated Crew Provisioning starts from Chicken Carcass;
+  Chicken Farm remains separate.
+- Production-scale Electronics III on the late Precision Components Fab.
+- Directed refinery slates for Diesel, Fuel Gas and Hydrogen, deep Hydrogen,
+  Plastic, and Rubber. They consume Stream, retain pollution and water outputs,
+  and avoid Heavy, Medium, Light, and Naphtha output logistics.
 - Frontier Projects that can accelerate future Programs or autonomous
   construction-capital production.
 
@@ -55,6 +68,12 @@ The universal portfolio requires 3,392 Computing, 1,024 commissioning Packages,
 and 415 MW of Direct process power. Ordinary branches need roughly three to four
 Rack III. Precision modes preserve Direct output rate while reducing physical
 feedstock by 12.5% and doubling energy per output.
+
+Access Fiber supports three continuously optimized facilities. Backbone Fiber
+supports seven. The complete nine-owner reference network requires three
+local-mode Gateways or one Backbone-mode plus one local Gateway. Both consume
+approximately 154.29 Packages per hour under demand backpressure; the denser
+topology uses more power.
 
 The mod preserves conventional machines, material conservation, maintenance,
 validation, logistics, and selected human work. It does not place factories,

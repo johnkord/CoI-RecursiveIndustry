@@ -15,8 +15,12 @@ sys.path.insert(0, str(ROOT / "tools"))
 from simulate_recursive_industry_economy import (  # noqa: E402
     CURRENT,
     SELECTED,
+    control_scenarios,
+    control_sensitivity_tournament,
     dossier_bank,
+    electronics_iii_balance,
     package_bank,
+    package_scale_scenarios,
     scenarios,
 )
 
@@ -75,7 +79,139 @@ class EconomyTests(unittest.TestCase):
         self.assertEqual(universal.rack_iii, 14)
         self.assertEqual(universal.rack_coolant, 140)
         self.assertEqual(universal.gross_power_mw, 436)
-        self.assertEqual(optimized.gross_power_mw, 658)
+        self.assertEqual(optimized.gross_power_mw, 736)
+
+    def test_directed_elastomer_sets_refinery_power_ceiling(self) -> None:
+        direct = {
+            result.scenario: result
+            for result in scenarios(SELECTED, orbital_power_closure=False)
+        }
+        self.assertEqual(
+            direct["all_universal_optimized"].gross_power_mw
+            - direct["all_universal_direct"].gross_power_mw,
+            300,
+        )
+
+    def test_control_topologies_have_exact_capacity_and_package_closure(self) -> None:
+        control = {result.scenario: result for result in control_scenarios()}
+        direct = control["no_control_direct"]
+        access = control["three_facility_access"]
+        backbone = control["seven_facility_backbone"]
+        federated_backbone = control["seven_facility_federated"]
+        all_nine = control["all_nine_optimized"]
+        federated_all_nine = control["all_nine_federated"]
+
+        self.assertEqual(direct.gateway_count, 0)
+        self.assertEqual(direct.stream_demand_per_minute, 0)
+        self.assertEqual(access.optimized_owner_count, 3)
+        self.assertEqual(access.gateway_count, 1)
+        self.assertEqual(access.transport_headroom_per_minute, 20)
+        self.assertEqual(backbone.optimized_owner_count, 7)
+        self.assertEqual(backbone.gateway_count, 2)
+        self.assertEqual(backbone.gateway_headroom_per_minute, 0)
+        self.assertEqual(backbone.transport_headroom_per_minute, 30)
+        self.assertEqual(federated_backbone.gateway_count, 1)
+        self.assertEqual(federated_backbone.local_gateway_count, 0)
+        self.assertEqual(federated_backbone.backbone_gateway_count, 1)
+        self.assertEqual(federated_backbone.stream_supply_per_minute, 420)
+        self.assertEqual(all_nine.optimized_owner_count, 9)
+        self.assertEqual(all_nine.gateway_count, 3)
+        self.assertEqual(all_nine.stream_demand_per_minute, 540)
+        self.assertEqual(all_nine.stream_supply_per_minute, 630)
+        self.assertEqual(all_nine.steady_state_packages_per_hour, Fraction(1080, 7))
+        self.assertEqual(all_nine.unconstrained_packages_per_hour, 180)
+        self.assertEqual(all_nine.support.package_validators, 1)
+        self.assertEqual(all_nine.support.package_model_centers, 1)
+        self.assertEqual(all_nine.support.package_curation_offices, 1)
+        self.assertEqual(all_nine.support.computing, 4208)
+        self.assertEqual(all_nine.support.rack_iii, 17)
+        self.assertEqual(all_nine.support.rack_coolant, 170)
+        self.assertEqual(all_nine.support.workers, 464)
+        self.assertEqual(all_nine.support.gross_maintenance_t3, 714)
+        self.assertEqual(federated_all_nine.gateway_count, 2)
+        self.assertEqual(federated_all_nine.local_gateway_count, 1)
+        self.assertEqual(federated_all_nine.backbone_gateway_count, 1)
+        self.assertEqual(federated_all_nine.stream_supply_per_minute, 630)
+        self.assertEqual(
+            federated_all_nine.steady_state_packages_per_hour,
+            all_nine.steady_state_packages_per_hour,
+        )
+        self.assertEqual(federated_all_nine.unconstrained_packages_per_hour, 180)
+        self.assertGreater(
+            federated_all_nine.support.gross_power_mw,
+            all_nine.support.gross_power_mw,
+        )
+        self.assertLess(federated_all_nine.support.workers, all_nine.support.workers)
+
+    def test_assurance_campus_compresses_bulk_and_retains_trim_line(self) -> None:
+        scale = {result.scenario: result for result in package_scale_scenarios()}
+        mature = scale["mature_core_with_control"]
+        center = scale["mature_core_center_control"]
+        self.assertEqual(mature.demand_per_hour, Fraction(21519, 28))
+        self.assertEqual(mature.standard_validators, 5)
+        self.assertEqual(mature.assurance_campuses, 1)
+        self.assertEqual(mature.trim_validators, 1)
+        self.assertEqual(mature.dense_capacity_per_hour, 800)
+        self.assertEqual(center.demand_per_hour, Fraction(39439, 28))
+        self.assertEqual(center.standard_validators, 9)
+        self.assertEqual(center.assurance_campuses, 2)
+        self.assertEqual(center.trim_validators, 1)
+        self.assertEqual(center.dense_capacity_per_hour, 1440)
+        for result in (mature, center):
+            self.assertEqual(
+                result.standard_capacity_per_hour,
+                result.dense_capacity_per_hour,
+            )
+            self.assertLess(result.dense_workers, result.standard_workers)
+            self.assertGreater(result.dense_power_mw, result.standard_power_mw)
+            self.assertGreater(result.dense_computing, result.standard_computing)
+            self.assertGreater(
+                result.dense_construction_parts_iv,
+                result.standard_construction_parts_iv,
+            )
+
+    def test_control_sensitivity_tournament_covers_all_selected_axes(self) -> None:
+        tournament = control_sensitivity_tournament()
+        self.assertEqual(len(tournament), 12)
+        self.assertEqual(
+            {
+                (
+                    result.stream_per_package,
+                    result.gateway_computing,
+                    result.gateway_power_mw,
+                )
+                for result in tournament
+            },
+            {
+                (stream, computing, power)
+                for stream in (105, 210, 420)
+                for computing in (128, 256)
+                for power in (2, 4)
+            },
+        )
+        selected = next(
+            result
+            for result in tournament
+            if (
+                result.stream_per_package,
+                result.gateway_computing,
+                result.gateway_power_mw,
+            ) == (210, 256, 4)
+        )
+        self.assertEqual(selected.gateway_count, 3)
+        self.assertEqual(selected.steady_state_packages_per_hour, Fraction(1080, 7))
+        self.assertEqual(selected.unconstrained_packages_per_hour, 180)
+        self.assertEqual(selected.support.package_validators, 1)
+
+    def test_electronics_three_supply_matches_representative_demand(self) -> None:
+        balance = electronics_iii_balance()
+        self.assertEqual(balance.representative_demand_per_hour, 4720)
+        self.assertEqual(balance.direct_fab_output_per_hour, 1440)
+        self.assertEqual(balance.required_direct_fabs, 4)
+        self.assertEqual(balance.direct_fab_capacity_per_hour, 5760)
+        self.assertEqual(balance.direct_fab_headroom_per_hour, 1040)
+        self.assertEqual(balance.required_assembly_v_lines, 14)
+        self.assertEqual(balance.required_throughput_cells, 7)
 
 
 if __name__ == "__main__":

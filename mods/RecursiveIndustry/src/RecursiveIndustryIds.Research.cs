@@ -69,5 +69,11 @@ public static partial class RecursiveIndustryIds
 
         public static readonly ResearchID RecursiveProjectEfficiency =
             Ids.Research.CreateId("RecursiveIndustry_RecursiveProjectEfficiency");
+
+        public static readonly ResearchID IndustrialControlNetworks =
+            Ids.Research.CreateId("RecursiveIndustry_IndustrialControlNetworks");
+
+        public static readonly ResearchID FederatedDeployment =
+            Ids.Research.CreateId("RecursiveIndustry_FederatedDeployment");
     }
 }

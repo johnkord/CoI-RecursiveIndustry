@@ -10,9 +10,9 @@ Recursive Industry is a Captain of Industry endgame mod about building a physica
 AI economy, from accelerator racks and validated models to autonomous industry,
 planetary coordination, and frontier-scale megaprojects.
 
-> **Development status:** Public playtest pre-release. Version 0.19.0d is available
-> for ordinary testing and feedback, but it is not stable 1.0. Integrated author
-> and independent final-candidate testing remain.
+> **Development status:** Version 0.20.0a is the unreleased Industrial Control
+> source candidate. The latest downloadable public playtest remains immutable
+> 0.19.0d. Integrated author and independent final-candidate testing remain.
 
 [Download Recursive Industry 0.19.0d Playtest](https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.19.0d)
 
@@ -35,6 +35,19 @@ Player ZIP SHA-256:
   chemistry, food, utilities, nuclear fuel, and advanced manufacturing.
 - Direct, Integrated, and Precision production choices. Precision preserves
   throughput while reducing feedstock by 12.5% at twice the energy per output.
+- A Data-only Fiber control plane. Direct production remains Fiber-free, while
+  seventeen Integrated chain-composition modes require live Industrial Control
+  Stream from Control Deployment Gateways. Precision efficiency remains
+  Fiber-free and pays through 200% recipe power.
+- Federated Deployment for endgame density: Backbone-rate Gateway operation and
+  a long-batch Assurance Campus preserve exact Package and Stream yields while
+  trading additional power, Computing, capital, and cadence for fewer buildings.
+- Five directed refinery slates convert crude into Diesel, Fuel Gas plus
+  Hydrogen, deep Hydrogen, Plastic, or Rubber without exporting Heavy, Medium,
+  or Light Oil or Naphtha. They retain Sour Water, CO2, Exhaust, Water, and gas
+  residuals and require continuous Stream.
+- A production-scale Electronics III Direct row on the late Precision Components
+  Fab.
 - A bounded reinvestment finale: Frontier Projects can accelerate future Programs
   or expand autonomous construction-capital production.
 
@@ -83,6 +96,7 @@ Run the public offline checks with:
 
 ```powershell
 python tools/validate_public_repo.py
+python tools/audit_recursive_industry_control_network.py
 python tools/generate_recursive_industry_universal_source.py
 python -m unittest discover -s tests -p "test_*.py"
 ```
@@ -93,6 +107,10 @@ Inspect the selected support economy or its terrestrial-grid counterfactual with
 python tools/simulate_recursive_industry_economy.py
 python tools/simulate_recursive_industry_economy.py --power-basis terrestrial
 ```
+
+The JSON report also includes six Industrial Control topologies, Package density
+comparators, the 12-point Gateway sensitivity tournament, and representative
+Electronics III supply closure.
 
 Game assemblies are referenced from `COI_ROOT` and must never be committed or
 redistributed.

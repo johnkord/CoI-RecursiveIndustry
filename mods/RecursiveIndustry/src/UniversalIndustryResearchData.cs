@@ -1,4 +1,5 @@
 using Mafi;
+using Mafi.Core.Factory.Transports;
 using Mafi.Core.Mods;
 using Mafi.Core.Research;
 
@@ -10,6 +11,43 @@ internal static class UniversalIndustryResearchData
         ProtoRegistrator registrator,
         ResearchNodeProto recursiveEpochV)
     {
+        ResearchNodeProto industrialControl = registrator.ResearchNodeProtoBuilder
+            .Start(
+                "Industrial Control Networks",
+                RecursiveIndustryIds.Research.IndustrialControlNetworks,
+                costMonths: 360)
+            .Description(
+                "Establishes a Data-only Fiber control plane for cross-stage Integrated production. Direct and Precision recipes retain local control and run without Fiber; Integrated compositions require continuous Industrial Control Stream from a Control Deployment Gateway.")
+            .AddProductToUnlock(RecursiveIndustryIds.Products.IndustrialControlStream)
+            .AddMachineToUnlock(
+                RecursiveIndustryIds.Machines.ControlDeploymentGateway,
+                unlockAllRecipes: false)
+            .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.DeployIndustrialControl)
+            .AddProtoToUnlock<TransportProto>(RecursiveIndustryIds.Infrastructure.AccessFiber)
+            .AddProtoToUnlock<TransportProto>(RecursiveIndustryIds.Infrastructure.BackboneFiber)
+            .AddLayoutEntityToUnlock(RecursiveIndustryIds.Infrastructure.FiberJunction)
+            .SetRequireSpacePoints()
+            .BuildAndAdd();
+        industrialControl.GridPosition = new Vector2i(212, 24);
+        industrialControl.AddParent(recursiveEpochV);
+
+        ResearchNodeProto federatedDeployment = registrator.ResearchNodeProtoBuilder
+            .Start(
+                "Federated Deployment",
+                RecursiveIndustryIds.Research.FederatedDeployment,
+                costMonths: 480)
+            .Description(
+                "Scales validated deployment without weakening assurance. A long-batch Campus compresses four standard validation lines, while Backbone deployment preserves 210 Stream per Package and trades power for Gateway density.")
+            .AddMachineToUnlock(
+                RecursiveIndustryIds.Machines.DeploymentAssuranceCampus,
+                unlockAllRecipes: true)
+            .AddRecipeToUnlock(
+                RecursiveIndustryIds.Recipes.DeployBackboneIndustrialControl)
+            .SetRequireSpacePoints()
+            .BuildAndAdd();
+        federatedDeployment.GridPosition = new Vector2i(212, 30);
+        federatedDeployment.AddParent(industrialControl);
+
         ResearchNodeProto materials = registrator.ResearchNodeProtoBuilder
             .Start(
                 "Autonomous Materials Systems",
@@ -30,7 +68,7 @@ internal static class UniversalIndustryResearchData
             .SetRequireSpacePoints()
             .BuildAndAdd();
         materials.GridPosition = new Vector2i(216, 22);
-        materials.AddParent(recursiveEpochV);
+        materials.AddParent(industrialControl);
 
         ResearchNodeProto process = registrator.ResearchNodeProtoBuilder
             .Start(
@@ -43,6 +81,11 @@ internal static class UniversalIndustryResearchData
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.MaterialsChemistryComplex)
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.MedicalChemistryComplex)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedRefinery)
+            .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedRefineryDiesel)
+            .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedRefineryGas)
+            .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedRefineryHydrogen)
+            .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedRefineryPlastic)
+            .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedRefineryRubber)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedFertilizer)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.PrecisionFertilizer)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.PrecisionMedicalSupplies)
@@ -52,7 +95,7 @@ internal static class UniversalIndustryResearchData
             .SetRequireSpacePoints()
             .BuildAndAdd();
         process.GridPosition = new Vector2i(216, 26);
-        process.AddParent(recursiveEpochV);
+        process.AddParent(industrialControl);
 
         ResearchNodeProto essential = registrator.ResearchNodeProtoBuilder
             .Start(
@@ -70,6 +113,7 @@ internal static class UniversalIndustryResearchData
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedFoodPackEggs)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedFoodPackMeat)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedFoodPackTofu)
+            .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedCrewSupplies)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedWaterRecovery)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.PrecisionFoodPackEggs)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.PrecisionFoodPackMeat)
@@ -81,7 +125,7 @@ internal static class UniversalIndustryResearchData
             .SetRequireSpacePoints()
             .BuildAndAdd();
         essential.GridPosition = new Vector2i(220, 22);
-        essential.AddParent(recursiveEpochV);
+        essential.AddParent(industrialControl);
 
         ResearchNodeProto nuclear = registrator.ResearchNodeProtoBuilder
             .Start(
@@ -101,7 +145,7 @@ internal static class UniversalIndustryResearchData
             .SetRequireSpacePoints()
             .BuildAndAdd();
         nuclear.GridPosition = new Vector2i(220, 26);
-        nuclear.AddParent(recursiveEpochV);
+        nuclear.AddParent(industrialControl);
 
         ResearchNodeProto advanced = registrator.ResearchNodeProtoBuilder
             .Start(
@@ -113,6 +157,7 @@ internal static class UniversalIndustryResearchData
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.GeneralManufacturingFab)
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.OrbitalFabricationFab)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedElectronics4)
+            .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedMechanicalParts)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.PrecisionElectronics4)
             .AddRequirementForLifetimeProduction(
                 RecursiveIndustryIds.Products.FrontierProgram,
@@ -120,6 +165,6 @@ internal static class UniversalIndustryResearchData
             .SetRequireSpacePoints()
             .BuildAndAdd();
         advanced.GridPosition = new Vector2i(224, 24);
-        advanced.AddParent(recursiveEpochV);
+        advanced.AddParent(industrialControl);
     }
 }

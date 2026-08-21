@@ -1,0 +1,1 @@
+var invalidFiber = new TransportProto(allowMixedProducts: true);

@@ -28,8 +28,8 @@ def load_catalog() -> dict[str, Any]:
     research = value.get("research_keys")
     if not isinstance(facilities, list) or len(facilities) != 19:
         raise ValueError("public catalog must contain 19 facilities")
-    if not isinstance(integrated, list) or len(integrated) != 10:
-        raise ValueError("public catalog must contain 10 Integrated recipes")
+    if not isinstance(integrated, list) or len(integrated) != 17:
+        raise ValueError("public catalog must contain 17 Integrated recipes")
     if not isinstance(precision, list) or len(precision) != 10:
         raise ValueError("public catalog must contain 10 Precision recipes")
     if not isinstance(research, list) or len(research) != 5:
@@ -42,8 +42,8 @@ def load_catalog() -> dict[str, Any]:
         for facility in facilities
         for binding in facility.get("direct_bindings", [])
     ]
-    if len(direct_ids) != 234 or len(set(direct_ids)) != 234:
-        raise ValueError("public catalog must contain 234 unique Direct bindings")
+    if len(direct_ids) != 235 or len(set(direct_ids)) != 235:
+        raise ValueError("public catalog must contain 235 unique Direct bindings")
     return value
 
 
@@ -182,6 +182,7 @@ def generate_integrated(data: dict[str, Any]) -> str:
             %s,
             batchScale: %d,
             durationSeconds: %d,
+            powerMultiplierPercent: %d,
             sources: new[] { %s })"""
             % (
                 pascal(recipe["key"]),
@@ -189,6 +190,7 @@ def generate_integrated(data: dict[str, Any]) -> str:
                 cs_string(recipe["machine"]),
                 recipe["batch_scale"],
                 recipe["duration_seconds"],
+                recipe.get("power_multiplier_percent", 200),
                 sources,
             )
         )

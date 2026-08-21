@@ -12,6 +12,11 @@ Use the exact GitHub pre-release:
 
 Do not use GitHub's automatic source-code archives as the player package.
 
+Version 0.20.0a is currently an unreleased source candidate. Do not substitute a
+local source archive for a source-bound player ZIP. Its integrated Industrial
+Control session begins only after build, package, migration, and private successor
+preflight gates pass.
+
 ## Install
 
 1. Exit Captain of Industry.
@@ -43,6 +48,16 @@ in one session. Useful reports explain:
 - whether a conventional machine remained a credible fallback;
 - whether any icon, port, model, or recipe row was confusing; and
 - whether ordinary operation required repeated manual intervention.
+
+For a future 0.20.0a package, also report whether Fiber topology is a meaningful
+planning choice, whether Access and Backbone are distinguishable, whether a cut
+is diagnosable, and whether Direct production remains understandable and useful
+without Fiber. Also report whether Backbone deployment earns its higher power
+cost, whether the Assurance Campus reduces repetition without making standard
+validators obsolete, and whether the Campus icon is distinct from the Gateway.
+For the Refinery Complex, report which product slate you chose, what demand drove
+that commitment, whether broad fractionation remained a credible fallback, and
+whether the Polymer or Elastomer power premium was understandable from normal UI.
 
 For crashes or registration failures, include:
 

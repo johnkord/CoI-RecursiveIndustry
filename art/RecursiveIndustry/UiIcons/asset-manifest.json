@@ -2,11 +2,12 @@
   "schema_version": 1,
   "generator": "Deterministic System.Drawing flat-symbol generator",
   "generator_path": "tools/generate_recursive_industry_ui_icons.ps1",
-  "generator_sha256": "D887BB08739DD3C047095DDD47C3E77C32D6877958CEAB12E75480DBD41A75B8",
-  "generated_date": "2026-08-15",
+  "generator_sha256": "C1D87EE3A6F7CF8532429F7231F04019B65C3AC8468B09A945FAEB073365693A",
+  "generated_date": "2026-08-20",
   "unity_version": "6000.0.66f1",
   "visual_review": {
-    "status": "PASS_AUTHOR_PROOF_REVIEW",
+    "status": "PASS_STATIC_PROOF_REVIEW",
+    "runtime_status": "OPEN_INTEGRATED_0.20.0A",
     "tested_sizes_px": [
       24,
       32,
@@ -18,24 +19,24 @@
     ],
     "size_proof": {
       "path": "art/RecursiveIndustry/UiIcons/proofs/all-ui-icons-size-proof.png",
-      "size_bytes": 474757,
-      "sha256": "A6E57AB1F8C0738BA42AC0C0B9035C368CC9BD1AD04F67C5DBBAE5E584FDFE8C"
+      "size_bytes": 508432,
+      "sha256": "5FB14B97FCDAA96CFDE464C7C6648F425220A20C0BF4DADACA6160B69E06A5B6"
     },
     "grayscale_proof": {
       "path": "art/RecursiveIndustry/UiIcons/proofs/all-ui-icons-grayscale-proof.png",
-      "size_bytes": 446750,
-      "sha256": "DF69AC867273C3635551584EA9F606D122DF3A195139E7A04EFF7C08A1BFB6DC"
+      "size_bytes": 478456,
+      "sha256": "0FBB4277DA8C2CB47802CE1211685541182C5EE1E214C0F7535AE4352A32C96A"
     }
   },
   "bundle": {
     "name": "uiicons_5287",
     "path": "mods/RecursiveIndustry/AssetBundles/uiicons_5287",
-    "size_bytes": 2062218,
-    "sha256": "37E1FFDAA29DD959FFA3812359354A5D0723FB9B2DA71529ED08F77D2613BBD2",
-    "crc": 2745060646,
+    "size_bytes": 2222338,
+    "sha256": "2A98D092BDD9AB9AFBBB0923D8650AF109B03F5673816A537EE788B1570EEB9D",
+    "crc": 3378853088,
     "dependencies": [],
     "unity_manifest": "art/RecursiveIndustry/UiIcons/unity/uiicons_5287.manifest",
-    "unity_manifest_sha256": "5A70200681691C816834CB4A6815CA975734B9E381E5D9A0F008789E51230CC1"
+    "unity_manifest_sha256": "2D269FD07E98D00E5E090E7A2E823C2BE2CCEC648FD90A66D96D5FBF448B0EA5"
   },
   "icons": [
     {
@@ -111,6 +112,96 @@
         "path": "art/RecursiveIndustry/UiIcons/exports/orbital_power_calibration.png",
         "size_bytes": 34431,
         "sha256": "2D8CD6BCBD9C1298F72685B41CD2BFA24D7BA028BFE9241F3EF287F13D552908"
+      }
+    },
+    {
+      "name": "industrial_control_stream",
+      "constant": "IndustrialControlStream",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/industrial_control_stream.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/industrial_control_stream-master.png",
+        "size_bytes": 25043,
+        "sha256": "3C6661496C387906A6D0D7DE147941F8E7C725403A59853D4311891AE4484605"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/industrial_control_stream.png",
+        "size_bytes": 19115,
+        "sha256": "9A70286F76539D2D7B177101A5A771442A0D74DA789A2A050DA6AF5335B3C055"
+      }
+    },
+    {
+      "name": "control_deployment_gateway",
+      "constant": "ControlDeploymentGateway",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/control_deployment_gateway.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/control_deployment_gateway-master.png",
+        "size_bytes": 38174,
+        "sha256": "019A625520AC12B5EC8D48CD10F2717E92AD5C0BDD588B5ABBE8C92EBCEEB7EF"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/control_deployment_gateway.png",
+        "size_bytes": 25312,
+        "sha256": "77AE2DED194080080A70BBEF5EACBA50F7FFD2FD7B217406E3A252B4FC6C1858"
+      }
+    },
+    {
+      "name": "deployment_assurance_campus",
+      "constant": "DeploymentAssuranceCampus",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/deployment_assurance_campus.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/deployment_assurance_campus-master.png",
+        "size_bytes": 37804,
+        "sha256": "64B78472F2706A11F50F8A50C07FC3B256A913F9E857E13CC32DB32D6E666143"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/deployment_assurance_campus.png",
+        "size_bytes": 24405,
+        "sha256": "2F449D005ED16153A6CD498D31D88AE159EC849D979AB04F31F1D28260D66F66"
+      }
+    },
+    {
+      "name": "access_fiber",
+      "constant": "AccessFiber",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/access_fiber.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/access_fiber-master.png",
+        "size_bytes": 19783,
+        "sha256": "77500AA8EA9648C525F78B6CFB30DE41BC07BB61AAF8403DB1F3A65266D317FA"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/access_fiber.png",
+        "size_bytes": 13208,
+        "sha256": "8843F72A7582F9E8F6DF323B17942E6CF18E5C07C3AAC4E9CD67C8E3979C4C2F"
+      }
+    },
+    {
+      "name": "backbone_fiber",
+      "constant": "BackboneFiber",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/backbone_fiber.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/backbone_fiber-master.png",
+        "size_bytes": 23276,
+        "sha256": "82353C0E1F6F0125B88D90353EBE7D9725491FF859D3E39426A5967119B4960B"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/backbone_fiber.png",
+        "size_bytes": 16990,
+        "sha256": "758231112492E959BB4D0EA677288C6ED67A123FE1E5F9B4C760917CDB57DEAD"
+      }
+    },
+    {
+      "name": "fiber_junction",
+      "constant": "FiberJunction",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/fiber_junction.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/fiber_junction-master.png",
+        "size_bytes": 32177,
+        "sha256": "D2EC82736DEAA58C50A815A2A62A9015EE3F67B9E448F6F59C6FCD35210BF0E7"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/fiber_junction.png",
+        "size_bytes": 24795,
+        "sha256": "D04D9BDB429AA6FD2CBC872D58E3ED9669FFD5B5BBD2353B43FCBF16491C6CB6"
       }
     },
     {
@@ -400,7 +491,7 @@
     },
     {
       "name": "orbital_power_relay",
-      "constant": "OrbitalPowerRelay",
+      "constant": "OrbitalPowerArray",
       "unity_path": "Assets/RecursiveIndustry/UiIcons/orbital_power_relay.png",
       "master": {
         "path": "art/RecursiveIndustry/UiIcons/masters/orbital_power_relay-master.png",

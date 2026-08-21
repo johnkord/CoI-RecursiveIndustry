@@ -46,5 +46,8 @@ public static partial class RecursiveIndustryIds
 
         public static readonly ProductID OrbitalPowerCalibration =
             Ids.Products.CreateId("RecursiveIndustry_OrbitalPowerCalibration");
+
+        public static readonly ProductID IndustrialControlStream =
+            Ids.Products.CreateId("RecursiveIndustry_IndustrialControlStream");
     }
 }

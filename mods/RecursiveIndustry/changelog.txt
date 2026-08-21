@@ -1,6 +1,24 @@
 Recursive Industry changelog
 ============================
 
+0.20.0a - Industrial Control and Federated Deployment candidate
+----------------------------------------------------------------
+
+- Added Data-only Access and Backbone Fiber plus conserved Industrial Control
+  Stream for twelve cross-stage Integrated compositions.
+- Added a local 210/minute Gateway row and a 250%-power 420/minute Backbone row,
+  both preserving 210 Stream per Package.
+- Added the 640-Packages/hour Deployment Assurance Campus at unchanged Model,
+  Lab Equipment IV, and Electronics III ratios.
+- Federated Deployment becomes available immediately after Industrial Control
+  Networks and retains its 480-month Space Research cost. Redundant weaker
+  lifetime gates were removed because Epoch V already requires 256 Programs.
+- Added production-scale Electronics III and kept all Direct and Precision rows
+  Fiber-free.
+- Added five Stream-controlled directed refinery slates for Diesel, gaseous
+  fuels, Hydrogen, Plastic, and Rubber. Polymer pays 300% recipe power and
+  Elastomer pays 400%; all intermediate oil fractions are consumed internally.
+
 0.19.0d - Complete Relay removal
 --------------------------------
 

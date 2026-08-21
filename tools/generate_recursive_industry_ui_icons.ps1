@@ -47,6 +47,12 @@ public static class RecursiveIndustryUiIconsV3 {
         "frontier_program",
         "frontier_expansion_project",
         "orbital_power_calibration",
+        "industrial_control_stream",
+        "control_deployment_gateway",
+        "deployment_assurance_campus",
+        "access_fiber",
+        "backbone_fiber",
+        "fiber_junction",
         "accelerator_works",
         "curation_office",
         "model_development_center",
@@ -165,6 +171,12 @@ public static class RecursiveIndustryUiIconsV3 {
             case "frontier_program": DrawFrontierProgram(g); break;
             case "frontier_expansion_project": DrawExpansionProject(g); break;
             case "orbital_power_calibration": DrawPowerCalibration(g); break;
+            case "industrial_control_stream": DrawIndustrialControlStream(g); break;
+            case "control_deployment_gateway": DrawControlDeploymentGateway(g); break;
+            case "deployment_assurance_campus": DrawDeploymentAssuranceCampus(g); break;
+            case "access_fiber": DrawAccessFiber(g); break;
+            case "backbone_fiber": DrawBackboneFiber(g); break;
+            case "fiber_junction": DrawFiberJunction(g); break;
             case "accelerator_works": DrawAcceleratorWorks(g); break;
             case "curation_office": DrawCurationOffice(g); break;
             case "model_development_center": DrawModelCenter(g); break;
@@ -387,6 +399,82 @@ public static class RecursiveIndustryUiIconsV3 {
         Line(g, White, 44f, new Point(512, 744), new Point(512, 946));
         Line(g, White, 44f, new Point(78, 512), new Point(280, 512));
         Line(g, White, 44f, new Point(744, 512), new Point(946, 512));
+    }
+
+    private static void DrawIndustrialControlStream(Graphics g) {
+        Rect(g, 112, 246, 800, 532, Recessed, 64, 58f);
+        Line(g, Cyan, 72f,
+            new Point(158, 512),
+            new Point(292, 512),
+            new Point(378, 354),
+            new Point(512, 670),
+            new Point(646, 402),
+            new Point(732, 512),
+            new Point(866, 512));
+        Ellipse(g, 104, 458, 108, 108, Gold, 26f);
+        Ellipse(g, 812, 458, 108, 108, White, 26f);
+    }
+
+    private static void DrawControlDeploymentGateway(Graphics g) {
+        MachineShell(g);
+        Rect(g, 246, 386, 204, 204, Green, 28, 38f);
+        Check(g, 294, 500, 112);
+        Arrow(g, new Point(466, 488), new Point(608, 488), White, 38f);
+        Ellipse(g, 604, 326, 108, 108, Cyan, 26f);
+        Ellipse(g, 670, 454, 108, 108, Cyan, 26f);
+        Ellipse(g, 604, 582, 108, 108, Cyan, 26f);
+        Line(g, Cyan, 32f, new Point(608, 488), new Point(658, 380));
+        Line(g, Cyan, 32f, new Point(608, 488), new Point(724, 508));
+        Line(g, Cyan, 32f, new Point(608, 488), new Point(658, 636));
+    }
+
+    private static void DrawDeploymentAssuranceCampus(Graphics g) {
+        MachineShell(g);
+        int[] rows = { 326, 418, 510, 602 };
+        Color[] accents = { Cyan, Gold, Blue, Cyan };
+        for (int index = 0; index < rows.Length; index++) {
+            Rect(g, 244, rows[index], 104, 72, accents[index], 14, 22f);
+            Line(g, White, 22f,
+                new Point(360, rows[index] + 36),
+                new Point(470, 488));
+        }
+        Arrow(g, new Point(470, 488), new Point(570, 488), White, 34f);
+        Rect(g, 590, 344, 206, 288, Green, 28, 38f);
+        Line(g, Cyan, 28f, new Point(632, 408), new Point(754, 408));
+        Line(g, Cyan, 28f, new Point(632, 466), new Point(726, 466));
+        Check(g, 632, 570, 116);
+    }
+
+    private static void DrawAccessFiber(Graphics g) {
+        Rect(g, 108, 310, 808, 404, Recessed, 64, 58f);
+        Line(g, Cyan, 58f, new Point(170, 512), new Point(854, 512));
+        int[] nodes = { 300, 512, 724 };
+        foreach (int x in nodes) {
+            Ellipse(g, x - 62, 450, 124, 124, Cyan, 28f);
+        }
+        Arrow(g, new Point(758, 634), new Point(856, 634), Gold, 34f);
+    }
+
+    private static void DrawBackboneFiber(Graphics g) {
+        Rect(g, 82, 282, 860, 460, Body, 64, 58f);
+        Line(g, White, 82f, new Point(138, 466), new Point(886, 466));
+        Line(g, Cyan, 82f, new Point(138, 586), new Point(886, 586));
+        for (int index = 0; index < 7; index++) {
+            int x = 176 + index * 112;
+            Ellipse(g, x - 42, 484, 84, 84, index == 3 ? Gold : Cyan, 20f);
+        }
+        Arrow(g, new Point(768, 676), new Point(886, 676), Gold, 34f);
+    }
+
+    private static void DrawFiberJunction(Graphics g) {
+        Rect(g, 132, 132, 760, 760, Recessed, 76, 58f);
+        Line(g, Cyan, 92f, new Point(512, 206), new Point(512, 818));
+        Line(g, Cyan, 92f, new Point(206, 512), new Point(818, 512));
+        Ellipse(g, 390, 390, 244, 244, Gold, 42f);
+        Ellipse(g, 154, 460, 104, 104, White, 24f);
+        Ellipse(g, 766, 460, 104, 104, White, 24f);
+        Ellipse(g, 460, 154, 104, 104, White, 24f);
+        Ellipse(g, 460, 766, 104, 104, White, 24f);
     }
 
     private static void DrawAcceleratorWorks(Graphics g) {

@@ -2,9 +2,12 @@
 
 ## Gameplay-first 1.0
 
-1. Collect ordinary issue reports on public pre-release 0.19.0d without expanding
-   scope.
-2. Complete one integrated author campaign covering the existing feature set.
+1. Preserve public pre-release 0.19.0d and complete the 0.20.0a Industrial
+   Control and Federated Deployment candidate without expanding into another
+   gameplay domain. Federated Deployment scales the existing validation/control
+   domain and adds no product or universal industry branch.
+2. Classify migration and complete one integrated author campaign covering the
+   complete 0.20.0a feature set.
 3. Fix only demonstrated gameplay, balance, copy, presentation, or compatibility
    defects.
 4. Freeze one deterministic 1.0 candidate.

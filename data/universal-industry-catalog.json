@@ -1152,6 +1152,10 @@
           "source_machine_id": "DiamondReactor"
         },
         {
+          "recipe_id": "Electronics3Assembly",
+          "source_machine_id": "AssemblyRoboticT2"
+        },
+        {
           "recipe_id": "Electronics4Assembly",
           "source_machine_id": "AssemblyRoboticT2"
         },
@@ -1344,6 +1348,31 @@
       ]
     },
     {
+      "key": "integrated_mechanical_parts",
+      "name": "Integrated Mechanical Parts",
+      "machine": "general_manufacturing_fab",
+      "batch_scale": 12,
+      "duration_seconds": 120,
+      "sources": [
+        {
+          "recipe_id": "IronSmeltingArc",
+          "multiplier": 2
+        },
+        {
+          "recipe_id": "SteelSmeltingT2",
+          "multiplier": 1
+        },
+        {
+          "recipe_id": "SteelCastingCooled",
+          "multiplier": 2
+        },
+        {
+          "recipe_id": "MechPartsSteelAssembly",
+          "multiplier": 2
+        }
+      ]
+    },
+    {
       "key": "integrated_refinery",
       "name": "Integrated Crude Fractionation",
       "machine": "refinery_complex",
@@ -1361,6 +1390,181 @@
         {
           "recipe_id": "HeavyDistillateRefining",
           "multiplier": 1
+        }
+      ]
+    },
+    {
+      "key": "integrated_refinery_diesel",
+      "name": "Integrated Directed Diesel",
+      "machine": "refinery_complex",
+      "batch_scale": 1,
+      "duration_seconds": 120,
+      "sources": [
+        {
+          "recipe_id": "CrudeOilRefiningT1",
+          "multiplier": 12
+        },
+        {
+          "recipe_id": "CrudeOilRefiningT2",
+          "multiplier": 12
+        },
+        {
+          "recipe_id": "HeavyDistillateRefining",
+          "multiplier": 12
+        },
+        {
+          "recipe_id": "HeavyOilCracking",
+          "multiplier": 6
+        },
+        {
+          "recipe_id": "NaphthaReforming",
+          "multiplier": 12
+        },
+        {
+          "recipe_id": "FuelGasReforming",
+          "multiplier": 7
+        }
+      ]
+    },
+    {
+      "key": "integrated_refinery_gas",
+      "name": "Integrated Gas and Hydrogen Slate",
+      "machine": "refinery_complex",
+      "batch_scale": 1,
+      "duration_seconds": 120,
+      "sources": [
+        {
+          "recipe_id": "CrudeOilRefiningT1",
+          "multiplier": 12
+        },
+        {
+          "recipe_id": "CrudeOilRefiningT2",
+          "multiplier": 12
+        },
+        {
+          "recipe_id": "HeavyDistillateRefining",
+          "multiplier": 12
+        },
+        {
+          "recipe_id": "DieselReforming",
+          "multiplier": 18
+        },
+        {
+          "recipe_id": "HeavyOilCrackingToNaphtha",
+          "multiplier": 6
+        },
+        {
+          "recipe_id": "NaphthaReformingToGas",
+          "multiplier": 23
+        }
+      ]
+    },
+    {
+      "key": "integrated_refinery_hydrogen",
+      "name": "Integrated Deep Hydrogen Reforming",
+      "machine": "refinery_complex",
+      "batch_scale": 1,
+      "duration_seconds": 120,
+      "sources": [
+        {
+          "recipe_id": "CrudeOilRefiningT1",
+          "multiplier": 12
+        },
+        {
+          "recipe_id": "CrudeOilRefiningT2",
+          "multiplier": 12
+        },
+        {
+          "recipe_id": "HeavyDistillateRefining",
+          "multiplier": 12
+        },
+        {
+          "recipe_id": "DieselReforming",
+          "multiplier": 18
+        },
+        {
+          "recipe_id": "HeavyOilCrackingToNaphtha",
+          "multiplier": 6
+        },
+        {
+          "recipe_id": "NaphthaReformingToGas",
+          "multiplier": 23
+        },
+        {
+          "recipe_id": "HydrogenReforming",
+          "multiplier": 31
+        }
+      ]
+    },
+    {
+      "key": "integrated_refinery_plastic",
+      "name": "Integrated Polymer Complex",
+      "machine": "refinery_complex",
+      "batch_scale": 1,
+      "duration_seconds": 60,
+      "power_multiplier_percent": 300,
+      "sources": [
+        {
+          "recipe_id": "CrudeOilRefiningT1",
+          "multiplier": 6
+        },
+        {
+          "recipe_id": "CrudeOilRefiningT2",
+          "multiplier": 6
+        },
+        {
+          "recipe_id": "HeavyDistillateRefining",
+          "multiplier": 6
+        },
+        {
+          "recipe_id": "DieselReforming",
+          "multiplier": 9
+        },
+        {
+          "recipe_id": "HeavyOilCrackingToNaphtha",
+          "multiplier": 3
+        },
+        {
+          "recipe_id": "PlasticMaking",
+          "multiplier": 23
+        }
+      ]
+    },
+    {
+      "key": "integrated_refinery_rubber",
+      "name": "Integrated Elastomer Complex",
+      "machine": "refinery_complex",
+      "batch_scale": 1,
+      "duration_seconds": 120,
+      "power_multiplier_percent": 400,
+      "sources": [
+        {
+          "recipe_id": "CrudeOilRefiningT1",
+          "multiplier": 12
+        },
+        {
+          "recipe_id": "CrudeOilRefiningT2",
+          "multiplier": 12
+        },
+        {
+          "recipe_id": "HeavyDistillateRefining",
+          "multiplier": 12
+        },
+        {
+          "recipe_id": "HeavyOilCracking",
+          "multiplier": 6
+        },
+        {
+          "recipe_id": "FuelGasReforming",
+          "multiplier": 5
+        },
+        {
+          "recipe_id": "RubberProductionDiesel",
+          "multiplier": 64
+        },
+        {
+          "recipe_id": "RubberProductionNaphtha",
+          "multiplier": 24
         }
       ]
     },
@@ -1436,6 +1640,35 @@
       ]
     },
     {
+      "key": "integrated_crew_supplies",
+      "name": "Integrated Crew Provisioning",
+      "machine": "food_pack_campus",
+      "batch_scale": 1,
+      "duration_seconds": 150,
+      "sources": [
+        {
+          "recipe_id": "WheatMilling",
+          "multiplier": 5
+        },
+        {
+          "recipe_id": "BreadProduction",
+          "multiplier": 5
+        },
+        {
+          "recipe_id": "MeatProcessing",
+          "multiplier": 6
+        },
+        {
+          "recipe_id": "FoodPackMeatAssembly",
+          "multiplier": 10
+        },
+        {
+          "recipe_id": "CrewSuppliesAssembly",
+          "multiplier": 20
+        }
+      ]
+    },
+    {
       "key": "integrated_food_pack_tofu",
       "name": "Integrated Plant Food Packs",
       "machine": "food_pack_campus",
@@ -1494,16 +1727,20 @@
       "key": "integrated_electronics4",
       "name": "Integrated Precision Electronics IV",
       "machine": "precision_components_fab",
-      "batch_scale": 8,
+      "batch_scale": 4,
       "duration_seconds": 120,
       "sources": [
         {
+          "recipe_id": "Electronics3Assembly",
+          "multiplier": 3
+        },
+        {
           "recipe_id": "LensMaking",
-          "multiplier": 2
+          "multiplier": 4
         },
         {
           "recipe_id": "Electronics4Assembly",
-          "multiplier": 1
+          "multiplier": 2
         }
       ]
     }

@@ -14,6 +14,8 @@ from typing import Iterable
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = ROOT / "data" / "universal-industry-catalog.json"
 CATALOG = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
+CONTROL_PATH = ROOT / "data" / "industrial-control-network.json"
+CONTROL = json.loads(CONTROL_PATH.read_text(encoding="utf-8"))
 
 RACK_III_COMPUTING = 256
 RACK_III_POWER_MW = Fraction(3, 2)
@@ -119,6 +121,69 @@ class ScenarioResult:
     workers: int
     gross_maintenance_t3: Fraction
     maintenance_at_focus_cap_t3: Fraction
+
+
+@dataclass(frozen=True)
+class ControlScenarioResult:
+    scenario: str
+    transport: str
+    optimized_owner_count: int
+    gateway_count: int
+    local_gateway_count: int
+    backbone_gateway_count: int
+    stream_demand_per_minute: int
+    stream_supply_per_minute: int
+    gateway_headroom_per_minute: int
+    transport_capacity_per_minute: int
+    transport_headroom_per_minute: int
+    package_demand_basis: str
+    steady_state_packages_per_hour: Fraction
+    unconstrained_packages_per_hour: int
+    support: ScenarioResult
+
+
+@dataclass(frozen=True)
+class PackageScaleResult:
+    scenario: str
+    demand_per_hour: Fraction
+    model_archives_per_hour: Fraction
+    standard_validators: int
+    standard_capacity_per_hour: int
+    standard_workers: int
+    standard_power_mw: Fraction
+    standard_computing: int
+    standard_maintenance_t3: int
+    standard_construction_parts_iv: int
+    assurance_campuses: int
+    trim_validators: int
+    dense_capacity_per_hour: int
+    dense_workers: int
+    dense_power_mw: Fraction
+    dense_computing: int
+    dense_maintenance_t3: int
+    dense_construction_parts_iv: int
+
+
+@dataclass(frozen=True)
+class ControlSensitivityResult:
+    stream_per_package: int
+    gateway_computing: int
+    gateway_power_mw: int
+    gateway_count: int
+    steady_state_packages_per_hour: Fraction
+    unconstrained_packages_per_hour: int
+    support: ScenarioResult
+
+
+@dataclass(frozen=True)
+class ElectronicsIIIResult:
+    representative_demand_per_hour: int
+    direct_fab_output_per_hour: int
+    required_direct_fabs: int
+    direct_fab_capacity_per_hour: int
+    direct_fab_headroom_per_hour: int
+    required_assembly_v_lines: int
+    required_throughput_cells: int
 
 
 CURRENT = Candidate(
@@ -233,19 +298,43 @@ def dossier_bank(demand_per_hour: Fraction) -> DossierBank:
     )
 
 
-def universal_assets(candidate: Candidate, mode: str = "direct") -> list[Asset]:
+def universal_assets(
+    candidate: Candidate,
+    mode: str = "direct",
+    optimized_keys: set[str] | None = None,
+) -> list[Asset]:
+    optimized_power_factors: dict[str, Fraction] = {}
+    for recipe in CATALOG["precision_recipes"]:
+        optimized_power_factors[recipe["machine"]] = max(
+            optimized_power_factors.get(recipe["machine"], Fraction(1)),
+            Fraction(2),
+        )
+    for recipe in CATALOG["integrated_recipes"]:
+        factor = Fraction(recipe.get("power_multiplier_percent", 200), 100)
+        optimized_power_factors[recipe["machine"]] = max(
+            optimized_power_factors.get(recipe["machine"], Fraction(1)),
+            factor,
+        )
     precision_owners = {
         recipe["machine"] for recipe in CATALOG["precision_recipes"]
     }
     integrated_owners = {
         recipe["machine"] for recipe in CATALOG["integrated_recipes"]
     }
+    if optimized_keys is None:
+        optimized_keys = (
+            precision_owners | integrated_owners
+            if mode == "optimized"
+            else set()
+        )
     result = []
     for facility in CATALOG["facilities"]:
         key = facility["key"]
-        power_factor = 1
-        if mode == "optimized" and key in precision_owners | integrated_owners:
-            power_factor = 2
+        power_factor = (
+            optimized_power_factors[key]
+            if key in optimized_keys
+            else Fraction(1)
+        )
         result.append(Asset(
             name=facility["name"],
             power_mw=Fraction(facility["power_mw"] * power_factor),
@@ -492,6 +581,289 @@ def scenarios(
     return results
 
 
+def control_gateway_asset(
+    gateway_count: int,
+    packages_per_hour: Fraction,
+    computing_per_gateway: int,
+    power_per_gateway_mw: int,
+) -> Asset:
+    gateway = CONTROL["gateway"]
+    construction = {
+        item["product_key"]: item["quantity"]
+        for item in gateway["construction"]
+    }
+    return Asset(
+        name="Control Deployment Gateway network",
+        power_mw=Fraction(gateway_count * power_per_gateway_mw),
+        computing=gateway_count * computing_per_gateway,
+        workers=gateway_count * gateway["workers"],
+        maintenance_t3=Fraction(
+            gateway_count * gateway["maintenance"]["quantity_per_month"]
+        ),
+        construction_packages=(
+            gateway_count * construction["ValidatedControlPackage"]
+        ),
+        packages_per_hour=packages_per_hour,
+    )
+
+
+def mixed_control_gateway_asset(
+    local_gateway_count: int,
+    backbone_gateway_count: int,
+    packages_per_hour: Fraction,
+) -> Asset:
+    gateway = CONTROL["gateway"]
+    construction = {
+        item["product_key"]: item["quantity"]
+        for item in gateway["construction"]
+    }
+    gateway_count = local_gateway_count + backbone_gateway_count
+    power = (
+        local_gateway_count * gateway["power_mw"]
+        + backbone_gateway_count
+        * gateway["backbone_recipe"]["effective_power_mw"]
+    )
+    return Asset(
+        name="Federated Control Deployment Gateway network",
+        power_mw=Fraction(power),
+        computing=gateway_count * gateway["computing"],
+        workers=gateway_count * gateway["workers"],
+        maintenance_t3=Fraction(
+            gateway_count * gateway["maintenance"]["quantity_per_month"]
+        ),
+        construction_packages=(
+            gateway_count * construction["ValidatedControlPackage"]
+        ),
+        packages_per_hour=packages_per_hour,
+    )
+
+
+def control_scenarios(
+    candidate: Candidate = SELECTED,
+    orbital_power_closure: bool = False,
+) -> list[ControlScenarioResult]:
+    owner_keys = tuple(owner["key"] for owner in CONTROL["owners"])
+    rate = CONTROL["consumer_contract"]["stream_units_per_active_minute"]
+    gateway = CONTROL["gateway"]
+    gateway_rate = gateway["recipe"]["output"]["quantity"]
+    gateway_seconds = gateway["recipe"]["duration_seconds"]
+    gateway_per_minute = gateway_rate * 60 // gateway_seconds
+    backbone_rate = gateway["backbone_recipe"]["output"]["quantity"]
+    topologies = (
+        ("no_control_direct", "none", owner_keys[:0], 0, False),
+        ("three_facility_access", "access_fiber", owner_keys[:3], 200, False),
+        ("seven_facility_backbone", "backbone_fiber", owner_keys[:7], 450, False),
+        ("seven_facility_federated", "backbone_fiber", owner_keys[:7], 450, True),
+        ("all_nine_optimized", "access_plus_backbone", owner_keys, 650, False),
+        ("all_nine_federated", "access_plus_backbone", owner_keys, 650, True),
+    )
+    results = []
+    for name, transport, optimized, transport_capacity, federated in topologies:
+        stream_demand = len(optimized) * rate
+        backbone_gateway_count = stream_demand // backbone_rate if federated else 0
+        remaining_demand = stream_demand - backbone_gateway_count * backbone_rate
+        local_gateway_count = (
+            ceil_fraction(Fraction(remaining_demand, gateway_per_minute))
+            if remaining_demand
+            else 0
+        )
+        gateway_count = local_gateway_count + backbone_gateway_count
+        steady_packages = (
+            Fraction(stream_demand * 60, gateway_rate)
+            if stream_demand
+            else Fraction(0)
+        )
+        unconstrained_packages = (
+            local_gateway_count + backbone_gateway_count * 2
+        ) * 60
+        assets = universal_assets(
+            candidate,
+            "direct",
+            optimized_keys=set(optimized),
+        )
+        if gateway_count:
+            assets.append(mixed_control_gateway_asset(
+                local_gateway_count,
+                backbone_gateway_count,
+                steady_packages,
+            ))
+        support = evaluate(
+            candidate,
+            name,
+            assets,
+            orbital_power_closure=orbital_power_closure,
+        )
+        supply = (
+            local_gateway_count * gateway_per_minute
+            + backbone_gateway_count * backbone_rate
+        )
+        results.append(ControlScenarioResult(
+            scenario=name,
+            transport=transport,
+            optimized_owner_count=len(optimized),
+            gateway_count=gateway_count,
+            local_gateway_count=local_gateway_count,
+            backbone_gateway_count=backbone_gateway_count,
+            stream_demand_per_minute=stream_demand,
+            stream_supply_per_minute=supply,
+            gateway_headroom_per_minute=supply - stream_demand,
+            transport_capacity_per_minute=transport_capacity,
+            transport_headroom_per_minute=transport_capacity - stream_demand,
+            package_demand_basis="steady_state_backpressure",
+            steady_state_packages_per_hour=steady_packages,
+            unconstrained_packages_per_hour=unconstrained_packages,
+            support=support,
+        ))
+    return results
+
+
+def package_scale_scenarios() -> list[PackageScaleResult]:
+    selected = {
+        result.scenario: result
+        for result in scenarios(SELECTED, orbital_power_closure=False)
+    }
+    stream_packages = Fraction(
+        CONTROL["capacity_closure"]["steady_state_packages_per_hour"]
+    )
+    assurance = CONTROL["deployment_assurance"]
+    assurance_cp4 = next(
+        item["quantity"]
+        for item in assurance["construction"]
+        if item["product_key"] == "ConstructionParts4"
+    )
+    cases = (
+        (
+            "mature_core_with_control",
+            selected["mature_core"].packages_per_hour + stream_packages,
+        ),
+        (
+            "mature_core_center_control",
+            selected["mature_core_plus_pcc"].packages_per_hour
+            + stream_packages,
+        ),
+    )
+    results = []
+    for name, demand in cases:
+        standard_validators = ceil_fraction(
+            demand / VALIDATOR_PACKAGES_PER_HOUR
+        )
+        assurance_campuses, trim_validators = divmod(standard_validators, 4)
+        results.append(PackageScaleResult(
+            scenario=name,
+            demand_per_hour=demand,
+            model_archives_per_hour=demand / 8,
+            standard_validators=standard_validators,
+            standard_capacity_per_hour=(
+                standard_validators * VALIDATOR_PACKAGES_PER_HOUR
+            ),
+            standard_workers=standard_validators * 24,
+            standard_power_mw=Fraction(standard_validators * 4, 5),
+            standard_computing=standard_validators * 24,
+            standard_maintenance_t3=standard_validators * 5,
+            standard_construction_parts_iv=standard_validators * 160,
+            assurance_campuses=assurance_campuses,
+            trim_validators=trim_validators,
+            dense_capacity_per_hour=(
+                assurance_campuses * assurance["recipe"]["packages_per_hour"]
+                + trim_validators * VALIDATOR_PACKAGES_PER_HOUR
+            ),
+            dense_workers=(
+                assurance_campuses * assurance["workers"]
+                + trim_validators * 24
+            ),
+            dense_power_mw=(
+                assurance_campuses * Fraction(assurance["power_mw"])
+                + trim_validators * Fraction(4, 5)
+            ),
+            dense_computing=(
+                assurance_campuses * assurance["computing"]
+                + trim_validators * 24
+            ),
+            dense_maintenance_t3=(
+                assurance_campuses
+                * assurance["maintenance"]["quantity_per_month"]
+                + trim_validators * 5
+            ),
+            dense_construction_parts_iv=(
+                assurance_campuses * assurance_cp4
+                + trim_validators * 160
+            ),
+        ))
+    return results
+
+
+def control_sensitivity_tournament(
+    candidate: Candidate = SELECTED,
+    orbital_power_closure: bool = False,
+) -> list[ControlSensitivityResult]:
+    closure = CONTROL["capacity_closure"]
+    sensitivity = closure["sensitivity"]
+    stream_demand = closure["all_owner_demand_per_minute"]
+    optimized_keys = {owner["key"] for owner in CONTROL["owners"]}
+    results = []
+    for stream_per_package in sensitivity["stream_per_package"]:
+        for computing in sensitivity["computing"]:
+            for power_mw in sensitivity["power_mw"]:
+                gateway_count = ceil_fraction(
+                    Fraction(stream_demand, stream_per_package)
+                )
+                steady_packages = Fraction(
+                    stream_demand * 60,
+                    stream_per_package,
+                )
+                unconstrained_packages = gateway_count * 60
+                assets = universal_assets(
+                    candidate,
+                    "direct",
+                    optimized_keys=optimized_keys,
+                )
+                assets.append(control_gateway_asset(
+                    gateway_count,
+                    steady_packages,
+                    computing,
+                    power_mw,
+                ))
+                name = (
+                    "control_sensitivity_"
+                    + f"stream_{stream_per_package}_computing_{computing}_power_{power_mw}"
+                )
+                results.append(ControlSensitivityResult(
+                    stream_per_package=stream_per_package,
+                    gateway_computing=computing,
+                    gateway_power_mw=power_mw,
+                    gateway_count=gateway_count,
+                    steady_state_packages_per_hour=steady_packages,
+                    unconstrained_packages_per_hour=unconstrained_packages,
+                    support=evaluate(
+                        candidate,
+                        name,
+                        assets,
+                        orbital_power_closure=orbital_power_closure,
+                    ),
+                ))
+    return results
+
+
+def electronics_iii_balance() -> ElectronicsIIIResult:
+    binding = CONTROL["direct_contract"]["electronics_iii_binding"]
+    demand = sum(
+        item["quantity"]
+        for item in binding["representative_demand_per_hour"]
+    )
+    output = binding["output_per_hour"]
+    direct_fabs = math.ceil(demand / output)
+    capacity = direct_fabs * output
+    return ElectronicsIIIResult(
+        representative_demand_per_hour=demand,
+        direct_fab_output_per_hour=output,
+        required_direct_fabs=direct_fabs,
+        direct_fab_capacity_per_hour=capacity,
+        direct_fab_headroom_per_hour=capacity - demand,
+        required_assembly_v_lines=math.ceil(demand / 360),
+        required_throughput_cells=math.ceil(demand / 720),
+    )
+
+
 def serialize(value: object) -> object:
     if isinstance(value, Fraction):
         return str(value) if value.denominator != 1 else value.numerator
@@ -541,6 +913,21 @@ def report() -> dict[str, object]:
             for orbital_power_closure in (True, False)
             for result in scenarios(candidate, orbital_power_closure)
         ],
+        "industrial_control": {
+            "scenarios": [
+                serialize(asdict(result))
+                for result in control_scenarios()
+            ],
+            "sensitivity_tournament": [
+                serialize(asdict(result))
+                for result in control_sensitivity_tournament()
+            ],
+            "electronics_iii": serialize(asdict(electronics_iii_balance())),
+            "deployment_scale": [
+                serialize(asdict(result))
+                for result in package_scale_scenarios()
+            ],
+        },
     }
 
 

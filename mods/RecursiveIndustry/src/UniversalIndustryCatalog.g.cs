@@ -516,6 +516,7 @@ internal static class UniversalIndustryCatalog
             directBindings: new[]
             {
                 new UniversalDirectBindingSpec("DiamondSynthesis", "DiamondReactor"),
+                new UniversalDirectBindingSpec("Electronics3Assembly", "AssemblyRoboticT2"),
                 new UniversalDirectBindingSpec("Electronics4Assembly", "AssemblyRoboticT2"),
                 new UniversalDirectBindingSpec("ElectronicsAssembly", "AssemblyRoboticT2"),
                 new UniversalDirectBindingSpec("LensMaking", "LensMaker"),
@@ -591,6 +592,7 @@ internal static class UniversalIndustryCatalog
             "mineral_products_works",
             batchScale: 6,
             durationSeconds: 120,
+            powerMultiplierPercent: 200,
             sources: new[] { new UniversalSourceRecipeSpec("CementProductionGas", 1), new UniversalSourceRecipeSpec("ConcreteMixingGravel", 2) }),
         new UniversalIntegratedRecipeSpec(
             RecursiveIndustryIds.Recipes.IntegratedSteel,
@@ -598,20 +600,71 @@ internal static class UniversalIndustryCatalog
             "primary_smelter",
             batchScale: 6,
             durationSeconds: 120,
+            powerMultiplierPercent: 200,
             sources: new[] { new UniversalSourceRecipeSpec("IronSmeltingArc", 2), new UniversalSourceRecipeSpec("SteelSmeltingT2", 1), new UniversalSourceRecipeSpec("SteelCastingCooled", 2) }),
+        new UniversalIntegratedRecipeSpec(
+            RecursiveIndustryIds.Recipes.IntegratedMechanicalParts,
+            "Integrated Mechanical Parts",
+            "general_manufacturing_fab",
+            batchScale: 12,
+            durationSeconds: 120,
+            powerMultiplierPercent: 200,
+            sources: new[] { new UniversalSourceRecipeSpec("IronSmeltingArc", 2), new UniversalSourceRecipeSpec("SteelSmeltingT2", 1), new UniversalSourceRecipeSpec("SteelCastingCooled", 2), new UniversalSourceRecipeSpec("MechPartsSteelAssembly", 2) }),
         new UniversalIntegratedRecipeSpec(
             RecursiveIndustryIds.Recipes.IntegratedRefinery,
             "Integrated Crude Fractionation",
             "refinery_complex",
             batchScale: 12,
             durationSeconds: 120,
+            powerMultiplierPercent: 200,
             sources: new[] { new UniversalSourceRecipeSpec("CrudeOilRefiningT1", 1), new UniversalSourceRecipeSpec("CrudeOilRefiningT2", 1), new UniversalSourceRecipeSpec("HeavyDistillateRefining", 1) }),
+        new UniversalIntegratedRecipeSpec(
+            RecursiveIndustryIds.Recipes.IntegratedRefineryDiesel,
+            "Integrated Directed Diesel",
+            "refinery_complex",
+            batchScale: 1,
+            durationSeconds: 120,
+            powerMultiplierPercent: 200,
+            sources: new[] { new UniversalSourceRecipeSpec("CrudeOilRefiningT1", 12), new UniversalSourceRecipeSpec("CrudeOilRefiningT2", 12), new UniversalSourceRecipeSpec("HeavyDistillateRefining", 12), new UniversalSourceRecipeSpec("HeavyOilCracking", 6), new UniversalSourceRecipeSpec("NaphthaReforming", 12), new UniversalSourceRecipeSpec("FuelGasReforming", 7) }),
+        new UniversalIntegratedRecipeSpec(
+            RecursiveIndustryIds.Recipes.IntegratedRefineryGas,
+            "Integrated Gas and Hydrogen Slate",
+            "refinery_complex",
+            batchScale: 1,
+            durationSeconds: 120,
+            powerMultiplierPercent: 200,
+            sources: new[] { new UniversalSourceRecipeSpec("CrudeOilRefiningT1", 12), new UniversalSourceRecipeSpec("CrudeOilRefiningT2", 12), new UniversalSourceRecipeSpec("HeavyDistillateRefining", 12), new UniversalSourceRecipeSpec("DieselReforming", 18), new UniversalSourceRecipeSpec("HeavyOilCrackingToNaphtha", 6), new UniversalSourceRecipeSpec("NaphthaReformingToGas", 23) }),
+        new UniversalIntegratedRecipeSpec(
+            RecursiveIndustryIds.Recipes.IntegratedRefineryHydrogen,
+            "Integrated Deep Hydrogen Reforming",
+            "refinery_complex",
+            batchScale: 1,
+            durationSeconds: 120,
+            powerMultiplierPercent: 200,
+            sources: new[] { new UniversalSourceRecipeSpec("CrudeOilRefiningT1", 12), new UniversalSourceRecipeSpec("CrudeOilRefiningT2", 12), new UniversalSourceRecipeSpec("HeavyDistillateRefining", 12), new UniversalSourceRecipeSpec("DieselReforming", 18), new UniversalSourceRecipeSpec("HeavyOilCrackingToNaphtha", 6), new UniversalSourceRecipeSpec("NaphthaReformingToGas", 23), new UniversalSourceRecipeSpec("HydrogenReforming", 31) }),
+        new UniversalIntegratedRecipeSpec(
+            RecursiveIndustryIds.Recipes.IntegratedRefineryPlastic,
+            "Integrated Polymer Complex",
+            "refinery_complex",
+            batchScale: 1,
+            durationSeconds: 60,
+            powerMultiplierPercent: 300,
+            sources: new[] { new UniversalSourceRecipeSpec("CrudeOilRefiningT1", 6), new UniversalSourceRecipeSpec("CrudeOilRefiningT2", 6), new UniversalSourceRecipeSpec("HeavyDistillateRefining", 6), new UniversalSourceRecipeSpec("DieselReforming", 9), new UniversalSourceRecipeSpec("HeavyOilCrackingToNaphtha", 3), new UniversalSourceRecipeSpec("PlasticMaking", 23) }),
+        new UniversalIntegratedRecipeSpec(
+            RecursiveIndustryIds.Recipes.IntegratedRefineryRubber,
+            "Integrated Elastomer Complex",
+            "refinery_complex",
+            batchScale: 1,
+            durationSeconds: 120,
+            powerMultiplierPercent: 400,
+            sources: new[] { new UniversalSourceRecipeSpec("CrudeOilRefiningT1", 12), new UniversalSourceRecipeSpec("CrudeOilRefiningT2", 12), new UniversalSourceRecipeSpec("HeavyDistillateRefining", 12), new UniversalSourceRecipeSpec("HeavyOilCracking", 6), new UniversalSourceRecipeSpec("FuelGasReforming", 5), new UniversalSourceRecipeSpec("RubberProductionDiesel", 64), new UniversalSourceRecipeSpec("RubberProductionNaphtha", 24) }),
         new UniversalIntegratedRecipeSpec(
             RecursiveIndustryIds.Recipes.IntegratedFertilizer,
             "Integrated Fertilizer Synthesis",
             "gas_fertilizer_complex",
             batchScale: 8,
             durationSeconds: 120,
+            powerMultiplierPercent: 200,
             sources: new[] { new UniversalSourceRecipeSpec("AirSeparation", 2), new UniversalSourceRecipeSpec("HydrogenReforming", 1), new UniversalSourceRecipeSpec("AmmoniaSynthesis", 3), new UniversalSourceRecipeSpec("FertilizerProduction", 3) }),
         new UniversalIntegratedRecipeSpec(
             RecursiveIndustryIds.Recipes.IntegratedFoodPackEggs,
@@ -619,6 +672,7 @@ internal static class UniversalIndustryCatalog
             "food_pack_campus",
             batchScale: 15,
             durationSeconds: 120,
+            powerMultiplierPercent: 200,
             sources: new[] { new UniversalSourceRecipeSpec("WheatMilling", 1), new UniversalSourceRecipeSpec("BreadProduction", 1), new UniversalSourceRecipeSpec("FoodPackEggsAssembly", 2) }),
         new UniversalIntegratedRecipeSpec(
             RecursiveIndustryIds.Recipes.IntegratedFoodPackMeat,
@@ -626,13 +680,23 @@ internal static class UniversalIndustryCatalog
             "food_pack_campus",
             batchScale: 3,
             durationSeconds: 120,
+            powerMultiplierPercent: 200,
             sources: new[] { new UniversalSourceRecipeSpec("WheatMilling", 5), new UniversalSourceRecipeSpec("BreadProduction", 5), new UniversalSourceRecipeSpec("MeatProcessing", 6), new UniversalSourceRecipeSpec("FoodPackMeatAssembly", 10) }),
+        new UniversalIntegratedRecipeSpec(
+            RecursiveIndustryIds.Recipes.IntegratedCrewSupplies,
+            "Integrated Crew Provisioning",
+            "food_pack_campus",
+            batchScale: 1,
+            durationSeconds: 150,
+            powerMultiplierPercent: 200,
+            sources: new[] { new UniversalSourceRecipeSpec("WheatMilling", 5), new UniversalSourceRecipeSpec("BreadProduction", 5), new UniversalSourceRecipeSpec("MeatProcessing", 6), new UniversalSourceRecipeSpec("FoodPackMeatAssembly", 10), new UniversalSourceRecipeSpec("CrewSuppliesAssembly", 20) }),
         new UniversalIntegratedRecipeSpec(
             RecursiveIndustryIds.Recipes.IntegratedFoodPackTofu,
             "Integrated Plant Food Packs",
             "food_pack_campus",
             batchScale: 15,
             durationSeconds: 240,
+            powerMultiplierPercent: 200,
             sources: new[] { new UniversalSourceRecipeSpec("TofuProduction", 3), new UniversalSourceRecipeSpec("FoodPackTofuAssembly", 4) }),
         new UniversalIntegratedRecipeSpec(
             RecursiveIndustryIds.Recipes.IntegratedWaterRecovery,
@@ -640,6 +704,7 @@ internal static class UniversalIndustryCatalog
             "water_utility",
             batchScale: 8,
             durationSeconds: 120,
+            powerMultiplierPercent: 200,
             sources: new[] { new UniversalSourceRecipeSpec("WaterTreatmentT2", 1), new UniversalSourceRecipeSpec("SludgeDigestion", 1) }),
         new UniversalIntegratedRecipeSpec(
             RecursiveIndustryIds.Recipes.IntegratedUraniumRods,
@@ -647,14 +712,16 @@ internal static class UniversalIndustryCatalog
             "nuclear_fuel_complex",
             batchScale: 16,
             durationSeconds: 120,
+            powerMultiplierPercent: 200,
             sources: new[] { new UniversalSourceRecipeSpec("UraniumLeaching", 2), new UniversalSourceRecipeSpec("UraniumEnrichment", 2), new UniversalSourceRecipeSpec("UraniumRodsAssembly", 1) }),
         new UniversalIntegratedRecipeSpec(
             RecursiveIndustryIds.Recipes.IntegratedElectronics4,
             "Integrated Precision Electronics IV",
             "precision_components_fab",
-            batchScale: 8,
+            batchScale: 4,
             durationSeconds: 120,
-            sources: new[] { new UniversalSourceRecipeSpec("LensMaking", 2), new UniversalSourceRecipeSpec("Electronics4Assembly", 1) })
+            powerMultiplierPercent: 200,
+            sources: new[] { new UniversalSourceRecipeSpec("Electronics3Assembly", 3), new UniversalSourceRecipeSpec("LensMaking", 4), new UniversalSourceRecipeSpec("Electronics4Assembly", 2) })
     };
 
     public static readonly UniversalPrecisionRecipeSpec[] PrecisionRecipes =

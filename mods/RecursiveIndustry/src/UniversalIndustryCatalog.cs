@@ -87,6 +87,7 @@ internal sealed class UniversalIntegratedRecipeSpec
     public readonly string MachineKey;
     public readonly int BatchScale;
     public readonly int DurationSeconds;
+    public readonly int PowerMultiplierPercent;
     public readonly UniversalSourceRecipeSpec[] Sources;
 
     public UniversalIntegratedRecipeSpec(
@@ -95,6 +96,7 @@ internal sealed class UniversalIntegratedRecipeSpec
         string machineKey,
         int batchScale,
         int durationSeconds,
+        int powerMultiplierPercent,
         UniversalSourceRecipeSpec[] sources)
     {
         Id = id;
@@ -102,6 +104,7 @@ internal sealed class UniversalIntegratedRecipeSpec
         MachineKey = machineKey;
         BatchScale = batchScale;
         DurationSeconds = durationSeconds;
+        PowerMultiplierPercent = powerMultiplierPercent;
         Sources = sources;
     }
 }

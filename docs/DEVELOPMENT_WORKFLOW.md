@@ -64,6 +64,8 @@ Version `v0.19.0c` is immutable superseded history. The current baseline is publ
 `v0.19.0d`; its nine-file playtest ZIP has SHA-256
 `638AE395526DD40ADFE4751CB88EF4DEA43F5DCBA9B6B586BFE2C01FD2AE280E`.
 Treat both tags and assets as immutable. Subsequent fixes require a new version.
+The active successor source is 0.20.0a; it must receive a new tag and archive only
+after its own build, migration, integrated-play, and reproducibility gates pass.
 
 After a public release:
 

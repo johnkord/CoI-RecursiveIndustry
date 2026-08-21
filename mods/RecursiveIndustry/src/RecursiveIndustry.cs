@@ -20,6 +20,10 @@ public sealed class RecursiveIndustry : DataOnlyMod
         registrator.RegisterData<RecursiveIndustryProductData>();
         registrator.RegisterData<AppliedScienceProductData>();
         registrator.RegisterData<EpochProductData>();
+        registrator.RegisterData<IndustrialControlProductData>();
+        registrator.RegisterData<IndustrialControlTransportData>();
+        registrator.RegisterData<IndustrialControlGatewayData>();
+        registrator.RegisterData<DeploymentAssuranceData>();
         registrator.RegisterData<WorldExchangeData>();
         registrator.RegisterData<AcceleratorWorksData>();
         registrator.RegisterData<RackGenerationData>();

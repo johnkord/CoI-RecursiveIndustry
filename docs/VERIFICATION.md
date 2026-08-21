@@ -11,7 +11,20 @@ that code and arithmetic cannot establish.
 - package-safe asset-bundle inventory;
 - absence of game DLLs, build outputs, logs, archives, and private evidence;
 - required policy notices and public documentation; and
-- checked-in generated catalog sentinels.
+- checked-in generated catalog sentinels;
+- the schema-1 Industrial Control authority, exact source declarations, and
+  negative fixtures; and
+- 80 UI identities, bundle paths, hashes, dependencies, and compact-size proofs.
+
+`python tools/audit_recursive_industry_control_network.py` independently checks
+235 Direct bindings, 17 controlled compositions, 10 Fiber-free Precision modes,
+nine Data-port owners, both Gateway rows, the separate Assurance Campus, Fiber
+declarations, registration order, research parenting, exact yield parity, and
+excluded runtime surfaces.
+
+The directed refinery contract additionally checks five exact net vectors, 2x
+crude-feed throughput, complete oil-intermediate cancellation, retained Sour
+Water/CO2/Exhaust/Water residuals, and 200/300/400% power declarations.
 
 `python tools/package_mod.py mods/RecursiveIndustry` creates a deterministic ZIP
 with one `RecursiveIndustry/` root and refuses to include game or engine DLLs.
@@ -46,6 +59,14 @@ overflows. The tested player ZIP SHA-256 is
 `638AE395526DD40ADFE4751CB88EF4DEA43F5DCBA9B6B586BFE2C01FD2AE280E`.
 The closed clean-world smoke log is 40,646 bytes with SHA-256
 `8BA6E85996A74868251A829D611C8FB2AC5A69407EEBF4B05C796D2298E82712`.
+
+The unreleased 0.20.0a source candidate passes the public contract, generator,
+economy, source-audit, icon-bundle, and zero-warning compile gates. Its promoted
+Fiber declarations follow the passed Build 613 proof path, but the integrated
+Gateway, consumer, outage, migration, and in-world legibility session remains
+open. The same session proves the 2-Package/420-Stream Backbone interval; Campus
+execution remains on inherited standard Machine behavior. Do not interpret
+offline closure as completed runtime evidence.
 
 ## Remaining before stable 1.0
 

@@ -118,5 +118,15 @@ public static partial class RecursiveIndustryIds
 
         public static readonly RecipeID RecoverVehicleParts3 =
             Ids.Recipes.CreateId("RecursiveIndustry_RecoverVehicleParts3");
+
+        public static readonly RecipeID DeployIndustrialControl =
+            Ids.Recipes.CreateId("RecursiveIndustry_DeployIndustrialControl");
+
+        public static readonly RecipeID DeployBackboneIndustrialControl =
+            Ids.Recipes.CreateId(
+                "RecursiveIndustry_DeployBackboneIndustrialControl");
+
+        public static readonly RecipeID BatchDeploymentAssurance =
+            Ids.Recipes.CreateId("RecursiveIndustry_BatchDeploymentAssurance");
     }
 }

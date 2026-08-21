@@ -10,6 +10,12 @@ internal static partial class RecursiveIndustryIcons
     public const string FrontierProgram = Root + "frontier_program.png";
     public const string FrontierExpansionProject = Root + "frontier_expansion_project.png";
     public const string OrbitalPowerCalibration = Root + "orbital_power_calibration.png";
+    public const string IndustrialControlStream = Root + "industrial_control_stream.png";
+    public const string ControlDeploymentGateway = Root + "control_deployment_gateway.png";
+    public const string DeploymentAssuranceCampus = Root + "deployment_assurance_campus.png";
+    public const string AccessFiber = Root + "access_fiber.png";
+    public const string BackboneFiber = Root + "backbone_fiber.png";
+    public const string FiberJunction = Root + "fiber_junction.png";
 
     public const string AcceleratorWorks = Root + "accelerator_works.png";
     public const string CurationOffice = Root + "curation_office.png";

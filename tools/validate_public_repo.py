@@ -12,6 +12,8 @@ import subprocess
 from typing import Any, Iterable
 from urllib.parse import unquote
 
+from audit_recursive_industry_control_network import audit as audit_control_network
+
 
 ROOT = Path(__file__).resolve().parents[1]
 MOD_ROOT = ROOT / "mods" / "RecursiveIndustry"
@@ -27,9 +29,14 @@ REQUIRED_ROOT_FILES = {
     "README.md",
     "SECURITY.md",
 }
-REQUIRED_DATA = {"universal-industry-catalog.json"}
+REQUIRED_DATA = {
+    "industrial-control-network.json",
+    "universal-industry-catalog.json",
+}
 REQUIRED_TOOLS = {
+    "audit_recursive_industry_control_network.py",
     "audit_release_zip.py",
+    "freeze_recursive_industry_ui_icons.py",
     "generate_recursive_industry_universal_source.py",
     "package_mod.py",
     "simulate_recursive_industry_economy.py",
@@ -257,13 +264,93 @@ def validate_asset_manifests(errors: list[str], root: Path) -> None:
             validate_file_identity(errors, root, generator_record, "path")
 
 
+def validate_ui_icon_contract(errors: list[str], root: Path) -> None:
+    path = root / "art" / "RecursiveIndustry" / "UiIcons" / "asset-manifest.json"
+    try:
+        manifest = load_json(path)
+    except (OSError, json.JSONDecodeError, ValueError) as exc:
+        errors.append(str(exc))
+        return
+
+    icons = manifest.get("icons")
+    if not isinstance(icons, list) or len(icons) != 80:
+        errors.append(
+            f"UI icon manifest must contain exactly 80 identities, found "
+            f"{len(icons) if isinstance(icons, list) else 'invalid'}"
+        )
+        return
+    required_control = {
+        "industrial_control_stream",
+        "control_deployment_gateway",
+        "deployment_assurance_campus",
+        "access_fiber",
+        "backbone_fiber",
+        "fiber_junction",
+    }
+    names = {icon.get("name") for icon in icons}
+    if not required_control <= names:
+        errors.append(
+            f"UI icon manifest is missing control identities: "
+            f"{sorted(required_control - names)}"
+        )
+
+    source_root = root / "mods" / "RecursiveIndustry" / "src"
+    source = "\n".join(
+        (source_root / name).read_text(encoding="utf-8")
+        for name in (
+            "RecursiveIndustryIcons.cs",
+            "UniversalIndustryIcons.g.cs",
+        )
+    )
+    root_match = re.search(r'private const string Root = "([^"]+)";', source)
+    if root_match is None:
+        errors.append("RecursiveIndustryIcons.Root is missing")
+    else:
+        icon_root = root_match.group(1)
+        constants = {
+            member: icon_root + filename
+            for member, filename in re.findall(
+                r'public const string (\w+) = Root \+ "([^"]+\.png)";',
+                source,
+            )
+        }
+        manifest_paths = {icon.get("unity_path") for icon in icons}
+        if len(constants) != 80:
+            errors.append(
+            f"C# source must declare exactly 80 UI icon constants, found {len(constants)}"
+            )
+        if set(constants.values()) != manifest_paths:
+            errors.append("C# UI icon paths differ from the asset manifest")
+
+    review = manifest.get("visual_review", {})
+    if review.get("status") != "PASS_STATIC_PROOF_REVIEW":
+        errors.append("UI icon static proof review is not passed")
+    if review.get("runtime_status") != "OPEN_INTEGRATED_0.20.0A":
+        errors.append("UI icon runtime review must remain on the integrated 0.20.0a boundary")
+    if review.get("tested_sizes_px") != [24, 32, 48]:
+        errors.append("UI icon proof must cover 24, 32, and 48 pixels")
+    if review.get("backgrounds") != ["light", "dark"]:
+        errors.append("UI icon proof must cover light and dark backgrounds")
+    bundle = manifest.get("bundle", {})
+    if bundle.get("name") != "uiicons_5287":
+        errors.append("all public UI identities must remain in uiicons_5287")
+    if bundle.get("dependencies") != []:
+        errors.append("uiicons_5287 must remain dependency-free")
+
+
 def validate_source_contract(errors: list[str], root: Path) -> None:
     source = root / "mods" / "RecursiveIndustry" / "src"
     files = sorted(source.glob("*.cs"))
-    if len(files) != 55:
-        errors.append(f"expected 55 C# source files, found {len(files)}")
+    if len(files) != 61:
+        errors.append(f"expected 61 C# source files, found {len(files)}")
     required = {
+        "DataProductProto.cs",
+        "DeploymentAssuranceData.cs",
+        "IndustrialControlGatewayData.cs",
+        "IndustrialControlProductData.cs",
+        "IndustrialControlTransportData.cs",
         "RecursiveIndustry.cs",
+        "RecursiveIndustryIds.Infrastructure.cs",
         "RecursiveIndustryResearchData.cs",
         "OrbitalPowerArrayData.cs",
         "OrbitalPowerArrayLayout.cs",
@@ -295,8 +382,8 @@ def validate_source_contract(errors: list[str], root: Path) -> None:
         catalog = catalog_path.read_text(encoding="utf-8")
         if catalog.count("new UniversalFacilitySpec(") != 19:
             errors.append("generated catalog must contain 19 facilities")
-        if catalog.count("new UniversalDirectBindingSpec(") != 234:
-            errors.append("generated catalog must contain 234 Direct bindings")
+        if catalog.count("new UniversalDirectBindingSpec(") != 235:
+            errors.append("generated catalog must contain 235 Direct bindings")
         if not catalog.startswith("// Generated by tools/"):
             errors.append("generated catalog header is missing")
     data_path = source / "UniversalIndustryData.cs"
@@ -304,8 +391,8 @@ def validate_source_contract(errors: list[str], root: Path) -> None:
         data = data_path.read_text(encoding="utf-8")
         for token in (
             "checked(binding.SourceBinding.Multiplier * 4)",
-            "expected 234 direct bindings",
-            "SetPowerMultiplier(200.Percent())",
+            "expected 235 direct bindings",
+            "SetPowerMultiplier(powerMultiplierPercent.Percent())",
         ):
             if token not in data:
                 errors.append(f"universal runtime contract missing: {token}")
@@ -389,7 +476,12 @@ def validate(root: Path = ROOT) -> list[str]:
         errors.append(str(exc))
     validate_bundle_inventory(errors, root)
     validate_asset_manifests(errors, root)
+    validate_ui_icon_contract(errors, root)
     validate_source_contract(errors, root)
+    errors.extend(
+        f"Industrial Control: {error}"
+        for error in audit_control_network(root)
+    )
     validate_markdown_links(errors, root, files)
 
     notice = (root / "NOTICE.md").read_text(encoding="utf-8") if (root / "NOTICE.md").is_file() else ""
@@ -414,7 +506,7 @@ def main() -> int:
         return 1
     print(
         "Recursive Industry public repository: PASS "
-        "(55 source files, 19 facilities, 234 Direct bindings, 3 bundles)"
+        "(61 source files, 19 facilities, 235 Direct bindings, 3 bundles)"
     )
     return 0
 

@@ -38,6 +38,14 @@ Dataset Archives feed Model Archives. Models, experiments, and physical trials
 feed renewable Validated Control Packages and Research Dossiers. Validation is a
 production economy, not flavor text.
 
+### Scale density, not yield
+
+Late infrastructure may compress repeated buildings, but it must preserve the
+material meaning of its outputs. Federated Deployment keeps both Package inputs
+per output and Stream per Package exact. It pays for density through power,
+Computing, capital, and longer batch cadence, leaving standard validators and
+local Gateways useful for bootstrap and incremental demand.
+
 ### Keep recursion bounded
 
 The late game supports recursive **reinvestment**, not literal self-replication.
@@ -53,7 +61,7 @@ maintenance, electronics, validation, logistics, and player decisions.
 - No automatic building placement, terrain expansion, or factory duplication.
 - No custom dispatch replacement for native trucks and trains.
 - No requirement to abandon conventional machines.
-- No custom runtime networking or telemetry.
+- No custom packet-network runtime, external telemetry, or network connections.
 - No low-power recipe family; efficient modes intentionally spend more energy.
 
 ## Why the name
