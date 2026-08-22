@@ -284,6 +284,28 @@ def audit_catalog(
     ):
         errors.append("every Stream recipe must consume one Stream per active second")
 
+    owners = {row.get("key"): row for row in control.get("owners", [])}
+    if owners.get("precision_components_fab") != {
+        "key": "precision_components_fab",
+        "material_input_ports": 8,
+        "input_ports_with_data": 9,
+        "output_ports": 1,
+        "physical_layout_rows": 7,
+        "right_side_input_ports": 2,
+        "top_side_input_ports": 0,
+    }:
+        errors.append("Precision Components runtime-observed port union drift")
+    if owners.get("general_manufacturing_fab") != {
+        "key": "general_manufacturing_fab",
+        "material_input_ports": 10,
+        "input_ports_with_data": 11,
+        "output_ports": 4,
+        "physical_layout_rows": 7,
+        "right_side_input_ports": 3,
+        "top_side_input_ports": 1,
+    }:
+        errors.append("General Manufacturing top-edge port union drift")
+
     expected_advanced = {
         "integrated_electronics3": {
             "machine": "precision_components_fab",
@@ -292,7 +314,11 @@ def audit_catalog(
             "sources": [
                 {"recipe_id": "ElectronicsAssembly", "multiplier": 4},
                 {"recipe_id": "PCBAssembly", "multiplier": 6},
-                {"recipe_id": "Electronics2Assembly", "multiplier": 12},
+                {
+                    "recipe_id": "Electronics2Assembly",
+                    "multiplier": 12,
+                    "source_machine_id": "AssemblyRoboticT2",
+                },
                 {"recipe_id": "Electronics3Assembly", "multiplier": 12},
             ],
         },
@@ -386,7 +412,7 @@ def audit_catalog(
     right_side_owners = {
         owner["key"]
         for owner in control["owners"]
-        if owner.get("right_side_input_ports") == 1
+        if owner.get("right_side_input_ports", 0) > 0
     }
     if right_side_owners != {
         "primary_smelter",
@@ -402,18 +428,37 @@ def audit_catalog(
         outputs = owner.get("output_ports")
         physical_rows = owner.get("physical_layout_rows")
         right_inputs = owner.get("right_side_input_ports")
+        top_inputs = owner.get("top_side_input_ports", 0)
         if not all(
             isinstance(value, int)
-            for value in (material, inputs, outputs, physical_rows, right_inputs)
+            for value in (
+                material,
+                inputs,
+                outputs,
+                physical_rows,
+                right_inputs,
+                top_inputs,
+            )
         ):
             errors.append(f"{owner.get('key')} port contract must contain integers")
             continue
         if inputs != material + 1:
             errors.append(f"{owner['key']} must add exactly one Data input")
-        if physical_rows > 7 or right_inputs != max(0, inputs - physical_rows):
+        overflow_inputs = max(0, inputs - physical_rows)
+        expected_right_inputs = min(
+            overflow_inputs,
+            physical_rows - outputs,
+        )
+        if (
+            physical_rows > 7
+            or right_inputs != expected_right_inputs
+            or top_inputs != overflow_inputs - expected_right_inputs
+        ):
             errors.append(f"{owner['key']} physical or right-side row contract drift")
         if outputs + right_inputs > physical_rows:
             errors.append(f"{owner['key']} right edge is oversubscribed")
+        if top_inputs > 7:
+            errors.append(f"{owner['key']} top edge is oversubscribed")
     return errors
 
 
@@ -487,8 +532,12 @@ def audit_universal_source(text: str, generated_catalog: str) -> list[str]:
             "amount.Product is DataProductProto",
             "private static readonly char[] KindOrder = { '#', '~', '\\'', '@', ':' }",
             "RightSideInputPorts",
-            "rightSideInputs = Math.Max(0, flatInputs.Count - layoutRows)",
-            "flatOutputs.Count + rightSideInputs > layoutRows",
+            "TopSideInputPorts",
+            "rightSideInputs = Math.Min(",
+            "bodyRows - flatOutputs.Count",
+            "topSideInputs = overflowInputs - rightSideInputs",
+            "BuildTopInputRow(",
+            'port.name + port.kind + "v"',
             '"<" + flatInputs[rightInputIndex].kind + flatInputs[rightInputIndex].name',
         ),
     )

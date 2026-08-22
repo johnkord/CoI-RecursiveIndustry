@@ -1,4 +1,4 @@
-Recursive Industry 0.20.0a pre-release candidate
+Recursive Industry 0.22.0a Circular Agrifood candidate
 =====================================
 
 A Captain of Industry endgame mod about building a physical AI economy, from
@@ -44,6 +44,15 @@ Highlights
 - Planetary coordination, orbital science and power, and two optional world
   contracts.
 - Nineteen high-power specialist megafacilities covering the physical economy.
+- Precision Irrigation plus labor-compressed Greenhouse II and Chicken Farm
+  families that preserve native weather, fertility, crop schedules, irrigation,
+  fertilizer, animal growth, slaughter controls, and co-products.
+- Four Stream-free authored agrifood rows convert unavoidable Animal Feed into
+  formulated Eggs, cultured Meat, mycoprotein Trimmings, or packaged Companion
+  Provisions while retaining Oxygen, water, power, and residual costs.
+- An optional staffed Companion Animal Center consumes provisions by population,
+  returns Waste, and grants 0.6 Unity at full satisfaction. It grants no Health
+  or worker-productivity bonus.
 - Data-only Access and Backbone Fiber, a Fiber Junction, and a Control Deployment
   Gateway that supplies live Industrial Control Stream.
 - Optional Federated Deployment adds a 420/minute Backbone Gateway row and a

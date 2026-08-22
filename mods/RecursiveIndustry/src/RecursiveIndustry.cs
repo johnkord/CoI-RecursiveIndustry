@@ -24,6 +24,7 @@ public sealed class RecursiveIndustry : DataOnlyMod
         registrator.RegisterData<IndustrialControlTransportData>();
         registrator.RegisterData<IndustrialControlGatewayData>();
         registrator.RegisterData<DeploymentAssuranceData>();
+        registrator.RegisterData<CompanionAnimalCareData>();
         registrator.RegisterData<WorldExchangeData>();
         registrator.RegisterData<AcceleratorWorksData>();
         registrator.RegisterData<RackGenerationData>();
@@ -40,6 +41,7 @@ public sealed class RecursiveIndustry : DataOnlyMod
         registrator.RegisterData<AutonomousMicrochipData>();
         registrator.RegisterData<AutonomousElectronicsIntegrationData>();
         registrator.RegisterData<AutonomousCapitalFabricationData>();
+        registrator.RegisterData<AdaptiveAgrifoodData>();
         registrator.RegisterData<PlanetaryCoordinationData>();
         registrator.RegisterData<OrbitalIndustryData>();
         registrator.RegisterData<OrbitalPowerArrayData>();

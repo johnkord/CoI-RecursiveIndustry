@@ -97,6 +97,45 @@ input union would erase too many independent domains and exceed the useful shell
 Farms, reactors, power generation, Waste Sorting, and native Maintenance Depots
 remain on their specialized game paths.
 
+## Adaptive Agrifood Systems
+
+Adaptive Agrifood Systems is an optional child of Autonomous Essential Systems.
+It keeps farms on their specialized native paths while adding three bounded
+choices:
+
+- Precision Irrigation allocates Focus to reduce farm water demand by 2% per
+  level for five levels, with no crop-yield bonus.
+- Greenhouse II upgrades in place to Sensor-Guided Greenhouse, reducing staffing
+  from 20 to 4 while
+  preserving crop schedules, fertility, rain, irrigation, fertilizer, yield,
+  maintenance, ports, and saved farm state.
+- Chicken Farm upgrades in place to Monitored Poultry Farm, reducing staffing
+  from 12 to 4 while
+  preserving flock growth, feed, water, starvation, slaughter controls, Eggs,
+  Chicken Carcass, buffers, and saved animal state.
+
+Native differential construction charges only the added Electronics IV,
+Validated Control Packages, and Frontier Programs. They do not consume Stream or
+Computing directly because native farm prototypes expose neither utility. They
+retain accountable workers rather than presenting zero-worker biology.
+
+## Circular Agrifood Systems
+
+Circular Agrifood Systems is an optional 480-month child of Adaptive Agrifood
+Systems. It inherits the parent's progression boundary and adds no duplicate
+lifetime-production gate. It unlocks:
+
+- Adaptive Egg Fermentation on the Crop and Soil Bioprocessing Center;
+- Serum-Free Cultured Meat and Mycoprotein Trimmings on the Food Processing
+  Campus;
+- packaged Companion Provisions on the Food Processing Campus; and
+- the staffed Companion Animal Center settlement module.
+
+The branch provides alternatives for unavoidable milling and oilseed coproducts
+without making native poultry obsolete. Its recipes are local, Stream-free, and
+Package-free. The settlement service grants bounded Unity only while supplied;
+it is unnecessary for housing, Health, workers, research, or every Epoch.
+
 Autonomous Process Systems also unlocks five directed Refinery slates. Broad
 fractionation remains the flexible choice; the directed rows commit crude to
 Diesel, Fuel Gas and Hydrogen, deep Hydrogen, Plastic, or Rubber. All require

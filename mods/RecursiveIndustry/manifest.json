@@ -1,9 +1,9 @@
 {
   "id": "RecursiveIndustry",
-  "version": "0.20.0a",
+  "version": "0.22.0a",
   "display_name": "Recursive Industry",
   "description_short": "Endgame AI infrastructure, Recursive Epochs, and universal industry.",
-  "description_long": "Build a physical endgame AI economy, deploy local or Backbone-rate control over Data-only Fiber, scale validated Packages through bulk assurance, transform logistics and nineteen specialized industrial facilities, choose Direct, Integrated, or high-power Precision production, and coordinate planetary and orbital expansion.",
+  "description_long": "Build a physical endgame AI economy, deploy local or Backbone-rate control over Data-only Fiber, transform logistics and nineteen specialist facilities, extend native biological production, and turn agrifood coproducts into synthetic ingredients or optional companion-animal care.",
   "authors": "John Kordich",
   "links": [ "https://github.com/johnkord/CoI-RecursiveIndustry" ],
   "primary_dlls": [ "RecursiveIndustry.dll" ],

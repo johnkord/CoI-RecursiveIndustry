@@ -53,6 +53,11 @@ public static class RecursiveIndustryUiIconsV3 {
         "access_fiber",
         "backbone_fiber",
         "fiber_junction",
+        "precision_irrigation",
+        "sensor_guided_greenhouse",
+        "monitored_poultry_farm",
+        "companion_provisions",
+        "companion_animal_center",
         "accelerator_works",
         "curation_office",
         "model_development_center",
@@ -177,6 +182,11 @@ public static class RecursiveIndustryUiIconsV3 {
             case "access_fiber": DrawAccessFiber(g); break;
             case "backbone_fiber": DrawBackboneFiber(g); break;
             case "fiber_junction": DrawFiberJunction(g); break;
+            case "precision_irrigation": DrawPrecisionIrrigation(g); break;
+            case "sensor_guided_greenhouse": DrawSensorGuidedGreenhouse(g); break;
+            case "monitored_poultry_farm": DrawMonitoredPoultryFarm(g); break;
+            case "companion_provisions": DrawCompanionProvisions(g); break;
+            case "companion_animal_center": DrawCompanionAnimalCenter(g); break;
             case "accelerator_works": DrawAcceleratorWorks(g); break;
             case "curation_office": DrawCurationOffice(g); break;
             case "model_development_center": DrawModelCenter(g); break;
@@ -885,6 +895,96 @@ public static class RecursiveIndustryUiIconsV3 {
         Arrow(g, new Point(382, 892), new Point(382, 676), Cyan, 42f);
         Arrow(g, new Point(642, 892), new Point(642, 676), Cyan, 42f);
         using (var pen = new Pen(Gold, 34f)) { g.DrawArc(pen, 154, 130, 716, 716, 200, 220); }
+    }
+
+    private static void DrawPrecisionIrrigation(Graphics g) {
+        Polygon(g, new[] {
+            new Point(512, 112), new Point(700, 382),
+            new Point(666, 646), new Point(512, 760),
+            new Point(358, 646), new Point(324, 382)
+        }, Blue, 48f);
+        Polygon(g, new[] {
+            new Point(238, 726), new Point(512, 472),
+            new Point(786, 726), new Point(512, 884)
+        }, Green, 42f);
+        Line(g, White, 34f, new Point(512, 492), new Point(512, 826));
+        Ellipse(g, 448, 300, 128, 128, Cyan, 28f);
+        using (var pen = new Pen(Gold, 28f)) {
+            g.DrawArc(pen, 346, 202, 332, 332, 198, 144);
+            g.DrawArc(pen, 274, 132, 476, 476, 206, 128);
+        }
+    }
+
+    private static void DrawSensorGuidedGreenhouse(Graphics g) {
+        Polygon(g, new[] {
+            new Point(148, 478), new Point(512, 170),
+            new Point(876, 478), new Point(818, 848),
+            new Point(206, 848)
+        }, Body, 50f);
+        Line(g, White, 34f, new Point(512, 194), new Point(512, 840));
+        Line(g, White, 30f, new Point(196, 484), new Point(828, 484));
+        for (int index = 0; index < 3; index++) {
+            int x = 326 + index * 186;
+            Line(g, Green, 30f, new Point(x, 760), new Point(x, 566));
+            Polygon(g, new[] {
+                new Point(x, 532), new Point(x - 76, 636), new Point(x, 618)
+            }, Green, 22f);
+            Polygon(g, new[] {
+                new Point(x, 572), new Point(x + 76, 654), new Point(x, 648)
+            }, Green, 22f);
+        }
+        Ellipse(g, 446, 330, 132, 132, Cyan, 28f);
+        Ellipse(g, 488, 372, 48, 48, White, 14f);
+        using (var pen = new Pen(Gold, 26f)) {
+            g.DrawArc(pen, 366, 250, 292, 292, 202, 136);
+        }
+    }
+
+    private static void DrawMonitoredPoultryFarm(Graphics g) {
+        Polygon(g, new[] {
+            new Point(160, 430), new Point(512, 166),
+            new Point(864, 430), new Point(810, 846),
+            new Point(214, 846)
+        }, Body, 52f);
+        Rect(g, 392, 518, 240, 328, Recessed, 26, 36f);
+        Ellipse(g, 262, 568, 174, 238, White, 34f);
+        Ellipse(g, 588, 568, 174, 238, Gold, 34f);
+        Ellipse(g, 450, 294, 124, 124, Cyan, 28f);
+        Ellipse(g, 490, 334, 44, 44, White, 12f);
+        using (var pen = new Pen(Green, 28f)) {
+            g.DrawArc(pen, 382, 226, 260, 260, 204, 132);
+        }
+        Check(g, 446, 712, 132);
+    }
+
+    private static void DrawCompanionProvisions(Graphics g) {
+        Polygon(g, new[] {
+            new Point(252, 220), new Point(772, 220),
+            new Point(824, 844), new Point(200, 844)
+        }, Body, 50f);
+        Line(g, Cyan, 38f, new Point(266, 340), new Point(758, 340));
+        Ellipse(g, 392, 476, 240, 204, Gold, 34f);
+        Ellipse(g, 306, 402, 130, 130, White, 28f);
+        Ellipse(g, 448, 370, 130, 130, White, 28f);
+        Ellipse(g, 590, 402, 130, 130, White, 28f);
+        Rect(g, 314, 710, 396, 74, Recessed, 28, 24f);
+        Check(g, 660, 684, 116);
+    }
+
+    private static void DrawCompanionAnimalCenter(Graphics g) {
+        Polygon(g, new[] {
+            new Point(142, 440), new Point(512, 154),
+            new Point(882, 440), new Point(822, 854),
+            new Point(202, 854)
+        }, Body, 52f);
+        Rect(g, 410, 566, 204, 288, Recessed, 28, 34f);
+        Ellipse(g, 404, 366, 216, 182, Cyan, 30f);
+        Ellipse(g, 332, 306, 112, 112, White, 24f);
+        Ellipse(g, 456, 264, 112, 112, White, 24f);
+        Ellipse(g, 580, 306, 112, 112, White, 24f);
+        Ellipse(g, 246, 640, 118, 118, Gold, 26f);
+        Ellipse(g, 660, 640, 118, 118, Gold, 26f);
+        Check(g, 446, 692, 132);
     }
 
     private static void DrawMegafacility(Graphics g, int kind) {

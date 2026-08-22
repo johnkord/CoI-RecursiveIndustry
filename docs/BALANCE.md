@@ -55,6 +55,58 @@ Integrated modes should lose when intermediate flexibility or electricity is the
 binding constraint. Precision should win under feedstock pressure and lose when
 power is scarce.
 
+## Adaptive Agrifood tradeoffs
+
+Precision Irrigation costs 8,000 Focus for its first -2% farm-water level and
+80,000 to cap at -10%. It changes neither crop yield nor settlement water, rain
+collection, fertilizer, or groundwater. It should win only when a mature farm
+district is water-constrained and lose when Focus is better allocated elsewhere.
+
+The Sensor-Guided Greenhouse retains 4 of Greenhouse II's 20 workers and adds 64
+Electronics IV, 16 Packages, and 4 Programs to source construction. The Monitored
+Poultry Farm retains 4 of 12 workers and adds 32 Electronics IV, 8 Packages, and
+2 Programs. Both preserve source output and operating inputs exactly. Their
+economic proposition is labor compression, not yield, water, feed, footprint,
+power, or maintenance improvement.
+
+The source buildings upgrade in place. Since the target construction vectors are
+the complete source vectors plus the hardware above, native replacement costing
+charges exactly those additions rather than rebuilding the farm's embedded
+capital.
+
+Native farms remain the lower-capital choice. Adaptive farms should be selected
+only when agricultural labor is scarce enough to justify advanced commissioning
+hardware and late research. Zero-worker farming, automatic crop schedules, and
+farm-to-Food-Pack shortcuts are outside the design.
+
+## Circular Agrifood tradeoffs
+
+The four authored rows are exact Feed-valorization recipes, not a fourth
+universal mode:
+
+- formulated Eggs consume 32 Feed at 30 MW;
+- cultured Meat plus Trimmings consumes 40 Feed at 36 MW;
+- mycoprotein Trimmings consumes 32 Feed at 30 MW; and
+- Companion Provisions consumes 60 Feed plus Trimmings, Oil, Water, and Plastic
+  at 18 MW.
+
+Four Chicken Farms consume 60 Feed and 72 Water per minute and return both 28
+Eggs and 40 Chicken Carcass. Poultry wins when both co-products are useful.
+Synthetic rows avoid an unwanted paired output but add Oxygen, refined inputs,
+Waste Water, and 2.5x to 3x campus process power. Mycoprotein specializes in the
+Sausage or digestion chain rather than producing premium Meat.
+
+One Companion Provisions batch supports 4,000 colonists for one month. At 1,000
+colonists the service embeds 15 Feed/month, returns 4 Waste/month, occupies eight
+workers, consumes 250 kW, and grants 0.6 Unity. It cannot clear the Integrated
+Plant row's 33.75 Feed/minute by itself, so poultry, synthetic ingredients,
+compost, fertilizer, and steam remain useful parallel outlets.
+
+No gas-fed Feed row is implemented. Under the retained screening guard, a future
+64 Fuel Gas to 60 Feed route could recover at most 52.5 Fuel Gas through the
+current worst synthetic-output digestion path, before other inputs and power.
+That arithmetic is necessary but not sufficient for future acceptance.
+
 ## Directed petrochemical slates
 
 The six Refinery strategies all process at the existing Integrated anchor of 2x
@@ -145,7 +197,7 @@ python tools/simulate_recursive_industry_economy.py --json
 ## Open judgment
 
 Integrated play still needs to determine whether three to four racks per branch,
-bulk Campus plus standard trim validation, and 415 to 683 MW feel substantial
+bulk assurance, 415 to 683 MW, and the agrifood labor/capital trade feel substantial
 without becoming repetitive infrastructure ceremony. Those are player-experience
 questions, not facts the offline model can settle.
 

@@ -4,18 +4,16 @@
 
 Use the exact GitHub pre-release:
 
-- version: `0.19.0d`;
-- release: https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.19.0d;
-- file: `RecursiveIndustry-0.19.0d.zip`;
-- size: 1,726,546 bytes;
-- SHA-256: `638AE395526DD40ADFE4751CB88EF4DEA43F5DCBA9B6B586BFE2C01FD2AE280E`.
+- version: `0.22.0a`;
+- release: https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0a;
+- file: `RecursiveIndustry-0.22.0a.zip`;
+- size: 1,993,958 bytes;
+- SHA-256: `699D3C50A8CF97B40D5125DC80DE7DD8371FABF2F517C82F6F8EC144C1E77411`.
 
 Do not use GitHub's automatic source-code archives as the player package.
 
-Version 0.20.0a is currently an unreleased source candidate. Do not substitute a
-local source archive for a source-bound player ZIP. Its integrated Industrial
-Control session begins only after build, package, migration, and private successor
-preflight gates pass.
+Use only the attached player ZIP. Do not substitute a local build or GitHub's
+automatic source archive.
 
 ## Install
 
@@ -31,9 +29,10 @@ Captain of Industry 0.8.7 and Trains expansion 1.0.0 or newer are required.
 Supporter edition is optional. Adding or removing the mod from an existing normal
 save is unsupported.
 
-Pre-release saves containing the removed Orbital Power Relay cannot load normally
-with 0.19.0d. Remove the Relay while running 0.19.0c before upgrading, or start a
-new campaign.
+Do not load a `0.19.x`, `0.20.x`, or `0.21.x` pre-release save with 0.22.0a.
+Testing an old placed-machine save produced continuous incompatible molten-output
+errors because legacy connections no longer match the current universal-facility
+port contract. This is an unsupported migration result, not a repair workflow.
 
 ## Useful feedback
 
@@ -49,7 +48,7 @@ in one session. Useful reports explain:
 - whether any icon, port, model, or recipe row was confusing; and
 - whether ordinary operation required repeated manual intervention.
 
-For a future 0.20.0a package, also report whether Fiber topology is a meaningful
+For 0.22.0a, also report whether Fiber topology is a meaningful
 planning choice, whether Access and Backbone are distinguishable, whether a cut
 is diagnosable, and whether Direct production remains understandable and useful
 without Fiber. Also report whether Backbone deployment earns its higher power
@@ -58,6 +57,11 @@ validators obsolete, and whether the Campus icon is distinct from the Gateway.
 For the Refinery Complex, report which product slate you chose, what demand drove
 that commitment, whether broad fractionation remained a credible fallback, and
 whether the Polymer or Elastomer power premium was understandable from normal UI.
+
+For Circular Agrifood, report whether poultry remains a credible joint Egg and
+carcass route, whether synthetic Eggs, Meat, and Trimmings solve distinct
+shortages, and whether Companion Animal Care earns its workers, power,
+provisions, Waste, and 0.6-Unity reward.
 
 For crashes or registration failures, include:
 

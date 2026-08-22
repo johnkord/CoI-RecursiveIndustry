@@ -16,6 +16,11 @@ internal static partial class RecursiveIndustryIcons
     public const string AccessFiber = Root + "access_fiber.png";
     public const string BackboneFiber = Root + "backbone_fiber.png";
     public const string FiberJunction = Root + "fiber_junction.png";
+    public const string PrecisionIrrigation = Root + "precision_irrigation.png";
+    public const string SensorGuidedGreenhouse = Root + "sensor_guided_greenhouse.png";
+    public const string MonitoredPoultryFarm = Root + "monitored_poultry_farm.png";
+    public const string CompanionProvisions = Root + "companion_provisions.png";
+    public const string CompanionAnimalCenter = Root + "companion_animal_center.png";
 
     public const string AcceleratorWorks = Root + "accelerator_works.png";
     public const string CurationOffice = Root + "curation_office.png";

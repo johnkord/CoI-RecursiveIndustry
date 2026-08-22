@@ -132,6 +132,18 @@ public static partial class RecursiveIndustryIds
         public static readonly RecipeID IntegratedLabEquipment4 =
             Ids.Recipes.CreateId("RecursiveIndustry_IntegratedLabEquipment4");
 
+        public static readonly RecipeID AdaptiveEggFermentation =
+            Ids.Recipes.CreateId("RecursiveIndustry_AdaptiveEggFermentation");
+
+        public static readonly RecipeID SerumFreeCulturedMeat =
+            Ids.Recipes.CreateId("RecursiveIndustry_SerumFreeCulturedMeat");
+
+        public static readonly RecipeID MycoproteinTrimmings =
+            Ids.Recipes.CreateId("RecursiveIndustry_MycoproteinTrimmings");
+
+        public static readonly RecipeID CompanionProvisions =
+            Ids.Recipes.CreateId("RecursiveIndustry_CompanionProvisions");
+
         public static readonly RecipeID PrecisionCement =
             Ids.Recipes.CreateId("RecursiveIndustry_PrecisionCement");
 

@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.66f1
-CRC: 3378853088
+CRC: 1923214527
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 80f388f6f0de32be1873d9e7be98bf8d
+    Hash: 0fef117137d675b51ece30241292211b
   TypeTreeHash:
     serializedVersion: 2
     Hash: 9f349c36d7a6532f767333f9299b3e74
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 70f3d207ae51792036b726d77f4f1534
+    Hash: 83ef48c4b1debe51f71700246e3f5a09
 HashAppended: 0
 ClassTypes:
 - Class: 28
@@ -30,14 +30,16 @@ Assets:
 - Assets/RecursiveIndustry/UiIcons/medical_chemistry_complex.png
 - Assets/RecursiveIndustry/UiIcons/autonomous_nuclear_locomotive_reactor.png
 - Assets/RecursiveIndustry/UiIcons/planetary_coordination_center.png
-- Assets/RecursiveIndustry/UiIcons/frontier_expansion_project.png
+- Assets/RecursiveIndustry/UiIcons/monitored_poultry_farm.png
 - Assets/RecursiveIndustry/UiIcons/frontier_project_complex.png
+- Assets/RecursiveIndustry/UiIcons/frontier_expansion_project.png
 - Assets/RecursiveIndustry/UiIcons/planetary_extraction.png
 - Assets/RecursiveIndustry/UiIcons/contract_coordination.png
 - Assets/RecursiveIndustry/UiIcons/deployment_assurance_campus.png
 - Assets/RecursiveIndustry/UiIcons/recursive_integration_array.png
 - Assets/RecursiveIndustry/UiIcons/autonomous_tank_hauler.png
 - Assets/RecursiveIndustry/UiIcons/precision_components_fab.png
+- Assets/RecursiveIndustry/UiIcons/precision_irrigation.png
 - Assets/RecursiveIndustry/UiIcons/autonomous_turbine_locomotive.png
 - Assets/RecursiveIndustry/UiIcons/experiment_program.png
 - Assets/RecursiveIndustry/UiIcons/water_utility.png
@@ -59,6 +61,7 @@ Assets:
 - Assets/RecursiveIndustry/UiIcons/curation_office.png
 - Assets/RecursiveIndustry/UiIcons/fleet_optimization.png
 - Assets/RecursiveIndustry/UiIcons/autonomous_nuclear_locomotive_condenser.png
+- Assets/RecursiveIndustry/UiIcons/sensor_guided_greenhouse.png
 - Assets/RecursiveIndustry/UiIcons/autonomous_construction_nexus.png
 - Assets/RecursiveIndustry/UiIcons/crop_soil_bioprocessing.png
 - Assets/RecursiveIndustry/UiIcons/autonomous_steam_tender_ii.png
@@ -67,7 +70,9 @@ Assets:
 - Assets/RecursiveIndustry/UiIcons/bioenergy_center.png
 - Assets/RecursiveIndustry/UiIcons/food_pack_campus.png
 - Assets/RecursiveIndustry/UiIcons/accelerator_works.png
+- Assets/RecursiveIndustry/UiIcons/companion_provisions.png
 - Assets/RecursiveIndustry/UiIcons/autonomous_amphibious_excavator.png
+- Assets/RecursiveIndustry/UiIcons/companion_animal_center.png
 - Assets/RecursiveIndustry/UiIcons/gas_fertilizer_complex.png
 - Assets/RecursiveIndustry/UiIcons/orbital_power_relay.png
 - Assets/RecursiveIndustry/UiIcons/autonomous_mega_excavator.png

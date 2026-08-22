@@ -1740,7 +1740,8 @@
         },
         {
           "recipe_id": "Electronics2Assembly",
-          "multiplier": 12
+          "multiplier": 12,
+          "source_machine_id": "AssemblyRoboticT2"
         },
         {
           "recipe_id": "Electronics3Assembly",
@@ -1830,6 +1831,85 @@
           "recipe_id": "LabEquipment4Assembly",
           "multiplier": 24
         }
+      ]
+    }
+  ],
+  "authored_recipes": [
+    {
+      "key": "adaptive_egg_fermentation",
+      "name": "Adaptive Egg Fermentation",
+      "machine": "crop_soil_bioprocessing",
+      "duration_seconds": 60,
+      "power_multiplier_percent": 250,
+      "inputs": [
+        { "product": "AnimalFeed", "quantity": 32 },
+        { "product": "CookingOil", "quantity": 8 },
+        { "product": "Oxygen", "quantity": 24 },
+        { "product": "Water", "quantity": 16 }
+      ],
+      "outputs": [
+        { "product": "Eggs", "quantity": 28 },
+        { "product": "CarbonDioxide", "quantity": 16 },
+        { "product": "WasteWater", "quantity": 12 }
+      ]
+    },
+    {
+      "key": "serum_free_cultured_meat",
+      "name": "Serum-Free Cultured Meat",
+      "machine": "food_processing_campus",
+      "duration_seconds": 60,
+      "power_multiplier_percent": 300,
+      "inputs": [
+        { "product": "AnimalFeed", "quantity": 40 },
+        { "product": "Sugar", "quantity": 8 },
+        { "product": "Oxygen", "quantity": 32 },
+        { "product": "Water", "quantity": 24 },
+        { "product": "Salt", "quantity": 4 }
+      ],
+      "outputs": [
+        { "product": "Meat", "quantity": 20 },
+        { "product": "MeatTrimmings", "quantity": 8 },
+        { "product": "CarbonDioxide", "quantity": 16 },
+        { "product": "WasteWater", "quantity": 16 }
+      ]
+    },
+    {
+      "key": "mycoprotein_trimmings",
+      "name": "Mycoprotein Trimmings",
+      "machine": "food_processing_campus",
+      "duration_seconds": 60,
+      "power_multiplier_percent": 250,
+      "inputs": [
+        { "product": "AnimalFeed", "quantity": 32 },
+        { "product": "CookingOil", "quantity": 8 },
+        { "product": "Oxygen", "quantity": 24 },
+        { "product": "Water", "quantity": 16 }
+      ],
+      "outputs": [
+        { "product": "MeatTrimmings", "quantity": 36 },
+        { "product": "CarbonDioxide", "quantity": 16 },
+        { "product": "WasteWater", "quantity": 12 }
+      ]
+    },
+    {
+      "key": "companion_provisions",
+      "name": "Companion Provisions",
+      "machine": "food_processing_campus",
+      "duration_seconds": 60,
+      "power_multiplier_percent": 150,
+      "inputs": [
+        { "product": "AnimalFeed", "quantity": 60 },
+        { "product": "MeatTrimmings", "quantity": 12 },
+        { "product": "CookingOil", "quantity": 4 },
+        { "product": "Water", "quantity": 8 },
+        { "product": "Plastic", "quantity": 4 }
+      ],
+      "outputs": [
+        {
+          "product": "RecursiveIndustry.CompanionProvisions",
+          "quantity": 80
+        },
+        { "product": "WasteWater", "quantity": 4 }
       ]
     }
   ],

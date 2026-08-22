@@ -2,12 +2,12 @@
   "schema_version": 1,
   "generator": "Deterministic System.Drawing flat-symbol generator",
   "generator_path": "tools/generate_recursive_industry_ui_icons.ps1",
-  "generator_sha256": "C1D87EE3A6F7CF8532429F7231F04019B65C3AC8468B09A945FAEB073365693A",
-  "generated_date": "2026-08-20",
+  "generator_sha256": "C2A595451E22CFA614FC95344732818C16628BCB932C99C37A6F866471295D55",
+  "generated_date": "2026-08-21",
   "unity_version": "6000.0.66f1",
   "visual_review": {
     "status": "PASS_STATIC_PROOF_REVIEW",
-    "runtime_status": "OPEN_INTEGRATED_0.20.0A",
+    "runtime_status": "OPEN_INTEGRATED_0.22.0A",
     "tested_sizes_px": [
       24,
       32,
@@ -19,24 +19,24 @@
     ],
     "size_proof": {
       "path": "art/RecursiveIndustry/UiIcons/proofs/all-ui-icons-size-proof.png",
-      "size_bytes": 508432,
-      "sha256": "5FB14B97FCDAA96CFDE464C7C6648F425220A20C0BF4DADACA6160B69E06A5B6"
+      "size_bytes": 544697,
+      "sha256": "62D3AD5B4BCEA437F47E1B40ACB78F55B15AFDA34109D0E9699845C06420D5F7"
     },
     "grayscale_proof": {
       "path": "art/RecursiveIndustry/UiIcons/proofs/all-ui-icons-grayscale-proof.png",
-      "size_bytes": 478456,
-      "sha256": "0FBB4277DA8C2CB47802CE1211685541182C5EE1E214C0F7535AE4352A32C96A"
+      "size_bytes": 511641,
+      "sha256": "6A8E805526543DFDA5C795FDF6E101C5264A6E23E109FC43A825342C55E54B93"
     }
   },
   "bundle": {
     "name": "uiicons_5287",
     "path": "mods/RecursiveIndustry/AssetBundles/uiicons_5287",
-    "size_bytes": 2222338,
-    "sha256": "2A98D092BDD9AB9AFBBB0923D8650AF109B03F5673816A537EE788B1570EEB9D",
-    "crc": 3378853088,
+    "size_bytes": 2420955,
+    "sha256": "0422C14BB87B3EF24AA9C283F1583757D11F69393E2B1078F668D35D173126B5",
+    "crc": 1923214527,
     "dependencies": [],
     "unity_manifest": "art/RecursiveIndustry/UiIcons/unity/uiicons_5287.manifest",
-    "unity_manifest_sha256": "2D269FD07E98D00E5E090E7A2E823C2BE2CCEC648FD90A66D96D5FBF448B0EA5"
+    "unity_manifest_sha256": "F0A3BB62F6CC88F3D8EE55E1C0149367505AB2CD6629F142C31413E5498417DC"
   },
   "icons": [
     {
@@ -202,6 +202,81 @@
         "path": "art/RecursiveIndustry/UiIcons/exports/fiber_junction.png",
         "size_bytes": 24795,
         "sha256": "D04D9BDB429AA6FD2CBC872D58E3ED9669FFD5B5BBD2353B43FCBF16491C6CB6"
+      }
+    },
+    {
+      "name": "precision_irrigation",
+      "constant": "PrecisionIrrigation",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/precision_irrigation.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/precision_irrigation-master.png",
+        "size_bytes": 45146,
+        "sha256": "90A4078D0451051EFCAA22393500FBF5F2683294011922633C7399759C18BB5D"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/precision_irrigation.png",
+        "size_bytes": 38018,
+        "sha256": "107CA8088A037BD0FFCD6A288EE4D7A0071EE783283C7A786E4AFF726E4D389E"
+      }
+    },
+    {
+      "name": "sensor_guided_greenhouse",
+      "constant": "SensorGuidedGreenhouse",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/sensor_guided_greenhouse.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/sensor_guided_greenhouse-master.png",
+        "size_bytes": 43664,
+        "sha256": "344D7B58AB55EBC5CC20E174C46D46AAB6BAC581941E4FB13ACCFB5BAC73C8D4"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/sensor_guided_greenhouse.png",
+        "size_bytes": 29820,
+        "sha256": "EAB4E99EDA21A86A2C3EABC8DA0C85BF8C9A708FB96EFD8AC30EBD1A0F60A7C0"
+      }
+    },
+    {
+      "name": "monitored_poultry_farm",
+      "constant": "MonitoredPoultryFarm",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/monitored_poultry_farm.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/monitored_poultry_farm-master.png",
+        "size_bytes": 42834,
+        "sha256": "F4520153EF3A35E56E16AC3CC3857A01592222267F2EE4265EBBACB2C6675722"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/monitored_poultry_farm.png",
+        "size_bytes": 33772,
+        "sha256": "3D1FD34CDB96062BEBFCB623CBC0FB5E40B06A4A0D09F5927900B5D0583B7459"
+      }
+    },
+    {
+      "name": "companion_provisions",
+      "constant": "CompanionProvisions",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/companion_provisions.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/companion_provisions-master.png",
+        "size_bytes": 38794,
+        "sha256": "B1FF88F662A7228DF04FFDBBF716CFB796E1AD947E440185BBB8A9F245AE3E67"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/companion_provisions.png",
+        "size_bytes": 21711,
+        "sha256": "E55052E46B6E1B6943888D0523A82D137C5B3DE04B8ECFA2055214C3ABB4391C"
+      }
+    },
+    {
+      "name": "companion_animal_center",
+      "constant": "CompanionAnimalCenter",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/companion_animal_center.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/companion_animal_center-master.png",
+        "size_bytes": 43271,
+        "sha256": "DD5B243276FB4E05C4649969E3AA6282FBBCDF7708506710911C996D8E207A81"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/companion_animal_center.png",
+        "size_bytes": 34177,
+        "sha256": "B139B998BE3528C19B30FF33371F3C49DBF794E31CB980A4890B43E6293CC502"
       }
     },
     {

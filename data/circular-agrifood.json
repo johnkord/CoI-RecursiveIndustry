@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "candidate_version": "0.22.0a",
+  "predecessor": "0.21.0d",
+  "game": {
+    "display_version": "0.8.7",
+    "build": 613
+  },
+  "catalog_contract": {
+    "facilities": 19,
+    "direct_bindings": 235,
+    "integrated_recipes": 21,
+    "precision_recipes": 10,
+    "authored_recipes": 4,
+    "all_authored_recipes_are_stream_free": true
+  },
+  "research": {
+    "id": "RecursiveIndustry_CircularAgrifoodSystems",
+    "name": "Circular Agrifood Systems",
+    "position": [228, 18],
+    "duration_months": 480,
+    "parent": "RecursiveIndustry_AdaptiveAgrifoodSystems",
+    "requires_space_points": true,
+    "additional_lifetime_requirements": [],
+    "unlocks": [
+      "RecursiveIndustry_CompanionProvisions",
+      "RecursiveIndustry_CompanionAnimalCenter",
+      "RecursiveIndustry_AdaptiveEggFermentation",
+      "RecursiveIndustry_SerumFreeCulturedMeat",
+      "RecursiveIndustry_MycoproteinTrimmings",
+      "RecursiveIndustry_CompanionProvisions"
+    ]
+  },
+  "authored_recipes": {
+    "adaptive_egg_fermentation": {
+      "machine": "crop_soil_bioprocessing",
+      "duration_seconds": 60,
+      "power_multiplier_percent": 250,
+      "process_power_mw": 30,
+      "inputs": {
+        "AnimalFeed": 32,
+        "CookingOil": 8,
+        "Oxygen": 24,
+        "Water": 16
+      },
+      "outputs": {
+        "Eggs": 28,
+        "CarbonDioxide": 16,
+        "WasteWater": 12
+      },
+      "maximum_fuel_gas_recovery": 28
+    },
+    "serum_free_cultured_meat": {
+      "machine": "food_processing_campus",
+      "duration_seconds": 60,
+      "power_multiplier_percent": 300,
+      "process_power_mw": 36,
+      "inputs": {
+        "AnimalFeed": 40,
+        "Sugar": 8,
+        "Oxygen": 32,
+        "Water": 24,
+        "Salt": 4
+      },
+      "outputs": {
+        "Meat": 20,
+        "MeatTrimmings": 8,
+        "CarbonDioxide": 16,
+        "WasteWater": 16
+      },
+      "maximum_fuel_gas_recovery": 4
+    },
+    "mycoprotein_trimmings": {
+      "machine": "food_processing_campus",
+      "duration_seconds": 60,
+      "power_multiplier_percent": 250,
+      "process_power_mw": 30,
+      "inputs": {
+        "AnimalFeed": 32,
+        "CookingOil": 8,
+        "Oxygen": 24,
+        "Water": 16
+      },
+      "outputs": {
+        "MeatTrimmings": 36,
+        "CarbonDioxide": 16,
+        "WasteWater": 12
+      },
+      "maximum_fuel_gas_recovery": 18
+    },
+    "companion_provisions": {
+      "machine": "food_processing_campus",
+      "duration_seconds": 60,
+      "power_multiplier_percent": 150,
+      "process_power_mw": 18,
+      "inputs": {
+        "AnimalFeed": 60,
+        "MeatTrimmings": 12,
+        "CookingOil": 4,
+        "Water": 8,
+        "Plastic": 4
+      },
+      "outputs": {
+        "RecursiveIndustry.CompanionProvisions": 80,
+        "WasteWater": 4
+      }
+    }
+  },
+  "companion_care": {
+    "product_id": "RecursiveIndustry_CompanionProvisions",
+    "product_kind": "CountableProductProto",
+    "module_id": "RecursiveIndustry_CompanionAnimalCenter",
+    "need_id": "RecursiveIndustry_CompanionCareNeed",
+    "unity_at_full_satisfaction": 0.6,
+    "health": 0,
+    "worker_productivity": 0,
+    "provisions_per_pop_per_month": 0.02,
+    "waste_per_pop_per_month": 0.004,
+    "electricity_kw": 250,
+    "workers": 8,
+    "input_buffer": 160,
+    "output_buffer": 64,
+    "population_supported_per_recipe_batch": 4000,
+    "feed_embodied_per_1000_pop_month": 15,
+    "waste_per_1000_pop_month": 4
+  },
+  "existing_alternatives": {
+    "four_chicken_farms": {
+      "inputs_per_minute": { "AnimalFeed": 60, "Water": 72 },
+      "outputs_per_minute": { "Eggs": 28, "ChickenCarcass": 40 }
+    },
+    "compost": {
+      "inputs": { "AnimalFeed": 12 },
+      "outputs": { "Compost": 6 },
+      "duration_seconds": 60
+    },
+    "organic_fertilizer": {
+      "inputs": { "Compost": 6, "Dirt": 12, "Water": 6 },
+      "outputs": { "FertilizerOrganic": 24 },
+      "duration_seconds": 20
+    },
+    "steam": {
+      "inputs": { "AnimalFeed": 12, "Water": 8 },
+      "outputs": { "SteamHigh": 8, "Exhaust": 6 },
+      "duration_seconds": 10
+    }
+  },
+  "guards": {
+    "gas_fed_feed_recipe_implemented": false,
+    "hypothetical_gas_fed_feed_input": 64,
+    "hypothetical_gas_fed_feed_output": 60,
+    "maximum_returned_fuel_gas_from_60_feed": 52.5,
+    "companion_service_clears_integrated_plant_surplus_alone": false,
+    "automatic_fallback": false,
+    "custom_saved_state": false,
+    "industrial_control_stream_input": false,
+    "recurring_packages": false,
+    "direct_health_bonus": false,
+    "worker_productivity_bonus": false,
+    "synthetic_chicken_carcass": false,
+    "direct_synthetic_food_pack": false
+  },
+  "presentation": {
+    "bundle": "uiicons_5287",
+    "total_ui_identities": 85,
+    "new_ui_identities": 2,
+    "dependencies": []
+  }
+}

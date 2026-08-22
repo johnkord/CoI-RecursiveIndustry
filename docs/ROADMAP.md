@@ -2,19 +2,19 @@
 
 ## Gameplay-first 1.0
 
-1. Preserve public pre-release 0.19.0d and complete the 0.20.0a Industrial
-   Control and Federated Deployment candidate without expanding into another
-   gameplay domain. Federated Deployment scales the existing validation/control
-   domain and adds no product or universal industry branch.
-2. Classify migration and complete one integrated author campaign covering the
-   complete 0.20.0a feature set.
+1. Preserve public pre-release 0.19.0d and source-bound 0.20.0a evidence.
+2. Complete one integrated author campaign covering the 0.22.0a Industrial
+   Control, Adaptive Agrifood, and Circular Agrifood successor, including native
+   farm upgrades, representative Feed conversion, companion-service behavior,
+   and persistence.
 3. Fix only demonstrated gameplay, balance, copy, presentation, or compatibility
    defects.
 4. Freeze one deterministic 1.0 candidate.
 5. Run independent, uncoached single-player campaigns on that exact archive.
 6. Publish the tested bytes on GitHub Releases and COI Hub.
 
-No new gameplay domain belongs in this sequence.
+No additional gameplay domain belongs before this integrated boundary. The
+0.22.0a scope is frozen for playtest preparation.
 
 ## Stabilization
 
@@ -27,6 +27,10 @@ older release archives for players on supported game branches.
 Potential later work includes civic knowledge infrastructure, bounded planetary
 stewardship policies, and custom presentation. These are directions, not promises;
 they must earn separate scope and must not destabilize the released core.
+
+Recirculating aquaculture and insect bioconversion are also deferred. Either must
+earn a native biological entity with growth, care, water, failure, and persistence;
+neither may ship as an ordinary recipe that exists only to consume Feed.
 
 A future art-focused release may replace borrowed compatible world-space building
 representations with original models without changing gameplay contracts.

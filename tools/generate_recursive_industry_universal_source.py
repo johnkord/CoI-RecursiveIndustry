@@ -24,12 +24,15 @@ def load_catalog() -> dict[str, Any]:
         raise ValueError("public universal-industry catalog schema must be 1")
     facilities = value.get("facilities")
     integrated = value.get("integrated_recipes")
+    authored = value.get("authored_recipes")
     precision = value.get("precision_recipes")
     research = value.get("research_keys")
     if not isinstance(facilities, list) or len(facilities) != 19:
         raise ValueError("public catalog must contain 19 facilities")
     if not isinstance(integrated, list) or len(integrated) != 21:
         raise ValueError("public catalog must contain 21 Integrated recipes")
+    if not isinstance(authored, list) or len(authored) != 4:
+        raise ValueError("public catalog must contain four authored recipes")
     if not isinstance(precision, list) or len(precision) != 10:
         raise ValueError("public catalog must contain 10 Precision recipes")
     if not isinstance(research, list) or len(research) != 5:
@@ -44,6 +47,64 @@ def load_catalog() -> dict[str, Any]:
     ]
     if len(direct_ids) != 235 or len(set(direct_ids)) != 235:
         raise ValueError("public catalog must contain 235 unique Direct bindings")
+    direct_id_set = set(direct_ids)
+    composition_only_sources = {
+        (source.get("recipe_id"), source.get("source_machine_id"))
+        for recipe in integrated
+        for source in recipe.get("sources", [])
+        if source.get("recipe_id") not in direct_id_set
+    }
+    if composition_only_sources != {
+        ("Electronics2Assembly", "AssemblyRoboticT2")
+    }:
+        raise ValueError(
+            "composition-only source inventory must contain only "
+            "Electronics2Assembly on AssemblyRoboticT2"
+        )
+    annotated_direct_sources = [
+        source.get("recipe_id")
+        for recipe in integrated
+        for source in recipe.get("sources", [])
+        if source.get("recipe_id") in direct_id_set
+        and source.get("source_machine_id") is not None
+    ]
+    if annotated_direct_sources:
+        raise ValueError(
+            "Direct-owned Integrated sources must not declare source machines: "
+            + ", ".join(sorted(str(value) for value in annotated_direct_sources))
+        )
+    precision_source_ids = {
+        recipe.get("source_recipe_id") for recipe in precision
+    }
+    if not precision_source_ids.issubset(direct_id_set):
+        raise ValueError("every Precision source must be Direct-owned")
+    authored_keys = [recipe.get("key") for recipe in authored]
+    if len(set(authored_keys)) != 4 or any(
+        not isinstance(key, str) for key in authored_keys
+    ):
+        raise ValueError("authored recipe keys must be four unique strings")
+    for recipe in authored:
+        for direction in ("inputs", "outputs"):
+            amounts = recipe.get(direction)
+            if not isinstance(amounts, list) or not amounts:
+                raise ValueError(
+                    f"authored recipe {recipe.get('key')} must declare {direction}"
+                )
+            products = [amount.get("product") for amount in amounts]
+            if len(products) != len(set(products)) or any(
+                not isinstance(product, str) for product in products
+            ):
+                raise ValueError(
+                    f"authored recipe {recipe.get('key')} has invalid {direction} products"
+                )
+            if any(
+                not isinstance(amount.get("quantity"), int)
+                or amount["quantity"] <= 0
+                for amount in amounts
+            ):
+                raise ValueError(
+                    f"authored recipe {recipe.get('key')} has invalid {direction} quantities"
+                )
     return value
 
 
@@ -59,6 +120,13 @@ def cs_string(value: str) -> str:
     return '"' + value.replace("\\", "\\\\").replace('"', '\\"') + '"'
 
 
+def product_expression(value: str) -> str:
+    prefix = "RecursiveIndustry."
+    if value.startswith(prefix):
+        return "RecursiveIndustryIds.Products." + pascal(value[len(prefix):])
+    return "Ids.Products." + pascal(value)
+
+
 def generate_ids(data: dict[str, Any]) -> str:
     machine_lines = []
     for facility in data["facilities"]:
@@ -69,7 +137,11 @@ def generate_ids(data: dict[str, Any]) -> str:
         )
 
     recipe_lines = []
-    for recipe in (*data["integrated_recipes"], *data["precision_recipes"]):
+    for recipe in (
+        *data["integrated_recipes"],
+        *data["authored_recipes"],
+        *data["precision_recipes"],
+    ):
         member = pascal(recipe["key"])
         recipe_lines.append(
             f"        public static readonly RecipeID {member} =\n"
@@ -171,8 +243,18 @@ def generate_integrated(data: dict[str, Any]) -> str:
     entries = []
     for recipe in data["integrated_recipes"]:
         sources = ", ".join(
-            "new UniversalSourceRecipeSpec(%s, %d)"
-            % (cs_string(source["recipe_id"]), source["multiplier"])
+            "new UniversalSourceRecipeSpec(%s)"
+            % ", ".join(
+                [
+                    cs_string(source["recipe_id"]),
+                    str(source["multiplier"]),
+                ]
+                + (
+                    [cs_string(source["source_machine_id"])]
+                    if "source_machine_id" in source
+                    else []
+                )
+            )
             for source in recipe["sources"]
         )
         entries.append(
@@ -216,8 +298,47 @@ def generate_precision(data: dict[str, Any]) -> str:
     return ",\n".join(entries)
 
 
+def generate_amounts(amounts: list[dict[str, Any]]) -> str:
+    return ", ".join(
+        "new UniversalProductAmountSpec(%s, %d%s)"
+        % (
+            product_expression(amount["product"]),
+            amount["quantity"],
+            ", triggerAtStart: true" if amount.get("trigger_at_start") else "",
+        )
+        for amount in amounts
+    )
+
+
+def generate_authored(data: dict[str, Any]) -> str:
+    entries = []
+    for recipe in data["authored_recipes"]:
+        entries.append(
+            """        new UniversalAuthoredRecipeSpec(
+            RecursiveIndustryIds.Recipes.%s,
+            %s,
+            %s,
+            durationSeconds: %d,
+            powerMultiplierPercent: %d,
+            inputs: new[] { %s },
+            outputs: new[] { %s })"""
+            % (
+                pascal(recipe["key"]),
+                cs_string(recipe["name"]),
+                cs_string(recipe["machine"]),
+                recipe["duration_seconds"],
+                recipe["power_multiplier_percent"],
+                generate_amounts(recipe["inputs"]),
+                generate_amounts(recipe["outputs"]),
+            )
+        )
+    return ",\n".join(entries)
+
+
 def generate_catalog(data: dict[str, Any]) -> str:
     return """// Generated by tools/generate_recursive_industry_universal_source.py.
+using Mafi.Base;
+
 namespace RecursiveIndustry;
 
 internal static class UniversalIndustryCatalog
@@ -232,12 +353,22 @@ internal static class UniversalIndustryCatalog
 %s
     };
 
+    public static readonly UniversalAuthoredRecipeSpec[] AuthoredRecipes =
+    {
+%s
+    };
+
     public static readonly UniversalPrecisionRecipeSpec[] PrecisionRecipes =
     {
 %s
     };
 }
-""" % (generate_facilities(data), generate_integrated(data), generate_precision(data))
+""" % (
+        generate_facilities(data),
+        generate_integrated(data),
+        generate_authored(data),
+        generate_precision(data),
+    )
 
 
 def generate_icons(data: dict[str, Any]) -> str:

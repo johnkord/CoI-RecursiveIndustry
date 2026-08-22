@@ -6,7 +6,49 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.22.0a] - 2026-08-22
+
+### Circular Agrifood
+
+- Added four exact, Stream-free authored recipes while preserving the existing
+  235 Direct, 21 Integrated, and 10 Precision contracts.
+- Added Feed-hydrolysate routes for formulated Eggs, serum-free cultured Meat,
+  and mycoprotein Meat Trimmings. They consume Oxygen, water, power, and
+  formulation inputs and preserve Carbon Dioxide and Waste Water residuals.
+- Added countable Companion Provisions and an attached, staffed Companion Animal
+  Center. The optional service consumes 0.02 Provisions and returns 0.004 Waste
+  per colonist per month for 0.6 Unity at full satisfaction. It grants no Health
+  or worker-productivity bonus.
+- Added two original UI identities and expanded dependency-free `uiicons_5287`
+  from 83 to 85 assets.
+- Kept poultry, composting, organic fertilizer, steam, and burning available as
+  progressively lower-value Animal Feed outlets. No gas-fed Feed recipe,
+  automatic fallback, synthetic carcass, or direct synthetic Food Pack was added.
+
+### Fixed
+
+- Fixed the 0.21.0b General Manufacturing registration failure by placing its
+  final Data input on the proven top edge of the unchanged seven-row shell.
+- Fixed the 0.21.0a registration failure in Integrated Electronics III by
+  resolving its composition-only Electronics II stage from Assembly V. Recipe
+  vectors and the 235 Direct bindings are unchanged. That first correction was
+  0.21.0b; 0.21.0c corrected the port layout, and 0.21.0d adds native farm
+  upgrades.
+
 ### Added
+
+- Added native in-place upgrade links from Greenhouse II to Sensor-Guided
+  Greenhouse and from Chicken Farm to Monitored Poultry Farm. Upgrade costs are
+  the existing added hardware vectors; entity IDs and biological state remain
+  under the native farm entities.
+- Added optional Adaptive Agrifood Systems after Autonomous Essential Systems.
+  It unlocks Precision Irrigation, a four-worker Sensor-Guided Greenhouse, and a
+  four-worker Monitored Poultry Farm.
+- Precision Irrigation applies -2% farm water per level for five levels. It does
+  not change crop yield, settlement water, rain collection, or groundwater.
+- Both farm upgrades use native special-entity families and preserve every
+  crop, animal, growth, input, output, maintenance, control, and persistence path.
+- Added three custom agrifood identities to dependency-free `uiicons_5287`.
 
 - Added non-storable Industrial Control Stream, Data-only Access Fiber and
   Backbone Fiber, a four-way Fiber Junction, and a Control Deployment Gateway.

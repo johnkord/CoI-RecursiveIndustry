@@ -13,6 +13,7 @@ from typing import Any, Iterable
 from urllib.parse import unquote
 
 from audit_recursive_industry_control_network import audit as audit_control_network
+from audit_recursive_industry_agrifood import audit as audit_agrifood
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -30,10 +31,12 @@ REQUIRED_ROOT_FILES = {
     "SECURITY.md",
 }
 REQUIRED_DATA = {
+    "adaptive-agrifood.json",
     "industrial-control-network.json",
     "universal-industry-catalog.json",
 }
 REQUIRED_TOOLS = {
+    "audit_recursive_industry_agrifood.py",
     "audit_recursive_industry_control_network.py",
     "audit_release_zip.py",
     "freeze_recursive_industry_ui_icons.py",
@@ -47,6 +50,7 @@ REQUIRED_MEDIA = {
     "social-preview.png": (1280, 640),
 }
 REQUIRED_DOCS = {
+    "AGRIFOOD.md",
     "ARCHITECTURE.md",
     "BALANCE.md",
     "BUILDING.md",
@@ -273,9 +277,9 @@ def validate_ui_icon_contract(errors: list[str], root: Path) -> None:
         return
 
     icons = manifest.get("icons")
-    if not isinstance(icons, list) or len(icons) != 80:
+    if not isinstance(icons, list) or len(icons) != 85:
         errors.append(
-            f"UI icon manifest must contain exactly 80 identities, found "
+            f"UI icon manifest must contain exactly 85 identities, found "
             f"{len(icons) if isinstance(icons, list) else 'invalid'}"
         )
         return
@@ -286,6 +290,11 @@ def validate_ui_icon_contract(errors: list[str], root: Path) -> None:
         "access_fiber",
         "backbone_fiber",
         "fiber_junction",
+        "precision_irrigation",
+        "sensor_guided_greenhouse",
+        "monitored_poultry_farm",
+        "companion_provisions",
+        "companion_animal_center",
     }
     names = {icon.get("name") for icon in icons}
     if not required_control <= names:
@@ -315,9 +324,9 @@ def validate_ui_icon_contract(errors: list[str], root: Path) -> None:
             )
         }
         manifest_paths = {icon.get("unity_path") for icon in icons}
-        if len(constants) != 80:
+        if len(constants) != 85:
             errors.append(
-            f"C# source must declare exactly 80 UI icon constants, found {len(constants)}"
+            f"C# source must declare exactly 85 UI icon constants, found {len(constants)}"
             )
         if set(constants.values()) != manifest_paths:
             errors.append("C# UI icon paths differ from the asset manifest")
@@ -325,8 +334,8 @@ def validate_ui_icon_contract(errors: list[str], root: Path) -> None:
     review = manifest.get("visual_review", {})
     if review.get("status") != "PASS_STATIC_PROOF_REVIEW":
         errors.append("UI icon static proof review is not passed")
-    if review.get("runtime_status") != "OPEN_INTEGRATED_0.20.0A":
-        errors.append("UI icon runtime review must remain on the integrated 0.20.0a boundary")
+    if review.get("runtime_status") != "OPEN_INTEGRATED_0.22.0A":
+        errors.append("UI icon runtime review must remain on the integrated 0.22.0a boundary")
     if review.get("tested_sizes_px") != [24, 32, 48]:
         errors.append("UI icon proof must cover 24, 32, and 48 pixels")
     if review.get("backgrounds") != ["light", "dark"]:
@@ -341,8 +350,8 @@ def validate_ui_icon_contract(errors: list[str], root: Path) -> None:
 def validate_source_contract(errors: list[str], root: Path) -> None:
     source = root / "mods" / "RecursiveIndustry" / "src"
     files = sorted(source.glob("*.cs"))
-    if len(files) != 61:
-        errors.append(f"expected 61 C# source files, found {len(files)}")
+    if len(files) != 65:
+        errors.append(f"expected 65 C# source files, found {len(files)}")
     required = {
         "DataProductProto.cs",
         "DeploymentAssuranceData.cs",
@@ -359,6 +368,10 @@ def validate_source_contract(errors: list[str], root: Path) -> None:
         "UniversalIndustryData.cs",
         "UniversalIndustryResearchData.cs",
         "WorldExchangeData.cs",
+        "AdaptiveAgrifoodData.cs",
+        "RecursiveIndustryIds.Farms.cs",
+        "CompanionAnimalCareData.cs",
+        "RecursiveIndustryIds.CompanionCare.cs",
     }
     missing = required - {path.name for path in files}
     if missing:
@@ -482,6 +495,10 @@ def validate(root: Path = ROOT) -> list[str]:
         f"Industrial Control: {error}"
         for error in audit_control_network(root)
     )
+    errors.extend(
+        f"Adaptive Agrifood: {error}"
+        for error in audit_agrifood(root)
+    )
     validate_markdown_links(errors, root, files)
 
     notice = (root / "NOTICE.md").read_text(encoding="utf-8") if (root / "NOTICE.md").is_file() else ""
@@ -506,7 +523,7 @@ def main() -> int:
         return 1
     print(
         "Recursive Industry public repository: PASS "
-        "(61 source files, 19 facilities, 235 Direct bindings, 3 bundles)"
+        "(65 source files, 19 facilities, 235 Direct bindings, 2 adaptive farms, 3 bundles)"
     )
     return 0
 

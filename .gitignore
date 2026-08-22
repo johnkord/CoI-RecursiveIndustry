@@ -19,6 +19,7 @@ Library/
 Temp/
 Logs/
 UserSettings/
+unity_build.log
 
 # Python
 __pycache__/

@@ -6,19 +6,21 @@ gates pass.
 
 ## Current public pre-release
 
-GitHub pre-release `v0.19.0d` is the current ordinary-playtesting candidate:
+GitHub pre-release `v0.22.0a` is the current ordinary-playtesting candidate:
 
-- release: `https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.19.0d`;
-- player ZIP: 1,726,546 bytes;
-- SHA-256: `638AE395526DD40ADFE4751CB88EF4DEA43F5DCBA9B6B586BFE2C01FD2AE280E`;
+- release: `https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0a`;
+- player ZIP: 1,993,958 bytes;
+- SHA-256: `699D3C50A8CF97B40D5125DC80DE7DD8371FABF2F517C82F6F8EC144C1E77411`;
 - status: pre-release, not COI Hub stable publication.
 
-Version 0.19.0c remains immutable superseded history. Do not replace either
-asset. Any further fix creates a new version, tag, and release asset.
+The `v0.19.0d` GitHub release was retired when 0.22.0a became the public
+playtest; its source tag and private evidence remain preserved. Version 0.19.0c
+remains immutable superseded history. Any further fix creates a new version,
+tag, and release asset.
 
-The working source is version 0.20.0a. It is not a hosted release until its exact
-source commit, deterministic ZIP, migration classification, and integrated
-Industrial Control evidence are bound. Never replace the 0.19.0d asset with it.
+Version 0.22.0a is for new campaigns only. Author gameplay judgment passed, but
+an old placed-machine save was degraded by incompatible legacy molten-output
+connections. Clean fresh-world and independent evidence remain required for 1.0.
 
 ## Repository metadata
 

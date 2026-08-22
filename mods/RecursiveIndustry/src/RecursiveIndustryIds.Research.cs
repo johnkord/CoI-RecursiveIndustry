@@ -75,5 +75,11 @@ public static partial class RecursiveIndustryIds
 
         public static readonly ResearchID FederatedDeployment =
             Ids.Research.CreateId("RecursiveIndustry_FederatedDeployment");
+
+        public static readonly ResearchID AdaptiveAgrifoodSystems =
+            Ids.Research.CreateId("RecursiveIndustry_AdaptiveAgrifoodSystems");
+
+        public static readonly ResearchID CircularAgrifoodSystems =
+            Ids.Research.CreateId("RecursiveIndustry_CircularAgrifoodSystems");
     }
 }

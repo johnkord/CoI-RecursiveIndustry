@@ -1,6 +1,8 @@
 using Mafi;
+using Mafi.Core.Buildings.Offices;
 using Mafi.Core.Factory.Transports;
 using Mafi.Core.Mods;
+using Mafi.Core.Population;
 using Mafi.Core.Research;
 
 namespace RecursiveIndustry;
@@ -108,7 +110,7 @@ internal static class UniversalIndustryResearchData
                 "Autonomous Essential Systems",
                 RecursiveIndustryIds.Research.AutonomousEssentialSystems,
                 costMonths: 600)
-            .Description("Unlocks accountable food, soil, bioenergy, water, emissions, and material-recovery facilities. Farms and special Maintenance Depots remain native.")
+            .Description("Unlocks accountable food, soil, bioenergy, water, emissions, and material-recovery facilities. Biological production remains on native farm families; special Maintenance Depots remain native.")
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.FoodProcessingCampus)
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.FoodPackCampus)
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.CropSoilBioprocessing)
@@ -176,5 +178,48 @@ internal static class UniversalIndustryResearchData
             .BuildAndAdd();
         advanced.GridPosition = new Vector2i(224, 24);
         advanced.AddParent(industrialControl);
+
+        ResearchNodeProto adaptiveAgrifood = registrator.ResearchNodeProtoBuilder
+            .Start(
+                "Adaptive Agrifood Systems",
+                RecursiveIndustryIds.Research.AdaptiveAgrifoodSystems,
+                costMonths: 480)
+            .Description("Adds sensor-guided irrigation and labor-compressed native farm families while preserving crop schedules, weather, fertility, fertilizer, biological growth, animal care, and co-products.")
+            .AddLayoutEntityToUnlock(
+                RecursiveIndustryIds.Farms.SensorGuidedGreenhouse)
+            .AddLayoutEntityToUnlock(
+                RecursiveIndustryIds.Farms.MonitoredPoultryFarm)
+            .AddFocusToUnlock(
+                registrator.PrototypesDb.GetOrThrow<OfficeFocusProto>(
+                    RecursiveIndustryIds.Focuses.PrecisionIrrigation))
+            .SetRequireSpacePoints()
+            .BuildAndAdd();
+        adaptiveAgrifood.GridPosition = new Vector2i(224, 18);
+        adaptiveAgrifood.AddParent(essential);
+
+        ResearchNodeProto circularAgrifood = registrator.ResearchNodeProtoBuilder
+            .Start(
+                "Circular Agrifood Systems",
+                RecursiveIndustryIds.Research.CircularAgrifoodSystems,
+                costMonths: 480)
+            .Description("Converts unavoidable milling and oilseed coproducts into synthetic Eggs, Meat, Meat Trimmings, and optional staffed companion-animal care. Exact residuals remain physical, and ordinary poultry, composting, and energy recovery remain available.")
+            .AddProductToUnlock(
+                RecursiveIndustryIds.Products.CompanionProvisions)
+            .AddLayoutEntityToUnlock(
+                RecursiveIndustryIds.Settlements.CompanionAnimalCenter)
+            .AddProtoToUnlock<PopNeedProto>(
+                RecursiveIndustryIds.Settlements.CompanionCareNeed)
+            .AddRecipeToUnlock(
+                RecursiveIndustryIds.Recipes.AdaptiveEggFermentation)
+            .AddRecipeToUnlock(
+                RecursiveIndustryIds.Recipes.SerumFreeCulturedMeat)
+            .AddRecipeToUnlock(
+                RecursiveIndustryIds.Recipes.MycoproteinTrimmings)
+            .AddRecipeToUnlock(
+                RecursiveIndustryIds.Recipes.CompanionProvisions)
+            .SetRequireSpacePoints()
+            .BuildAndAdd();
+        circularAgrifood.GridPosition = new Vector2i(228, 18);
+        circularAgrifood.AddParent(adaptiveAgrifood);
     }
 }

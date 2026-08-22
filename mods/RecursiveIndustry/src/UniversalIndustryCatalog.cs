@@ -1,5 +1,6 @@
 using Mafi.Core.Factory.Machines;
 using Mafi.Core.Factory.Recipes;
+using Mafi.Core.Products;
 
 namespace RecursiveIndustry;
 
@@ -72,11 +73,16 @@ internal sealed class UniversalSourceRecipeSpec
 {
     public readonly string RecipeId;
     public readonly int Multiplier;
+    public readonly string SourceMachineId;
 
-    public UniversalSourceRecipeSpec(string recipeId, int multiplier)
+    public UniversalSourceRecipeSpec(
+        string recipeId,
+        int multiplier,
+        string sourceMachineId = null)
     {
         RecipeId = recipeId;
         Multiplier = multiplier;
+        SourceMachineId = sourceMachineId;
     }
 }
 
@@ -106,6 +112,52 @@ internal sealed class UniversalIntegratedRecipeSpec
         DurationSeconds = durationSeconds;
         PowerMultiplierPercent = powerMultiplierPercent;
         Sources = sources;
+    }
+}
+
+internal sealed class UniversalProductAmountSpec
+{
+    public readonly ProductProto.ID ProductId;
+    public readonly int Quantity;
+    public readonly bool TriggerAtStart;
+
+    public UniversalProductAmountSpec(
+        ProductProto.ID productId,
+        int quantity,
+        bool triggerAtStart = false)
+    {
+        ProductId = productId;
+        Quantity = quantity;
+        TriggerAtStart = triggerAtStart;
+    }
+}
+
+internal sealed class UniversalAuthoredRecipeSpec
+{
+    public readonly RecipeProto.ID Id;
+    public readonly string Name;
+    public readonly string MachineKey;
+    public readonly int DurationSeconds;
+    public readonly int PowerMultiplierPercent;
+    public readonly UniversalProductAmountSpec[] Inputs;
+    public readonly UniversalProductAmountSpec[] Outputs;
+
+    public UniversalAuthoredRecipeSpec(
+        RecipeProto.ID id,
+        string name,
+        string machineKey,
+        int durationSeconds,
+        int powerMultiplierPercent,
+        UniversalProductAmountSpec[] inputs,
+        UniversalProductAmountSpec[] outputs)
+    {
+        Id = id;
+        Name = name;
+        MachineKey = machineKey;
+        DurationSeconds = durationSeconds;
+        PowerMultiplierPercent = powerMultiplierPercent;
+        Inputs = inputs;
+        Outputs = outputs;
     }
 }
 

@@ -699,19 +699,21 @@
     },
     {
       "key": "precision_components_fab",
-      "material_input_ports": 7,
-      "input_ports_with_data": 8,
+      "material_input_ports": 8,
+      "input_ports_with_data": 9,
       "output_ports": 1,
       "physical_layout_rows": 7,
-      "right_side_input_ports": 1
+      "right_side_input_ports": 2,
+      "top_side_input_ports": 0
     },
     {
       "key": "general_manufacturing_fab",
-      "material_input_ports": 7,
-      "input_ports_with_data": 8,
+      "material_input_ports": 10,
+      "input_ports_with_data": 11,
       "output_ports": 4,
       "physical_layout_rows": 7,
-      "right_side_input_ports": 1
+      "right_side_input_ports": 3,
+      "top_side_input_ports": 1
     },
     {
       "key": "autonomous_electronics_integration_complex",

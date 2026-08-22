@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "candidate_version": "0.22.0a",
+  "game": {
+    "display_version": "0.8.7",
+    "build": 613
+  },
+  "research": {
+    "id": "RecursiveIndustry_AdaptiveAgrifoodSystems",
+    "name": "Adaptive Agrifood Systems",
+    "position": [224, 18],
+    "duration_months": 480,
+    "parent": "RecursiveIndustry_AutonomousEssentialSystems",
+    "requires_space_points": true,
+    "additional_lifetime_requirements": [],
+    "unlocks": [
+      "RecursiveIndustry_SensorGuidedGreenhouse",
+      "RecursiveIndustry_MonitoredPoultryFarm",
+      "Focus_RecursiveIndustry_PrecisionIrrigation"
+    ]
+  },
+  "precision_irrigation": {
+    "property": "IdsCore.PropertyIds.FarmWaterConsumptionMultiplier",
+    "effect_percent_per_level": -2,
+    "levels": 5,
+    "cap_percent": -10,
+    "first_focus_cost": 8000,
+    "focus_cost_increment": 4000,
+    "total_focus_cost": 80000,
+    "excluded_properties": [
+      "FarmYieldMultiplier",
+      "SettlementWaterConsumptionMultiplier",
+      "RainYieldMultiplier",
+      "GroundWaterReplenishWhenLow"
+    ]
+  },
+  "farms": {
+    "sensor_guided_greenhouse": {
+      "id": "RecursiveIndustry_SensorGuidedGreenhouse",
+      "source": "Ids.Buildings.FarmT4",
+      "upgrade_from": "Ids.Buildings.FarmT4",
+      "upgrade_api": "UpgradeExtensions.SetNextTier",
+      "runtime_family": "FarmProto",
+      "workers": 4,
+      "source_workers": 20,
+      "additional_construction": {
+        "Electronics4": 64,
+        "ValidatedControlPackage": 16,
+        "FrontierProgram": 4
+      },
+      "incremental_upgrade_cost": {
+        "Electronics4": 64,
+        "ValidatedControlPackage": 16,
+        "FrontierProgram": 4
+      },
+      "preserved_fields": [
+        "Layout",
+        "WaterCollectedPerDay",
+        "FertilityReplenishPerDay",
+        "YieldMultiplier",
+        "DemandsMultiplier",
+        "HasIrrigationAndFertilizerSupport",
+        "IsGreenhouse",
+        "WaterEvaporationPerDay",
+        "ConstructionDurationPerProduct",
+        "Maintenance"
+      ],
+      "icon": "Assets/RecursiveIndustry/UiIcons/sensor_guided_greenhouse.png"
+    },
+    "monitored_poultry_farm": {
+      "id": "RecursiveIndustry_MonitoredPoultryFarm",
+      "source": "Ids.Buildings.ChickenFarm",
+      "upgrade_from": "Ids.Buildings.ChickenFarm",
+      "upgrade_api": "UpgradeExtensions.SetNextTier",
+      "runtime_family": "AnimalFarmProto",
+      "workers": 4,
+      "source_workers": 12,
+      "additional_construction": {
+        "Electronics4": 32,
+        "ValidatedControlPackage": 8,
+        "FrontierProgram": 2
+      },
+      "incremental_upgrade_cost": {
+        "Electronics4": 32,
+        "ValidatedControlPackage": 8,
+        "FrontierProgram": 2
+      },
+      "preserved_fields": [
+        "Layout",
+        "Animal",
+        "AnimalsCapacity",
+        "CarcassProto",
+        "CarcassOutpotPortName",
+        "AnimalsBornPer100AnimalsPerMonth",
+        "CarcassMultiplier",
+        "FoodPerAnimalPerMonth",
+        "WaterPerAnimalPerMonth",
+        "ProducedPerAnimalPerMonth",
+        "FoodBufferCapacity",
+        "WaterBufferCapacity",
+        "CarcassBufferCapacity",
+        "ProducedBufferCapacity",
+        "AnimationParams",
+        "Maintenance"
+      ],
+      "icon": "Assets/RecursiveIndustry/UiIcons/monitored_poultry_farm.png"
+    }
+  },
+  "boundaries": {
+    "custom_runtime_services": 0,
+    "custom_saved_state": false,
+    "automatic_crop_scheduler": false,
+    "farm_to_food_pack_recipe": false,
+    "traceability_product": false,
+    "cold_chain_building": false,
+    "farm_yield_bonus": false,
+    "zero_worker_biology": false,
+    "industrial_control_stream_input": false,
+    "direct_computing_input": false
+  },
+  "presentation": {
+    "bundle": "uiicons_5287",
+    "total_ui_identities": 85,
+    "new_ui_identities": 3,
+    "dependencies": []
+  }
+}

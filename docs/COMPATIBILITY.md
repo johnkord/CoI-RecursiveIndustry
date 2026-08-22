@@ -38,6 +38,34 @@ is tested and classified, migration into 0.20.0a is unsupported. Start a new
 campaign for the candidate. Do not add shadow machines solely to preserve a
 pre-release save.
 
+Version 0.21.0a failed registration before world creation because Integrated
+Electronics III referenced its composition-only Electronics II stage through the
+Direct-only source map. Version 0.21.0b resolved that stage, then exposed a second
+registration failure: General Manufacturing required fifteen directional ports
+on a fourteen-edge shell. Version 0.21.0c keeps the seven-row shell and places the
+one remaining Data input on its proven top edge. Neither correction changes recipe
+vectors or the 235 Direct bindings.
+
+Version 0.21.0c adds two new stable farm prototype IDs and one Focus/research
+branch without replacing or mutating vanilla farms. Existing 0.20.0a worlds are
+not a supported migration baseline because 0.20.0a runtime testing remained open.
+Start a new campaign for the Adaptive Agrifood candidate. The special farm
+families still require fresh registration and save/reload evidence.
+
+Version 0.21.0d links Greenhouse II and Chicken Farm to those stable targets as
+native next tiers. Existing placed source entities are not replaced during load;
+the link only exposes an unlocked in-place upgrade. Completing an upgrade keeps
+the entity ID and same-family saved state. Another mod that already assigns a
+next tier to either source is an explicit incompatibility and registration fails
+instead of silently overwriting that link.
+
+Version 0.22.0a adds one countable product, one settlement need, one attached
+settlement module, four recipe IDs, and one research node. It does not alter
+existing product kinds, farm save fields, Direct recipe identities, Fiber, or
+custom serialization. Because no 0.21.x build is a supported migration baseline,
+start a new campaign for the Circular Agrifood candidate. Runtime registration
+and fresh-process service persistence remain open until the integrated session.
+
 ## Mod interactions
 
 Recursive Industry adds content and uses standard entity families. It does not

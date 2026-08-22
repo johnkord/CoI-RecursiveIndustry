@@ -1,6 +1,65 @@
 Recursive Industry changelog
 ============================
 
+0.22.0a - Circular Agrifood candidate
+-------------------------------------
+
+- Added four Stream-free authored agrifood rows without changing 235 Direct,
+  21 Integrated, or 10 Precision recipes.
+- Added Feed-hydrolysate routes for formulated Eggs, serum-free cultured Meat,
+  and mycoprotein Meat Trimmings. All retain Oxygen, water, CO2, Waste Water,
+  power, and formulation inputs.
+- Added Companion Provisions and an optional staffed Companion Animal Center.
+  At full satisfaction it grants 0.6 Unity, consumes 0.02 Provisions per person
+  per month, returns 0.004 Waste, and grants no Health or productivity bonus.
+- Added two original identities to dependency-free uiicons_5287.
+- Preserved poultry, compost, organic fertilizer, steam, and burning as the
+  existing value ladder for surplus Animal Feed. No gas-fed Feed route was added.
+
+0.21.0d - Native farm upgrade candidate
+----------------------------------------
+
+- Linked Greenhouse II to Sensor-Guided Greenhouse and Chicken Farm to
+  Monitored Poultry Farm through the native in-place upgrade system.
+- Preserved entity IDs, crop and flock state, layouts, ports, maintenance, and
+  operating vectors. Native differential costing charges only the added
+  Electronics IV, Packages, and Programs.
+
+0.21.0c - Port-layout-corrected Adaptive Agrifood candidate
+------------------------------------------------------------
+
+- Fixed the 0.21.0b General Manufacturing registration failure by placing its
+  one remaining Industrial Control Stream input on the proven top edge of the
+  unchanged seven-row Chemical Plant II shell.
+- Preserved all recipe vectors, owners, and the exact 235 Direct bindings.
+
+0.21.0b - Registration-corrected Adaptive Agrifood candidate
+--------------------------------------------------------------
+
+- This candidate resolved the Electronics II source, then failed registration
+  on the General Manufacturing port union. Use 0.21.0d or later.
+- Fixed the 0.21.0a registration failure in Integrated Electronics III by
+  resolving its composition-only Electronics II source from Assembly V.
+- Preserved all recipe quantities, durations, machine ownership, and the exact
+  235 Direct binding inventory.
+
+0.21.0a - Adaptive Agrifood candidate
+-------------------------------------
+
+- This candidate failed registration before world creation and is preserved as
+  negative evidence. Use 0.21.0d or later.
+- Added five-step Precision Irrigation, reducing farm water demand by up to 10%
+  without increasing crop yield or changing settlement water and rain collection.
+- Added a four-worker Sensor-Guided Greenhouse as an exact Greenhouse II family
+  clone with additional Electronics IV, Package, and Program construction cost.
+- Added a four-worker Monitored Poultry Farm preserving native flock growth,
+  feed, water, starvation, slaughter controls, Eggs, and Chicken Carcass.
+- Added one optional Adaptive Agrifood Systems research child after Autonomous
+  Essential Systems, with no duplicate lifetime-production gate.
+- Added three distinct agrifood UI identities to dependency-free uiicons_5287.
+- Added no crop scheduler, farm-to-Food-Pack shortcut, yield bonus, traceability
+  commodity, cold-chain simulation, custom saved state, or zero-worker biology.
+
 0.20.0a - Industrial Control and Federated Deployment candidate
 ----------------------------------------------------------------
 

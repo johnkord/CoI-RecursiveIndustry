@@ -20,5 +20,8 @@ public static partial class RecursiveIndustryIds
 
         public static readonly Proto.ID OrbitalLiftCoordination =
             new("Focus_RecursiveIndustry_OrbitalLiftCoordination");
+
+        public static readonly Proto.ID PrecisionIrrigation =
+            new("Focus_RecursiveIndustry_PrecisionIrrigation");
     }
 }

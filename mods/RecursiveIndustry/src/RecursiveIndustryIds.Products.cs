@@ -49,5 +49,8 @@ public static partial class RecursiveIndustryIds
 
         public static readonly ProductID IndustrialControlStream =
             Ids.Products.CreateId("RecursiveIndustry_IndustrialControlStream");
+
+        public static readonly ProductID CompanionProvisions =
+            Ids.Products.CreateId("RecursiveIndustry_CompanionProvisions");
     }
 }

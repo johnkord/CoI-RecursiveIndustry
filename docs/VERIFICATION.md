@@ -14,7 +14,18 @@ that code and arithmetic cannot establish.
 - checked-in generated catalog sentinels;
 - the schema-1 Industrial Control authority, exact source declarations, and
   negative fixtures; and
-- 80 UI identities, bundle paths, hashes, dependencies, and compact-size proofs.
+- 85 UI identities, bundle paths, hashes, dependencies, and compact-size proofs.
+
+`python tools/audit_recursive_industry_agrifood.py` checks the five-step farm-water
+Focus, exact native farm-family constructor copying, four-worker floor, added
+construction hardware, optional research parent, absence of hidden scheduling or
+custom state, and all three UI identities.
+
+`python tools/audit_recursive_industry_circular_agrifood.py` checks all four
+authored vectors, unchanged Direct/Integrated/Precision counts, population-scaled
+service demand, Unity-only reward, accountable care workers, physical Waste,
+research ownership, cycle guards, excluded automatic behavior, and both new UI
+identities.
 
 `python tools/audit_recursive_industry_control_network.py` independently checks
 235 Direct bindings, 21 generated plus 3 authored controlled compositions, 10
@@ -61,7 +72,7 @@ overflows. The tested player ZIP SHA-256 is
 The closed clean-world smoke log is 40,646 bytes with SHA-256
 `8BA6E85996A74868251A829D611C8FB2AC5A69407EEBF4B05C796D2298E82712`.
 
-The unreleased 0.20.0a source candidate passes the public contract, generator,
+The source-bound 0.20.0a candidate passes the public contract, generator,
 economy, source-audit, icon-bundle, and zero-warning compile gates. Its promoted
 Fiber declarations follow the passed Build 613 proof path, but the integrated
 Gateway, consumer, outage, migration, and in-world legibility session remains
@@ -69,9 +80,37 @@ open. The same session proves the 2-Package/420-Stream Backbone interval; Campus
 execution remains on inherited standard Machine behavior. Do not interpret
 offline closure as completed runtime evidence.
 
+Version 0.21.0a failed registration before world creation on an unresolved
+composition-only Electronics II source. Version 0.21.0b corrected that lookup and
+then failed on General Manufacturing's fifteen-port union. Both remain preserved
+negative evidence. Version 0.21.0c uses one proven top-edge Data input without
+changing material vectors or Direct inventory and remains an unplayed predecessor.
+Version 0.21.0d adds native same-family upgrade links from Greenhouse II and
+Chicken Farm. Offline
+source, icon, and build checks do not prove special farm registration, research
+unlock execution, source-to-target state retention, or fresh-process persistence.
+Those claims remain open and should be batched with the existing integrated
+author boundary.
+
+Version 0.22.0a preserves 0.21.0d as an unplayed predecessor and adds four exact
+Stream-free recipes plus one standard settlement service. Compilation and static
+checks can prove product kinds, recipe vectors, power multipliers, ports, research
+unlocks, population rates, and absence of custom state. They cannot prove fresh
+registration, recipe completion, settlement satisfaction and starvation,
+in-world icon legibility, or save/reload. Those claims join the same integrated
+author session rather than creating a separate feature playtest.
+
+The author completed a full gameplay review on the exact 0.22.0a archive and
+reported that the player-facing result looked good. Both observed sessions loaded
+the same unsupported migration world. Registration succeeded, but existing
+molten-output connections produced continuous `Sending incompatible product`
+errors after load. The migration result is therefore degraded-but-loadable and
+does not satisfy the clean fresh-world log gate. Public 0.22.0a testing is
+explicitly limited to new campaigns.
+
 ## Remaining before stable 1.0
 
-- One complete integrated author campaign across the final scope.
+- One clean, structured fresh-world integrated evidence pass across the final scope.
 - Resolution of demonstrated gameplay, balance, copy, presentation, or
   compatibility findings.
 - Independent uncoached campaigns on one exact frozen archive.

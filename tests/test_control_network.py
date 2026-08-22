@@ -333,19 +333,32 @@ class ControlNetworkContractTests(unittest.TestCase):
                 owner["material_input_ports"] + 1,
             )
             self.assertLessEqual(owner["physical_layout_rows"], 7)
+            overflow_inputs = max(
+                0,
+                owner["input_ports_with_data"] - owner["physical_layout_rows"],
+            )
+            expected_right_inputs = min(
+                overflow_inputs,
+                owner["physical_layout_rows"] - owner["output_ports"],
+            )
             self.assertEqual(
                 owner["right_side_input_ports"],
-                max(0, owner["input_ports_with_data"] - owner["physical_layout_rows"]),
+                expected_right_inputs,
+            )
+            self.assertEqual(
+                owner.get("top_side_input_ports", 0),
+                overflow_inputs - expected_right_inputs,
             )
             self.assertLessEqual(
                 owner["output_ports"] + owner["right_side_input_ports"],
                 owner["physical_layout_rows"],
             )
+            self.assertLessEqual(owner.get("top_side_input_ports", 0), 7)
         self.assertEqual(
             {
                 owner["key"]
                 for owner in owners
-                if owner["right_side_input_ports"] == 1
+                if owner["right_side_input_ports"] > 0
             },
             {
                 "primary_smelter",
@@ -354,6 +367,14 @@ class ControlNetworkContractTests(unittest.TestCase):
                 "precision_components_fab",
                 "general_manufacturing_fab",
             },
+        )
+        self.assertEqual(
+            {
+                owner["key"]: owner.get("top_side_input_ports", 0)
+                for owner in owners
+                if owner.get("top_side_input_ports", 0) > 0
+            },
+            {"general_manufacturing_fab": 1},
         )
         self.assertEqual(
             {
