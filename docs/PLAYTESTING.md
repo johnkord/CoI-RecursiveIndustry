@@ -4,11 +4,11 @@
 
 Use the exact GitHub pre-release:
 
-- version: `0.22.0a`;
-- release: https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0a;
-- file: `RecursiveIndustry-0.22.0a.zip`;
-- size: 1,993,958 bytes;
-- SHA-256: `699D3C50A8CF97B40D5125DC80DE7DD8371FABF2F517C82F6F8EC144C1E77411`.
+- version: `0.22.0b`;
+- release: https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0b;
+- file: `RecursiveIndustry-0.22.0b.zip`;
+- size: 1,994,137 bytes;
+- SHA-256: `1199B108737A431C9339B285C815C08B026F0A5FBAC64F5D9813B819E4E2293F`.
 
 Do not use GitHub's automatic source-code archives as the player package.
 
@@ -29,7 +29,7 @@ Captain of Industry 0.8.7 and Trains expansion 1.0.0 or newer are required.
 Supporter edition is optional. Adding or removing the mod from an existing normal
 save is unsupported.
 
-Do not load a `0.19.x`, `0.20.x`, or `0.21.x` pre-release save with 0.22.0a.
+Do not load a `0.19.x`, `0.20.x`, or `0.21.x` pre-release save with 0.22.0b.
 Testing an old placed-machine save produced continuous incompatible molten-output
 errors because legacy connections no longer match the current universal-facility
 port contract. This is an unsupported migration result, not a repair workflow.
@@ -48,7 +48,7 @@ in one session. Useful reports explain:
 - whether any icon, port, model, or recipe row was confusing; and
 - whether ordinary operation required repeated manual intervention.
 
-For 0.22.0a, also report whether Fiber topology is a meaningful
+For 0.22.0b, also report whether Fiber topology is a meaningful
 planning choice, whether Access and Backbone are distinguishable, whether a cut
 is diagnosable, and whether Direct production remains understandable and useful
 without Fiber. Also report whether Backbone deployment earns its higher power

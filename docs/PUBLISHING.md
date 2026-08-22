@@ -6,19 +6,20 @@ gates pass.
 
 ## Current public pre-release
 
-GitHub pre-release `v0.22.0a` is the current ordinary-playtesting candidate:
+GitHub pre-release `v0.22.0b` is the current ordinary-playtesting candidate:
 
-- release: `https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0a`;
-- player ZIP: 1,993,958 bytes;
-- SHA-256: `699D3C50A8CF97B40D5125DC80DE7DD8371FABF2F517C82F6F8EC144C1E77411`;
+- release: `https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0b`;
+- player ZIP: 1,994,137 bytes;
+- SHA-256: `1199B108737A431C9339B285C815C08B026F0A5FBAC64F5D9813B819E4E2293F`;
 - status: pre-release, not COI Hub stable publication.
 
-The `v0.19.0d` GitHub release was retired when 0.22.0a became the public
+The `v0.19.0d` GitHub release was retired when 0.22.0b became the public
 playtest; its source tag and private evidence remain preserved. Version 0.19.0c
 remains immutable superseded history. Any further fix creates a new version,
 tag, and release asset.
 
-Version 0.22.0a is for new campaigns only. Author gameplay judgment passed, but
+Version 0.22.0b is for new campaigns only. Author gameplay judgment passed on
+the source-equivalent 0.22.0a build, but
 an old placed-machine save was degraded by incompatible legacy molten-output
 connections. Clean fresh-world and independent evidence remain required for 1.0.
 

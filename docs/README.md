@@ -17,7 +17,7 @@ Recursive Industry.
 | [PLAYTESTING.md](PLAYTESTING.md) | Exact playtest download, installation, and useful feedback |
 | [ROADMAP.md](ROADMAP.md) | Release sequence and intentionally deferred scope |
 | [PUBLISHING.md](PUBLISHING.md) | GitHub and COI Hub listing copy and release checklist |
-| [RELEASE_NOTES_0.22.0a.md](RELEASE_NOTES_0.22.0a.md) | Public playtest scope, installation warning, and exact artifact identity |
+| [RELEASE_NOTES_0.22.0b.md](RELEASE_NOTES_0.22.0b.md) | Current public playtest scope, installation warning, and exact artifact identity |
 
 Historical experiments, private test responses, game-derived datasets, and
 superseded design drafts are intentionally not published here.

@@ -1,6 +1,15 @@
 Recursive Industry changelog
 ============================
 
+0.22.0b - Source-reproducible public playtest
+------------------------------------------------
+
+- Preserves all 0.22.0a gameplay and assets without mechanical changes.
+- Rebuilds from the committed source after clearing stale incremental compiler
+  state. Normalized decompiled IL is identical to the author-tested 0.22.0a DLL.
+- Publishes for new campaigns only; migration from older pre-release saves is
+  unsupported.
+
 0.22.0a - Circular Agrifood candidate
 -------------------------------------
 

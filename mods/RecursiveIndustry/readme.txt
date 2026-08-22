@@ -1,4 +1,4 @@
-Recursive Industry 0.22.0a Circular Agrifood candidate
+Recursive Industry 0.22.0b Circular Agrifood playtest
 =====================================
 
 A Captain of Industry endgame mod about building a physical AI economy, from

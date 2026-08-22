@@ -6,6 +6,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.22.0b] - 2026-08-22
+
+### Changed
+
+- Rebuilt the author-reviewed 0.22.0a source after clearing stale incremental
+  compiler state. Normalized decompiled IL is identical; gameplay and assets are
+  unchanged.
+- Bound the public playtest to one clean source commit and reproducible ZIP.
+- Classified migration from older placed-machine saves as unsupported and
+  degraded-but-loadable after legacy molten-output connections spammed errors.
+
 ## [0.22.0a] - 2026-08-22
 
 ### Circular Agrifood

@@ -108,6 +108,12 @@ errors after load. The migration result is therefore degraded-but-loadable and
 does not satisfy the clean fresh-world log gate. Public 0.22.0a testing is
 explicitly limited to new campaigns.
 
+The first post-commit reproduction exposed stale incremental compiler state:
+the clean source commit produced a different DLL identity. Normalized decompiled
+IL had zero differences. Version 0.22.0b is the source-reproducible package-only
+successor with unchanged gameplay and assets. Public testing uses 0.22.0b;
+0.22.0a remains immutable author-test evidence.
+
 ## Remaining before stable 1.0
 
 - One clean, structured fresh-world integrated evidence pass across the final scope.

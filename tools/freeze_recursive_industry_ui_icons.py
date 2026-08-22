@@ -115,7 +115,7 @@ def build_manifest(generated_date: str) -> dict[str, object]:
         "unity_version": unity_version,
         "visual_review": {
             "status": "PASS_STATIC_PROOF_REVIEW",
-            "runtime_status": "OPEN_INTEGRATED_0.22.0A",
+            "runtime_status": "OPEN_PUBLIC_PLAYTEST_0.22.0B",
             "tested_sizes_px": [24, 32, 48],
             "backgrounds": ["light", "dark"],
             "size_proof": file_record(

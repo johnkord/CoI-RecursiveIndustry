@@ -66,6 +66,10 @@ custom serialization. Because no 0.21.x build is a supported migration baseline,
 start a new campaign for the Circular Agrifood candidate. Runtime registration
 and fresh-process service persistence remain open until the integrated session.
 
+Version 0.22.0b changes no gameplay. It is the clean source-reproducible build
+of the author-reviewed 0.22.0a implementation. Normalized decompiled IL is
+identical. The same new-campaign-only compatibility boundary applies.
+
 ## Mod interactions
 
 Recursive Industry adds content and uses standard entity families. It does not

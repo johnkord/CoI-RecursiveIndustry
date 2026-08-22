@@ -334,8 +334,8 @@ def validate_ui_icon_contract(errors: list[str], root: Path) -> None:
     review = manifest.get("visual_review", {})
     if review.get("status") != "PASS_STATIC_PROOF_REVIEW":
         errors.append("UI icon static proof review is not passed")
-    if review.get("runtime_status") != "OPEN_INTEGRATED_0.22.0A":
-        errors.append("UI icon runtime review must remain on the integrated 0.22.0a boundary")
+    if review.get("runtime_status") != "OPEN_PUBLIC_PLAYTEST_0.22.0B":
+        errors.append("UI icon runtime review must remain on the public 0.22.0b boundary")
     if review.get("tested_sizes_px") != [24, 32, 48]:
         errors.append("UI icon proof must cover 24, 32, and 48 pixels")
     if review.get("backgrounds") != ["light", "dark"]:

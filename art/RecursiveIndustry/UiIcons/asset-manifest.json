@@ -3,11 +3,11 @@
   "generator": "Deterministic System.Drawing flat-symbol generator",
   "generator_path": "tools/generate_recursive_industry_ui_icons.ps1",
   "generator_sha256": "C2A595451E22CFA614FC95344732818C16628BCB932C99C37A6F866471295D55",
-  "generated_date": "2026-08-21",
+  "generated_date": "2026-08-22",
   "unity_version": "6000.0.66f1",
   "visual_review": {
     "status": "PASS_STATIC_PROOF_REVIEW",
-    "runtime_status": "OPEN_INTEGRATED_0.22.0A",
+    "runtime_status": "OPEN_PUBLIC_PLAYTEST_0.22.0B",
     "tested_sizes_px": [
       24,
       32,

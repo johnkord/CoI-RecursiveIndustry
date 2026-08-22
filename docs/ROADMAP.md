@@ -3,7 +3,7 @@
 ## Gameplay-first 1.0
 
 1. Preserve public pre-release 0.19.0d and source-bound 0.20.0a evidence.
-2. Complete one integrated author campaign covering the 0.22.0a Industrial
+2. Complete one clean structured campaign covering the 0.22.0b Industrial
    Control, Adaptive Agrifood, and Circular Agrifood successor, including native
    farm upgrades, representative Feed conversion, companion-service behavior,
    and persistence.
@@ -14,7 +14,7 @@
 6. Publish the tested bytes on GitHub Releases and COI Hub.
 
 No additional gameplay domain belongs before this integrated boundary. The
-0.22.0a scope is frozen for playtest preparation.
+0.22.0b scope is frozen for public playtesting.
 
 ## Stabilization
 
