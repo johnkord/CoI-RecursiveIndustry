@@ -3,18 +3,17 @@
 ## Gameplay-first 1.0
 
 1. Preserve public pre-release 0.19.0d and source-bound 0.20.0a evidence.
-2. Complete one clean structured campaign covering the 0.22.0b Industrial
-   Control, Adaptive Agrifood, and Circular Agrifood successor, including native
-   farm upgrades, representative Feed conversion, companion-service behavior,
-   and persistence.
+2. Complete the minimal 0.22.0c Build 614 startup and strict-log boundary. Native
+   Machine, farm, settlement-service, upgrade, and serialization behavior is
+   inherited and is not replayed for reassurance.
 3. Fix only demonstrated gameplay, balance, copy, presentation, or compatibility
    defects.
 4. Freeze one deterministic 1.0 candidate.
 5. Run independent, uncoached single-player campaigns on that exact archive.
 6. Publish the tested bytes on GitHub Releases and COI Hub.
 
-No additional gameplay domain belongs before this integrated boundary. The
-0.22.0b scope is frozen for public playtesting.
+No additional gameplay domain belongs before this boundary. The 0.22.0b scope
+is frozen for public playtesting; 0.22.0c changes compatibility metadata only.
 
 ## Stabilization
 

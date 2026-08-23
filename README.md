@@ -10,10 +10,10 @@ Recursive Industry is a Captain of Industry endgame mod about building a physica
 AI economy, from accelerator racks and validated models to autonomous industry,
 planetary coordination, and frontier-scale megaprojects.
 
-> **Development status:** Version 0.22.0b is the current public playtest.
-> Its gameplay is identical to the author-reviewed 0.22.0a build. Migration from older
-> pre-release saves is unsupported; start a new campaign. Stable 1.0 still
-> requires clean fresh-world and independent evidence.
+> **Development status:** Version 0.22.0c is the current source candidate for
+> Captain of Industry 0.8.7a Build 614. It changes compatibility metadata only;
+> gameplay and assets remain identical to published 0.22.0b. The 0.22.0b ZIP
+> remains the public download until 0.22.0c passes its clean startup gate.
 
 [Download Recursive Industry 0.22.0b Playtest](https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0b)
 
@@ -72,9 +72,8 @@ not a global speed multiplier or a free-resource automation mod.
 
 ## Requirements
 
-- Captain of Industry 0.8.7, verified on Build 613. The v0.8.7a Build 614 API
-  review and author play observation pass for this public playtest; a clean
-  fresh-world log remains open before raising the exact manifest ceiling.
+- Captain of Industry 0.8.7a, Build 614. The manifest remains compatible back
+  to 0.8.6c, but 0.8.7a is the exact successor target.
 - Trains expansion 1.0.0 or newer.
 - Supporter edition 1.1.0 is optional and enables the Captain's locomotive variant.
 - Start a new campaign with the mod enabled. Adding or removing it from an
@@ -82,7 +81,7 @@ not a global speed multiplier or a free-resource automation mod.
 
 ## Installation
 
-For the current playtest:
+For the currently published playtest:
 
 1. Download `RecursiveIndustry-0.22.0b.zip` from the
   [GitHub pre-release](https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0b).

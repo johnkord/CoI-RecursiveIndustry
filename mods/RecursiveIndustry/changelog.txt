@@ -1,6 +1,15 @@
 Recursive Industry changelog
 ============================
 
+0.22.0c - Build 614 compatibility candidate
+---------------------------------------------
+
+- Raises max_verified_game_version to exact Captain of Industry 0.8.7a,
+  Build 614.
+- Preserves all 0.22.0b gameplay, C# source, assets, recipes, and stable IDs.
+- Remains unpublished until one clean fresh-world startup and strict log audit
+  pass.
+
 0.22.0b - Source-reproducible public playtest
 ------------------------------------------------
 

@@ -1,6 +1,13 @@
 # Playtesting
 
-## Current build
+## Source candidate
+
+The current source candidate is 0.22.0c for Captain of Industry 0.8.7a Build
+614. It changes compatibility metadata only and is not yet a published asset.
+Use the exact 0.22.0b release below for ordinary public playtesting until the
+0.22.0c clean startup gate passes.
+
+## Published build
 
 Use the exact GitHub pre-release:
 
@@ -25,7 +32,7 @@ automatic source archive.
    `%APPDATA%/Captain of Industry/Mods/RecursiveIndustry/manifest.json`.
 5. Start a new single-player campaign with Recursive Industry enabled.
 
-Captain of Industry 0.8.7 and Trains expansion 1.0.0 or newer are required.
+Captain of Industry 0.8.7 or 0.8.7a and Trains expansion 1.0.0 or newer are required.
 Supporter edition is optional. Adding or removing the mod from an existing normal
 save is unsupported.
 

@@ -1,6 +1,6 @@
 {
   "id": "RecursiveIndustry",
-  "version": "0.22.0b",
+  "version": "0.22.0c",
   "display_name": "Recursive Industry",
   "description_short": "Endgame AI infrastructure, Recursive Epochs, and universal industry.",
   "description_long": "Build a physical endgame AI economy, deploy local or Backbone-rate control over Data-only Fiber, transform logistics and nineteen specialist facilities, extend native biological production, and turn agrifood coproducts into synthetic ingredients or optional companion-animal care.",
@@ -10,6 +10,6 @@
   "mod_dependencies": [ "COI-TrainsDlc >= 1.0.0" ],
   "optional_mod_dependencies": [ "COI-SupporterDlc >= 1.1.0" ],
   "min_game_version": "0.8.6c",
-  "max_verified_game_version": "0.8.7",
+  "max_verified_game_version": "0.8.7a",
   "non_locking_dll_load": true
 }

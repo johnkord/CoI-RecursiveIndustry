@@ -114,9 +114,16 @@ IL had zero differences. Version 0.22.0b is the source-reproducible package-only
 successor with unchanged gameplay and assets. Public testing uses 0.22.0b;
 0.22.0a remains immutable author-test evidence.
 
+Version 0.22.0c raises the exact manifest ceiling to Captain of Industry 0.8.7a
+Build 614. It changes no gameplay or assets. Exact declarations and unchanged
+native controlling paths retire recipe, farm, settlement-service, and
+persistence replay; only one clean fresh-world startup and strict full-log audit
+remain for author runtime evidence.
+
 ## Remaining before stable 1.0
 
-- One clean, structured fresh-world integrated evidence pass across the final scope.
+- One clean 0.22.0c fresh-world startup, Unlock All Research action, normal exit,
+  and strict full-log audit.
 - Resolution of demonstrated gameplay, balance, copy, presentation, or
   compatibility findings.
 - Independent uncoached campaigns on one exact frozen archive.

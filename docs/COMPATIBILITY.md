@@ -4,7 +4,7 @@
 
 | Component | Support |
 | --- | --- |
-| Captain of Industry | 0.8.7, verified on Build 613; v0.8.7a Build 614 public-playtest compatibility reviewed |
+| Captain of Industry | 0.8.7a, Build 614 exact successor target |
 | Manifest minimum | 0.8.6c |
 | Trains expansion | Required, 1.0.0 or newer |
 | Supporter edition | Optional, 1.1.0 or newer |
@@ -13,12 +13,12 @@
 
 The maximum verified game version is intentionally bounded. A later game version
 may load the mod, but it is unsupported until its API and behavior are reviewed.
-Build 614 has the same reflected ids, commands, and selected public API as Build
-613. The 0.22.0b DLL and ZIP also reproduce byte-for-byte against Build 614, and
-the author continued a long gameplay review across the update. Because that
-continued session used an unsupported older save with known legacy connection
-errors, the exact manifest ceiling remains 0.8.7 pending a clean fresh-world
-strict-log pass.
+Build 614 has the same reflected ids, commands, selected public API, and relevant
+controlling paths as Build 613. The 0.22.0b DLL and ZIP also reproduce
+byte-for-byte against Build 614, and the author continued a long gameplay review
+across the update. Version 0.22.0c raises the exact manifest ceiling to 0.8.7a
+without changing gameplay. Publishing that successor remains gated on one clean
+fresh-world startup and strict full-log audit.
 
 ## Saves
 
@@ -75,6 +75,10 @@ and fresh-process service persistence remain open until the integrated session.
 Version 0.22.0b changes no gameplay. It is the clean source-reproducible build
 of the author-reviewed 0.22.0a implementation. Normalized decompiled IL is
 identical. The same new-campaign-only compatibility boundary applies.
+
+Version 0.22.0c is a compatibility-metadata successor. It changes the manifest
+version and exact verified game ceiling only; all gameplay, assets, recipe
+vectors, and stable IDs remain those of 0.22.0b.
 
 ## Mod interactions
 

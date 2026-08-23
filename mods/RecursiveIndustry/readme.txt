@@ -1,4 +1,4 @@
-Recursive Industry 0.22.0b Circular Agrifood playtest
+Recursive Industry 0.22.0c Build 614 compatibility candidate
 =====================================
 
 A Captain of Industry endgame mod about building a physical AI economy, from
@@ -8,13 +8,15 @@ coordination, and frontier-scale megaprojects.
 Status
 ------
 
-This is pre-release source. A stable public package has not yet been declared.
-Integrated author and independent player testing remain before 1.0.
+This is a metadata-only successor to the published 0.22.0b playtest. It targets
+Captain of Industry 0.8.7a Build 614 without changing gameplay or assets. A
+stable public package has not yet been declared.
 
 Requirements
 ------------
 
-- Captain of Industry 0.8.7, verified on Build 613.
+- Captain of Industry 0.8.7a, Build 614, is the exact verified target. The
+  manifest remains compatible back to 0.8.6c.
 - Trains expansion 1.0.0 or newer is required.
 - Supporter edition 1.1.0 or newer is optional.
 - Enable the mod when creating a new campaign. Adding it to or removing it from

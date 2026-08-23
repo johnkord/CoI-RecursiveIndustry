@@ -6,6 +6,16 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.22.0c] - 2026-08-22
+
+### Changed
+
+- Raised the exact verified manifest ceiling to Captain of Industry 0.8.7a,
+  Build 614, after the reflected API and relevant controlling paths matched
+  Build 613.
+- Preserved all gameplay, C# source, assets, recipe vectors, and stable IDs from
+  0.22.0b. Publication remains gated on one clean fresh-world startup log.
+
 ## [0.22.0b] - 2026-08-22
 
 ### Changed

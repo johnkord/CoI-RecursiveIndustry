@@ -163,7 +163,7 @@ def validate_manifest(errors: list[str], root: Path) -> None:
         "mod_dependencies": ["COI-TrainsDlc >= 1.0.0"],
         "optional_mod_dependencies": ["COI-SupporterDlc >= 1.1.0"],
         "min_game_version": "0.8.6c",
-        "max_verified_game_version": "0.8.7",
+        "max_verified_game_version": "0.8.7a",
     }
     for key, value in expected.items():
         if manifest.get(key) != value:
