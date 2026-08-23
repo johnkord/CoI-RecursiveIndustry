@@ -6,17 +6,16 @@ gates pass.
 
 ## Current public pre-release
 
-GitHub pre-release `v0.22.0b` is the current ordinary-playtesting candidate:
+GitHub prerelease `v0.22.0c` is the current ordinary-playtesting candidate:
 
-- release: `https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0b`;
-- player ZIP: 1,994,137 bytes;
-- SHA-256: `1199B108737A431C9339B285C815C08B026F0A5FBAC64F5D9813B819E4E2293F`;
+- release: `https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0c`;
+- player ZIP: 1,994,306 bytes;
+- SHA-256: `F7212C437318DB39F4997B6B3D4B984BFB3D4FC9B92015860D1F11F516A7ACD9`;
 - status: pre-release, not COI Hub stable publication.
 
-Public main now contains metadata-only successor 0.22.0c targeting exact Captain
-of Industry 0.8.7a Build 614. Do not replace, relabel, or rebuild the hosted
-0.22.0b asset. Freeze and publish a new 0.22.0c package only after its clean
-fresh-world startup and strict-log gate passes.
+Version 0.22.0c targets exact Captain of Industry 0.8.7a Build 614 and passed its
+clean fresh-world startup and strict-log gate. Do not replace, relabel, or
+rebuild its hosted asset. Version 0.22.0b remains preserved as its predecessor.
 
 The `v0.19.0d` GitHub release was retired when 0.22.0b became the public
 playtest; its source tag and private evidence remain preserved. Version 0.19.0c

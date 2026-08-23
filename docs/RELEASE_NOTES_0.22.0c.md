@@ -16,12 +16,19 @@ and relevant Machine, Farm, AnimalFarm, settlement-service, product-rendering,
 and research paths as Build 613. Rebuilding 0.22.0b against Build 614 reproduced
 its DLL and ZIP exactly.
 
-## Publication gate
+## Public playtest
 
-Version 0.22.0c is not published yet. Before release, the exact candidate must
-complete one new sandbox world startup, one Unlock All Research action, normal
-exit, and strict audit of the complete log. No recipe execution, building
-placement, farm or service operation, checkpoint capture, or save/reload test is
-required.
+Version 0.22.0c is published as a GitHub prerelease after the exact candidate
+completed one new sandbox world startup, one Unlock All Research action, normal
+exit, and strict audit of the complete log.
+
+Download the attached `RecursiveIndustry-0.22.0c.zip` from:
+
+https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0c
+
+- Size: 1,994,306 bytes
+- SHA-256: `F7212C437318DB39F4997B6B3D4B984BFB3D4FC9B92015860D1F11F516A7ACD9`
+
+Start a new campaign. Migration from earlier prereleases remains unsupported.
 
 The published 0.22.0b tag, ZIP, release notes, and hashes remain immutable.

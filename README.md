@@ -10,15 +10,15 @@ Recursive Industry is a Captain of Industry endgame mod about building a physica
 AI economy, from accelerator racks and validated models to autonomous industry,
 planetary coordination, and frontier-scale megaprojects.
 
-> **Development status:** Version 0.22.0c is the current source candidate for
+> **Development status:** Version 0.22.0c is the current public playtest for
 > Captain of Industry 0.8.7a Build 614. It changes compatibility metadata only;
-> gameplay and assets remain identical to published 0.22.0b. The 0.22.0b ZIP
-> remains the public download until 0.22.0c passes its clean startup gate.
+> gameplay and assets remain identical to 0.22.0b. Start a new campaign and
+> report feedback through GitHub Issues.
 
-[Download Recursive Industry 0.22.0b Playtest](https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0b)
+[Download Recursive Industry 0.22.0c Playtest](https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0c)
 
 Player ZIP SHA-256:
-`1199B108737A431C9339B285C815C08B026F0A5FBAC64F5D9813B819E4E2293F`
+`F7212C437318DB39F4997B6B3D4B984BFB3D4FC9B92015860D1F11F516A7ACD9`
 
 ## What it adds
 
@@ -83,8 +83,8 @@ not a global speed multiplier or a free-resource automation mod.
 
 For the currently published playtest:
 
-1. Download `RecursiveIndustry-0.22.0b.zip` from the
-  [GitHub pre-release](https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0b).
+1. Download `RecursiveIndustry-0.22.0c.zip` from the
+  [GitHub pre-release](https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0c).
 2. Extract it into `%APPDATA%/Captain of Industry/Mods`.
 3. Confirm the resulting path is
    `%APPDATA%/Captain of Industry/Mods/RecursiveIndustry/manifest.json`.

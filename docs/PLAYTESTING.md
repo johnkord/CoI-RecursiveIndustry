@@ -1,21 +1,14 @@
 # Playtesting
 
-## Source candidate
+## Current public playtest
 
-The current source candidate is 0.22.0c for Captain of Industry 0.8.7a Build
-614. It changes compatibility metadata only and is not yet a published asset.
-Use the exact 0.22.0b release below for ordinary public playtesting until the
-0.22.0c clean startup gate passes.
+Use the exact GitHub prerelease:
 
-## Published build
-
-Use the exact GitHub pre-release:
-
-- version: `0.22.0b`;
-- release: https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0b;
-- file: `RecursiveIndustry-0.22.0b.zip`;
-- size: 1,994,137 bytes;
-- SHA-256: `1199B108737A431C9339B285C815C08B026F0A5FBAC64F5D9813B819E4E2293F`.
+- version: `0.22.0c`;
+- release: https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0c;
+- file: `RecursiveIndustry-0.22.0c.zip`;
+- size: 1,994,306 bytes;
+- SHA-256: `F7212C437318DB39F4997B6B3D4B984BFB3D4FC9B92015860D1F11F516A7ACD9`.
 
 Do not use GitHub's automatic source-code archives as the player package.
 
@@ -36,11 +29,11 @@ Captain of Industry 0.8.7 or 0.8.7a and Trains expansion 1.0.0 or newer are requ
 Supporter edition is optional. Adding or removing the mod from an existing normal
 save is unsupported.
 
-The exact archive rebuilds unchanged against v0.8.7a Build 614, whose reflected
-modding surface matches Build 613. Build 614 fresh-world strict-log evidence is
-still useful; the completed author continuation used an unsupported older save.
+The exact archive passed a clean Build 614 fresh-world startup and strict
+complete-log audit. Its reflected modding surface matches Build 613.
 
-Do not load a `0.19.x`, `0.20.x`, or `0.21.x` pre-release save with 0.22.0b.
+Do not load a `0.19.x`, `0.20.x`, `0.21.x`, or earlier `0.22.x` prerelease save
+with 0.22.0c.
 Testing an old placed-machine save produced continuous incompatible molten-output
 errors because legacy connections no longer match the current universal-facility
 port contract. This is an unsupported migration result, not a repair workflow.
@@ -59,7 +52,7 @@ in one session. Useful reports explain:
 - whether any icon, port, model, or recipe row was confusing; and
 - whether ordinary operation required repeated manual intervention.
 
-For 0.22.0b, also report whether Fiber topology is a meaningful
+For 0.22.0c, also report whether Fiber topology is a meaningful
 planning choice, whether Access and Backbone are distinguishable, whether a cut
 is diagnosable, and whether Direct production remains understandable and useful
 without Fiber. Also report whether Backbone deployment earns its higher power
