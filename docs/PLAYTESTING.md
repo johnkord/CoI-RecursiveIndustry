@@ -29,6 +29,10 @@ Captain of Industry 0.8.7 and Trains expansion 1.0.0 or newer are required.
 Supporter edition is optional. Adding or removing the mod from an existing normal
 save is unsupported.
 
+The exact archive rebuilds unchanged against v0.8.7a Build 614, whose reflected
+modding surface matches Build 613. Build 614 fresh-world strict-log evidence is
+still useful; the completed author continuation used an unsupported older save.
+
 Do not load a `0.19.x`, `0.20.x`, or `0.21.x` pre-release save with 0.22.0b.
 Testing an old placed-machine save produced continuous incompatible molten-output
 errors because legacy connections no longer match the current universal-facility

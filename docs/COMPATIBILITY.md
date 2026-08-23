@@ -4,7 +4,7 @@
 
 | Component | Support |
 | --- | --- |
-| Captain of Industry | 0.8.7, verified on Build 613 |
+| Captain of Industry | 0.8.7, verified on Build 613; v0.8.7a Build 614 public-playtest compatibility reviewed |
 | Manifest minimum | 0.8.6c |
 | Trains expansion | Required, 1.0.0 or newer |
 | Supporter edition | Optional, 1.1.0 or newer |
@@ -13,6 +13,12 @@
 
 The maximum verified game version is intentionally bounded. A later game version
 may load the mod, but it is unsupported until its API and behavior are reviewed.
+Build 614 has the same reflected ids, commands, and selected public API as Build
+613. The 0.22.0b DLL and ZIP also reproduce byte-for-byte against Build 614, and
+the author continued a long gameplay review across the update. Because that
+continued session used an unsupported older save with known legacy connection
+errors, the exact manifest ceiling remains 0.8.7 pending a clean fresh-world
+strict-log pass.
 
 ## Saves
 

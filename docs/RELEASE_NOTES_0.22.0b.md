@@ -19,7 +19,11 @@ directed processing, adaptive farming, and circular agrifood.
 ## Install
 
 This build requires Captain of Industry 0.8.7 and Trains expansion 1.0.0 or
-newer. Supporter edition is optional.
+newer. Supporter edition is optional. The exact archive rebuilds unchanged
+against v0.8.7a Build 614. Its API surface is unchanged from Build 613, and the
+author continued the full playtest after the hotfix without a gameplay defect.
+The manifest remains bounded to 0.8.7 until a clean Build 614 fresh-world log is
+captured.
 
 **Start a new campaign.** Migration from earlier Recursive Industry pre-releases
 is unsupported. An old placed-machine save can load with legacy molten-output

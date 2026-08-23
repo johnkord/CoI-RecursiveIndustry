@@ -72,7 +72,9 @@ not a global speed multiplier or a free-resource automation mod.
 
 ## Requirements
 
-- Captain of Industry 0.8.7, verified on Build 613.
+- Captain of Industry 0.8.7, verified on Build 613. The v0.8.7a Build 614 API
+  review and author play observation pass for this public playtest; a clean
+  fresh-world log remains open before raising the exact manifest ceiling.
 - Trains expansion 1.0.0 or newer.
 - Supporter edition 1.1.0 is optional and enables the Captain's locomotive variant.
 - Start a new campaign with the mod enabled. Adding or removing it from an
