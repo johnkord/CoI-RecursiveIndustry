@@ -13,7 +13,9 @@ planetary coordination, and frontier-scale megaprojects.
 > **Development status:** Version 0.22.0c is the current public playtest for
 > Captain of Industry 0.8.7a Build 614. It changes compatibility metadata only;
 > gameplay and assets remain identical to 0.22.0b. Start a new campaign and
-> report feedback through GitHub Issues.
+> report feedback through GitHub Issues. The main branch now contains the
+> unpublished 0.23.0b operating-envelope successor; do not treat source builds
+> as the hosted playtest artifact.
 
 [Download Recursive Industry 0.22.0c Playtest](https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0c)
 
@@ -30,9 +32,11 @@ Player ZIP SHA-256:
 - Applied Science that keeps physical experiments and validation relevant.
 - Autonomous freight, heavy equipment, forestry, and a full locomotive roster
   built on native game behavior.
+- A general zero-worker Autonomous Hauler with Tier II tank, flatbed, and dump
+  attachments, including native Fuel Station assignment for fuel distribution.
 - Planetary coordination, bounded world contracts, orbital science, and
   Dossier-fed orbital power.
-- Nineteen specialized high-power megafacilities covering materials, refining,
+- Twenty-five process-scaled specialist facilities covering materials, refining,
   chemistry, food, utilities, nuclear fuel, and advanced manufacturing.
 - Direct, Integrated, and Precision production choices. Precision preserves
   throughput while reducing feedstock by 12.5% at twice the energy per output.
@@ -48,8 +52,7 @@ Player ZIP SHA-256:
   Hydrogen, deep Hydrogen, Plastic, or Rubber without exporting Heavy, Medium,
   or Light Oil or Naphtha. They retain Sour Water, CO2, Exhaust, Water, and gas
   residuals and require continuous Stream.
-- A production-scale Electronics III Direct row on the late Precision Components
-  Fab.
+- A production-scale Electronics III Direct row on the Robotic Components Fab.
 - Stream-controlled raw Electronics III and Lab Equipment II through IV rows,
   while local Electronics, Microchips, staged capital, Precision, and Nexus
   production no longer burn a Package every batch.
@@ -136,6 +139,7 @@ redistributed.
 - [Design](docs/DESIGN.md)
 - [Progression](docs/PROGRESSION.md)
 - [Balance](docs/BALANCE.md)
+- [Building operating envelopes](docs/OPERATING_ENVELOPES.md)
 - [Adaptive Agrifood](docs/AGRIFOOD.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Building and packaging](docs/BUILDING.md)

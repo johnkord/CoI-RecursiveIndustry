@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "candidate_version": "0.22.0c",
+  "candidate_version": "0.23.0b",
   "game": {
-    "display_version": "0.8.7",
-    "build": 613
+    "display_version": "0.8.7a",
+    "build": 614
   },
   "research": {
     "id": "RecursiveIndustry_AdaptiveAgrifoodSystems",
@@ -120,7 +120,7 @@
   },
   "presentation": {
     "bundle": "uiicons_5287",
-    "total_ui_identities": 85,
+    "total_ui_identities": 91,
     "new_ui_identities": 3,
     "dependencies": []
   }

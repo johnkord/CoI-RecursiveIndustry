@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "candidate_version": "0.22.0c",
+  "candidate_version": "0.23.0b",
   "predecessor": "0.21.0d",
   "game": {
-    "display_version": "0.8.7",
-    "build": 613
+    "display_version": "0.8.7a",
+    "build": 614
   },
   "catalog_contract": {
-    "facilities": 19,
-    "direct_bindings": 235,
+    "facilities": 25,
+    "direct_bindings": 231,
     "integrated_recipes": 21,
     "precision_recipes": 10,
     "authored_recipes": 4,
@@ -53,8 +53,8 @@
     "serum_free_cultured_meat": {
       "machine": "food_processing_campus",
       "duration_seconds": 60,
-      "power_multiplier_percent": 300,
-      "process_power_mw": 36,
+      "power_multiplier_percent": 600,
+      "process_power_mw": 3,
       "inputs": {
         "AnimalFeed": 40,
         "Sugar": 8,
@@ -73,8 +73,8 @@
     "mycoprotein_trimmings": {
       "machine": "food_processing_campus",
       "duration_seconds": 60,
-      "power_multiplier_percent": 250,
-      "process_power_mw": 30,
+      "power_multiplier_percent": 500,
+      "process_power_mw": 2.5,
       "inputs": {
         "AnimalFeed": 32,
         "CookingOil": 8,
@@ -91,8 +91,8 @@
     "companion_provisions": {
       "machine": "food_processing_campus",
       "duration_seconds": 60,
-      "power_multiplier_percent": 150,
-      "process_power_mw": 18,
+      "power_multiplier_percent": 300,
+      "process_power_mw": 1.5,
       "inputs": {
         "AnimalFeed": 60,
         "MeatTrimmings": 12,
@@ -118,6 +118,10 @@
     "waste_per_pop_per_month": 0.004,
     "electricity_kw": 250,
     "workers": 8,
+    "maintenance": {
+      "product_key": "Maintenance2",
+      "quantity_per_month": 4
+    },
     "input_buffer": 160,
     "output_buffer": 64,
     "population_supported_per_recipe_batch": 4000,
@@ -162,7 +166,7 @@
   },
   "presentation": {
     "bundle": "uiicons_5287",
-    "total_ui_identities": 85,
+    "total_ui_identities": 91,
     "new_ui_identities": 2,
     "dependencies": []
   }

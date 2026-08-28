@@ -63,7 +63,7 @@ internal sealed class CompanionAnimalCareData : IModData
                     8,
                     RecursiveIndustryIds.Products.ValidatedControlPackage)
                 .Workers(8)
-                .MaintenanceT3(4))
+                .MaintenanceT2(4))
             .SetElectricityConsumed(250.Kw())
             .SetCategories(Ids.ToolbarCategories.Housing)
             .SetLayout(

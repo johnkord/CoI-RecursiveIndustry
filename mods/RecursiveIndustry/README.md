@@ -2,14 +2,15 @@
 
 This directory is the build and packaging root for Recursive Industry.
 
-The current source version is **0.19.0d**, which removes the dominated 30 MW
-Orbital Power Relay as a prototype and buildable entity. Orbital power now has one
-modded building: the 240 MW Array. This is pre-release source, not a stable public
-package.
+The current source version is **0.23.0b**, an unpublished new-campaign test
+candidate with process-scaled power, labor, and maintenance across all custom
+buildings plus corrected Fuel Station assignment for the general Autonomous
+Hauler. The published 0.22.0c playtest remains immutable. Orbital power retains
+one modded building: the 240 MW Array.
 
 ## Requirements
 
-- Captain of Industry 0.8.7 Build 613.
+- Captain of Industry 0.8.7a Build 614.
 - Trains expansion 1.0.0 or newer.
 - Optional Supporter edition 1.1.0 or newer.
 - Windows, .NET SDK capable of targeting .NET Framework 4.8, and `COI_ROOT` set

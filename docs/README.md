@@ -8,6 +8,7 @@ Recursive Industry.
 | [DESIGN.md](DESIGN.md) | Player promise, design pillars, and boundaries |
 | [PROGRESSION.md](PROGRESSION.md) | Products, research phases, and late-game choices |
 | [BALANCE.md](BALANCE.md) | Economy methodology and selected support scale |
+| [OPERATING_ENVELOPES.md](OPERATING_ENVELOPES.md) | Implemented 0.23.0a power, workers, maintenance, facility splits, and runtime boundary |
 | [AGRIFOOD.md](AGRIFOOD.md) | Native farm upgrades, synthetic ingredients, companion care, Feed outlets, and biological boundaries |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Code structure, prototype registration, and assets |
 | [BUILDING.md](BUILDING.md) | Local build, deployment, validation, and packaging |

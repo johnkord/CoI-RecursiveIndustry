@@ -9,6 +9,8 @@ from pathlib import Path
 import re
 from typing import Any, Iterable
 
+from generate_recursive_industry_universal_source import load_catalog
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_ROOT = ROOT / "mods" / "RecursiveIndustry" / "src"
@@ -141,9 +143,9 @@ def audit_gateway_source(text: str) -> list[str]:
             ".Product(32, RecursiveIndustryIds.Products.ValidatedControlPackage)",
             ".Product(4, RecursiveIndustryIds.Products.FrontierProgram)",
             ".Product(4, RecursiveIndustryIds.Products.ValidatedResearchDossier)",
-            ".Workers(24)",
-            ".MaintenanceT3(12)",
-            ".SetElectricityConsumption(4000.Kw())",
+            ".Workers(4)",
+            ".MaintenanceT3(8)",
+            ".SetElectricityConsumption(1000.Kw())",
             ".SetComputingConsumption(Computing.FromTFlops(256))",
             '"A#>[4][4][4][4][4][4]>:X"',
             ".SetCustomIconPath(RecursiveIndustryIcons.ControlDeploymentGateway)",
@@ -201,8 +203,8 @@ def audit_catalog(
 ) -> list[str]:
     errors: list[str] = []
     facilities = catalog.get("facilities", [])
-    if not isinstance(facilities, list) or len(facilities) != 19:
-        return ["universal catalog must contain exactly 19 facilities"]
+    if not isinstance(facilities, list) or len(facilities) != 25:
+        return ["universal catalog must contain exactly 25 facilities"]
 
     direct = [
         (facility.get("key"), binding)
@@ -234,7 +236,7 @@ def audit_catalog(
         )
     ]:
         errors.append(
-            "Electronics3Assembly must be owned only by precision_components_fab"
+            "Electronics3Assembly must be owned only by robotic_components_fab"
         )
 
     controlled = control["consumer_contract"]["recipes"]
@@ -243,12 +245,20 @@ def audit_catalog(
     controlled_by_key = {recipe["key"]: recipe for recipe in controlled}
     catalog_keys = {recipe.get("key") for recipe in catalog_integrated}
     expected_custom = {
-        (key, controlled_by_key[key]["owner_key"])
+        (
+            key,
+            controlled_by_key[key]["owner_key"],
+            controlled_by_key[key]["power_multiplier_percent"],
+        )
         for key in catalog_keys
         if key in controlled_by_key
     }
     actual_custom = {
-        (recipe.get("key"), recipe.get("machine"))
+        (
+            recipe.get("key"),
+            recipe.get("machine"),
+            recipe.get("power_multiplier_percent", 200),
+        )
         for recipe in catalog_integrated
     }
     if actual_custom != expected_custom:
@@ -285,8 +295,8 @@ def audit_catalog(
         errors.append("every Stream recipe must consume one Stream per active second")
 
     owners = {row.get("key"): row for row in control.get("owners", [])}
-    if owners.get("precision_components_fab") != {
-        "key": "precision_components_fab",
+    if owners.get("robotic_components_fab") != {
+        "key": "robotic_components_fab",
         "material_input_ports": 8,
         "input_ports_with_data": 9,
         "output_ports": 1,
@@ -308,9 +318,10 @@ def audit_catalog(
 
     expected_advanced = {
         "integrated_electronics3": {
-            "machine": "precision_components_fab",
+            "machine": "robotic_components_fab",
             "batch_scale": 1,
             "duration_seconds": 120,
+            "power_multiplier_percent": 100,
             "sources": [
                 {"recipe_id": "ElectronicsAssembly", "multiplier": 4},
                 {"recipe_id": "PCBAssembly", "multiplier": 6},
@@ -394,6 +405,18 @@ def audit_catalog(
             errors.append(
                 f"{row.get('key')} Stream cadence or intermediate-output drift"
             )
+    directed_powers = {
+        "integrated_refinery_diesel": 100,
+        "integrated_refinery_gas": 100,
+        "integrated_refinery_hydrogen": 275,
+        "integrated_refinery_plastic": 300,
+        "integrated_refinery_rubber": 400,
+    }
+    if {
+        row.get("key"): row.get("power_multiplier_percent")
+        for row in directed_modes
+    } != directed_powers:
+        errors.append("directed refinery power envelope drift")
 
     expected_owners = {owner["key"] for owner in control["owners"]}
     actual_controlled_owners = {recipe.get("owner_key") for recipe in controlled}
@@ -407,8 +430,8 @@ def audit_catalog(
     }
     if len(actual_catalog_owners) != 9 or actual_catalog_owners != expected_catalog_owners:
         errors.append("exactly nine universal facilities must own catalog compositions")
-    if len({facility.get("key") for facility in facilities} - actual_catalog_owners) != 10:
-        errors.append("exactly ten facilities must remain without a Data port")
+    if len({facility.get("key") for facility in facilities} - actual_catalog_owners) != 16:
+        errors.append("exactly sixteen facilities must remain without a Data port")
     right_side_owners = {
         owner["key"]
         for owner in control["owners"]
@@ -418,7 +441,7 @@ def audit_catalog(
         "primary_smelter",
         "food_pack_campus",
         "nuclear_fuel_complex",
-        "precision_components_fab",
+        "robotic_components_fab",
         "general_manufacturing_fab",
     }:
         errors.append("right-side input owner inventory drift")
@@ -500,10 +523,10 @@ def audit_capacity(control: dict[str, Any]) -> list[str]:
         "transport_capacity_per_minute": 900,
         "packages_per_hour_at_full_output": 240,
         "steady_state_packages_per_hour": "1320/7",
-        "power_mw": 20,
+        "power_mw": 5,
         "computing": 512,
-        "workers": 48,
-        "maintenance_iii_per_month": 24,
+        "workers": 8,
+        "maintenance_iii_per_month": 16,
     }:
         errors.append("two-Backbone federated topology drift")
     if (
@@ -522,7 +545,7 @@ def audit_universal_source(text: str, generated_catalog: str) -> list[str]:
         "Universal Industrial Control integration",
         text,
         (
-            "expected 235 direct bindings",
+            "expected 231 direct bindings",
             "ResolveEffectiveDuration(",
             "GetMaterialTransportDurationFloor(",
             "AppendIndustrialControlInput(",
@@ -543,8 +566,8 @@ def audit_universal_source(text: str, generated_catalog: str) -> list[str]:
     )
     if "rows > 7" in text:
         errors.append("Universal source still rejects logical eight-input layouts")
-    if generated_catalog.count("new UniversalDirectBindingSpec(") != 235:
-        errors.append("generated catalog must contain exactly 235 Direct bindings")
+    if generated_catalog.count("new UniversalDirectBindingSpec(") != 231:
+        errors.append("generated catalog must contain exactly 231 Direct bindings")
 
     direct_loop = re.search(
         r"foreach \(ResolvedDirectBinding binding in direct\)(.*?)"
@@ -797,7 +820,7 @@ def audit(root: Path = ROOT) -> list[str]:
         errors.append(f"missing Industrial Control source files: {sorted(missing)}")
 
     control = load_json(root / "data" / "industrial-control-network.json")
-    catalog = load_json(root / "data" / "universal-industry-catalog.json")
+    catalog = load_catalog()
     if control.get("schema_version") != 1:
         errors.append("industrial-control-network schema must be 1")
     errors.extend(audit_catalog(catalog, control))
@@ -856,7 +879,7 @@ def main() -> int:
         return 1
     print(
         "Recursive Industry Industrial Control network: PASS "
-        "(235 Direct, 21 universal plus 3 legacy compositions, "
+        "(231 Direct, 21 universal plus 3 legacy compositions, "
         "10 Fiber-free Precision, 11 Data owners, two-Backbone deployment, "
         "640/h assurance)"
     )

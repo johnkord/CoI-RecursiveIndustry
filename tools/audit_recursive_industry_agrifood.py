@@ -220,7 +220,7 @@ def audit(root: Path = ROOT) -> list[str]:
     }
     if (
         presentation.get("bundle") != "uiicons_5287"
-        or presentation.get("total_ui_identities") != 85
+        or presentation.get("total_ui_identities") != 91
         or presentation.get("new_ui_identities") != 3
         or presentation.get("dependencies") != []
         or not required_icons <= icon_names
@@ -238,7 +238,7 @@ def main() -> int:
         return 1
     print(
         "Recursive Industry Adaptive Agrifood: PASS "
-        "(Precision Irrigation, 2 native farm upgrades, 85 UI identities)"
+        "(Precision Irrigation, 2 native farm upgrades, 91 UI identities)"
     )
     return 0
 

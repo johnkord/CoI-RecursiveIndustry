@@ -2,12 +2,12 @@
   "schema_version": 1,
   "generator": "Deterministic System.Drawing flat-symbol generator",
   "generator_path": "tools/generate_recursive_industry_ui_icons.ps1",
-  "generator_sha256": "C2A595451E22CFA614FC95344732818C16628BCB932C99C37A6F866471295D55",
-  "generated_date": "2026-08-22",
+  "generator_sha256": "9CA2239A5BE5941950EC924AC6B7F14C3E9AAA47602DAAE8DEB18BAE2DD45DBE",
+  "generated_date": "2026-08-27",
   "unity_version": "6000.0.66f1",
   "visual_review": {
     "status": "PASS_STATIC_PROOF_REVIEW",
-    "runtime_status": "OPEN_PUBLIC_PLAYTEST_0.22.0B",
+    "runtime_status": "OPEN_SUCCESSOR_0.23.0A",
     "tested_sizes_px": [
       24,
       32,
@@ -19,24 +19,24 @@
     ],
     "size_proof": {
       "path": "art/RecursiveIndustry/UiIcons/proofs/all-ui-icons-size-proof.png",
-      "size_bytes": 544697,
-      "sha256": "62D3AD5B4BCEA437F47E1B40ACB78F55B15AFDA34109D0E9699845C06420D5F7"
+      "size_bytes": 578860,
+      "sha256": "14C2A96DA7B2E9DA938321258DCB9D23096C617E029562B5DC022D0EF6918DAA"
     },
     "grayscale_proof": {
       "path": "art/RecursiveIndustry/UiIcons/proofs/all-ui-icons-grayscale-proof.png",
-      "size_bytes": 511641,
-      "sha256": "6A8E805526543DFDA5C795FDF6E101C5264A6E23E109FC43A825342C55E54B93"
+      "size_bytes": 544130,
+      "sha256": "F226694D5927D4B460308A55E1E1AF1C40C08CEB3F7A12F108C5638D09685FAD"
     }
   },
   "bundle": {
     "name": "uiicons_5287",
     "path": "mods/RecursiveIndustry/AssetBundles/uiicons_5287",
-    "size_bytes": 2420955,
-    "sha256": "0422C14BB87B3EF24AA9C283F1583757D11F69393E2B1078F668D35D173126B5",
-    "crc": 1923214527,
+    "size_bytes": 2567779,
+    "sha256": "E82485CFF06A111AB4E0C3EAD446540885355BED4140632BF29CBA7F71E39FB7",
+    "crc": 710001397,
     "dependencies": [],
     "unity_manifest": "art/RecursiveIndustry/UiIcons/unity/uiicons_5287.manifest",
-    "unity_manifest_sha256": "F0A3BB62F6CC88F3D8EE55E1C0149367505AB2CD6629F142C31413E5498417DC"
+    "unity_manifest_sha256": "EA9B64C4D5235062D681605AE1269DF2527F24A6A4BD4BFB152139E9AB61EBB6"
   },
   "icons": [
     {
@@ -1075,6 +1075,21 @@
       }
     },
     {
+      "name": "fuel_smelter",
+      "constant": "FuelSmelter",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/fuel_smelter.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/fuel_smelter-master.png",
+        "size_bytes": 27363,
+        "sha256": "11D9EE9B05E12A7C3DE6FAE0D51016AFD83D5664C6B8B294BC54F52AD09AB13B"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/fuel_smelter.png",
+        "size_bytes": 20346,
+        "sha256": "B4003892455EB6496FF838D0A5D16ADB6D2CBB9FB4DE6494441CFB14C8EBA289"
+      }
+    },
+    {
       "name": "precision_metals_works",
       "constant": "PrecisionMetalsWorks",
       "unity_path": "Assets/RecursiveIndustry/UiIcons/precision_metals_works.png",
@@ -1087,6 +1102,21 @@
         "path": "art/RecursiveIndustry/UiIcons/exports/precision_metals_works.png",
         "size_bytes": 21517,
         "sha256": "90B54E7DC2FF072499A968BCD4EF843B5106529EC0B7DD53822C98A00AEAB6E6"
+      }
+    },
+    {
+      "name": "casting_finishing_works",
+      "constant": "CastingFinishingWorks",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/casting_finishing_works.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/casting_finishing_works-master.png",
+        "size_bytes": 21385,
+        "sha256": "4DD68AC2B056DDB6ADA46C2626AB25FE0B6F317139C5BD7DA83E7ADAC527820F"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/casting_finishing_works.png",
+        "size_bytes": 15627,
+        "sha256": "92E2E4408A20EC268B87E0DBFA316D28B8DA7B923CFAEE95AD4F813F99F23F65"
       }
     },
     {
@@ -1225,6 +1255,21 @@
       }
     },
     {
+      "name": "thermal_desalination_works",
+      "constant": "ThermalDesalinationWorks",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/thermal_desalination_works.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/thermal_desalination_works-master.png",
+        "size_bytes": 25998,
+        "sha256": "768FB7D036A5BFC5C5802F379FE5F23C17071A0909F8D8D62A26CEF262463122"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/thermal_desalination_works.png",
+        "size_bytes": 20220,
+        "sha256": "9D9F758A831CE788EF29FFD791A20AF75D9E2A73124ED71CCEAD8F51481173A7"
+      }
+    },
+    {
       "name": "thermal_emissions_utility",
       "constant": "ThermalEmissionsUtility",
       "unity_path": "Assets/RecursiveIndustry/UiIcons/thermal_emissions_utility.png",
@@ -1270,6 +1315,36 @@
       }
     },
     {
+      "name": "nuclear_reprocessing_center",
+      "constant": "NuclearReprocessingCenter",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/nuclear_reprocessing_center.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/nuclear_reprocessing_center-master.png",
+        "size_bytes": 29792,
+        "sha256": "A415388951B00350203427B3F1D897A9197BAFF5487C3740CEBB076DB9C0DBEC"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/nuclear_reprocessing_center.png",
+        "size_bytes": 24842,
+        "sha256": "CBA2D3A1539B25B174397F100D25894032D53079FDB7F1BB18B75972B1B78B39"
+      }
+    },
+    {
+      "name": "nuclear_fuel_fabrication_cell",
+      "constant": "NuclearFuelFabricationCell",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/nuclear_fuel_fabrication_cell.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/nuclear_fuel_fabrication_cell-master.png",
+        "size_bytes": 28855,
+        "sha256": "23E1A1A7C2FA667DC0A1393432672563E49A64CF8E77C085197440E34F676753"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/nuclear_fuel_fabrication_cell.png",
+        "size_bytes": 15629,
+        "sha256": "58F5773276362D0664BA6237FC9A4C3F9A804E636A3B334D0A9BC381CD9043B7"
+      }
+    },
+    {
       "name": "precision_components_fab",
       "constant": "PrecisionComponentsFab",
       "unity_path": "Assets/RecursiveIndustry/UiIcons/precision_components_fab.png",
@@ -1282,6 +1357,21 @@
         "path": "art/RecursiveIndustry/UiIcons/exports/precision_components_fab.png",
         "size_bytes": 14366,
         "sha256": "80A46785F05164E0B48B8507D19FC5C93860B2AA23A4311731EE544DC8DEAE32"
+      }
+    },
+    {
+      "name": "robotic_components_fab",
+      "constant": "RoboticComponentsFab",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/robotic_components_fab.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/robotic_components_fab-master.png",
+        "size_bytes": 26466,
+        "sha256": "634FD3B4684D3FC6C314CCBFE354BF3933CC387C9CDA88228965449E6C454547"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/robotic_components_fab.png",
+        "size_bytes": 20103,
+        "sha256": "976992605D2DD522763497B70278686D58F8371E8DDDDAC3F7356A4B1D2700AD"
       }
     },
     {

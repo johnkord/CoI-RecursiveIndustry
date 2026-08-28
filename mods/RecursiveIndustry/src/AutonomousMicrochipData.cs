@@ -26,7 +26,7 @@ internal sealed class AutonomousMicrochipData : IModData
                         RecursiveIndustryIds.Products.ValidatedControlPackage)
                     .Product(4, RecursiveIndustryIds.Products.FrontierProgram)
                     .Workers(0)
-                    .MaintenanceT3(24))
+                    .MaintenanceT3(96))
             .SetElectricityConsumption(8000.Kw())
             .SetComputingConsumption(Computing.FromTFlops(256))
             .SetCategories(Ids.ToolbarCategories.Production_General)

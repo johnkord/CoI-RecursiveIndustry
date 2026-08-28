@@ -117,7 +117,7 @@ internal sealed class AutonomousNetworksData : IModData
 
         TruckProto hauler = registrator.TruckProtoBuilder
             .Start("Autonomous Hauler", vehicleId)
-            .Description("A zero-worker countable-cargo truck with embodied control hardware, native logistics behavior, and separately funded fleet optimization.")
+            .Description("A zero-worker general cargo truck with embodied control hardware, native logistics behavior, and separately funded fleet optimization.")
             .SetCosts(costs)
             .SetDurationToBuild(120.Seconds())
             .SetCapacity(60)
@@ -170,7 +170,16 @@ internal sealed class AutonomousNetworksData : IModData
             .AddExhaustSources(Option<VehicleExhaustParticlesSpec>.None)
             .SetEngineSound(
                 "Assets/Base/Vehicles/ModularTruck/Audio/Engine.prefab")
-            .SetFixedProductType(CountableProductProto.ProductType)
+            .AddAttachment(new TankAttachmentProto(
+                new Proto.ID(vehicleId + "_AttachmentTank"),
+                product => product is FluidProductProto,
+                new TankAttachmentProto.Gfx(
+                    "Assets/Base/Vehicles/ModularTruck/T2-tank.prefab",
+                    "icons",
+                    "T2-tank",
+                    ColorRgba.Gray,
+                    ColorRgba.DarkGray),
+                keepOnEvenIfNotNeeded: false))
             .AddAttachment(new FlatBedAttachmentProto(
                 new Proto.ID(vehicleId + "_AttachmentFlatBed"),
                 product => product is CountableProductProto,
@@ -178,6 +187,15 @@ internal sealed class AutonomousNetworksData : IModData
                     FlatBedAttachmentProto.Gfx.ProductOffsetsTruckT2(),
                     "Assets/Base/Vehicles/ModularTruck/Truck_Flat.prefab"),
                 keepOnEvenIfNotNeeded: true))
+            .AddAttachment(new DumpAttachmentProto(
+                new Proto.ID(vehicleId + "_AttachmentDump"),
+                new DumpAttachmentProto.Gfx(
+                    "Assets/Base/Vehicles/ModularTruck/Truck_Dump.prefab",
+                    "Object010/PileSmooth",
+                    "Object010/PileRough",
+                    LoosePileTextureParams.Default,
+                    new Vector3f(2.6.ToFix32(), 0.2.ToFix32(), 0),
+                    new Vector3f(2.6.ToFix32(), 1.9.ToFix32(), 0))))
             .SetVehicleGroup(vehicleGroup)
             .BuildAndAdd();
 

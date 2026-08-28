@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "candidate_version": "0.20.0a",
+  "candidate_version": "0.23.0b",
   "game": {
-    "display_version": "0.8.7",
-    "build": 613
+    "display_version": "0.8.7a",
+    "build": 614
   },
   "product": {
     "registration_id": "RecursiveIndustry_IndustrialControlStream",
@@ -82,15 +82,15 @@
       },
       "duration_seconds": 60,
       "power_multiplier_percent": 250,
-      "effective_power_mw": 10,
+      "effective_power_mw": 2.5,
       "required_transport_key": "backbone_fiber"
     },
-    "power_mw": 4,
+    "power_mw": 1,
     "computing": 256,
-    "workers": 24,
+    "workers": 4,
     "maintenance": {
       "product_key": "Maintenance3",
-      "quantity_per_month": 12
+      "quantity_per_month": 8
     },
     "construction": [
       {
@@ -205,6 +205,7 @@
         "owner_key": "mineral_products_works",
         "effective_duration_seconds": 120,
         "stream_quantity": 120,
+        "power_multiplier_percent": 100,
         "cancelled_intermediates": [
           "Cement"
         ]
@@ -216,6 +217,7 @@
         "owner_key": "primary_smelter",
         "effective_duration_seconds": 120,
         "stream_quantity": 120,
+        "power_multiplier_percent": 100,
         "cancelled_intermediates": [
           "Molten Iron",
           "Molten Steel"
@@ -228,6 +230,7 @@
         "owner_key": "general_manufacturing_fab",
         "effective_duration_seconds": 120,
         "stream_quantity": 120,
+        "power_multiplier_percent": 1425,
         "cancelled_intermediates": [
           "Molten Iron",
           "Molten Steel",
@@ -241,7 +244,7 @@
         "owner_key": "refinery_complex",
         "effective_duration_seconds": 120,
         "stream_quantity": 120,
-        "power_multiplier_percent": 200,
+        "power_multiplier_percent": 100,
         "cancelled_intermediates": [
           "Medium Oil",
           "Light Oil"
@@ -254,7 +257,7 @@
         "owner_key": "refinery_complex",
         "effective_duration_seconds": 120,
         "stream_quantity": 120,
-        "power_multiplier_percent": 200,
+        "power_multiplier_percent": 100,
         "cancelled_intermediates": [
           "Heavy Oil",
           "Medium Oil",
@@ -270,7 +273,7 @@
         "owner_key": "refinery_complex",
         "effective_duration_seconds": 120,
         "stream_quantity": 120,
-        "power_multiplier_percent": 200,
+        "power_multiplier_percent": 100,
         "cancelled_intermediates": [
           "Heavy Oil",
           "Medium Oil",
@@ -286,7 +289,7 @@
         "owner_key": "refinery_complex",
         "effective_duration_seconds": 120,
         "stream_quantity": 120,
-        "power_multiplier_percent": 200,
+        "power_multiplier_percent": 275,
         "cancelled_intermediates": [
           "Heavy Oil",
           "Medium Oil",
@@ -336,6 +339,7 @@
         "owner_key": "gas_fertilizer_complex",
         "effective_duration_seconds": 120,
         "stream_quantity": 120,
+        "power_multiplier_percent": 100,
         "cancelled_intermediates": [
           "Nitrogen",
           "Ammonia"
@@ -348,6 +352,7 @@
         "owner_key": "food_pack_campus",
         "effective_duration_seconds": 120,
         "stream_quantity": 120,
+        "power_multiplier_percent": 125,
         "cancelled_intermediates": [
           "Flour",
           "Bread"
@@ -360,6 +365,7 @@
         "owner_key": "food_pack_campus",
         "effective_duration_seconds": 120,
         "stream_quantity": 120,
+        "power_multiplier_percent": 150,
         "cancelled_intermediates": [
           "Flour",
           "Bread",
@@ -373,6 +379,7 @@
         "owner_key": "food_pack_campus",
         "effective_duration_seconds": 150,
         "stream_quantity": 150,
+        "power_multiplier_percent": 100,
         "cancelled_intermediates": [
           "Flour",
           "Bread",
@@ -387,6 +394,7 @@
         "owner_key": "food_pack_campus",
         "effective_duration_seconds": 240,
         "stream_quantity": 240,
+        "power_multiplier_percent": 100,
         "cancelled_intermediates": [
           "Tofu"
         ]
@@ -398,6 +406,7 @@
         "owner_key": "water_utility",
         "effective_duration_seconds": 120,
         "stream_quantity": 120,
+        "power_multiplier_percent": 100,
         "cancelled_intermediates": [
           "Sludge"
         ]
@@ -409,6 +418,7 @@
         "owner_key": "nuclear_fuel_complex",
         "effective_duration_seconds": 120,
         "stream_quantity": 120,
+        "power_multiplier_percent": 800,
         "cancelled_intermediates": [
           "Yellowcake",
           "Enriched Uranium (4%)"
@@ -418,10 +428,10 @@
         "key": "integrated_electronics3",
         "stable_id": "Recipe_RecursiveIndustry_IntegratedElectronics3",
         "mode": "integrated",
-        "owner_key": "precision_components_fab",
+        "owner_key": "robotic_components_fab",
         "effective_duration_seconds": 120,
         "stream_quantity": 120,
-        "power_multiplier_percent": 200,
+        "power_multiplier_percent": 100,
         "cancelled_intermediates": [
           "Electronics",
           "PCB",
@@ -432,9 +442,10 @@
         "key": "integrated_electronics4",
         "stable_id": "Recipe_RecursiveIndustry_IntegratedElectronics4",
         "mode": "integrated",
-        "owner_key": "precision_components_fab",
+        "owner_key": "robotic_components_fab",
         "effective_duration_seconds": 120,
         "stream_quantity": 120,
+        "power_multiplier_percent": 150,
         "cancelled_intermediates": [
           "Electronics III",
           "Lens"
@@ -447,7 +458,7 @@
         "owner_key": "general_manufacturing_fab",
         "effective_duration_seconds": 120,
         "stream_quantity": 120,
-        "power_multiplier_percent": 200,
+        "power_multiplier_percent": 100,
         "cancelled_intermediates": [
           "Lab Equipment"
         ]
@@ -459,7 +470,7 @@
         "owner_key": "general_manufacturing_fab",
         "effective_duration_seconds": 120,
         "stream_quantity": 120,
-        "power_multiplier_percent": 200,
+        "power_multiplier_percent": 125,
         "cancelled_intermediates": [
           "Lab Equipment",
           "Lab Equipment II"
@@ -472,7 +483,7 @@
         "owner_key": "general_manufacturing_fab",
         "effective_duration_seconds": 180,
         "stream_quantity": 180,
-        "power_multiplier_percent": 200,
+        "power_multiplier_percent": 125,
         "cancelled_intermediates": [
           "Lab Equipment",
           "Lab Equipment II",
@@ -486,7 +497,7 @@
         "owner_key": "autonomous_electronics_integration_complex",
         "effective_duration_seconds": 120,
         "stream_quantity": 120,
-        "power_multiplier_percent": 200,
+        "power_multiplier_percent": 100,
         "cancelled_intermediates": [
           "Electronics",
           "PCB"
@@ -499,7 +510,7 @@
         "owner_key": "autonomous_capital_fabrication_matrix",
         "effective_duration_seconds": 80,
         "stream_quantity": 80,
-        "power_multiplier_percent": 200,
+        "power_multiplier_percent": 100,
         "cancelled_intermediates": [
           "Construction Parts",
           "Construction Parts II"
@@ -540,7 +551,7 @@
         "key": "integrated_refinery_diesel",
         "duration_seconds": 120,
         "stream_quantity": 120,
-        "power_multiplier_percent": 200,
+        "power_multiplier_percent": 100,
         "inputs": {
           "Crude Oil": 240,
           "Hydrogen": 54,
@@ -557,7 +568,7 @@
         "key": "integrated_refinery_gas",
         "duration_seconds": 120,
         "stream_quantity": 120,
-        "power_multiplier_percent": 200,
+        "power_multiplier_percent": 100,
         "inputs": {
           "Crude Oil": 240,
           "Steam (High)": 89
@@ -572,7 +583,7 @@
         "key": "integrated_refinery_hydrogen",
         "duration_seconds": 120,
         "stream_quantity": 120,
-        "power_multiplier_percent": 200,
+        "power_multiplier_percent": 275,
         "inputs": {
           "Crude Oil": 240,
           "Steam (High)": 120
@@ -698,7 +709,7 @@
       "right_side_input_ports": 1
     },
     {
-      "key": "precision_components_fab",
+      "key": "robotic_components_fab",
       "material_input_ports": 8,
       "input_ports_with_data": 9,
       "output_ports": 1,
@@ -735,13 +746,13 @@
     }
   ],
   "direct_contract": {
-    "expected_binding_count": 235,
+    "expected_binding_count": 231,
     "stream_inputs_per_binding": 0,
     "electronics_iii_binding": {
       "recipe_id": "Electronics3Assembly",
       "source_export_recipe_id": "Electronics3AssemblyRoboticT2",
       "source_machine_id": "AssemblyRoboticT2",
-      "owner_key": "precision_components_fab",
+      "owner_key": "robotic_components_fab",
       "inputs": [
         {
           "product_key": "Microchips",
@@ -857,10 +868,10 @@
       "transport_capacity_per_minute": 900,
       "packages_per_hour_at_full_output": 240,
       "steady_state_packages_per_hour": "1320/7",
-      "power_mw": 20,
+      "power_mw": 5,
       "computing": 512,
-      "workers": 48,
-      "maintenance_iii_per_month": 24
+      "workers": 8,
+      "maintenance_iii_per_month": 16
     },
     "local_only_topology": {
       "gateway_count": 4,
@@ -868,10 +879,10 @@
       "transport_capacity_per_minute": 900,
       "packages_per_hour_at_full_output": 240,
       "steady_state_packages_per_hour": "1320/7",
-      "power_mw": 16,
+      "power_mw": 4,
       "computing": 1024,
-      "workers": 96,
-      "maintenance_iii_per_month": 48
+      "workers": 16,
+      "maintenance_iii_per_month": 32
     },
     "package_scale_up": {
       "selected_mature_core_packages_per_hour": 408,
@@ -895,8 +906,8 @@
         256
       ],
       "power_mw": [
-        2,
-        4
+        1,
+        2
       ]
     }
   },

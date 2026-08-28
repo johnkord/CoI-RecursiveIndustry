@@ -9,6 +9,8 @@ from pathlib import Path
 import re
 import unittest
 
+from tools.generate_recursive_industry_universal_source import load_catalog
+
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTROL = json.loads(
@@ -16,11 +18,7 @@ CONTROL = json.loads(
         encoding="utf-8"
     )
 )
-CATALOG = json.loads(
-    (ROOT / "data" / "universal-industry-catalog.json").read_text(
-        encoding="utf-8"
-    )
-)
+CATALOG = load_catalog()
 
 
 def pascal(value: str) -> str:
@@ -78,16 +76,16 @@ class ControlNetworkContractTests(unittest.TestCase):
         self.assertEqual(backbone["output"]["quantity"], 420)
         self.assertEqual(backbone["duration_seconds"], 60)
         self.assertEqual(backbone["power_multiplier_percent"], 250)
-        self.assertEqual(backbone["effective_power_mw"], 10)
+        self.assertEqual(backbone["effective_power_mw"], 2.5)
         self.assertEqual(backbone["required_transport_key"], "backbone_fiber")
         self.assertEqual(
             Fraction(recipe["output"]["quantity"], recipe["input"]["quantity"]),
             Fraction(backbone["output"]["quantity"], backbone["input"]["quantity"]),
         )
-        self.assertEqual(gateway["power_mw"], 4)
+        self.assertEqual(gateway["power_mw"], 1)
         self.assertEqual(gateway["computing"], 256)
-        self.assertEqual(gateway["workers"], 24)
-        self.assertEqual(gateway["maintenance"]["quantity_per_month"], 12)
+        self.assertEqual(gateway["workers"], 4)
+        self.assertEqual(gateway["maintenance"]["quantity_per_month"], 8)
         self.assertEqual(
             {item["product_key"]: item["quantity"] for item in gateway["construction"]},
             {
@@ -101,7 +99,7 @@ class ControlNetworkContractTests(unittest.TestCase):
         sensitivity = CONTROL["capacity_closure"]["sensitivity"]
         self.assertEqual(sensitivity["stream_per_package"], [105, 210, 420])
         self.assertEqual(sensitivity["computing"], [128, 256])
-        self.assertEqual(sensitivity["power_mw"], [2, 4])
+        self.assertEqual(sensitivity["power_mw"], [1, 2])
 
     def test_deployment_assurance_is_density_not_yield(self) -> None:
         assurance = CONTROL["deployment_assurance"]
@@ -194,13 +192,13 @@ class ControlNetworkContractTests(unittest.TestCase):
 
     def test_five_directed_refinery_slates_are_stream_controlled(self) -> None:
         expected = {
-            "integrated_refinery_diesel": (200, {
+            "integrated_refinery_diesel": (100, {
                 "Heavy Oil", "Medium Oil", "Light Oil", "Naphtha", "Fuel Gas"
             }),
-            "integrated_refinery_gas": (200, {
+            "integrated_refinery_gas": (100, {
                 "Heavy Oil", "Medium Oil", "Light Oil", "Diesel", "Naphtha"
             }),
-            "integrated_refinery_hydrogen": (200, {
+            "integrated_refinery_hydrogen": (275, {
                 "Heavy Oil", "Medium Oil", "Light Oil", "Diesel", "Naphtha", "Fuel Gas"
             }),
             "integrated_refinery_plastic": (300, {
@@ -261,19 +259,19 @@ class ControlNetworkContractTests(unittest.TestCase):
                 {"Crude Oil": 240, "Hydrogen": 54, "Oxygen": 42, "Steam (High)": 48},
                 {"Diesel": 368, "Sour Water": 72, "Water": 14},
                 120,
-                200,
+                100,
             ),
             "integrated_refinery_gas": (
                 {"Crude Oil": 240, "Steam (High)": 89},
                 {"Fuel Gas": 372, "Hydrogen": 74, "Sour Water": 72},
                 120,
-                200,
+                100,
             ),
             "integrated_refinery_hydrogen": (
                 {"Crude Oil": 240, "Steam (High)": 120},
                 {"Carbon Dioxide": 372, "Hydrogen": 508, "Sour Water": 72},
                 120,
-                200,
+                275,
             ),
             "integrated_refinery_plastic": (
                 {"Chlorine": 92, "Crude Oil": 120, "Hydrogen": 9, "Steam (High)": 33},
@@ -364,7 +362,7 @@ class ControlNetworkContractTests(unittest.TestCase):
                 "primary_smelter",
                 "food_pack_campus",
                 "nuclear_fuel_complex",
-                "precision_components_fab",
+                "robotic_components_fab",
                 "general_manufacturing_fab",
             },
         )
@@ -391,7 +389,7 @@ class ControlNetworkContractTests(unittest.TestCase):
     def test_direct_binding_delta_is_one_exact_electronics_three_row(self) -> None:
         direct = CONTROL["direct_contract"]
         binding = direct["electronics_iii_binding"]
-        self.assertEqual(direct["expected_binding_count"], 235)
+        self.assertEqual(direct["expected_binding_count"], 231)
         self.assertEqual(direct["stream_inputs_per_binding"], 0)
         self.assertEqual(binding["recipe_id"], "Electronics3Assembly")
         self.assertEqual(
@@ -399,7 +397,7 @@ class ControlNetworkContractTests(unittest.TestCase):
             "Electronics3AssemblyRoboticT2",
         )
         self.assertEqual(binding["source_machine_id"], "AssemblyRoboticT2")
-        self.assertEqual(binding["owner_key"], "precision_components_fab")
+        self.assertEqual(binding["owner_key"], "robotic_components_fab")
         self.assertEqual(
             {item["product_key"]: item["quantity"] for item in binding["inputs"]},
             {"Microchips": 8, "Electronics2": 16},

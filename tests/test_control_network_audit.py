@@ -22,6 +22,7 @@ from audit_recursive_industry_control_network import (  # noqa: E402
     audit_gateway_source,
     audit_transport_source,
 )
+from generate_recursive_industry_universal_source import load_catalog  # noqa: E402
 
 
 CONTROL = json.loads(
@@ -29,11 +30,7 @@ CONTROL = json.loads(
         encoding="utf-8"
     )
 )
-CATALOG = json.loads(
-    (ROOT / "data" / "universal-industry-catalog.json").read_text(
-        encoding="utf-8"
-    )
-)
+CATALOG = load_catalog()
 
 VALID_DATA_PRODUCT = """
 public sealed class DataProductProto : ProductProto
@@ -79,9 +76,9 @@ var gateway = builder
         .Product(32, RecursiveIndustryIds.Products.ValidatedControlPackage)
         .Product(4, RecursiveIndustryIds.Products.FrontierProgram)
         .Product(4, RecursiveIndustryIds.Products.ValidatedResearchDossier)
-        .Workers(24)
-        .MaintenanceT3(12))
-    .SetElectricityConsumption(4000.Kw())
+        .Workers(4)
+        .MaintenanceT3(8))
+    .SetElectricityConsumption(1000.Kw())
     .SetComputingConsumption(Computing.FromTFlops(256))
     .SetLayout("A#>[4][4][4][4][4][4]>:X")
     .SetCustomIconPath(RecursiveIndustryIcons.ControlDeploymentGateway);
@@ -127,21 +124,7 @@ recipe
 
 
 def implemented_catalog() -> dict[str, object]:
-    catalog = copy.deepcopy(CATALOG)
-    facility = next(
-        item
-        for item in catalog["facilities"]
-        if item["key"] == "precision_components_fab"
-    )
-    if not any(
-        binding["recipe_id"] == "Electronics3Assembly"
-        for binding in facility["direct_bindings"]
-    ):
-        facility["direct_bindings"].append({
-            "recipe_id": "Electronics3Assembly",
-            "source_machine_id": "AssemblyRoboticT2",
-        })
-    return catalog
+    return copy.deepcopy(CATALOG)
 
 
 class ControlNetworkAuditTests(unittest.TestCase):
@@ -186,17 +169,17 @@ class ControlNetworkAuditTests(unittest.TestCase):
 
     def test_electronics_three_wrong_owner_is_rejected(self) -> None:
         catalog = implemented_catalog()
-        precision = next(
+        robotic = next(
             item
             for item in catalog["facilities"]
-            if item["key"] == "precision_components_fab"
+            if item["key"] == "robotic_components_fab"
         )
         binding = next(
             item
-            for item in precision["direct_bindings"]
+            for item in robotic["direct_bindings"]
             if item["recipe_id"] == "Electronics3Assembly"
         )
-        precision["direct_bindings"].remove(binding)
+        robotic["direct_bindings"].remove(binding)
         catalog["facilities"][0]["direct_bindings"].append(binding)
         errors = audit_catalog(catalog, CONTROL)
         self.assertTrue(any("owned only" in error for error in errors))

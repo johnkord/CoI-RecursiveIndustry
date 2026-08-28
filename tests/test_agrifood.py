@@ -62,7 +62,7 @@ class AdaptiveAgrifoodTests(unittest.TestCase):
     def test_icons_are_distinct_and_dependency_free(self) -> None:
         contract = load_json(ROOT / "data" / "adaptive-agrifood.json")
         presentation = contract["presentation"]
-        self.assertEqual(presentation["total_ui_identities"], 85)
+        self.assertEqual(presentation["total_ui_identities"], 91)
         self.assertEqual(presentation["new_ui_identities"], 3)
         self.assertEqual(presentation["dependencies"], [])
 

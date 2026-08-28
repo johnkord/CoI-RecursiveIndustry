@@ -4,16 +4,24 @@ using Mafi.Core.Products;
 
 namespace RecursiveIndustry;
 
+internal enum UniversalMaintenanceTier
+{
+    I,
+    II,
+    III,
+}
+
 internal sealed class UniversalFacilitySpec
 {
     public readonly string Key;
     public readonly string Name;
     public readonly MachineProto.ID Id;
     public readonly string IconPath;
-    public readonly int PowerMw;
+    public readonly int PowerKw;
     public readonly int Computing;
     public readonly int Workers;
-    public readonly int MaintenanceT3;
+    public readonly UniversalMaintenanceTier MaintenanceTier;
+    public readonly int MaintenancePerMonth;
     public readonly int Cp4;
     public readonly int Electronics4;
     public readonly int Packages;
@@ -27,10 +35,11 @@ internal sealed class UniversalFacilitySpec
         string name,
         MachineProto.ID id,
         string iconPath,
-        int powerMw,
+        int powerKw,
         int computing,
         int workers,
-        int maintenanceT3,
+        UniversalMaintenanceTier maintenanceTier,
+        int maintenancePerMonth,
         int cp4,
         int electronics4,
         int packages,
@@ -43,10 +52,11 @@ internal sealed class UniversalFacilitySpec
         Name = name;
         Id = id;
         IconPath = iconPath;
-        PowerMw = powerMw;
+        PowerKw = powerKw;
         Computing = computing;
         Workers = workers;
-        MaintenanceT3 = maintenanceT3;
+        MaintenanceTier = maintenanceTier;
+        MaintenancePerMonth = maintenancePerMonth;
         Cp4 = cp4;
         Electronics4 = electronics4;
         Packages = packages;

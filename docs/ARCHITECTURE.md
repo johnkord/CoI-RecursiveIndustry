@@ -23,8 +23,9 @@ Registration is divided into small `IModData` classes under
   at least one transported intermediate. Three earlier authored compositions on
   the Electronics Integration and Capital Fabrication facilities use the same
   Stream contract, for twenty-four controlled recipes on eleven owners.
-- Integrated power defaults to 200%. The deeply collapsed Polymer and Elastomer
-  refinery rows explicitly use 300% and 400%.
+- Integrated power follows each exact simultaneous source composition. Effective
+  targets range from 2 MW for broad crude fractionation to 144 MW for the full
+  uranium front end. Elastomer retains an additional anti-dominance premium.
 - Ten Precision rows remain Fiber-free. They alter one source process for 12.5%
   lower feedstock per output at 200% recipe power.
 - Four exact authored agrifood rows are also Fiber-free. Unlike Integrated rows,
@@ -69,7 +70,7 @@ not collide with vanilla recipe registration.
 standard `PopNeedProto`, `UpointsCategoryProto`, and `SettlementModuleProto`.
 The attached module consumes Companion Provisions and produces loose Waste in
 proportion to population. The need owns 0.6 Unity and no Health. Ordinary entity
-costs retain eight care workers and Maintenance III; the module consumes 250 kW.
+costs retain eight care workers and Maintenance II; the module consumes 250 kW.
 
 No custom service class, global worker modifier, command processor, serializer,
 or saved state participates. Circular Agrifood research explicitly unlocks both
@@ -116,20 +117,21 @@ only collapses their upstream physical steel and assembly supply chain.
 `data/universal-industry-catalog.json`. Check parity with
 `python tools/generate_recursive_industry_universal_source.py`, or regenerate with
 the `--write` flag. Registration
-fails closed if the catalog does not resolve exactly 19 facilities and 235 unique
+fails closed if the catalog does not resolve exactly 25 facilities and 231 unique
 Direct bindings, 21 Integrated compositions, 10 Precision modes, and four exact
 authored agrifood recipes.
 
 At runtime, Direct binding quantities include the live source-machine multiplier.
 Transport duration is raised when necessary to keep each mapped highest-tier port
-within the game transport ceiling. Facility power is the greater of the authored
-envelope and 125% of four-source-machine equivalent power.
+within the game transport ceiling. Direct facility power must meet 110% of the
+four-source-machine equivalent, rounded up to 0.5 MW. Each facility declares an
+explicit maintenance tier and depot-workload quantity.
 
 Port planning is facility-wide and type-aware. For each product kind, it takes
 the maximum simultaneous product count across every row, then sums those maxima.
 The seven-row Chemical Plant II shell carries up to seven inputs on its left edge.
 Overflow inputs first use right-edge rows not occupied by outputs. Precision
-Components uses two right inputs. General Manufacturing uses three right inputs
+Robotic Components uses two right inputs. General Manufacturing uses three right inputs
 and one top Data input, whose `v` direction is already used by native-compatible
 Assembly layouts. Right-side outputs plus overflow inputs and top-edge capacity
 are audited separately.
@@ -142,7 +144,7 @@ The player package contains three dependency-free bundles:
 
 - `producticons_84e1`: eight Foundation product UI icons.
 - `cartridge_c874`: one shared cartridge mesh, eight albedos, and shared PBR maps.
-- `uiicons_5287`: 85 later products, entities, vehicles, trains, policies,
+- `uiicons_5287`: 91 later products, entities, vehicles, trains, policies,
   Industrial Control, Adaptive Agrifood, and companion-care identities.
 
 Original source art is under `art/RecursiveIndustry/`. Runtime code references

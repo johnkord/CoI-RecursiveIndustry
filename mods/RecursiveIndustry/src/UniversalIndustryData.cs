@@ -73,10 +73,10 @@ internal sealed class UniversalIndustryData : IModData
             }
         }
 
-        if (directCount != 235)
+        if (directCount != 231)
         {
             throw new InvalidOperationException(
-                $"Universal Industry expected 235 direct bindings, registered {directCount}.");
+            $"Universal Industry expected 231 direct bindings, registered {directCount}.");
         }
         Log.Info(
             "RecursiveIndustry: Universal Industry registered "
@@ -333,20 +333,21 @@ internal sealed class UniversalIndustryData : IModData
                 RecursiveIndustryIds.Products.OrbitalPowerCalibration);
         }
         costs = costs.Workers(spec.Workers);
-        bool exactMaintenance = TryApplySameTierMaintenance(
-            costs,
-            direct,
-            out EntityCostsTpl.Builder resolvedCosts);
-        costs = exactMaintenance
-            ? resolvedCosts
-            : costs.MaintenanceT3(spec.MaintenanceT3);
+        costs = ApplyMaintenance(costs, spec);
 
         int sourceEquivalentPowerKw = direct.Max(binding => checked(
             (int)(binding.SourceMachine.ElectricityConsumed.Value / Electricity.OneKw.Value)
             * 4));
-        int facilityPowerKw = Math.Max(
-            spec.PowerMw * 1000,
-            checked((sourceEquivalentPowerKw * 5 + 3) / 4));
+        int minimumPowerKw = checked(
+            (Math.Max(5000, sourceEquivalentPowerKw * 11) + 4999)
+            / 5000
+            * 500);
+        if (spec.PowerKw < minimumPowerKw)
+        {
+            throw new InvalidOperationException(
+                $"Universal facility '{spec.Key}' declares {spec.PowerKw} kW, below its "
+                + $"{minimumPowerKw} kW Direct source envelope.");
+        }
         bool useChemicalPlantBasis = ports.BodyRows > 5;
         string prefabPath = useChemicalPlantBasis
             ? "Assets/Base/Machines/Oil/ReformerT2.prefab"
@@ -358,10 +359,10 @@ internal sealed class UniversalIndustryData : IModData
             machine = registrator.MachineProtoBuilder
                 .Start(spec.Name, spec.Id)
                 .Description(
-                    "A high-power AI megafacility with exact 4x Direct bindings and bounded "
+                    "A process-scaled AI facility with exact 4x Direct bindings and bounded "
                     + "Integrated or Precision modes. Conventional source plants remain available.")
                 .SetCost(costs)
-                .SetElectricityConsumption(facilityPowerKw.Kw())
+                .SetElectricityConsumption(spec.PowerKw.Kw())
                 .SetComputingConsumption(Computing.FromTFlops(spec.Computing))
                 .SetCategories(Ids.ToolbarCategories.Production_General)
                 .SetLayout(new EntityLayoutParams(), ports.LayoutRows)
@@ -374,10 +375,10 @@ internal sealed class UniversalIndustryData : IModData
             machine = registrator.MachineProtoBuilder
                 .Start(spec.Name, spec.Id)
                 .Description(
-                    "A high-power AI megafacility with exact 4x Direct bindings and bounded "
+                    "A process-scaled AI facility with exact 4x Direct bindings and bounded "
                     + "Integrated or Precision modes. Conventional source plants remain available.")
                 .SetCost(costs)
-                .SetElectricityConsumption(facilityPowerKw.Kw())
+                .SetElectricityConsumption(spec.PowerKw.Kw())
                 .SetComputingConsumption(Computing.FromTFlops(spec.Computing))
                 .SetCategories(Ids.ToolbarCategories.Production_General)
                 .SetLayout(new EntityLayoutParams(), ports.LayoutRows)
@@ -388,10 +389,11 @@ internal sealed class UniversalIndustryData : IModData
         }
         Log.Info(
             "RecursiveIndustry: Universal facility " + spec.Key
-            + " power_kw=" + facilityPowerKw
+            + " power_kw=" + spec.PowerKw
             + " source_equivalent_power_kw=" + sourceEquivalentPowerKw
             + " maintenance=" + machine.Costs.Maintenance
-            + " exact_same_tier_maintenance=" + exactMaintenance
+            + " maintenance_tier=" + spec.MaintenanceTier
+            + " maintenance_per_month=" + spec.MaintenancePerMonth
             + " logical_port_rows=" + ports.RequiredRows
             + " layout_rows=" + ports.BodyRows
             + " right_side_inputs=" + ports.RightSideInputPorts
@@ -400,36 +402,18 @@ internal sealed class UniversalIndustryData : IModData
         return machine;
     }
 
-    private static bool TryApplySameTierMaintenance(
+    private static EntityCostsTpl.Builder ApplyMaintenance(
         EntityCostsTpl.Builder costs,
-        ResolvedDirectBinding[] direct,
-        out EntityCostsTpl.Builder resolved)
+        UniversalFacilitySpec spec)
     {
-        var sourceCosts = direct
-            .Select(binding => binding.SourceMachine.Costs.Maintenance)
-            .Where(maintenance => maintenance.Product != null)
-            .ToArray();
-        if (sourceCosts.Length != direct.Length || sourceCosts.Length == 0)
+        return spec.MaintenanceTier switch
         {
-            resolved = costs;
-            return false;
-        }
-        ProductProto product = sourceCosts[0].Product;
-        if (sourceCosts.Any(maintenance => maintenance.Product.Id != product.Id))
-        {
-            resolved = costs;
-            return false;
-        }
-        Fix32 minimum = sourceCosts[0].MaintenancePerMonth.Value;
-        foreach (var source in sourceCosts)
-        {
-            if (source.MaintenancePerMonth.Value < minimum)
-            {
-                minimum = source.MaintenancePerMonth.Value;
-            }
-        }
-        resolved = costs.Maintenance(minimum * 3, product.Id);
-        return true;
+            UniversalMaintenanceTier.I => costs.MaintenanceT1(spec.MaintenancePerMonth),
+            UniversalMaintenanceTier.II => costs.MaintenanceT2(spec.MaintenancePerMonth),
+            UniversalMaintenanceTier.III => costs.MaintenanceT3(spec.MaintenancePerMonth),
+            _ => throw new InvalidOperationException(
+                $"Unknown maintenance tier for universal facility '{spec.Key}'."),
+        };
     }
 
     private static void RegisterCustomRecipe(

@@ -21,7 +21,7 @@ class CircularAgrifoodTests(unittest.TestCase):
     def test_catalog_counts_preserve_existing_modes(self) -> None:
         contract = load_json(ROOT / "data" / "circular-agrifood.json")
         counts = contract["catalog_contract"]
-        self.assertEqual(counts["direct_bindings"], 235)
+        self.assertEqual(counts["direct_bindings"], 231)
         self.assertEqual(counts["integrated_recipes"], 21)
         self.assertEqual(counts["precision_recipes"], 10)
         self.assertEqual(counts["authored_recipes"], 4)

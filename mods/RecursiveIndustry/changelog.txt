@@ -1,6 +1,31 @@
 Recursive Industry changelog
 ============================
 
+0.23.0b - Fuel Station compatibility correction
+-------------------------------------------------
+
+- Restores tank, flatbed, and dump attachments on the general Autonomous
+  Hauler and removes its countable-only product lock.
+- Allows Hydrogen Fuel Stations to select the Autonomous Hauler as an attached
+  distribution vehicle through the native Fuel Station assignment path.
+- Keeps the 180-capacity Autonomous Dump and Tank Haulers as fixed specialists.
+- Preserves all 0.23.0a operating-envelope values and public 0.22.0c artifacts.
+
+0.23.0a - Building operating-envelope candidate
+-------------------------------------------------
+
+- Splits six mixed-process catalogs into 25 process-scaled facilities while
+  conserving 3,392 Computing and 1,024 commissioning Packages.
+- Reduces universal Direct power from 415 MW to 142.5 MW and routine workers
+  from 264 to 88. Exact custom compositions set a 328.5 MW maximum-mode envelope.
+- Uses explicit physical maintenance tiers and depot-workload quantities:
+  203 Maintenance I, 111 Maintenance II, and 168 Maintenance III per month.
+- Returns four passive steam-condensation rows to native Large Cooling Towers.
+- Retunes Gateway, Microchip, Electronics Integration, Capital Fabrication,
+  Construction Nexus, and Companion Animal Center support values.
+- Adds six original facility icons. The 240 MW Orbital Power Array is unchanged.
+- New campaigns only. Public 0.22.0c remains an immutable playtest release.
+
 0.22.0c - Build 614 compatibility candidate
 ---------------------------------------------
 

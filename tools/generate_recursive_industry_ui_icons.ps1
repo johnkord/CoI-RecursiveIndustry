@@ -111,7 +111,9 @@ public static class RecursiveIndustryUiIconsV3 {
         "comminution_hub",
         "mineral_products_works",
         "primary_smelter",
+        "fuel_smelter",
         "precision_metals_works",
+        "casting_finishing_works",
         "refinery_complex",
         "gas_fertilizer_complex",
         "materials_chemistry_complex",
@@ -121,10 +123,14 @@ public static class RecursiveIndustryUiIconsV3 {
         "crop_soil_bioprocessing",
         "bioenergy_center",
         "water_utility",
+        "thermal_desalination_works",
         "thermal_emissions_utility",
         "materials_recovery_center",
         "nuclear_fuel_complex",
+        "nuclear_reprocessing_center",
+        "nuclear_fuel_fabrication_cell",
         "precision_components_fab",
+        "robotic_components_fab",
         "general_manufacturing_fab",
         "orbital_fabrication_fab",
     };
@@ -240,7 +246,9 @@ public static class RecursiveIndustryUiIconsV3 {
             case "comminution_hub": DrawMegafacility(g, 0); break;
             case "mineral_products_works": DrawMegafacility(g, 1); break;
             case "primary_smelter": DrawMegafacility(g, 2); break;
+            case "fuel_smelter": DrawMegafacility(g, 19); break;
             case "precision_metals_works": DrawMegafacility(g, 3); break;
+            case "casting_finishing_works": DrawMegafacility(g, 20); break;
             case "refinery_complex": DrawMegafacility(g, 4); break;
             case "gas_fertilizer_complex": DrawMegafacility(g, 5); break;
             case "materials_chemistry_complex": DrawMegafacility(g, 6); break;
@@ -250,10 +258,14 @@ public static class RecursiveIndustryUiIconsV3 {
             case "crop_soil_bioprocessing": DrawMegafacility(g, 10); break;
             case "bioenergy_center": DrawMegafacility(g, 11); break;
             case "water_utility": DrawMegafacility(g, 12); break;
+            case "thermal_desalination_works": DrawMegafacility(g, 21); break;
             case "thermal_emissions_utility": DrawMegafacility(g, 13); break;
             case "materials_recovery_center": DrawMegafacility(g, 14); break;
             case "nuclear_fuel_complex": DrawMegafacility(g, 15); break;
+            case "nuclear_reprocessing_center": DrawMegafacility(g, 22); break;
+            case "nuclear_fuel_fabrication_cell": DrawMegafacility(g, 23); break;
             case "precision_components_fab": DrawMegafacility(g, 16); break;
+            case "robotic_components_fab": DrawMegafacility(g, 24); break;
             case "general_manufacturing_fab": DrawMegafacility(g, 17); break;
             case "orbital_fabrication_fab": DrawMegafacility(g, 18); break;
             default: throw new InvalidOperationException(name);
@@ -988,7 +1000,7 @@ public static class RecursiveIndustryUiIconsV3 {
     }
 
     private static void DrawMegafacility(Graphics g, int kind) {
-        Color[] accents = { Cyan, Gold, Orange, Blue, Cyan, Green, Blue, White, Gold, Orange, Green, Cyan, Blue, Orange, Green, Gold, Cyan, White, Blue };
+        Color[] accents = { Cyan, Gold, Orange, Blue, Cyan, Green, Blue, White, Gold, Orange, Green, Cyan, Blue, Orange, Green, Gold, Cyan, White, Blue, Orange, Gold, Blue, Green, Gold, Cyan };
         Color accent = accents[kind];
         Rect(g, 176, 344, 672, 456, Body, 34, 46f);
         Rect(g, 240, 260, 544, 150, Recessed, 28, 40f);
@@ -1083,6 +1095,45 @@ public static class RecursiveIndustryUiIconsV3 {
             case 18:
                 Polygon(g, new[] { new Point(512, 344), new Point(650, 570), new Point(570, 650), new Point(454, 650), new Point(374, 570) }, Blue, 34f);
                 Polygon(g, new[] { new Point(512, 578), new Point(586, 694), new Point(438, 694) }, Orange, 24f);
+                break;
+            case 19:
+                Polygon(g, new[] { new Point(512, 370), new Point(650, 542), new Point(612, 666), new Point(412, 666), new Point(374, 542) }, Orange, 34f);
+                Polygon(g, new[] { new Point(512, 444), new Point(576, 548), new Point(544, 620), new Point(466, 620), new Point(444, 548) }, Gold, 24f);
+                break;
+            case 20:
+                Polygon(g, new[] { new Point(348, 408), new Point(648, 408), new Point(604, 560), new Point(392, 560) }, Body, 34f);
+                Line(g, Gold, 38f, new Point(392, 456), new Point(604, 456));
+                Line(g, Orange, 42f, new Point(604, 520), new Point(676, 640));
+                Rect(g, 626, 626, 108, 48, Gold, 14, 22f);
+                break;
+            case 21:
+                Polygon(g, new[] { new Point(512, 356), new Point(658, 532), new Point(624, 642), new Point(512, 692), new Point(400, 642), new Point(366, 532) }, Blue, 34f);
+                Line(g, White, 26f, new Point(418, 548), new Point(606, 548));
+                Line(g, Cyan, 26f, new Point(430, 604), new Point(594, 604));
+                break;
+            case 22:
+                Ellipse(g, 424, 432, 176, 176, Green, 28f);
+                Arrow(g, new Point(340, 484), new Point(430, 408), Cyan, 32f);
+                Arrow(g, new Point(684, 556), new Point(594, 632), Gold, 32f);
+                Line(g, Cyan, 30f, new Point(430, 408), new Point(602, 408), new Point(684, 484));
+                Line(g, Gold, 30f, new Point(594, 632), new Point(422, 632), new Point(340, 556));
+                break;
+            case 23:
+                Rect(g, 350, 400, 84, 246, Gold, 18, 26f);
+                Rect(g, 470, 374, 84, 272, Orange, 18, 26f);
+                Rect(g, 590, 400, 84, 246, Gold, 18, 26f);
+                Line(g, White, 24f, new Point(392, 436), new Point(392, 610));
+                Line(g, White, 24f, new Point(512, 410), new Point(512, 610));
+                Line(g, White, 24f, new Point(632, 436), new Point(632, 610));
+                break;
+            case 24:
+                Rect(g, 432, 446, 160, 142, Cyan, 18, 28f);
+                Line(g, Gold, 34f, new Point(346, 396), new Point(438, 474));
+                Line(g, Gold, 34f, new Point(678, 396), new Point(586, 474));
+                Line(g, White, 28f, new Point(346, 396), new Point(318, 492));
+                Line(g, White, 28f, new Point(678, 396), new Point(706, 492));
+                Line(g, Orange, 30f, new Point(458, 620), new Point(458, 674));
+                Line(g, Orange, 30f, new Point(566, 620), new Point(566, 674));
                 break;
         }
     }

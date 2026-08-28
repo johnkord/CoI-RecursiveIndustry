@@ -6,6 +6,60 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.23.0b] - 2026-08-27
+
+### Fixed
+
+- Restored the Autonomous Hauler's complete Tier II tank, flatbed, and dump
+  attachment set. It no longer declares a countable-only fixed product type, so
+  Hydrogen Fuel Stations can select it as an attached distribution vehicle.
+- Preserved the 180-capacity Autonomous Dump Hauler and Autonomous Tank Hauler
+  as fixed loose/fluid specialists. No pathfinding, capacity, fuel, maintenance,
+  worker, policy, or operating-envelope value changed.
+
+### Compatibility
+
+- This is the defect successor to the untested 0.23.0a candidate. Public
+  0.22.0c and the 0.23.0a test archive remain unchanged.
+
+## [0.23.0a] - 2026-08-27
+
+### Changed
+
+- Replaced the 19 broad high-power universal facilities with 25 process-scaled
+  facilities while preserving 3,392 Computing and 1,024 commissioning Packages.
+  Six new stable machine IDs separate fuel smelting, casting and finishing,
+  thermal desalination, nuclear reprocessing, nuclear fuel fabrication, and
+  robotic component assembly.
+- Reduced the universal Direct envelope from 415 MW and 264 workers to 142.5 MW
+  and 88 workers. The exact all-owner custom-mode envelope is 328.5 MW before
+  the unchanged 14 Rack III support district.
+- Replaced minimum-row maintenance inference with explicit physical tiers and
+  depot-workload quantities: 203 Maintenance I, 111 Maintenance II, and 168
+  Maintenance III per month across the universal portfolio.
+- Set all 21 Integrated recipe power values from their simultaneous source-stage
+  composition. Precision remains Fiber-free at 200% host power. Reassigned
+  electronics, steel, and uranium modes to their coherent split facilities.
+- Returned four zero-worker, zero-electricity, maintenance-free steam
+  condensation bindings to native Large Cooling Towers.
+- Retuned the Control Deployment Gateway, Microchip Complex, Electronics
+  Integration, Capital Fabrication, Construction Nexus, and Companion Animal
+  Center operating envelopes. The 240 MW Orbital Power Array is unchanged.
+
+### Added
+
+- Added six original compact facility identities to dependency-free
+  `uiicons_5287`, taking the bundle from 85 to 91 assets.
+- Added exact public regression coverage for facility partitioning, construction
+  and Computing conservation, custom-mode ownership, support totals, research
+  unlocks, and the unchanged Orbital Array boundary.
+
+### Compatibility
+
+- This is an unpublished new-campaign test candidate. Existing pre-release
+  megafacility entities are not a supported migration boundary.
+- Public 0.22.0c source, tag, release, and hosted archive remain unchanged.
+
 ## [0.22.0c] - 2026-08-22
 
 ### Changed

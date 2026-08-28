@@ -22,13 +22,66 @@ def load_catalog() -> dict[str, Any]:
     value = json.loads(DATA_PATH.read_text(encoding="utf-8"))
     if not isinstance(value, dict) or value.get("schema_version") != 1:
         raise ValueError("public universal-industry catalog schema must be 1")
-    facilities = value.get("facilities")
+    source_facilities = value.get("facilities")
+    successors = value.get("successor_facilities")
+    if not isinstance(source_facilities, list) or len(source_facilities) != 19:
+        raise ValueError("public catalog must contain 19 source facilities")
+    if not isinstance(successors, list) or len(successors) != 25:
+        raise ValueError("public catalog must contain 25 successor facilities")
+    source_by_key = {facility.get("key"): facility for facility in source_facilities}
+    if len(source_by_key) != 19 or None in source_by_key:
+        raise ValueError("source facility keys must be 19 unique strings")
+    facilities = []
+    assigned_direct_ids = []
+    for successor in successors:
+        parent_key = successor.get("source_facility_key", successor.get("key"))
+        source = source_by_key.get(parent_key)
+        if source is None:
+            raise ValueError(
+                f"successor facility {successor.get('key')} has unknown source {parent_key}"
+            )
+        source_groups = successor.get("source_machine_ids")
+        if not isinstance(source_groups, list) or not source_groups:
+            raise ValueError(
+                f"successor facility {successor.get('key')} has no source machine ids"
+            )
+        direct_bindings = [
+            binding
+            for binding in source.get("direct_bindings", [])
+            if binding.get("source_machine_id") in source_groups
+        ]
+        if not direct_bindings:
+            raise ValueError(
+                f"successor facility {successor.get('key')} has no Direct bindings"
+            )
+        assigned_direct_ids.extend(
+            binding.get("recipe_id") for binding in direct_bindings
+        )
+        facilities.append({
+            **source,
+            **successor,
+            "baseline_computing": successor["selected_computing"] * 8,
+            "baseline_packages": successor["selected_packages"] * 2,
+            "direct_bindings": direct_bindings,
+        })
+    retired_direct_ids = set(value.get("retired_direct_bindings", []))
+    source_direct_ids = {
+        binding.get("recipe_id")
+        for facility in source_facilities
+        for binding in facility.get("direct_bindings", [])
+    }
+    if (
+        len(assigned_direct_ids) != len(set(assigned_direct_ids))
+        or set(assigned_direct_ids) != source_direct_ids - retired_direct_ids
+    ):
+        raise ValueError("successor facilities must partition all retained Direct bindings")
+    value["facilities"] = facilities
     integrated = value.get("integrated_recipes")
     authored = value.get("authored_recipes")
     precision = value.get("precision_recipes")
     research = value.get("research_keys")
-    if not isinstance(facilities, list) or len(facilities) != 19:
-        raise ValueError("public catalog must contain 19 facilities")
+    if len(facilities) != 25:
+        raise ValueError("public catalog must contain 25 facilities")
     if not isinstance(integrated, list) or len(integrated) != 21:
         raise ValueError("public catalog must contain 21 Integrated recipes")
     if not isinstance(authored, list) or len(authored) != 4:
@@ -38,15 +91,15 @@ def load_catalog() -> dict[str, Any]:
     if not isinstance(research, list) or len(research) != 5:
         raise ValueError("public catalog must contain five research keys")
     keys = [facility.get("key") for facility in facilities]
-    if len(set(keys)) != 19 or any(not isinstance(key, str) for key in keys):
-        raise ValueError("facility keys must be 19 unique strings")
+    if len(set(keys)) != 25 or any(not isinstance(key, str) for key in keys):
+        raise ValueError("facility keys must be 25 unique strings")
     direct_ids = [
         binding.get("recipe_id")
         for facility in facilities
         for binding in facility.get("direct_bindings", [])
     ]
-    if len(direct_ids) != 235 or len(set(direct_ids)) != 235:
-        raise ValueError("public catalog must contain 235 unique Direct bindings")
+    if len(direct_ids) != 231 or len(set(direct_ids)) != 231:
+        raise ValueError("public catalog must contain 231 unique Direct bindings")
     direct_id_set = set(direct_ids)
     composition_only_sources = {
         (source.get("recipe_id"), source.get("source_machine_id"))
@@ -204,10 +257,11 @@ def generate_facilities(data: dict[str, Any]) -> str:
             %s,
             RecursiveIndustryIds.Machines.%s,
             %s,
-            powerMw: %d,
+            powerKw: %d,
             computing: %d,
             workers: %d,
-            maintenanceT3: %d,
+            maintenanceTier: UniversalMaintenanceTier.%s,
+            maintenancePerMonth: %d,
             cp4: %d,
             electronics4: %d,
             packages: %d,
@@ -223,10 +277,11 @@ def generate_facilities(data: dict[str, Any]) -> str:
                 cs_string(facility["name"]),
                 member,
                 f"RecursiveIndustryIcons.{member}",
-                facility["power_mw"],
+                facility["power_kw"],
                 facility["selected_computing"],
                 facility["workers"],
-                facility["maintenance_t3"],
+                facility["maintenance_tier"],
+                facility["maintenance_per_month"],
                 facility["cp4"],
                 facility["electronics4"],
                 facility["selected_packages"],

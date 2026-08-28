@@ -11,9 +11,11 @@ import math
 from pathlib import Path
 from typing import Iterable
 
+from generate_recursive_industry_universal_source import load_catalog
+
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = ROOT / "data" / "universal-industry-catalog.json"
-CATALOG = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
+CATALOG = load_catalog()
 CONTROL_PATH = ROOT / "data" / "industrial-control-network.json"
 CONTROL = json.loads(CONTROL_PATH.read_text(encoding="utf-8"))
 
@@ -310,15 +312,24 @@ def universal_assets(
             optimized_power_factors.get(recipe["machine"], Fraction(1)),
             factor,
         )
+    for recipe in CATALOG["authored_recipes"]:
+        factor = Fraction(recipe["power_multiplier_percent"], 100)
+        optimized_power_factors[recipe["machine"]] = max(
+            optimized_power_factors.get(recipe["machine"], Fraction(1)),
+            factor,
+        )
     precision_owners = {
         recipe["machine"] for recipe in CATALOG["precision_recipes"]
     }
     integrated_owners = {
         recipe["machine"] for recipe in CATALOG["integrated_recipes"]
     }
+    authored_owners = {
+        recipe["machine"] for recipe in CATALOG["authored_recipes"]
+    }
     if optimized_keys is None:
         optimized_keys = (
-            precision_owners | integrated_owners
+            precision_owners | integrated_owners | authored_owners
             if mode == "optimized"
             else set()
         )
@@ -332,13 +343,17 @@ def universal_assets(
         )
         result.append(Asset(
             name=facility["name"],
-            power_mw=Fraction(facility["power_mw"] * power_factor),
+            power_mw=Fraction(facility["power_kw"], 1000) * power_factor,
             computing=scaled_int(
                 facility["baseline_computing"],
                 candidate.universal_computing_scale,
             ),
             workers=facility["workers"],
-            maintenance_t3=Fraction(facility["maintenance_t3"]),
+            maintenance_t3=(
+                Fraction(facility["maintenance_per_month"])
+                if facility["maintenance_tier"] == "III"
+                else Fraction(facility["maintenance_per_month"], 2)
+            ),
             construction_packages=scaled_int(
                 facility["baseline_packages"],
                 candidate.universal_package_scale,
@@ -380,23 +395,23 @@ def core_assets(candidate: Candidate, include_pcc: bool) -> list[Asset]:
             8,
             scaled_int(512, scale),
             0,
-            24,
+            96,
             construction_packages=scaled_int(64, package_scale),
         ),
         Asset(
             "Autonomous Electronics Integration Complex",
-            6,
+            2,
             scaled_int(512, scale),
             0,
-            20,
+            16,
             construction_packages=scaled_int(64, package_scale),
         ),
         Asset(
             "Autonomous Capital Fabrication Matrix",
-            8,
+            2,
             scaled_int(1024, scale),
             0,
-            28,
+            16,
             construction_packages=scaled_int(96, package_scale),
         ),
         Asset(
@@ -430,10 +445,10 @@ def core_assets(candidate: Candidate, include_pcc: bool) -> list[Asset]:
         ),
         Asset(
             "Autonomous Construction Nexus",
-            12,
+            2,
             scaled_int(2048, scale),
             0,
-            32,
+            16,
             construction_packages=scaled_int(128, package_scale),
         ),
     ]
@@ -461,18 +476,18 @@ def legacy_control_assets(
     return [
         Asset(
             "Autonomous Electronics Integration Complex",
-            12 if electronics_key in optimized_keys else 6,
+            4 if electronics_key in optimized_keys else 2,
             scaled_int(512, scale),
             0,
-            20,
+            16,
             construction_packages=scaled_int(64, package_scale),
         ),
         Asset(
             "Autonomous Capital Fabrication Matrix",
-            16 if capital_key in optimized_keys else 8,
+            4 if capital_key in optimized_keys else 2,
             scaled_int(1024, scale),
             0,
-            28,
+            16,
             construction_packages=scaled_int(96, package_scale),
         ),
     ]

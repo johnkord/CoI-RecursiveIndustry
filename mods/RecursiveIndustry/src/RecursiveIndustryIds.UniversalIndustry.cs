@@ -18,8 +18,14 @@ public static partial class RecursiveIndustryIds
         public static readonly MachineID PrimarySmelter =
             Ids.Machines.CreateId("RecursiveIndustry_PrimarySmelter");
 
+        public static readonly MachineID FuelSmelter =
+            Ids.Machines.CreateId("RecursiveIndustry_FuelSmelter");
+
         public static readonly MachineID PrecisionMetalsWorks =
             Ids.Machines.CreateId("RecursiveIndustry_PrecisionMetalsWorks");
+
+        public static readonly MachineID CastingFinishingWorks =
+            Ids.Machines.CreateId("RecursiveIndustry_CastingFinishingWorks");
 
         public static readonly MachineID RefineryComplex =
             Ids.Machines.CreateId("RecursiveIndustry_RefineryComplex");
@@ -48,6 +54,9 @@ public static partial class RecursiveIndustryIds
         public static readonly MachineID WaterUtility =
             Ids.Machines.CreateId("RecursiveIndustry_WaterUtility");
 
+        public static readonly MachineID ThermalDesalinationWorks =
+            Ids.Machines.CreateId("RecursiveIndustry_ThermalDesalinationWorks");
+
         public static readonly MachineID ThermalEmissionsUtility =
             Ids.Machines.CreateId("RecursiveIndustry_ThermalEmissionsUtility");
 
@@ -57,8 +66,17 @@ public static partial class RecursiveIndustryIds
         public static readonly MachineID NuclearFuelComplex =
             Ids.Machines.CreateId("RecursiveIndustry_NuclearFuelComplex");
 
+        public static readonly MachineID NuclearReprocessingCenter =
+            Ids.Machines.CreateId("RecursiveIndustry_NuclearReprocessingCenter");
+
+        public static readonly MachineID NuclearFuelFabricationCell =
+            Ids.Machines.CreateId("RecursiveIndustry_NuclearFuelFabricationCell");
+
         public static readonly MachineID PrecisionComponentsFab =
             Ids.Machines.CreateId("RecursiveIndustry_PrecisionComponentsFab");
+
+        public static readonly MachineID RoboticComponentsFab =
+            Ids.Machines.CreateId("RecursiveIndustry_RoboticComponentsFab");
 
         public static readonly MachineID GeneralManufacturingFab =
             Ids.Machines.CreateId("RecursiveIndustry_GeneralManufacturingFab");

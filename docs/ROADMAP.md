@@ -6,14 +6,17 @@
 2. Complete the minimal 0.22.0c Build 614 startup and strict-log boundary. Native
    Machine, farm, settlement-service, upgrade, and serialization behavior is
    inherited and is not replayed for reassurance.
-3. Fix only demonstrated gameplay, balance, copy, presentation, or compatibility
+3. Validate the 0.23.0b building operating-envelope and Fuel Station compatibility
+   successor with one fresh-world registration, strict-log, toolbar, moved-owner,
+   and attached-vehicle inspection.
+4. Fix only demonstrated gameplay, balance, copy, presentation, or compatibility
    defects.
-4. Freeze one deterministic 1.0 candidate.
-5. Run independent, uncoached single-player campaigns on that exact archive.
-6. Publish the tested bytes on GitHub Releases and COI Hub.
+5. Freeze one deterministic 1.0 candidate.
+6. Run independent, uncoached single-player campaigns on that exact archive.
+7. Publish the tested bytes on GitHub Releases and COI Hub.
 
-No additional gameplay domain belongs before this boundary. The 0.22.0b scope
-is frozen for public playtesting; 0.22.0c changes compatibility metadata only.
+No additional gameplay domain belongs before this boundary. Public 0.22.0c is
+frozen; 0.23.0a is a balance successor, not a new gameplay domain.
 
 ## Stabilization
 

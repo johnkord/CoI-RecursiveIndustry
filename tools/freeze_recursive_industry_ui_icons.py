@@ -79,8 +79,8 @@ def build_manifest(generated_date: str) -> dict[str, object]:
     constants = parse_ui_icon_constants(
         "\n".join(path.read_text(encoding="utf-8") for path in SOURCE_PATHS)
     )
-    if len(constants) != 85:
-        raise ValueError(f"expected 85 UI icon constants, found {len(constants)}")
+    if len(constants) != 91:
+        raise ValueError(f"expected 91 UI icon constants, found {len(constants)}")
 
     unity_version, crc, assets, dependencies = parse_unity_manifest(
         UNITY_MANIFEST_PATH
@@ -115,7 +115,7 @@ def build_manifest(generated_date: str) -> dict[str, object]:
         "unity_version": unity_version,
         "visual_review": {
             "status": "PASS_STATIC_PROOF_REVIEW",
-            "runtime_status": "OPEN_PUBLIC_PLAYTEST_0.22.0B",
+            "runtime_status": "OPEN_SUCCESSOR_0.23.0A",
             "tested_sizes_px": [24, 32, 48],
             "backgrounds": ["light", "dark"],
             "size_proof": file_record(

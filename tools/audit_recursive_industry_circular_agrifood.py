@@ -8,6 +8,8 @@ from pathlib import Path
 import re
 from typing import Any
 
+from generate_recursive_industry_universal_source import load_catalog
+
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -41,7 +43,7 @@ def canonical_amounts(rows: list[dict[str, Any]]) -> dict[str, int]:
 def audit(root: Path = ROOT) -> list[str]:
     errors: list[str] = []
     contract = load_json(root / "data" / "circular-agrifood.json")
-    catalog = load_json(root / "data" / "universal-industry-catalog.json")
+    catalog = load_catalog()
     manifest = load_json(root / "mods" / "RecursiveIndustry" / "manifest.json")
     icons = load_json(
         root / "art" / "RecursiveIndustry" / "UiIcons" / "asset-manifest.json"
@@ -196,7 +198,7 @@ def audit(root: Path = ROOT) -> list[str]:
     presentation = contract.get("presentation", {})
     icon_names = {row.get("name") for row in icons.get("icons", [])}
     if (
-        presentation.get("total_ui_identities") != 85
+        presentation.get("total_ui_identities") != 91
         or presentation.get("new_ui_identities") != 2
         or presentation.get("dependencies") != []
         or not {
@@ -217,7 +219,7 @@ def main() -> int:
         return 1
     print(
         "Recursive Industry Circular Agrifood: PASS "
-        "(4 authored recipes, optional companion care, 85 UI identities)"
+        "(4 authored recipes, optional companion care, 91 UI identities)"
     )
     return 0
 

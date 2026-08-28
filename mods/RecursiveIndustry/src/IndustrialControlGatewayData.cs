@@ -22,9 +22,9 @@ internal sealed class IndustrialControlGatewayData : IModData
                 .Product(32, RecursiveIndustryIds.Products.ValidatedControlPackage)
                 .Product(4, RecursiveIndustryIds.Products.FrontierProgram)
                 .Product(4, RecursiveIndustryIds.Products.ValidatedResearchDossier)
-                .Workers(24)
-                .MaintenanceT3(12))
-            .SetElectricityConsumption(4000.Kw())
+                .Workers(4)
+                .MaintenanceT3(8))
+            .SetElectricityConsumption(1000.Kw())
             .SetComputingConsumption(Computing.FromTFlops(256))
             .SetCategories(Ids.ToolbarCategories.Production_General)
             .SetLayout(
@@ -64,6 +64,6 @@ internal sealed class IndustrialControlGatewayData : IModData
             + " local_input_package=1 local_output_stream=210"
             + " backbone_input_package=2 backbone_output_stream=420"
             + " duration_seconds=60 backbone_power_percent=250"
-            + " computing=256 power_kw=4000 workers=24 maintenance_t3=12");
+            + " computing=256 power_kw=1000 workers=4 maintenance_t3=8");
     }
 }

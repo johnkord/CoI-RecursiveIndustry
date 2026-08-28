@@ -1,10 +1,43 @@
 {
   "schema_version": 1,
   "game": {
-    "display_version": "0.8.7",
-    "build": 613
+    "display_version": "0.8.7a",
+    "build": 614
   },
   "direct_binding_rule": "checked(source MachineRecipeBinding.Multiplier * 4)",
+  "retired_direct_bindings": [
+    "SteamDepletedCondensationT2",
+    "SteamHpCondensationT2",
+    "SteamLpCondensationT2",
+    "SteamSpCondensationT2"
+  ],
+  "successor_facilities": [
+    {"key":"comminution_hub","name":"Autonomous Comminution Hub","source_machine_ids":["CrusherLarge"],"power_kw":4500,"selected_computing":64,"workers":0,"maintenance_tier":"I","maintenance_per_month":28,"cp4":1000,"electronics4":128,"selected_packages":32,"programs":4,"dossiers":0,"calibration":0},
+    {"key":"mineral_products_works","name":"Autonomous Mineral Products Works","source_machine_ids":["ConcreteMixerT3","RotaryKiln","RotaryKilnGas"],"power_kw":2000,"selected_computing":96,"workers":0,"maintenance_tier":"I","maintenance_per_month":21,"cp4":1200,"electronics4":128,"selected_packages":32,"programs":6,"dossiers":0,"calibration":0},
+    {"key":"primary_smelter","name":"Autonomous Arc Smelter","source_machine_ids":["ArcFurnace2"],"power_kw":26500,"selected_computing":192,"workers":0,"maintenance_tier":"II","maintenance_per_month":28,"cp4":1800,"electronics4":192,"selected_packages":48,"programs":9,"dossiers":0,"calibration":0},
+    {"key":"fuel_smelter","name":"Autonomous Fuel Smelter","source_facility_key":"primary_smelter","source_machine_ids":["OxygenFurnaceT2","SmeltingFurnaceT2"],"power_kw":1000,"selected_computing":64,"workers":0,"maintenance_tier":"I","maintenance_per_month":21,"cp4":600,"electronics4":64,"selected_packages":16,"programs":3,"dossiers":0,"calibration":0},
+    {"key":"precision_metals_works","name":"Electrochemical Metals and Glass Works","source_machine_ids":["AlloyMixer","AluminumCell","CopperElectrolysis","GlassMakerT2","SiliconCrystallizer"],"power_kw":35500,"selected_computing":128,"workers":4,"maintenance_tier":"II","maintenance_per_month":41,"cp4":1500,"electronics4":192,"selected_packages":48,"programs":8,"dossiers":0,"calibration":0},
+    {"key":"casting_finishing_works","name":"Autonomous Casting and Finishing Works","source_facility_key":"precision_metals_works","source_machine_ids":["CasterCooledT2","CasterT2","GoldFurnace","SettlingTank","SiliconReactor"],"power_kw":4000,"selected_computing":64,"workers":4,"maintenance_tier":"I","maintenance_per_month":7,"cp4":500,"electronics4":64,"selected_packages":16,"programs":2,"dossiers":0,"calibration":0},
+    {"key":"refinery_complex","name":"Autonomous Refinery Complex","source_machine_ids":["DistillationTowerT1","DistillationTowerT2","DistillationTowerT3","HydroCrackerT1","PolymerizationPlant","SourWaterStripper","VacuumDistillationTower"],"power_kw":2000,"selected_computing":256,"workers":0,"maintenance_tier":"I","maintenance_per_month":21,"cp4":2400,"electronics4":256,"selected_packages":64,"programs":12,"dossiers":0,"calibration":0},
+    {"key":"gas_fertilizer_complex","name":"Autonomous Gas and Fertilizer Complex","source_machine_ids":["AirSeparator","ChemicalPlant2","ElectrolyzerT2","HydrogenReformer"],"power_kw":5000,"selected_computing":192,"workers":4,"maintenance_tier":"II","maintenance_per_month":21,"cp4":1800,"electronics4":192,"selected_packages":48,"programs":10,"dossiers":0,"calibration":0},
+    {"key":"materials_chemistry_complex","name":"Autonomous Materials Chemistry Complex","source_machine_ids":["ChemicalPlant2","DistillationTowerT3","IndustrialMixerT2"],"power_kw":2000,"selected_computing":192,"workers":4,"maintenance_tier":"II","maintenance_per_month":21,"cp4":1800,"electronics4":192,"selected_packages":48,"programs":10,"dossiers":0,"calibration":0},
+    {"key":"medical_chemistry_complex","name":"Autonomous Medical and Precision Chemistry Complex","source_machine_ids":["AssemblyRoboticT2","ChemicalPlant2"],"power_kw":2000,"selected_computing":128,"workers":8,"maintenance_tier":"III","maintenance_per_month":14,"cp4":1400,"electronics4":192,"selected_packages":48,"programs":8,"dossiers":0,"calibration":0},
+    {"key":"food_processing_campus","name":"Autonomous Food Processing Campus","source_machine_ids":["FoodProcessor"],"power_kw":500,"selected_computing":128,"workers":8,"maintenance_tier":"I","maintenance_per_month":14,"cp4":1200,"electronics4":128,"selected_packages":32,"programs":8,"dossiers":0,"calibration":0},
+    {"key":"food_pack_campus","name":"Autonomous Food Pack Campus","source_machine_ids":["AssemblyRoboticT2","BakingUnit","FoodMill"],"power_kw":2000,"selected_computing":96,"workers":4,"maintenance_tier":"III","maintenance_per_month":14,"cp4":800,"electronics4":96,"selected_packages":24,"programs":4,"dossiers":0,"calibration":0},
+    {"key":"crop_soil_bioprocessing","name":"Autonomous Crop and Soil Bioprocessing Center","source_machine_ids":["FermentationTank","IndustrialMixerT2"],"power_kw":1000,"selected_computing":96,"workers":4,"maintenance_tier":"I","maintenance_per_month":14,"cp4":1000,"electronics4":128,"selected_packages":32,"programs":6,"dossiers":0,"calibration":0},
+    {"key":"bioenergy_center","name":"Autonomous Bioenergy Digestion Center","source_machine_ids":["AnaerobicDigester","CharcoalMaker"],"power_kw":500,"selected_computing":96,"workers":0,"maintenance_tier":"I","maintenance_per_month":4,"cp4":1000,"electronics4":128,"selected_packages":32,"programs":6,"dossiers":0,"calibration":0},
+    {"key":"water_utility","name":"Autonomous Water Reclamation and Chilling Complex","source_machine_ids":["WaterChiller","WaterTreatmentPlant"],"power_kw":4500,"selected_computing":96,"workers":4,"maintenance_tier":"I","maintenance_per_month":34,"cp4":1050,"electronics4":144,"selected_packages":36,"programs":6,"dossiers":0,"calibration":0},
+    {"key":"thermal_desalination_works","name":"Autonomous Thermal Desalination Works","source_facility_key":"water_utility","source_machine_ids":["EvaporationPondHeated","ThermalDesalinator"],"power_kw":2000,"selected_computing":32,"workers":0,"maintenance_tier":"I","maintenance_per_month":7,"cp4":350,"electronics4":48,"selected_packages":12,"programs":2,"dossiers":0,"calibration":0},
+    {"key":"thermal_emissions_utility","name":"Autonomous Thermal and Emissions Utility","source_machine_ids":["ExhaustScrubber","IncinerationPlant"],"power_kw":2500,"selected_computing":128,"workers":4,"maintenance_tier":"I","maintenance_per_month":28,"cp4":1400,"electronics4":192,"selected_packages":48,"programs":8,"dossiers":0,"calibration":0},
+    {"key":"materials_recovery_center","name":"Autonomous Materials Recovery Center","source_machine_ids":["Compactor","Shredder"],"power_kw":500,"selected_computing":128,"workers":0,"maintenance_tier":"I","maintenance_per_month":4,"cp4":1200,"electronics4":160,"selected_packages":40,"programs":8,"dossiers":0,"calibration":0},
+    {"key":"nuclear_fuel_complex","name":"Autonomous Nuclear Fuel Front End","source_machine_ids":["ChemicalPlant2","SettlingTank","UraniumEnrichmentPlant"],"power_kw":18000,"selected_computing":320,"workers":8,"maintenance_tier":"III","maintenance_per_month":16,"cp4":2000,"electronics4":320,"selected_packages":80,"programs":10,"dossiers":10,"calibration":1},
+    {"key":"nuclear_reprocessing_center","name":"Autonomous Nuclear Reprocessing Center","source_facility_key":"nuclear_fuel_complex","source_machine_ids":["NuclearReprocessingPlant"],"power_kw":9000,"selected_computing":128,"workers":16,"maintenance_tier":"III","maintenance_per_month":40,"cp4":800,"electronics4":128,"selected_packages":32,"programs":4,"dossiers":4,"calibration":0},
+    {"key":"nuclear_fuel_fabrication_cell","name":"Autonomous Nuclear Fuel Fabrication Cell","source_facility_key":"nuclear_fuel_complex","source_machine_ids":["AssemblyRoboticT2"],"power_kw":2000,"selected_computing":64,"workers":4,"maintenance_tier":"III","maintenance_per_month":14,"cp4":400,"electronics4":64,"selected_packages":16,"programs":2,"dossiers":2,"calibration":0},
+    {"key":"precision_components_fab","name":"Autonomous Precision Materials Works","source_machine_ids":["DiamondReactor","LensMaker"],"power_kw":9000,"selected_computing":128,"workers":4,"maintenance_tier":"III","maintenance_per_month":28,"cp4":1000,"electronics4":160,"selected_packages":40,"programs":6,"dossiers":0,"calibration":0},
+    {"key":"robotic_components_fab","name":"Autonomous Robotic Components Fab","source_facility_key":"precision_components_fab","source_machine_ids":["AssemblyRoboticT2"],"power_kw":2000,"selected_computing":128,"workers":0,"maintenance_tier":"III","maintenance_per_month":14,"cp4":1000,"electronics4":160,"selected_packages":40,"programs":6,"dossiers":0,"calibration":0},
+    {"key":"general_manufacturing_fab","name":"Autonomous General Manufacturing Fab","source_machine_ids":["AssemblyRoboticT2"],"power_kw":2000,"selected_computing":192,"workers":0,"maintenance_tier":"III","maintenance_per_month":14,"cp4":1600,"electronics4":256,"selected_packages":64,"programs":10,"dossiers":0,"calibration":0},
+    {"key":"orbital_fabrication_fab","name":"Autonomous Orbital Fabrication Fab","source_machine_ids":["AssemblyRoboticT2"],"power_kw":2500,"selected_computing":256,"workers":8,"maintenance_tier":"III","maintenance_per_month":14,"cp4":2400,"electronics4":384,"selected_packages":96,"programs":14,"dossiers":0,"calibration":0}
+  ],
   "facilities": [
     {
       "key": "comminution_hub",
@@ -1315,6 +1348,7 @@
       "machine": "mineral_products_works",
       "batch_scale": 6,
       "duration_seconds": 120,
+      "power_multiplier_percent": 100,
       "sources": [
         {
           "recipe_id": "CementProductionGas",
@@ -1332,6 +1366,7 @@
       "machine": "primary_smelter",
       "batch_scale": 6,
       "duration_seconds": 120,
+      "power_multiplier_percent": 100,
       "sources": [
         {
           "recipe_id": "IronSmeltingArc",
@@ -1353,6 +1388,7 @@
       "machine": "general_manufacturing_fab",
       "batch_scale": 12,
       "duration_seconds": 120,
+      "power_multiplier_percent": 1425,
       "sources": [
         {
           "recipe_id": "IronSmeltingArc",
@@ -1378,6 +1414,7 @@
       "machine": "refinery_complex",
       "batch_scale": 12,
       "duration_seconds": 120,
+      "power_multiplier_percent": 100,
       "sources": [
         {
           "recipe_id": "CrudeOilRefiningT1",
@@ -1399,6 +1436,7 @@
       "machine": "refinery_complex",
       "batch_scale": 1,
       "duration_seconds": 120,
+      "power_multiplier_percent": 100,
       "sources": [
         {
           "recipe_id": "CrudeOilRefiningT1",
@@ -1432,6 +1470,7 @@
       "machine": "refinery_complex",
       "batch_scale": 1,
       "duration_seconds": 120,
+      "power_multiplier_percent": 100,
       "sources": [
         {
           "recipe_id": "CrudeOilRefiningT1",
@@ -1465,6 +1504,7 @@
       "machine": "refinery_complex",
       "batch_scale": 1,
       "duration_seconds": 120,
+      "power_multiplier_percent": 275,
       "sources": [
         {
           "recipe_id": "CrudeOilRefiningT1",
@@ -1574,6 +1614,7 @@
       "machine": "gas_fertilizer_complex",
       "batch_scale": 8,
       "duration_seconds": 120,
+      "power_multiplier_percent": 100,
       "sources": [
         {
           "recipe_id": "AirSeparation",
@@ -1599,6 +1640,7 @@
       "machine": "food_pack_campus",
       "batch_scale": 15,
       "duration_seconds": 120,
+      "power_multiplier_percent": 125,
       "sources": [
         {
           "recipe_id": "WheatMilling",
@@ -1620,6 +1662,7 @@
       "machine": "food_pack_campus",
       "batch_scale": 3,
       "duration_seconds": 120,
+      "power_multiplier_percent": 150,
       "sources": [
         {
           "recipe_id": "WheatMilling",
@@ -1645,6 +1688,7 @@
       "machine": "food_pack_campus",
       "batch_scale": 1,
       "duration_seconds": 150,
+      "power_multiplier_percent": 100,
       "sources": [
         {
           "recipe_id": "WheatMilling",
@@ -1674,6 +1718,7 @@
       "machine": "food_pack_campus",
       "batch_scale": 15,
       "duration_seconds": 240,
+      "power_multiplier_percent": 100,
       "sources": [
         {
           "recipe_id": "TofuProduction",
@@ -1691,6 +1736,7 @@
       "machine": "water_utility",
       "batch_scale": 8,
       "duration_seconds": 120,
+      "power_multiplier_percent": 100,
       "sources": [
         {
           "recipe_id": "WaterTreatmentT2",
@@ -1708,6 +1754,7 @@
       "machine": "nuclear_fuel_complex",
       "batch_scale": 16,
       "duration_seconds": 120,
+      "power_multiplier_percent": 800,
       "sources": [
         {
           "recipe_id": "UraniumLeaching",
@@ -1726,9 +1773,10 @@
     {
       "key": "integrated_electronics3",
       "name": "Integrated Electronics III",
-      "machine": "precision_components_fab",
+      "machine": "robotic_components_fab",
       "batch_scale": 1,
       "duration_seconds": 120,
+      "power_multiplier_percent": 100,
       "sources": [
         {
           "recipe_id": "ElectronicsAssembly",
@@ -1752,9 +1800,10 @@
     {
       "key": "integrated_electronics4",
       "name": "Integrated Precision Electronics IV",
-      "machine": "precision_components_fab",
+      "machine": "robotic_components_fab",
       "batch_scale": 4,
       "duration_seconds": 120,
+      "power_multiplier_percent": 150,
       "sources": [
         {
           "recipe_id": "Electronics3Assembly",
@@ -1776,6 +1825,7 @@
       "machine": "general_manufacturing_fab",
       "batch_scale": 1,
       "duration_seconds": 120,
+      "power_multiplier_percent": 100,
       "sources": [
         {
           "recipe_id": "LabEquipment1Assembly",
@@ -1793,6 +1843,7 @@
       "machine": "general_manufacturing_fab",
       "batch_scale": 1,
       "duration_seconds": 120,
+      "power_multiplier_percent": 125,
       "sources": [
         {
           "recipe_id": "LabEquipment1Assembly",
@@ -1814,6 +1865,7 @@
       "machine": "general_manufacturing_fab",
       "batch_scale": 1,
       "duration_seconds": 180,
+      "power_multiplier_percent": 125,
       "sources": [
         {
           "recipe_id": "LabEquipment1Assembly",
@@ -1858,7 +1910,7 @@
       "name": "Serum-Free Cultured Meat",
       "machine": "food_processing_campus",
       "duration_seconds": 60,
-      "power_multiplier_percent": 300,
+      "power_multiplier_percent": 600,
       "inputs": [
         { "product": "AnimalFeed", "quantity": 40 },
         { "product": "Sugar", "quantity": 8 },
@@ -1878,7 +1930,7 @@
       "name": "Mycoprotein Trimmings",
       "machine": "food_processing_campus",
       "duration_seconds": 60,
-      "power_multiplier_percent": 250,
+      "power_multiplier_percent": 500,
       "inputs": [
         { "product": "AnimalFeed", "quantity": 32 },
         { "product": "CookingOil", "quantity": 8 },
@@ -1896,7 +1948,7 @@
       "name": "Companion Provisions",
       "machine": "food_processing_campus",
       "duration_seconds": 60,
-      "power_multiplier_percent": 150,
+      "power_multiplier_percent": 300,
       "inputs": [
         { "product": "AnimalFeed", "quantity": 60 },
         { "product": "MeatTrimmings", "quantity": 12 },
@@ -1923,7 +1975,7 @@
     {
       "key": "precision_steel",
       "name": "Precision Steel",
-      "machine": "primary_smelter",
+      "machine": "casting_finishing_works",
       "source_recipe_id": "SteelCastingCooled"
     },
     {
@@ -1965,13 +2017,13 @@
     {
       "key": "precision_uranium_rods",
       "name": "Precision Uranium Rods",
-      "machine": "nuclear_fuel_complex",
+      "machine": "nuclear_fuel_fabrication_cell",
       "source_recipe_id": "UraniumRodsAssembly"
     },
     {
       "key": "precision_electronics4",
       "name": "Precision Electronics4",
-      "machine": "precision_components_fab",
+      "machine": "robotic_components_fab",
       "source_recipe_id": "Electronics4Assembly"
     }
   ],

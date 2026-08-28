@@ -4,8 +4,9 @@
 
 Recursive Industry trades workers, footprint, and selected feedstocks for large
 capital commitments, Computing, validation infrastructure, maintenance, and power.
-Power remains the primary scaling pressure; the mod does not include low-power
-production modes.
+Power follows physical process scale rather than a generic facility tax. Direct,
+Integrated, and Precision remain distinct operating choices; the mod does not
+include a free low-power mode.
 
 ## Package semantics
 
@@ -24,14 +25,15 @@ Validated Control Packages are not applied uniformly:
 
 ## Selected universal economy
 
-The current pre-release balance has:
+The 0.23.0a test candidate has:
 
-- 19 specialist facilities.
+- 25 specialist facilities and 231 Direct bindings.
 - 3,392 total universal Computing, equivalent to 14 Rack III.
 - 1,024 commissioning Packages.
-- 415 MW of Direct process power before rack and support infrastructure.
-- 264 retained workers.
-- 462 Maintenance III per month before policy effects.
+- 142.5 MW of Direct process power before rack and support infrastructure.
+- 328.5 MW when every custom owner selects its most expensive row.
+- 88 retained workers.
+- 203 Maintenance I, 111 Maintenance II, and 168 Maintenance III per month.
 
 An ordinary research branch needs approximately three to four Rack III. Before
 Industrial Control, the mature core consumes 408 Packages/hour and needs three
@@ -42,10 +44,11 @@ network raises the composed boundaries to four and eight validators respectively
 ## Mode tradeoffs
 
 - **Direct:** four times the exact source binding quantities at the source duration.
-- **Integrated:** twice the declared terminal or chain-feed anchor with composed
+- **Integrated:** the declared terminal or chain-feed anchor with composed
   inputs and outputs, transported intermediates cancelled, retained final
-  byproducts, and 60 Stream per active minute. Power defaults to 200%; Polymer
-  uses 300% and Elastomer 400%.
+  byproducts, and 60 Stream per active minute. Power is at least 110% of the
+  exact simultaneous source stages, rounded up to 0.5 MW. Elastomer retains an
+  additional anti-dominance premium.
 - **Precision:** seven source input batches become eight output batches over twice
   the source duration at 200% recipe power. Output rate matches Direct, physical
   feedstock per output falls 12.5%, and energy per output doubles. Precision is
@@ -84,16 +87,16 @@ farm-to-Food-Pack shortcuts are outside the design.
 The four authored rows are exact Feed-valorization recipes, not a fourth
 universal mode:
 
-- formulated Eggs consume 32 Feed at 30 MW;
-- cultured Meat plus Trimmings consumes 40 Feed at 36 MW;
-- mycoprotein Trimmings consumes 32 Feed at 30 MW; and
+- formulated Eggs consume 32 Feed at 2.5 MW;
+- cultured Meat plus Trimmings consumes 40 Feed at 3 MW;
+- mycoprotein Trimmings consumes 32 Feed at 2.5 MW; and
 - Companion Provisions consumes 60 Feed plus Trimmings, Oil, Water, and Plastic
-  at 18 MW.
+  at 1.5 MW.
 
 Four Chicken Farms consume 60 Feed and 72 Water per minute and return both 28
 Eggs and 40 Chicken Carcass. Poultry wins when both co-products are useful.
 Synthetic rows avoid an unwanted paired output but add Oxygen, refined inputs,
-Waste Water, and 2.5x to 3x campus process power. Mycoprotein specializes in the
+Waste Water, and explicit process-power premiums. Mycoprotein specializes in the
 Sausage or digestion chain rather than producing premium Meat.
 
 One Companion Provisions batch supports 4,000 colonists for one month. At 1,000
@@ -115,8 +118,8 @@ for flexible downstream routing. Five directed slates consume every Heavy,
 Medium, and Light Oil and every Naphtha intermediate to make Diesel, Fuel Gas
 plus Hydrogen, deep Hydrogen, Plastic, or Rubber.
 
-Directed Diesel, gas, and Hydrogen use 200% recipe power, or 60 MW. Polymer uses
-300%, or 90 MW. Elastomer uses 400%, or 120 MW. The higher endpoint premiums
+Directed Diesel and gas use 2 MW. Deep Hydrogen uses 5.5 MW, Polymer uses 6 MW,
+and Elastomer uses 8 MW. The higher endpoint premiums
 prevent Plastic and Rubber from beating their existing Direct rows on both
 footprint and electricity per output. All rows retain Sour Water and any final
 CO2, Exhaust, Water, Fuel Gas, or Hydrogen residual.
@@ -131,18 +134,20 @@ CO2, Exhaust, Water, Fuel Gas, or Hydrogen residual.
 - Federated Deployment adds a 250%-power row producing 420 per minute from two
   Packages. Two Backbone-mode Gateways replace four local Gateways, provide the
   same 840/minute output over 900/minute of Fiber capacity, and preserve 210
-  Stream per Package. They use 20 rather than 16 MW while reducing Gateway
-  workers from 96 to 48 and Computing from 1,024 to 512.
+  Stream per Package. They use 5 rather than 4 MW while reducing Gateway
+  workers from 16 to 8 and Computing from 1,024 to 512.
 - Demand backpressure consumes $1320/7$, approximately 188.57, Packages per hour.
   Both unconstrained topologies consume 240/hour. One standard validator is no
   longer enough; two close the live network with useful margin.
 
 The selected all-eleven local-Gateway model closes at 5,280 Computing, 21 Rack
-III, 210 coolant, 616 workers, and 834 Maintenance III per month before policy
-effects. The federated topology reduces those values to 4,768 Computing, 19 Rack
-III, 190 coolant, 568 workers, and 786 Maintenance III while spending 1 MW more.
+III, 210 coolant, 360 workers, and 665 Maintenance III-equivalent depot workload
+per month before policy effects. The federated topology reduces those values to
+4,768 Computing, 19 Rack III, 190 coolant, 352 workers, and 625 Maintenance
+III-equivalent workload. Its Gateways spend 1 MW more, while two fewer racks make
+the complete topology use 2 MW less.
 The simulator also evaluates 105, 210, and 420 Stream per Package, 128 and 256
-Computing per Gateway, and 2 and 4 MW per Gateway.
+Computing per Gateway, and 1 and 2 MW per Gateway.
 
 ## Deployment assurance density
 
@@ -160,7 +165,7 @@ not a material-efficiency upgrade.
 
 ## Electronics III correction
 
-The Precision Components Fab adds the exact four-copy Assembly V row: 8
+The Robotic Components Fab owns the exact four-copy Assembly V row: 8
 Microchips plus 16 Electronics II to 8 Electronics III every 20 seconds. It
 produces 1,440 Electronics III per hour and consumes no Stream or Packages.
 A representative 4,720/hour mature load requires four Fabs, seven Throughput AI
@@ -175,15 +180,15 @@ exclusive recipe rows. It closes whole Rack III counts, rack power and coolant,
 validator Model and Dataset support, Dossier science support, workers,
 maintenance, and Orbital Arrays.
 
-Two power boundaries are useful:
+Two universal power boundaries are useful:
 
-- **Terrestrial grid:** universal Direct load is approximately 436 MW; optimized
-  operation across every custom owner is approximately 736 MW.
+- **Terrestrial grid:** universal Direct plus 14 Rack III is 163.5 MW; optimized
+  operation across every custom owner plus those racks is 349.5 MW.
 - **Orbital self-sufficient:** closing Array and Dossier support raises those loads
-  to approximately 442 MW and 744.8 MW.
+  to approximately 167.5 MW and 355.1 MW.
 
 The deliberately unrealistic all-content stress case still requires 34 Rack III,
-seven validators, and three to four Orbital Arrays. It is a support-explosion test,
+seven validators, and two Orbital Arrays. It is a support-explosion test,
 not a prescribed factory layout.
 
 Run the standard-library model from the repository root:
@@ -196,10 +201,10 @@ python tools/simulate_recursive_industry_economy.py --json
 
 ## Open judgment
 
-Integrated play still needs to determine whether three to four racks per branch,
-bulk assurance, 415 to 683 MW, and the agrifood labor/capital trade feel substantial
-without becoming repetitive infrastructure ceremony. Those are player-experience
-questions, not facts the offline model can settle.
+Runtime testing now targets registration, moved recipe ownership, toolbar
+legibility, and the practical distinction between 142.5 MW Direct and 328.5 MW
+maximum-mode operation. Standard Machine power, worker, and maintenance mechanics
+are inherited and do not need one proof session per facility.
 
 ## Composition boundaries
 

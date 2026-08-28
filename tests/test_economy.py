@@ -64,8 +64,12 @@ class EconomyTests(unittest.TestCase):
     def test_selected_stress_case_remains_large(self) -> None:
         selected = {result.scenario: result for result in scenarios(SELECTED)}
         self.assertEqual(selected["release_stress_direct"].rack_iii, 34)
-        self.assertEqual(selected["release_stress_direct"].orbital_arrays, 3)
-        self.assertEqual(selected["release_stress_optimized"].orbital_arrays, 4)
+        self.assertEqual(selected["release_stress_direct"].orbital_arrays, 2)
+        self.assertEqual(selected["release_stress_optimized"].orbital_arrays, 2)
+        self.assertGreater(
+            selected["release_stress_optimized"].gross_power_mw,
+            selected["release_stress_direct"].gross_power_mw,
+        )
 
     def test_terrestrial_counterfactual_excludes_orbital_support(self) -> None:
         terrestrial = {
@@ -79,10 +83,10 @@ class EconomyTests(unittest.TestCase):
         self.assertEqual(process.rack_iii, 3)
         self.assertEqual(universal.rack_iii, 14)
         self.assertEqual(universal.rack_coolant, 140)
-        self.assertEqual(universal.gross_power_mw, 436)
-        self.assertEqual(optimized.gross_power_mw, 736)
+        self.assertEqual(universal.gross_power_mw, Fraction(327, 2))
+        self.assertEqual(optimized.gross_power_mw, Fraction(699, 2))
 
-    def test_directed_elastomer_sets_refinery_power_ceiling(self) -> None:
+    def test_composed_modes_set_exact_power_ceiling(self) -> None:
         direct = {
             result.scenario: result
             for result in scenarios(SELECTED, orbital_power_closure=False)
@@ -90,7 +94,7 @@ class EconomyTests(unittest.TestCase):
         self.assertEqual(
             direct["all_universal_optimized"].gross_power_mw
             - direct["all_universal_direct"].gross_power_mw,
-            300,
+            186,
         )
 
     def test_control_topologies_have_exact_capacity_and_package_closure(self) -> None:
@@ -129,8 +133,8 @@ class EconomyTests(unittest.TestCase):
         self.assertEqual(all_eleven.support.computing, 5280)
         self.assertEqual(all_eleven.support.rack_iii, 21)
         self.assertEqual(all_eleven.support.rack_coolant, 210)
-        self.assertEqual(all_eleven.support.workers, 616)
-        self.assertEqual(all_eleven.support.gross_maintenance_t3, 834)
+        self.assertEqual(all_eleven.support.workers, 360)
+        self.assertEqual(all_eleven.support.gross_maintenance_t3, 665)
         self.assertEqual(federated_all_eleven.gateway_count, 2)
         self.assertEqual(federated_all_eleven.local_gateway_count, 0)
         self.assertEqual(federated_all_eleven.backbone_gateway_count, 2)
@@ -140,7 +144,7 @@ class EconomyTests(unittest.TestCase):
             all_eleven.steady_state_packages_per_hour,
         )
         self.assertEqual(federated_all_eleven.unconstrained_packages_per_hour, 240)
-        self.assertGreater(
+        self.assertLess(
             federated_all_eleven.support.gross_power_mw,
             all_eleven.support.gross_power_mw,
         )
@@ -192,7 +196,7 @@ class EconomyTests(unittest.TestCase):
                 (stream, computing, power)
                 for stream in (105, 210, 420)
                 for computing in (128, 256)
-                for power in (2, 4)
+                for power in (1, 2)
             },
         )
         selected = next(
@@ -202,7 +206,7 @@ class EconomyTests(unittest.TestCase):
                 result.stream_per_package,
                 result.gateway_computing,
                 result.gateway_power_mw,
-            ) == (210, 256, 4)
+            ) == (210, 256, 1)
         )
         self.assertEqual(selected.gateway_count, 4)
         self.assertEqual(selected.steady_state_packages_per_hour, Fraction(1320, 7))

@@ -75,7 +75,7 @@ bootstrap and smaller districts.
 
 ## Universal industrial transformation
 
-Five optional research branches unlock nineteen specialist megafacilities:
+Five optional research branches unlock twenty-five specialist facilities:
 
 - Materials and metallurgy.
 - Refining and chemistry.
