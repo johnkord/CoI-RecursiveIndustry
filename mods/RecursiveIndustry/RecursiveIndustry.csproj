@@ -18,7 +18,7 @@
     <CoiManagedDir>$(COI_ROOT)\Captain of Industry_Data\Managed</CoiManagedDir>
     <CoiTrainsDlcDir>$(COI_ROOT)\DLCs\Mafi.TrainsDlc</CoiTrainsDlcDir>
     <CoiModsDir>$(AppData)\Captain of Industry\Mods</CoiModsDir>
-    <DeployToModsFolder Condition="'$(DeployToModsFolder)' == ''">true</DeployToModsFolder>
+    <DeployToModsFolder Condition="'$(DeployToModsFolder)' == ''">false</DeployToModsFolder>
   </PropertyGroup>
 
   <ItemGroup>

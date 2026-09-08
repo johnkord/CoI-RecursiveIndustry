@@ -614,10 +614,6 @@ def research_direct_parents(text: str, variable: str) -> set[str]:
     ))
 
 
-def audit_research_source(text: str) -> list[str]:
-    return audit_generated_research(text)
-
-
 def recipe_block(text: str, member: str) -> str | None:
     match = re.search(
         r"RecursiveIndustryIds\.Recipes\s*\.\s*" + re.escape(member),
@@ -698,10 +694,6 @@ def audit_physical_recipe_semantics(source_files: dict[str, str]) -> list[str]:
         if token not in source_files.get(filename, ""):
             errors.append(f"{filename} obsolete Package port removal drift")
     return errors
-
-
-def audit_legacy_research_source(text: str) -> list[str]:
-    return audit_generated_research(text)
 
 
 def audit_registration_source(text: str) -> list[str]:

@@ -14,8 +14,8 @@ planetary coordination, and frontier-scale megaprojects.
 > Captain of Industry 0.8.7a Build 614. It changes compatibility metadata only;
 > gameplay and assets remain identical to 0.22.0b. Start a new campaign and
 > report feedback through GitHub Issues. The main branch now contains the
-> unpublished 0.27.0a complete-world-art successor to island reconstruction,
-> retaining the 0.23 operating envelopes and Hauler correction; do not treat source builds
+> unpublished 0.28.0a release candidate with independent application research,
+> complete original artwork, earlier Program reinvestment, and an optional conversion planner; do not treat source builds
 > as the hosted playtest artifact.
 
 [Download Recursive Industry 0.22.0c Playtest](https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0c)
@@ -31,9 +31,10 @@ Player ZIP SHA-256:
 - AI Operations offices that turn workers, Computing, and renewable control into
   allocatable Focus.
 - Applied Science that keeps physical experiments and validation relevant.
-- Epoch II electronics and capital integration with earlier Industrial Control
-  and optional bulk deployment. Four terrestrial portfolios become available from
-  Epoch III, while nuclear and orbital specialization remain at Epoch IV.
+- Independent industrial, mobility, and civic research branches. Rack density is
+  optional for applications; source technologies and real commissioning costs remain.
+- Smaller mineral/metallurgy, refining/chemistry, and food/utility portfolios.
+  Terrestrial nuclear fuel systems no longer require orbital research or Calibration.
 - Optional staffed Civic Knowledge: a Model Center supplies a Knowledge Commons
   through dedicated Fiber, creating a population-scaled Unity service without a
   Health or worker-productivity bonus.
@@ -79,8 +80,10 @@ Player ZIP SHA-256:
 - An optional staffed Companion Animal Center turns packaged provisions into a
   bounded 0.6-Unity settlement service while returning Waste. It grants no
   Health or worker-productivity bonus.
-- A bounded reinvestment finale: Frontier Projects can accelerate future Programs
-  or expand autonomous construction-capital production.
+- Program reinvestment at 32 lifetime Programs, before major orbital and Frontier
+  demand. Expansion Projects commission the Construction Nexus; beamed power is optional.
+- An optional offline conversion worksheet for equal-output staged/integrated
+  planning, supplied headroom, retained suppliers, capital, and temporary cutover load.
 
 The mod deliberately preserves conventional machines, material conservation,
 power demand, maintenance, logistics, validation, and selected human work. It is
@@ -88,8 +91,8 @@ not a global speed multiplier or a free-resource automation mod.
 
 ## Requirements
 
-- Captain of Industry 0.8.7a, Build 614. The manifest remains compatible back
-  to 0.8.6c, but 0.8.7a is the exact successor target.
+- Captain of Industry 0.8.7a, Build 614. The current candidate's minimum and
+  maximum verified versions both match this tested API target.
 - Trains expansion 1.0.0 or newer.
 - Supporter edition 1.1.0 is optional and enables the Captain's locomotive variant.
 - Start a new campaign with the mod enabled. Adding or removing it from an
@@ -116,13 +119,14 @@ Set `COI_ROOT` to the game directory, then run:
 
 ```powershell
 $env:COI_ROOT = "C:\Program Files (x86)\Steam\steamapps\common\Captain of Industry"
-dotnet build mods/RecursiveIndustry/RecursiveIndustry.csproj -c Release
+dotnet build mods/RecursiveIndustry/RecursiveIndustry.csproj -c Release -t:Rebuild
 python tools/package_mod.py mods/RecursiveIndustry
 python tools/audit_release_zip.py
 ```
 
-The Release build deploys to `%APPDATA%/Captain of Industry/Mods/RecursiveIndustry`
-by default. Set `/p:DeployToModsFolder=false` to build without deploying.
+Builds do not deploy by default. Install an audited player ZIP with the game
+closed. `/p:DeployToModsFolder=true` is an explicit developer opt-in, not the
+release installation procedure.
 
 Run the public offline checks with:
 
@@ -130,6 +134,7 @@ Run the public offline checks with:
 python tools/validate_public_repo.py
 python tools/audit_recursive_industry_control_network.py
 python tools/generate_recursive_industry_universal_source.py
+python tools/generate_research_tree.py
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
@@ -152,6 +157,8 @@ redistributed.
 - [Design](docs/DESIGN.md)
 - [Progression](docs/PROGRESSION.md)
 - [Reconstruction](docs/RECONSTRUCTION.md)
+- [Complete research tree](docs/RESEARCH_TREE.md)
+- [Conversion worksheet](docs/CONVERSION_WORKSHEET.md)
 - [Civic Knowledge](docs/CIVIC_KNOWLEDGE.md)
 - [Building artwork](docs/BUILDING_ART.md)
 - [Complete world artwork](docs/WORLD_ART.md)

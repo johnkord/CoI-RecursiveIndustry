@@ -7,7 +7,9 @@ Recursive Industry.
 | --- | --- |
 | [DESIGN.md](DESIGN.md) | Player promise, design pillars, and boundaries |
 | [PROGRESSION.md](PROGRESSION.md) | Products, research phases, and late-game choices |
-| [RECONSTRUCTION.md](RECONSTRUCTION.md) | Epoch II integration, equal-output comparisons, shared support, and an optional redevelopment project |
+| [RECONSTRUCTION.md](RECONSTRUCTION.md) | Independent integration, equal-output comparisons, shared support, and an optional redevelopment project |
+| [RESEARCH_TREE.md](RESEARCH_TREE.md) | Generated application branches, costs, and parents |
+| [CONVERSION_WORKSHEET.md](CONVERSION_WORKSHEET.md) | Generated equal-output example with capital, retained inputs, and cutover Computing |
 | [CIVIC_KNOWLEDGE.md](CIVIC_KNOWLEDGE.md) | Distinct Fiber service, staffing, input chain, population capacity, and shared support |
 | [BUILDING_ART.md](BUILDING_ART.md) | Complete 52-building model family retained from 0.26.0a |
 | [WORLD_ART.md](WORLD_ART.md) | Complete 0.27.0a cargo, rack, Fiber, vehicle, attachment, and train models plus native visual contracts |

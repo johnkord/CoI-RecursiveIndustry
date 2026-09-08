@@ -19,6 +19,7 @@ from model_civic_knowledge import audit as audit_civic
 from audit_building_models import audit as audit_buildings, building_bundle_names
 from audit_world_art import audit as audit_world, names as world_bundle_names
 from generate_research_tree import audit as audit_research
+from audit_release_policy import audit as audit_release_policy
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -41,6 +42,7 @@ REQUIRED_DATA = {
     "world-art.json",
     "civic-knowledge.json",
     "research-tree.json",
+    "release-policy.json",
     "reconstruction-scenario.example.json",
     "industrial-control-network.json",
     "universal-industry-catalog.json",
@@ -48,6 +50,7 @@ REQUIRED_DATA = {
 REQUIRED_TOOLS = {
     "audit_building_models.py",
     "audit_world_art.py",
+    "audit_release_policy.py",
     "audit_recursive_industry_agrifood.py",
     "audit_recursive_industry_control_network.py",
     "audit_release_zip.py",
@@ -185,7 +188,7 @@ def validate_manifest(errors: list[str], root: Path) -> None:
         "primary_dlls": ["RecursiveIndustry.dll"],
         "mod_dependencies": ["COI-TrainsDlc >= 1.0.0"],
         "optional_mod_dependencies": ["COI-SupporterDlc >= 1.1.0"],
-        "min_game_version": "0.8.6c",
+        "min_game_version": "0.8.7a",
         "max_verified_game_version": "0.8.7a",
     }
     for key, value in expected.items():
@@ -534,6 +537,7 @@ def validate(root: Path = ROOT) -> list[str]:
     )
     errors.extend(f"Civic Knowledge: {error}" for error in audit_civic(root))
     errors.extend(f"Research: {error}" for error in audit_research(root))
+    errors.extend(f"Release policy: {error}" for error in audit_release_policy(root))
     errors.extend(f"Building artwork: {error}" for error in audit_buildings(root))
     errors.extend(f"World artwork: {error}" for error in audit_world(root))
     validate_markdown_links(errors, root, files)

@@ -1,5 +1,20 @@
 # Playtesting
 
+## Current Release Candidate
+
+The main branch contains unpublished 0.28.0a. Use its exact supplied player
+archive and recorded SHA-256 when participating in candidate testing, not the
+older hosted playtest below. It requires 0.8.7a Build 614 and a new campaign.
+Native prototype registration/initialization is already checked offline with
+and without Supporter. Do not repeat unchanged Civic mechanics just for this
+research successor. Play naturally and report the goals, choices, and content
+you actually encountered; there is no feature-by-feature checklist.
+
+After exiting normally, preserve the complete log alongside the exact version,
+mod list, and any relevant screenshots. Do not publish personal paths or saves.
+Independent uncoached feedback is managed separately and is not inferred from
+author or public-preview reports.
+
 ## Current public playtest
 
 Use the exact GitHub prerelease:
@@ -86,3 +101,9 @@ frozen archive and separately managed, uncoached campaigns.
 
 Never share personal information, account identifiers, or private saves as part
 of a report.
+
+## Sources
+
+- [Current release policy](../data/release-policy.json).
+- [Verification boundaries](VERIFICATION.md).
+- [Hosted 0.22.0c identity](RELEASE_NOTES_0.22.0c.md).

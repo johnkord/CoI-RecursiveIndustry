@@ -25,7 +25,7 @@ creates silent divergence and makes it unclear which commit owns a release.
 
 ## Normal change
 
-1. Create a branch in this public repository.
+1. Work in this public repository, using a branch when the change workflow calls for one.
 2. Change player source, public models, art, and docs here.
 3. Run the public offline suite and local game build.
 4. When exact game-derived data is needed, query or export it from the private
@@ -60,12 +60,17 @@ One public commit owns one candidate package. Build and package from a clean
 checkout of that commit, then record its DLL and ZIP hashes in private release
 evidence. Do not rebuild or overwrite an archive after testers receive it.
 
-Version `v0.19.0c` is immutable superseded history. The current baseline is public
-`v0.19.0d`; its nine-file playtest ZIP has SHA-256
-`638AE395526DD40ADFE4751CB88EF4DEA43F5DCBA9B6B586BFE2C01FD2AE280E`.
-Treat both tags and assets as immutable. Subsequent fixes require a new version.
-The active successor source is 0.20.0a; it must receive a new tag and archive only
-after its own build, migration, integrated-play, and reproducibility gates pass.
+The hosted playtest is `v0.22.0c`; preserve its exact archive and tag. The current
+source candidate is `0.28.0a`, with complete original art, independent research,
+and bounded conversion decision support. Earlier 0.24 through 0.27 candidate
+archives and evidence are immutable. Do not rebuild a tested candidate or rewrite
+its original evidence to fit a successor.
+
+Builds do not deploy by default. A release requires a committed source identity,
+clean-checkout reproducibility, exact archive/deployment parity, and the acceptance
+gates in [Verification](VERIFICATION.md). New-campaign-only support is explicit;
+unsupported migration is not a gate to advertise as passed. Commit and package
+preparation do not authorize pushing, tagging, or publishing.
 
 After a public release:
 
@@ -74,3 +79,9 @@ After a public release:
   source fork; and
 - game-update research remains private until its minimal compatibility change is
   ready for a public branch.
+
+## Sources
+
+- [Release policy](../data/release-policy.json).
+- [Build project](../mods/RecursiveIndustry/RecursiveIndustry.csproj).
+- [Publishing boundary](PUBLISHING.md).

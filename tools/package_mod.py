@@ -4,14 +4,16 @@
 from __future__ import annotations
 
 import argparse
+import io
 import json
 from pathlib import Path
+import re
 import sys
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 
 
 ROOT = Path(__file__).resolve().parents[1]
-FORBIDDEN_DLL_PREFIXES = ("Mafi", "UnityEngine")
+FORBIDDEN_DLL_PREFIXES = ("mafi", "unityengine")
 FIXED_TIMESTAMP = (2020, 1, 1, 0, 0, 0)
 CANONICAL_TEXT_FILES = {
     "manifest.json",
@@ -40,9 +42,11 @@ def resolve_primary_dll(mod_dir: Path, name: str, configuration: str) -> Path:
         mod_dir / name,
         mod_dir / "bin" / configuration / name,
     )
-    for path in candidates:
-        if path.is_file():
-            return path
+    present = [path for path in candidates if path.is_file()]
+    if len(present) > 1 and present[0].read_bytes() != present[1].read_bytes():
+        raise SystemExit(f"Conflicting root and build DLLs for {name!r}; refusing ambiguous packaging.")
+    if present:
+        return present[-1]
     raise SystemExit(
         f"Primary DLL {name!r} was not found in {mod_dir} or "
         f"{mod_dir / 'bin' / configuration}. Build the mod first."
@@ -56,8 +60,8 @@ def package_entries(
     include_symbols: bool,
 ) -> list[tuple[Path, Path]]:
     mod_id = manifest.get("id")
-    if not isinstance(mod_id, str) or not mod_id:
-        raise SystemExit("Manifest id must be a non-empty string.")
+    if not isinstance(mod_id, str) or re.fullmatch(r"[A-Za-z][A-Za-z0-9_-]*", mod_id) is None:
+        raise SystemExit("Manifest id must be a portable mod folder name.")
     if mod_dir.name != mod_id:
         raise SystemExit(
             f"Mod folder {mod_dir.name!r} must match manifest id {mod_id!r}."
@@ -73,9 +77,9 @@ def package_entries(
             entries.append((source, Path(mod_id) / name))
 
     for name in primary_dlls:
-        if not isinstance(name, str) or not name.lower().endswith(".dll"):
+        if not isinstance(name, str) or re.fullmatch(r"[A-Za-z0-9_.-]+\.dll", name, re.IGNORECASE) is None:
             raise SystemExit(f"Invalid primary DLL entry: {name!r}")
-        if name.startswith(FORBIDDEN_DLL_PREFIXES):
+        if name.casefold().startswith(FORBIDDEN_DLL_PREFIXES):
             raise SystemExit(f"Refusing to package game or engine DLL: {name}")
         source = resolve_primary_dll(mod_dir, name, configuration)
         entries.append((source, Path(mod_id) / name))
@@ -93,7 +97,7 @@ def package_entries(
             entries.append((source, Path(mod_id) / relative))
 
     archive_paths = [archive for _, archive in entries]
-    if len(archive_paths) != len(set(archive_paths)):
+    if len(archive_paths) != len({path.as_posix().casefold() for path in archive_paths}):
         raise SystemExit("Package contains duplicate archive paths.")
     return entries
 
@@ -107,8 +111,8 @@ def entry_payload(source: Path, archive_path: Path) -> bytes:
 
 
 def write_zip(output: Path, entries: list[tuple[Path, Path]]) -> None:
-    output.parent.mkdir(parents=True, exist_ok=True)
-    with ZipFile(output, "w", compression=ZIP_DEFLATED, compresslevel=9) as archive:
+    buffer = io.BytesIO()
+    with ZipFile(buffer, "w", compression=ZIP_DEFLATED, compresslevel=9) as archive:
         for source, archive_path in sorted(entries, key=lambda entry: entry[1].as_posix()):
             info = ZipInfo(archive_path.as_posix(), date_time=FIXED_TIMESTAMP)
             info.compress_type = ZIP_DEFLATED
@@ -119,6 +123,14 @@ def write_zip(output: Path, entries: list[tuple[Path, Path]]) -> None:
                 compress_type=ZIP_DEFLATED,
                 compresslevel=9,
             )
+    payload = buffer.getvalue()
+    if output.exists():
+        if output.read_bytes() != payload:
+            raise SystemExit(f"Refusing to overwrite existing candidate with different bytes: {output}")
+        return
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with output.open("xb") as handle:
+        handle.write(payload)
 
 
 def main(argv: list[str] | None = None) -> int:

@@ -110,7 +110,9 @@ def validate_source(root: Path, catalog: dict) -> None:
 def audit(root: Path = ROOT) -> list[str]:
     try:
         catalog, manifest = load(root / "data/world-art.json"), load(root / MANIFEST)
-        require(catalog["art_version"] == manifest["art_version"] == load(root / "mods/RecursiveIndustry/manifest.json")["version"], "Complete-art version drift")
+        policy = load(root / "data/release-policy.json")
+        require(policy["candidate_version"] == load(root / "mods/RecursiveIndustry/manifest.json")["version"], "Release candidate version drift")
+        require(catalog["art_version"] == manifest["art_version"] == policy["retained_art_versions"]["world"], "Complete-art version drift")
         validate_records(catalog, manifest)
         validate_source(root, catalog)
         for row in (manifest["catalog"], *manifest["generators"], *manifest["bundles"], *manifest["previews"]):

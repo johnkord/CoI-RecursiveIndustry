@@ -19,7 +19,7 @@ from audit_release_zip import (  # noqa: E402
     expected_entries,
     load_source_manifest,
 )
-from package_mod import entry_payload  # noqa: E402
+from package_mod import entry_payload, package_entries, resolve_primary_dll, write_zip  # noqa: E402
 
 
 def write_fixture(path: Path, extra: str | None = None) -> None:
@@ -41,6 +41,43 @@ def write_fixture(path: Path, extra: str | None = None) -> None:
 
 
 class ReleaseArchiveTests(unittest.TestCase):
+    def test_identical_repackage_is_noop_and_changed_bytes_are_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            source = root / "input.txt"
+            source.write_bytes(b"original")
+            output = root / "candidate.zip"
+            entries = [(source, Path("RecursiveIndustry/readme.txt"))]
+            write_zip(output, entries)
+            before = output.read_bytes(), output.stat().st_mtime_ns
+            write_zip(output, entries)
+            self.assertEqual((output.read_bytes(), output.stat().st_mtime_ns), before)
+            source.write_bytes(b"changed")
+            with self.assertRaisesRegex(SystemExit, "Refusing to overwrite"):
+                write_zip(output, entries)
+            self.assertEqual((output.read_bytes(), output.stat().st_mtime_ns), before)
+
+    def test_unsafe_and_game_dll_names_are_rejected(self) -> None:
+        for name in ("../outside.dll", "..\\outside.dll", "C:outside.dll", "mafi.dll", "UNITYENGINE.Core.dll"):
+            with self.subTest(name=name), tempfile.TemporaryDirectory() as temp:
+                root = Path(temp) / "RecursiveIndustry"
+                root.mkdir()
+                with self.assertRaises(SystemExit):
+                    package_entries(root, {"id": root.name, "primary_dlls": [name]}, "Release", False)
+
+    def test_ambiguous_root_and_build_dlls_are_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            build = root / "bin/Release/RecursiveIndustry.dll"
+            build.parent.mkdir(parents=True)
+            build.write_bytes(b"current")
+            stale = root / build.name
+            stale.write_bytes(b"stale")
+            with self.assertRaisesRegex(SystemExit, "Conflicting"):
+                resolve_primary_dll(root, build.name, "Release")
+            stale.write_bytes(build.read_bytes())
+            self.assertEqual(resolve_primary_dll(root, build.name, "Release"), build)
+
     def test_packaged_text_is_line_ending_independent(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

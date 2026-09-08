@@ -1,15 +1,15 @@
 {
   "id": "RecursiveIndustry",
-  "version": "0.27.0a",
+  "version": "0.28.0a",
   "display_name": "Recursive Industry",
-  "description_short": "Endgame AI infrastructure, Recursive Epochs, and universal industry.",
-  "description_long": "Rebuild a mature island around physical AI infrastructure. Integrate electronics and capital from Epoch II, reconstruct terrestrial industries from Epoch III, and invest in Civic Knowledge through a staffed Fiber-connected settlement service. Native source technologies, material costs, power, maintenance, and deliberate construction remain, with original landmark models and later orbital specialization.",
+  "description_short": "Physical AI, independent industrial reconstruction, and civic services.",
+  "description_long": "Rebuild a mature island around physical AI infrastructure. Validate Models, choose independent industrial and mobility applications, and invest in optional Civic Knowledge or planetary coordination. Native technologies, material costs, power, maintenance, and deliberate construction remain. Earlier Program reinvestment supports later megaprojects; beamed power is optional. Includes original mod-owned building, product, Fiber, rack, vehicle, and train models.",
   "authors": "John Kordich",
   "links": [ "https://github.com/johnkord/CoI-RecursiveIndustry" ],
   "primary_dlls": [ "RecursiveIndustry.dll" ],
   "mod_dependencies": [ "COI-TrainsDlc >= 1.0.0" ],
   "optional_mod_dependencies": [ "COI-SupporterDlc >= 1.1.0" ],
-  "min_game_version": "0.8.6c",
+  "min_game_version": "0.8.7a",
   "max_verified_game_version": "0.8.7a",
   "non_locking_dll_load": true
 }

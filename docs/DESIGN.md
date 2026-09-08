@@ -49,9 +49,9 @@ local Gateways useful for bootstrap and incremental demand.
 ### Keep recursion bounded
 
 The late game supports recursive **reinvestment**, not literal self-replication.
-Programs and capital produce Frontier Projects; a Project can build an Integration
-Array that accelerates future Programs or a Construction Nexus that expands
-capital-goods capacity. Every iteration still requires raw matter, energy,
+The Integration Array becomes available while major Program demand is still ahead.
+Programs and capital later produce Frontier Projects; each Project can commission
+a Construction Nexus that expands capital-goods capacity. Every iteration still requires raw matter, energy,
 maintenance, electronics, validation, logistics, and player decisions.
 
 ## Deliberate non-goals
@@ -66,8 +66,14 @@ maintenance, electronics, validation, logistics, and player decisions.
 
 ## Why the name
 
-“Recursive Industry” refers to the bounded reinvestment loop and to advanced
+"Recursive Industry" refers to the bounded reinvestment loop and to advanced
 Computing improving the industrial process that supports subsequent Computing,
 research, and expansion. Most operation remains ordinary factory planning; the
 recursive payoff is the culmination rather than a claim of autonomous
 self-replication.
+
+## Sources
+
+- [Current research catalog](../data/research-tree.json).
+- [Reconstruction choices](RECONSTRUCTION.md).
+- [Production and support model](BALANCE.md).

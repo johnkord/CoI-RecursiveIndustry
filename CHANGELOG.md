@@ -6,6 +6,30 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### 0.28.0a Release Candidate
+
+- Replace the compulsory Epoch ladder with independent application research.
+  Preserve existing IDs and native source technologies; make Rack II/III optional
+  for ordinary industry, Civic Knowledge, science, and orbital applications.
+- Split mineral/metallurgy, refining/chemistry, food/utilities, heavy/amphibious/
+  forestry/planting, and rail technology gates. Separate greenhouse and poultry
+  monitoring; Circular Agrifood no longer requires either monitoring branch.
+- Move Fiber infrastructure ahead of its separate industrial and civic services.
+  Keep both widths together and retain native Direct recipe locks.
+- Open the Integration Array at 32 lifetime Programs and replace its Project
+  commissioning item with 32 Programs. Preserve its operating recipe and costs.
+  Keep the Nexus behind an Expansion Project; make beamed power optional for Frontier.
+- Remove terrestrial nuclear research's Space/Calibration gates and its single
+  Calibration construction item. Correct Microchip research to 256 Computing.
+- Generate native research, ID additions, feature references, and a player table
+  from one checked catalog. Add exact unlock ownership and branch-isolation tests.
+- Add a bounded offline conversion planner with equal-output comparisons, shared
+  support, remaining external inputs, commissioning capital, and cutover Computing.
+- Match the game minimum to verified 0.8.7a Build 614 and make builds non-deploying
+  by default. Retain all original 0.26 building and 0.27 world artwork unchanged.
+- Native data registration and initialization pass with and without Supporter.
+  This is not a claim of in-game visual acceptance, migration, or stable publication.
+
 ### 0.27.0a Complete World Artwork Candidate
 
 - Complete original Fiber profiles, connected/closed ports, junction, mount,

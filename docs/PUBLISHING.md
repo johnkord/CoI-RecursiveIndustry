@@ -4,6 +4,10 @@ Recursive Industry is not yet declared stable. Use this document to prepare the
 GitHub and COI Hub release after the integrated author and independent player
 gates pass.
 
+The current source is unpublished 0.28.0a. Source commits, local packaging,
+deployment, and automated native registration do not themselves authorize a
+GitHub/Hub publication or close independent acceptance.
+
 ## Current public pre-release
 
 GitHub prerelease `v0.22.0c` is the current ordinary-playtesting candidate:
@@ -69,15 +73,15 @@ map, Endgame.
 > models, run experiments, and validate renewable control packages before
 > deploying automation.
 >
-> Progress through finite Recursive Epochs into autonomous freight, heavy
-> equipment, locomotives, lights-out microchips, planetary coordination, orbital
-> science, and frontier-scale industrial projects. Nineteen specialist
-> megafacilities transform materials, refining, chemistry, food, utilities,
+> Choose independent applications in autonomous freight, heavy equipment,
+> locomotives, Microchip consolidation, civic services, planetary coordination,
+> orbital science, and Frontier megaprojects. Twenty-five specialist
+> facilities transform materials, refining, chemistry, food, utilities,
 > nuclear fuel, and advanced manufacturing.
 >
 > Choose conventional production or high-capital Direct, Integrated, and
-> Precision routes. Direct operation remains local and Fiber-free; optimized
-> modes reserve live Industrial Control Stream over Access or Backbone Fiber.
+> Precision routes. Direct and Precision operation remain local and Fiber-free;
+> Integrated modes consume live Industrial Control Stream over Access or Backbone Fiber.
 > Efficient production spends more power rather than erasing
 > costs: raw materials, electricity, Computing, maintenance, logistics,
 > validation, and selected human work remain part of the planning problem.
@@ -109,12 +113,13 @@ Do not use sandbox-only compositions as the only gameplay media.
 
 ## Final release sequence
 
-1. Complete the integrated author campaign and classify findings.
-2. Apply only demonstrated fixes and set the manifest to `1.0.0`.
-3. Build, validate, and package one exact archive.
-4. Commit the source and require a post-commit deterministic rebuild.
-5. Test that frozen archive in independent uncoached campaigns.
-6. Resolve release-gate findings without adding new scope.
+1. Complete ordinary-use judgment and classify actual findings without replaying inherited mechanics.
+2. Apply demonstrated fixes in a named successor. Commit and freeze its complete source.
+3. Build and package that commit in two clean locations; require byte-identical DLL and ZIP.
+4. Bind all gates, source, game identity, and artifacts without rebuilding after distribution.
+5. Test the frozen archive in independent uncoached new campaigns.
+6. Resolve release-gate findings before a stable decision. A later `1.0.0` metadata
+  successor gets its own archive and identity; inherit unaffected behavior explicitly.
 7. Run:
 
    ```powershell
@@ -143,3 +148,9 @@ Do not use sandbox-only compositions as the only gameplay media.
 - Complete the campaign judgments and independent player sessions.
 - Capture and approve final in-game screenshots.
 - Accept and publish the final 1.0 COI Hub listing.
+
+## Sources
+
+- [Release policy](../data/release-policy.json).
+- [Verification boundaries](VERIFICATION.md).
+- [Package builder](../tools/package_mod.py).

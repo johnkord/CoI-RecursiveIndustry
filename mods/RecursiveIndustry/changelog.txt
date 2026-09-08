@@ -1,6 +1,24 @@
 Recursive Industry changelog
 ============================
 
+0.28.0a - Release candidate (unpublished)
+----------------------------------------
+
+- Reorganizes research into independent applications with optional hardware density,
+  smaller industry portfolios, and separate native mobility technologies.
+- Separates shared Fiber infrastructure from industrial control and Civic Knowledge.
+  Preserves all native Direct recipe locks and exact source-technology prerequisites.
+- Opens the Integration Array at 32 lifetime Programs with 32-Program commissioning.
+  Keeps the Nexus behind a Project and makes beamed power optional for Frontier.
+- Removes Space/Calibration gates from terrestrial nuclear fuel systems and fixes
+  the Microchip research card's Computing value.
+- Adds an optional offline equal-output conversion worksheet with explicit external
+  supply, capital, shared headroom, and temporary cutover costs.
+- Retains all complete original building/world artwork and production vectors.
+- Requires verified 0.8.7a Build 614. Source builds no longer deploy by default.
+- Native data registration and initialization pass both Supporter configurations.
+  Independent acceptance, visual judgment, and stable publication are not inferred.
+
 0.27.0a - Complete World Artwork (unpublished)
 ----------------------------------------------
 

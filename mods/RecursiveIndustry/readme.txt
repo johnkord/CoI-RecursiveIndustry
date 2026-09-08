@@ -1,5 +1,5 @@
-Recursive Industry 0.27.0a complete world artwork candidate
-=====================================
+Recursive Industry 0.28.0a release candidate
+==========================================
 
 A Captain of Industry endgame mod about building a physical AI economy, from
 accelerator racks and validated models to autonomous industry, planetary
@@ -8,18 +8,17 @@ coordination, and frontier-scale megaprojects.
 Status
 ------
 
-This unpublished successor completes original mod-owned building and world models:
-all 52 buildings plus Fiber, later cargo products, installed racks, vehicles,
-load attachments, locomotives, and tenders. It preserves the reconstruction progression, Civic Knowledge service, process
-economics, layouts, ports, research, and corrected Hauler. Native source
-technologies remain required. It is not the hosted 0.22.0c playtest, a stable
-release, or a general save-migration promise.
+This unpublished successor reorganizes research into independent applications,
+smaller industrial portfolios, and separate native mobility technologies.
+Hardware density is optional for ordinary applications. Earlier Program
+reinvestment supports later megaprojects, and beamed power is optional.
+All 52 building models and the complete original world artwork are retained.
+It is not the hosted 0.22.0c playtest, stable publication, or a migration promise.
 
 Requirements
 ------------
 
-- Captain of Industry 0.8.7a, Build 614, is the exact verified target. The
-  manifest remains compatible back to 0.8.6c.
+- Captain of Industry 0.8.7a, Build 614, is the minimum and exact verified target.
 - Trains expansion 1.0.0 or newer is required.
 - Supporter edition 1.1.0 or newer is optional.
 - Enable the mod when creating a new campaign. Adding it to or removing it from
@@ -30,12 +29,13 @@ Requirements
 Install
 -------
 
-1. Extract the release ZIP into %APPDATA%/Captain of Industry/Mods.
-2. Confirm the result contains:
+1. Exit the game. Move an older RecursiveIndustry folder outside Mods as a backup.
+2. Extract the exact player ZIP into %APPDATA%/Captain of Industry/Mods.
+3. Confirm the result contains:
    Mods/RecursiveIndustry/manifest.json
    Mods/RecursiveIndustry/RecursiveIndustry.dll
-3. Enable Recursive Industry when creating a campaign.
-4. On error, inspect %APPDATA%/Captain of Industry/Logs.
+4. Enable Recursive Industry when creating a new campaign. Do not load an old pre-release save.
+5. On error, inspect %APPDATA%/Captain of Industry/Logs.
 
 Highlights
 ----------
@@ -43,17 +43,18 @@ Highlights
 - Three accelerator-rack generations for vanilla Data Centers.
 - Physical data, models, experiments, validation, and deployment packages.
 - AI Operations offices and five bounded Focus policies.
-- Applied Science and finite Recursive Epoch progression.
-- Electronics and lower-capital integration from Epoch II, with both Fiber tiers
-  available and no additional 8/32-Program research witnesses. Construction
+- Applied AI Science and physical validation without compulsory Rack III research.
+- Independent electronics and lower-capital integration after Systems Integration,
+  with no duplicate Program research witnesses. Construction
   still consumes the declared Programs, Packages, and other capital.
 - Autonomous freight, heavy equipment, forestry, and locomotives on native game
   behavior.
 - Planetary coordination, orbital science and power, and two optional world
   contracts.
 - Twenty-five process-scaled specialist facilities covering the physical economy.
-- Terrestrial materials, chemistry, essential systems, and advanced manufacturing
-  from Epoch III without a blanket Industrial Control research requirement.
+- Independent mineral, metallurgy, refining, chemistry, food, utilities, nuclear,
+  and advanced manufacturing research without a blanket Industrial Control gate.
+  Terrestrial nuclear processing requires neither Space Research nor Calibration.
   Direct recipe locks remain native; only Integrated operation needs Stream.
 - A Civic Model Center supplies a staffed Knowledge Commons over its own Fiber
   service. At full satisfaction the optional service gives 1.2 Unity, no Health
@@ -91,8 +92,11 @@ Highlights
 - Directed refinery slates for Diesel, Fuel Gas and Hydrogen, deep Hydrogen,
   Plastic, and Rubber. They consume Stream, retain pollution and water outputs,
   and avoid Heavy, Medium, Light, and Naphtha output logistics.
-- Frontier Projects that can accelerate future Programs or autonomous
-  construction-capital production.
+- The Integration Array opens at 32 lifetime Programs and costs 32 Programs,
+  accelerating reinvestment before major orbital and Frontier demand.
+- Frontier Projects commission the Construction Nexus; beamed power is optional.
+- The source repository includes an optional offline equal-output conversion
+  worksheet. It reads no saves and issues no commands.
 
 Balance
 -------
@@ -128,8 +132,9 @@ installation. Prior author feedback accepts the model direction and reports
 successful Civic Knowledge use; it is not a persistence or stable-release claim.
 Three mod-owned amphibious attachment IDs isolate its art from native trucks while
 preserving load rules and offsets. This does not establish save-migration support.
-This art successor needs ordinary in-game visual feedback, not a replay of the
-unchanged Civic gameplay checklist.
+Native prototype registration and initialization pass with and without Supporter.
+Ordinary progression/visual judgment and independent uncoached acceptance remain
+release gates. No repeated Civic mechanics checklist is required.
 
 Source and issue tracker:
 https://github.com/johnkord/CoI-RecursiveIndustry

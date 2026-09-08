@@ -1,8 +1,8 @@
 # Compatibility
 
-Version 0.27.0a is an unpublished complete-art successor. It retains the selected
-reconstruction gameplay and all 52 building models while replacing the remaining
-mod-specific cargo, rack, Fiber, vehicle, attachment, and train artwork. The author
+Version 0.28.0a is an unpublished release candidate. It reorganizes research and
+two commissioning gates while retaining the selected recipes, operating values,
+and complete original building/world artwork. The author
 reported successful Civic use on 0.25.0a; that does not establish persistence or
 in-game acceptance of the new models. The hosted 0.22.0c archive is unchanged.
 
@@ -11,7 +11,7 @@ in-game acceptance of the new models. The hosted 0.22.0c archive is unchanged.
 | Component | Support |
 | --- | --- |
 | Captain of Industry | 0.8.7a, Build 614 exact successor target |
-| Manifest minimum | 0.8.6c |
+| Manifest minimum | 0.8.7a |
 | Trains expansion | Required, 1.0.0 or newer |
 | Supporter edition | Optional, 1.1.0 or newer |
 | Runtime platform | Windows game build |
@@ -24,7 +24,8 @@ controlling paths as Build 613. The 0.22.0b DLL and ZIP also reproduce
 byte-for-byte against Build 614, and the author continued a long gameplay review
 across the update. Version 0.22.0c raises the exact manifest ceiling to 0.8.7a
 without changing gameplay. That hosted release's evidence remains separate from
-the unpublished 0.27.0a art candidate.
+the unpublished 0.28.0a release candidate. Current actual-MaFi prototype
+registration and initialization pass both with and without Supporter content.
 
 ## Saves
 
@@ -32,8 +33,9 @@ Enable Recursive Industry when creating a new campaign. Adding it to or removing
 it from an existing normal save is unsupported. Stable prototype IDs are treated
 as save contracts and should not be renamed casually.
 
-Version 0.27.0a retains all existing building, product, research, and vehicle IDs
-and gameplay values. Three mod-owned amphibious attachment IDs isolate its original
+Version 0.28.0a retains existing building, product, research, and vehicle IDs but
+changes research ownership and adds application branches. It is new-campaign-only.
+Version 0.27.0a introduced three mod-owned amphibious attachment IDs to isolate original
 art from native trucks. Eligibility, order, cargo offsets, fill controls, and the
 empty-load choice are retained, but existing-save migration is not thereby proven.
 Do not overwrite an original save to test a pre-release upgrade.
@@ -108,4 +110,10 @@ Report the complete mod list and game log with compatibility issues.
 
 The mod makes no network connections. Runtime behavior does not intentionally
 access arbitrary files. The build deploys normal player files to Captain of
-Industry's `%APPDATA%` Mods directory when deployment is enabled.
+Industry's `%APPDATA%` Mods directory only when deployment is explicitly enabled.
+
+## Sources
+
+- [Release support policy](../data/release-policy.json).
+- [Mod manifest](../mods/RecursiveIndustry/manifest.json).
+- [Research catalog](../data/research-tree.json).

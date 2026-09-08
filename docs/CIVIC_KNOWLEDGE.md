@@ -1,7 +1,7 @@
 # Civic Knowledge
 
 Civic Knowledge is an optional settlement investment introduced in 0.25.0a and
-retained unchanged in the 0.27.0a art successor.
+retained in 0.28.0a with an independent research path.
 It does not replace housing, clinics, food, sanitation, or the player's decisions.
 
 ## Supply the Service
@@ -53,9 +53,10 @@ demands. External laboratory inputs, Titanium, Office Supplies, maintenance,
 coolant, power generation, and the Data Center itself remain necessary. The
 service is intended for an established island with capacity it wants to invest.
 
-The research follows Industrial Control, Physical Validation, and ISP Module,
+The research follows Fiber Infrastructure, Physical Validation, and ISP Module,
 with four lifetime Dossiers and sixteen lifetime Models. It is optional for all
-Epochs and does not require a Planetary Center.
+other applications and does not require a Planetary Center, Industrial Control
+Gateway, or Microchip consolidation.
 
 ## Sources
 

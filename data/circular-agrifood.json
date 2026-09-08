@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "candidate_version": "0.27.0a",
+  "candidate_version": "0.28.0a",
   "predecessor": "0.21.0d",
   "game": {
     "display_version": "0.8.7a",

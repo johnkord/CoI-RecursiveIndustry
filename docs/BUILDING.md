@@ -3,10 +3,10 @@
 ## Prerequisites
 
 - Windows.
-- A lawfully installed Captain of Industry 0.8.7.
+- A lawfully installed Captain of Industry 0.8.7a Build 614.
 - The Trains expansion installed.
 - A .NET SDK capable of targeting .NET Framework 4.8.
-- Python 3.11 or newer for repository tools.
+- Python 3.12 or newer for repository tools.
 
 Set `COI_ROOT` to the game directory:
 
@@ -29,6 +29,7 @@ Never copy those assemblies into this repository.
 python tools/audit_recursive_industry_control_network.py
 python tools/validate_public_repo.py
 python tools/generate_recursive_industry_universal_source.py
+python tools/generate_research_tree.py
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
@@ -46,16 +47,15 @@ python tools/validate_public_repo.py
 ## Compile
 
 ```powershell
-dotnet build mods/RecursiveIndustry/RecursiveIndustry.csproj -c Release
+dotnet build mods/RecursiveIndustry/RecursiveIndustry.csproj -c Release -t:Rebuild
 ```
 
-The build deploys player files to
-`%APPDATA%/Captain of Industry/Mods/RecursiveIndustry` by default. To compile
-without deployment:
+Builds do not deploy by default. For developer-only direct deployment to
+`%APPDATA%/Captain of Industry/Mods/RecursiveIndustry`, explicitly opt in:
 
 ```powershell
 dotnet build mods/RecursiveIndustry/RecursiveIndustry.csproj -c Release `
-  /p:DeployToModsFolder=false
+  /p:DeployToModsFolder=true
 ```
 
 All game references use `Private=false` so proprietary assemblies are not copied
@@ -78,8 +78,8 @@ The deterministic package is written under `dist/` and contains one
 - `readme.txt`;
 - `changelog.txt`;
 - `RecursiveIndustry.dll`; and
-- the three unchanged legacy bundles, five reconstruction bundles, and the
-  generated `mafi_bundles.manifest` including prefab dependencies.
+- all 113 verified bundles and the generated `mafi_bundles.manifest`, including
+  dependency-before-root declarations. The normal player package contains 119 files.
 
 PDB files are excluded unless packaging explicitly requests symbols. Game and
 engine DLL names are rejected.
@@ -92,7 +92,9 @@ archive on a fresh world, exit normally, and inspect the complete game log.
 
 A source, manifest, readme, DLL, config, or bundle change produces a new archive
 identity and requires a new version. Never overwrite an archive already used for
-testing or distribution.
+testing or distribution. The packager leaves an identical existing ZIP untouched
+and refuses to replace it with different bytes. Conflicting root/build DLLs are
+also rejected; build from a clean source checkout before packaging.
 
 ## Reconstruction Assets and Policies
 
@@ -109,8 +111,10 @@ python tools/model_civic_knowledge.py --population 1000
 The policy fixtures link the production prerequisite algorithm to small native-data
 stand-ins. They do not run the game. The asset builder creates original geometry,
 renders nonblank previews, and verifies final prefab dependencies. In-game
-rendering and the new Data-backed settlement integration still need the prepared
-integrated candidate test.
+rendering remains separate from these offline fixtures. Earlier Civic use was
+reported successful; do not replay that mechanic solely for a research/art change.
+The release research graph also has a private actual-MaFi registration probe
+covering both Supporter configurations without loading a world or save.
 
 ## Sources
 

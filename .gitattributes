@@ -16,6 +16,7 @@
 *.gif binary
 *.webp binary
 *.obj binary
+art/**/UnitySource/** -text
 mods/**/AssetBundles/* -text -diff -merge
 mods/**/AssetBundles/mafi_bundles.manifest text eol=lf diff
 art/**/unity/*.manifest text eol=lf

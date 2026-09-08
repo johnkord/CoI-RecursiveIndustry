@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "candidate_version": "0.28.0a",
+  "intended_stage": "release_candidate",
+  "game": {
+    "minimum": "0.8.7a",
+    "maximum_verified": "0.8.7a",
+    "build": 614
+  },
+  "retained_art_versions": {
+    "buildings": "0.26.0a",
+    "world": "0.27.0a"
+  },
+  "support": {
+    "new_campaigns_only": true,
+    "add_to_existing_saves": false,
+    "remove_from_existing_saves": false,
+    "pre_release_save_migration": false
+  },
+  "required_release_gates": [
+    "Exact source commit and deterministic player archive",
+    "Native prototype registration with and without Supporter",
+    "Complete offline tests and clean installation",
+    "Ordinary-use visual and progression judgment",
+    "Independent uncoached new-campaign acceptance before stable publication"
+  ]
+}

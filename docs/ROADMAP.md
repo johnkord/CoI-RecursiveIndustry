@@ -1,13 +1,13 @@
 # Roadmap
 
-## Current Complete-Art Candidate
+## Current Release Candidate
 
-The 0.27.0a development candidate completes the selected reconstruction gameplay
-and all remaining mod-specific model work. It retains all 52 building models and
-adds original Fiber hardware/profiles, six cargo products, three installed racks,
-eight vehicles, eight load attachments, and seventeen locomotive/tender models.
-Recipes, research, process envelopes, Civic behavior, and Hauler compatibility
-remain unchanged. The earlier archives and hosted 0.22.0c playtest are preserved.
+The 0.28.0a candidate completes a release-focused progression rewrite and bounded
+conversion worksheet. Applications are independent, broad portfolios are smaller,
+and Program reinvestment arrives before major demand. Native source prerequisites
+and Direct recipe locks remain. All original building/world art, recipes, operating
+envelopes, Civic behavior, and Hauler compatibility are retained. Earlier archives
+and the hosted 0.22.0c playtest are preserved.
 
 The author reported successful Civic Knowledge use and accepted the initial model
 direction on 0.25.0a. That is scoped feedback, not a persistence or clean-log claim.
@@ -15,9 +15,9 @@ The 0.26.0a building-art successor repaired its collider/emission integration de
 Do not restart the superseded full Civic checklist for the complete-art candidate.
 
 1. Preserve the exact archive and its automated source, native-graphics, asset,
-   deterministic build/package, and clean-install evidence. Do not rebuild a ready
+   native registration, deterministic build/package, and clean-install evidence. Do not rebuild a ready
    candidate merely to repeat verification.
-2. Collect ordinary visual feedback on models actually observed, and fix only
+2. Collect ordinary progression and visual feedback on content actually observed, and fix only
    demonstrated integration or usability problems. Do not prescribe one session
    per vehicle, product, building, or transport feature.
 3. Bind a source commit and collect independent uncoached judgment before a stable
@@ -32,7 +32,8 @@ older release archives for players on supported game branches.
 ## Later directions
 
 Conditional later work includes bounded planetary stewardship, a manufactured-
-export offer, and a small reconstruction comparison UI.
+export offer, and an in-game reconstruction comparison UI. The current source
+already includes a bounded offline conversion worksheet.
 None is silently included in the current candidate. A new offer or tool needs
 a distinct unsolved player problem, not merely a place on a feature checklist.
 
