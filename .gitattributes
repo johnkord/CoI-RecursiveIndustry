@@ -17,6 +17,8 @@
 *.webp binary
 *.obj binary
 art/**/UnitySource/** -text
+data/building-models.json -text
+data/world-art.json -text
 mods/**/AssetBundles/* -text -diff -merge
 mods/**/AssetBundles/mafi_bundles.manifest text eol=lf diff
 art/**/unity/*.manifest text eol=lf
