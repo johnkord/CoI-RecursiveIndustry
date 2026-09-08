@@ -1,4 +1,4 @@
-Recursive Industry 0.23.0b operating-envelope test candidate
+Recursive Industry 0.27.0a complete world artwork candidate
 =====================================
 
 A Captain of Industry endgame mod about building a physical AI economy, from
@@ -8,11 +8,12 @@ coordination, and frontier-scale megaprojects.
 Status
 ------
 
-This is an unpublished new-campaign balance successor to public 0.22.0c. It
-retunes power, workers, and maintenance across all custom buildings and splits
-six mixed-process catalogs into coherent facilities. It also restores the
-general Autonomous Hauler's tank, flatbed, and dump attachments so Hydrogen
-Fuel Stations can assign it. A stable package has not been declared.
+This unpublished successor completes original mod-owned building and world models:
+all 52 buildings plus Fiber, later cargo products, installed racks, vehicles,
+load attachments, locomotives, and tenders. It preserves the reconstruction progression, Civic Knowledge service, process
+economics, layouts, ports, research, and corrected Hauler. Native source
+technologies remain required. It is not the hosted 0.22.0c playtest, a stable
+release, or a general save-migration promise.
 
 Requirements
 ------------
@@ -43,11 +44,28 @@ Highlights
 - Physical data, models, experiments, validation, and deployment packages.
 - AI Operations offices and five bounded Focus policies.
 - Applied Science and finite Recursive Epoch progression.
+- Electronics and lower-capital integration from Epoch II, with both Fiber tiers
+  available and no additional 8/32-Program research witnesses. Construction
+  still consumes the declared Programs, Packages, and other capital.
 - Autonomous freight, heavy equipment, forestry, and locomotives on native game
   behavior.
 - Planetary coordination, orbital science and power, and two optional world
   contracts.
 - Twenty-five process-scaled specialist facilities covering the physical economy.
+- Terrestrial materials, chemistry, essential systems, and advanced manufacturing
+  from Epoch III without a blanket Industrial Control research requirement.
+  Direct recipe locks remain native; only Integrated operation needs Stream.
+- A Civic Model Center supplies a staffed Knowledge Commons over its own Fiber
+  service. At full satisfaction the optional service gives 1.2 Unity, no Health
+  or productivity. It does not consume Industrial Control Stream.
+- Original models for all 52 buildings, including 25 universal facilities,
+  offices, laboratories, farms, services, and orbital equipment. Three detail
+  levels reduce distant geometry on the 48 new models. Recipe signs, native
+  lighting, crop rendering, and service-controlled animations remain supported.
+- Original Fiber hardware, six later cargo products, three installed rack cabinets,
+  eight autonomous vehicles, eight load attachments, and seventeen train models.
+  Native Data Center shells, shared game infrastructure, standard cargo wagons,
+  audio, and generic effects remain intentionally reused.
 - Precision Irrigation plus labor-compressed Greenhouse II and Chicken Farm
   families that preserve native weather, fertility, crop schedules, irrigation,
   fertilizer, animal growth, slaughter controls, and co-products.
@@ -79,6 +97,12 @@ Highlights
 Balance
 -------
 
+Integration is not a one-for-one machine upgrade. At default durations, the
+staged Electronics II row produces 96 per 60 Time; raw integration produces 48.
+Two raw facilities match one full staged facility, while eliminating PCB and
+Electronics handoffs only where those suppliers are no longer needed elsewhere.
+Shared support can make later conversions much smaller than the first.
+
 The universal portfolio requires 3,392 Computing, 1,024 commissioning Packages,
 142.5 MW of Direct process power, and 88 workers. Fourteen Rack III add 21 MW.
 Selecting every owner's most expensive custom row raises process power to
@@ -98,6 +122,14 @@ create free resources, or make external network connections.
 
 Compatibility and support
 -------------------------
+
+New campaigns remain the public support baseline. Use a fresh process after
+installation. Prior author feedback accepts the model direction and reports
+successful Civic Knowledge use; it is not a persistence or stable-release claim.
+Three mod-owned amphibious attachment IDs isolate its art from native trucks while
+preserving load rules and offsets. This does not establish save-migration support.
+This art successor needs ordinary in-game visual feedback, not a replay of the
+unchanged Civic gameplay checklist.
 
 Source and issue tracker:
 https://github.com/johnkord/CoI-RecursiveIndustry

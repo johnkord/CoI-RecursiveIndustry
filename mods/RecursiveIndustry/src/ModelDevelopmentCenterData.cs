@@ -28,10 +28,9 @@ internal sealed class ModelDevelopmentCenterData : IModData
             .SetComputingConsumption(Computing.FromTFlops(24))
             .SetCategories(Ids.ToolbarCategories.Production_General)
             .SetLayout(VerticalSliceProofLayout.Create())
-            .SetPrefabPath(VerticalSliceProofLayout.PrefabPath)
+            .SetPrefabPath(BuildingModelPaths.ModelDevelopmentCenter)
             .SetCustomIconPath(RecursiveIndustryIcons.ModelDevelopmentCenter)
             .SetMachineSound(VerticalSliceProofLayout.SoundPath)
-            .EnableSemiInstancedRendering(ImmutableArray.Create("sign"))
             .AddSign()
             .BuildAndAdd();
 

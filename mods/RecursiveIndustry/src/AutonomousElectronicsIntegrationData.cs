@@ -17,7 +17,7 @@ internal sealed class AutonomousElectronicsIntegrationData : IModData
                 "Autonomous Electronics Integration Complex",
                 RecursiveIndustryIds.Machines
                     .AutonomousElectronicsIntegrationComplex)
-            .Description("A zero-worker Electronics II facility. The staged row preserves PCB and Electronics logistics without recurring Packages; the late networked row consumes Stream to collapse those transported stages.")
+            .Description("A zero-worker Electronics II facility. Staged production retains PCB and Electronics logistics; raw integration consumes live Stream to remove those handoffs at lower output per machine. The modes require different material connections.")
             .SetCost(
                 Costs.Build
                     .CP4(960)
@@ -35,7 +35,6 @@ internal sealed class AutonomousElectronicsIntegrationData : IModData
             .SetPrefabPath(AutonomousElectronicsIntegrationLayout.PrefabPath)
             .SetCustomIconPath(
                 RecursiveIndustryIcons.AutonomousElectronicsIntegrationComplex)
-            .EnableSemiInstancedRendering()
             .BuildAndAdd();
 
         registrator.RecipeProtoBuilder

@@ -6,9 +6,6 @@ namespace RecursiveIndustry;
 
 internal sealed class IndustrialControlGatewayData : IModData
 {
-    private const string PrefabPath =
-        "Assets/Base/Machines/Assembly/AssemblyT5.prefab";
-
     public void RegisterData(ProtoRegistrator registrator)
     {
         var gateway = registrator.MachineProtoBuilder
@@ -33,7 +30,7 @@ internal sealed class IndustrialControlGatewayData : IModData
                 "   [4][4][4][4][4][4]   ",
                 "   [4][4][4][4][4][4]   ",
                 "   [4][4][4][4][4][4]   ")
-            .SetPrefabPath(PrefabPath)
+            .SetPrefabPath(BuildingModelPaths.ControlDeploymentGateway)
             .SetCustomIconPath(RecursiveIndustryIcons.ControlDeploymentGateway)
             .SetMachineSound(SystemsIntegrationLayout.SoundPath)
             .BuildAndAdd();

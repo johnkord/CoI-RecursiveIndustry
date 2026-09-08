@@ -33,8 +33,8 @@ island:
 | Epoch | Industrial change |
 | --- | --- |
 | I | Zero-worker autonomous freight on native vehicle behavior |
-| II | Lights-out microchip production and optional electronics integration |
-| III | Planetary coordination, bounded world contracts, and capital fabrication |
+| II | Lights-out microchips, electronics and capital integration, and optional live control |
+| III | Planetary coordination and bounded world contracts |
 | IV | Ground-supported orbital science and Dossier-fed orbital power |
 | V | Frontier Projects, Program reinvestment, and autonomous construction capital |
 
@@ -43,12 +43,18 @@ forestry, planting, and train systems without introducing custom dispatch.
 
 ## Industrial Control Networks
 
-Industrial Control Networks follows Recursive Epoch V and precedes all five
-universal-industry branches. It unlocks Industrial Control Stream, the Control
+In the current reconstruction progression, Industrial Control Networks follows Recursive Epoch II
+and uses ordinary Research Points. It unlocks Industrial Control Stream, the Control
 Deployment Gateway, Access Fiber, Backbone Fiber, and the Fiber Junction. It also
 activates the existing raw Electronics II and integrated Construction Parts III
 and Vehicle Parts II rows, which remain unavailable with their earlier machine
 research alone.
+
+Autonomous Electronics Integration and Autonomous Capital Fabrication both follow
+Epoch II and Robotic Assembly. They no longer add 8/32-Program research witnesses;
+their actual construction still consumes Programs and other capital. The staged
+rows do not require Industrial Control. See [Reconstruction](RECONSTRUCTION.md)
+for equal-output comparisons and the first-deployment cost.
 
 Validated Control Packages remain countable signed releases. The Gateway deploys
 them as non-storable live service capacity. Direct recipes retain local control
@@ -61,10 +67,10 @@ after a cut. The mod does not switch recipes automatically.
 
 Federated Deployment is an optional child of Industrial Control Networks at
 `(212, 30)`. It becomes available to research as soon as Industrial Control
-Networks is complete and costs 480 months of Space Research. It has no additional
-lifetime-production gate and does not require all five universal branches. Epoch
-V already provides the campaign-scale production gate through its requirement
-for 256 lifetime Frontier Programs.
+Networks is complete. Its 480-month cost uses ordinary Research Points,
+not Space Research. It has no additional lifetime-production or Epoch III gate
+and does not require the universal branches. The Campus remains a large capital
+investment.
 
 The node unlocks the Deployment Assurance Campus and the Gateway's Backbone
 deployment row. The Campus supplies bulk Package demand at unchanged material
@@ -75,7 +81,17 @@ bootstrap and smaller districts.
 
 ## Universal industrial transformation
 
-Five optional research branches unlock twenty-five specialist facilities:
+Materials, Process, Essential Systems, and terrestrial Advanced Manufacturing
+follow Epoch III. Their ordinary research still requires the native source
+equipment and the technologies behind the compositions they unlock. Direct
+recipes keep their own native locks; researching Industrial Control is not a
+blanket requirement to build these facilities. Integrated operation still needs
+the actual live Stream supply.
+
+Nuclear Operations follows Epoch IV and retains its Calibration and Space
+requirements. Orbital Fabrication and Integrated Crew Provisioning belong to
+Epoch IV, preventing their orbital technologies from delaying terrestrial
+reconstruction. The portfolios retain twenty-five facilities:
 
 - Materials and metallurgy.
 - Refining and chemistry.
@@ -99,7 +115,7 @@ remain on their specialized game paths.
 
 ## Adaptive Agrifood Systems
 
-Adaptive Agrifood Systems is an optional child of Autonomous Essential Systems.
+Adaptive Agrifood Systems is an optional ordinary-research child of Autonomous Essential Systems.
 It keeps farms on their specialized native paths while adding three bounded
 choices:
 
@@ -121,7 +137,7 @@ retain accountable workers rather than presenting zero-worker biology.
 
 ## Circular Agrifood Systems
 
-Circular Agrifood Systems is an optional 480-month child of Adaptive Agrifood
+Circular Agrifood Systems is an optional 480-month ordinary-research child of Adaptive Agrifood
 Systems. It inherits the parent's progression boundary and adds no duplicate
 lifetime-production gate. It unlocks:
 
@@ -156,3 +172,18 @@ strategic costs.
 
 This is compounding industrial investment, not automatic expansion. The player
 still supplies and commissions every iteration.
+
+## Civic Knowledge
+
+Civic Knowledge Systems follows Industrial Control, Physical Validation, and the
+native ISP Module. It requires four lifetime Dossiers and sixteen lifetime Models,
+but no Space Research or later Epoch. It unlocks a Civic Model Center, distinct
+Civic Knowledge Stream, and Knowledge Commons. This optional staffed settlement
+service supplies Unity, not Health, housing, or productivity. See
+[Civic Knowledge](CIVIC_KNOWLEDGE.md) for its input and population boundaries.
+
+## Sources
+
+- [Research registration](../mods/RecursiveIndustry/src/RecursiveIndustryResearchData.cs).
+- [Universal and control research](../mods/RecursiveIndustry/src/UniversalIndustryResearchData.cs).
+- [Control authority](../data/industrial-control-network.json).

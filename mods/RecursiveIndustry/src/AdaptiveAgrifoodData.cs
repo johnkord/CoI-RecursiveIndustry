@@ -101,7 +101,8 @@ internal sealed class AdaptiveAgrifoodData : IModData
             source.WaterEvaporationPerDay,
             WithCustomIcon(
                 source.Graphics,
-                RecursiveIndustryIcons.SensorGuidedGreenhouse),
+                RecursiveIndustryIcons.SensorGuidedGreenhouse,
+                BuildingModelPaths.SensorGuidedGreenhouse),
             source.ConstructionDurationPerProduct));
             LinkUpgrade(source, sensorGuidedGreenhouse, "Greenhouse II");
     }
@@ -145,7 +146,8 @@ internal sealed class AdaptiveAgrifoodData : IModData
             source.AnimationParams,
             WithCustomIcon(
                 source.Graphics,
-                RecursiveIndustryIcons.MonitoredPoultryFarm)));
+                RecursiveIndustryIcons.MonitoredPoultryFarm,
+                BuildingModelPaths.MonitoredPoultryFarm)));
         LinkUpgrade(source, monitoredPoultryFarm, "Chicken Farm");
     }
 
@@ -188,9 +190,10 @@ internal sealed class AdaptiveAgrifoodData : IModData
 
     private static FarmProto.Gfx WithCustomIcon(
         FarmProto.Gfx source,
-        string iconPath) =>
+        string iconPath,
+        string prefabPath) =>
         new(
-            source.PrefabPath,
+            prefabPath,
             source.CropPositions,
             source.SprinklerPrefabPath,
             source.SprinklerSoundPath,
@@ -200,24 +203,25 @@ internal sealed class AdaptiveAgrifoodData : IModData
             source.HideBlockedPortsIcon,
             source.VisualizedLayers,
             source.Categories,
-            source.UseInstancedRendering,
-            source.UseSemiInstancedRendering,
+            useInstancedRendering: false,
+            useSemiInstancedRendering: false,
             source.DisableEmptyChildrenStripping);
 
     private static Mafi.Core.Entities.Static.Layout.LayoutEntityProto.Gfx
         WithCustomIcon(
             Mafi.Core.Entities.Static.Layout.LayoutEntityProto.Gfx source,
-            string iconPath) =>
+            string iconPath,
+            string prefabPath) =>
         new(
-            source.PrefabPath,
+            prefabPath,
             source.PrefabOrigin,
             Option<string>.Some(iconPath),
             source.Color,
             source.HideBlockedPortsIcon,
             source.VisualizedLayers,
             source.Categories,
-            source.UseInstancedRendering,
-            source.UseSemiInstancedRendering,
+            useInstancedRendering: false,
+            useSemiInstancedRendering: false,
             maxRenderedLod: source.MaxRenderedLod,
             disableEmptyChildrenStripping: source.DisableEmptyChildrenStripping,
             removeUndergroundVertices: source.RemoveUndergroundVertices,

@@ -41,10 +41,9 @@ internal sealed class RecursiveFrontierData : IModData
             .SetComputingConsumption(Computing.FromTFlops(512))
             .SetCategories(Ids.ToolbarCategories.Production_General)
             .SetLayout(FrontierProjectLayout.Create())
-            .SetPrefabPath(FrontierProjectLayout.PrefabPath)
+            .SetPrefabPath(BuildingModelPaths.FrontierProjectComplex)
             .SetCustomIconPath(RecursiveIndustryIcons.FrontierProjectComplex)
             .SetMachineSound(FrontierProjectLayout.SoundPath)
-            .EnableSemiInstancedRendering(ImmutableArray.Create("sign"))
             .AddSign()
             .BuildAndAdd();
 
@@ -95,10 +94,9 @@ internal sealed class RecursiveFrontierData : IModData
             .SetComputingConsumption(Computing.FromTFlops(512))
             .SetCategories(Ids.ToolbarCategories.Production_General)
             .SetLayout(SystemsIntegrationLayout.Create())
-            .SetPrefabPath(SystemsIntegrationLayout.PrefabPath)
+            .SetPrefabPath(BuildingModelPaths.RecursiveIntegrationArray)
             .SetCustomIconPath(RecursiveIndustryIcons.RecursiveIntegrationArray)
             .SetMachineSound(SystemsIntegrationLayout.SoundPath)
-            .EnableSemiInstancedRendering(ImmutableArray.Create("sign"))
             .AddSign()
             .BuildAndAdd();
 
@@ -127,7 +125,7 @@ internal sealed class RecursiveFrontierData : IModData
             .Start(
                 "Autonomous Construction Nexus",
                 RecursiveIndustryIds.Machines.AutonomousConstructionNexus)
-            .Description("A zero-worker Frontier Mandate facility for Construction Parts IV and Vehicle Parts III. Surge preserves vanilla ratios at 4x throughput; Precision spends Dossiers and Packages for 12.5% more output; Recovery consumes Recyclables to displace 25% of virgin parts.")
+            .Description("A zero-worker Frontier Mandate facility for Construction Parts IV and Vehicle Parts III. Surge preserves vanilla ratios at 4x throughput; Precision spends Dossiers for 12.5% more output; Recovery consumes Recyclables to displace 25% of virgin parts.")
             .SetCost(
                 Costs.Build
                     .CP4(1800)
@@ -144,10 +142,9 @@ internal sealed class RecursiveFrontierData : IModData
             .SetComputingConsumption(Computing.FromTFlops(1024))
             .SetCategories(Ids.ToolbarCategories.Production_General)
             .SetLayout(ConstructionNexusLayout.Create())
-            .SetPrefabPath(ConstructionNexusLayout.PrefabPath)
+            .SetPrefabPath(BuildingModelPaths.AutonomousConstructionNexus)
             .SetCustomIconPath(RecursiveIndustryIcons.AutonomousConstructionNexus)
             .SetMachineSound(ConstructionNexusLayout.SoundPath)
-            .EnableSemiInstancedRendering(ImmutableArray.Create("sign"))
             .AddSign()
             .BuildAndAdd();
 

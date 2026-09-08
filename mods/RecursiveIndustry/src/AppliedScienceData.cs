@@ -29,10 +29,9 @@ internal sealed class AppliedScienceData : IModData
             .SetComputingConsumption(Computing.FromTFlops(64))
             .SetCategories(Ids.ToolbarCategories.Production_General)
             .SetLayout(VerticalSliceProofLayout.Create())
-            .SetPrefabPath(VerticalSliceProofLayout.PrefabPath)
+            .SetPrefabPath(BuildingModelPaths.AIScienceInstitute)
             .SetCustomIconPath(RecursiveIndustryIcons.AiScienceInstitute)
             .SetMachineSound(VerticalSliceProofLayout.SoundPath)
-            .EnableSemiInstancedRendering(ImmutableArray.Create("sign"))
             .AddSign()
             .BuildAndAdd();
 
@@ -46,10 +45,9 @@ internal sealed class AppliedScienceData : IModData
             .SetComputingConsumption(Computing.FromTFlops(8))
             .SetCategories(Ids.ToolbarCategories.Production_General)
             .SetLayout(VerticalSliceProofLayout.Create())
-            .SetPrefabPath(VerticalSliceProofLayout.PrefabPath)
+            .SetPrefabPath(BuildingModelPaths.PilotScienceComplex)
             .SetCustomIconPath(RecursiveIndustryIcons.PilotScienceComplex)
             .SetMachineSound(VerticalSliceProofLayout.SoundPath)
-            .EnableSemiInstancedRendering(ImmutableArray.Create("sign"))
             .AddSign()
             .BuildAndAdd();
 

@@ -114,6 +114,7 @@ internal sealed class PlanetaryCoordinationData : IModData
             64,
             249900,
             inputBuffer: 512,
-            outputBuffer: 512);
+            outputBuffer: 512,
+            customPrefabPath: "Assets/RecursiveIndustry/Reconstruction/planetary_coordination_center.prefab");
     }
 }

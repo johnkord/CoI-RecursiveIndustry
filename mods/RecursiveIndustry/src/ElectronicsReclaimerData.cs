@@ -18,10 +18,9 @@ internal sealed class ElectronicsReclaimerData : IModData
             .SetElectricityConsumption(500.Kw())
             .SetCategories(Ids.ToolbarCategories.Waste_Solid)
             .SetLayout(VerticalSliceProofLayout.Create())
-            .SetPrefabPath(VerticalSliceProofLayout.PrefabPath)
+            .SetPrefabPath(BuildingModelPaths.ElectronicsReclaimer)
             .SetCustomIconPath(RecursiveIndustryIcons.ElectronicsReclaimer)
             .SetMachineSound(VerticalSliceProofLayout.SoundPath)
-            .EnableSemiInstancedRendering(ImmutableArray.Create("sign"))
             .AddSign()
             .BuildAndAdd();
 

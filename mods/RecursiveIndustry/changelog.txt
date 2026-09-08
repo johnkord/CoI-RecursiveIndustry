@@ -1,6 +1,69 @@
 Recursive Industry changelog
 ============================
 
+0.27.0a - Complete World Artwork (unpublished)
+----------------------------------------------
+
+- Completes original Fiber profiles and hardware, six later cargo products,
+  three installed rack generations, eight vehicles, eight load attachments,
+  and seventeen locomotive/tender/nuclear-consist models.
+- Preserves native rig and working-state controls, load eligibility and offsets,
+  headlights, train numbers, wheel/track motion, and tender/dump fill animation.
+- Preserves all gameplay/config values, existing gameplay IDs, 52 building models,
+  and 57 prior bundles. Three scoped amphibious attachment IDs isolate its art.
+- Adds final-bundle visual, rig, shader-control, source-equivalence and negative
+  checks. Native shared game infrastructure and audio are intentionally reused.
+- Implementation completion does not imply in-game acceptance, save migration,
+  independent testing, stable release, or publication.
+
+0.26.0a - Complete Building Artwork (unpublished)
+-------------------------------------------------
+
+- Adds original models for the remaining 48 buildings, completing all 52
+  mod-owned building prototypes. Vehicles, trains, transport structures, and
+  native Data Center shells keep their existing art.
+- Adds three reducing detail levels per new model, root selection colliders,
+  native lighting, retained product signs, translucent greenhouse roofs, and
+  native-state ventilation animations for poultry and Companion care.
+- Fixes the four earlier models' missing root colliders and the Planetary
+  Center's missing emission material found in the completed author log.
+- Preserves recipes, layouts, ports, costs, research, config, biological state,
+  Civic behavior, and legacy product/icon bundle bytes. Corrects only the
+  Nexus's obsolete description of recurring Packages.
+- Inherits reported Civic success and acceptance of the earlier model direction.
+  New-art visual feedback remains open; no persistence, general save-migration,
+  independent-test, or stable-release claim is made.
+
+0.25.0a - Island Reconstruction and Civic Knowledge (unpublished)
+----------------------------------------------------------------
+
+- Moves terrestrial Materials, Process, Essential, and Advanced portfolios to
+  Epoch III and removes redundant Program and Space gates. Direct recipes retain
+  native locks; source equipment and composed technologies remain prerequisites.
+- Keeps Nuclear at Epoch IV with Calibration. Moves Orbital Fabrication and
+  Integrated Crew Provisioning to Epoch IV so they do not delay terrestrial work.
+- Makes Adaptive and Circular Agrifood ordinary research after Essential Systems.
+- Adds Civic Knowledge Stream, Civic Model Center, Knowledge Commons, and one
+  optional research branch. The staffed service provides Unity only while supplied.
+- Adds four original world models and three civic icons with complete bundle
+  dependencies. Existing process vectors, layouts, Focus outputs, and native
+  behavior remain unchanged.
+- Preserves the exact 0.24.0a bridge archive and source snapshot. No migration,
+  stable-release, or completed in-game testing claim is made.
+
+0.24.0a - Epoch II reconstruction bridge (unpublished)
+------------------------------------------------------
+
+- Moves Industrial Control to Epoch II and removes its Space Research requirement.
+- Keeps Access Fiber and Backbone Fiber available together.
+- Moves lower capital fabrication to Epoch II and removes the separate 8/32-Program
+  research witnesses for electronics and capital. Robotic Assembly remains required.
+- Makes Federated Deployment ordinary research after Industrial Control, with no
+  extra Epoch gate. Its construction and material yields remain unchanged.
+- Keeps all five universal branches explicitly gated by Epoch V.
+- Preserves recipes, costs, operating envelopes, assets, native behavior, and the
+  corrected general Hauler. New campaigns only; no deployment or publication implied.
+
 0.23.0b - Fuel Station compatibility correction
 -------------------------------------------------
 

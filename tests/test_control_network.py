@@ -484,9 +484,9 @@ class ControlNetworkContractTests(unittest.TestCase):
         self.assertEqual(research["duration_months"], 360)
         self.assertEqual(
             research["parent_registration_id"],
-            "RecursiveIndustry_RecursiveEpochV",
+            "RecursiveIndustry_RecursiveEpochII",
         )
-        self.assertTrue(research["requires_space_points"])
+        self.assertFalse(research["requires_space_points"])
         self.assertEqual(research["child_branch_keys"], CATALOG["research_keys"])
         self.assertEqual(
             set(research["unlocks"]),
@@ -509,18 +509,17 @@ class ControlNetworkContractTests(unittest.TestCase):
             federated["parent_registration_id"],
             "RecursiveIndustry_IndustrialControlNetworks",
         )
-        self.assertTrue(federated["requires_space_points"])
+        self.assertFalse(federated["requires_space_points"])
         self.assertEqual(federated["additional_lifetime_requirements"], [])
         self.assertEqual(
             federated["transitive_campaign_gate"],
             {
-                "research_registration_id": "RecursiveIndustry_RecursiveEpochV",
+                "research_registration_id": "RecursiveIndustry_RecursiveEpochII",
                 "product_key": "FrontierProgram",
-                "quantity": 256,
+                "quantity": 4,
                 "reason": (
-                    "Industrial Control Networks already descends from Epoch V; "
-                    "repeating weaker lifetime conditions only blocks sandbox and "
-                    "migrated research states"
+                    "The Epoch II bridge makes deployment density optional after local control; "
+                    "construction still consumes its declared Programs and Dossiers"
                 ),
             },
         )

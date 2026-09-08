@@ -67,9 +67,8 @@ internal sealed class OrbitalIndustryData : IModData
             .SetComputingConsumption(Computing.FromTFlops(256))
             .SetCategories(Ids.ToolbarCategories.Production_General)
             .SetLayout(OrbitalMissionLayout.Create())
-            .SetPrefabPath(OrbitalMissionLayout.PrefabPath)
+            .SetPrefabPath(BuildingModelPaths.OrbitalMissionComplex)
             .SetCustomIconPath(RecursiveIndustryIcons.OrbitalMissionComplex)
-            .EnableSemiInstancedRendering()
             .BuildAndAdd();
 
         registrator.RecipeProtoBuilder

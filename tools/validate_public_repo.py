@@ -14,6 +14,10 @@ from urllib.parse import unquote
 
 from audit_recursive_industry_control_network import audit as audit_control_network
 from audit_recursive_industry_agrifood import audit as audit_agrifood
+from bundle_manifest import bundle_files
+from model_civic_knowledge import audit as audit_civic
+from audit_building_models import audit as audit_buildings, building_bundle_names
+from audit_world_art import audit as audit_world, names as world_bundle_names
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,16 +36,22 @@ REQUIRED_ROOT_FILES = {
 }
 REQUIRED_DATA = {
     "adaptive-agrifood.json",
+    "building-models.json",
+    "world-art.json",
+    "civic-knowledge.json",
     "industrial-control-network.json",
     "universal-industry-catalog.json",
 }
 REQUIRED_TOOLS = {
+    "audit_building_models.py",
+    "audit_world_art.py",
     "audit_recursive_industry_agrifood.py",
     "audit_recursive_industry_control_network.py",
     "audit_release_zip.py",
     "freeze_recursive_industry_ui_icons.py",
     "generate_recursive_industry_universal_source.py",
     "package_mod.py",
+    "model_reconstruction_bridge.py",
     "simulate_recursive_industry_economy.py",
     "validate_public_repo.py",
 }
@@ -59,13 +69,18 @@ REQUIRED_DOCS = {
     "DEVELOPMENT_WORKFLOW.md",
     "OPERATING_ENVELOPES.md",
     "PROGRESSION.md",
+    "RECONSTRUCTION.md",
     "PUBLISHING.md",
     "PLAYTESTING.md",
     "README.md",
     "ROADMAP.md",
     "VERIFICATION.md",
 }
-REQUIRED_BUNDLES = {"cartridge_c874", "producticons_84e1", "uiicons_5287"}
+REQUIRED_BUNDLES = {
+    "cartridge_c874", "producticons_84e1", "uiicons_5287", "reconstruction_9aa2",
+    "electronics_integration_196b", "civic_model_center_f408", "knowledge_commons_338d",
+    "planetary_coordination_center_e77f",
+}
 FORBIDDEN_PARTS = {
     "bin",
     "dist",
@@ -110,7 +125,7 @@ def png_dimensions(path: Path) -> tuple[int, int] | None:
 def repository_files(root: Path) -> list[Path]:
     try:
         result = subprocess.run(
-            ["git", "-C", str(root), "ls-files", "-z"],
+            ["git", "-C", str(root), "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
             check=False,
             capture_output=True,
         )
@@ -187,17 +202,22 @@ def validate_bundle_inventory(errors: list[str], root: Path) -> None:
     if not manifest_path.is_file():
         errors.append("mafi_bundles.manifest is missing")
         return
-    declared = {
-        line.strip()
-        for line in manifest_path.read_text(encoding="utf-8").splitlines()
-        if line.strip()
-    }
+    try:
+        declared = bundle_files(manifest_path.read_text(encoding="utf-8"))
+    except ValueError as exc:
+        errors.append(str(exc))
+        return
     actual = {
         path.name
         for path in bundle_root.iterdir()
         if path.is_file() and path.name != manifest_path.name
     }
-    if declared != REQUIRED_BUNDLES:
+    try:
+        required = REQUIRED_BUNDLES | building_bundle_names(root) | world_bundle_names(root)
+    except (OSError, ValueError, KeyError) as exc:
+        errors.append(f"building bundle inventory: {exc}")
+        required = REQUIRED_BUNDLES
+    if declared != required:
         errors.append(f"declared bundle inventory drift: {sorted(declared)}")
     if actual != declared:
         errors.append(
@@ -247,8 +267,8 @@ def validate_file_identity(
 
 def validate_asset_manifests(errors: list[str], root: Path) -> None:
     manifests = sorted((root / "art" / "RecursiveIndustry").rglob("asset-manifest.json"))
-    if len(manifests) != 3:
-        errors.append(f"expected three public asset manifests, found {len(manifests)}")
+    if len(manifests) != 6:
+        errors.append(f"expected six public asset manifests, found {len(manifests)}")
     for path in manifests:
         try:
             manifest = load_json(path)
@@ -351,9 +371,14 @@ def validate_ui_icon_contract(errors: list[str], root: Path) -> None:
 def validate_source_contract(errors: list[str], root: Path) -> None:
     source = root / "mods" / "RecursiveIndustry" / "src"
     files = sorted(source.glob("*.cs"))
-    if len(files) != 65:
-        errors.append(f"expected 65 C# source files, found {len(files)}")
     required = {
+        "BuildingModelPaths.g.cs",
+        "WorldModelPaths.cs",
+        "WorldAttachmentGraphics.cs",
+        "FiberGraphics.cs",
+        "ReconstructionResearchPrerequisites.cs",
+        "CivicKnowledgeData.cs",
+        "RecursiveIndustryIds.CivicKnowledge.cs",
         "DataProductProto.cs",
         "DeploymentAssuranceData.cs",
         "IndustrialControlGatewayData.cs",
@@ -500,6 +525,9 @@ def validate(root: Path = ROOT) -> list[str]:
         f"Adaptive Agrifood: {error}"
         for error in audit_agrifood(root)
     )
+    errors.extend(f"Civic Knowledge: {error}" for error in audit_civic(root))
+    errors.extend(f"Building artwork: {error}" for error in audit_buildings(root))
+    errors.extend(f"World artwork: {error}" for error in audit_world(root))
     validate_markdown_links(errors, root, files)
 
     notice = (root / "NOTICE.md").read_text(encoding="utf-8") if (root / "NOTICE.md").is_file() else ""
@@ -524,7 +552,7 @@ def main() -> int:
         return 1
     print(
         "Recursive Industry public repository: PASS "
-        "(65 source files, 25 facilities, 231 Direct bindings, 2 adaptive farms, 3 bundles)"
+        "(required source inventory, 25 facilities, 231 Direct bindings, 2 adaptive farms, declared bundles)"
     )
     return 0
 

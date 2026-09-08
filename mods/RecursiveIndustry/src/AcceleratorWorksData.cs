@@ -33,10 +33,9 @@ internal sealed class AcceleratorWorksData : IModData
             .SetElectricityConsumption(500.Kw())
             .SetCategories(Ids.ToolbarCategories.Production_General)
             .SetLayout(layout)
-            .SetPrefabPath("Assets/Base/Machines/Assembly/AssemblyT5.prefab")
+            .SetPrefabPath(BuildingModelPaths.AcceleratorWorks)
             .SetCustomIconPath(RecursiveIndustryIcons.AcceleratorWorks)
             .SetMachineSound("Assets/Base/Machines/Assembly/AssemblyT4/AssemblerSound.prefab")
-            .EnableSemiInstancedRendering(ImmutableArray.Create("sign"))
             .AddSign()
             .BuildAndAdd();
 

@@ -40,15 +40,15 @@ class AutonomousHaulerCompatibilityTests(unittest.TestCase):
         self.assertIn("new FlatBedAttachmentProto(", self.general)
         self.assertIn("new DumpAttachmentProto(", self.general)
         self.assertIn(
-            '"Assets/Base/Vehicles/ModularTruck/T2-tank.prefab"',
+            'WorldModelPaths.Root + "hauler_tank.prefab"',
             self.general,
         )
         self.assertIn(
-            '"Assets/Base/Vehicles/ModularTruck/Truck_Flat.prefab"',
+            'WorldModelPaths.Root + "hauler_flatbed.prefab"',
             self.general,
         )
         self.assertIn(
-            '"Assets/Base/Vehicles/ModularTruck/Truck_Dump.prefab"',
+            'WorldModelPaths.Root + "hauler_dump.prefab"',
             self.general,
         )
 

@@ -594,6 +594,25 @@ def audit_universal_source(text: str, generated_catalog: str) -> list[str]:
     return errors
 
 
+def research_registration(text: str, variable: str) -> str:
+    match = re.search(
+        rf"ResearchNodeProto\s+{re.escape(variable)}\s*=.*?\.BuildAndAdd\(\);",
+        text,
+        re.DOTALL,
+    )
+    if match is None:
+        raise ValueError(f"Missing research registration: {variable}")
+    return match.group()
+
+
+def research_direct_parents(text: str, variable: str) -> set[str]:
+    code = re.sub(r"/\*.*?\*/|//[^\n]*", "", text, flags=re.DOTALL)
+    return set(re.findall(
+        rf"(?m)^\s*{re.escape(variable)}\.AddParent\(\s*(\w+)\s*\);",
+        code,
+    ))
+
+
 def audit_research_source(text: str) -> list[str]:
     errors: list[str] = []
     require_tokens(
@@ -605,7 +624,7 @@ def audit_research_source(text: str) -> list[str]:
             "RecursiveIndustryIds.Research.IndustrialControlNetworks",
             "costMonths: 360",
             "industrialControl.GridPosition = new Vector2i(212, 24)",
-            "industrialControl.AddParent(recursiveEpochV)",
+            "industrialControl.AddParent(recursiveEpochII)",
             ".AddProductToUnlock(RecursiveIndustryIds.Products.IndustrialControlStream)",
             ".AddMachineToUnlock(",
             "RecursiveIndustryIds.Machines.ControlDeploymentGateway",
@@ -617,7 +636,6 @@ def audit_research_source(text: str) -> list[str]:
             ".AddProtoToUnlock<TransportProto>(RecursiveIndustryIds.Infrastructure.AccessFiber)",
             ".AddProtoToUnlock<TransportProto>(RecursiveIndustryIds.Infrastructure.BackboneFiber)",
             ".AddLayoutEntityToUnlock(RecursiveIndustryIds.Infrastructure.FiberJunction)",
-            ".SetRequireSpacePoints()",
             '"Federated Deployment"',
             "RecursiveIndustryIds.Research.FederatedDeployment",
             "costMonths: 480",
@@ -646,13 +664,38 @@ def audit_research_source(text: str) -> list[str]:
         errors.append(
             "Federated Deployment must not duplicate Epoch V lifetime requirements"
         )
-    if text.count(".AddParent(industrialControl)") != 6:
+    if text.count(".AddParent(industrialControl)") != 1:
         errors.append(
-            "Federated Deployment and all five universal branches must parent Industrial Control Networks"
+            "Only Federated Deployment directly parents Industrial Control; Direct portfolios remain independent"
         )
-    branch_section = text[text.find("ResearchNodeProto materials") :]
-    if ".AddParent(recursiveEpochV)" in branch_section:
-        errors.append("universal research branches must not parent Recursive Epoch V directly")
+    expected_parents = {
+        "industrialControl": {"recursiveEpochII"},
+        "federatedDeployment": {"industrialControl"},
+        **{
+            variable: {"recursiveEpochIII"}
+            for variable in ("materials", "process", "essential", "advanced")
+        },
+        "nuclear": {"recursiveEpochIV"},
+    }
+    for variable, parents in expected_parents.items():
+        if research_direct_parents(text, variable) != parents:
+            errors.append(f"{variable} bridge parent contract drift")
+        try:
+            block = research_registration(text, variable)
+        except ValueError as exc:
+            errors.append(str(exc))
+            continue
+        requires_space = ".SetRequireSpacePoints()" in block
+        if requires_space != (variable == "nuclear"):
+            errors.append(f"{variable} Space Research contract drift")
+        if variable in ("materials", "process", "essential", "advanced", "nuclear"):
+            if "Products.FrontierProgram" in block:
+                errors.append(f"{variable} must not add a redundant Program gate")
+            for call in re.findall(r"\.AddMachineToUnlock\((.*?)\)", block, re.DOTALL):
+                if "unlockAllRecipes: false" not in call:
+                    errors.append(f"{variable} must explicitly retain native recipe locks")
+    if "Machines.OrbitalFabricationFab" in research_registration(text, "advanced"):
+        errors.append("Terrestrial advanced manufacturing must not unlock orbital fabrication")
     return errors
 
 
@@ -775,7 +818,18 @@ def audit_legacy_research_source(text: str) -> list[str]:
         require_tokens(errors, label, section, required)
         for token in forbidden:
             if token in section:
-                errors.append(f"{label} must not unlock late Stream recipe {token}")
+                errors.append(f"{label} must not bypass Industrial Control for {token}")
+        if "AddRequirementForLifetimeProduction" in section:
+            errors.append(f"{label} must not add a duplicate Program witness")
+        if "Ids.Research.RoboticAssembly" not in section:
+            errors.append(f"{label} must preserve native Robotic Assembly")
+    for variable in ("autonomousElectronicsIntegration", "autonomousCapitalFabrication"):
+        if research_direct_parents(text, variable) != {"recursiveEpochII"}:
+            errors.append(f"{variable} must parent Epoch II")
+    if "UniversalIndustryResearchData.Register(registrator, recursiveEpochII, recursiveEpochIII, recursiveEpochIV)" not in text:
+        errors.append("Universal research must receive the exact Epoch II, III, and IV nodes")
+    if "Machines.OrbitalFabricationFab" not in research_registration(text, "recursiveEpochIV"):
+        errors.append("Orbital fabrication must unlock with Epoch IV")
     return errors
 
 
@@ -862,6 +916,15 @@ def audit(root: Path = ROOT) -> list[str]:
     errors.extend(audit_physical_recipe_semantics(source_files))
 
     manifest = load_json(root / "mods" / "RecursiveIndustry" / "manifest.json")
+    if control.get("candidate_version") != manifest.get("version"):
+        errors.append("control authority and manifest versions differ")
+    for key, parent in (
+        ("research", "RecursiveIndustry_RecursiveEpochII"),
+        ("federated_deployment", "RecursiveIndustry_IndustrialControlNetworks"),
+    ):
+        row = control[key]
+        if row["parent_registration_id"] != parent or row["requires_space_points"]:
+            errors.append(f"{key} bridge authority drift")
     dependencies = manifest.get("mod_dependencies", []) + manifest.get(
         "optional_mod_dependencies", []
     )

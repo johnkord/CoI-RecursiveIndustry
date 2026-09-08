@@ -175,11 +175,12 @@ def audit(root: Path = ROOT) -> list[str]:
                 "RecursiveIndustryIds.Farms.MonitoredPoultryFarm",
                 "RecursiveIndustryIds.Focuses.PrecisionIrrigation",
                 "adaptiveAgrifood.GridPosition=newVector2i(224,18)",
-                ".SetRequireSpacePoints()",
             ),
         )
         if "AddRequirementForLifetimeProduction" in section:
             errors.append("Adaptive Agrifood must not duplicate its parent lifetime gate")
+        if ".SetRequireSpacePoints()" in section or contract["research"]["requires_space_points"]:
+            errors.append("Adaptive Agrifood must use ordinary research after terrestrial reconstruction")
 
     all_source = "\n".join(
         path.read_text(encoding="utf-8")

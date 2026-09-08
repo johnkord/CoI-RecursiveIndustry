@@ -6,6 +6,78 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### 0.27.0a Complete World Artwork Candidate
+
+- Complete original Fiber profiles, connected/closed ports, junction, mount,
+  vertical connector, and Access/Backbone flow hardware through the native renderer.
+- Add six original later cargo models with complete PBR maps and all five LODs,
+  and three installed accelerator-rack cabinets with native panel controls.
+- Add original models for all eight autonomous vehicles, eight tank/flatbed/dump
+  attachments, and seventeen locomotive/tender/nuclear-consist models. Preserve
+  native working states, wheel/track/coupler controls, load signs, fill levels,
+  headlights, and numbered train signs. Controllers are present only where native
+  graphics require them.
+- Preserve every gameplay/config value, existing gameplay ID, all 52 building models,
+  and all 57 prior bundles. Isolate amphibious graphics in three mod-owned attachment
+  IDs without changing eligibility, order, offsets, or empty-load selection.
+- Add final-bundle rig/motion checks, composed-load previews, native shader-control
+  pixel pairs, real-MaFi graphics policy checks under Unity, and negative-case audits.
+- Reconcile the current roadmap. No new optional gameplay, migration promise,
+  in-game performance claim, independent result, or public release is implied.
+
+### 0.26.0a Complete Building Artwork Candidate
+
+- Add original models for the remaining 48 buildings, completing all 52 mod-owned
+  building prototypes. Give industrial families recognizable equipment and office
+  tiers distinct silhouettes; retain the four accepted reconstruction models.
+- Add three reducing LODs per new model, root selection colliders, native emission
+  materials, product-sign shaders, translucent greenhouse roofing, and native-state
+  ventilation animations for poultry and Companion care.
+- Fix missing root colliders on the four reconstruction models and the Planetary
+  Center's missing native emission material, found in the completed author log.
+- Preserve layouts, ports, recipes, operating values, research, Civic behavior,
+  biological state, and the legacy icon/product bundles. Correct the Nexus's stale
+  description of recurring Packages without changing its recipes.
+- Add final-bundle preview rendering, coverage and mutation checks, reproducible
+  source assets, and full-model contact sheets. Vehicles, trains, transport art,
+  and native Data Center shells remain outside this building-art batch.
+- Author feedback accepts the earlier model direction and reports successful Civic
+  use. This successor does not claim fresh runtime, persistence, general migration,
+  or stable-release evidence from that report.
+
+### 0.25.0a Island Reconstruction Candidate
+
+- Move four terrestrial universal portfolios to Epoch III, keeping native Direct
+  recipe locks and deriving equipment/composition prerequisites from native research.
+- Keep nuclear operations at Epoch IV with Calibration. Move orbital fabrication
+  and Integrated Crew Provisioning to Epoch IV; the latter no longer pulls a
+  crewed-station prerequisite into Essential Systems.
+- Remove mod-added Space Research requirements from Adaptive and Circular Agrifood.
+- Add the optional Civic Knowledge service: a staffed Model Center, separate Data
+  stream, and Knowledge Commons giving supplied Unity, not Health or productivity.
+- Add four original world models and three civic icons. Preserve legacy bundle
+  bytes, all existing process economics and layouts, and the corrected general Hauler.
+- Add dependency-aware bundle validation, civic capacity/support models, and
+  source checks. This unpublished candidate targets a single integrated author
+  test on a new world; it is not a supported migration or stable release.
+
+### 0.24.0a Reconstruction Bridge Candidate
+
+- Bring Industrial Control Networks into Epoch II with ordinary Research Points,
+  preserving both Fiber tiers and the three existing early compositions.
+- Move Autonomous Capital Fabrication to Epoch II. Remove the additional 8/32
+  lifetime-Program research conditions for electronics and capital while retaining
+  Robotic Assembly and all construction costs.
+- Remove Federated Deployment's Space Research requirement without adding another
+  Epoch gate. Bulk assurance and dense Gateway operation retain their exact yields.
+- Protect all five universal branches with explicit Epoch V parents so moving
+  Industrial Control does not advance the rest of the campaign.
+- Add source-bound regression and mutation checks, an exact conversion model,
+  and a player reconstruction guide. Recipes, quantities, durations, operating
+  envelopes, assets, and the general Hauler repair remain unchanged.
+- This is an unpublished new-campaign successor, not a replacement for any
+  frozen archive or evidence of runtime, migration, or stable-release readiness.
+
 ## [0.23.0b] - 2026-08-27
 
 ### Fixed

@@ -1,0 +1,180 @@
+{
+    "schema_version": 1,
+    "bundle_name": "reconstruction_9aa2",
+    "bundle": {
+        "path": "mods/RecursiveIndustry/AssetBundles/reconstruction_9aa2",
+        "size_bytes": 112553,
+        "sha256": "98712E9129B20E89D4840AA15CB86D34350D4768F170953584AEEAC6319EC61F"
+    },
+    "bundles": [
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/reconstruction_9aa2",
+            "size_bytes": 112553,
+            "sha256": "98712E9129B20E89D4840AA15CB86D34350D4768F170953584AEEAC6319EC61F"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/electronics_integration_196b",
+            "size_bytes": 4029,
+            "sha256": "CDBA569FAF5A42322CB5C57AF8C07C895E92E8A6DC68368F3C2D43B39317BA1E"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/civic_model_center_f408",
+            "size_bytes": 4010,
+            "sha256": "493A8AA624ACE70A13B01F72A76D73196C3919E5D2373AD21AFC2E9ECCD1BEAA"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/knowledge_commons_338d",
+            "size_bytes": 4008,
+            "sha256": "682AB04B45C89AC9E91DFC1AAE02B9F661F4123A78526C42D9341A85F1F9104E"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/planetary_coordination_center_e77f",
+            "size_bytes": 4169,
+            "sha256": "55CBF86374ABFBFC1155B29792B8F0800986E64F417AEAE868577147803C6D05"
+        }
+    ],
+    "dependencies": [],
+    "asset_paths": [
+        "assets/recursiveindustry/reconstruction/civic.mat",
+        "assets/recursiveindustry/reconstruction/civic_knowledge_stream.png",
+        "assets/recursiveindustry/reconstruction/civic_model_center.png",
+        "assets/recursiveindustry/reconstruction/civic_model_center.prefab",
+        "assets/recursiveindustry/reconstruction/civic_model_center_civic.asset",
+        "assets/recursiveindustry/reconstruction/civic_model_center_concrete.asset",
+        "assets/recursiveindustry/reconstruction/civic_model_center_frame.asset",
+        "assets/recursiveindustry/reconstruction/civic_model_center_glass.asset",
+        "assets/recursiveindustry/reconstruction/civic_model_center_roof.asset",
+        "assets/recursiveindustry/reconstruction/civic_model_center_safety.asset",
+        "assets/recursiveindustry/reconstruction/concrete.mat",
+        "assets/recursiveindustry/reconstruction/electronics_integration.prefab",
+        "assets/recursiveindustry/reconstruction/electronics_integration_civic.asset",
+        "assets/recursiveindustry/reconstruction/electronics_integration_concrete.asset",
+        "assets/recursiveindustry/reconstruction/electronics_integration_frame.asset",
+        "assets/recursiveindustry/reconstruction/electronics_integration_glass.asset",
+        "assets/recursiveindustry/reconstruction/electronics_integration_roof.asset",
+        "assets/recursiveindustry/reconstruction/electronics_integration_safety.asset",
+        "assets/recursiveindustry/reconstruction/frame.mat",
+        "assets/recursiveindustry/reconstruction/glass.mat",
+        "assets/recursiveindustry/reconstruction/industrialsurface.shader",
+        "assets/recursiveindustry/reconstruction/knowledge_commons.png",
+        "assets/recursiveindustry/reconstruction/knowledge_commons.prefab",
+        "assets/recursiveindustry/reconstruction/knowledge_commons_civic.asset",
+        "assets/recursiveindustry/reconstruction/knowledge_commons_concrete.asset",
+        "assets/recursiveindustry/reconstruction/knowledge_commons_glass.asset",
+        "assets/recursiveindustry/reconstruction/knowledge_commons_planting.asset",
+        "assets/recursiveindustry/reconstruction/knowledge_commons_roof.asset",
+        "assets/recursiveindustry/reconstruction/knowledge_commons_timber.asset",
+        "assets/recursiveindustry/reconstruction/planetary_coordination_center.prefab",
+        "assets/recursiveindustry/reconstruction/planetary_coordination_center_civic.asset",
+        "assets/recursiveindustry/reconstruction/planetary_coordination_center_concrete.asset",
+        "assets/recursiveindustry/reconstruction/planetary_coordination_center_frame.asset",
+        "assets/recursiveindustry/reconstruction/planetary_coordination_center_glass.asset",
+        "assets/recursiveindustry/reconstruction/planetary_coordination_center_planting.asset",
+        "assets/recursiveindustry/reconstruction/planetary_coordination_center_roof.asset",
+        "assets/recursiveindustry/reconstruction/planetary_coordination_center_safety.asset",
+        "assets/recursiveindustry/reconstruction/planting.mat",
+        "assets/recursiveindustry/reconstruction/roof.mat",
+        "assets/recursiveindustry/reconstruction/safety.mat",
+        "assets/recursiveindustry/reconstruction/timber.mat"
+    ],
+    "models": [
+        {
+            "name": "electronics_integration",
+            "asset_path": "Assets/RecursiveIndustry/Reconstruction/electronics_integration.prefab",
+            "center": [
+                0.0,
+                2.3500003814697267,
+                0.27499985694885256
+            ],
+            "size": [
+                13.600000381469727,
+                4.700000762939453,
+                6.449999809265137
+            ],
+            "vertices": 776,
+            "triangles": 372,
+            "renderer_count": 6,
+            "root_collider": true,
+            "emissive_renderers": 1,
+            "preview_path": "art/RecursiveIndustry/Reconstruction/previews/electronics_integration.png"
+        },
+        {
+            "name": "civic_model_center",
+            "asset_path": "Assets/RecursiveIndustry/Reconstruction/civic_model_center.prefab",
+            "center": [
+                0.0,
+                3.1500000953674318,
+                0.0
+            ],
+            "size": [
+                11.699999809265137,
+                6.300000190734863,
+                9.699999809265137
+            ],
+            "vertices": 640,
+            "triangles": 312,
+            "renderer_count": 6,
+            "root_collider": true,
+            "emissive_renderers": 1,
+            "preview_path": "art/RecursiveIndustry/Reconstruction/previews/civic_model_center.png"
+        },
+        {
+            "name": "knowledge_commons",
+            "asset_path": "Assets/RecursiveIndustry/Reconstruction/knowledge_commons.prefab",
+            "center": [
+                0.0,
+                2.8125,
+                0.0
+            ],
+            "size": [
+                21.5,
+                5.625,
+                13.5
+            ],
+            "vertices": 744,
+            "triangles": 372,
+            "renderer_count": 6,
+            "root_collider": true,
+            "emissive_renderers": 1,
+            "preview_path": "art/RecursiveIndustry/Reconstruction/previews/knowledge_commons.png"
+        },
+        {
+            "name": "planetary_coordination_center",
+            "asset_path": "Assets/RecursiveIndustry/Reconstruction/planetary_coordination_center.prefab",
+            "center": [
+                0.0,
+                14.375,
+                0.0
+            ],
+            "size": [
+                68.0,
+                28.75,
+                27.5
+            ],
+            "vertices": 2568,
+            "triangles": 1284,
+            "renderer_count": 7,
+            "root_collider": true,
+            "emissive_renderers": 1,
+            "preview_path": "art/RecursiveIndustry/Reconstruction/previews/planetary_coordination_center.png"
+        }
+    ],
+    "icons": [
+        {
+            "path": "art/RecursiveIndustry/Reconstruction/icons/civic_knowledge_stream.png",
+            "size_bytes": 8173,
+            "sha256": "5634A2DF0CBB24484DEF187B8E4EFF3C8C9648E28E6ABB17B8C00023CB3622DE"
+        },
+        {
+            "path": "art/RecursiveIndustry/Reconstruction/icons/civic_model_center.png",
+            "size_bytes": 8101,
+            "sha256": "1C7F75EC6884CF6B17C2FD6AC1B515283C8D9935E5A4B6996F915BE747BA9676"
+        },
+        {
+            "path": "art/RecursiveIndustry/Reconstruction/icons/knowledge_commons.png",
+            "size_bytes": 8221,
+            "sha256": "D054C88990A9B636F02719CBDBFF9E4C99ABEC03B2902025A008D3E1E5F29CB3"
+        }
+    ],
+    "origin": "Original procedural geometry, shader, and bitmap icons; no game assets included."
+}

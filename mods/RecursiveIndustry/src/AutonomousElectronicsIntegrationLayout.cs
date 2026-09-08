@@ -2,7 +2,7 @@ namespace RecursiveIndustry;
 
 internal static class AutonomousElectronicsIntegrationLayout
 {
-    public const string PrefabPath = AutonomousMicrochipLayout.PrefabPath;
+    public const string PrefabPath = "Assets/RecursiveIndustry/Reconstruction/electronics_integration.prefab";
 
     public static string[] Create()
     {

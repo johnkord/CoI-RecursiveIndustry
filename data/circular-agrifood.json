@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "candidate_version": "0.23.0b",
+  "candidate_version": "0.27.0a",
   "predecessor": "0.21.0d",
   "game": {
     "display_version": "0.8.7a",
@@ -20,7 +20,7 @@
     "position": [228, 18],
     "duration_months": 480,
     "parent": "RecursiveIndustry_AdaptiveAgrifoodSystems",
-    "requires_space_points": true,
+    "requires_space_points": false,
     "additional_lifetime_requirements": [],
     "unlocks": [
       "RecursiveIndustry_CompanionProvisions",

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "candidate_version": "0.23.0b",
+  "candidate_version": "0.27.0a",
   "game": {
     "display_version": "0.8.7a",
     "build": 614
@@ -803,8 +803,8 @@
       "y": 24
     },
     "duration_months": 360,
-    "parent_registration_id": "RecursiveIndustry_RecursiveEpochV",
-    "requires_space_points": true,
+    "parent_registration_id": "RecursiveIndustry_RecursiveEpochII",
+    "requires_space_points": false,
     "unlocks": [
       "RecursiveIndustry_IndustrialControlStream",
       "RecursiveIndustry_ControlDeploymentGateway",
@@ -833,13 +833,13 @@
     },
     "duration_months": 480,
     "parent_registration_id": "RecursiveIndustry_IndustrialControlNetworks",
-    "requires_space_points": true,
+    "requires_space_points": false,
     "additional_lifetime_requirements": [],
     "transitive_campaign_gate": {
-      "research_registration_id": "RecursiveIndustry_RecursiveEpochV",
+      "research_registration_id": "RecursiveIndustry_RecursiveEpochII",
       "product_key": "FrontierProgram",
-      "quantity": 256,
-      "reason": "Industrial Control Networks already descends from Epoch V; repeating weaker lifetime conditions only blocks sandbox and migrated research states"
+      "quantity": 4,
+      "reason": "The Epoch II bridge makes deployment density optional after local control; construction still consumes its declared Programs and Dossiers"
     },
     "unlocks": [
       "RecursiveIndustry_DeploymentAssuranceCampus",

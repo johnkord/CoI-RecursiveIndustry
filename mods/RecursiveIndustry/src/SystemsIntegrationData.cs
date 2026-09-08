@@ -23,10 +23,9 @@ internal sealed class SystemsIntegrationData : IModData
             .SetComputingConsumption(Computing.FromTFlops(128))
             .SetCategories(Ids.ToolbarCategories.Production_General)
             .SetLayout(SystemsIntegrationLayout.Create())
-            .SetPrefabPath(SystemsIntegrationLayout.PrefabPath)
+            .SetPrefabPath(BuildingModelPaths.SystemsIntegrationComplex)
             .SetCustomIconPath(RecursiveIndustryIcons.SystemsIntegrationComplex)
             .SetMachineSound(SystemsIntegrationLayout.SoundPath)
-            .EnableSemiInstancedRendering(ImmutableArray.Create("sign"))
             .AddSign()
             .BuildAndAdd();
 

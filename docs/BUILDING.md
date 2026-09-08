@@ -78,7 +78,8 @@ The deterministic package is written under `dist/` and contains one
 - `readme.txt`;
 - `changelog.txt`;
 - `RecursiveIndustry.dll`; and
-- the three runtime bundles plus `mafi_bundles.manifest`.
+- the three unchanged legacy bundles, five reconstruction bundles, and the
+  generated `mafi_bundles.manifest` including prefab dependencies.
 
 PDB files are excluded unless packaging explicitly requests symbols. Game and
 engine DLL names are rejected.
@@ -92,3 +93,27 @@ archive on a fresh world, exit normally, and inspect the complete game log.
 A source, manifest, readme, DLL, config, or bundle change produces a new archive
 identity and requires a new version. Never overwrite an archive already used for
 testing or distribution.
+
+## Reconstruction Assets and Policies
+
+Original reconstruction models, shader, icons, and import metadata are under
+`art/RecursiveIndustry/Reconstruction`. With the external Unity project configured:
+
+```powershell
+./tools/build_reconstruction_assets.ps1
+dotnet build tests/Reconstruction.Policy/Reconstruction.Policy.csproj -c Release
+./tests/Reconstruction.Policy/bin/Release/Reconstruction.Policy.exe
+python tools/model_civic_knowledge.py --population 1000
+```
+
+The policy fixtures link the production prerequisite algorithm to small native-data
+stand-ins. They do not run the game. The asset builder creates original geometry,
+renders nonblank previews, and verifies final prefab dependencies. In-game
+rendering and the new Data-backed settlement integration still need the prepared
+integrated candidate test.
+
+## Sources
+
+- [Public validation tool](../tools/validate_public_repo.py).
+- [Asset build tool](../tools/build_reconstruction_assets.ps1).
+- [Build project](../mods/RecursiveIndustry/RecursiveIndustry.csproj).

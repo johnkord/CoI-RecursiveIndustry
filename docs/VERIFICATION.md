@@ -3,6 +3,30 @@
 Recursive Industry uses automation first, then reserves human play for claims
 that code and arithmetic cannot establish.
 
+## Current Candidate
+
+The unpublished 0.27.0a source completes the selected reconstruction gameplay and
+the remaining mod-specific world artwork. All 52 building models are retained;
+55 original cargo, rack, Fiber-hardware, vehicle, attachment, and train prefabs
+plus two Fiber cross-sections replace the remaining compatible borrowed models.
+The author's reported Civic success and acceptance of the earlier model direction
+are inherited only for what was observed. No full Civic or native-mechanics replay
+is required for this art-only successor.
+
+Current source validation covers 231 Direct bindings, the retained 21+3 controlled
+compositions and ten Precision rows, native source-research prerequisites, civic
+capacity and exact ports, 91 legacy icons plus three civic icons, and dependency-
+aware packaging of 113 player bundles. The 57 pre-existing bundles remain byte-
+identical. Offline Unity checks load every new prefab and imported cargo mesh,
+validate native rig states, sample animations, and render nonblank model/assembly
+previews. Native number, track, and headlight controls produce distinct image pairs.
+Compiled production graphics policies run against MaFi inside the matching Unity
+runtime. The archived-source guard rejects unrelated gameplay changes.
+
+Implementation and offline asset coverage are separate from in-game visual
+preference, measured performance, save migration, and independent release judgment.
+See [Complete World Artwork](WORLD_ART.md) for the exact inventory and commands.
+
 ## Public offline checks
 
 `python tools/validate_public_repo.py` verifies:
@@ -14,7 +38,8 @@ that code and arithmetic cannot establish.
 - checked-in generated catalog sentinels;
 - the schema-1 Industrial Control authority, exact source declarations, and
   negative fixtures; and
-- 85 UI identities, bundle paths, hashes, dependencies, and compact-size proofs.
+- 91 legacy UI identities plus three civic identities, original building/world
+  assets, bundle paths, hashes, dependencies, and compact-size proofs.
 
 `python tools/audit_recursive_industry_agrifood.py` checks the five-step farm-water
 Focus, exact native farm-family constructor copying, four-worker floor, added
@@ -28,7 +53,7 @@ research ownership, cycle guards, excluded automatic behavior, and both new UI
 identities.
 
 `python tools/audit_recursive_industry_control_network.py` independently checks
-235 Direct bindings, 21 generated plus 3 authored controlled compositions, 10
+231 Direct bindings, 21 generated plus 3 authored controlled compositions, 10
 Fiber-free Precision modes, eleven Data-port owners, both Gateway rows, the
 separate Assurance Campus, Package-free physical manufacturing, Fiber
 declarations, registration order, research parenting, exact yield parity, and
@@ -41,7 +66,7 @@ Water/CO2/Exhaust/Water residuals, and 200/300/400% power declarations.
 `python tools/package_mod.py mods/RecursiveIndustry` creates a deterministic ZIP
 with one `RecursiveIndustry/` root and refuses to include game or engine DLLs.
 
-## Game-bound checks
+## Historical Evidence
 
 A complete candidate is built on Windows against the installed game assemblies
 and checked for:
@@ -122,12 +147,12 @@ remain for author runtime evidence.
 
 ## Remaining before stable 1.0
 
-- One clean 0.22.0c fresh-world startup, Unlock All Research action, normal exit,
-  and strict full-log audit.
+- Ordinary visual and completed-log observations for the current art candidate,
+  scoped to models actually seen and without replaying unchanged mechanics.
 - Resolution of demonstrated gameplay, balance, copy, presentation, or
   compatibility findings.
 - Independent uncoached campaigns on one exact frozen archive.
-- Final clean-install, hash, compatibility, and Hub-hosted smoke checks.
+- Source commit freeze and final publication checks on the exact verified archive.
 
 Ordinary reports from the public pre-release are useful for defect discovery but
 do not automatically count as independent, uncoached final-candidate evidence.

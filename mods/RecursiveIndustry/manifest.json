@@ -1,9 +1,9 @@
 {
   "id": "RecursiveIndustry",
-  "version": "0.23.0b",
+  "version": "0.27.0a",
   "display_name": "Recursive Industry",
   "description_short": "Endgame AI infrastructure, Recursive Epochs, and universal industry.",
-  "description_long": "Build a physical endgame AI economy, deploy local or Backbone-rate control over Data-only Fiber, transform logistics and twenty-five process-scaled specialist facilities, extend native biological production, and turn agrifood coproducts into synthetic ingredients or optional companion-animal care.",
+  "description_long": "Rebuild a mature island around physical AI infrastructure. Integrate electronics and capital from Epoch II, reconstruct terrestrial industries from Epoch III, and invest in Civic Knowledge through a staffed Fiber-connected settlement service. Native source technologies, material costs, power, maintenance, and deliberate construction remain, with original landmark models and later orbital specialization.",
   "authors": "John Kordich",
   "links": [ "https://github.com/johnkord/CoI-RecursiveIndustry" ],
   "primary_dlls": [ "RecursiveIndustry.dll" ],

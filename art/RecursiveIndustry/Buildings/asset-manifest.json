@@ -1,0 +1,3087 @@
+{
+    "schema_version": 1,
+    "new_model_count": 48,
+    "total_building_count": 52,
+    "catalog": {
+        "path": "data/building-models.json",
+        "size_bytes": 8205,
+        "sha256": "263C23C662F0B92109E999DDB7DF2DF0912FE8D2903111D98FDFF5B9AF17E6BD"
+    },
+    "generator": {
+        "path": "art/RecursiveIndustry/Buildings/Editor/AllBuildingAssets.cs",
+        "size_bytes": 48067,
+        "sha256": "45D1536A65D3B39B2D0B1A2BF6B8F43C71712882BAC9227A88F8821D8401F355"
+    },
+    "bundles": [
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/buildings_cfa7",
+            "size_bytes": 1181804,
+            "sha256": "6ACD55498279267A97910E392727A4C124AC8A5D25F8E5B8CFD86EADAFD85216"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/accelerator_works_15b4",
+            "size_bytes": 4519,
+            "sha256": "CE954665D7585B5ED7F79A3501E05926D8409A29AB2182AAF8C5FAE3764DE130"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/curation_office_9716",
+            "size_bytes": 4530,
+            "sha256": "4B0F744FD26C01261D5E1E4315A10EA7EDE6CB5896CA30BD780AD8BD8F836AAE"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/model_development_center_610a",
+            "size_bytes": 4558,
+            "sha256": "0451F5D0D2B3E9CF5ED47F8E5DCA653C10DCAC6A4EE0EBA434024F06358E9F8F"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/ai_electronics_cell_0521",
+            "size_bytes": 4561,
+            "sha256": "137A93D3FB25549B427EE3EB0D7A1D930EA8388A3C666CD1062D7D6974AE556B"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/electronics_reclaimer_1a6d",
+            "size_bytes": 4536,
+            "sha256": "5E541076E807E5FC036EA3D14A4B197BDC5F08631278E2AA23C73C09CDD435A0"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/ai_science_institute_6e35",
+            "size_bytes": 4548,
+            "sha256": "311AC20AC03F347408B501A57BE1378FB87C8BE76AD6EC9B18A9C043D0A3AADC"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/pilot_science_complex_3b0b",
+            "size_bytes": 4545,
+            "sha256": "06266C5EE90F16A730C772E3E0AB08F52A3AE0A403843C435A16E21A5DE4714F"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/systems_integration_complex_c466",
+            "size_bytes": 4535,
+            "sha256": "AC0F27F7D3658A224AC3886A10F1B4DB7E15364B1202F579D28AE626AD1E9911"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/control_deployment_gateway_47f5",
+            "size_bytes": 4416,
+            "sha256": "98F03822B373ED0B4633B60F08EAF561FD029458EC64CE5F22734B98F785286C"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/deployment_assurance_campus_ffbf",
+            "size_bytes": 4416,
+            "sha256": "22207069F2D06B21E6E0921F26A5B9EA2C6BF46338C645B9D53C273F39226189"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/autonomous_microchip_complex_f696",
+            "size_bytes": 4408,
+            "sha256": "E01DDBB7EECFD02F19162CCCC9CCE417F3E779A9C80E1C394A6F7554125F078B"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/capital_fabrication_matrix_6d59",
+            "size_bytes": 4542,
+            "sha256": "E21219969D1C22F4027BAD7B014F3634801E20BC4A6E26EC3BEB6D438173F4E6"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/orbital_mission_complex_ed58",
+            "size_bytes": 4387,
+            "sha256": "C923C2AC6D13369E71A7D881CDA4E71EBEA06E40A604DD227F83D0D911FF0354"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/frontier_project_complex_7708",
+            "size_bytes": 4567,
+            "sha256": "C2411268D0E66C13361F6BA5B6EE551C9BC8E5D6114AEF3B74856950FB5FB9BB"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/recursive_integration_array_9a08",
+            "size_bytes": 4518,
+            "sha256": "C1A9CECC1CB9C37E14E27269F24EFB41DD11176C64F5F24D6EDF5F7456A9E26E"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/autonomous_construction_nexus_1745",
+            "size_bytes": 4523,
+            "sha256": "A3A95C002C15453303F2A5C5C97BB0907496A69E4A1EF05A32B3AA59D58CD0FE"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/ai_operations_i_9b8a",
+            "size_bytes": 4378,
+            "sha256": "7C03CA6A374ECB0EB0EAB90F9DB7BA57EF48642715E07DB48F25A1C236772123"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/ai_operations_ii_f0db",
+            "size_bytes": 4391,
+            "sha256": "63537BA567E99E67AE46B2B77563C6B111857356E1906DE164EC5C347D86ADD3"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/ai_operations_iii_0c45",
+            "size_bytes": 4395,
+            "sha256": "AC6C1804801655320C81860E74081015BAD98E70FC9FF43526F067318D0C08EE"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/orbital_power_array_699a",
+            "size_bytes": 4381,
+            "sha256": "AAB6D0DD562C5D49105346BF33D55B4EA7B72C231EFD651F12E8D9A49AF331E7"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/companion_animal_center_8a8e",
+            "size_bytes": 4979,
+            "sha256": "DB8496D5A094334201DA279255BC995B39407BB50E8F5AEA8A388E4D1E7176BB"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/sensor_guided_greenhouse_1b61",
+            "size_bytes": 4795,
+            "sha256": "712748BA34D33567D8D54D435ECDB92ABE376929B8F0CD8469CA55DCE1410F21"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/monitored_poultry_farm_ee21",
+            "size_bytes": 4984,
+            "sha256": "89A613CC0C320B3C9C1BF5E88538BD55D8D09F80D74D82094C886AF738F5CCFC"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/comminution_hub_e2b5",
+            "size_bytes": 4378,
+            "sha256": "B80EA7A6CC44FEE29BCBD2969197F58FE971D269218EA3D75CEEFD4C1FBCA6E1"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/mineral_products_works_3d1f",
+            "size_bytes": 4391,
+            "sha256": "BDDB1805A5E6857D2708456D4831E716F3A0FF7A81C5F90509EAEEDB10663A63"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/primary_smelter_7b21",
+            "size_bytes": 4377,
+            "sha256": "A1BC5B850A054588800F2BBC70E1DEEF06158197016DF1B986EE95F3BB0EF725"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/fuel_smelter_1c58",
+            "size_bytes": 4392,
+            "sha256": "8F2DB2340CA323A8C38D7A960D7FAAC14DC52DD9A45F273BF81DADF4198D4B51"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/precision_metals_works_e07a",
+            "size_bytes": 4402,
+            "sha256": "8CA699676949C45F221C5EBD1C3E5616845612B8404C45739F80627C82C998A6"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/casting_finishing_works_a0a4",
+            "size_bytes": 4393,
+            "sha256": "1E88ED7922874D8C852FB6AC61FCC0DDC6E2E4735526CFFAF6AF712DC5B11CE6"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/refinery_complex_4ffe",
+            "size_bytes": 4385,
+            "sha256": "FF5AB8F271005F8D9A46B17F47FDEC40A450368B8158874C3CD5A71A1A32522F"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/gas_fertilizer_complex_a0eb",
+            "size_bytes": 4397,
+            "sha256": "48A5E4B042CCA081240B07EAE19DB1ABCC05D60AE18B16D5C4B45F5C448CA831"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/materials_chemistry_complex_1470",
+            "size_bytes": 4383,
+            "sha256": "67EEB6FB89A7B71E1D1B55CAE978D6EA24F83242B7634442292C2A552FEF735D"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/medical_chemistry_complex_f2d7",
+            "size_bytes": 4397,
+            "sha256": "A0C80D9A8B0B5AC12AC1978FDF2FB99A8DE7E4C3A5E7CE460122F04F75E93653"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/food_processing_campus_821f",
+            "size_bytes": 4393,
+            "sha256": "4F2F6A565B0438E1C1A43A5FAE8C0E7C0722FBBA6F05802161FDCAC7696FFC9F"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/food_pack_campus_967c",
+            "size_bytes": 4386,
+            "sha256": "D73DB11BD1224D4D48715D1322ACEA47257DAC8ED5862C21D9A8D2C3BAA91AB9"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/crop_soil_bioprocessing_21df",
+            "size_bytes": 4406,
+            "sha256": "7443A5F9D950915D5DFC3AB03F0CC2435085BB9A5E512DD6347EF4073A34205C"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/bioenergy_center_d5dd",
+            "size_bytes": 4378,
+            "sha256": "D24D4C5C3CA620A77457741CD60FF130FC72F932F2C9A08DC9B3D355A1B52D7E"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/water_utility_dfd0",
+            "size_bytes": 4382,
+            "sha256": "897D23EEED549687E81131EFCBC0BEF2BA8DC8138C87322147769A8F7450C01E"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/thermal_desalination_works_7f3b",
+            "size_bytes": 4407,
+            "sha256": "2EE8510C713C2436CF84B20EA213F16A92F6151B04E2555354A8EDDA6B1CF033"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/thermal_emissions_utility_7e01",
+            "size_bytes": 4388,
+            "sha256": "F1DF16BFECB1A362A4B2DBA5E321CC3F898A3983B97E92E5496B0B6E11C7A7EF"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/materials_recovery_center_f85f",
+            "size_bytes": 4376,
+            "sha256": "C1B7ABADCC250A04971274E6895BD845C3C754F7267F1A28FCA4BA4147D96DDF"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/nuclear_fuel_complex_fcdd",
+            "size_bytes": 4393,
+            "sha256": "41A052BBFC0E1DA4DE7D3EAD2659C0645B32CF3B28853842DDB850115294E377"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/nuclear_reprocessing_center_da69",
+            "size_bytes": 4398,
+            "sha256": "7F478BAF82A46BEBBAD1D808BD0B7BEA7767AC73BB71D4FFA91587B448C00372"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/nuclear_fuel_fabrication_cell_773d",
+            "size_bytes": 4404,
+            "sha256": "F475A902BDBCB5F58A2BEC02282235C9B009D9A4412E74A7C5D616403592BAE5"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/precision_components_fab_2554",
+            "size_bytes": 4385,
+            "sha256": "26258B3A70A665B77C5FD3EBF2DAE8965D05218C608E72B6A9D414F98E17164B"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/robotic_components_fab_72b0",
+            "size_bytes": 4400,
+            "sha256": "5E7754C64AAF3AA4D1FE02818C64B320BE809C6FB7555E0A921AED52F2D4FF15"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/general_manufacturing_fab_1e5e",
+            "size_bytes": 4391,
+            "sha256": "617B7CA78AE77839BE4EA8723DAA7CD8C756CB2BF95F8174D5EE8F0EF92E4DA4"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/orbital_fabrication_fab_1d73",
+            "size_bytes": 4383,
+            "sha256": "F4604D576CBB6820E2F266FA63FBE1191243A1A4059BBF780C3F0BF40E63073E"
+        }
+    ],
+    "previews": [
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/accelerator_works.png",
+            "size_bytes": 31967,
+            "sha256": "58FC23F20D65F9353611942842360522890FEA1049139AEE513CCAED9A447FFA"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/curation_office.png",
+            "size_bytes": 28819,
+            "sha256": "334504F186D0D9915A63EDC789E5BE388E79A3403C513F3BEDF561F99DD87A3A"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/model_development_center.png",
+            "size_bytes": 30659,
+            "sha256": "E7675F3D20B9F1371EBA88EFC43D980DA22EEE8A63B356D0A2929B90E72693D9"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/ai_electronics_cell.png",
+            "size_bytes": 29359,
+            "sha256": "40BB10822F225CBDFC79E179178424652C7CBB174E2B08E705F818DC15727706"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/electronics_reclaimer.png",
+            "size_bytes": 31275,
+            "sha256": "3D0BFAD431709D3A2B57A3C95E6E7ABA913C0AC90D22E47AAC2C724CDD580EF5"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/ai_science_institute.png",
+            "size_bytes": 28229,
+            "sha256": "180730C873B76C398FFA7F0028A9F49122DAF522B62993D55B4BFF07653857B9"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/pilot_science_complex.png",
+            "size_bytes": 29326,
+            "sha256": "BC2D98CDB0C176CC77B6ABFBF5F575EE287D53A0D9B986AA694A940D0D140C74"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/systems_integration_complex.png",
+            "size_bytes": 32780,
+            "sha256": "32E87C58CF1FEAC490C4D2242D4400A52C1427C9E2CA49B74D35E66FF67A7CDA"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/control_deployment_gateway.png",
+            "size_bytes": 33221,
+            "sha256": "D4A1DDD6C12490ECDBDC6D7BBDB9829B15318F5E80FE54B98B8E4DC6A61E9697"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/deployment_assurance_campus.png",
+            "size_bytes": 27788,
+            "sha256": "201B1B82AC30616AB65D501C364BADF909156E317438A8C1046AE326EAC30357"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/autonomous_microchip_complex.png",
+            "size_bytes": 30096,
+            "sha256": "097676310B63252C06F9672687E2366F777EDB127B722F778758D167B7126413"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/capital_fabrication_matrix.png",
+            "size_bytes": 29961,
+            "sha256": "23CDDB82AAF0E852971C6022334A02AC2C118EDE77FBF4B9A76DFA437B4CC675"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/orbital_mission_complex.png",
+            "size_bytes": 29185,
+            "sha256": "50472DF37339B737102873C4E0527C857A221AB4BCBBDB9ABF3CFC6D2C3D52A3"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/frontier_project_complex.png",
+            "size_bytes": 33709,
+            "sha256": "E403B51FD72B048616E411159240937D61C8AFD82B10C7E0ABCE8A476F8391EC"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/recursive_integration_array.png",
+            "size_bytes": 31574,
+            "sha256": "95DC7A8B8CFC7B809C9BE4946F23825ABC92556998D7F8F114105E6E59417818"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/autonomous_construction_nexus.png",
+            "size_bytes": 32887,
+            "sha256": "98D5B57918A704025E2D157D45C2D17BA2A06211BEB67915A09FE778756A4908"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/ai_operations_i.png",
+            "size_bytes": 31265,
+            "sha256": "CAC2AF7E7A4FA1A86D42EC38E64B55399F08FCDEBE96710EB0E8DFBD85C39A88"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/ai_operations_ii.png",
+            "size_bytes": 38121,
+            "sha256": "6274388FCEE5EBDF9959CFECE545FE32079F234C6FDB4886FA9B6169952102EC"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/ai_operations_iii.png",
+            "size_bytes": 42869,
+            "sha256": "F228908218C8D6016CEC41D78F10BC67EA3F289BC389FF4AD824A74728B8DBA2"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/orbital_power_array.png",
+            "size_bytes": 30830,
+            "sha256": "931AB0C6A9E5B13DA90ABCBBAEA07D53955ECA5C5AB838A446DF9A9445A77293"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/companion_animal_center.png",
+            "size_bytes": 29355,
+            "sha256": "85BD0DC98D558FFCD1A8C11DCA531E1CA5EF39F860F111661E2334935304B8F3"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/sensor_guided_greenhouse.png",
+            "size_bytes": 59539,
+            "sha256": "12F457AF2C6F6D0FB9C8CD6CF92A669262F6CEFA25A470E6EBA9F59D7A9D47D1"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/monitored_poultry_farm.png",
+            "size_bytes": 33246,
+            "sha256": "D51735AA69876E06AAA97BCCD663C04DA5A8946D6CAE1EFEC95AD3E7B07B8BA5"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/comminution_hub.png",
+            "size_bytes": 26334,
+            "sha256": "5EB6B4A05B86ABA344DFEB330E9CFECEBC66103A5589E278CFF55A5E1AE2CEB3"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/mineral_products_works.png",
+            "size_bytes": 29181,
+            "sha256": "FEF0B8322F1C5A649C48F50CA8B756F223CE4ECF1194BD8DD85545151C752CFA"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/primary_smelter.png",
+            "size_bytes": 24831,
+            "sha256": "7CF3F8924C32D3AB2E32B7EEDE7B319019B5ADA769A6B365C125F64110427A62"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/fuel_smelter.png",
+            "size_bytes": 25475,
+            "sha256": "4BC598E1659E83590E3DB6DAE4C6A2DC3E0C96A5F60A03557B50BDC5AB258956"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/precision_metals_works.png",
+            "size_bytes": 37367,
+            "sha256": "2E8EEBE87E97643BE5219806C38F846746A0B71A987CCA91FBDDBA275883C17F"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/casting_finishing_works.png",
+            "size_bytes": 29128,
+            "sha256": "2F199EFC85F3B94F60EF05041519847721F8B78162781A87DA9383FCA383031B"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/refinery_complex.png",
+            "size_bytes": 39334,
+            "sha256": "2976AE598CFAC8C2EA9FAF3FFA3F6C4A22EB8B5ACAB7ECE335456F428641E2A6"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/gas_fertilizer_complex.png",
+            "size_bytes": 39089,
+            "sha256": "951BF9148034DC5973033662A9BA2392A036D2BE8C00DB8EBF955E19C365C8B3"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/materials_chemistry_complex.png",
+            "size_bytes": 40574,
+            "sha256": "BA2659FC4736DAD4EF838A4C862ABD358AED0085BBC4818A707CB1D39706F7A8"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/medical_chemistry_complex.png",
+            "size_bytes": 35165,
+            "sha256": "F27A37AA5363F28995B2CB26C4709E1977B7DBE7FDB953AC150A688B6D5F9D08"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/food_processing_campus.png",
+            "size_bytes": 34604,
+            "sha256": "8868C7B51BBD2E4FA8ADCD739686C530068D7B4BA1118F5FF3311FDC2FA276BF"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/food_pack_campus.png",
+            "size_bytes": 36978,
+            "sha256": "74035F107EFD9D674D15C036AF92A677EBB14310663D7584CE7B7E745AECA015"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/crop_soil_bioprocessing.png",
+            "size_bytes": 30596,
+            "sha256": "553E7212119CB104C558A45B0862578BB20019825B887A3A21881655CFEB0968"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/bioenergy_center.png",
+            "size_bytes": 29725,
+            "sha256": "1B85F1F9C35E3C50166A593572777C5E1177F1D09A3038665F30F992A65F2212"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/water_utility.png",
+            "size_bytes": 29809,
+            "sha256": "2430B7B7CCCD84E8AEE86EB148D4D3BE8D3358A761575C2A5310F052DCA48E8B"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/thermal_desalination_works.png",
+            "size_bytes": 30548,
+            "sha256": "61C2613F21DFED1FE2F41F2859C56175D399F6DE4AAFD854E0F831AE5D6C3480"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/thermal_emissions_utility.png",
+            "size_bytes": 35024,
+            "sha256": "2990DB08665968E91BB0701D4C4270CB9136ACB99D43ABB59B466CCB06FB33E9"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/materials_recovery_center.png",
+            "size_bytes": 27916,
+            "sha256": "6B0FDA0C128771EE0416CF813EFE916A64E6C833DEDA67B45D3A2228C6909D06"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/nuclear_fuel_complex.png",
+            "size_bytes": 27665,
+            "sha256": "97D6D97DE244194CF09D4B2352227E065352C604AD565CE9DCE536FE7BBFF27B"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/nuclear_reprocessing_center.png",
+            "size_bytes": 27220,
+            "sha256": "A1CE5F364E9B9A51E0B04EB5C34AA152B1CBC08C72E8299C3E4BB09ECB71A73C"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/nuclear_fuel_fabrication_cell.png",
+            "size_bytes": 25453,
+            "sha256": "F3DD38B0764A65499F60082DEFD4762F790299B9DA560C676579C7DDBA138D6C"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/precision_components_fab.png",
+            "size_bytes": 29106,
+            "sha256": "1A59FB3EC0530B3736B6172576CF0796AC2A023838E4687F3AC25211CAE54D51"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/robotic_components_fab.png",
+            "size_bytes": 30685,
+            "sha256": "D95118A3E971B45D141E4A4FBD927AC42FDEF29D18574D76667A861C2EC887EA"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/general_manufacturing_fab.png",
+            "size_bytes": 30187,
+            "sha256": "019DE947F7F2D77FA91B7D22254A799CC51DFD5E728A3CDED9C39A9F8131234D"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/orbital_fabrication_fab.png",
+            "size_bytes": 31099,
+            "sha256": "F468223CCECE9EC4D4C5C408403F37D82F350992475A6999A6FFD7560854802E"
+        }
+    ],
+    "dependencies": [
+        {
+            "name": "buildings_cfa7",
+            "dependencies": []
+        },
+        {
+            "name": "accelerator_works_15b4",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "curation_office_9716",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "model_development_center_610a",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "ai_electronics_cell_0521",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "electronics_reclaimer_1a6d",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "ai_science_institute_6e35",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "pilot_science_complex_3b0b",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "systems_integration_complex_c466",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "control_deployment_gateway_47f5",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "deployment_assurance_campus_ffbf",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "autonomous_microchip_complex_f696",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "capital_fabrication_matrix_6d59",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "orbital_mission_complex_ed58",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "frontier_project_complex_7708",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "recursive_integration_array_9a08",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "autonomous_construction_nexus_1745",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "ai_operations_i_9b8a",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "ai_operations_ii_f0db",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "ai_operations_iii_0c45",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "orbital_power_array_699a",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "companion_animal_center_8a8e",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "sensor_guided_greenhouse_1b61",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "monitored_poultry_farm_ee21",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "comminution_hub_e2b5",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "mineral_products_works_3d1f",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "primary_smelter_7b21",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "fuel_smelter_1c58",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "precision_metals_works_e07a",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "casting_finishing_works_a0a4",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "refinery_complex_4ffe",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "gas_fertilizer_complex_a0eb",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "materials_chemistry_complex_1470",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "medical_chemistry_complex_f2d7",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "food_processing_campus_821f",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "food_pack_campus_967c",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "crop_soil_bioprocessing_21df",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "bioenergy_center_d5dd",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "water_utility_dfd0",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "thermal_desalination_works_7f3b",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "thermal_emissions_utility_7e01",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "materials_recovery_center_f85f",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "nuclear_fuel_complex_fcdd",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "nuclear_reprocessing_center_da69",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "nuclear_fuel_fabrication_cell_773d",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "precision_components_fab_2554",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "robotic_components_fab_72b0",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "general_manufacturing_fab_1e5e",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "orbital_fabrication_fab_1d73",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        }
+    ],
+    "asset_paths": [
+        "assets/recursiveindustry/buildings/accelerator_works.prefab",
+        "assets/recursiveindustry/buildings/accelerator_works_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/accelerator_works_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/accelerator_works_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/accelerator_works_sign.asset",
+        "assets/recursiveindustry/buildings/accelerator_works_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/accelerator_works_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/accelerator_works_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/ai_electronics_cell.prefab",
+        "assets/recursiveindustry/buildings/ai_electronics_cell_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/ai_electronics_cell_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/ai_electronics_cell_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/ai_electronics_cell_sign.asset",
+        "assets/recursiveindustry/buildings/ai_electronics_cell_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/ai_electronics_cell_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/ai_electronics_cell_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/ai_operations_i.prefab",
+        "assets/recursiveindustry/buildings/ai_operations_i_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/ai_operations_i_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/ai_operations_i_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/ai_operations_i_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/ai_operations_i_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/ai_operations_i_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/ai_operations_ii.prefab",
+        "assets/recursiveindustry/buildings/ai_operations_ii_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/ai_operations_ii_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/ai_operations_ii_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/ai_operations_ii_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/ai_operations_ii_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/ai_operations_ii_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/ai_operations_iii.prefab",
+        "assets/recursiveindustry/buildings/ai_operations_iii_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/ai_operations_iii_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/ai_operations_iii_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/ai_operations_iii_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/ai_operations_iii_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/ai_operations_iii_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/ai_science_institute.prefab",
+        "assets/recursiveindustry/buildings/ai_science_institute_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/ai_science_institute_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/ai_science_institute_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/ai_science_institute_sign.asset",
+        "assets/recursiveindustry/buildings/ai_science_institute_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/ai_science_institute_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/ai_science_institute_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/autonomous_construction_nexus.prefab",
+        "assets/recursiveindustry/buildings/autonomous_construction_nexus_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/autonomous_construction_nexus_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/autonomous_construction_nexus_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/autonomous_construction_nexus_sign.asset",
+        "assets/recursiveindustry/buildings/autonomous_construction_nexus_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/autonomous_construction_nexus_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/autonomous_construction_nexus_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/autonomous_microchip_complex.prefab",
+        "assets/recursiveindustry/buildings/autonomous_microchip_complex_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/autonomous_microchip_complex_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/autonomous_microchip_complex_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/autonomous_microchip_complex_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/autonomous_microchip_complex_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/autonomous_microchip_complex_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/bioenergy_center.prefab",
+        "assets/recursiveindustry/buildings/bioenergy_center_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/bioenergy_center_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/bioenergy_center_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/bioenergy_center_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/bioenergy_center_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/bioenergy_center_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/building_sign.mat",
+        "assets/recursiveindustry/buildings/building_surface.mat",
+        "assets/recursiveindustry/buildings/building_windows.mat",
+        "assets/recursiveindustry/buildings/buildingglazing.shader",
+        "assets/recursiveindustry/buildings/buildingsign.shader",
+        "assets/recursiveindustry/buildings/buildingsurface.shader",
+        "assets/recursiveindustry/buildings/capital_fabrication_matrix.prefab",
+        "assets/recursiveindustry/buildings/capital_fabrication_matrix_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/capital_fabrication_matrix_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/capital_fabrication_matrix_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/capital_fabrication_matrix_sign.asset",
+        "assets/recursiveindustry/buildings/capital_fabrication_matrix_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/capital_fabrication_matrix_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/capital_fabrication_matrix_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/casting_finishing_works.prefab",
+        "assets/recursiveindustry/buildings/casting_finishing_works_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/casting_finishing_works_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/casting_finishing_works_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/casting_finishing_works_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/casting_finishing_works_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/casting_finishing_works_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/comminution_hub.prefab",
+        "assets/recursiveindustry/buildings/comminution_hub_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/comminution_hub_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/comminution_hub_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/comminution_hub_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/comminution_hub_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/comminution_hub_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/companion_animal_center.controller",
+        "assets/recursiveindustry/buildings/companion_animal_center.prefab",
+        "assets/recursiveindustry/buildings/companion_animal_center_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/companion_animal_center_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/companion_animal_center_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/companion_animal_center_main.anim",
+        "assets/recursiveindustry/buildings/companion_animal_center_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/companion_animal_center_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/companion_animal_center_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/companion_animal_center_ventilation_rotor.asset",
+        "assets/recursiveindustry/buildings/control_deployment_gateway.prefab",
+        "assets/recursiveindustry/buildings/control_deployment_gateway_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/control_deployment_gateway_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/control_deployment_gateway_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/control_deployment_gateway_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/control_deployment_gateway_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/control_deployment_gateway_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/crop_soil_bioprocessing.prefab",
+        "assets/recursiveindustry/buildings/crop_soil_bioprocessing_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/crop_soil_bioprocessing_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/crop_soil_bioprocessing_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/crop_soil_bioprocessing_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/crop_soil_bioprocessing_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/crop_soil_bioprocessing_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/curation_office.prefab",
+        "assets/recursiveindustry/buildings/curation_office_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/curation_office_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/curation_office_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/curation_office_sign.asset",
+        "assets/recursiveindustry/buildings/curation_office_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/curation_office_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/curation_office_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/deployment_assurance_campus.prefab",
+        "assets/recursiveindustry/buildings/deployment_assurance_campus_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/deployment_assurance_campus_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/deployment_assurance_campus_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/deployment_assurance_campus_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/deployment_assurance_campus_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/deployment_assurance_campus_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/electronics_reclaimer.prefab",
+        "assets/recursiveindustry/buildings/electronics_reclaimer_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/electronics_reclaimer_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/electronics_reclaimer_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/electronics_reclaimer_sign.asset",
+        "assets/recursiveindustry/buildings/electronics_reclaimer_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/electronics_reclaimer_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/electronics_reclaimer_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/food_pack_campus.prefab",
+        "assets/recursiveindustry/buildings/food_pack_campus_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/food_pack_campus_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/food_pack_campus_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/food_pack_campus_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/food_pack_campus_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/food_pack_campus_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/food_processing_campus.prefab",
+        "assets/recursiveindustry/buildings/food_processing_campus_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/food_processing_campus_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/food_processing_campus_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/food_processing_campus_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/food_processing_campus_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/food_processing_campus_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/frontier_project_complex.prefab",
+        "assets/recursiveindustry/buildings/frontier_project_complex_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/frontier_project_complex_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/frontier_project_complex_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/frontier_project_complex_sign.asset",
+        "assets/recursiveindustry/buildings/frontier_project_complex_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/frontier_project_complex_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/frontier_project_complex_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/fuel_smelter.prefab",
+        "assets/recursiveindustry/buildings/fuel_smelter_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/fuel_smelter_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/fuel_smelter_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/fuel_smelter_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/fuel_smelter_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/fuel_smelter_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/gas_fertilizer_complex.prefab",
+        "assets/recursiveindustry/buildings/gas_fertilizer_complex_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/gas_fertilizer_complex_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/gas_fertilizer_complex_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/gas_fertilizer_complex_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/gas_fertilizer_complex_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/gas_fertilizer_complex_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/general_manufacturing_fab.prefab",
+        "assets/recursiveindustry/buildings/general_manufacturing_fab_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/general_manufacturing_fab_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/general_manufacturing_fab_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/general_manufacturing_fab_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/general_manufacturing_fab_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/general_manufacturing_fab_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/greenhouse_glazing.mat",
+        "assets/recursiveindustry/buildings/materials_chemistry_complex.prefab",
+        "assets/recursiveindustry/buildings/materials_chemistry_complex_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/materials_chemistry_complex_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/materials_chemistry_complex_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/materials_chemistry_complex_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/materials_chemistry_complex_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/materials_chemistry_complex_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/materials_recovery_center.prefab",
+        "assets/recursiveindustry/buildings/materials_recovery_center_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/materials_recovery_center_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/materials_recovery_center_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/materials_recovery_center_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/materials_recovery_center_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/materials_recovery_center_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/medical_chemistry_complex.prefab",
+        "assets/recursiveindustry/buildings/medical_chemistry_complex_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/medical_chemistry_complex_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/medical_chemistry_complex_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/medical_chemistry_complex_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/medical_chemistry_complex_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/medical_chemistry_complex_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/mineral_products_works.prefab",
+        "assets/recursiveindustry/buildings/mineral_products_works_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/mineral_products_works_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/mineral_products_works_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/mineral_products_works_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/mineral_products_works_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/mineral_products_works_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/model_development_center.prefab",
+        "assets/recursiveindustry/buildings/model_development_center_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/model_development_center_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/model_development_center_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/model_development_center_sign.asset",
+        "assets/recursiveindustry/buildings/model_development_center_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/model_development_center_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/model_development_center_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/monitored_poultry_farm.controller",
+        "assets/recursiveindustry/buildings/monitored_poultry_farm.prefab",
+        "assets/recursiveindustry/buildings/monitored_poultry_farm_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/monitored_poultry_farm_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/monitored_poultry_farm_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/monitored_poultry_farm_main.anim",
+        "assets/recursiveindustry/buildings/monitored_poultry_farm_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/monitored_poultry_farm_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/monitored_poultry_farm_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/monitored_poultry_farm_ventilation_rotor.asset",
+        "assets/recursiveindustry/buildings/nuclear_fuel_complex.prefab",
+        "assets/recursiveindustry/buildings/nuclear_fuel_complex_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/nuclear_fuel_complex_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/nuclear_fuel_complex_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/nuclear_fuel_complex_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/nuclear_fuel_complex_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/nuclear_fuel_complex_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/nuclear_fuel_fabrication_cell.prefab",
+        "assets/recursiveindustry/buildings/nuclear_fuel_fabrication_cell_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/nuclear_fuel_fabrication_cell_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/nuclear_fuel_fabrication_cell_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/nuclear_fuel_fabrication_cell_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/nuclear_fuel_fabrication_cell_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/nuclear_fuel_fabrication_cell_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/nuclear_reprocessing_center.prefab",
+        "assets/recursiveindustry/buildings/nuclear_reprocessing_center_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/nuclear_reprocessing_center_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/nuclear_reprocessing_center_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/nuclear_reprocessing_center_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/nuclear_reprocessing_center_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/nuclear_reprocessing_center_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/orbital_fabrication_fab.prefab",
+        "assets/recursiveindustry/buildings/orbital_fabrication_fab_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/orbital_fabrication_fab_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/orbital_fabrication_fab_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/orbital_fabrication_fab_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/orbital_fabrication_fab_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/orbital_fabrication_fab_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/orbital_mission_complex.prefab",
+        "assets/recursiveindustry/buildings/orbital_mission_complex_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/orbital_mission_complex_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/orbital_mission_complex_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/orbital_mission_complex_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/orbital_mission_complex_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/orbital_mission_complex_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/orbital_power_array.prefab",
+        "assets/recursiveindustry/buildings/orbital_power_array_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/orbital_power_array_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/orbital_power_array_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/orbital_power_array_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/orbital_power_array_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/orbital_power_array_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/pilot_science_complex.prefab",
+        "assets/recursiveindustry/buildings/pilot_science_complex_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/pilot_science_complex_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/pilot_science_complex_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/pilot_science_complex_sign.asset",
+        "assets/recursiveindustry/buildings/pilot_science_complex_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/pilot_science_complex_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/pilot_science_complex_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/precision_components_fab.prefab",
+        "assets/recursiveindustry/buildings/precision_components_fab_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/precision_components_fab_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/precision_components_fab_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/precision_components_fab_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/precision_components_fab_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/precision_components_fab_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/precision_metals_works.prefab",
+        "assets/recursiveindustry/buildings/precision_metals_works_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/precision_metals_works_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/precision_metals_works_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/precision_metals_works_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/precision_metals_works_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/precision_metals_works_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/primary_smelter.prefab",
+        "assets/recursiveindustry/buildings/primary_smelter_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/primary_smelter_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/primary_smelter_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/primary_smelter_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/primary_smelter_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/primary_smelter_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/recursive_integration_array.prefab",
+        "assets/recursiveindustry/buildings/recursive_integration_array_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/recursive_integration_array_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/recursive_integration_array_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/recursive_integration_array_sign.asset",
+        "assets/recursiveindustry/buildings/recursive_integration_array_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/recursive_integration_array_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/recursive_integration_array_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/refinery_complex.prefab",
+        "assets/recursiveindustry/buildings/refinery_complex_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/refinery_complex_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/refinery_complex_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/refinery_complex_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/refinery_complex_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/refinery_complex_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/robotic_components_fab.prefab",
+        "assets/recursiveindustry/buildings/robotic_components_fab_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/robotic_components_fab_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/robotic_components_fab_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/robotic_components_fab_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/robotic_components_fab_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/robotic_components_fab_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/sensor_guided_greenhouse.prefab",
+        "assets/recursiveindustry/buildings/sensor_guided_greenhouse_glazing_lod0.asset",
+        "assets/recursiveindustry/buildings/sensor_guided_greenhouse_glazing_lod1.asset",
+        "assets/recursiveindustry/buildings/sensor_guided_greenhouse_glazing_lod2.asset",
+        "assets/recursiveindustry/buildings/sensor_guided_greenhouse_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/sensor_guided_greenhouse_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/sensor_guided_greenhouse_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/sensor_guided_greenhouse_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/sensor_guided_greenhouse_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/sensor_guided_greenhouse_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/systems_integration_complex.prefab",
+        "assets/recursiveindustry/buildings/systems_integration_complex_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/systems_integration_complex_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/systems_integration_complex_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/systems_integration_complex_sign.asset",
+        "assets/recursiveindustry/buildings/systems_integration_complex_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/systems_integration_complex_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/systems_integration_complex_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/thermal_desalination_works.prefab",
+        "assets/recursiveindustry/buildings/thermal_desalination_works_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/thermal_desalination_works_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/thermal_desalination_works_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/thermal_desalination_works_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/thermal_desalination_works_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/thermal_desalination_works_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/thermal_emissions_utility.prefab",
+        "assets/recursiveindustry/buildings/thermal_emissions_utility_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/thermal_emissions_utility_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/thermal_emissions_utility_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/thermal_emissions_utility_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/thermal_emissions_utility_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/thermal_emissions_utility_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/water_utility.prefab",
+        "assets/recursiveindustry/buildings/water_utility_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/water_utility_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/water_utility_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/water_utility_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/water_utility_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/water_utility_structure_lod2.asset"
+    ],
+    "models": [
+        {
+            "key": "accelerator_works",
+            "family": "assembly",
+            "member": "AcceleratorWorks",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/accelerator_works.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                2.9891998767852785,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                5.978399753570557,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                552,
+                282,
+                186
+            ],
+            "renderers_per_lod": [
+                3,
+                3,
+                3
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": true,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "88AA492DB446DF05595C3102A204F5D39F2E59442A4FDD83D9135467F8A683C2",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/accelerator_works.png",
+            "nonblank_pixels": 118315
+        },
+        {
+            "key": "curation_office",
+            "family": "archive",
+            "member": "CurationOffice",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/curation_office.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                2.8387999534606935,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                5.677599906921387,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                264,
+                204,
+                144
+            ],
+            "renderers_per_lod": [
+                3,
+                3,
+                3
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": true,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "D4228131D02989DE5777911EEAFD20F1E8587A1133E463A96243F9176FAD6BCD",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/curation_office.png",
+            "nonblank_pixels": 121472
+        },
+        {
+            "key": "model_development_center",
+            "family": "compute",
+            "member": "ModelDevelopmentCenter",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/model_development_center.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                2.744800090789795,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                5.48960018157959,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                252,
+                228,
+                96
+            ],
+            "renderers_per_lod": [
+                3,
+                3,
+                3
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": true,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "2A40E353F5F65EA52E8BC693AFA5E9D8265B1E71264443EA323A4FB317AE59DD",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/model_development_center.png",
+            "nonblank_pixels": 126836
+        },
+        {
+            "key": "ai_electronics_cell",
+            "family": "assembly",
+            "member": "AIElectronicsCell",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/ai_electronics_cell.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                2.9891998767852785,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                5.978399753570557,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                444,
+                240,
+                156
+            ],
+            "renderers_per_lod": [
+                3,
+                3,
+                3
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": true,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "DBF6F070B0A85D62ED7804C198660B723653C2D17D7926E6671AA79E59ED4185",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/ai_electronics_cell.png",
+            "nonblank_pixels": 117835
+        },
+        {
+            "key": "electronics_reclaimer",
+            "family": "recovery",
+            "member": "ElectronicsReclaimer",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/electronics_reclaimer.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                2.857600212097168,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                5.715200424194336,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                312,
+                234,
+                156
+            ],
+            "renderers_per_lod": [
+                3,
+                3,
+                3
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": true,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "CCAA6855DD446FE1A8B5FFF856ED0975EEF046CD55305C8C9C9D0847B438F66A",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/electronics_reclaimer.png",
+            "nonblank_pixels": 100918
+        },
+        {
+            "key": "ai_science_institute",
+            "family": "laboratory",
+            "member": "AIScienceInstitute",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/ai_science_institute.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                2.8387999534606935,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                5.677599906921387,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                240,
+                198,
+                126
+            ],
+            "renderers_per_lod": [
+                3,
+                3,
+                3
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": true,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "BA4A80BC10F219702D89E195744BAD3AFCC91C6D7AECFDB8541E0468014BDB29",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/ai_science_institute.png",
+            "nonblank_pixels": 122083
+        },
+        {
+            "key": "pilot_science_complex",
+            "family": "pilot",
+            "member": "PilotScienceComplex",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/pilot_science_complex.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                2.89520001411438,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                5.79040002822876,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                336,
+                246,
+                126
+            ],
+            "renderers_per_lod": [
+                3,
+                3,
+                3
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": true,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "91B5AB52B3A565F4C06DD02B5B4EA84282F0C5131A28F642DB952EE2151BFB54",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/pilot_science_complex.png",
+            "nonblank_pixels": 107091
+        },
+        {
+            "key": "systems_integration_complex",
+            "family": "integration",
+            "member": "SystemsIntegrationComplex",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/systems_integration_complex.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                3.2899999618530275,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                6.579999923706055,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                288,
+                264,
+                132
+            ],
+            "renderers_per_lod": [
+                3,
+                3,
+                3
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": true,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "95617C52833510B5DF9BBF345CB5DC15C3007E1DB1E1227F2D607AE0D324B863",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/systems_integration_complex.png",
+            "nonblank_pixels": 127682
+        },
+        {
+            "key": "control_deployment_gateway",
+            "family": "gateway",
+            "member": "ControlDeploymentGateway",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/control_deployment_gateway.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                3.120800018310547,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                6.241600036621094,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                336,
+                276,
+                120
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "A65118824C143F4EBD859C0DE2275CBE5CE29BE742797B22BAAB156FDD978EDB",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/control_deployment_gateway.png",
+            "nonblank_pixels": 125337
+        },
+        {
+            "key": "deployment_assurance_campus",
+            "family": "assurance",
+            "member": "DeploymentAssuranceCampus",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/deployment_assurance_campus.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                2.8387999534606935,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                5.677599906921387,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                192,
+                168,
+                108
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "44A781A1B247B2482739484EAE1A85A895620983FE602CCA32A1C136B21B3838",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/deployment_assurance_campus.png",
+            "nonblank_pixels": 121969
+        },
+        {
+            "key": "autonomous_microchip_complex",
+            "family": "cleanroom",
+            "member": "AutonomousMicrochipComplex",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/autonomous_microchip_complex.prefab",
+            "envelope": [
+                14.0,
+                4.0,
+                8.0
+            ],
+            "bounds_center": [
+                0.0,
+                1.503999948501587,
+                0.0
+            ],
+            "bounds_size": [
+                12.902399063110352,
+                3.007999897003174,
+                7.06879997253418
+            ],
+            "triangles_per_lod": [
+                624,
+                336,
+                204
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "A91147BBD5657EF17EBE7E71262C9561E06F81AEF9BACAF7B29CD2E2D35494E1",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/autonomous_microchip_complex.png",
+            "nonblank_pixels": 66703
+        },
+        {
+            "key": "capital_fabrication_matrix",
+            "family": "fabrication",
+            "member": "AutonomousCapitalFabricationMatrix",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/capital_fabrication_matrix.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                3.1489999294281008,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                6.297999858856201,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                288,
+                216,
+                144
+            ],
+            "renderers_per_lod": [
+                3,
+                3,
+                3
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": true,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "56132AB3A1A23D57EBAE085484CB951754576A7777CE3881189F5B918D60F607",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/capital_fabrication_matrix.png",
+            "nonblank_pixels": 119690
+        },
+        {
+            "key": "orbital_mission_complex",
+            "family": "mission",
+            "member": "OrbitalMissionComplex",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/orbital_mission_complex.prefab",
+            "envelope": [
+                14.0,
+                4.0,
+                8.0
+            ],
+            "bounds_center": [
+                0.0,
+                1.8423999547958375,
+                0.0
+            ],
+            "bounds_size": [
+                12.902399063110352,
+                3.684799909591675,
+                7.06879997253418
+            ],
+            "triangles_per_lod": [
+                680,
+                404,
+                168
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "B87E88F5AAF9EC27D7963B9570CB90619C6F734192791B0B7868B6BE7BD1A4F0",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/orbital_mission_complex.png",
+            "nonblank_pixels": 62197
+        },
+        {
+            "key": "frontier_project_complex",
+            "family": "project",
+            "member": "FrontierProjectComplex",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/frontier_project_complex.prefab",
+            "envelope": [
+                14.0,
+                10.0,
+                14.0
+            ],
+            "bounds_center": [
+                0.0,
+                4.077249526977539,
+                0.0
+            ],
+            "bounds_size": [
+                12.902399063110352,
+                8.154499053955079,
+                12.370399475097657
+            ],
+            "triangles_per_lod": [
+                444,
+                288,
+                192
+            ],
+            "renderers_per_lod": [
+                3,
+                3,
+                3
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": true,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "057A7BB0FCE005056249E0B7171DBF28825411AB5635069ED45AF908ABEC3CFD",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/frontier_project_complex.png",
+            "nonblank_pixels": 141803
+        },
+        {
+            "key": "recursive_integration_array",
+            "family": "compute",
+            "member": "RecursiveIntegrationArray",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/recursive_integration_array.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                2.744800090789795,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                5.48960018157959,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                264,
+                240,
+                108
+            ],
+            "renderers_per_lod": [
+                3,
+                3,
+                3
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": true,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "5BAEC3440EB3D1E28E80C1D242FCB15B3B8D5AF75C4C72759BD7E0E2A4E1C329",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/recursive_integration_array.png",
+            "nonblank_pixels": 128849
+        },
+        {
+            "key": "autonomous_construction_nexus",
+            "family": "fabrication",
+            "member": "AutonomousConstructionNexus",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/autonomous_construction_nexus.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                3.1772000789642336,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                6.354400157928467,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                336,
+                252,
+                174
+            ],
+            "renderers_per_lod": [
+                3,
+                3,
+                3
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": true,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "EAC80ECDCD9189E350A4FC10040D1D4BC475CC1E2213CA9892B6F4038D3062B9",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/autonomous_construction_nexus.png",
+            "nonblank_pixels": 119688
+        },
+        {
+            "key": "ai_operations_i",
+            "family": "office",
+            "member": "OperationsI",
+            "category": "Offices",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/ai_operations_i.prefab",
+            "envelope": [
+                76.0,
+                15.0,
+                30.0
+            ],
+            "bounds_center": [
+                0.0,
+                4.934999942779541,
+                -0.35249900817871096
+            ],
+            "bounds_size": [
+                66.39360046386719,
+                9.869999885559082,
+                26.930999755859376
+            ],
+            "triangles_per_lod": [
+                1008,
+                360,
+                120
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "846AE82A461B9AAEC0259A2DE0002EB0ED013E937CF2207A7BF3DE5C4F5FC15A",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/ai_operations_i.png",
+            "nonblank_pixels": 44563
+        },
+        {
+            "key": "ai_operations_ii",
+            "family": "office",
+            "member": "OperationsII",
+            "category": "Offices",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/ai_operations_ii.prefab",
+            "envelope": [
+                76.0,
+                24.0,
+                30.0
+            ],
+            "bounds_center": [
+                0.0,
+                9.982799530029297,
+                -0.35249900817871096
+            ],
+            "bounds_size": [
+                66.39360046386719,
+                19.965599060058595,
+                26.930999755859376
+            ],
+            "triangles_per_lod": [
+                2220,
+                756,
+                144
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "70E0751296515C7878B0CDA8AFE88DCC0C9E645FE36359515F5B230140552EBB",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/ai_operations_ii.png",
+            "nonblank_pixels": 57339
+        },
+        {
+            "key": "ai_operations_iii",
+            "family": "office",
+            "member": "OperationsIII",
+            "category": "Offices",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/ai_operations_iii.prefab",
+            "envelope": [
+                76.0,
+                31.0,
+                30.0
+            ],
+            "bounds_center": [
+                0.0,
+                12.967299461364746,
+                -0.35249900817871096
+            ],
+            "bounds_size": [
+                66.39360046386719,
+                25.934598922729493,
+                26.930999755859376
+            ],
+            "triangles_per_lod": [
+                3480,
+                1200,
+                168
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "E014209E6C00FA464B29BBC673137061993690F87949E66E703D814000421AEB",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/ai_operations_iii.png",
+            "nonblank_pixels": 69011
+        },
+        {
+            "key": "orbital_power_array",
+            "family": "receiver",
+            "member": "OrbitalPowerArray",
+            "category": "Power",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/orbital_power_array.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                3.196000099182129,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                6.392000198364258,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                392,
+                260,
+                108
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "84586A18DC7A75A294F6E8DC5E9E8A9328414CD292B98B8C4FF686079C3E2D4B",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/orbital_power_array.png",
+            "nonblank_pixels": 111392
+        },
+        {
+            "key": "companion_animal_center",
+            "family": "care",
+            "member": "CompanionAnimalCenter",
+            "category": "Settlements",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/companion_animal_center.prefab",
+            "envelope": [
+                22.0,
+                8.0,
+                14.0
+            ],
+            "bounds_center": [
+                0.0,
+                1.9449999332427979,
+                0.0
+            ],
+            "bounds_size": [
+                20.06399917602539,
+                3.8899998664855959,
+                12.238800048828125
+            ],
+            "triangles_per_lod": [
+                348,
+                264,
+                108
+            ],
+            "renderers_per_lod": [
+                3,
+                3,
+                3
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": true,
+            "sampled_animation_motion": true,
+            "geometry_sha256": "E5C88D060C4F89B86099CA632F894C6F4F8535294C7AAA534868F6F917B7FD5A",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/companion_animal_center.png",
+            "nonblank_pixels": 74294
+        },
+        {
+            "key": "sensor_guided_greenhouse",
+            "family": "greenhouse",
+            "member": "SensorGuidedGreenhouse",
+            "category": "Farms",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/sensor_guided_greenhouse.prefab",
+            "envelope": [
+                122.0,
+                12.0,
+                82.0
+            ],
+            "bounds_center": [
+                0.0,
+                4.801501750946045,
+                -0.038539886474609378
+            ],
+            "bounds_size": [
+                116.65151977539063,
+                9.60300350189209,
+                76.84876251220703
+            ],
+            "triangles_per_lod": [
+                3476,
+                2180,
+                1376
+            ],
+            "renderers_per_lod": [
+                3,
+                3,
+                3
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "8975A151D9F57BD4EA0704608FB2659D84EDF600C7212061C01F5E1A674501B6",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/sensor_guided_greenhouse.png",
+            "nonblank_pixels": 27211
+        },
+        {
+            "key": "monitored_poultry_farm",
+            "family": "poultry",
+            "member": "MonitoredPoultryFarm",
+            "category": "Farms",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/monitored_poultry_farm.prefab",
+            "envelope": [
+                32.0,
+                6.0,
+                22.0
+            ],
+            "bounds_center": [
+                0.0,
+                2.6050000190734865,
+                -2.062040328979492
+            ],
+            "bounds_size": [
+                29.491199493408204,
+                5.210000038146973,
+                20.14232063293457
+            ],
+            "triangles_per_lod": [
+                648,
+                402,
+                162
+            ],
+            "renderers_per_lod": [
+                3,
+                3,
+                3
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": true,
+            "sampled_animation_motion": true,
+            "geometry_sha256": "AC236C6C13A601AA4469F1F6591C4C20F86114E9A21AC388EBC474932E1098C9",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/monitored_poultry_farm.png",
+            "nonblank_pixels": 60593
+        },
+        {
+            "key": "comminution_hub",
+            "family": "crusher",
+            "member": "ComminutionHub",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/comminution_hub.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                3.1114001274108888,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                6.222800254821777,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                144,
+                132,
+                72
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "DC60C4F348017507494C05F9E6C9FCA0DC1487230A7A2C96E70618A08F338F04",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/comminution_hub.png",
+            "nonblank_pixels": 107165
+        },
+        {
+            "key": "mineral_products_works",
+            "family": "kiln",
+            "member": "MineralProductsWorks",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/mineral_products_works.prefab",
+            "envelope": [
+                14.0,
+                10.0,
+                14.0
+            ],
+            "bounds_center": [
+                0.0,
+                3.7599997520446779,
+                0.0
+            ],
+            "bounds_size": [
+                12.902399063110352,
+                7.5199995040893559,
+                12.370399475097657
+            ],
+            "triangles_per_lod": [
+                228,
+                156,
+                102
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "F43BD7BC0FBB2CFB41743A4DD93351BD0529A3F4096A73A156C474A2F9886A87",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/mineral_products_works.png",
+            "nonblank_pixels": 102834
+        },
+        {
+            "key": "primary_smelter",
+            "family": "arc",
+            "member": "PrimarySmelter",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/primary_smelter.prefab",
+            "envelope": [
+                14.0,
+                10.0,
+                14.0
+            ],
+            "bounds_center": [
+                0.0,
+                4.265249729156494,
+                0.0
+            ],
+            "bounds_size": [
+                12.902399063110352,
+                8.530499458312989,
+                12.370399475097657
+            ],
+            "triangles_per_lod": [
+                348,
+                246,
+                126
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "2264E5998B72A783F62EBBC48403F0AD01927099BA3F2C5D7801208C2DB03A03",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/primary_smelter.png",
+            "nonblank_pixels": 100940
+        },
+        {
+            "key": "fuel_smelter",
+            "family": "blast",
+            "member": "FuelSmelter",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/fuel_smelter.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                3.4121999740600588,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                6.824399948120117,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                288,
+                210,
+                108
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "82824832197535E31D54FB5C3F0084F85817B192D31AB5D1CEF143F6B979AA7C",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/fuel_smelter.png",
+            "nonblank_pixels": 101798
+        },
+        {
+            "key": "precision_metals_works",
+            "family": "electrolysis",
+            "member": "PrecisionMetalsWorks",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/precision_metals_works.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                2.8106000423431398,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                5.621200084686279,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                420,
+                156,
+                144
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "4C68604D3008D4E369BAB2BAA830A529A034D58D4687EEF0359497637EC5464E",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/precision_metals_works.png",
+            "nonblank_pixels": 105102
+        },
+        {
+            "key": "casting_finishing_works",
+            "family": "casting",
+            "member": "CastingFinishingWorks",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/casting_finishing_works.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                3.0738000869750978,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                6.147600173950195,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                192,
+                150,
+                120
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "1E1671663D0DAD084B5F96015E7955342A4D15AE65E748EF2D6A740C7D1D42D1",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/casting_finishing_works.png",
+            "nonblank_pixels": 101818
+        },
+        {
+            "key": "refinery_complex",
+            "family": "refinery",
+            "member": "RefineryComplex",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/refinery_complex.prefab",
+            "envelope": [
+                14.0,
+                10.0,
+                14.0
+            ],
+            "bounds_center": [
+                0.0,
+                4.13599967956543,
+                0.0
+            ],
+            "bounds_size": [
+                12.902399063110352,
+                8.27199935913086,
+                12.370399475097657
+            ],
+            "triangles_per_lod": [
+                660,
+                420,
+                108
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "213600782ADC1711B894606E6DA4A9441CAB041AC2D798A6184D236C51C87DDE",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/refinery_complex.png",
+            "nonblank_pixels": 103351
+        },
+        {
+            "key": "gas_fertilizer_complex",
+            "family": "gas",
+            "member": "GasFertilizerComplex",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/gas_fertilizer_complex.prefab",
+            "envelope": [
+                14.0,
+                10.0,
+                14.0
+            ],
+            "bounds_center": [
+                0.0,
+                4.13599967956543,
+                0.0
+            ],
+            "bounds_size": [
+                12.902399063110352,
+                8.27199935913086,
+                12.370399475097657
+            ],
+            "triangles_per_lod": [
+                696,
+                444,
+                126
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "3A2D2B0E5BE59BA546B4092A9CABF6930F34069E02BDBD2967896D906E2DED7B",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/gas_fertilizer_complex.png",
+            "nonblank_pixels": 103351
+        },
+        {
+            "key": "materials_chemistry_complex",
+            "family": "chemical",
+            "member": "MaterialsChemistryComplex",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/materials_chemistry_complex.prefab",
+            "envelope": [
+                14.0,
+                10.0,
+                14.0
+            ],
+            "bounds_center": [
+                0.0,
+                4.13599967956543,
+                0.0
+            ],
+            "bounds_size": [
+                12.902399063110352,
+                8.27199935913086,
+                12.370399475097657
+            ],
+            "triangles_per_lod": [
+                852,
+                540,
+                126
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "C23B2DA399F4738F54CAF87F58725B0E33C7BCA835F9F412E786F01B2B6BDBD1",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/materials_chemistry_complex.png",
+            "nonblank_pixels": 105096
+        },
+        {
+            "key": "medical_chemistry_complex",
+            "family": "medical",
+            "member": "MedicalChemistryComplex",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/medical_chemistry_complex.prefab",
+            "envelope": [
+                14.0,
+                10.0,
+                14.0
+            ],
+            "bounds_center": [
+                0.0,
+                3.1959996223449709,
+                0.0
+            ],
+            "bounds_size": [
+                12.902399063110352,
+                6.391999244689941,
+                12.370399475097657
+            ],
+            "triangles_per_lod": [
+                492,
+                258,
+                162
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "6F1C09B9F16F87A6DE713289FBE8AB8A6C5B37FB8FC21D833AD889487DB0C093",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/medical_chemistry_complex.png",
+            "nonblank_pixels": 137924
+        },
+        {
+            "key": "food_processing_campus",
+            "family": "food",
+            "member": "FoodProcessingCampus",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/food_processing_campus.prefab",
+            "envelope": [
+                14.0,
+                10.0,
+                14.0
+            ],
+            "bounds_center": [
+                0.0,
+                3.759999990463257,
+                0.0
+            ],
+            "bounds_size": [
+                12.902399063110352,
+                7.519999980926514,
+                12.370399475097657
+            ],
+            "triangles_per_lod": [
+                588,
+                318,
+                198
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "51635DA826436EC581C5893F474B87E332D83A9694F33B9577C80E016676CE46",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/food_processing_campus.png",
+            "nonblank_pixels": 134865
+        },
+        {
+            "key": "food_pack_campus",
+            "family": "packing",
+            "member": "FoodPackCampus",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/food_pack_campus.prefab",
+            "envelope": [
+                14.0,
+                10.0,
+                14.0
+            ],
+            "bounds_center": [
+                0.0,
+                2.8199996948242189,
+                0.0
+            ],
+            "bounds_size": [
+                12.902399063110352,
+                5.6399993896484379,
+                12.370399475097657
+            ],
+            "triangles_per_lod": [
+                528,
+                294,
+                198
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "E91FF2093BB48D05BFCCB489A7BF87B66230884FEB1FAE64176D71B182772B6A",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/food_pack_campus.png",
+            "nonblank_pixels": 127685
+        },
+        {
+            "key": "crop_soil_bioprocessing",
+            "family": "fermentation",
+            "member": "CropSoilBioprocessing",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/crop_soil_bioprocessing.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                2.970399856567383,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                5.940799713134766,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                324,
+                210,
+                144
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "1A2A240411972EAC5B0DBA5B06BD565FF66A0E2C7A61AF2805A8D046922A98EF",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/crop_soil_bioprocessing.png",
+            "nonblank_pixels": 92935
+        },
+        {
+            "key": "bioenergy_center",
+            "family": "digester",
+            "member": "BioenergyCenter",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/bioenergy_center.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                2.293599843978882,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                4.587199687957764,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                276,
+                180,
+                126
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "7EDA8B7A50B855DE8C62B8C684637D80C5DC808A4851511CA42C8DCA9F92CB20",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/bioenergy_center.png",
+            "nonblank_pixels": 91618
+        },
+        {
+            "key": "water_utility",
+            "family": "water",
+            "member": "WaterUtility",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/water_utility.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                1.992799997329712,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                3.985599994659424,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                480,
+                264,
+                168
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "0CEAFA30B0162192750125E12DE129213D356C583619F7958508AB7881A40B57",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/water_utility.png",
+            "nonblank_pixels": 88782
+        },
+        {
+            "key": "thermal_desalination_works",
+            "family": "desalination",
+            "member": "ThermalDesalinationWorks",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/thermal_desalination_works.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                2.368800163269043,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                4.737600326538086,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                180,
+                132,
+                114
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "0F95CD3DA9D8E6B109CEFFFD882680EBF9D9322AD1B9C9CF73C846CA9F2F268A",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/thermal_desalination_works.png",
+            "nonblank_pixels": 92442
+        },
+        {
+            "key": "thermal_emissions_utility",
+            "family": "scrubber",
+            "member": "ThermalEmissionsUtility",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/thermal_emissions_utility.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                3.3087997436523439,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                6.6175994873046879,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                708,
+                450,
+                126
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "773667DB828E20F206E3ED50F808F25964354FD90231CBAE8A49DEC66B4FA811",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/thermal_emissions_utility.png",
+            "nonblank_pixels": 95541
+        },
+        {
+            "key": "materials_recovery_center",
+            "family": "recovery",
+            "member": "MaterialsRecoveryCenter",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/materials_recovery_center.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                1.823599934577942,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                3.647199869155884,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                204,
+                156,
+                96
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "5297AE34FDFF9DA371867ED060A9525388977C8D5A53A2E7EEBE0B213A82D672",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/materials_recovery_center.png",
+            "nonblank_pixels": 92779
+        },
+        {
+            "key": "nuclear_fuel_complex",
+            "family": "enrichment",
+            "member": "NuclearFuelComplex",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/nuclear_fuel_complex.prefab",
+            "envelope": [
+                14.0,
+                10.0,
+                14.0
+            ],
+            "bounds_center": [
+                0.0,
+                3.806999921798706,
+                0.0
+            ],
+            "bounds_size": [
+                12.902399063110352,
+                7.613999843597412,
+                12.370399475097657
+            ],
+            "triangles_per_lod": [
+                444,
+                300,
+                114
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "DD5F35D40EDEA3E30C0AABBF99EC133588162CA63042B5CBE7353D0AF737D8A5",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/nuclear_fuel_complex.png",
+            "nonblank_pixels": 137431
+        },
+        {
+            "key": "nuclear_reprocessing_center",
+            "family": "hotcells",
+            "member": "NuclearReprocessingCenter",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/nuclear_reprocessing_center.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                3.23360013961792,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                6.46720027923584,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                204,
+                162,
+                90
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "3BAB57AC456D3AFBAB33F43FA39D283FD79C3AA99C1116FA8768055E95EBDF66",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/nuclear_reprocessing_center.png",
+            "nonblank_pixels": 128819
+        },
+        {
+            "key": "nuclear_fuel_fabrication_cell",
+            "family": "fuelrods",
+            "member": "NuclearFuelFabricationCell",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/nuclear_fuel_fabrication_cell.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                2.744800090789795,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                5.48960018157959,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                180,
+                156,
+                96
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "9AD6F295204C542A40B3DB208782CB0794084745E46FE89F91BEBD1AFB1CD9E5",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/nuclear_fuel_fabrication_cell.png",
+            "nonblank_pixels": 116870
+        },
+        {
+            "key": "precision_components_fab",
+            "family": "crystal",
+            "member": "PrecisionComponentsFab",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/precision_components_fab.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                3.158400058746338,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                6.316800117492676,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                360,
+                264,
+                150
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "1506B1B231B9A94F5E2805FF70416580F72D697EEC5673122FC748172C05AD41",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/precision_components_fab.png",
+            "nonblank_pixels": 103446
+        },
+        {
+            "key": "robotic_components_fab",
+            "family": "robotics",
+            "member": "RoboticComponentsFab",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/robotic_components_fab.prefab",
+            "envelope": [
+                14.0,
+                10.0,
+                14.0
+            ],
+            "bounds_center": [
+                0.0,
+                3.9362499713897707,
+                0.0
+            ],
+            "bounds_size": [
+                12.902399063110352,
+                7.872499942779541,
+                12.370399475097657
+            ],
+            "triangles_per_lod": [
+                288,
+                204,
+                132
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "70A1F2F4F6BF4A0CBD42C2735A9FEB50B1147089A66DBFBC81698FE37C569DAF",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/robotic_components_fab.png",
+            "nonblank_pixels": 138838
+        },
+        {
+            "key": "general_manufacturing_fab",
+            "family": "manufacturing",
+            "member": "GeneralManufacturingFab",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/general_manufacturing_fab.prefab",
+            "envelope": [
+                14.0,
+                10.0,
+                14.0
+            ],
+            "bounds_center": [
+                0.0,
+                3.7365000247955324,
+                0.0
+            ],
+            "bounds_size": [
+                12.902399063110352,
+                7.4730000495910648,
+                12.370399475097657
+            ],
+            "triangles_per_lod": [
+                444,
+                228,
+                144
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "ADF4638F48B9069214C8113AD5D445855809F4A97012DD6E7C2C7C6AEDC8809F",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/general_manufacturing_fab.png",
+            "nonblank_pixels": 138595
+        },
+        {
+            "key": "orbital_fabrication_fab",
+            "family": "orbital",
+            "member": "OrbitalFabricationFab",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/orbital_fabrication_fab.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                3.684799909591675,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                7.36959981918335,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                680,
+                404,
+                168
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "BB8DD169D0AAE28997D9B5875FE1FA3A8615C9F3CF7DA500F4E54BEAD4CE5597",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/orbital_fabrication_fab.png",
+            "nonblank_pixels": 98646
+        }
+    ],
+    "provenance": "Original procedural building geometry, shaders and materials; no redistributed game artwork."
+}

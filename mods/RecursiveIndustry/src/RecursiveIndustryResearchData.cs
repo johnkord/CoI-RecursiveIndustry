@@ -251,16 +251,13 @@ internal sealed class RecursiveIndustryResearchData : IResearchNodesData
                 "Autonomous Electronics Integration",
                 RecursiveIndustryIds.Research.AutonomousElectronicsIntegration,
                 costMonths: 360)
-            .Description("Consolidates sustained Electronics II demand. The Package-free staged row gives 4x throughput while retaining PCB and Electronics logistics; Industrial Control later unlocks a 2x raw-material composition. Assembly V remains preferable for intermittent demand.")
+            .Description("Rebuilds Electronics II production after Epoch II. The staged row retains PCB and Electronics supply; Industrial Control Networks enables raw-material integration with fewer intermediate handoffs but lower output per machine. Construction and shared control support remain substantial investments.")
             .AddMachineToUnlock(
                 RecursiveIndustryIds.Machines
                     .AutonomousElectronicsIntegrationComplex,
                 unlockAllRecipes: false)
             .AddRecipeToUnlock(
                 RecursiveIndustryIds.Recipes.IntegrateElectronics2Intermediates)
-            .AddRequirementForLifetimeProduction(
-                RecursiveIndustryIds.Products.FrontierProgram,
-                8)
             .BuildAndAdd();
 
         autonomousElectronicsIntegration.GridPosition = new Vector2i(200, 26);
@@ -301,7 +298,7 @@ internal sealed class RecursiveIndustryResearchData : IResearchNodesData
                 "Autonomous Capital Fabrication",
                 RecursiveIndustryIds.Research.AutonomousCapitalFabrication,
                 costMonths: 480)
-            .Description("Consolidates sustained lower construction and vehicle-part production. Package-free staged rows give 4x throughput; Industrial Control later unlocks 2x cross-stage compositions. Ordinary Assemblies remain the low-capital fallback, while final tiers stay in the Nexus.")
+            .Description("Rebuilds lower construction and vehicle-part production after Epoch II. Staged rows retain intermediate supply, while Industrial Control Networks enables integrated Construction Parts III and Vehicle Parts II. Final tiers stay in the Nexus; retain shared suppliers when other industries still need them.")
             .AddMachineToUnlock(
                 RecursiveIndustryIds.Machines.AutonomousCapitalFabricationMatrix,
                 unlockAllRecipes: false)
@@ -315,13 +312,10 @@ internal sealed class RecursiveIndustryResearchData : IResearchNodesData
                 RecursiveIndustryIds.Recipes.FabricateVehicleParts)
             .AddRecipeToUnlock(
                 RecursiveIndustryIds.Recipes.FabricateVehicleParts2)
-            .AddRequirementForLifetimeProduction(
-                RecursiveIndustryIds.Products.FrontierProgram,
-                32)
             .BuildAndAdd();
 
         autonomousCapitalFabrication.GridPosition = new Vector2i(204, 26);
-        autonomousCapitalFabrication.AddParent(recursiveEpochIII);
+        autonomousCapitalFabrication.AddParent(recursiveEpochII);
         autonomousCapitalFabrication.AddParent(
             registrator.PrototypesDb.GetOrThrow<ResearchNodeProto>(
                 Ids.Research.RoboticAssembly));
@@ -457,6 +451,10 @@ internal sealed class RecursiveIndustryResearchData : IResearchNodesData
                     RecursiveIndustryIds.Focuses.OrbitalLiftCoordination))
             .AddMachineToUnlock(
                 RecursiveIndustryIds.Machines.OrbitalMissionComplex)
+            .AddMachineToUnlock(
+                RecursiveIndustryIds.Machines.OrbitalFabricationFab,
+                unlockAllRecipes: false)
+            .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedCrewSupplies)
             .AddRecipeToUnlock(
                 RecursiveIndustryIds.Recipes.RunOrbitalScienceCampaign)
             .AddProductToUnlock(
@@ -571,7 +569,7 @@ internal sealed class RecursiveIndustryResearchData : IResearchNodesData
         algorithmicCoDesign.GridPosition = new Vector2i(188, 22);
         algorithmicCoDesign.AddParent(physicalValidation);
 
-        UniversalIndustryResearchData.Register(registrator, recursiveEpochV);
+        UniversalIndustryResearchData.Register(registrator, recursiveEpochII, recursiveEpochIII, recursiveEpochIV);
     }
 
     private static long ExtremeCost(long baseCost, int level)

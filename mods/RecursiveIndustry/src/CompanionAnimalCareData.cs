@@ -21,9 +21,10 @@ internal sealed class CompanionAnimalCareData : IModData
             new CountableProductProto(
                 RecursiveIndustryIds.Products.CompanionProvisions,
                 "Companion Provisions",
-                CountableProductGraphics.WithCustomIcon(
+                CountableProductGraphics.WithCustomModel(
                     foodPack,
-                    RecursiveIndustryIcons.CompanionProvisions)));
+                    RecursiveIndustryIcons.CompanionProvisions,
+                    "companion_provisions")));
         ProductProto waste = registrator.PrototypesDb
             .GetOrThrow<ProductProto>(Ids.Products.Waste);
         UpointsStatsCategoryProto services = registrator.PrototypesDb
@@ -81,7 +82,7 @@ internal sealed class CompanionAnimalCareData : IModData
                 "[4][4][4][4][5][5][5][5][5][5][4]   ")
             .SetInput(provisions, 0.02.ToFix64(), 160)
             .SetOutput(waste, 0.004.ToFix64(), 64)
-            .SetPrefabPath("Assets/Base/Settlements/HouseholdGoodsModule.prefab")
+            .SetPrefabPath(BuildingModelPaths.CompanionAnimalCenter)
             .SetCustomIconPath(RecursiveIndustryIcons.CompanionAnimalCenter)
             .SetAnimationParams(AnimationParams.Loop(60.Percent()))
             .SetStayConnectedToLogisticsByDefault()

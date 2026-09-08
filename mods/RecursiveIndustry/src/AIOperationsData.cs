@@ -35,7 +35,8 @@ internal sealed class AIOperationsData : IModData
             250,
             16,
             1,
-            150);
+            150,
+            customPrefabPath: BuildingModelPaths.OperationsI);
         OfficeBuildingProto operationsII = OfficeBuildingFactory.Register(
             registrator,
             RecursiveIndustryIds.Offices.OperationsII,
@@ -54,7 +55,8 @@ internal sealed class AIOperationsData : IModData
             400,
             64,
             4,
-            2400);
+            2400,
+            customPrefabPath: BuildingModelPaths.OperationsII);
         OfficeBuildingProto operationsIII = OfficeBuildingFactory.Register(
             registrator,
             RecursiveIndustryIds.Offices.OperationsIII,
@@ -73,7 +75,8 @@ internal sealed class AIOperationsData : IModData
             600,
             192,
             16,
-            24900);
+            24900,
+            customPrefabPath: BuildingModelPaths.OperationsIII);
 
         operationsI.SetNextTier(operationsII);
         operationsII.SetNextTier(operationsIII);

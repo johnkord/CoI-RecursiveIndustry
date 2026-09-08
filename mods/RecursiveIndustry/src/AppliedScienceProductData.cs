@@ -18,15 +18,17 @@ internal sealed class AppliedScienceProductData : IModData
         registrator.PrototypesDb.Add(new CountableProductProto(
             RecursiveIndustryIds.Products.ExperimentProgram,
             "Experiment Program",
-            CountableProductGraphics.WithCustomIcon(
+            CountableProductGraphics.WithCustomModel(
                 labEquipment4,
-                RecursiveIndustryIcons.ExperimentProgram)));
+                RecursiveIndustryIcons.ExperimentProgram,
+                "experiment_program")));
 
         registrator.PrototypesDb.Add(new CountableProductProto(
             RecursiveIndustryIds.Products.ValidatedResearchDossier,
             "Validated Research Dossier",
-            CountableProductGraphics.WithCustomIcon(
+            CountableProductGraphics.WithCustomModel(
                 officeSupplies,
-                RecursiveIndustryIcons.ValidatedResearchDossier)));
+                RecursiveIndustryIcons.ValidatedResearchDossier,
+                "validated_research_dossier")));
     }
 }

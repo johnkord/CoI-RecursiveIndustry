@@ -1,5 +1,11 @@
 # Compatibility
 
+Version 0.27.0a is an unpublished complete-art successor. It retains the selected
+reconstruction gameplay and all 52 building models while replacing the remaining
+mod-specific cargo, rack, Fiber, vehicle, attachment, and train artwork. The author
+reported successful Civic use on 0.25.0a; that does not establish persistence or
+in-game acceptance of the new models. The hosted 0.22.0c archive is unchanged.
+
 ## Supported environment
 
 | Component | Support |
@@ -17,14 +23,20 @@ Build 614 has the same reflected ids, commands, selected public API, and relevan
 controlling paths as Build 613. The 0.22.0b DLL and ZIP also reproduce
 byte-for-byte against Build 614, and the author continued a long gameplay review
 across the update. Version 0.22.0c raises the exact manifest ceiling to 0.8.7a
-without changing gameplay. Publishing that successor remains gated on one clean
-fresh-world startup and strict full-log audit.
+without changing gameplay. That hosted release's evidence remains separate from
+the unpublished 0.27.0a art candidate.
 
 ## Saves
 
 Enable Recursive Industry when creating a new campaign. Adding it to or removing
 it from an existing normal save is unsupported. Stable prototype IDs are treated
 as save contracts and should not be renamed casually.
+
+Version 0.27.0a retains all existing building, product, research, and vehicle IDs
+and gameplay values. Three mod-owned amphibious attachment IDs isolate its original
+art from native trucks. Eligibility, order, cargo offsets, fill controls, and the
+empty-load choice are retained, but existing-save migration is not thereby proven.
+Do not overwrite an original save to test a pre-release upgrade.
 
 Version 0.19.0d intentionally removes the pre-release
 `RecursiveIndustry_OrbitalPowerRelay` prototype. A pre-release save containing a

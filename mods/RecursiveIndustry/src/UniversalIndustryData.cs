@@ -349,9 +349,7 @@ internal sealed class UniversalIndustryData : IModData
                 + $"{minimumPowerKw} kW Direct source envelope.");
         }
         bool useChemicalPlantBasis = ports.BodyRows > 5;
-        string prefabPath = useChemicalPlantBasis
-            ? "Assets/Base/Machines/Oil/ReformerT2.prefab"
-            : SystemsIntegrationLayout.PrefabPath;
+        string prefabPath = BuildingModelPaths.Universal(spec.Key);
 
         MachineProto machine;
         if (useChemicalPlantBasis)
@@ -398,7 +396,7 @@ internal sealed class UniversalIndustryData : IModData
             + " layout_rows=" + ports.BodyRows
             + " right_side_inputs=" + ports.RightSideInputPorts
             + " top_side_inputs=" + ports.TopSideInputPorts
-            + " presentation=" + (useChemicalPlantBasis ? "chemical_plant_ii" : "assembly_v"));
+            + " presentation=" + prefabPath);
         return machine;
     }
 

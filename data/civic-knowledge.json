@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "candidate_version": "0.27.0a",
+  "month_seconds": 60,
+  "research": {
+    "position": [200, 34],
+    "cost_months": 480,
+    "ri_parents": ["IndustrialControlNetworks", "PhysicalValidation"],
+    "native_parent": "IspModule",
+    "lifetime_dossiers": 4,
+    "lifetime_models": 16,
+    "space_points": false
+  },
+  "recipe": {
+    "inputs": {"ModelArchive": 1, "DatasetArchive": 8, "ValidatedResearchDossier": 1, "OfficeSupplies": 8},
+    "output": 1600,
+    "duration_seconds": 360
+  },
+  "center": {
+    "workers": 40,
+    "computing": 128,
+    "power_kw": 1000,
+    "maintenance_t3": 6,
+    "construction": {"ConstructionParts4": 240, "Electronics4": 64, "ValidatedControlPackage": 16, "ValidatedResearchDossier": 4}
+  },
+  "commons": {
+    "workers": 12,
+    "power_kw": 250,
+    "maintenance_t2": 4,
+    "stream_per_pop_month": "1/5",
+    "buffer": 240,
+    "unity": "6/5",
+    "health": null,
+    "productivity": null,
+    "construction": {"ConstructionParts4": 240, "Electronics4": 32, "ValidatedControlPackage": 8}
+  },
+  "stream": {
+    "product_class": "DataProductProto",
+    "storable": false,
+    "interchangeable_with_industrial_control": false,
+    "mixed_product_links": false
+  },
+  "scope": "Population-scaled optional service; no custom saved state, automatic policy, free material, health, or worker-productivity effect."
+}

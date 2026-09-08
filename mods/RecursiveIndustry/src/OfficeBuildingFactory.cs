@@ -26,22 +26,23 @@ internal static class OfficeBuildingFactory
         int packageQuantity,
         int bonusPercent,
         int inputBuffer = 64,
-        int outputBuffer = 64)
+        int outputBuffer = 64,
+        string customPrefabPath = null)
     {
         OfficeBuildingProto vanillaOffice = registrator.PrototypesDb
             .GetOrThrow<OfficeBuildingProto>(vanillaOfficeId);
         EntityCostsTpl costsTemplate = costs;
         LayoutEntityProto.Gfx graphics = vanillaOffice.Graphics;
         var customGraphics = new LayoutEntityProto.Gfx(
-            graphics.PrefabPath,
+            customPrefabPath ?? graphics.PrefabPath,
             graphics.PrefabOrigin,
             Option<string>.Some(customIconPath),
             graphics.Color,
             graphics.HideBlockedPortsIcon,
             graphics.VisualizedLayers,
             graphics.Categories,
-            graphics.UseInstancedRendering,
-            graphics.UseSemiInstancedRendering,
+            customPrefabPath == null && graphics.UseInstancedRendering,
+            customPrefabPath == null && graphics.UseSemiInstancedRendering,
             instancedRenderingExcludedObjects:
                 graphics.SemiInstancedRenderingExcludedObjects,
             instancedRenderingExcludedObjectsPattern:

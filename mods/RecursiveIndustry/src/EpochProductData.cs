@@ -21,22 +21,25 @@ internal sealed class EpochProductData : IModData
         registrator.PrototypesDb.Add(new CountableProductProto(
             RecursiveIndustryIds.Products.FrontierProgram,
             "Frontier Program",
-            CountableProductGraphics.WithCustomIcon(
+            CountableProductGraphics.WithCustomModel(
                 spaceProbeParts,
-                RecursiveIndustryIcons.FrontierProgram)));
+                RecursiveIndustryIcons.FrontierProgram,
+                "frontier_program")));
 
         registrator.PrototypesDb.Add(new CountableProductProto(
             RecursiveIndustryIds.Products.FrontierExpansionProject,
             "Frontier Expansion Project",
-            CountableProductGraphics.WithCustomIcon(
+            CountableProductGraphics.WithCustomModel(
                 asteroidBoosterParts,
-                RecursiveIndustryIcons.FrontierExpansionProject)));
+                RecursiveIndustryIcons.FrontierExpansionProject,
+                "frontier_expansion_project")));
 
         registrator.PrototypesDb.Add(new CountableProductProto(
             RecursiveIndustryIds.Products.OrbitalPowerCalibration,
             "Orbital Power Calibration",
-            CountableProductGraphics.WithCustomIcon(
+            CountableProductGraphics.WithCustomModel(
                 solarCellMono,
-                RecursiveIndustryIcons.OrbitalPowerCalibration)));
+                RecursiveIndustryIcons.OrbitalPowerCalibration,
+                "orbital_power_calibration")));
     }
 }

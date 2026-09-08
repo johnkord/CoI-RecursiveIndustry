@@ -14,7 +14,8 @@ planetary coordination, and frontier-scale megaprojects.
 > Captain of Industry 0.8.7a Build 614. It changes compatibility metadata only;
 > gameplay and assets remain identical to 0.22.0b. Start a new campaign and
 > report feedback through GitHub Issues. The main branch now contains the
-> unpublished 0.23.0b operating-envelope successor; do not treat source builds
+> unpublished 0.27.0a complete-world-art successor to island reconstruction,
+> retaining the 0.23 operating envelopes and Hauler correction; do not treat source builds
 > as the hosted playtest artifact.
 
 [Download Recursive Industry 0.22.0c Playtest](https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0c)
@@ -30,6 +31,18 @@ Player ZIP SHA-256:
 - AI Operations offices that turn workers, Computing, and renewable control into
   allocatable Focus.
 - Applied Science that keeps physical experiments and validation relevant.
+- Epoch II electronics and capital integration with earlier Industrial Control
+  and optional bulk deployment. Four terrestrial portfolios become available from
+  Epoch III, while nuclear and orbital specialization remain at Epoch IV.
+- Optional staffed Civic Knowledge: a Model Center supplies a Knowledge Commons
+  through dedicated Fiber, creating a population-scaled Unity service without a
+  Health or worker-productivity bonus.
+- Original world models for all 52 mod-owned buildings, including process-specific
+  industrial equipment, three office tiers, farms, services, and orbital receivers.
+  The 48 new models have three detail levels and retain native visual hooks.
+- Original Fiber profiles/hardware, six later cargo models, three installed rack
+  cabinets, eight autonomous vehicles, eight cargo attachments, and seventeen
+  locomotive/tender models. Native controls and gameplay values are retained.
 - Autonomous freight, heavy equipment, forestry, and a full locomotive roster
   built on native game behavior.
 - A general zero-worker Autonomous Hauler with Tier II tank, flatbed, and dump
@@ -138,6 +151,10 @@ redistributed.
 
 - [Design](docs/DESIGN.md)
 - [Progression](docs/PROGRESSION.md)
+- [Reconstruction](docs/RECONSTRUCTION.md)
+- [Civic Knowledge](docs/CIVIC_KNOWLEDGE.md)
+- [Building artwork](docs/BUILDING_ART.md)
+- [Complete world artwork](docs/WORLD_ART.md)
 - [Balance](docs/BALANCE.md)
 - [Building operating envelopes](docs/OPERATING_ENVELOPES.md)
 - [Adaptive Agrifood](docs/AGRIFOOD.md)

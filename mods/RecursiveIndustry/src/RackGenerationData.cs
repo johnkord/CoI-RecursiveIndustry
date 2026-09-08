@@ -23,7 +23,8 @@ internal sealed class RackGenerationData : IModData
             16,
             240,
             1.5,
-            2);
+            2,
+            "rack_i");
         RegisterRack(
             registrator,
             RecursiveIndustryIds.ServerRacks.RackII,
@@ -34,7 +35,8 @@ internal sealed class RackGenerationData : IModData
             64,
             600,
             4,
-            5);
+            5,
+            "rack_ii");
         RegisterRack(
             registrator,
             RecursiveIndustryIds.ServerRacks.RackIII,
@@ -45,7 +47,8 @@ internal sealed class RackGenerationData : IModData
             256,
             1500,
             10,
-            12);
+            12,
+            "rack_iii");
     }
 
     private static void RegisterRack(
@@ -58,7 +61,8 @@ internal sealed class RackGenerationData : IModData
         int computing,
         int powerKw,
         double coolant,
-        int maintenance)
+        int maintenance,
+        string modelKey)
     {
         ProductProto rackProduct = registrator.PrototypesDb.GetOrThrow<ProductProto>(productId);
         ProductProto spentProduct = registrator.PrototypesDb.GetOrThrow<ProductProto>(
@@ -80,7 +84,7 @@ internal sealed class RackGenerationData : IModData
             new PartialQuantity(maintenance.ToFix32()),
             new ServerRackProto.Gfx(
                 iconPath,
-                Assets.Base.Buildings.DataCenter.Rack_prefab,
+                "Assets/RecursiveIndustry/World/" + modelKey + ".prefab",
                 ImmutableArray.Create(
                     "DataCenter_Rack1",
                     "DataCenter_Rack2",

@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>10</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <CoiManagedDir>$(COI_ROOT)\Captain of Industry_Data\Managed</CoiManagedDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mafi"><HintPath>$(CoiManagedDir)\Mafi.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Mafi.Core"><HintPath>$(CoiManagedDir)\Mafi.Core.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="netstandard"><HintPath>$(CoiManagedDir)\netstandard.dll</HintPath><Private>false</Private></Reference>
+    <Compile Include="PolicyFixture.cs" />
+    <Compile Include="../../mods/RecursiveIndustry/src/FiberGraphics.cs" Link="FiberGraphics.cs" />
+    <Compile Include="../../mods/RecursiveIndustry/src/CountableProductGraphics.cs" Link="CountableProductGraphics.cs" />
+    <Compile Include="../../mods/RecursiveIndustry/src/WorldModelPaths.cs" Link="WorldModelPaths.cs" />
+  </ItemGroup>
+</Project>

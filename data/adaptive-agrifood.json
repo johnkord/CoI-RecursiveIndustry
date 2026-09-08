@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "candidate_version": "0.23.0b",
+  "candidate_version": "0.27.0a",
   "game": {
     "display_version": "0.8.7a",
     "build": 614
@@ -11,7 +11,7 @@
     "position": [224, 18],
     "duration_months": 480,
     "parent": "RecursiveIndustry_AutonomousEssentialSystems",
-    "requires_space_points": true,
+    "requires_space_points": false,
     "additional_lifetime_requirements": [],
     "unlocks": [
       "RecursiveIndustry_SensorGuidedGreenhouse",

@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>10</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="PolicyFixture.cs" />
+    <Compile Include="../../mods/RecursiveIndustry/src/ReconstructionResearchPrerequisites.cs" Link="ReconstructionResearchPrerequisites.cs" />
+  </ItemGroup>
+</Project>

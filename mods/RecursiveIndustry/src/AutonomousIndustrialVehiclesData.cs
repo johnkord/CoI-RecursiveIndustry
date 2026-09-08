@@ -1,6 +1,7 @@
 using System;
 using Mafi;
 using Mafi.Base;
+using Mafi.Collections.ImmutableCollections;
 using Mafi.Core.Buildings.VehicleDepots;
 using Mafi.Core.Economy;
 using Mafi.Core.Entities.Dynamic;
@@ -71,6 +72,8 @@ internal sealed class AutonomousIndustrialVehiclesData : IModData
     {
         TruckProto source = registrator.PrototypesDb
             .GetOrThrow<TruckProto>(Ids.Vehicles.TruckAmphibiousH);
+        ImmutableArray<AttachmentProto> attachments =
+            WorldAttachmentGraphics.CloneAmphibious(registrator, source.Attachments);
 
         return registrator.PrototypesDb.Add(new TruckProto(
             RecursiveIndustryIds.Vehicles.AutonomousAmphibiousHauler,
@@ -90,8 +93,8 @@ internal sealed class AutonomousIndustrialVehiclesData : IModData
             source.CapacityBase,
             SupportsTruckProduct,
             source.DumpedThicknessByDistance,
-            source.Attachments,
-            source.AttachmentWhenEmpty,
+            attachments,
+            WorldAttachmentGraphics.EmptySelection(source, attachments),
             source.CargoPickupDuration,
             source.MinDumpingDistance,
             source.MaxDumpingDistance,
@@ -317,21 +320,21 @@ internal sealed class AutonomousIndustrialVehiclesData : IModData
         ExcavatorProto.Gfx source,
         string iconPath) =>
         new(
-            source.PrefabPath,
+            WorldModelPaths.ForIcon(iconPath),
             source.FrontContactPtsOffset,
             source.RearContactPtsOffset,
             source.DustParticles,
             source.ExhaustParticlesSpec,
             source.EngineSoundPath,
             source.MovementSoundPath,
-            source.CabinModelName,
-            source.LeftTrackModelName,
-            source.RightTrackModelName,
+            "cabin",
+            "track_left",
+            "track_right",
             source.SpacingBetweenTracks,
             source.TrackTextureLength,
             source.IdleStateName,
-            source.PileParentPath,
-            source.PileModelName,
+            "cabin/boom/stick/bucket",
+            "payload",
             source.DigSounds,
             source.DumpSounds,
             Option<string>.Some(iconPath),
@@ -341,7 +344,7 @@ internal sealed class AutonomousIndustrialVehiclesData : IModData
         TruckProto.Gfx source,
         string iconPath) =>
         new(
-            source.PrefabPath,
+            WorldModelPaths.ForIcon(iconPath),
             Option<string>.Some(iconPath),
             source.FrontContactPtsOffset,
             source.RearContactPtsOffset,
@@ -352,8 +355,8 @@ internal sealed class AutonomousIndustrialVehiclesData : IModData
             source.SteeringWheelsSubmodelPaths,
             source.WheelDiameter,
             source.StaticWheelsSubmodelPaths,
-            source.LeftTrackModelName,
-            source.RightTrackModelName,
+            "track_left",
+            "track_right",
             source.SpacingBetweenTracks,
             source.TrackTextureLength);
 
@@ -361,7 +364,7 @@ internal sealed class AutonomousIndustrialVehiclesData : IModData
         TreeHarvesterProto.Gfx source,
         string iconPath) =>
         new(
-            source.PrefabPath,
+            WorldModelPaths.ForIcon(iconPath),
             Option<string>.Some(iconPath),
             source.FrontContactPtsOffset,
             source.RearContactPtsOffset,
@@ -369,9 +372,9 @@ internal sealed class AutonomousIndustrialVehiclesData : IModData
             source.ExhaustParticlesSpec,
             source.EngineSoundPath,
             source.MovementSoundPath,
-            source.CabinObjectPath,
-            source.LeftTrackObjectPath,
-            source.RightTrackObjectPath,
+            "cabin",
+            "track_left",
+            "track_right",
             source.SpacingBetweenTracks,
             source.TrackTextureLength,
             source.TreeHolderOffset,
@@ -383,14 +386,14 @@ internal sealed class AutonomousIndustrialVehiclesData : IModData
             source.TreeOnTruckAnimStateName,
             source.TreeFromTruckAnimStateName,
             source.FoldedAnimStateName,
-            source.HarvestedTreeParentObjectPath,
-            source.RotatingHandObjectPath);
+            "cabin/boom/stick/head/TreeHolder",
+            "cabin/boom/stick/head");
 
     private static TreePlanterProto.Gfx WithCustomIcon(
         TreePlanterProto.Gfx source,
         string iconPath) =>
         new(
-            source.PrefabPath,
+            WorldModelPaths.ForIcon(iconPath),
             Option<string>.Some(iconPath),
             source.FrontContactPtsOffset,
             source.RearContactPtsOffset,
@@ -398,13 +401,13 @@ internal sealed class AutonomousIndustrialVehiclesData : IModData
             source.ExhaustParticlesSpec,
             source.EngineSoundPath,
             source.MovementSoundPath,
-            source.CabinObjectPath,
-            source.LeftTrackObjectPath,
-            source.RightTrackObjectPath,
-            source.TreesBaseObjectPath,
+            "cabin",
+            "track_left",
+            "track_right",
+            "seedling",
             source.NumTrees,
             source.SpacingBetweenTracks,
             source.TrackTextureLength,
-            source.IdleAnimStateName,
-            source.PlantingAnimStateName);
+            "Idle",
+            "Planting");
 }

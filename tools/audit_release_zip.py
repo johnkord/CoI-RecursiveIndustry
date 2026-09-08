@@ -9,6 +9,8 @@ import json
 from pathlib import Path, PurePosixPath
 from zipfile import BadZipFile, ZipFile
 
+from bundle_manifest import bundle_files
+
 
 ROOT = Path(__file__).resolve().parents[1]
 MOD_ROOT = ROOT / "mods" / "RecursiveIndustry"
@@ -24,13 +26,7 @@ def load_source_manifest() -> dict:
 
 def expected_entries(manifest: dict) -> set[str]:
     mod_id = manifest["id"]
-    bundles = {
-        line.strip()
-        for line in (MOD_ROOT / "AssetBundles" / "mafi_bundles.manifest")
-        .read_text(encoding="utf-8")
-        .splitlines()
-        if line.strip()
-    }
+    bundles = bundle_files((MOD_ROOT / "AssetBundles" / "mafi_bundles.manifest").read_text(encoding="utf-8"))
     return {
         f"{mod_id}/manifest.json",
         f"{mod_id}/config.json",
@@ -81,13 +77,7 @@ def audit_archive(path: Path) -> list[str]:
                 f"{manifest['id']}/AssetBundles/mafi_bundles.manifest"
             )
             if bundle_manifest_name in actual:
-                declared = {
-                    line.strip()
-                    for line in archive.read(bundle_manifest_name)
-                    .decode("utf-8")
-                    .splitlines()
-                    if line.strip()
-                }
+                declared = bundle_files(archive.read(bundle_manifest_name).decode("utf-8"))
                 packaged_bundles = {
                     PurePosixPath(name).name
                     for name in actual
@@ -96,7 +86,7 @@ def audit_archive(path: Path) -> list[str]:
                 }
                 if packaged_bundles != declared:
                     errors.append("packaged bundles differ from MaFi manifest")
-    except (OSError, BadZipFile, json.JSONDecodeError, UnicodeDecodeError) as exc:
+    except (OSError, BadZipFile, ValueError, UnicodeDecodeError) as exc:
         errors.append(str(exc))
     return errors
 

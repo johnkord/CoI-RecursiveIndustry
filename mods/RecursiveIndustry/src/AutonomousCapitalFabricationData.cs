@@ -18,7 +18,7 @@ internal sealed class AutonomousCapitalFabricationData : IModData
             .Start(
                 "Autonomous Capital Fabrication Matrix",
                 RecursiveIndustryIds.Machines.AutonomousCapitalFabricationMatrix)
-            .Description("A zero-worker capital-goods facility. Staged rows use installed control without recurring Packages; late networked rows consume Stream to collapse transported lower tiers at higher power.")
+            .Description("A zero-worker capital-goods facility available after Epoch II. Staged rows retain intermediate production; Industrial Control enables integrated lower-tier chains at higher power. Keep shared suppliers where other industries still need their outputs.")
             .SetCost(
                 Costs.Build
                     .CP4(1440)
@@ -33,11 +33,10 @@ internal sealed class AutonomousCapitalFabricationData : IModData
             .SetComputingConsumption(Computing.FromTFlops(512))
             .SetCategories(Ids.ToolbarCategories.Production_General)
             .SetLayout(AutonomousCapitalFabricationLayout.Create())
-            .SetPrefabPath(AutonomousCapitalFabricationLayout.PrefabPath)
+            .SetPrefabPath(BuildingModelPaths.AutonomousCapitalFabricationMatrix)
             .SetCustomIconPath(
                 RecursiveIndustryIcons.AutonomousCapitalFabricationMatrix)
             .SetMachineSound(AutonomousCapitalFabricationLayout.SoundPath)
-            .EnableSemiInstancedRendering(ImmutableArray.Create("sign"))
             .AddSign()
             .BuildAndAdd();
 

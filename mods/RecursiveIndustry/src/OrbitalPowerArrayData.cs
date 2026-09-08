@@ -57,13 +57,13 @@ internal sealed class OrbitalPowerArrayData : IModData
             DestroyReason.UsedAsFuel,
             ImmutableArray<AnimationParams>.Empty,
             new ElectricityGeneratorFromProductProto.Gfx(
-                OrbitalPowerArrayLayout.PrefabPath,
+                BuildingModelPaths.OrbitalPowerArray,
                 ImmutableArray<ParticlesParams>.Empty,
                 OrbitalPowerArrayLayout.SoundPath,
                 registrator.GetCategoriesProtos(
                     Ids.ToolbarCategories.Power_General),
                 customIconPath:
                     Option<string>.Some(RecursiveIndustryIcons.OrbitalPowerArray),
-                useSemiInstancedRendering: true)));
+                useSemiInstancedRendering: false)));
     }
 }

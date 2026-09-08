@@ -19,10 +19,9 @@ internal sealed class CurationOfficeData : IModData
             .SetElectricityConsumption(200.Kw())
             .SetCategories(Ids.ToolbarCategories.Production_General)
             .SetLayout(VerticalSliceProofLayout.Create())
-            .SetPrefabPath(VerticalSliceProofLayout.PrefabPath)
+            .SetPrefabPath(BuildingModelPaths.CurationOffice)
             .SetCustomIconPath(RecursiveIndustryIcons.CurationOffice)
             .SetMachineSound(VerticalSliceProofLayout.SoundPath)
-            .EnableSemiInstancedRendering(ImmutableArray.Create("sign"))
             .AddSign()
             .BuildAndAdd();
 

@@ -143,8 +143,7 @@ internal sealed class AutonomousNetworksData : IModData
                 100.Percent(),
                 RoadLaneType.MaskTwoTileLane))
             .SetDisruptionByDistance(22, 10)
-            .SetPrefabPath(
-                "Assets/Base/Vehicles/ModularTruck/TruckBaseHydrogen.prefab")
+            .SetPrefabPath(WorldModelPaths.ForIcon(RecursiveIndustryIcons.AutonomousHauler))
             .SetCustomIconPath(RecursiveIndustryIcons.AutonomousHauler)
             .SetTerrainContactPointsOffsets(
                 new RelTile2f(4.6.Meters(), 1.1.Meters()),
@@ -174,9 +173,9 @@ internal sealed class AutonomousNetworksData : IModData
                 new Proto.ID(vehicleId + "_AttachmentTank"),
                 product => product is FluidProductProto,
                 new TankAttachmentProto.Gfx(
-                    "Assets/Base/Vehicles/ModularTruck/T2-tank.prefab",
+                    WorldModelPaths.Root + "hauler_tank.prefab",
                     "icons",
-                    "T2-tank",
+                    "tank",
                     ColorRgba.Gray,
                     ColorRgba.DarkGray),
                 keepOnEvenIfNotNeeded: false))
@@ -185,14 +184,14 @@ internal sealed class AutonomousNetworksData : IModData
                 product => product is CountableProductProto,
                 new FlatBedAttachmentProto.Gfx(
                     FlatBedAttachmentProto.Gfx.ProductOffsetsTruckT2(),
-                    "Assets/Base/Vehicles/ModularTruck/Truck_Flat.prefab"),
+                    WorldModelPaths.Root + "hauler_flatbed.prefab"),
                 keepOnEvenIfNotNeeded: true))
             .AddAttachment(new DumpAttachmentProto(
                 new Proto.ID(vehicleId + "_AttachmentDump"),
                 new DumpAttachmentProto.Gfx(
-                    "Assets/Base/Vehicles/ModularTruck/Truck_Dump.prefab",
-                    "Object010/PileSmooth",
-                    "Object010/PileRough",
+                    WorldModelPaths.Root + "hauler_dump.prefab",
+                    "bed/PileSmooth",
+                    "bed/PileRough",
                     LoosePileTextureParams.Default,
                     new Vector3f(2.6.ToFix32(), 0.2.ToFix32(), 0),
                     new Vector3f(2.6.ToFix32(), 1.9.ToFix32(), 0))))
@@ -219,9 +218,9 @@ internal sealed class AutonomousNetworksData : IModData
             new DumpAttachmentProto(
                 new Proto.ID(dumpId + "_AttachmentDump"),
                 new DumpAttachmentProto.Gfx(
-                    "Assets/Base/Vehicles/ModularTruckT3/TruckT3DumpHydrogen.prefab",
-                    "dump/PileSmooth",
-                    "dump/PileSmooth",
+                    WorldModelPaths.Root + "heavy_dump.prefab",
+                    "bed/PileSmooth",
+                    "bed/PileSmooth",
                     LoosePileTextureParams.Default,
                     "Main")));
 
@@ -238,9 +237,9 @@ internal sealed class AutonomousNetworksData : IModData
                 new Proto.ID(tankId + "_AttachmentTank"),
                 product => product is FluidProductProto,
                 new TankAttachmentProto.Gfx(
-                    "Assets/Base/Vehicles/ModularTruckT3/T3-tank.prefab",
+                    WorldModelPaths.Root + "heavy_tank.prefab",
                     "icons",
-                    "T3-tank",
+                    "tank",
                     new ColorRgba(0.63f, 0.51f, 0.24f),
                     ColorRgba.DarkDarkGray),
                 keepOnEvenIfNotNeeded: true));
@@ -307,8 +306,7 @@ internal sealed class AutonomousNetworksData : IModData
                 100.Percent(),
                 RoadLaneType.MaskFourTileLane))
             .SetDisruptionByDistance(0, 32, 32)
-            .SetPrefabPath(
-                "Assets/Base/Vehicles/ModularTruckT3/TruckT3BaseHydrogen.prefab")
+            .SetPrefabPath(WorldModelPaths.ForIcon(customIconPath))
             .SetCustomIconPath(customIconPath)
             .SetTerrainContactPointsOffsets(
                 new RelTile2f(3.0.Meters(), 2.5.Meters()),

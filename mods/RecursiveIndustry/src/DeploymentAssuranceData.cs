@@ -35,7 +35,7 @@ internal sealed class DeploymentAssuranceData : IModData
             .SetComputingConsumption(Computing.FromTFlops(256))
             .SetCategories(Ids.ToolbarCategories.Production_General)
             .SetLayout(Layout)
-            .SetPrefabPath(VerticalSliceProofLayout.PrefabPath)
+            .SetPrefabPath(BuildingModelPaths.DeploymentAssuranceCampus)
             .SetCustomIconPath(RecursiveIndustryIcons.DeploymentAssuranceCampus)
             .SetMachineSound(VerticalSliceProofLayout.SoundPath)
             .BuildAndAdd();

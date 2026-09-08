@@ -20,17 +20,17 @@ internal sealed class IndustrialControlTransportData : IModData
 
     public void RegisterData(ProtoRegistrator registrator)
     {
-        IoPortShapeProto pipeShape = registrator.PrototypesDb
-            .GetOrThrow<IoPortShapeProto>(Ids.IoPortShapes.Pipe);
         var dataShape = new IoPortShapeProto(
             RecursiveIndustryIds.Infrastructure.Data,
             Proto.Str.Empty,
             ':',
             DataProductProto.ProductType,
             new IoPortShapeProto.Gfx(
-                pipeShape.Graphics.ConnectedPortPrefabPath,
-                pipeShape.Graphics.ConnectedPortPrefabPathLod3,
-                showWhenTwoTransportsConnect: true));
+                FiberGraphics.Port,
+                FiberGraphics.PortFar,
+                showWhenTwoTransportsConnect: true,
+                disconnectedPrefabPath: FiberGraphics.PortClosed,
+                disconnectedPrefabPathLod3: FiberGraphics.PortClosedFar));
         registrator.PrototypesDb.Add(dataShape);
 
         TransportProto accessFiber = CloneNativeTransport(
@@ -82,7 +82,7 @@ internal sealed class IndustrialControlTransportData : IModData
             "+:C{1}A:+",
             "   D:+   ");
         var graphics = new LayoutEntityProto.Gfx(
-            "Assets/Base/MiniZippers/ConnectorFluid.prefab",
+            FiberGraphics.Junction,
             customIconPath: RecursiveIndustryIcons.FiberJunction,
             color: ColorRgba.White,
             hideBlockedPortsIcon: true,
@@ -109,17 +109,17 @@ internal sealed class IndustrialControlTransportData : IModData
         string iconPath)
     {
         var graphics = new TransportProto.Gfx(
-            source.Graphics.CrossSectionLods,
+            FiberGraphics.CrossSections(source, id == RecursiveIndustryIds.Infrastructure.BackboneFiber),
             renderProducts: false,
-            source.Graphics.MaterialPath,
+            FiberGraphics.Material,
             source.Graphics.TransportUvLength,
             renderTransportedProducts: false,
             source.Graphics.SoundOnBuildPrefabPath,
-            source.Graphics.FlowIndicator,
-            source.Graphics.VerticalConnectorPrefabPath,
-            source.Graphics.PillarAttachments,
+            FiberGraphics.FlowIndicator(source, id == RecursiveIndustryIds.Infrastructure.BackboneFiber),
+            source.Graphics.VerticalConnectorPrefabPath.HasValue ? Option<string>.Some(FiberGraphics.Vertical) : Option<string>.None,
+            FiberGraphics.PillarAttachments(source),
             source.Graphics.UvShiftY,
-            source.Graphics.InstancedRenderingData,
+            new TransportProto.Gfx.TransportInstancedRenderingData(),
             source.Graphics.CrossSectionRadius,
             source.Graphics.CrossSectionScale,
             usePerProductColoring: true,

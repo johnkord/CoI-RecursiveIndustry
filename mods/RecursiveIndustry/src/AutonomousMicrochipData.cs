@@ -31,9 +31,8 @@ internal sealed class AutonomousMicrochipData : IModData
             .SetComputingConsumption(Computing.FromTFlops(256))
             .SetCategories(Ids.ToolbarCategories.Production_General)
             .SetLayout(AutonomousMicrochipLayout.Create())
-            .SetPrefabPath(AutonomousMicrochipLayout.PrefabPath)
+            .SetPrefabPath(BuildingModelPaths.AutonomousMicrochipComplex)
             .SetCustomIconPath(RecursiveIndustryIcons.AutonomousMicrochipComplex)
-            .EnableSemiInstancedRendering()
             .BuildAndAdd();
 
         registrator.RecipeProtoBuilder

@@ -23,10 +23,9 @@ internal sealed class AIElectronicsCellData : IModData
             .SetComputingConsumption(Computing.FromTFlops(12))
             .SetCategories(Ids.ToolbarCategories.Production_General)
             .SetLayout(VerticalSliceProofLayout.Create(includeThirdInput: false))
-            .SetPrefabPath(VerticalSliceProofLayout.PrefabPath)
+            .SetPrefabPath(BuildingModelPaths.AIElectronicsCell)
             .SetCustomIconPath(RecursiveIndustryIcons.AiElectronicsCell)
             .SetMachineSound(VerticalSliceProofLayout.SoundPath)
-            .EnableSemiInstancedRendering(ImmutableArray.Create("sign"))
             .AddSign()
             .BuildAndAdd();
 
