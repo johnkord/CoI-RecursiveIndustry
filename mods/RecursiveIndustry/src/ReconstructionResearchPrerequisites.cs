@@ -68,6 +68,24 @@ internal static class ReconstructionResearchPrerequisites
         foreach (string recipeId in sourceRecipes)
             required.Add(registrator.PrototypesDb.GetOrThrow<RecipeProto>(new RecipeProto.ID(recipeId)));
 
+        AttachNativeOwners(registrator, target, required);
+    }
+
+    public static void AddNativeOwners(
+        ProtoRegistrator registrator,
+        ResearchNodeProto target,
+        params Proto[] requiredProtos)
+    {
+        if (requiredProtos.Length == 0 || requiredProtos.Any(proto => proto == null))
+            throw new ArgumentException("Native prerequisite prototypes must be present.", nameof(requiredProtos));
+        AttachNativeOwners(registrator, target, new HashSet<Proto>(requiredProtos));
+    }
+
+    private static void AttachNativeOwners(
+        ProtoRegistrator registrator,
+        ResearchNodeProto target,
+        HashSet<Proto> required)
+    {
         var owners = new Dictionary<Proto, List<ResearchNodeProto>>();
         foreach (ResearchNodeProto node in registrator.PrototypesDb.All<ResearchNodeProto>())
         {
@@ -96,7 +114,7 @@ internal static class ReconstructionResearchPrerequisites
         {
             if (!owners.TryGetValue(proto, out List<ResearchNodeProto> nodes))
             {
-                if (proto is MachineProto)
+                if (!(proto is RecipeProto))
                     throw new InvalidOperationException("No native equipment research owner for " + proto.Id);
                 continue;
             }

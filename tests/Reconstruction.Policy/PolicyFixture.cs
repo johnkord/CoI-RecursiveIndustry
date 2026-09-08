@@ -201,6 +201,30 @@ namespace RecursiveIndustry
             Require(precision.Target.Parents.SequenceEqual(new[] { precision.Native }), "Precision must retain its native source technology");
             passed++;
 
+            var specialized = new Scenario();
+            var diesel = new Proto(new Proto.ID("DieselLocomotive"));
+            var nuclear = new Proto(new Proto.ID("NuclearLocomotive"));
+            var dieselOwner = new ResearchNodeProto("DieselResearch") { Mod=new object() };
+            var nuclearOwner = new ResearchNodeProto("NuclearResearch") { Mod=new object() };
+            dieselOwner.Units.Add(new Unlock(diesel));
+            nuclearOwner.Units.Add(new Unlock(nuclear));
+            specialized.Registrator.PrototypesDb.Items.AddRange(new Proto[] { diesel, nuclear, dieselOwner, nuclearOwner });
+            ReconstructionResearchPrerequisites.AddNativeOwners(specialized.Registrator, specialized.Target, diesel);
+            Require(specialized.Target.Parents.SequenceEqual(new[] { dieselOwner }), "A chosen native application must not inherit another application's technology");
+            passed++;
+
+            var unknown = new Proto(new Proto.ID("UnownedVehicle"));
+            bool missingOwnerFailed = false;
+            try { ReconstructionResearchPrerequisites.AddNativeOwners(specialized.Registrator, specialized.Target, unknown); }
+            catch (InvalidOperationException) { missingOwnerFailed=true; }
+            Require(missingOwnerFailed, "Unowned native vehicles or buildings must fail closed");
+            passed++;
+
+            var duplicate = new Scenario();
+            ReconstructionResearchPrerequisites.AddNativeOwners(duplicate.Registrator, duplicate.Target, duplicate.Machine, duplicate.Machine);
+            Require(duplicate.Target.Parents.SequenceEqual(new[] { duplicate.Native }), "Repeated source prototypes must not duplicate research parents");
+            passed++;
+
             Console.WriteLine("PASS: " + passed + " compiled reconstruction policy scenarios (native data stand-ins, not game runtime).");
             return 0;
         }
