@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "product": "Electronics2",
+  "output_per_60": "96",
+  "material_capacity_per_60": "450",
+  "headroom": {
+    "installed_computing": 1024,
+    "ongoing_computing": 512,
+    "reserve_computing": 128,
+    "overlap_computing": 256,
+    "stream_per_60": "0",
+    "packages_per_60": "0"
+  },
+  "config_overrides": {}
+}

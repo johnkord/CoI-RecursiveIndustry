@@ -41,6 +41,7 @@ REQUIRED_DATA = {
     "world-art.json",
     "civic-knowledge.json",
     "research-tree.json",
+    "reconstruction-scenario.example.json",
     "industrial-control-network.json",
     "universal-industry-catalog.json",
 }
@@ -55,6 +56,7 @@ REQUIRED_TOOLS = {
     "generate_research_tree.py",
     "package_mod.py",
     "model_reconstruction_bridge.py",
+    "plan_reconstruction.py",
     "simulate_recursive_industry_economy.py",
     "validate_public_repo.py",
 }
@@ -73,6 +75,8 @@ REQUIRED_DOCS = {
     "OPERATING_ENVELOPES.md",
     "PROGRESSION.md",
     "RECONSTRUCTION.md",
+    "RESEARCH_TREE.md",
+    "CONVERSION_WORKSHEET.md",
     "PUBLISHING.md",
     "PLAYTESTING.md",
     "README.md",

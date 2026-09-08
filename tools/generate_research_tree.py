@@ -203,7 +203,7 @@ def main() -> int:
     files = {OUTPUT: render(data), IDS: render_ids(data), DOC: render_doc(data), **contract_references()}
     for path, expected in files.items():
         if args.write:
-            path.write_text(expected, encoding="utf-8")
+            path.write_text(expected, encoding="utf-8", newline="\n")
         elif not path.exists() or path.read_text(encoding="utf-8") != expected:
             raise ValueError("Generated research source differs: " + path.name)
     print(f"PASS: {len(data['nodes'])} research definitions, acyclic generation, explicit recipe ownership")

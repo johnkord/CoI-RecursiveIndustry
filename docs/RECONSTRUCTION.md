@@ -1,13 +1,13 @@
 # Rebuilding an Industrial District
 
-The unpublished reconstruction candidate makes live-control integration available from
-Epoch II and terrestrial reconstruction from Epoch III. Civic Knowledge provides
-a new optional settlement destination. This is not a quest system or a change
-to the hosted 0.22.0c playtest.
+The 0.28.0a release candidate makes industrial applications independent choices
+after Systems Integration, retaining their native source technologies. Civic
+Knowledge uses the shared Fiber infrastructure without requiring industrial
+control or Microchip consolidation. See [Progression](PROGRESSION.md).
 
-Version 0.26.0a added [complete building artwork](BUILDING_ART.md); 0.27.0a completes
-the [remaining world models](WORLD_ART.md). Both preserve the 0.25.0a gameplay
-described here.
+The candidate retains the [complete building artwork](BUILDING_ART.md) and
+[world models](WORLD_ART.md) unchanged. It is not a quest system or an update
+to the immutable hosted 0.22.0c playtest.
 
 ## Choose What to Simplify
 
@@ -60,7 +60,7 @@ another district does not automatically require another complete support chain.
 
 Rates are per 60 simulation Time. A wider link does not increase its source's
 output. These are capacity bounds, not guarantees of flow or priority. Both
-transport tiers are available with Industrial Control; Federated Deployment
+transport tiers are available with Fiber Infrastructure; Federated Deployment
 adds dense supply and bulk assurance, not permission to lay Backbone.
 
 ## Make the Conversion Voluntary
@@ -87,6 +87,31 @@ There is no completion counter, demolition reward, or extra pollution-removal
 mechanic. The result is the place you have built and the capacity it now supports.
 Keeping a historical plant beside its successor is as valid as clearing the site.
 
+## Conversion Worksheet
+
+The optional offline planner compares staged and integrated Electronics II,
+Construction Parts III, or Vehicle Parts II at the same requested output. It
+requires Python 3.12 and this source checkout, not the game or a save export.
+
+```console
+python tools/plan_reconstruction.py data/reconstruction-scenario.example.json
+python tools/plan_reconstruction.py data/reconstruction-scenario.example.json --json
+```
+
+The [example scenario](../data/reconstruction-scenario.example.json) and
+[generated worksheet](CONVERSION_WORKSHEET.md) show the supported fields.
+`output_per_60` and spare supply rates accept exact fractions such as `1/7`.
+Computing fields are integers. `overlap_computing` means additional temporary
+load beyond the entered ongoing demand and new facilities; do not count the same
+old equipment twice. Optional `construction_stock` and
+`spare_construction_rates_per_60` use product keys and produce only a parallel
+supply lower bound, not a construction schedule.
+
+This worksheet assumes curation-intensive Model adaptation and Rack III are
+available. Its totals include added process/control support, with remaining
+external supply listed separately. It does not rank whole-island labor or power,
+decide that a shared supplier is redundant, or issue game commands.
+
 ## Contributor Comparison
 
 Run `python tools/model_reconstruction_bridge.py` for a deterministic,
@@ -106,4 +131,5 @@ construction, transport, and startup are additional obligations.
 - [Capital recipes](../mods/RecursiveIndustry/src/AutonomousCapitalFabricationData.cs).
 - [Gateway](../mods/RecursiveIndustry/src/IndustrialControlGatewayData.cs).
 - [Source-derived comparison](../tools/model_reconstruction_bridge.py).
+- [Scenario planner](../tools/plan_reconstruction.py).
 - [Progression](PROGRESSION.md) and [control authority](../data/industrial-control-network.json).

@@ -34,8 +34,8 @@ class ReleaseResearchTests(unittest.TestCase):
         self.nodes = {node["key"]: node for node in self.data["nodes"]}
 
     def test_generated_native_registrations_match(self):
-        self.assertEqual(research.render(self.data), research.OUTPUT.read_text(encoding="utf-8"))
-        self.assertEqual(research.render_ids(self.data), research.IDS.read_text(encoding="utf-8"))
+        self.assertEqual(research.render(self.data).encode("utf-8"), research.OUTPUT.read_bytes())
+        self.assertEqual(research.render_ids(self.data).encode("utf-8"), research.IDS.read_bytes())
         self.assertIn(": IResearchNodesData", research.render(self.data))
 
     def test_every_authored_unlock_has_exactly_one_owner(self):
