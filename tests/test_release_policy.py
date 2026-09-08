@@ -46,6 +46,10 @@ class ReleasePolicyTests(unittest.TestCase):
         self.assertIsNotNone(setting)
         self.assertEqual(setting.text, "false")
 
+    def test_generated_building_paths_match_clean_checkout_bytes(self):
+        from generate_building_model_paths import load, OUTPUT, render
+        self.assertEqual(OUTPUT.read_bytes(), render(load()).encode("utf-8"))
+
 
 if __name__ == "__main__":
     unittest.main()

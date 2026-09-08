@@ -45,8 +45,8 @@ def main() -> int:
     args = parser.parse_args()
     expected = render(load())
     if args.write:
-        OUTPUT.write_text(expected, encoding="utf-8")
-    elif not OUTPUT.exists() or OUTPUT.read_text(encoding="utf-8") != expected:
+        OUTPUT.write_text(expected, encoding="utf-8", newline="\n")
+    elif not OUTPUT.exists() or OUTPUT.read_bytes() != expected.encode("utf-8"):
         raise ValueError("Building paths differ from the catalog; regenerate them")
     print("PASS: 48 exact new building paths and 25 universal owners")
     return 0
