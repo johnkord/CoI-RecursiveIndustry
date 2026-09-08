@@ -547,7 +547,7 @@ internal static class UniversalIndustryCatalog
             packages: 80,
             programs: 10,
             dossiers: 10,
-            calibration: 1,
+            calibration: 0,
             directBindings: new[]
             {
                 new UniversalDirectBindingSpec("BlanketFuelFromDepleted", "ChemicalPlant2"),

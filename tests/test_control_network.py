@@ -10,6 +10,7 @@ import re
 import unittest
 
 from tools.generate_recursive_industry_universal_source import load_catalog
+from tools.generate_research_tree import node as research_node
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -479,51 +480,27 @@ class ControlNetworkContractTests(unittest.TestCase):
         )
 
     def test_research_gate_and_children_are_catalog_bound(self) -> None:
-        research = CONTROL["research"]
-        self.assertEqual(research["position"], {"x": 212, "y": 24})
-        self.assertEqual(research["duration_months"], 360)
-        self.assertEqual(
-            research["parent_registration_id"],
-            "RecursiveIndustry_RecursiveEpochII",
-        )
-        self.assertFalse(research["requires_space_points"])
-        self.assertEqual(research["child_branch_keys"], CATALOG["research_keys"])
-        self.assertEqual(
-            set(research["unlocks"]),
-            {
-                "RecursiveIndustry_IndustrialControlStream",
-                "RecursiveIndustry_ControlDeploymentGateway",
-                "RecursiveIndustry_DeployIndustrialControl",
-                "RecursiveIndustry_IntegrateElectronics2Direct",
-                "RecursiveIndustry_IntegrateConstructionParts3",
-                "RecursiveIndustry_IntegrateVehicleParts2",
-                "RecursiveIndustry_AccessFiber",
-                "RecursiveIndustry_BackboneFiber",
-                "RecursiveIndustry_FiberJunction",
-            },
-        )
-        federated = CONTROL["federated_deployment"]
-        self.assertEqual(federated["position"], {"x": 212, "y": 30})
-        self.assertEqual(federated["duration_months"], 480)
-        self.assertEqual(
-            federated["parent_registration_id"],
-            "RecursiveIndustry_IndustrialControlNetworks",
-        )
-        self.assertFalse(federated["requires_space_points"])
-        self.assertEqual(federated["additional_lifetime_requirements"], [])
-        self.assertEqual(
-            federated["transitive_campaign_gate"],
-            {
-                "research_registration_id": "RecursiveIndustry_RecursiveEpochII",
-                "product_key": "FrontierProgram",
-                "quantity": 4,
-                "reason": (
-                    "The Epoch II bridge makes deployment density optional after local control; "
-                    "construction still consumes its declared Programs and Dossiers"
-                ),
-            },
-        )
-        self.assertEqual(len(federated["unlocks"]), 3)
+        self.assertEqual(CONTROL["research"], {"catalog": "research-tree.json", "key": "industrialControl"})
+        research = research_node(CONTROL["research"]["key"])
+        self.assertEqual(research["position"], [200, 34])
+        self.assertEqual(research["cost_months"], 240)
+        self.assertEqual(research["parents"], ["digitalInfrastructure", "systemsIntegration"])
+        self.assertFalse(research.get("space", False))
+        self.assertEqual(research["unlock"]["products"], ["IndustrialControlStream"])
+        self.assertEqual(research["unlock"]["machines"], ["ControlDeploymentGateway"])
+        self.assertEqual(set(research["unlock"]["recipes"]), {
+            "DeployIndustrialControl", "IntegrateElectronics2Direct",
+            "IntegrateConstructionParts3", "IntegrateVehicleParts2",
+        })
+        self.assertEqual(CONTROL["federated_deployment"], {"catalog": "research-tree.json", "key": "federatedDeployment"})
+        federated = research_node(CONTROL["federated_deployment"]["key"])
+        self.assertEqual(federated["position"], [208, 34])
+        self.assertEqual(federated["cost_months"], 360)
+        self.assertEqual(federated["parents"], ["industrialControl"])
+        self.assertFalse(federated.get("space", False))
+        self.assertEqual(federated.get("lifetime", []), [])
+        self.assertEqual(federated["unlock"]["machines"], ["DeploymentAssuranceCampus"])
+        self.assertEqual(set(federated["unlock"]["recipes"]), {"BatchDeploymentAssurance", "DeployBackboneIndustrialControl"})
 
     def test_research_coordinate_is_unique_and_at_least_four_units_away(self) -> None:
         source_root = ROOT / "mods" / "RecursiveIndustry" / "src"
@@ -538,14 +515,8 @@ class ControlNetworkContractTests(unittest.TestCase):
                 source,
             )
         ]
-        target = (
-            CONTROL["research"]["position"]["x"],
-            CONTROL["research"]["position"]["y"],
-        )
-        federated_target = (
-            CONTROL["federated_deployment"]["position"]["x"],
-            CONTROL["federated_deployment"]["position"]["y"],
-        )
+        target = tuple(research_node(CONTROL["research"]["key"])["position"])
+        federated_target = tuple(research_node(CONTROL["federated_deployment"]["key"])["position"])
         for selected in (target, federated_target):
             self.assertEqual(positions.count(selected), 1)
             for position in positions:

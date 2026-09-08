@@ -10,6 +10,7 @@ import re
 from typing import Any, Iterable
 
 from generate_recursive_industry_universal_source import load_catalog
+from generate_research_tree import audit_source as audit_generated_research
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -614,89 +615,7 @@ def research_direct_parents(text: str, variable: str) -> set[str]:
 
 
 def audit_research_source(text: str) -> list[str]:
-    errors: list[str] = []
-    require_tokens(
-        errors,
-        "Industrial Control research",
-        text,
-        (
-            '"Industrial Control Networks"',
-            "RecursiveIndustryIds.Research.IndustrialControlNetworks",
-            "costMonths: 360",
-            "industrialControl.GridPosition = new Vector2i(212, 24)",
-            "industrialControl.AddParent(recursiveEpochII)",
-            ".AddProductToUnlock(RecursiveIndustryIds.Products.IndustrialControlStream)",
-            ".AddMachineToUnlock(",
-            "RecursiveIndustryIds.Machines.ControlDeploymentGateway",
-            "unlockAllRecipes: false",
-            ".AddRecipeToUnlock(RecursiveIndustryIds.Recipes.DeployIndustrialControl)",
-            "RecursiveIndustryIds.Recipes.IntegrateElectronics2Direct",
-            "RecursiveIndustryIds.Recipes.IntegrateConstructionParts3",
-            "RecursiveIndustryIds.Recipes.IntegrateVehicleParts2",
-            ".AddProtoToUnlock<TransportProto>(RecursiveIndustryIds.Infrastructure.AccessFiber)",
-            ".AddProtoToUnlock<TransportProto>(RecursiveIndustryIds.Infrastructure.BackboneFiber)",
-            ".AddLayoutEntityToUnlock(RecursiveIndustryIds.Infrastructure.FiberJunction)",
-            '"Federated Deployment"',
-            "RecursiveIndustryIds.Research.FederatedDeployment",
-            "costMonths: 480",
-            "federatedDeployment.GridPosition = new Vector2i(212, 30)",
-            "federatedDeployment.AddParent(industrialControl)",
-            "RecursiveIndustryIds.Machines.DeploymentAssuranceCampus",
-            "RecursiveIndustryIds.Recipes.DeployBackboneIndustrialControl",
-                "RecursiveIndustryIds.Recipes.IntegratedRefineryDiesel",
-                "RecursiveIndustryIds.Recipes.IntegratedRefineryGas",
-                "RecursiveIndustryIds.Recipes.IntegratedRefineryHydrogen",
-                "RecursiveIndustryIds.Recipes.IntegratedRefineryPlastic",
-                "RecursiveIndustryIds.Recipes.IntegratedRefineryRubber",
-                "RecursiveIndustryIds.Recipes.IntegratedElectronics3",
-                "RecursiveIndustryIds.Recipes.IntegratedLabEquipment2",
-                "RecursiveIndustryIds.Recipes.IntegratedLabEquipment3",
-                "RecursiveIndustryIds.Recipes.IntegratedLabEquipment4",
-        ),
-    )
-    federated_section = text[
-        text.find("ResearchNodeProto federatedDeployment"):
-        text.find("ResearchNodeProto materials")
-    ]
-    if not federated_section:
-        errors.append("could not locate Federated Deployment research section")
-    elif "AddRequirementForLifetimeProduction" in federated_section:
-        errors.append(
-            "Federated Deployment must not duplicate Epoch V lifetime requirements"
-        )
-    if text.count(".AddParent(industrialControl)") != 1:
-        errors.append(
-            "Only Federated Deployment directly parents Industrial Control; Direct portfolios remain independent"
-        )
-    expected_parents = {
-        "industrialControl": {"recursiveEpochII"},
-        "federatedDeployment": {"industrialControl"},
-        **{
-            variable: {"recursiveEpochIII"}
-            for variable in ("materials", "process", "essential", "advanced")
-        },
-        "nuclear": {"recursiveEpochIV"},
-    }
-    for variable, parents in expected_parents.items():
-        if research_direct_parents(text, variable) != parents:
-            errors.append(f"{variable} bridge parent contract drift")
-        try:
-            block = research_registration(text, variable)
-        except ValueError as exc:
-            errors.append(str(exc))
-            continue
-        requires_space = ".SetRequireSpacePoints()" in block
-        if requires_space != (variable == "nuclear"):
-            errors.append(f"{variable} Space Research contract drift")
-        if variable in ("materials", "process", "essential", "advanced", "nuclear"):
-            if "Products.FrontierProgram" in block:
-                errors.append(f"{variable} must not add a redundant Program gate")
-            for call in re.findall(r"\.AddMachineToUnlock\((.*?)\)", block, re.DOTALL):
-                if "unlockAllRecipes: false" not in call:
-                    errors.append(f"{variable} must explicitly retain native recipe locks")
-    if "Machines.OrbitalFabricationFab" in research_registration(text, "advanced"):
-        errors.append("Terrestrial advanced manufacturing must not unlock orbital fabrication")
-    return errors
+    return audit_generated_research(text)
 
 
 def recipe_block(text: str, member: str) -> str | None:
@@ -782,55 +701,7 @@ def audit_physical_recipe_semantics(source_files: dict[str, str]) -> list[str]:
 
 
 def audit_legacy_research_source(text: str) -> list[str]:
-    errors: list[str] = []
-    electronics = text[
-        text.find("ResearchNodeProto autonomousElectronicsIntegration") :
-        text.find("ResearchNodeProto recursiveEpochIII")
-    ]
-    capital = text[
-        text.find("ResearchNodeProto autonomousCapitalFabrication") :
-        text.find("ResearchNodeProtoBuilder.State heavyEquipmentBuilder")
-    ]
-    for label, section, required, forbidden in (
-        (
-            "Autonomous Electronics Integration",
-            electronics,
-            ("unlockAllRecipes: false", "IntegrateElectronics2Intermediates"),
-            ("IntegrateElectronics2Direct",),
-        ),
-        (
-            "Autonomous Capital Fabrication",
-            capital,
-            (
-                "unlockAllRecipes: false",
-                "FabricateConstructionParts",
-                "FabricateConstructionParts2",
-                "FabricateConstructionParts3",
-                "FabricateVehicleParts",
-                "FabricateVehicleParts2",
-            ),
-            ("IntegrateConstructionParts3", "IntegrateVehicleParts2"),
-        ),
-    ):
-        if not section:
-            errors.append(f"could not locate {label} research section")
-            continue
-        require_tokens(errors, label, section, required)
-        for token in forbidden:
-            if token in section:
-                errors.append(f"{label} must not bypass Industrial Control for {token}")
-        if "AddRequirementForLifetimeProduction" in section:
-            errors.append(f"{label} must not add a duplicate Program witness")
-        if "Ids.Research.RoboticAssembly" not in section:
-            errors.append(f"{label} must preserve native Robotic Assembly")
-    for variable in ("autonomousElectronicsIntegration", "autonomousCapitalFabrication"):
-        if research_direct_parents(text, variable) != {"recursiveEpochII"}:
-            errors.append(f"{variable} must parent Epoch II")
-    if "UniversalIndustryResearchData.Register(registrator, recursiveEpochII, recursiveEpochIII, recursiveEpochIV)" not in text:
-        errors.append("Universal research must receive the exact Epoch II, III, and IV nodes")
-    if "Machines.OrbitalFabricationFab" not in research_registration(text, "recursiveEpochIV"):
-        errors.append("Orbital fabrication must unlock with Epoch IV")
-    return errors
+    return audit_generated_research(text)
 
 
 def audit_registration_source(text: str) -> list[str]:
@@ -902,14 +773,7 @@ def audit(root: Path = ROOT) -> list[str]:
             source_files["UniversalIndustryData.cs"],
             source_files.get("UniversalIndustryCatalog.g.cs", ""),
         ))
-    if "UniversalIndustryResearchData.cs" in source_files:
-        errors.extend(audit_research_source(
-            source_files["UniversalIndustryResearchData.cs"]
-        ))
-    if "RecursiveIndustryResearchData.cs" in source_files:
-        errors.extend(audit_legacy_research_source(
-            source_files["RecursiveIndustryResearchData.cs"]
-        ))
+    errors.extend(audit_generated_research(source_files.get("ReleaseResearchTree.g.cs", ""), root))
     if "RecursiveIndustry.cs" in source_files:
         errors.extend(audit_registration_source(source_files["RecursiveIndustry.cs"]))
     errors.extend(audit_forbidden_runtime(source_files))
@@ -918,13 +782,12 @@ def audit(root: Path = ROOT) -> list[str]:
     manifest = load_json(root / "mods" / "RecursiveIndustry" / "manifest.json")
     if control.get("candidate_version") != manifest.get("version"):
         errors.append("control authority and manifest versions differ")
-    for key, parent in (
-        ("research", "RecursiveIndustry_RecursiveEpochII"),
-        ("federated_deployment", "RecursiveIndustry_IndustrialControlNetworks"),
+    for key, node in (
+        ("research", "industrialControl"),
+        ("federated_deployment", "federatedDeployment"),
     ):
-        row = control[key]
-        if row["parent_registration_id"] != parent or row["requires_space_points"]:
-            errors.append(f"{key} bridge authority drift")
+        if control[key] != {"catalog": "research-tree.json", "key": node}:
+            errors.append(f"{key} research authority reference drift")
     dependencies = manifest.get("mod_dependencies", []) + manifest.get(
         "optional_mod_dependencies", []
     )

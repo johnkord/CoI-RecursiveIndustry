@@ -15,21 +15,8 @@
     "all_authored_recipes_are_stream_free": true
   },
   "research": {
-    "id": "RecursiveIndustry_CircularAgrifoodSystems",
-    "name": "Circular Agrifood Systems",
-    "position": [228, 18],
-    "duration_months": 480,
-    "parent": "RecursiveIndustry_AdaptiveAgrifoodSystems",
-    "requires_space_points": false,
-    "additional_lifetime_requirements": [],
-    "unlocks": [
-      "RecursiveIndustry_CompanionProvisions",
-      "RecursiveIndustry_CompanionAnimalCenter",
-      "RecursiveIndustry_AdaptiveEggFermentation",
-      "RecursiveIndustry_SerumFreeCulturedMeat",
-      "RecursiveIndustry_MycoproteinTrimmings",
-      "RecursiveIndustry_CompanionProvisions"
-    ]
+    "catalog": "research-tree.json",
+    "key": "circularAgrifood"
   },
   "authored_recipes": {
     "adaptive_egg_fermentation": {
@@ -130,22 +117,44 @@
   },
   "existing_alternatives": {
     "four_chicken_farms": {
-      "inputs_per_minute": { "AnimalFeed": 60, "Water": 72 },
-      "outputs_per_minute": { "Eggs": 28, "ChickenCarcass": 40 }
+      "inputs_per_minute": {
+        "AnimalFeed": 60,
+        "Water": 72
+      },
+      "outputs_per_minute": {
+        "Eggs": 28,
+        "ChickenCarcass": 40
+      }
     },
     "compost": {
-      "inputs": { "AnimalFeed": 12 },
-      "outputs": { "Compost": 6 },
+      "inputs": {
+        "AnimalFeed": 12
+      },
+      "outputs": {
+        "Compost": 6
+      },
       "duration_seconds": 60
     },
     "organic_fertilizer": {
-      "inputs": { "Compost": 6, "Dirt": 12, "Water": 6 },
-      "outputs": { "FertilizerOrganic": 24 },
+      "inputs": {
+        "Compost": 6,
+        "Dirt": 12,
+        "Water": 6
+      },
+      "outputs": {
+        "FertilizerOrganic": 24
+      },
       "duration_seconds": 20
     },
     "steam": {
-      "inputs": { "AnimalFeed": 12, "Water": 8 },
-      "outputs": { "SteamHigh": 8, "Exhaust": 6 },
+      "inputs": {
+        "AnimalFeed": 12,
+        "Water": 8
+      },
+      "outputs": {
+        "SteamHigh": 8,
+        "Exhaust": 6
+      },
       "duration_seconds": 10
     }
   },

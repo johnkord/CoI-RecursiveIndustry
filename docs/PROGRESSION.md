@@ -1,8 +1,10 @@
 # Progression
 
 Recursive Industry is an optional late-game layer. It expects a functioning
-vanilla island with advanced electronics, Computing, physical research, world-map
-logistics, and substantial power.
+vanilla island with advanced electronics, Computing, physical research, and
+substantial power. World-map and orbital investment are application choices,
+not prerequisites for every conversion. See the generated [Research Tree](RESEARCH_TREE.md)
+for the complete branch and cost list.
 
 ## Foundation
 
@@ -16,7 +18,9 @@ The first loop establishes:
 6. Electronics applications, rack upgrades, and lossy recovery choices.
 
 Rack I, Rack II, and Rack III represent assisted, agentic, and recursive workload
-scale. Older racks remain usable instead of becoming forced waste.
+scale. Rack II/III and Office II/III are optional density investments, not a
+compulsory staircase before Applied AI Science. Older racks remain usable,
+upgradeable, and salvageable.
 
 ## Applied Science
 
@@ -25,33 +29,38 @@ Pilot Science Complexes consume Programs and physical laboratory inputs to produ
 Validated Research Dossiers. This keeps empirical work and accountable labor in
 the loop.
 
-## Recursive Epochs
+## Independent Applications
 
-The finite Epoch sequence changes the planning problem rather than resetting the
-island:
+Validated deployment enables road freight, rail families, and Fiber infrastructure.
+Applied science and physical validation lead to Systems Integration. From there,
+choose applications according to the island's actual needs:
 
-| Epoch | Industrial change |
+| Application | Industrial change |
 | --- | --- |
-| I | Zero-worker autonomous freight on native vehicle behavior |
-| II | Lights-out microchips, electronics and capital integration, and optional live control |
-| III | Planetary coordination and bounded world contracts |
-| IV | Ground-supported orbital science and Dossier-fed orbital power |
-| V | Frontier Projects, Program reinvestment, and autonomous construction capital |
+| Industrial reconstruction | Smaller mineral, metallurgy, refining, chemistry, food, utility, nuclear, and manufacturing branches |
+| Mobility | Native road, mining, amphibious, forestry, planting, and individual rail technologies |
+| Civic knowledge | A staffed public service on a separate Fiber network |
+| Coordination | Optional Planetary Center and bounded extraction/contract Focus |
+| Frontier | Orbital science, optional beamed power, and physical megaprojects |
 
-Optional Heavy Equipment and Rail Control branches extend native excavating,
-forestry, planting, and train systems without introducing custom dispatch.
+The historical Epoch IDs remain stable, but applications no longer require the
+whole ladder. Diesel does not require nuclear propulsion. Heavy mining does not
+require forestry or amphibious technology. Each rail tier retains its exact native
+technology; the Captain's branch exists only with the optional Supporter content.
+All scheduling and vehicle jobs remain native.
 
 ## Industrial Control Networks
 
-In the current reconstruction progression, Industrial Control Networks follows Recursive Epoch II
-and uses ordinary Research Points. It unlocks Industrial Control Stream, the Control
-Deployment Gateway, Access Fiber, Backbone Fiber, and the Fiber Junction. It also
+Fiber Infrastructure unlocks Access Fiber, Backbone Fiber, and the junction together.
+Industrial Control Networks follows Fiber Infrastructure and Systems Integration,
+using ordinary Research Points. It unlocks Industrial Control Stream and the Control
+Deployment Gateway. It also
 activates the existing raw Electronics II and integrated Construction Parts III
 and Vehicle Parts II rows, which remain unavailable with their earlier machine
 research alone.
 
-Autonomous Electronics Integration and Autonomous Capital Fabrication both follow
-Epoch II and Robotic Assembly. They no longer add 8/32-Program research witnesses;
+Electronics Integration and Capital Fabrication both follow
+Systems Integration and Robotic Assembly. They add no duplicate Program research witness;
 their actual construction still consumes Programs and other capital. The staged
 rows do not require Industrial Control. See [Reconstruction](RECONSTRUCTION.md)
 for equal-output comparisons and the first-deployment cost.
@@ -66,9 +75,9 @@ after a cut. The mod does not switch recipes automatically.
 ## Federated Deployment
 
 Federated Deployment is an optional child of Industrial Control Networks at
-`(212, 30)`. It becomes available to research as soon as Industrial Control
-Networks is complete. Its 480-month cost uses ordinary Research Points,
-not Space Research. It has no additional lifetime-production or Epoch III gate
+`(208, 34)`. It becomes available to research as soon as Industrial Control
+Networks is complete. Its 360-month cost uses ordinary Research Points,
+not Space Research. It has no additional lifetime-production or Planetary Coordination gate
 and does not require the universal branches. The Campus remains a large capital
 investment.
 
@@ -81,16 +90,18 @@ bootstrap and smaller districts.
 
 ## Universal industrial transformation
 
-Materials, Process, Essential Systems, and terrestrial Advanced Manufacturing
-follow Epoch III. Their ordinary research still requires the native source
+Mineral Processing, Metallurgy and Glass, Refining and Fuels, Chemical Systems,
+Food and Bioprocessing, Water and Circular Utilities, Advanced Manufacturing,
+and Nuclear Fuel Systems independently follow Systems Integration.
+Their ordinary research still requires the native source
 equipment and the technologies behind the compositions they unlock. Direct
 recipes keep their own native locks; researching Industrial Control is not a
 blanket requirement to build these facilities. Integrated operation still needs
 the actual live Stream supply.
 
-Nuclear Operations follows Epoch IV and retains its Calibration and Space
-requirements. Orbital Fabrication and Integrated Crew Provisioning belong to
-Epoch IV, preventing their orbital technologies from delaying terrestrial
+Nuclear Fuel Systems no longer requires Calibration in research or construction,
+and uses ordinary research. Orbital Fabrication and Integrated Crew Provisioning belong to
+Orbital Industry, preventing their orbital technologies from delaying terrestrial
 reconstruction. The portfolios retain twenty-five facilities:
 
 - Materials and metallurgy.
@@ -115,9 +126,9 @@ remain on their specialized game paths.
 
 ## Adaptive Agrifood Systems
 
-Adaptive Agrifood Systems is an optional ordinary-research child of Autonomous Essential Systems.
-It keeps farms on their specialized native paths while adding three bounded
-choices:
+Sensor-Guided Agriculture and Monitored Poultry Systems independently follow
+Systems Integration plus the matching native farm technology. Neither requires
+food factories or the other farm family. They preserve the specialized native paths:
 
 - Precision Irrigation allocates Focus to reduce farm water demand by 2% per
   level for five levels, with no crop-yield bonus.
@@ -137,8 +148,8 @@ retain accountable workers rather than presenting zero-worker biology.
 
 ## Circular Agrifood Systems
 
-Circular Agrifood Systems is an optional 480-month ordinary-research child of Adaptive Agrifood
-Systems. It inherits the parent's progression boundary and adds no duplicate
+Circular Agrifood and Companion Care is an optional 360-month ordinary-research
+child of Food and Bioprocessing. It does not require monitoring upgrades and adds no duplicate
 lifetime-production gate. It unlocks:
 
 - Adaptive Egg Fermentation on the Crop and Soil Bioprocessing Center;
@@ -152,19 +163,23 @@ without making native poultry obsolete. Its recipes are local, Stream-free, and
 Package-free. The settlement service grants bounded Unity only while supplied;
 it is unnecessary for housing, Health, workers, research, or every Epoch.
 
-Autonomous Process Systems also unlocks five directed Refinery slates. Broad
+Refining and Fuels also unlocks five directed Refinery slates. Broad
 fractionation remains the flexible choice; the directed rows commit crude to
 Diesel, Fuel Gas and Hydrogen, deep Hydrogen, Plastic, or Rubber. All require
 Stream and retain final pollution and water products.
 
 ## Frontier reinvestment
 
-A Frontier Expansion Project requires Programs plus advanced industrial capital.
-The player spends each Project on one of two facilities:
+Recursive Systems Integration follows Systems Integration and Recursive Hardware
+after 32 lifetime Programs. Its Array costs 32 Programs, plus electronics and
+construction capital, and produces eight Programs per campaign. It is available
+before the 64-Program orbital and 256-Program Frontier milestones.
 
-- **Recursive Integration Array:** increases Frontier Program production.
-- **Autonomous Construction Nexus:** produces Construction Parts IV or Vehicle
-  Parts III through Surge, Precision, or Recovery routes.
+A Frontier Expansion Project still requires Programs plus advanced industrial
+capital. Each Project can commission an Autonomous Construction Nexus, producing
+Construction Parts IV or Vehicle Parts III through Surge, Precision, or Recovery.
+Frontier Megaprojects follows Orbital Industry directly; beamed-power research is
+an optional sibling, so a terrestrial power strategy remains valid.
 
 Nexus batches use installed control rather than recurring Packages. Precision
 retains Dossiers and Recovery retains Recyclables, preserving their distinct
@@ -175,7 +190,7 @@ still supplies and commissions every iteration.
 
 ## Civic Knowledge
 
-Civic Knowledge Systems follows Industrial Control, Physical Validation, and the
+Civic Knowledge Systems follows Fiber Infrastructure, Physical Validation, and the
 native ISP Module. It requires four lifetime Dossiers and sixteen lifetime Models,
 but no Space Research or later Epoch. It unlocks a Civic Model Center, distinct
 Civic Knowledge Stream, and Knowledge Commons. This optional staffed settlement
@@ -184,6 +199,6 @@ service supplies Unity, not Health, housing, or productivity. See
 
 ## Sources
 
-- [Research registration](../mods/RecursiveIndustry/src/RecursiveIndustryResearchData.cs).
-- [Universal and control research](../mods/RecursiveIndustry/src/UniversalIndustryResearchData.cs).
+- [Canonical research catalog](../data/research-tree.json).
+- [Research registration](../mods/RecursiveIndustry/src/ReleaseResearchTree.g.cs).
 - [Control authority](../data/industrial-control-network.json).

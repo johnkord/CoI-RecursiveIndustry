@@ -6,7 +6,6 @@ using Mafi.Core.Mods;
 using Mafi.Core.Population;
 using Mafi.Core.Products;
 using Mafi.Core.Prototypes;
-using Mafi.Core.Research;
 
 namespace RecursiveIndustry;
 
@@ -104,24 +103,5 @@ internal sealed class CivicKnowledgeData : IModData
 
         Log.Info("RecursiveIndustry: CIVIC_KNOWLEDGE_REGISTERED stream=" + stream.Id
             + " output=1600 duration=360 per_pop_month=0.2 buffer=240 unity=1.2 center_workers=40 commons_workers=12");
-    }
-
-    public static void RegisterResearch(ProtoRegistrator registrator, ResearchNodeProto industrialControl)
-    {
-        ResearchNodeProto civic = registrator.ResearchNodeProtoBuilder
-            .Start("Civic Knowledge Systems", RecursiveIndustryIds.Research.CivicKnowledgeSystems, costMonths: 480)
-            .Description("Invest industrial abundance in learning, translation, and public-service access. A Civic Model Center supplies the staffed Knowledge Commons over dedicated Fiber. The service is optional for housing, health, and all Epochs.")
-            .AddProductToUnlock(RecursiveIndustryIds.Products.CivicKnowledgeStream, addIconToNode: true)
-            .AddMachineToUnlock(RecursiveIndustryIds.Machines.CivicModelCenter, unlockAllRecipes: false)
-            .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.ProvideCivicKnowledge)
-            .AddLayoutEntityToUnlock(RecursiveIndustryIds.Settlements.KnowledgeCommons)
-            .AddProtoToUnlock<PopNeedProto>(RecursiveIndustryIds.Settlements.CivicKnowledgeNeed)
-            .AddRequirementForLifetimeProduction(RecursiveIndustryIds.Products.ValidatedResearchDossier, 4)
-            .AddRequirementForLifetimeProduction(RecursiveIndustryIds.Products.ModelArchive, 16)
-            .BuildAndAdd();
-        civic.GridPosition = new Vector2i(200, 34);
-        civic.AddParent(industrialControl);
-        civic.AddParent(registrator.PrototypesDb.GetOrThrow<ResearchNodeProto>(RecursiveIndustryIds.Research.PhysicalValidation));
-        civic.AddParent(registrator.PrototypesDb.GetOrThrow<ResearchNodeProto>(Ids.Research.IspModule));
     }
 }

@@ -77,7 +77,7 @@ internal sealed class RecursiveFrontierData : IModData
             .Start(
                 "Recursive Integration Array",
                 RecursiveIndustryIds.Machines.RecursiveIntegrationArray)
-            .Description("An earned high-capacity Systems Integration facility that converts validated models, control, science, and electronics into eight Frontier Programs per campaign.")
+            .Description("A high-capacity reinvestment after 32 lifetime Programs. Converts validated Models, Packages, Dossiers, and electronics into eight Programs per campaign while major commissioning and Frontier demand are still ahead.")
             .SetCost(
                 Costs.Build
                     .CP4(1800)
@@ -86,8 +86,8 @@ internal sealed class RecursiveFrontierData : IModData
                         64,
                         RecursiveIndustryIds.Products.ValidatedControlPackage)
                     .Product(
-                        1,
-                        RecursiveIndustryIds.Products.FrontierExpansionProject)
+                        32,
+                        RecursiveIndustryIds.Products.FrontierProgram)
                     .Workers(60)
                     .MaintenanceT3(24))
             .SetElectricityConsumption(6000.Kw())

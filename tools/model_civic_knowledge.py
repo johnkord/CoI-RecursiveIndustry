@@ -82,7 +82,6 @@ def audit(root: Path = ROOT) -> list[str]:
         ".Workers(12).MaintenanceT2(4)", ".SetInput(stream,0.2.ToFix64(),240)",
         ".SetComputingConsumption(Computing.FromTFlops(128))", ".BindTo(center,360.Seconds())",
         ".AddOutput(1600,streamId)", ".WithCommonInputPorts(", ".WithCommonOutputPorts((streamId,\"X\"))",
-        "civic.AddParent(industrialControl)", "Ids.Research.IspModule", "newVector2i(200,34)",
         "CIVIC_KNOWLEDGE_REGISTERED",
     ):
         if token not in source:
@@ -91,6 +90,12 @@ def audit(root: Path = ROOT) -> list[str]:
         prefix = "Ids" if product == "OfficeSupplies" else "RecursiveIndustryIds"
         if f".AddInput({quantity},{prefix}.Products.{product})" not in source:
             errors.append(f"Civic input differs: {product}")
+    research = "".join((root / "mods/RecursiveIndustry/src/ReleaseResearchTree.g.cs").read_text(encoding="utf-8").split())
+    for token in ("civic.AddParent(digitalInfrastructure)", "civic.AddParent(physicalValidation)",
+                  "civic.AddParent(registrator.PrototypesDb.GetOrThrow<ResearchNodeProto>(Ids.Research.IspModule))",
+                  "civic.GridPosition=newVector2i(192,42)"):
+        if token not in research:
+            errors.append(f"Civic research missing {token}")
     if ".SetRequireSpacePoints()" in source or ".AddInput(" in source and "Products.IndustrialControlStream)" in source:
         errors.append("Civic service must not require Space or consume Industrial Control")
     if contract["recipe"]["output"] != 1600 or contract["recipe"]["duration_seconds"] != 360:

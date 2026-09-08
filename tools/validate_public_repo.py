@@ -18,6 +18,7 @@ from bundle_manifest import bundle_files
 from model_civic_knowledge import audit as audit_civic
 from audit_building_models import audit as audit_buildings, building_bundle_names
 from audit_world_art import audit as audit_world, names as world_bundle_names
+from generate_research_tree import audit as audit_research
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -39,6 +40,7 @@ REQUIRED_DATA = {
     "building-models.json",
     "world-art.json",
     "civic-knowledge.json",
+    "research-tree.json",
     "industrial-control-network.json",
     "universal-industry-catalog.json",
 }
@@ -50,6 +52,7 @@ REQUIRED_TOOLS = {
     "audit_release_zip.py",
     "freeze_recursive_industry_ui_icons.py",
     "generate_recursive_industry_universal_source.py",
+    "generate_research_tree.py",
     "package_mod.py",
     "model_reconstruction_bridge.py",
     "simulate_recursive_industry_economy.py",
@@ -386,13 +389,13 @@ def validate_source_contract(errors: list[str], root: Path) -> None:
         "IndustrialControlTransportData.cs",
         "RecursiveIndustry.cs",
         "RecursiveIndustryIds.Infrastructure.cs",
-        "RecursiveIndustryResearchData.cs",
+        "ReleaseResearchTree.g.cs",
+        "RecursiveIndustryIds.ReleaseResearch.g.cs",
         "OrbitalPowerArrayData.cs",
         "OrbitalPowerArrayLayout.cs",
         "UniversalIndustryCatalog.cs",
         "UniversalIndustryCatalog.g.cs",
         "UniversalIndustryData.cs",
-        "UniversalIndustryResearchData.cs",
         "WorldExchangeData.cs",
         "AdaptiveAgrifoodData.cs",
         "RecursiveIndustryIds.Farms.cs",
@@ -436,7 +439,7 @@ def validate_source_contract(errors: list[str], root: Path) -> None:
             if token not in data:
                 errors.append(f"universal runtime contract missing: {token}")
 
-    research_path = source / "RecursiveIndustryResearchData.cs"
+    research_path = source / "ReleaseResearchTree.g.cs"
     orbital_path = source / "OrbitalPowerArrayData.cs"
     if research_path.is_file():
         research = research_path.read_text(encoding="utf-8")
@@ -526,6 +529,7 @@ def validate(root: Path = ROOT) -> list[str]:
         for error in audit_agrifood(root)
     )
     errors.extend(f"Civic Knowledge: {error}" for error in audit_civic(root))
+    errors.extend(f"Research: {error}" for error in audit_research(root))
     errors.extend(f"Building artwork: {error}" for error in audit_buildings(root))
     errors.extend(f"World artwork: {error}" for error in audit_world(root))
     validate_markdown_links(errors, root, files)

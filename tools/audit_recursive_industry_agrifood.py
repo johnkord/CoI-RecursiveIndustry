@@ -103,7 +103,7 @@ def audit(root: Path = ROOT) -> list[str]:
                 errors.append(f"{key} clone or cost contract drift")
 
     data_path = root / "mods" / "RecursiveIndustry" / "src" / "AdaptiveAgrifoodData.cs"
-    research_path = root / "mods" / "RecursiveIndustry" / "src" / "UniversalIndustryResearchData.cs"
+    research_path = root / "mods" / "RecursiveIndustry" / "src" / "ReleaseResearchTree.g.cs"
     data = normalized(data_path)
     research = normalized(research_path)
     require_tokens(
@@ -156,7 +156,7 @@ def audit(root: Path = ROOT) -> list[str]:
             errors.append(f"Adaptive Agrifood source introduces forbidden surface: {forbidden}")
 
     research_match = re.search(
-        r"ResearchNodeProtoadaptiveAgrifood=.*?adaptiveAgrifood.AddParent\(essential\);",
+        r"ResearchNodeProtoadaptiveAgrifood=.*?adaptiveAgrifood.AddParent\(systemsIntegration\);",
         research,
     )
     if research_match is None:
@@ -168,19 +168,24 @@ def audit(root: Path = ROOT) -> list[str]:
             "Adaptive Agrifood research",
             section,
             (
-                '"AdaptiveAgrifoodSystems"',
+                '"Sensor-GuidedAgriculture"',
                 "RecursiveIndustryIds.Research.AdaptiveAgrifoodSystems",
-                "costMonths:480",
+                "costMonths:240",
                 "RecursiveIndustryIds.Farms.SensorGuidedGreenhouse",
-                "RecursiveIndustryIds.Farms.MonitoredPoultryFarm",
                 "RecursiveIndustryIds.Focuses.PrecisionIrrigation",
-                "adaptiveAgrifood.GridPosition=newVector2i(224,18)",
+                "adaptiveAgrifood.GridPosition=newVector2i(200,48)",
             ),
         )
         if "AddRequirementForLifetimeProduction" in section:
             errors.append("Adaptive Agrifood must not duplicate its parent lifetime gate")
-        if ".SetRequireSpacePoints()" in section or contract["research"]["requires_space_points"]:
+        if ".SetRequireSpacePoints()" in section:
             errors.append("Adaptive Agrifood must use ordinary research after terrestrial reconstruction")
+    require_tokens(errors, "Independent poultry research", research, (
+        "RecursiveIndustryIds.Research.MonitoredPoultrySystems",
+        "monitoredPoultry.AddParent(systemsIntegration)",
+        "AddLayoutEntityToUnlock(RecursiveIndustryIds.Farms.MonitoredPoultryFarm)",
+        "ReconstructionResearchPrerequisites.AddNativeOwners(registrator,monitoredPoultry,registrator.PrototypesDb.GetOrThrow<AnimalFarmProto>(Ids.Buildings.ChickenFarm))",
+    ))
 
     all_source = "\n".join(
         path.read_text(encoding="utf-8")
@@ -193,7 +198,7 @@ def audit(root: Path = ROOT) -> list[str]:
             all_source,
         )
     ]
-    target = (224, 18)
+    target = (200, 48)
     if positions.count(target) != 1:
         errors.append("Adaptive Agrifood research coordinate must be unique")
     for position in positions:

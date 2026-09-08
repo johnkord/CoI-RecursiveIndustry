@@ -796,56 +796,12 @@
     }
   },
   "research": {
-    "registration_id": "RecursiveIndustry_IndustrialControlNetworks",
-    "display_name": "Industrial Control Networks",
-    "position": {
-      "x": 212,
-      "y": 24
-    },
-    "duration_months": 360,
-    "parent_registration_id": "RecursiveIndustry_RecursiveEpochII",
-    "requires_space_points": false,
-    "unlocks": [
-      "RecursiveIndustry_IndustrialControlStream",
-      "RecursiveIndustry_ControlDeploymentGateway",
-      "RecursiveIndustry_DeployIndustrialControl",
-      "RecursiveIndustry_IntegrateElectronics2Direct",
-      "RecursiveIndustry_IntegrateConstructionParts3",
-      "RecursiveIndustry_IntegrateVehicleParts2",
-      "RecursiveIndustry_AccessFiber",
-      "RecursiveIndustry_BackboneFiber",
-      "RecursiveIndustry_FiberJunction"
-    ],
-    "child_branch_keys": [
-      "autonomous_materials_systems",
-      "autonomous_process_systems",
-      "autonomous_essential_systems",
-      "autonomous_nuclear_operations",
-      "autonomous_advanced_manufacturing"
-    ]
+    "catalog": "research-tree.json",
+    "key": "industrialControl"
   },
   "federated_deployment": {
-    "research_registration_id": "RecursiveIndustry_FederatedDeployment",
-    "display_name": "Federated Deployment",
-    "position": {
-      "x": 212,
-      "y": 30
-    },
-    "duration_months": 480,
-    "parent_registration_id": "RecursiveIndustry_IndustrialControlNetworks",
-    "requires_space_points": false,
-    "additional_lifetime_requirements": [],
-    "transitive_campaign_gate": {
-      "research_registration_id": "RecursiveIndustry_RecursiveEpochII",
-      "product_key": "FrontierProgram",
-      "quantity": 4,
-      "reason": "The Epoch II bridge makes deployment density optional after local control; construction still consumes its declared Programs and Dossiers"
-    },
-    "unlocks": [
-      "RecursiveIndustry_DeploymentAssuranceCampus",
-      "RecursiveIndustry_BatchDeploymentAssurance",
-      "RecursiveIndustry_DeployBackboneIndustrialControl"
-    ]
+    "catalog": "research-tree.json",
+    "key": "federatedDeployment"
   },
   "capacity_closure": {
     "optimized_owner_count": 11,

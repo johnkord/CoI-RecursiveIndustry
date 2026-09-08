@@ -164,10 +164,10 @@ def audit(root: Path = ROOT) -> list[str]:
         / "mods"
         / "RecursiveIndustry"
         / "src"
-        / "UniversalIndustryResearchData.cs"
+        / "ReleaseResearchTree.g.cs"
     )
     match = re.search(
-        r"ResearchNodeProtocircularAgrifood=.*?circularAgrifood.AddParent\(adaptiveAgrifood\);",
+        r"ResearchNodeProtocircularAgrifood=.*?circularAgrifood.AddParent\(essential\);",
         research,
     )
     if match is None:
@@ -179,21 +179,21 @@ def audit(root: Path = ROOT) -> list[str]:
             "Circular Agrifood research",
             section,
             (
-                '"CircularAgrifoodSystems"',
+                '"CircularAgrifoodandCompanionCare"',
                 "RecursiveIndustryIds.Research.CircularAgrifoodSystems",
-                "costMonths:480",
+                "costMonths:360",
                 "RecursiveIndustryIds.Settlements.CompanionAnimalCenter",
                 "AddProtoToUnlock<PopNeedProto>(RecursiveIndustryIds.Settlements.CompanionCareNeed)",
                 "RecursiveIndustryIds.Recipes.AdaptiveEggFermentation",
                 "RecursiveIndustryIds.Recipes.SerumFreeCulturedMeat",
                 "RecursiveIndustryIds.Recipes.MycoproteinTrimmings",
                 "RecursiveIndustryIds.Recipes.CompanionProvisions",
-                "circularAgrifood.GridPosition=newVector2i(228,18)",
+                "circularAgrifood.GridPosition=newVector2i(216,56)",
             ),
         )
         if "AddRequirementForLifetimeProduction" in section:
             errors.append("Circular Agrifood must inherit its parent lifetime gate")
-        if ".SetRequireSpacePoints()" in section or contract["research"]["requires_space_points"]:
+        if ".SetRequireSpacePoints()" in section:
             errors.append("Circular Agrifood must remain reachable without Space Research")
 
     presentation = contract.get("presentation", {})

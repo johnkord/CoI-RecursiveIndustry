@@ -6,18 +6,8 @@
     "build": 614
   },
   "research": {
-    "id": "RecursiveIndustry_AdaptiveAgrifoodSystems",
-    "name": "Adaptive Agrifood Systems",
-    "position": [224, 18],
-    "duration_months": 480,
-    "parent": "RecursiveIndustry_AutonomousEssentialSystems",
-    "requires_space_points": false,
-    "additional_lifetime_requirements": [],
-    "unlocks": [
-      "RecursiveIndustry_SensorGuidedGreenhouse",
-      "RecursiveIndustry_MonitoredPoultryFarm",
-      "Focus_RecursiveIndustry_PrecisionIrrigation"
-    ]
+    "catalog": "research-tree.json",
+    "key": "adaptiveAgrifood"
   },
   "precision_irrigation": {
     "property": "IdsCore.PropertyIds.FarmWaterConsumptionMultiplier",
@@ -123,5 +113,9 @@
     "total_ui_identities": 91,
     "new_ui_identities": 3,
     "dependencies": []
+  },
+  "poultry_research": {
+    "catalog": "research-tree.json",
+    "key": "monitoredPoultry"
   }
 }

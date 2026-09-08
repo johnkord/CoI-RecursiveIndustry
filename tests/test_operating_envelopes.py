@@ -74,7 +74,7 @@ class OperatingEnvelopeTests(unittest.TestCase):
         )
         self.assertEqual(depot_seconds, Fraction(325, 4))
 
-    def test_split_support_and_construction_are_conserved(self) -> None:
+    def test_split_costs_are_conserved_except_retired_orbital_calibration(self) -> None:
         source = {row["key"]: row for row in self.raw["facilities"]}
         successor = self.catalog["facilities"]
         fields = (
@@ -93,9 +93,10 @@ class OperatingEnvelopeTests(unittest.TestCase):
                 if PARENTS.get(row["key"], row["key"]) == parent
             ]
             for field in fields:
+                retired_calibration = 1 if parent == "nuclear_fuel_complex" and field == "calibration" else 0
                 self.assertEqual(
                     sum(row[field] for row in children),
-                    source[parent][field],
+                    source[parent][field] - retired_calibration,
                     f"{parent} {field}",
                 )
 
@@ -192,7 +193,7 @@ class OperatingEnvelopeTests(unittest.TestCase):
 
     def test_new_facilities_are_unlocked_and_have_icons(self) -> None:
         source = ROOT / "mods" / "RecursiveIndustry" / "src"
-        research = (source / "UniversalIndustryResearchData.cs").read_text(
+        research = (source / "ReleaseResearchTree.g.cs").read_text(
             encoding="utf-8"
         )
         for key in NEW_KEYS:

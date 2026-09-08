@@ -114,7 +114,7 @@ class PublicRepositoryTests(unittest.TestCase):
 
     def test_orbital_relay_is_completely_removed(self) -> None:
         source = ROOT / "mods" / "RecursiveIndustry" / "src"
-        research = (source / "RecursiveIndustryResearchData.cs").read_text(
+        research = (source / "ReleaseResearchTree.g.cs").read_text(
             encoding="utf-8"
         )
         orbital = (source / "OrbitalPowerArrayData.cs").read_text(
