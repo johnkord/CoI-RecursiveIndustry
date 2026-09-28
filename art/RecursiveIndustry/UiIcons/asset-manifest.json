@@ -2,12 +2,12 @@
   "schema_version": 1,
   "generator": "Deterministic System.Drawing flat-symbol generator",
   "generator_path": "tools/generate_recursive_industry_ui_icons.ps1",
-  "generator_sha256": "9CA2239A5BE5941950EC924AC6B7F14C3E9AAA47602DAAE8DEB18BAE2DD45DBE",
-  "generated_date": "2026-08-27",
+  "generator_sha256": "235ABAD816A86A1E0F211055A3AE150C5700419C235D30B3BAD8DC4600B9C39D",
+  "generated_date": "2026-09-27",
   "unity_version": "6000.0.66f1",
   "visual_review": {
     "status": "PASS_STATIC_PROOF_REVIEW",
-    "runtime_status": "OPEN_SUCCESSOR_0.23.0A",
+    "runtime_status": "OPEN_SUCCESSOR_0.29.0A",
     "tested_sizes_px": [
       24,
       32,
@@ -19,24 +19,24 @@
     ],
     "size_proof": {
       "path": "art/RecursiveIndustry/UiIcons/proofs/all-ui-icons-size-proof.png",
-      "size_bytes": 578860,
-      "sha256": "14C2A96DA7B2E9DA938321258DCB9D23096C617E029562B5DC022D0EF6918DAA"
+      "size_bytes": 596939,
+      "sha256": "105709C6509A2009C1D19B0976BAB43DC60B081D9907D4BAE4DA6785140620AA"
     },
     "grayscale_proof": {
       "path": "art/RecursiveIndustry/UiIcons/proofs/all-ui-icons-grayscale-proof.png",
-      "size_bytes": 544130,
-      "sha256": "F226694D5927D4B460308A55E1E1AF1C40C08CEB3F7A12F108C5638D09685FAD"
+      "size_bytes": 561221,
+      "sha256": "4DD099EC7BC1F5E9FFDB294EBDEA8F74C971036E5A18BC2EA5CC41F142116AC3"
     }
   },
   "bundle": {
     "name": "uiicons_5287",
     "path": "mods/RecursiveIndustry/AssetBundles/uiicons_5287",
-    "size_bytes": 2567779,
-    "sha256": "E82485CFF06A111AB4E0C3EAD446540885355BED4140632BF29CBA7F71E39FB7",
-    "crc": 710001397,
+    "size_bytes": 2642487,
+    "sha256": "94C50FC5FD91D8C9F9ECF31621DB799CD2686442DF2552BB926F963848E58386",
+    "crc": 387490795,
     "dependencies": [],
     "unity_manifest": "art/RecursiveIndustry/UiIcons/unity/uiicons_5287.manifest",
-    "unity_manifest_sha256": "EA9B64C4D5235062D681605AE1269DF2527F24A6A4BD4BFB152139E9AB61EBB6"
+    "unity_manifest_sha256": "2FB1E5B079C9A577AA79BDF2FF876341B6E6A573ADCECDC0C4F02516863574EC"
   },
   "icons": [
     {
@@ -142,6 +142,21 @@
         "path": "art/RecursiveIndustry/UiIcons/exports/control_deployment_gateway.png",
         "size_bytes": 25312,
         "sha256": "77AE2DED194080080A70BBEF5EACBA50F7FFD2FD7B217406E3A252B4FC6C1858"
+      }
+    },
+    {
+      "name": "local_deployment_controller",
+      "constant": "LocalDeploymentController",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/local_deployment_controller.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/local_deployment_controller-master.png",
+        "size_bytes": 28090,
+        "sha256": "60449805364D4F47509953320B0C1C3D742D199BF39AE6292BFFD326F8EBD348"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/local_deployment_controller.png",
+        "size_bytes": 19807,
+        "sha256": "827FEFF6BD2E7F46A1CF2564D192CDFE72AC39963BD88E70592D59D9ECFEBBDB"
       }
     },
     {
@@ -1105,6 +1120,21 @@
       }
     },
     {
+      "name": "alloy_glass_works",
+      "constant": "AlloyGlassWorks",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/alloy_glass_works.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/alloy_glass_works-master.png",
+        "size_bytes": 33435,
+        "sha256": "01D98E471572EA342906FA1817EA7606C9A54A2C25AFF233D5D3BB977A7382BF"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/alloy_glass_works.png",
+        "size_bytes": 19914,
+        "sha256": "5972D4BA1250CDF20A8B4E56B4506FF9A019D8204F9C9F6092F3AFD91C07393B"
+      }
+    },
+    {
       "name": "casting_finishing_works",
       "constant": "CastingFinishingWorks",
       "unity_path": "Assets/RecursiveIndustry/UiIcons/casting_finishing_works.png",
@@ -1252,6 +1282,21 @@
         "path": "art/RecursiveIndustry/UiIcons/exports/water_utility.png",
         "size_bytes": 16996,
         "sha256": "4C8DBA112789059BEE25E86ADEDB168EB3E80BBE86A02ED3C45F638ED6CFE7E4"
+      }
+    },
+    {
+      "name": "process_water_chiller",
+      "constant": "ProcessWaterChiller",
+      "unity_path": "Assets/RecursiveIndustry/UiIcons/process_water_chiller.png",
+      "master": {
+        "path": "art/RecursiveIndustry/UiIcons/masters/process_water_chiller-master.png",
+        "size_bytes": 37473,
+        "sha256": "83B78C32C06447A354D456CEECE9B6FDA361DBA8E753B011BAD295C5CBFDC8DA"
+      },
+      "export": {
+        "path": "art/RecursiveIndustry/UiIcons/exports/process_water_chiller.png",
+        "size_bytes": 24743,
+        "sha256": "E4E577F33B6BB0F13962F73B638B84778C3FA8AA6086050E3A26223CC2DDAAF6"
       }
     },
     {

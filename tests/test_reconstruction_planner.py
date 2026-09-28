@@ -4,10 +4,12 @@ import json
 from pathlib import Path
 import sys
 import unittest
+import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 import plan_reconstruction as planner
+import planner_oracle
 
 
 class ReconstructionPlannerTests(unittest.TestCase):
@@ -102,6 +104,41 @@ class ReconstructionPlannerTests(unittest.TestCase):
     def test_committed_example_matches_current_source(self):
         expected = planner.markdown(planner.plan(self.scenario))
         self.assertEqual((ROOT / "docs/CONVERSION_WORKSHEET.md").read_text(encoding="utf-8"), expected)
+
+
+class NativePlannerOracleTests(unittest.TestCase):
+        def report(self):
+                return ET.fromstring('''<prototypes ticks_per_second="10" electricity_per_kw="10" percent_hundred_raw="100">
+                    <machine id="Host" power_raw="100"><recipe id="Recipe" duration_ticks="600" multiplier="2" power_raw="100">
+                        <input product="Feed" quantity="2"/><output product="Part" quantity="1"/><output product="Waste" quantity="1"/>
+                    </recipe></machine>
+                    <planner><capacity kind="Unit" value="3"/>
+                        <process Key="Host|Recipe" Duration="60" PowerKw="10">
+                            <Inputs product="Feed" quantity="4"/><Outputs product="Part" quantity="2"/><Outputs product="Waste" quantity="2"/>
+                            <port input="true" kind="Unit" products="Feed"/>
+                            <quote product="Part" requested="1" maximum_batches="3/4" Hosts="1" Attainable="3/2" ActiveHosts="1/2"
+                                         PeakPower="10" IdealAveragePower="5" EnergyPerOutput="300">
+                                <Inputs product="Feed" quantity="2"/><Outputs product="Part" quantity="1"/><Outputs product="Waste" quantity="1"/>
+                            </quote>
+                        </process>
+                    </planner></prototypes>''')
+
+        def test_independent_fraction_quote_matches(self):
+                self.assertEqual(planner_oracle.audit(self.report()), ([], 1))
+
+        def test_wrong_quotes_and_lost_coproducts_fail(self):
+                for field in ("Hosts", "Attainable", "ActiveHosts", "PeakPower", "IdealAveragePower", "EnergyPerOutput", "maximum_batches"):
+                        root = self.report()
+                        root.find("planner/process/quote").set(field, "99")
+                        self.assertTrue(planner_oracle.audit(root)[0], field)
+                root = self.report()
+                root.find("planner/process/quote/Outputs[@product='Waste']").set("quantity", "0")
+                self.assertTrue(planner_oracle.audit(root)[0])
+
+        def test_binding_multiplier_drift_fails(self):
+                root = self.report()
+                root.find("machine/recipe").set("multiplier", "3")
+                self.assertTrue(any("normalization" in error for error in planner_oracle.audit(root)[0]))
 
 
 if __name__ == "__main__":

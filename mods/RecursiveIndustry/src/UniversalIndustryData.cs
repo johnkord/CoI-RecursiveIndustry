@@ -37,6 +37,8 @@ internal sealed class UniversalIndustryData : IModData
                 spec,
                 directByRecipe))
             .ToArray();
+        var economy = UniversalIndustryCatalog.EconomyRecipes
+            .Select(spec => ResolveEconomyRecipe(spec, directByRecipe)).ToArray();
 
         int directCount = 0;
         foreach (UniversalFacilitySpec facility in UniversalIndustryCatalog.Facilities)
@@ -47,11 +49,12 @@ internal sealed class UniversalIndustryData : IModData
             ResolvedCustomRecipe[] custom = integrated
                 .Concat(authored)
                 .Concat(precision)
+                .Concat(economy)
                 .Where(recipe => recipe.MachineKey == facility.Key)
                 .ToArray();
             UniversalPortPlan ports = UniversalPortPlan.Create(
                 direct.Select(binding => RecipeVector.FromRecipe(binding.Recipe))
-                    .Concat(custom.Select(recipe => recipe.Vector)));
+                    .Concat(custom.Select(recipe => recipe.Vector)), facility.BodyColumns, facility.BodyRows);
             MachineProto machine = BuildMachine(registrator, facility, direct, ports);
 
             foreach (ResolvedDirectBinding binding in direct)
@@ -84,7 +87,7 @@ internal sealed class UniversalIndustryData : IModData
             + " facilities, " + directCount + " direct bindings, "
             + integrated.Length + " Integrated recipes, and "
             + precision.Length + " Precision recipes, plus "
-            + authored.Length + " exact authored recipes");
+            + authored.Length + " exact authored recipes, and " + economy.Length + " Economy recipes");
     }
 
     private static Dictionary<string, ResolvedDirectBinding> ResolveDirectBindings(ProtosDb db)
@@ -193,6 +196,18 @@ internal sealed class UniversalIndustryData : IModData
             vector,
             spec.DurationSeconds.Seconds());
         return new ResolvedCustomRecipe(spec, vector, effectiveDuration);
+    }
+
+    private static ResolvedCustomRecipe ResolveEconomyRecipe(
+        UniversalEconomyRecipeSpec spec,
+        IReadOnlyDictionary<string, ResolvedDirectBinding> directByRecipe)
+    {
+        ResolvedDirectBinding source = directByRecipe[spec.SourceRecipeId];
+        int multiplier = checked(source.SourceBinding.Multiplier * 4);
+        var vector = new RecipeVector(
+            source.Recipe.AllInputs.Select(input => new ProductAmount(input.Product, checked(input.Quantity.Value * multiplier), false)).ToArray(),
+            source.Recipe.AllOutputs.Select(output => new ProductAmount(output.Product, checked(output.Quantity.Value * multiplier), output.TriggerAtStart)).ToArray());
+        return new ResolvedCustomRecipe(spec, vector, ResolveEffectiveDuration(vector, source.SourceBinding.Duration * 2));
     }
 
     private static Duration ResolveEffectiveDuration(
@@ -338,10 +353,10 @@ internal sealed class UniversalIndustryData : IModData
         int sourceEquivalentPowerKw = direct.Max(binding => checked(
             (int)(binding.SourceMachine.ElectricityConsumed.Value / Electricity.OneKw.Value)
             * 4));
-        int minimumPowerKw = checked(
-            (Math.Max(5000, sourceEquivalentPowerKw * 11) + 4999)
-            / 5000
-            * 500);
+        int powerQuantum = checked(spec.PowerRoundingKw * 100);
+        int minimumPowerKw = Math.Max(500, checked(
+            (sourceEquivalentPowerKw * spec.SourcePowerPercent + powerQuantum - 1)
+            / powerQuantum * spec.PowerRoundingKw));
         if (spec.PowerKw < minimumPowerKw)
         {
             throw new InvalidOperationException(
@@ -447,6 +462,13 @@ internal sealed class UniversalIndustryData : IModData
             description = name
                 + ". Fiber-free adaptive bioprocessing with explicit material and residual vectors.";
             powerMultiplierPercent = authored.PowerMultiplierPercent;
+        }
+        else if (resolved.Spec is UniversalEconomyRecipeSpec economy)
+        {
+            id = economy.Id;
+            name = economy.Name;
+            description = name + ". Same material yield at half Direct throughput and 30% active process power. Extra hosts retain Computing and maintenance obligations.";
+            powerMultiplierPercent = economy.PowerMultiplierPercent;
         }
         else
         {
@@ -594,6 +616,7 @@ internal sealed class UniversalIndustryData : IModData
             UniversalIntegratedRecipeSpec integrated => integrated.MachineKey,
             UniversalAuthoredRecipeSpec authored => authored.MachineKey,
             UniversalPrecisionRecipeSpec precision => precision.MachineKey,
+            UniversalEconomyRecipeSpec economy => economy.MachineKey,
             _ => throw new InvalidOperationException(
                 "Unknown universal recipe specification."),
         };
@@ -710,7 +733,7 @@ internal sealed class UniversalIndustryData : IModData
             TopSideInputPorts = topSideInputPorts;
         }
 
-        public static UniversalPortPlan Create(IEnumerable<RecipeVector> vectors)
+        public static UniversalPortPlan Create(IEnumerable<RecipeVector> vectors, int selectedColumns = 0, int selectedRows = 0)
         {
             RecipeVector[] all = vectors.ToArray();
             Dictionary<char, int> inputCounts = MaxCounts(all.Select(vector => vector.Inputs));
@@ -728,8 +751,8 @@ internal sealed class UniversalIndustryData : IModData
             var flatOutputs = Flatten(outputs);
             int rows = Math.Max(flatInputs.Count, flatOutputs.Count);
             bool useChemicalPlantBasis = rows > 5;
-            int bodyRows = useChemicalPlantBasis ? 7 : Math.Max(rows, 5);
-            int bodyColumns = useChemicalPlantBasis ? 7 : 6;
+            int bodyRows = selectedRows > 0 ? selectedRows : useChemicalPlantBasis ? 7 : Math.Max(rows, 5);
+            int bodyColumns = selectedColumns > 0 ? selectedColumns : useChemicalPlantBasis ? 7 : 6;
             if (flatOutputs.Count > bodyRows)
             {
                 throw new InvalidOperationException(
@@ -749,9 +772,8 @@ internal sealed class UniversalIndustryData : IModData
                     + " top-side input slots; the selected shell supports "
                     + bodyColumns + ".");
             }
-            string body = useChemicalPlantBasis
-                ? "[7][7][7][6][5][5][5]"
-                : "[4][4][4][4][4][4]";
+            string body = string.Concat(Enumerable.Range(0, bodyColumns).Select(index =>
+                !useChemicalPlantBasis ? "[4]" : index < 3 ? "[7]" : index == 3 ? "[6]" : "[5]"));
             int bodyOffset = topSideInputs > 0 ? 1 : 0;
             var layout = new string[bodyRows + bodyOffset];
             if (topSideInputs > 0)

@@ -26,8 +26,8 @@ def load_catalog() -> dict[str, Any]:
     successors = value.get("successor_facilities")
     if not isinstance(source_facilities, list) or len(source_facilities) != 19:
         raise ValueError("public catalog must contain 19 source facilities")
-    if not isinstance(successors, list) or len(successors) != 25:
-        raise ValueError("public catalog must contain 25 successor facilities")
+    if not isinstance(successors, list) or len(successors) != 27:
+        raise ValueError("public catalog must contain 27 successor facilities")
     source_by_key = {facility.get("key"): facility for facility in source_facilities}
     if len(source_by_key) != 19 or None in source_by_key:
         raise ValueError("source facility keys must be 19 unique strings")
@@ -80,8 +80,8 @@ def load_catalog() -> dict[str, Any]:
     authored = value.get("authored_recipes")
     precision = value.get("precision_recipes")
     research = value.get("research_keys")
-    if len(facilities) != 25:
-        raise ValueError("public catalog must contain 25 facilities")
+    if len(facilities) != 27:
+        raise ValueError("public catalog must contain 27 facilities")
     if not isinstance(integrated, list) or len(integrated) != 21:
         raise ValueError("public catalog must contain 21 Integrated recipes")
     if not isinstance(authored, list) or len(authored) != 4:
@@ -91,8 +91,14 @@ def load_catalog() -> dict[str, Any]:
     if not isinstance(research, list) or len(research) != 5:
         raise ValueError("public catalog must contain five research keys")
     keys = [facility.get("key") for facility in facilities]
-    if len(set(keys)) != 25 or any(not isinstance(key, str) for key in keys):
-        raise ValueError("facility keys must be 25 unique strings")
+    if len(set(keys)) != 27 or any(not isinstance(key, str) for key in keys):
+        raise ValueError("facility keys must be 27 unique strings")
+    for facility in facilities:
+        columns, rows = facility.get("body_columns",0), facility.get("body_rows",0)
+        if bool(columns) != bool(rows) or columns and not (3 <= columns <= 12 and 3 <= rows <= 12):
+            raise ValueError("Invalid explicit facility footprint")
+        if facility.get("source_power_percent",110) < 100 or facility.get("power_rounding_kw",500) not in (250,500):
+            raise ValueError("Invalid source power floor")
     direct_ids = [
         binding.get("recipe_id")
         for facility in facilities
@@ -131,6 +137,11 @@ def load_catalog() -> dict[str, Any]:
     }
     if not precision_source_ids.issubset(direct_id_set):
         raise ValueError("every Precision source must be Direct-owned")
+    economy = value.get("economy_recipes",[])
+    if len(economy) != 2 or {row.get("source_recipe_id") for row in economy} != {"WaterTreatment","WaterTreatmentT2"}:
+        raise ValueError("Economy must contain the exact two water-treatment sources")
+    if any(row.get("machine") != "water_utility" or row.get("power_multiplier_percent") != 30 for row in economy):
+        raise ValueError("Economy owner or power contract drift")
     authored_keys = [recipe.get("key") for recipe in authored]
     if len(set(authored_keys)) != 4 or any(
         not isinstance(key, str) for key in authored_keys
@@ -194,6 +205,7 @@ def generate_ids(data: dict[str, Any]) -> str:
         *data["integrated_recipes"],
         *data["authored_recipes"],
         *data["precision_recipes"],
+        *data["economy_recipes"],
     ):
         member = pascal(recipe["key"])
         recipe_lines.append(
@@ -271,7 +283,11 @@ def generate_facilities(data: dict[str, Any]) -> str:
             directBindings: new[]
             {
 %s
-            })"""
+            },
+            bodyColumns: %d,
+            bodyRows: %d,
+            sourcePowerPercent: %d,
+            powerRoundingKw: %d)"""
             % (
                 cs_string(facility["key"]),
                 cs_string(facility["name"]),
@@ -289,6 +305,10 @@ def generate_facilities(data: dict[str, Any]) -> str:
                 facility["dossiers"],
                 facility["calibration"],
                 direct_rows(facility),
+                facility.get("body_columns",0),
+                facility.get("body_rows",0),
+                facility.get("source_power_percent",110),
+                facility.get("power_rounding_kw",500),
             )
         )
     return ",\n".join(entries)
@@ -365,6 +385,14 @@ def generate_amounts(amounts: list[dict[str, Any]]) -> str:
     )
 
 
+def generate_economy(data: dict[str, Any]) -> str:
+    return ",\n".join(
+        "        new UniversalEconomyRecipeSpec(RecursiveIndustryIds.Recipes.%s, %s, %s, %s, %d)"
+        % (pascal(row["key"]),cs_string(row["name"]),cs_string(row["machine"]),cs_string(row["source_recipe_id"]),row["power_multiplier_percent"])
+        for row in data["economy_recipes"]
+    )
+
+
 def generate_authored(data: dict[str, Any]) -> str:
     entries = []
     for recipe in data["authored_recipes"]:
@@ -417,12 +445,18 @@ internal static class UniversalIndustryCatalog
     {
 %s
     };
+
+    public static readonly UniversalEconomyRecipeSpec[] EconomyRecipes =
+    {
+%s
+    };
 }
 """ % (
         generate_facilities(data),
         generate_integrated(data),
         generate_authored(data),
         generate_precision(data),
+        generate_economy(data),
     )
 
 

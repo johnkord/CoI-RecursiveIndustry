@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 
 from model_reconstruction_bridge import (  # noqa: E402
-    Headroom, additional_racks, capital_wait, conversion, load_source, report,
+    Headroom, additional_racks, capital_wait, conversion, load_source, parse_machine, report,
 )
 
 
@@ -27,6 +27,16 @@ class ReconstructionEconomyTests(unittest.TestCase):
         ):
             with self.subTest(demand=demand, installed=installed, reserve=reserve):
                 self.assertEqual(additional_racks(demand, installed, reserve), expected)
+
+    def test_machine_costs_do_not_leak_between_builders_in_one_file(self) -> None:
+        text = (ROOT / "mods/RecursiveIndustry/src/IndustrialControlGatewayData.cs").read_text(encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "exactly one"):
+            parse_machine(text)
+        gateway = parse_machine(text, "gateway")
+        local = parse_machine(text, "local")
+        self.assertEqual((gateway.capital["Electronics4"], gateway.capital["FrontierProgram"]), (128, 4))
+        self.assertEqual((local.capital["Electronics4"], local.capital["FrontierProgram"]), (32, 1))
+        self.assertEqual((gateway.workers, local.workers), (4, 2))
 
     def test_equal_output_requires_two_raw_electronics_facilities(self) -> None:
         self.assertEqual(self.recipes["IntegrateElectronics2Intermediates"].rate("Electronics2"), 96)

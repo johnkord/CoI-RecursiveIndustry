@@ -133,6 +133,18 @@ def write_zip(output: Path, entries: list[tuple[Path, Path]]) -> None:
         handle.write(payload)
 
 
+def validate_complete_source(mod_dir: Path, manifest: dict) -> None:
+    if manifest.get("id") != "RecursiveIndustry":
+        return
+    root = mod_dir.resolve().parent.parent
+    if not (root / "data/release-policy.json").is_file():
+        raise SystemExit("Recursive Industry must be packaged from its complete source checkout.")
+    from validate_public_repo import validate
+    errors = validate(root)
+    if errors:
+        raise SystemExit("Refusing to package incomplete Recursive Industry source:\n" + "\n".join(errors))
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("mod", type=Path, help="mod source folder")
@@ -149,6 +161,7 @@ def main(argv: list[str] | None = None) -> int:
         output_dir = ROOT / output_dir
 
     manifest = load_manifest(mod_dir)
+    validate_complete_source(mod_dir, manifest)
     entries = package_entries(
         mod_dir,
         manifest,

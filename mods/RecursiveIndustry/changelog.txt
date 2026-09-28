@@ -1,7 +1,22 @@
 Recursive Industry changelog
 ============================
 
-0.28.0a - Release candidate (unpublished)
+0.29.0a - Breakthroughs and Opportunity Costs (author-test candidate)
+----------------------------------------------------------
+
+- Adds the read-only full-portfolio planner with exact shared support, research,
+  rack and transport choices, lifecycle cancellation, and separate cutover cooling.
+- Splits aluminum/alloy and water/chilling process owners while conserving parent
+  capital, Computing, workers, and maintenance. Preserves 231 Direct bindings.
+- Adds compact 105-Stream local control, two 750-kW Economy water-treatment rows,
+  and component-plus-Package accelerator repair on the existing Reclaimer.
+- Replaces Co-design's long tail with two +100-point purchases at 240/720 months.
+- Completes three new model/icon identities and selected footprint/port updates.
+  Final bundles and isolated native UI rendering pass; integrated play remains open.
+- Refuses to package an incomplete source/artifact set. Testing uses one exact
+  supplied archive; no public release or stable acceptance is implied.
+
+0.28.0a - Published playtest
 ----------------------------------------
 
 - Reorganizes research into independent applications with optional hardware density,

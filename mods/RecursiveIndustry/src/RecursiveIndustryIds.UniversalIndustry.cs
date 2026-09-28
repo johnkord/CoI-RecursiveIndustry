@@ -24,6 +24,9 @@ public static partial class RecursiveIndustryIds
         public static readonly MachineID PrecisionMetalsWorks =
             Ids.Machines.CreateId("RecursiveIndustry_PrecisionMetalsWorks");
 
+        public static readonly MachineID AlloyGlassWorks =
+            Ids.Machines.CreateId("RecursiveIndustry_AlloyGlassWorks");
+
         public static readonly MachineID CastingFinishingWorks =
             Ids.Machines.CreateId("RecursiveIndustry_CastingFinishingWorks");
 
@@ -53,6 +56,9 @@ public static partial class RecursiveIndustryIds
 
         public static readonly MachineID WaterUtility =
             Ids.Machines.CreateId("RecursiveIndustry_WaterUtility");
+
+        public static readonly MachineID ProcessWaterChiller =
+            Ids.Machines.CreateId("RecursiveIndustry_ProcessWaterChiller");
 
         public static readonly MachineID ThermalDesalinationWorks =
             Ids.Machines.CreateId("RecursiveIndustry_ThermalDesalinationWorks");
@@ -191,6 +197,12 @@ public static partial class RecursiveIndustryIds
 
         public static readonly RecipeID PrecisionElectronics4 =
             Ids.Recipes.CreateId("RecursiveIndustry_PrecisionElectronics4");
+
+        public static readonly RecipeID EconomyWaterTreatment =
+            Ids.Recipes.CreateId("RecursiveIndustry_EconomyWaterTreatment");
+
+        public static readonly RecipeID EconomyWaterTreatmentT2 =
+            Ids.Recipes.CreateId("RecursiveIndustry_EconomyWaterTreatmentT2");
     }
 
     public static partial class Research

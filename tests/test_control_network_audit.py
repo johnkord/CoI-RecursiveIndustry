@@ -80,7 +80,7 @@ var gateway = builder
         .MaintenanceT3(8))
     .SetElectricityConsumption(1000.Kw())
     .SetComputingConsumption(Computing.FromTFlops(256))
-    .SetLayout("A#>[4][4][4][4][4][4]>:X")
+    .SetLayout("A#>[4][4][4][4]>:X")
     .SetCustomIconPath(RecursiveIndustryIcons.ControlDeploymentGateway);
 recipe
     .AddInput(1, RecursiveIndustryIds.Products.ValidatedControlPackage)

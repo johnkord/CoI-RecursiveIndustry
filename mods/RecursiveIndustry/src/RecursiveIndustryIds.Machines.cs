@@ -59,5 +59,8 @@ public static partial class RecursiveIndustryIds
 
         public static readonly MachineID DeploymentAssuranceCampus =
             Ids.Machines.CreateId("RecursiveIndustry_DeploymentAssuranceCampus");
+
+        public static readonly MachineID LocalDeploymentController =
+            Ids.Machines.CreateId("RecursiveIndustry_LocalDeploymentController");
     }
 }

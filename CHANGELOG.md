@@ -6,7 +6,24 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
-### 0.28.0a Release Candidate
+### 0.29.0a Breakthroughs and Opportunity Costs
+
+- Add a read-only in-game reconstruction planner with the full mod Machine
+  portfolio, native comparators, exact arithmetic, explicit shared support,
+  research/rack choices, and separate cutover cooling and capital.
+- Split aluminum from lighter alloy/glass processing, and treatment from chilling.
+  Preserve parent capital, Computing, labor, maintenance, and all 231 Direct rows.
+- Add a compact 105-Stream Local Deployment Controller and two 30%-power,
+  double-duration Economy water-treatment rows on the existing treatment host.
+- Add component-and-Package accelerator repair on the Electronics Reclaimer,
+  retaining normal manufacture, salvage, recovery, and take-back choices.
+- Replace the Co-design tail with two +100-point research-efficiency purchases
+  costing 240 and 720 base months, without a Space Research gate.
+- Complete three original models/icons and the selected footprint/port updates.
+  Final bundles, isolated native UI rendering, and form callbacks pass. Fresh-world
+  integrated testing and independent acceptance remain open before publication.
+
+## [0.28.0a] - 2026-09-08
 
 - Replace the compulsory Epoch ladder with independent application research.
   Preserve existing IDs and native source technologies; make Rack II/III optional

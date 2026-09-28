@@ -91,8 +91,9 @@ def render(data: dict) -> str:
         repeat = node.get("repeatable")
         if repeat:
             output += [f'{indent}    .DescriptionPerLevelWithBonus({literal(node["description"])}, {repeat["bonus_percent"]}.Percent())',
-                       f'{indent}    .SetRepeatableProperties({repeat["levels"]}, IdsCore.PropertyIds.ResearchEfficiencyMultiplier, {repeat["bonus_percent"]}.Percent(), CoDesignCost)',
-                       f'{indent}    .SetSpacePointRequiredFrom({repeat["space_from_level"]})']
+                       f'{indent}    .SetRepeatableProperties({repeat["levels"]}, IdsCore.PropertyIds.ResearchEfficiencyMultiplier, {repeat["bonus_percent"]}.Percent(), CoDesignCost)']
+            if "space_from_level" in repeat:
+                output.append(f'{indent}    .SetSpacePointRequiredFrom({repeat["space_from_level"]})')
         else:
             output += [f'{indent}    .Description({literal(node["description"])})']
         unlocked = node["unlock"]
@@ -132,8 +133,7 @@ def render(data: dict) -> str:
         output.append("")
     output += [f'        Log.Info("RecursiveIndustry: RELEASE_RESEARCH_REGISTERED version={data["candidate_version"]} nodes_max={len(data["nodes"])} native_recipe_locks=true");',
                "    }", "", "    private static long CoDesignCost(long baseCost, int level)", "    {",
-               "        Fix64 step = Fix64.One + level;", "        Fix64 growth = Math.Pow(1.4, level).ToFix64();",
-               "        return (baseCost * (step + growth).HalfFast).ToLongRounded();", "    }", "}", ""]
+               "        return checked(baseCost * (level == 0 ? 1 : 3));", "    }", "}", ""]
     return "\n".join(output)
 
 

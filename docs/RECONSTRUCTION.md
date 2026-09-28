@@ -1,13 +1,14 @@
 # Rebuilding an Industrial District
 
-The 0.28.0a release candidate makes industrial applications independent choices
+The published 0.28.0a playtest makes industrial applications independent choices
 after Systems Integration, retaining their native source technologies. Civic
 Knowledge uses the shared Fiber infrastructure without requiring industrial
 control or Microchip consolidation. See [Progression](PROGRESSION.md).
 
-The candidate retains the [complete building artwork](BUILDING_ART.md) and
-[world models](WORLD_ART.md) unchanged. It is not a quest system or an update
-to the immutable hosted 0.22.0c playtest.
+The unpublished 0.29.0a successor adds the in-game planner and selected choices
+below. Source compilation, offline arithmetic, final Unity bundles, and isolated
+native UI checks pass. Testing uses the separately supplied exact candidate archive;
+an arbitrary source build is not that artifact. Published 0.28.0a stays unchanged.
 
 ## Choose What to Simplify
 
@@ -34,7 +35,7 @@ must be counted before claiming a smaller total district.
 
 ## The First Deployment
 
-One raw Electronics II facility plus one local Gateway requires, before racks,
+One raw Electronics II facility plus one standard Gateway requires, before racks,
 Fiber, and supporting production:
 
 | Construction product | Combined quantity |
@@ -46,17 +47,24 @@ Fiber, and supporting production:
 | Validated Research Dossiers | 4 |
 
 At 48 Electronics II per 60 Time, the facility needs 60 Stream per 60 Time.
-A local Gateway converts one Package into 210 Stream every 60 Time, consuming
+A standard Gateway converts one Package into 210 Stream every 60 Time, consuming
 Packages as demand permits. Continuing supply needs Models, validation inputs,
 and Datasets. A reserve of already supplied Computing or Packages is useful;
 another district does not automatically require another complete support chain.
 
 | Network | Source capacity | Trunk capacity | Full-rate compositions |
 | --- | ---: | ---: | ---: |
-| One local Gateway and Access | 210 | 200 | 3 |
-| One local Gateway and Backbone | 210 | 450 | 3 |
-| Two local Gateways and Backbone | 420 | 450 | 7 |
+| One standard Gateway and Access | 210 | 200 | 3 |
+| One standard Gateway and Backbone | 210 | 450 | 3 |
+| Two standard Gateways and Backbone | 420 | 450 | 7 |
 | One dense Gateway and Backbone | 420 | 450 | 7 |
+
+The 0.29.0a Local Deployment Controller supplies 105 Stream per Package per
+60 Time. Its 3-by-3 body, 250 kW, 32 Computing, two workers, and smaller capital
+make a first composition easier to commission. It uses twice the Packages per
+Stream of a Gateway. Controllers can be pooled; their capacity is not artificially
+limited to one consumer. Central supply remains valuable for fewer installations,
+staff, and Package demand rather than winning every electricity comparison.
 
 Rates are per 60 simulation Time. A wider link does not increase its source's
 output. These are capacity bounds, not guarantees of flow or priority. Both
@@ -88,6 +96,42 @@ mechanic. The result is the place you have built and the capacity it now support
 Keeping a historical plant beside its successor is as valid as clearing the site.
 
 ## Conversion Worksheet
+
+### In-Game Planner (0.29.0a Source)
+
+The native Reconstruction Planner has one global entry and an **Inspect current**
+action. It reads exact registered recipes, configured values, research state,
+and a simulation-synchronized selected-building snapshot. The searchable catalog
+covers every mod Machine binding and its declared native comparators, with 50
+rows per page and up to eight selections. Farms, Offices, services, and generators
+are reference-only entries rather than invented Machine recipes.
+
+**Alternatives** are mutually exclusive choices against the same headroom.
+**Combined project** purchases shared support once across the selected consumers.
+Each process selects one target output and a rate per 60 simulation Time.
+Co-products remain simultaneous outputs needing sinks; they are not free credits.
+Different selected recipes require dedicated hosts, even on the same building type.
+
+The Process view separates requested output, transport capacity bounds, peak power,
+ideal utilization-based power, and process energy per output. Added support uses
+explicitly selected suppliers, unlocked racks, Data Center slots, and typed transport
+tiers. Spare supply defaults to zero and means guaranteed supplied capacity, not
+momentary idle output. Cycles, missing research, unavailable transports, invalid
+numbers, and work limits produce explicit incomplete states, not cheaper totals.
+
+Conversion keeps existing commitments during cutover. Only explicitly declared
+retirement reduces steady demand. Construction stock and spare production give
+a parallel supply lower bound, excluding delivery, construction, startup, and
+temporary storage. External suppliers remain outside known costs; no exact total
+island area, retirement recommendation, or payback is implied.
+
+The window sends no gameplay commands and saves no comparison state. Its worker
+uses detached exact values with a 25 ms budget and bounded graph expansion.
+Save/world changes, edits, close, and disposal invalidate pending generations.
+Isolated native rendering and form callbacks pass. Live game integration and
+player judgment remain the integrated author-test boundary.
+
+### Offline Worksheet
 
 The optional offline planner compares staged and integrated Electronics II,
 Construction Parts III, or Vehicle Parts II at the same requested output. It
@@ -125,6 +169,27 @@ geometry. It is not a whole-island cost or payback forecast. Its preparation
 example is only a lower bound using explicitly supplied spare rates; research,
 construction, transport, and startup are additional obligations.
 
+## Selective Breakthroughs (0.29.0a Source)
+
+Aluminum Works keeps the high-power aluminum cell. Alloy and Glass Works handles
+the lighter metallurgy portfolio without paying that cell's power class. Water
+Reclamation and Process Water Chiller likewise have separate installations.
+The splits conserve parent capital, Computing, staffing, and maintenance.
+
+Efficient Water Processing unlocks two Economy treatment rows: native quantities
+at 4x, twice the source duration, and 750 kW on the existing treatment host.
+Equal output needs twice the buildings and Computing of Direct treatment. It can
+win electricity when rack headroom exists and lose at a rack-rounding boundary.
+Integrated water recovery stays at 4.5 MW; Precision is 5 MW.
+
+Validated Deployment unlocks repair on the existing Electronics Reclaimer:
+4 Spent Accelerators + 2 Microchips + 2 Electronics III + 2 Titanium Alloy +
+1 Package produce 4 Accelerator Modules + 2 Waste in 240 Time at 1 MW.
+Repair saves replacement components but is slower and uses four times the process
+energy per Module of new manufacture. Reusing intact racks, recovering electronics,
+and take-back remain alternatives. The Package pays for tested redeployment; it
+does not restore recurring Packages to ordinary manufacturing.
+
 ## Sources
 
 - [Electronics recipes](../mods/RecursiveIndustry/src/AutonomousElectronicsIntegrationData.cs).
@@ -132,4 +197,6 @@ construction, transport, and startup are additional obligations.
 - [Gateway](../mods/RecursiveIndustry/src/IndustrialControlGatewayData.cs).
 - [Source-derived comparison](../tools/model_reconstruction_bridge.py).
 - [Scenario planner](../tools/plan_reconstruction.py).
+- [Exact native planner](../mods/RecursiveIndustry/src/Planner/PlannerCalculator.cs)
+	and [Fraction oracle](../tools/planner_oracle.py).
 - [Progression](PROGRESSION.md) and [control authority](../data/industrial-control-network.json).

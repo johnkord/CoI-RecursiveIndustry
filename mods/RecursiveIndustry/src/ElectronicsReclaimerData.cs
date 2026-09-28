@@ -17,7 +17,12 @@ internal sealed class ElectronicsReclaimerData : IModData
             .SetCost(Costs.Build.CP4(80).Workers(12).MaintenanceT3(3))
             .SetElectricityConsumption(500.Kw())
             .SetCategories(Ids.ToolbarCategories.Waste_Solid)
-            .SetLayout(VerticalSliceProofLayout.Create())
+            .SetLayout(
+                "D#>[4][4][4][4][4][4]   ",
+                "A#>[4][4][4][4][4][4]>#X",
+                "B#>[4][4][4][4][4][4]>#Y",
+                "C#>[5][5][4][4][4][4]>~Z",
+                "E#>[5][5][4][4][4][4]   ")
             .SetPrefabPath(BuildingModelPaths.ElectronicsReclaimer)
             .SetCustomIconPath(RecursiveIndustryIcons.ElectronicsReclaimer)
             .SetMachineSound(VerticalSliceProofLayout.SoundPath)
@@ -49,6 +54,27 @@ internal sealed class ElectronicsReclaimerData : IModData
                 (Ids.Products.TitaniumAlloy, "Y"),
                 (Ids.Products.Waste, "Z"))
             .BindTo(machine, 90.Seconds());
+
+        registrator.RecipeProtoBuilder
+            .Start(RecursiveIndustryIds.Recipes.RemanufactureAcceleratorModules)
+            .Description("Refurbishes spent accelerators with replacement components and a signed test Package. Slower and more power-intensive than new manufacture; competes with recovering Microchips and Electronics from the same spent stock.")
+            .SetPowerMultiplier(200.Percent())
+            .AddInput(4, RecursiveIndustryIds.Products.SpentAccelerator)
+            .AddInput(2, Ids.Products.Microchips)
+            .AddInput(2, Ids.Products.Electronics3)
+            .AddInput(2, Ids.Products.TitaniumAlloy)
+            .AddInput(1, RecursiveIndustryIds.Products.ValidatedControlPackage)
+            .AddOutput(4, RecursiveIndustryIds.Products.AcceleratorModule)
+            .AddOutput(2, Ids.Products.Waste)
+            .BuildAndAdd()
+            .WithCommonInputPorts(
+                (RecursiveIndustryIds.Products.SpentAccelerator, "A"),
+                (Ids.Products.Microchips, "B"),
+                (Ids.Products.Electronics3, "C"),
+                (Ids.Products.TitaniumAlloy, "D"),
+                (RecursiveIndustryIds.Products.ValidatedControlPackage, "E"))
+            .WithCommonOutputPorts((RecursiveIndustryIds.Products.AcceleratorModule, "X"), (Ids.Products.Waste, "Z"))
+            .BindTo(machine, 240.Seconds());
 
         registrator.RecipeProtoBuilder
             .Start(RecursiveIndustryIds.Recipes.SalvageRackIII)

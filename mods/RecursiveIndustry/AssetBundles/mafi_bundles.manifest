@@ -10,6 +10,8 @@ ai_operations_ii_f0db
 ai_operations_iii_0c45
 +buildings_cfa7
 ai_science_institute_6e35
++buildings_cfa7
+alloy_glass_works_c092
 +world_7fef
 amphibious_dump_c719
 +world_7fef
@@ -155,6 +157,8 @@ heavy_tank_31d3
 +reconstruction_9aa2
 knowledge_commons_338d
 +buildings_cfa7
+local_deployment_controller_0899
++buildings_cfa7
 materials_chemistry_complex_1470
 +buildings_cfa7
 materials_recovery_center_f85f
@@ -190,6 +194,8 @@ precision_components_fab_2554
 precision_metals_works_e07a
 +buildings_cfa7
 primary_smelter_7b21
++buildings_cfa7
+process_water_chiller_4d95
 producticons_84e1
 +world_7fef
 rack_i_a81f

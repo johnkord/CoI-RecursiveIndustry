@@ -10,20 +10,19 @@ Recursive Industry is a Captain of Industry endgame mod about building a physica
 AI economy, from accelerator racks and validated models to autonomous industry,
 planetary coordination, and frontier-scale megaprojects.
 
-> **Development status:** Version 0.22.0c is the current public playtest for
-> Captain of Industry 0.8.7a Build 614. It changes compatibility metadata only;
-> gameplay and assets remain identical to 0.22.0b. Start a new campaign and
-> report feedback through GitHub Issues. The main branch now contains the
-> unpublished 0.28.0a release candidate with independent application research,
-> complete original artwork, earlier Program reinvestment, and an optional conversion planner; do not treat source builds
-> as the hosted playtest artifact.
+> **Published playtest:** Version 0.28.0a includes independent application research,
+> complete original artwork, earlier Program reinvestment, and an offline conversion
+> worksheet. Start a new campaign and report feedback through GitHub Issues.
+> The unpublished 0.29.0a author-test candidate has completed gameplay, artwork,
+> and offline planner checks. Use only its separately supplied, hash-verified
+> candidate archive for testing. Source builds are not the published archive.
 
-[Download Recursive Industry 0.22.0c Playtest](https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0c)
+[Download Recursive Industry 0.28.0a Playtest](https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.28.0a)
 
 Player ZIP SHA-256:
-`F7212C437318DB39F4997B6B3D4B984BFB3D4FC9B92015860D1F11F516A7ACD9`
+`A8727D152CE87386FB239638C3E668AD5140B54CE0E6D5567F7D348840744D5E`
 
-## What it adds
+## Published Features
 
 - Three accelerator-rack generations for vanilla Data Centers.
 - Physical Dataset Archives, Model Archives, Validated Control Packages,
@@ -89,10 +88,23 @@ The mod deliberately preserves conventional machines, material conservation,
 power demand, maintenance, logistics, validation, and selected human work. It is
 not a global speed multiplier or a free-resource automation mod.
 
+## 0.29.0a Development
+
+The unpublished successor adds an in-game read-only Reconstruction Planner,
+a compact Local Deployment Controller, separate aluminum/alloy and water/chilling
+power classes, two slower Economy water-treatment rows, accelerator repair,
+and two substantial Co-design purchases. The Array and 625,000-Focus Center
+retain their earned advantages. See [Reconstruction](docs/RECONSTRUCTION.md).
+
+The candidate contains three new original building identities and revised footprints.
+Native registration, exact arithmetic, final bundles, and isolated native UI checks
+pass. A fresh-world integrated observation and independent acceptance remain open;
+this is not stable publication or a save-migration promise.
+
 ## Requirements
 
-- Captain of Industry 0.8.7a, Build 614. The current candidate's minimum and
-  maximum verified versions both match this tested API target.
+- Published 0.28.0a: Captain of Industry 0.8.7a, Build 614. The 0.29.0a worktree
+  has scoped offline checks on 0.8.7d; that is not a fresh-world compatibility pass.
 - Trains expansion 1.0.0 or newer.
 - Supporter edition 1.1.0 is optional and enables the Captain's locomotive variant.
 - Start a new campaign with the mod enabled. Adding or removing it from an
@@ -102,8 +114,8 @@ not a global speed multiplier or a free-resource automation mod.
 
 For the currently published playtest:
 
-1. Download `RecursiveIndustry-0.22.0c.zip` from the
-  [GitHub pre-release](https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0c).
+1. Download the player ZIP from the
+  [0.28.0a GitHub pre-release](https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.28.0a).
 2. Extract it into `%APPDATA%/Captain of Industry/Mods`.
 3. Confirm the resulting path is
    `%APPDATA%/Captain of Industry/Mods/RecursiveIndustry/manifest.json`.

@@ -2,13 +2,19 @@
 
 ## Current Release Candidate
 
-The main branch contains unpublished 0.28.0a. Use its exact supplied player
-archive and recorded SHA-256 when participating in candidate testing, not the
-older hosted playtest below. It requires 0.8.7a Build 614 and a new campaign.
-Native prototype registration/initialization is already checked offline with
-and without Supporter. Do not repeat unchanged Civic mechanics just for this
-research successor. Play naturally and report the goals, choices, and content
-you actually encountered; there is no feature-by-feature checklist.
+The unpublished 0.29.0a author-test candidate completes the selected reconstruction
+update. Use its separately supplied exact player archive and recorded SHA-256,
+not an arbitrary source build or the hosted predecessor below. Native registration,
+both Supporter configurations, exact arithmetic, final artwork, and isolated native
+planner UI checks are covered offline. The integrated author pass targets the
+current 0.8.7d game and a new world; this does not raise the manifest's verified
+0.8.7a ceiling before a clean fresh-world pass.
+
+The supplied author handoff identifies the remaining window/inspection interaction
+and complete-log checks. Do not replay unchanged Civic, farm, power, or production
+mechanics, or create one session per feature. Then play naturally and report the
+goals, choices, and content actually encountered. Independent uncoached testing
+uses a later source-commit-bound freeze, not this author workflow.
 
 After exiting normally, preserve the complete log alongside the exact version,
 mod list, and any relevant screenshots. Do not publish personal paths or saves.
@@ -19,11 +25,10 @@ author or public-preview reports.
 
 Use the exact GitHub prerelease:
 
-- version: `0.22.0c`;
-- release: https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.22.0c;
-- file: `RecursiveIndustry-0.22.0c.zip`;
-- size: 1,994,306 bytes;
-- SHA-256: `F7212C437318DB39F4997B6B3D4B984BFB3D4FC9B92015860D1F11F516A7ACD9`.
+- version: `0.28.0a`;
+- release: https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.28.0a;
+- size: 6,177,442 bytes;
+- SHA-256: `A8727D152CE87386FB239638C3E668AD5140B54CE0E6D5567F7D348840744D5E`.
 
 Do not use GitHub's automatic source-code archives as the player package.
 
@@ -40,12 +45,12 @@ automatic source archive.
    `%APPDATA%/Captain of Industry/Mods/RecursiveIndustry/manifest.json`.
 5. Start a new single-player campaign with Recursive Industry enabled.
 
-Captain of Industry 0.8.7 or 0.8.7a and Trains expansion 1.0.0 or newer are required.
+The published playtest targets Captain of Industry 0.8.7a and requires Trains expansion 1.0.0 or newer.
 Supporter edition is optional. Adding or removing the mod from an existing normal
 save is unsupported.
 
-The exact archive passed a clean Build 614 fresh-world startup and strict
-complete-log audit. Its reflected modding surface matches Build 613.
+The published source/archive identities and offline gates are preserved. Do not
+transfer a predecessor's fresh-world or visual evidence to changed successor code.
 
 Do not load a `0.19.x`, `0.20.x`, `0.21.x`, or earlier `0.22.x` prerelease save
 with 0.22.0c.
@@ -67,7 +72,7 @@ in one session. Useful reports explain:
 - whether any icon, port, model, or recipe row was confusing; and
 - whether ordinary operation required repeated manual intervention.
 
-For 0.22.0c, also report whether Fiber topology is a meaningful
+Also report whether Fiber topology is a meaningful
 planning choice, whether Access and Backbone are distinguishable, whether a cut
 is diagnosable, and whether Direct production remains understandable and useful
 without Fiber. Also report whether Backbone deployment earns its higher power
@@ -106,4 +111,4 @@ of a report.
 
 - [Current release policy](../data/release-policy.json).
 - [Verification boundaries](VERIFICATION.md).
-- [Hosted 0.22.0c identity](RELEASE_NOTES_0.22.0c.md).
+- [Hosted 0.28.0a playtest](https://github.com/johnkord/CoI-RecursiveIndustry/releases/tag/v0.28.0a).

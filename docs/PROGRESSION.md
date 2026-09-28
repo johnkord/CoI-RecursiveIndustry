@@ -54,7 +54,7 @@ All scheduling and vehicle jobs remain native.
 Fiber Infrastructure unlocks Access Fiber, Backbone Fiber, and the junction together.
 Industrial Control Networks follows Fiber Infrastructure and Systems Integration,
 using ordinary Research Points. It unlocks Industrial Control Stream and the Control
-Deployment Gateway. It also
+Deployment Gateway and, in 0.29.0a, the compact Local Deployment Controller. It also
 activates the existing raw Electronics II and integrated Construction Parts III
 and Vehicle Parts II rows, which remain unavailable with their earlier machine
 research alone.
@@ -102,7 +102,7 @@ the actual live Stream supply.
 Nuclear Fuel Systems no longer requires Calibration in research or construction,
 and uses ordinary research. Orbital Fabrication and Integrated Crew Provisioning belong to
 Orbital Industry, preventing their orbital technologies from delaying terrestrial
-reconstruction. The portfolios retain twenty-five facilities:
+reconstruction. The 0.29.0a source portfolio has twenty-seven facilities:
 
 - Materials and metallurgy.
 - Refining and chemistry.
@@ -123,6 +123,16 @@ input union would erase too many independent domains and exceed the useful shell
 
 Farms, reactors, power generation, Waste Sorting, and native Maintenance Depots
 remain on their specialized game paths.
+
+Efficient Water Processing is a 240-month ordinary-research child of Water and
+Circular Utilities. Its two Economy rows trade footprint and Computing for lower
+water-treatment electricity. It adds no production witness or new commodity.
+Accelerator repair belongs to the earlier Validated Deployment node, while
+hardware-led training can still supply useful spent stock.
+
+Algorithmic Co-design now has two +100-percentage-point research-efficiency
+purchases, costing 240 and then 720 base research months after Physical Validation.
+It has no Space Research gate, Focus increase, or physical production multiplier.
 
 ## Adaptive Agrifood Systems
 

@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "candidate_version": "0.28.0a",
+  "candidate_version": "0.29.0a",
   "predecessor": "0.21.0d",
   "game": {
     "display_version": "0.8.7a",
     "build": 614
   },
   "catalog_contract": {
-    "facilities": 25,
+    "facilities": 27,
     "direct_bindings": 231,
     "integrated_recipes": 21,
     "precision_recipes": 10,

@@ -58,11 +58,12 @@ internal sealed class ReleaseResearchTree : IResearchNodesData
 
         ResearchNodeProto validatedOperations = registrator.ResearchNodeProtoBuilder
             .Start("Validated Deployment", RecursiveIndustryIds.Research.ValidatedOperations, costMonths: 192)
-            .Description("Validate Models into signed Control Packages. AI Operations I allocates Focus, and the AI Electronics Cell offers a local-control application. Packages are physical releases, not a universal per-batch tax.")
+            .Description("Validate Models into signed Control Packages. AI Operations I allocates Focus, the Electronics Cell provides local control, and the Reclaimer can refurbish spent accelerators using replacement parts and a test Package. Ordinary manufacturing remains Package-free after commissioning.")
             .AddProductToUnlock(RecursiveIndustryIds.Products.ValidatedControlPackage, addIconToNode: true)
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.AIElectronicsCell, unlockAllRecipes: false)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.ValidateControlPackages)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.PrecisionElectronics3)
+            .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.RemanufactureAcceleratorModules)
             .AddLayoutEntityToUnlock(RecursiveIndustryIds.Offices.OperationsI)
             .AddRequirementForLifetimeProduction(RecursiveIndustryIds.Products.ModelArchive, 1)
             .BuildAndAdd();
@@ -131,10 +132,9 @@ internal sealed class ReleaseResearchTree : IResearchNodesData
         systemsIntegration.AddParent(physicalValidation);
 
         ResearchNodeProto algorithmicCoDesign = registrator.ResearchNodeProtoBuilder
-            .Start("Algorithmic Co-design", RecursiveIndustryIds.Research.AlgorithmicCoDesign, costMonths: 480)
-            .DescriptionPerLevelWithBonus("Physically validated algorithm and hardware co-design improves research efficiency by {0}. An optional mastery investment with no new hardware, Focus, or content unlocks.", 4.Percent())
-            .SetRepeatableProperties(10, IdsCore.PropertyIds.ResearchEfficiencyMultiplier, 4.Percent(), CoDesignCost)
-            .SetSpacePointRequiredFrom(5)
+            .Start("Algorithmic Co-design", RecursiveIndustryIds.Research.AlgorithmicCoDesign, costMonths: 240)
+            .DescriptionPerLevelWithBonus("Adds {0} to research efficiency per level through physical algorithm and hardware co-design. Two optional investments cost 240 then 720 base research months. Existing bonuses add together; a mature 4x research rate becomes 5x, then 6x. No new Focus or manufacturing multiplier.", 100.Percent())
+            .SetRepeatableProperties(2, IdsCore.PropertyIds.ResearchEfficiencyMultiplier, 100.Percent(), CoDesignCost)
             .BuildAndAdd();
         algorithmicCoDesign.GridPosition = new Vector2i(192, 4);
         algorithmicCoDesign.AddParent(physicalValidation);
@@ -163,10 +163,12 @@ internal sealed class ReleaseResearchTree : IResearchNodesData
 
         ResearchNodeProto industrialControl = registrator.ResearchNodeProtoBuilder
             .Start("Industrial Control Networks", RecursiveIndustryIds.Research.IndustrialControlNetworks, costMonths: 240)
-            .Description("Deploy Packages as live Industrial Control Stream. Raw Electronics II and integrated capital rows need their owning machine, physical inputs, and live supply. Direct and Precision production remain independent of Fiber.")
+            .Description("Deploy Packages as live Industrial Control Stream. Choose a compact local controller at 105 Stream per Package or the central Gateway at 210. Raw integration still needs physical inputs and its owning machine; Direct, Precision, and Economy remain local.")
             .AddProductToUnlock(RecursiveIndustryIds.Products.IndustrialControlStream, addIconToNode: true)
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.ControlDeploymentGateway, unlockAllRecipes: false)
+            .AddMachineToUnlock(RecursiveIndustryIds.Machines.LocalDeploymentController, unlockAllRecipes: false)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.DeployIndustrialControl)
+            .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.DeployLocalIndustrialControl)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegrateElectronics2Direct)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegrateConstructionParts3)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegrateVehicleParts2)
@@ -250,17 +252,18 @@ internal sealed class ReleaseResearchTree : IResearchNodesData
 
         ResearchNodeProto metallurgy = registrator.ResearchNodeProtoBuilder
             .Start("Autonomous Metallurgy and Glass", RecursiveIndustryIds.Research.AutonomousMetallurgy, costMonths: 420)
-            .Description("Rebuild smelting, electrochemical metals, glass, casting, and finishing. Native source equipment and recipe knowledge remain required. Integrated Steel and Precision Steel are alternatives, not mandatory modes.")
+            .Description("Rebuild smelting, aluminum, alloys, glass, casting, and finishing. Heavy aluminum processing and lighter materials now have separate power envelopes. Native source equipment and recipe knowledge remain required.")
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.PrimarySmelter, unlockAllRecipes: false)
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.FuelSmelter, unlockAllRecipes: false)
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.PrecisionMetalsWorks, unlockAllRecipes: false)
+            .AddMachineToUnlock(RecursiveIndustryIds.Machines.AlloyGlassWorks, unlockAllRecipes: false)
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.CastingFinishingWorks, unlockAllRecipes: false)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.IntegratedSteel)
             .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.PrecisionSteel)
             .BuildAndAdd();
         metallurgy.GridPosition = new Vector2i(216, 18);
         metallurgy.AddParent(systemsIntegration);
-        ReconstructionResearchPrerequisites.AddSources(registrator, metallurgy, RecursiveIndustryIds.Machines.PrimarySmelter, RecursiveIndustryIds.Machines.FuelSmelter, RecursiveIndustryIds.Machines.PrecisionMetalsWorks, RecursiveIndustryIds.Machines.CastingFinishingWorks);
+        ReconstructionResearchPrerequisites.AddSources(registrator, metallurgy, RecursiveIndustryIds.Machines.PrimarySmelter, RecursiveIndustryIds.Machines.FuelSmelter, RecursiveIndustryIds.Machines.PrecisionMetalsWorks, RecursiveIndustryIds.Machines.AlloyGlassWorks, RecursiveIndustryIds.Machines.CastingFinishingWorks);
 
         ResearchNodeProto process = registrator.ResearchNodeProtoBuilder
             .Start("Autonomous Refining and Fuels", RecursiveIndustryIds.Research.AutonomousProcessSystems, costMonths: 360)
@@ -311,8 +314,9 @@ internal sealed class ReleaseResearchTree : IResearchNodesData
 
         ResearchNodeProto utilities = registrator.ResearchNodeProtoBuilder
             .Start("Autonomous Water and Circular Utilities", RecursiveIndustryIds.Research.AutonomousUtilities, costMonths: 300)
-            .Description("Rebuild water recovery, chilling, desalination, emissions treatment, and materials recovery. Keep all physical residuals and native maintenance depots. Food and farming research are not prerequisite branches.")
+            .Description("Rebuild water recovery, dedicated process chilling, desalination, emissions treatment, and materials recovery. Treatment no longer pays the chiller's power envelope. Keep physical residuals and native maintenance depots.")
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.WaterUtility, unlockAllRecipes: false)
+            .AddMachineToUnlock(RecursiveIndustryIds.Machines.ProcessWaterChiller, unlockAllRecipes: false)
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.ThermalDesalinationWorks, unlockAllRecipes: false)
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.ThermalEmissionsUtility, unlockAllRecipes: false)
             .AddMachineToUnlock(RecursiveIndustryIds.Machines.MaterialsRecoveryCenter, unlockAllRecipes: false)
@@ -321,7 +325,16 @@ internal sealed class ReleaseResearchTree : IResearchNodesData
             .BuildAndAdd();
         utilities.GridPosition = new Vector2i(216, 42);
         utilities.AddParent(systemsIntegration);
-        ReconstructionResearchPrerequisites.AddSources(registrator, utilities, RecursiveIndustryIds.Machines.WaterUtility, RecursiveIndustryIds.Machines.ThermalDesalinationWorks, RecursiveIndustryIds.Machines.ThermalEmissionsUtility, RecursiveIndustryIds.Machines.MaterialsRecoveryCenter);
+        ReconstructionResearchPrerequisites.AddSources(registrator, utilities, RecursiveIndustryIds.Machines.WaterUtility, RecursiveIndustryIds.Machines.ProcessWaterChiller, RecursiveIndustryIds.Machines.ThermalDesalinationWorks, RecursiveIndustryIds.Machines.ThermalEmissionsUtility, RecursiveIndustryIds.Machines.MaterialsRecoveryCenter);
+
+        ResearchNodeProto efficientWaterProcessing = registrator.ResearchNodeProtoBuilder
+            .Start("Efficient Water Processing", RecursiveIndustryIds.Research.EfficientWaterProcessing, costMonths: 240)
+            .Description("Select slower treatment with unchanged material yield and 30% active process power. Half throughput can require more hosts, land, Computing, and maintenance. Compare total support before choosing; Sludge remains a real output.")
+            .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.EconomyWaterTreatment)
+            .AddRecipeToUnlock(RecursiveIndustryIds.Recipes.EconomyWaterTreatmentT2)
+            .BuildAndAdd();
+        efficientWaterProcessing.GridPosition = new Vector2i(224, 42);
+        efficientWaterProcessing.AddParent(utilities);
 
         ResearchNodeProto advanced = registrator.ResearchNodeProtoBuilder
             .Start("Autonomous Advanced Manufacturing", RecursiveIndustryIds.Research.AutonomousAdvancedManufacturing, costMonths: 480)
@@ -623,13 +636,11 @@ internal sealed class ReleaseResearchTree : IResearchNodesData
             ReconstructionResearchPrerequisites.AddNativeOwners(registrator, captainsRail, registrator.PrototypesDb.GetOrThrow<LocomotiveProto>(IdsTrainsDlc.LocomotiveT1Captains));
         }
 
-        Log.Info("RecursiveIndustry: RELEASE_RESEARCH_REGISTERED version=0.28.0a nodes_max=50 native_recipe_locks=true");
+        Log.Info("RecursiveIndustry: RELEASE_RESEARCH_REGISTERED version=0.29.0a nodes_max=51 native_recipe_locks=true");
     }
 
     private static long CoDesignCost(long baseCost, int level)
     {
-        Fix64 step = Fix64.One + level;
-        Fix64 growth = Math.Pow(1.4, level).ToFix64();
-        return (baseCost * (step + growth).HalfFast).ToLongRounded();
+        return checked(baseCost * (level == 0 ? 1 : 3));
     }
 }

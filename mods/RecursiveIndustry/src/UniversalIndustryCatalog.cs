@@ -28,6 +28,10 @@ internal sealed class UniversalFacilitySpec
     public readonly int Programs;
     public readonly int Dossiers;
     public readonly int Calibration;
+    public readonly int BodyColumns;
+    public readonly int BodyRows;
+    public readonly int SourcePowerPercent;
+    public readonly int PowerRoundingKw;
     public readonly UniversalDirectBindingSpec[] DirectBindings;
 
     public UniversalFacilitySpec(
@@ -46,7 +50,11 @@ internal sealed class UniversalFacilitySpec
         int programs,
         int dossiers,
         int calibration,
-        UniversalDirectBindingSpec[] directBindings)
+        UniversalDirectBindingSpec[] directBindings,
+        int bodyColumns = 0,
+        int bodyRows = 0,
+        int sourcePowerPercent = 110,
+        int powerRoundingKw = 500)
     {
         Key = key;
         Name = name;
@@ -64,6 +72,10 @@ internal sealed class UniversalFacilitySpec
         Dossiers = dossiers;
         Calibration = calibration;
         DirectBindings = directBindings;
+        BodyColumns = bodyColumns;
+        BodyRows = bodyRows;
+        SourcePowerPercent = sourcePowerPercent;
+        PowerRoundingKw = powerRoundingKw;
     }
 }
 
@@ -188,5 +200,23 @@ internal sealed class UniversalPrecisionRecipeSpec
         Name = name;
         MachineKey = machineKey;
         SourceRecipeId = sourceRecipeId;
+    }
+}
+
+internal sealed class UniversalEconomyRecipeSpec
+{
+    public readonly RecipeProto.ID Id;
+    public readonly string Name;
+    public readonly string MachineKey;
+    public readonly string SourceRecipeId;
+    public readonly int PowerMultiplierPercent;
+
+    public UniversalEconomyRecipeSpec(RecipeProto.ID id, string name, string machineKey, string sourceRecipeId, int powerMultiplierPercent)
+    {
+        Id = id;
+        Name = name;
+        MachineKey = machineKey;
+        SourceRecipeId = sourceRecipeId;
+        PowerMultiplierPercent = powerMultiplierPercent;
     }
 }

@@ -128,5 +128,11 @@ public static partial class RecursiveIndustryIds
 
         public static readonly RecipeID BatchDeploymentAssurance =
             Ids.Recipes.CreateId("RecursiveIndustry_BatchDeploymentAssurance");
+
+        public static readonly RecipeID DeployLocalIndustrialControl =
+            Ids.Recipes.CreateId("RecursiveIndustry_DeployLocalIndustrialControl");
+
+        public static readonly RecipeID RemanufactureAcceleratorModules =
+            Ids.Recipes.CreateId("RecursiveIndustry_RemanufactureAcceleratorModules");
     }
 }

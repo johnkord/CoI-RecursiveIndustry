@@ -20,7 +20,9 @@ from generate_recursive_industry_universal_source import load_catalog  # noqa: E
 PARENTS = {
     "fuel_smelter": "primary_smelter",
     "casting_finishing_works": "precision_metals_works",
+    "alloy_glass_works": "precision_metals_works",
     "thermal_desalination_works": "water_utility",
+    "process_water_chiller": "water_utility",
     "nuclear_reprocessing_center": "nuclear_fuel_complex",
     "nuclear_fuel_fabrication_cell": "nuclear_fuel_complex",
     "robotic_components_fab": "precision_components_fab",
@@ -55,12 +57,12 @@ class OperatingEnvelopeTests(unittest.TestCase):
             for facility in facilities
             for binding in facility["direct_bindings"]
         ]
-        self.assertEqual(len(facilities), 25)
-        self.assertEqual(len({facility["key"] for facility in facilities}), 25)
+        self.assertEqual(len(facilities), 27)
+        self.assertEqual(len({facility["key"] for facility in facilities}), 27)
         self.assertEqual(len(direct_ids), 231)
         self.assertEqual(len(set(direct_ids)), 231)
         self.assertTrue(RETIRED.isdisjoint(direct_ids))
-        self.assertEqual(sum(row["power_kw"] for row in facilities), 142500)
+        self.assertEqual(sum(row["power_kw"] for row in facilities), 149500)
         self.assertEqual(sum(row["selected_computing"] for row in facilities), 3392)
         self.assertEqual(sum(row["workers"] for row in facilities), 88)
         maintenance = Counter()
@@ -146,7 +148,7 @@ class OperatingEnvelopeTests(unittest.TestCase):
             power_by_key[key] * multiplier // 100
             for key, multiplier in maximums.items()
         )
-        self.assertEqual(maximum_power_kw, 328500)
+        self.assertEqual(maximum_power_kw, 333500)
 
     def test_non_universal_values_and_array_boundary_are_exact(self) -> None:
         source = ROOT / "mods" / "RecursiveIndustry" / "src"
@@ -206,7 +208,7 @@ class OperatingEnvelopeTests(unittest.TestCase):
         )
         names = {row["name"] for row in icons["icons"]}
         self.assertTrue(NEW_KEYS <= names)
-        self.assertEqual(len(names), 91)
+        self.assertEqual(len(names), 94)
 
 
 if __name__ == "__main__":

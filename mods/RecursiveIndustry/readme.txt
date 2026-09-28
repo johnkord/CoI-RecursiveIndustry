@@ -1,5 +1,5 @@
-Recursive Industry 0.28.0a release candidate
-==========================================
+Recursive Industry 0.29.0a author-test candidate
+==============================================
 
 A Captain of Industry endgame mod about building a physical AI economy, from
 accelerator racks and validated models to autonomous industry, planetary
@@ -8,17 +8,21 @@ coordination, and frontier-scale megaprojects.
 Status
 ------
 
-This unpublished successor reorganizes research into independent applications,
-smaller industrial portfolios, and separate native mobility technologies.
-Hardware density is optional for ordinary applications. Earlier Program
-reinvestment supports later megaprojects, and beamed power is optional.
-All 52 building models and the complete original world artwork are retained.
-It is not the hosted 0.22.0c playtest, stable publication, or a migration promise.
+This unpublished successor adds a read-only reconstruction planner, compact local
+control, separate aluminum/alloy and water/chilling power classes, selective
+Economy water treatment, accelerator repair, and two substantial Co-design levels.
+Hardware density remains optional for ordinary applications. The Integration Array
+and 625,000-Focus Planetary Center retain their earned advantages.
+Gameplay, original artwork, native registration, exact arithmetic, and isolated
+native planner UI checks are complete. Use only the supplied hash-verified player
+archive for integrated testing. Fresh-world judgment, independent testing, and
+stable publication remain open. Published 0.28.0a remains unchanged.
 
 Requirements
 ------------
 
-- Captain of Industry 0.8.7a, Build 614, is the minimum and exact verified target.
+- The manifest retains the published 0.8.7a compatibility boundary. The current
+  0.8.7d game has scoped offline checks, not a completed fresh-world/visual pass.
 - Trains expansion 1.0.0 or newer is required.
 - Supporter edition 1.1.0 or newer is optional.
 - Enable the mod when creating a new campaign. Adding it to or removing it from
@@ -51,7 +55,7 @@ Highlights
   behavior.
 - Planetary coordination, orbital science and power, and two optional world
   contracts.
-- Twenty-five process-scaled specialist facilities covering the physical economy.
+- Twenty-seven process-scaled specialist facilities covering the physical economy.
 - Independent mineral, metallurgy, refining, chemistry, food, utilities, nuclear,
   and advanced manufacturing research without a blanket Industrial Control gate.
   Terrestrial nuclear processing requires neither Space Research nor Calibration.
@@ -59,10 +63,9 @@ Highlights
 - A Civic Model Center supplies a staffed Knowledge Commons over its own Fiber
   service. At full satisfaction the optional service gives 1.2 Unity, no Health
   or productivity. It does not consume Industrial Control Stream.
-- Original models for all 52 buildings, including 25 universal facilities,
-  offices, laboratories, farms, services, and orbital equipment. Three detail
-  levels reduce distant geometry on the 48 new models. Recipe signs, native
-  lighting, crop rendering, and service-controlled animations remain supported.
+- Original models for all 55 buildings, including 27 universal facilities.
+  Final bundles retain reducing LODs, picking colliders, native emissions,
+  recipe signs, and the required native animation hooks.
 - Original Fiber hardware, six later cargo products, three installed rack cabinets,
   eight autonomous vehicles, eight load attachments, and seventeen train models.
   Native Data Center shells, shared game infrastructure, standard cargo wagons,
@@ -78,6 +81,9 @@ Highlights
   or worker-productivity bonus.
 - Data-only Access and Backbone Fiber, a Fiber Junction, and a Control Deployment
   Gateway that supplies live Industrial Control Stream.
+- Local Deployment Controller: 105 Stream per Package per 60 Time, 250 kW,
+  32 Computing, two workers, and compact capital. Central Gateways retain twice
+  its Stream-per-Package yield and stronger large-district density.
 - Optional Federated Deployment adds a 420/minute Backbone Gateway row and a
   640-Packages/hour Deployment Assurance Campus without improving material yield.
 - Fiber-free local, staged, Direct, Precision, and recovery production. Twenty-four
@@ -97,6 +103,14 @@ Highlights
 - Frontier Projects commission the Construction Nexus; beamed power is optional.
 - The source repository includes an optional offline equal-output conversion
   worksheet. It reads no saves and issues no commands.
+- The in-game planner compares actual registered recipes, explicit shared support,
+  unlocked racks, typed transport bounds, and steady/cutover capacity. It issues
+  no gameplay commands and never infers that shared suppliers can be demolished.
+- Economy treatment halves throughput at 750 kW; equal output requires twice the
+  treatment hosts and Computing. Accelerator repair halves direct replacement
+  components but is slower and more power-intensive than new manufacture.
+- Co-design has two +100-point research-efficiency purchases at 240 and 720 base
+  months, after Physical Validation and without a Space Research gate.
 
 Balance
 -------
@@ -108,9 +122,9 @@ Electronics handoffs only where those suppliers are no longer needed elsewhere.
 Shared support can make later conversions much smaller than the first.
 
 The universal portfolio requires 3,392 Computing, 1,024 commissioning Packages,
-142.5 MW of Direct process power, and 88 workers. Fourteen Rack III add 21 MW.
+149.5 MW of Direct process power, and 88 workers. Fourteen Rack III add 21 MW.
 Selecting every owner's most expensive custom row raises process power to
-328.5 MW. Precision preserves Direct output rate while reducing physical
+333.5 MW. Precision preserves Direct output rate while reducing physical
 feedstock by 12.5% and doubling host energy per output.
 
 Access Fiber supports three continuously optimized facilities. Backbone Fiber
@@ -132,8 +146,8 @@ installation. Prior author feedback accepts the model direction and reports
 successful Civic Knowledge use; it is not a persistence or stable-release claim.
 Three mod-owned amphibious attachment IDs isolate its art from native trucks while
 preserving load rules and offsets. This does not establish save-migration support.
-Native prototype registration and initialization pass with and without Supporter.
-Ordinary progression/visual judgment and independent uncoached acceptance remain
+Native registration, exact arithmetic, and isolated native UI renders are offline
+evidence, not a fresh-world pass. Ordinary progression/visual judgment and independent uncoached acceptance remain
 release gates. No repeated Civic mechanics checklist is required.
 
 Source and issue tracker:

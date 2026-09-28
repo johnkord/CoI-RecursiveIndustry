@@ -16,11 +16,11 @@ OUTPUT = ROOT / "mods/RecursiveIndustry/src/BuildingModelPaths.g.cs"
 def load() -> dict:
     data = json.loads(CATALOG.read_text(encoding="utf-8"))
     models = data["models"]
-    if len(models) != 48 or len(data["retained_reconstruction_models"]) != 4:
-        raise ValueError("Expected 48 new and four retained building models")
+    if len(models) != 51 or len(data["retained_reconstruction_models"]) != 4:
+        raise ValueError("Expected 51 generated and four retained building models")
     if len({row["key"] for row in models}) != len(models):
         raise ValueError("Duplicate building model")
-    if sum(row.get("universal", False) for row in models) != 25:
+    if sum(row.get("universal", False) for row in models) != 27:
         raise ValueError("Every universal facility must have a model")
     for row in models:
         if not re.fullmatch(r"[a-z0-9_]+", row["key"]) or min(row[field] for field in ("width", "depth", "height")) <= 0:
@@ -48,7 +48,7 @@ def main() -> int:
         OUTPUT.write_text(expected, encoding="utf-8", newline="\n")
     elif not OUTPUT.exists() or OUTPUT.read_bytes() != expected.encode("utf-8"):
         raise ValueError("Building paths differ from the catalog; regenerate them")
-    print("PASS: 48 exact new building paths and 25 universal owners")
+    print("PASS: 51 generated building paths and 27 universal owners")
     return 0
 
 

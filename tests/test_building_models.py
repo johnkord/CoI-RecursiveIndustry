@@ -23,7 +23,7 @@ class BuildingModelTests(unittest.TestCase):
 
     def test_missing_model_fails(self) -> None:
         self.manifest["models"].pop()
-        with self.assertRaisesRegex(ValueError, "48 unique"):
+        with self.assertRaisesRegex(ValueError, "51 unique"):
             building_art.validate_records(self.catalog, self.manifest)
 
     def test_collider_emission_and_sign_fail_closed(self) -> None:

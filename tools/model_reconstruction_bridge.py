@@ -126,7 +126,19 @@ def parse_recipe(text: str, owner: str, key: str, variables: dict[str, int]) -> 
     )
 
 
-def parse_machine(text: str) -> Machine:
+def parse_machine(text: str, owner: str | None = None) -> Machine:
+    declarations = list(re.finditer(
+        r"(?:var\s+(?P<owner>\w+)\s*=\s*)?registrator\.MachineProtoBuilder\s*\.Start\(", text,
+    ))
+    selected = [match for match in declarations if owner is None or match.group("owner") == owner]
+    if len(selected) != 1:
+        raise ValueError("Select exactly one declared machine owner")
+    start = selected[0].start()
+    end = text.find(".BuildAndAdd()", start)
+    if end < 0:
+        raise ValueError("Unterminated machine declaration")
+    text = text[start:end]
+
     def value(pattern: str, default: int | None = None) -> int:
         match = re.search(pattern, text)
         if match:
@@ -174,7 +186,13 @@ def load_source(root: Path = ROOT, overrides: dict[str, int] | None = None) -> t
                 text,
             )
         }
-        machines[filename] = parse_machine(text)
+        owners = {
+            re.search(r"\.BindTo\((\w+),", recipe_block(text, key)).group(1)
+            for key in members
+        }
+        if len(owners) != 1:
+            raise ValueError(f"Worksheet group crosses machine owners: {filename}")
+        machines[filename] = parse_machine(text, next(iter(owners)))
         recipes.update({key: parse_recipe(text, filename, key, variables) for key in members})
         hashes[filename] = hashlib.sha256(path.read_bytes()).hexdigest()
     return recipes, machines, hashes

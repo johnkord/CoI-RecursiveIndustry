@@ -7,6 +7,7 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 from zipfile import ZIP_DEFLATED, ZipFile
 
 
@@ -19,7 +20,7 @@ from audit_release_zip import (  # noqa: E402
     expected_entries,
     load_source_manifest,
 )
-from package_mod import entry_payload, package_entries, resolve_primary_dll, write_zip  # noqa: E402
+from package_mod import entry_payload, package_entries, resolve_primary_dll, validate_complete_source, write_zip  # noqa: E402
 
 
 def write_fixture(path: Path, extra: str | None = None) -> None:
@@ -41,6 +42,16 @@ def write_fixture(path: Path, extra: str | None = None) -> None:
 
 
 class ReleaseArchiveTests(unittest.TestCase):
+    def test_incomplete_source_cannot_be_packaged(self) -> None:
+        with patch("validate_public_repo.validate", return_value=["Missing selected artwork"]):
+            with self.assertRaisesRegex(SystemExit, "Refusing to package incomplete"):
+                validate_complete_source(MOD_ROOT, {"id": "RecursiveIndustry"})
+        with patch("validate_public_repo.validate", return_value=[]):
+            validate_complete_source(MOD_ROOT, {"id": "RecursiveIndustry"})
+        with tempfile.TemporaryDirectory() as temp:
+            with self.assertRaisesRegex(SystemExit, "complete source checkout"):
+                validate_complete_source(Path(temp) / "mods/RecursiveIndustry", {"id": "RecursiveIndustry"})
+
     def test_identical_repackage_is_noop_and_changed_bytes_are_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

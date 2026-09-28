@@ -487,9 +487,9 @@ class ControlNetworkContractTests(unittest.TestCase):
         self.assertEqual(research["parents"], ["digitalInfrastructure", "systemsIntegration"])
         self.assertFalse(research.get("space", False))
         self.assertEqual(research["unlock"]["products"], ["IndustrialControlStream"])
-        self.assertEqual(research["unlock"]["machines"], ["ControlDeploymentGateway"])
+        self.assertEqual(research["unlock"]["machines"], ["ControlDeploymentGateway", "LocalDeploymentController"])
         self.assertEqual(set(research["unlock"]["recipes"]), {
-            "DeployIndustrialControl", "IntegrateElectronics2Direct",
+            "DeployIndustrialControl", "DeployLocalIndustrialControl", "IntegrateElectronics2Direct",
             "IntegrateConstructionParts3", "IntegrateVehicleParts2",
         })
         self.assertEqual(CONTROL["federated_deployment"], {"catalog": "research-tree.json", "key": "federatedDeployment"})

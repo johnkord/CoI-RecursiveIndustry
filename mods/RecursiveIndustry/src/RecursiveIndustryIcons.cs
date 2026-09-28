@@ -12,6 +12,7 @@ internal static partial class RecursiveIndustryIcons
     public const string OrbitalPowerCalibration = Root + "orbital_power_calibration.png";
     public const string IndustrialControlStream = Root + "industrial_control_stream.png";
     public const string ControlDeploymentGateway = Root + "control_deployment_gateway.png";
+    public const string LocalDeploymentController = Root + "local_deployment_controller.png";
     public const string DeploymentAssuranceCampus = Root + "deployment_assurance_campus.png";
     public const string AccessFiber = Root + "access_fiber.png";
     public const string BackboneFiber = Root + "backbone_fiber.png";

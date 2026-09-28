@@ -37,7 +37,11 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("RockCrushing", "CrusherLarge"),
                 new UniversalDirectBindingSpec("SlagCrushing", "CrusherLarge"),
                 new UniversalDirectBindingSpec("UraniumCrushing", "CrusherLarge")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "mineral_products_works",
             "Autonomous Mineral Products Works",
@@ -65,7 +69,11 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("ConcreteMixingGravel", "ConcreteMixerT3"),
                 new UniversalDirectBindingSpec("ConcreteMixingSlagM", "ConcreteMixerT3"),
                 new UniversalDirectBindingSpec("ConcreteMixingSlag", "ConcreteMixerT3")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "primary_smelter",
             "Autonomous Arc Smelter",
@@ -94,7 +102,11 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("IronSmeltingArcScrap", "ArcFurnace2"),
                 new UniversalDirectBindingSpec("SiliconSmeltingArc2", "ArcFurnace2"),
                 new UniversalDirectBindingSpec("TitaniumSmeltingArc2", "ArcFurnace2")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "fuel_smelter",
             "Autonomous Fuel Smelter",
@@ -120,33 +132,64 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("IronSmeltingT2", "SmeltingFurnaceT2"),
                 new UniversalDirectBindingSpec("IronSmeltingT2Scrap", "SmeltingFurnaceT2"),
                 new UniversalDirectBindingSpec("SteelSmeltingT2", "OxygenFurnaceT2")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "precision_metals_works",
-            "Electrochemical Metals and Glass Works",
+            "Autonomous Aluminum Works",
             RecursiveIndustryIds.Machines.PrecisionMetalsWorks,
             RecursiveIndustryIcons.PrecisionMetalsWorks,
             powerKw: 35500,
-            computing: 128,
+            computing: 96,
             workers: 4,
             maintenanceTier: UniversalMaintenanceTier.II,
-            maintenancePerMonth: 41,
-            cp4: 1500,
-            electronics4: 192,
-            packages: 48,
-            programs: 8,
+            maintenancePerMonth: 28,
+            cp4: 1000,
+            electronics4: 128,
+            packages: 32,
+            programs: 6,
+            dossiers: 0,
+            calibration: 0,
+            directBindings: new[]
+            {
+                new UniversalDirectBindingSpec("AluminumElectrolysis", "AluminumCell")
+            },
+            bodyColumns: 8,
+            bodyRows: 6,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
+        new UniversalFacilitySpec(
+            "alloy_glass_works",
+            "Alloy and Glass Works",
+            RecursiveIndustryIds.Machines.AlloyGlassWorks,
+            RecursiveIndustryIcons.AlloyGlassWorks,
+            powerKw: 4500,
+            computing: 32,
+            workers: 0,
+            maintenanceTier: UniversalMaintenanceTier.II,
+            maintenancePerMonth: 13,
+            cp4: 500,
+            electronics4: 64,
+            packages: 16,
+            programs: 2,
             dossiers: 0,
             calibration: 0,
             directBindings: new[]
             {
                 new UniversalDirectBindingSpec("AluminaCrystallization", "SiliconCrystallizer"),
-                new UniversalDirectBindingSpec("AluminumElectrolysis", "AluminumCell"),
                 new UniversalDirectBindingSpec("CopperElectrolysisProcess", "CopperElectrolysis"),
                 new UniversalDirectBindingSpec("CopperElectrolysisWithWater", "CopperElectrolysis"),
                 new UniversalDirectBindingSpec("GlassCastingT2", "GlassMakerT2"),
                 new UniversalDirectBindingSpec("SiliconCrystallization", "SiliconCrystallizer"),
                 new UniversalDirectBindingSpec("TitaniumAlloyMixing", "AlloyMixer")
-            }),
+            },
+            bodyColumns: 6,
+            bodyRows: 5,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "casting_finishing_works",
             "Autonomous Casting and Finishing Works",
@@ -176,7 +219,11 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("SiliconTreatment", "SiliconReactor"),
                 new UniversalDirectBindingSpec("SteelCastingCooled", "CasterCooledT2"),
                 new UniversalDirectBindingSpec("TitaniumAlloyCastingT2", "CasterCooledT2")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "refinery_complex",
             "Autonomous Refinery Complex",
@@ -212,7 +259,11 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("RubberProductionNaphtha", "VacuumDistillationTower"),
                 new UniversalDirectBindingSpec("RubberProductionNaphthaAlt", "VacuumDistillationTower"),
                 new UniversalDirectBindingSpec("SourWaterStripping", "SourWaterStripper")
-            }),
+            },
+            bodyColumns: 8,
+            bodyRows: 8,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "gas_fertilizer_complex",
             "Autonomous Gas and Fertilizer Complex",
@@ -246,7 +297,11 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("HydrogenProductionFromSteamSp", "HydrogenReformer"),
                 new UniversalDirectBindingSpec("HydrogenReforming", "HydrogenReformer"),
                 new UniversalDirectBindingSpec("WaterElectrolysis", "ElectrolyzerT2")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "materials_chemistry_complex",
             "Autonomous Materials Chemistry Complex",
@@ -277,7 +332,11 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("TitaniumChlorideReduction", "ChemicalPlant2"),
                 new UniversalDirectBindingSpec("TitaniumChlorination", "ChemicalPlant2"),
                 new UniversalDirectBindingSpec("TitaniumPurification", "DistillationTowerT3")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "medical_chemistry_complex",
             "Autonomous Medical and Precision Chemistry Complex",
@@ -306,7 +365,11 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("MedicalSuppliesAssembly", "AssemblyRoboticT2"),
                 new UniversalDirectBindingSpec("MorphineProduction", "ChemicalPlant2"),
                 new UniversalDirectBindingSpec("PaperProduction", "ChemicalPlant2")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "food_processing_campus",
             "Autonomous Food Processing Campus",
@@ -332,7 +395,11 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("SnackProductionPotato", "FoodProcessor"),
                 new UniversalDirectBindingSpec("SugarRefiningCane", "FoodProcessor"),
                 new UniversalDirectBindingSpec("TofuProduction", "FoodProcessor")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "food_pack_campus",
             "Autonomous Food Pack Campus",
@@ -360,7 +427,11 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("FoodPackTofuAssembly", "AssemblyRoboticT2"),
                 new UniversalDirectBindingSpec("SoybeanMilling", "FoodMill"),
                 new UniversalDirectBindingSpec("WheatMilling", "FoodMill")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "crop_soil_bioprocessing",
             "Autonomous Crop and Soil Bioprocessing Center",
@@ -392,7 +463,11 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("OrganicFertilizerProductionDirt", "IndustrialMixerT2"),
                 new UniversalDirectBindingSpec("OrganicFertilizerProduction", "IndustrialMixerT2"),
                 new UniversalDirectBindingSpec("SugarToEthanolFermentation", "FermentationTank")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "bioenergy_center",
             "Autonomous Bioenergy Digestion Center",
@@ -423,30 +498,61 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("SugarCaneDigestion", "AnaerobicDigester"),
                 new UniversalDirectBindingSpec("VegetablesDigestion", "AnaerobicDigester"),
                 new UniversalDirectBindingSpec("WheatDigestion", "AnaerobicDigester")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "water_utility",
-            "Autonomous Water Reclamation and Chilling Complex",
+            "Water Reclamation Complex",
             RecursiveIndustryIds.Machines.WaterUtility,
             RecursiveIndustryIcons.WaterUtility,
-            powerKw: 4500,
-            computing: 96,
+            powerKw: 2500,
+            computing: 64,
             workers: 4,
             maintenanceTier: UniversalMaintenanceTier.I,
-            maintenancePerMonth: 34,
-            cp4: 1050,
-            electronics4: 144,
-            packages: 36,
-            programs: 6,
+            maintenancePerMonth: 28,
+            cp4: 750,
+            electronics4: 96,
+            packages: 24,
+            programs: 4,
             dossiers: 0,
             calibration: 0,
             directBindings: new[]
             {
                 new UniversalDirectBindingSpec("ToxicSlurryTreatment", "WaterTreatmentPlant"),
-                new UniversalDirectBindingSpec("WaterChilling", "WaterChiller"),
                 new UniversalDirectBindingSpec("WaterTreatment", "WaterTreatmentPlant"),
                 new UniversalDirectBindingSpec("WaterTreatmentT2", "WaterTreatmentPlant")
-            }),
+            },
+            bodyColumns: 6,
+            bodyRows: 5,
+            sourcePowerPercent: 100,
+            powerRoundingKw: 250),
+        new UniversalFacilitySpec(
+            "process_water_chiller",
+            "Process Water Chiller",
+            RecursiveIndustryIds.Machines.ProcessWaterChiller,
+            RecursiveIndustryIcons.ProcessWaterChiller,
+            powerKw: 4500,
+            computing: 32,
+            workers: 0,
+            maintenanceTier: UniversalMaintenanceTier.I,
+            maintenancePerMonth: 6,
+            cp4: 300,
+            electronics4: 48,
+            packages: 12,
+            programs: 2,
+            dossiers: 0,
+            calibration: 0,
+            directBindings: new[]
+            {
+                new UniversalDirectBindingSpec("WaterChilling", "WaterChiller")
+            },
+            bodyColumns: 4,
+            bodyRows: 4,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "thermal_desalination_works",
             "Autonomous Thermal Desalination Works",
@@ -472,7 +578,11 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("DesalinationFromSP", "ThermalDesalinator"),
                 new UniversalDirectBindingSpec("SaltMakingFromBrine", "EvaporationPondHeated"),
                 new UniversalDirectBindingSpec("SaltMaking", "EvaporationPondHeated")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "thermal_emissions_utility",
             "Autonomous Thermal and Emissions Utility",
@@ -497,7 +607,11 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("IncinerationOfWasteHydrogen", "IncinerationPlant"),
                 new UniversalDirectBindingSpec("IncinerationOfWastePressed", "IncinerationPlant"),
                 new UniversalDirectBindingSpec("IncinerationOfWastePressedHydrogen", "IncinerationPlant")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "materials_recovery_center",
             "Autonomous Materials Recovery Center",
@@ -531,7 +645,11 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("ShreddingSaplings", "Shredder"),
                 new UniversalDirectBindingSpec("ShreddingWaste", "Shredder"),
                 new UniversalDirectBindingSpec("ShreddingWood", "Shredder")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "nuclear_fuel_complex",
             "Autonomous Nuclear Fuel Front End",
@@ -563,7 +681,11 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("UraniumEnrichment", "UraniumEnrichmentPlant"),
                 new UniversalDirectBindingSpec("UraniumEnrichment20", "UraniumEnrichmentPlant"),
                 new UniversalDirectBindingSpec("UraniumLeaching", "SettlingTank")
-            }),
+            },
+            bodyColumns: 8,
+            bodyRows: 8,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "nuclear_reprocessing_center",
             "Autonomous Nuclear Reprocessing Center",
@@ -586,7 +708,11 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("SpentFuelReprocessing", "NuclearReprocessingPlant"),
                 new UniversalDirectBindingSpec("SpentFuelToBlanket", "NuclearReprocessingPlant"),
                 new UniversalDirectBindingSpec("SpentMoxToBlanket", "NuclearReprocessingPlant")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "nuclear_fuel_fabrication_cell",
             "Autonomous Nuclear Fuel Fabrication Cell",
@@ -606,7 +732,11 @@ internal static class UniversalIndustryCatalog
             directBindings: new[]
             {
                 new UniversalDirectBindingSpec("UraniumRodsAssembly", "AssemblyRoboticT2")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "precision_components_fab",
             "Autonomous Precision Materials Works",
@@ -627,7 +757,11 @@ internal static class UniversalIndustryCatalog
             {
                 new UniversalDirectBindingSpec("DiamondSynthesis", "DiamondReactor"),
                 new UniversalDirectBindingSpec("LensMaking", "LensMaker")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "robotic_components_fab",
             "Autonomous Robotic Components Fab",
@@ -653,7 +787,11 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("ServerAssembly", "AssemblyRoboticT2"),
                 new UniversalDirectBindingSpec("SolarCellAssembly", "AssemblyRoboticT2"),
                 new UniversalDirectBindingSpec("SolarCellMonoAssemblyT1", "AssemblyRoboticT2")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "general_manufacturing_fab",
             "Autonomous General Manufacturing Fab",
@@ -685,7 +823,11 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("MechPartsIronAssembly", "AssemblyRoboticT2"),
                 new UniversalDirectBindingSpec("OfficeSuppliesAssembly", "AssemblyRoboticT2"),
                 new UniversalDirectBindingSpec("RailPartsAssembly", "AssemblyRoboticT2")
-            }),
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500),
         new UniversalFacilitySpec(
             "orbital_fabrication_fab",
             "Autonomous Orbital Fabrication Fab",
@@ -712,7 +854,11 @@ internal static class UniversalIndustryCatalog
                 new UniversalDirectBindingSpec("ProbePartsAssembly", "AssemblyRoboticT2"),
                 new UniversalDirectBindingSpec("StationPartsAssembly", "AssemblyRoboticT2"),
                 new UniversalDirectBindingSpec("StationPartsBasicAssembly", "AssemblyRoboticT2")
-            })
+            },
+            bodyColumns: 0,
+            bodyRows: 0,
+            sourcePowerPercent: 110,
+            powerRoundingKw: 500)
     };
 
     public static readonly UniversalIntegratedRecipeSpec[] IntegratedRecipes =
@@ -835,7 +981,7 @@ internal static class UniversalIndustryCatalog
             "water_utility",
             batchScale: 8,
             durationSeconds: 120,
-            powerMultiplierPercent: 100,
+            powerMultiplierPercent: 180,
             sources: new[] { new UniversalSourceRecipeSpec("WaterTreatmentT2", 1), new UniversalSourceRecipeSpec("SludgeDigestion", 1) }),
         new UniversalIntegratedRecipeSpec(
             RecursiveIndustryIds.Recipes.IntegratedUraniumRods,
@@ -975,5 +1121,11 @@ internal static class UniversalIndustryCatalog
             "Precision Electronics4",
             "robotic_components_fab",
             "Electronics4Assembly")
+    };
+
+    public static readonly UniversalEconomyRecipeSpec[] EconomyRecipes =
+    {
+        new UniversalEconomyRecipeSpec(RecursiveIndustryIds.Recipes.EconomyWaterTreatment, "Economy Water Treatment", "water_utility", "WaterTreatment", 30),
+        new UniversalEconomyRecipeSpec(RecursiveIndustryIds.Recipes.EconomyWaterTreatmentT2, "Economy Filtered Water Treatment", "water_utility", "WaterTreatmentT2", 30)
     };
 }

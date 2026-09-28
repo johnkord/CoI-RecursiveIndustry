@@ -7,6 +7,9 @@ Recursive Industry is a content-focused `DataOnlyMod` targeting .NET Framework
 system. The mod does not use Harmony, replace the simulation loop, or make network
 connections.
 
+The 0.29.0a source adds a read-only native planner window and observational
+dependency-injected services. They issue no gameplay commands and add no saved state.
+
 Registration is divided into small `IModData` classes under
 `mods/RecursiveIndustry/src/`. Stable IDs live in partial
 `RecursiveIndustryIds` classes grouped by prototype category.
@@ -32,10 +35,15 @@ Registration is divided into small `IModData` classes under
   they declare product vectors directly and use the same typed port planner and
   transport-floor checks.
 - Direct rows remain Fiber-free and preserve source recipe identity.
+- Two Economy water-treatment rows retain 4x native vectors, double duration,
+  and use 30% host power. Native recipe uniqueness includes the real power
+  multiplier; there is no per-binding power override.
 - Packages commission autonomous capital and recur only for signed deployment,
   Focus, research, and orbital artifacts. Ordinary physical production, including
   local, staged, Precision, recovery, and Nexus rows, does not consume Packages
   per batch.
+- Accelerator remanufacturing is an explicit exception: one signed Package per
+  four repaired Modules pays for tested redeployment, alongside physical components.
 - Conventional source machines and recipes remain registered and usable.
 
 ## Adaptive farms
@@ -95,6 +103,10 @@ Stream over the same duration. Both preserve 210 Stream per Package. No service,
 patch, packet graph, automatic recipe switch, or custom saved runtime state
 participates in production.
 
+The compact Local Deployment Controller is a separate ordinary Machine: one
+Package produces 105 Stream in 60 Time, at 250 kW and 32 Computing. Its lower
+capital competes with the central Gateway's better Package yield and density.
+
 Deployment Assurance is a separate standard Machine, not a universal facility or
 Data owner. Its 720-second batch compresses four ordinary Package validators while
 preserving exact Model Archive, Lab Equipment IV, and Electronics III ratios.
@@ -117,14 +129,15 @@ only collapses their upstream physical steel and assembly supply chain.
 `data/universal-industry-catalog.json`. Check parity with
 `python tools/generate_recursive_industry_universal_source.py`, or regenerate with
 the `--write` flag. Registration
-fails closed if the catalog does not resolve exactly 25 facilities and 231 unique
-Direct bindings, 21 Integrated compositions, 10 Precision modes, and four exact
-authored agrifood recipes.
+fails closed if the catalog does not resolve exactly 27 facilities and 231 unique
+Direct bindings, 21 Integrated compositions, 10 Precision modes, four exact
+authored agrifood recipes, and two Economy treatment rows.
 
 At runtime, Direct binding quantities include the live source-machine multiplier.
 Transport duration is raised when necessary to keep each mapped highest-tier port
-within the game transport ceiling. Direct facility power must meet 110% of the
-four-source-machine equivalent, rounded up to 0.5 MW. Each facility declares an
+within the game transport ceiling. Direct facility power normally meets 110% of the
+four-source-machine equivalent, rounded up to 0.5 MW. Water Reclamation explicitly
+uses 100%, rounded to 0.25 MW, to preserve its selected 2.5 MW class. Each facility declares an
 explicit maintenance tier and depot-workload quantity.
 
 Port planning is facility-wide and type-aware. For each product kind, it takes
@@ -140,15 +153,40 @@ and are audited separately from this generated planner.
 
 ## Assets
 
-The player package contains three dependency-free bundles:
+Three dependency-free icon/product bundles accompany the building and world bundles:
 
 - `producticons_84e1`: eight Foundation product UI icons.
 - `cartridge_c874`: one shared cartridge mesh, eight albedos, and shared PBR maps.
-- `uiicons_5287`: 91 later products, entities, vehicles, trains, policies,
-  Industrial Control, Adaptive Agrifood, and companion-care identities.
+- `uiicons_5287`: 94 validated identities in 0.29.0a, including three new control
+  and process owners. Its 91 earlier icon exports remain unchanged.
 
-Original source art is under `art/RecursiveIndustry/`. Runtime code references
-compatible game prefabs by path but does not redistribute those assets.
+Original source art covers mod-owned buildings, cargo, racks, Fiber, vehicles, and
+trains. Native Data Center shells, shared infrastructure, audio, and generic
+effects remain reused by path. No game assets are redistributed.
+
+## Read-Only Planner
+
+The native catalog detaches every mod Machine binding and declared native comparator
+using recipe-plus-host identity. It copies actual quantities, durations, power,
+typed physical port maps, research availability, costs, and reference data.
+The 0.29.0a default export contains 311 mod bindings and 240 native comparators.
+
+The production coordinator captures only the inspector's entity ID on the UI side.
+Sync transfers requests, simulation/paused-idle callbacks resolve entities, and a
+later Sync publishes a matching detached generation. Save, project, unlock, close,
+and disposal boundaries invalidate old work. The worker never traverses prototypes
+or entities. It uses exact rational arithmetic, explicit supply edges, dedicated
+hosts, shared support before rounding, and separately closed cutover cooling.
+
+Limits are 50 catalog rows per page, eight selected comparisons, 128 graph nodes,
+depth 12, 150 ms debounce, and a 25 ms worker budget. Incomplete graphs and timed-out
+work cannot display completed cost totals. The selected snapshot targets 2 ms;
+in-game timing remains observational rather than a synthetic performance guarantee.
+
+Linked C# fixtures exercise arithmetic and the actual coordinator. An independent
+Python Fraction auditor checks native-exported quotes. These do not substitute for
+rendering and interaction in the game. Isolated native rendering at 1920x1080
+and 1366x768, readable-label bounds, and form callbacks pass under Unity 6000.3.19f1.
 
 ## Dependencies
 

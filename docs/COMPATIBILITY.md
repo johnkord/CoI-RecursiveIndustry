@@ -1,10 +1,14 @@
 # Compatibility
 
-Version 0.28.0a is an unpublished release candidate. It reorganizes research and
-two commissioning gates while retaining the selected recipes, operating values,
-and complete original building/world artwork. The author
-reported successful Civic use on 0.25.0a; that does not establish persistence or
-in-game acceptance of the new models. The hosted 0.22.0c archive is unchanged.
+Version 0.28.0a is the published playtest. The unpublished 0.29.0a worktree changes
+selected power classes, recipes, research, footprints, and adds a read-only planner.
+It is an author-test candidate, not stable publication. No old archive, hosted
+release, or save is rewritten by this work.
+
+The installed 0.8.7d game (Steam build 25332973) passes scoped API, native value,
+compilation, registration, and planner arithmetic checks. Final assets and isolated
+native UI rendering also pass, but do not prove fresh-world startup. The manifest ceiling
+remains 0.8.7a until the required compatibility evidence is complete.
 
 ## Supported environment
 
@@ -24,10 +28,13 @@ controlling paths as Build 613. The 0.22.0b DLL and ZIP also reproduce
 byte-for-byte against Build 614, and the author continued a long gameplay review
 across the update. Version 0.22.0c raises the exact manifest ceiling to 0.8.7a
 without changing gameplay. That hosted release's evidence remains separate from
-the unpublished 0.28.0a release candidate. Current actual-MaFi prototype
-registration and initialization pass both with and without Supporter content.
+the 0.28.0a playtest and unfinished 0.29.0a worktree. Supporter/no-Supporter
+registration results must be bound to each candidate separately.
 
 ## Saves
+
+Version 0.29.0a changes layouts and research levels and remains new-campaign-only.
+The planner's session comparisons are not serialized into the game save.
 
 Enable Recursive Industry when creating a new campaign. Adding it to or removing
 it from an existing normal save is unsupported. Stable prototype IDs are treated

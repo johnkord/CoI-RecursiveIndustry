@@ -148,7 +148,7 @@ def audit_gateway_source(text: str) -> list[str]:
             ".MaintenanceT3(8)",
             ".SetElectricityConsumption(1000.Kw())",
             ".SetComputingConsumption(Computing.FromTFlops(256))",
-            '"A#>[4][4][4][4][4][4]>:X"',
+            '"A#>[4][4][4][4]>:X"',
             ".SetCustomIconPath(RecursiveIndustryIcons.ControlDeploymentGateway)",
             ".AddInput(1, RecursiveIndustryIds.Products.ValidatedControlPackage)",
             ".AddOutput(210, RecursiveIndustryIds.Products.IndustrialControlStream)",
@@ -204,8 +204,8 @@ def audit_catalog(
 ) -> list[str]:
     errors: list[str] = []
     facilities = catalog.get("facilities", [])
-    if not isinstance(facilities, list) or len(facilities) != 25:
-        return ["universal catalog must contain exactly 25 facilities"]
+    if not isinstance(facilities, list) or len(facilities) != 27:
+        return ["universal catalog must contain exactly 27 facilities"]
 
     direct = [
         (facility.get("key"), binding)
@@ -431,8 +431,8 @@ def audit_catalog(
     }
     if len(actual_catalog_owners) != 9 or actual_catalog_owners != expected_catalog_owners:
         errors.append("exactly nine universal facilities must own catalog compositions")
-    if len({facility.get("key") for facility in facilities} - actual_catalog_owners) != 16:
-        errors.append("exactly sixteen facilities must remain without a Data port")
+    if len({facility.get("key") for facility in facilities} - actual_catalog_owners) != 18:
+        errors.append("exactly eighteen facilities must remain without a Data port")
     right_side_owners = {
         owner["key"]
         for owner in control["owners"]

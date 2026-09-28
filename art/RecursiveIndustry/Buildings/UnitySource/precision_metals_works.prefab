@@ -564,7 +564,7 @@ LODGroup:
   m_GameObject: {fileID: 8775107485913916505}
   serializedVersion: 2
   m_LocalReferencePoint: {x: 0, y: 2.8106, z: 0}
-  m_Size: 11.059199
+  m_Size: 14.7456
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
@@ -604,5 +604,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 11.059199, y: 5.6212, z: 8.8359995}
+  m_Size: {x: 14.7456, y: 5.6212, z: 10.6032}
   m_Center: {x: 0, y: 2.8106, z: 0}

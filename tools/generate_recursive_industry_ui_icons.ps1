@@ -27,7 +27,7 @@ using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
 
-public static class RecursiveIndustryUiIconsV3 {
+public static class RecursiveIndustryUiIconsV4 {
     private const int MasterSize = 1024;
     private const int ExportSize = 512;
 
@@ -49,6 +49,7 @@ public static class RecursiveIndustryUiIconsV3 {
         "orbital_power_calibration",
         "industrial_control_stream",
         "control_deployment_gateway",
+        "local_deployment_controller",
         "deployment_assurance_campus",
         "access_fiber",
         "backbone_fiber",
@@ -113,6 +114,7 @@ public static class RecursiveIndustryUiIconsV3 {
         "primary_smelter",
         "fuel_smelter",
         "precision_metals_works",
+        "alloy_glass_works",
         "casting_finishing_works",
         "refinery_complex",
         "gas_fertilizer_complex",
@@ -123,6 +125,7 @@ public static class RecursiveIndustryUiIconsV3 {
         "crop_soil_bioprocessing",
         "bioenergy_center",
         "water_utility",
+        "process_water_chiller",
         "thermal_desalination_works",
         "thermal_emissions_utility",
         "materials_recovery_center",
@@ -184,6 +187,9 @@ public static class RecursiveIndustryUiIconsV3 {
             case "orbital_power_calibration": DrawPowerCalibration(g); break;
             case "industrial_control_stream": DrawIndustrialControlStream(g); break;
             case "control_deployment_gateway": DrawControlDeploymentGateway(g); break;
+            case "local_deployment_controller": DrawLocalController(g); break;
+            case "alloy_glass_works": DrawAlloyGlass(g); break;
+            case "process_water_chiller": DrawWaterChiller(g); break;
             case "deployment_assurance_campus": DrawDeploymentAssuranceCampus(g); break;
             case "access_fiber": DrawAccessFiber(g); break;
             case "backbone_fiber": DrawBackboneFiber(g); break;
@@ -465,6 +471,34 @@ public static class RecursiveIndustryUiIconsV3 {
         Line(g, Cyan, 28f, new Point(632, 408), new Point(754, 408));
         Line(g, Cyan, 28f, new Point(632, 466), new Point(726, 466));
         Check(g, 632, 570, 116);
+    }
+
+    private static void DrawLocalController(Graphics graphics) {
+        Rect(graphics, 262, 150, 500, 724, Body, 38, 54f);
+        Rect(graphics, 334, 254, 356, 264, Recessed, 28, 32f);
+        Line(graphics, Cyan, 44f, new Point(368, 398), new Point(450, 398), new Point(494, 328), new Point(548, 450), new Point(602, 376), new Point(652, 376));
+        Rect(graphics, 338, 608, 174, 152, Green, 22, 30f);
+        Check(graphics, 370, 682, 94);
+        Ellipse(graphics, 564, 628, 124, 124, Gold, 28f);
+    }
+
+    private static void DrawAlloyGlass(Graphics graphics) {
+        MachineShell(graphics);
+        Polygon(graphics, new[] { new Point(242, 398), new Point(482, 398), new Point(440, 620), new Point(284, 620) }, Orange, 34f);
+        Line(graphics, Gold, 30f, new Point(280, 472), new Point(444, 472));
+        Polygon(graphics, new[] { new Point(544, 620), new Point(594, 366), new Point(764, 366), new Point(710, 620) }, Cyan, 34f);
+        Line(graphics, White, 28f, new Point(616, 406), new Point(580, 574));
+        Line(graphics, Blue, 24f, new Point(618, 660), new Point(760, 660));
+    }
+
+    private static void DrawWaterChiller(Graphics graphics) {
+        MachineShell(graphics);
+        Ellipse(graphics, 296, 334, 432, 350, Recessed, 34f);
+        Line(graphics, White, 42f, new Point(512, 368), new Point(512, 652));
+        Line(graphics, Cyan, 42f, new Point(380, 430), new Point(644, 588));
+        Line(graphics, Cyan, 42f, new Point(380, 588), new Point(644, 430));
+        Ellipse(graphics, 468, 466, 88, 88, Blue, 22f);
+        Line(graphics, Gold, 30f, new Point(258, 690), new Point(764, 690));
     }
 
     private static void DrawAccessFiber(Graphics g) {
@@ -1169,13 +1203,13 @@ public static class RecursiveIndustryUiIconsV3 {
 }
 '@
 
-[RecursiveIndustryUiIconsV3]::GenerateAll($masterDir, $exportDir)
-[RecursiveIndustryUiIconsV3]::CreateProof(
+[RecursiveIndustryUiIconsV4]::GenerateAll($masterDir, $exportDir)
+[RecursiveIndustryUiIconsV4]::CreateProof(
     $exportDir,
     (Join-Path $proofDir 'all-ui-icons-size-proof.png'),
     $false
 )
-[RecursiveIndustryUiIconsV3]::CreateProof(
+[RecursiveIndustryUiIconsV4]::CreateProof(
     $exportDir,
     (Join-Path $proofDir 'all-ui-icons-grayscale-proof.png'),
     $true

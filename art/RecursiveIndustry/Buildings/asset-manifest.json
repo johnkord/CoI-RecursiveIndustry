@@ -1,22 +1,22 @@
 {
     "schema_version": 1,
-    "new_model_count": 48,
-    "total_building_count": 52,
+    "new_model_count": 51,
+    "total_building_count": 55,
     "catalog": {
         "path": "data/building-models.json",
-        "size_bytes": 8205,
-        "sha256": "263C23C662F0B92109E999DDB7DF2DF0912FE8D2903111D98FDFF5B9AF17E6BD"
+        "size_bytes": 8644,
+        "sha256": "045E7DCC5EB4840F58877689889C972C80210FB415519810DAA15843C0A82B79"
     },
     "generator": {
         "path": "art/RecursiveIndustry/Buildings/Editor/AllBuildingAssets.cs",
-        "size_bytes": 48067,
-        "sha256": "45D1536A65D3B39B2D0B1A2BF6B8F43C71712882BAC9227A88F8821D8401F355"
+        "size_bytes": 50357,
+        "sha256": "5C81EE3597F35FD623ACF9AFFA81EF86E4018C26D0450850CCF0642882F354AD"
     },
     "bundles": [
         {
             "path": "mods/RecursiveIndustry/AssetBundles/buildings_cfa7",
-            "size_bytes": 1181804,
-            "sha256": "6ACD55498279267A97910E392727A4C124AC8A5D25F8E5B8CFD86EADAFD85216"
+            "size_bytes": 1234358,
+            "sha256": "AEF44F8D80DED2AE7EA4F7E545297ABA3246A0F091B63DCDD0862290D2C075C2"
         },
         {
             "path": "mods/RecursiveIndustry/AssetBundles/accelerator_works_15b4",
@@ -61,7 +61,12 @@
         {
             "path": "mods/RecursiveIndustry/AssetBundles/control_deployment_gateway_47f5",
             "size_bytes": 4416,
-            "sha256": "98F03822B373ED0B4633B60F08EAF561FD029458EC64CE5F22734B98F785286C"
+            "sha256": "82CD9245D644D2876F11627D853E7735B84EE3C4975E1D8EEC5C50791B83FAA5"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/local_deployment_controller_0899",
+            "size_bytes": 4419,
+            "sha256": "2DCDE2132A4D4BA575CC3F950BEE34D6B832E8B88F59F01E9373B837692B3904"
         },
         {
             "path": "mods/RecursiveIndustry/AssetBundles/deployment_assurance_campus_ffbf",
@@ -116,7 +121,7 @@
         {
             "path": "mods/RecursiveIndustry/AssetBundles/orbital_power_array_699a",
             "size_bytes": 4381,
-            "sha256": "AAB6D0DD562C5D49105346BF33D55B4EA7B72C231EFD651F12E8D9A49AF331E7"
+            "sha256": "A3BFE73B5B64573D99C3B85BE7F113E7EBB6B99D45A5F7C944C4232DFC310895"
         },
         {
             "path": "mods/RecursiveIndustry/AssetBundles/companion_animal_center_8a8e",
@@ -156,7 +161,12 @@
         {
             "path": "mods/RecursiveIndustry/AssetBundles/precision_metals_works_e07a",
             "size_bytes": 4402,
-            "sha256": "8CA699676949C45F221C5EBD1C3E5616845612B8404C45739F80627C82C998A6"
+            "sha256": "1AB345A232841351B7DBAD06687045395AE6B8D9D4B08A76C293DC255EDBC469"
+        },
+        {
+            "path": "mods/RecursiveIndustry/AssetBundles/alloy_glass_works_c092",
+            "size_bytes": 4380,
+            "sha256": "986E80F77930A8239D8DC9FD687F97BDB004316C8384CE752A8688451A992B69"
         },
         {
             "path": "mods/RecursiveIndustry/AssetBundles/casting_finishing_works_a0a4",
@@ -165,8 +175,8 @@
         },
         {
             "path": "mods/RecursiveIndustry/AssetBundles/refinery_complex_4ffe",
-            "size_bytes": 4385,
-            "sha256": "FF5AB8F271005F8D9A46B17F47FDEC40A450368B8158874C3CD5A71A1A32522F"
+            "size_bytes": 4386,
+            "sha256": "0E9E516C541F75E7613CDD819A878A4C4C3D661569907211BA2948950640372F"
         },
         {
             "path": "mods/RecursiveIndustry/AssetBundles/gas_fertilizer_complex_a0eb",
@@ -209,6 +219,11 @@
             "sha256": "897D23EEED549687E81131EFCBC0BEF2BA8DC8138C87322147769A8F7450C01E"
         },
         {
+            "path": "mods/RecursiveIndustry/AssetBundles/process_water_chiller_4d95",
+            "size_bytes": 4392,
+            "sha256": "65BA20CF8145013BA731216A66C84B1F3823B01435870BD9B049A88833F4B041"
+        },
+        {
             "path": "mods/RecursiveIndustry/AssetBundles/thermal_desalination_works_7f3b",
             "size_bytes": 4407,
             "sha256": "2EE8510C713C2436CF84B20EA213F16A92F6151B04E2555354A8EDDA6B1CF033"
@@ -226,7 +241,7 @@
         {
             "path": "mods/RecursiveIndustry/AssetBundles/nuclear_fuel_complex_fcdd",
             "size_bytes": 4393,
-            "sha256": "41A052BBFC0E1DA4DE7D3EAD2659C0645B32CF3B28853842DDB850115294E377"
+            "sha256": "19725EE13EFDC7B277C3C0A257FFD455F5A31E5052EBE41C927A9D3BB670CA67"
         },
         {
             "path": "mods/RecursiveIndustry/AssetBundles/nuclear_reprocessing_center_da69",
@@ -282,8 +297,8 @@
         },
         {
             "path": "art/RecursiveIndustry/Buildings/previews/electronics_reclaimer.png",
-            "size_bytes": 31275,
-            "sha256": "3D0BFAD431709D3A2B57A3C95E6E7ABA913C0AC90D22E47AAC2C724CDD580EF5"
+            "size_bytes": 32509,
+            "sha256": "2620DC9F1E27321F991B388F8B5D6BA128298426F75A40D7347B93ADC2F1888C"
         },
         {
             "path": "art/RecursiveIndustry/Buildings/previews/ai_science_institute.png",
@@ -302,8 +317,13 @@
         },
         {
             "path": "art/RecursiveIndustry/Buildings/previews/control_deployment_gateway.png",
-            "size_bytes": 33221,
-            "sha256": "D4A1DDD6C12490ECDBDC6D7BBDB9829B15318F5E80FE54B98B8E4DC6A61E9697"
+            "size_bytes": 28702,
+            "sha256": "A2137D6EC0B5382606478F4E03A819A58911458A310F4D723048DB774A6A44DE"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/local_deployment_controller.png",
+            "size_bytes": 23413,
+            "sha256": "CF9077545EA10981558192AD828BEFD35C5EDBE60F1C5F10FCF73DC78D67B455"
         },
         {
             "path": "art/RecursiveIndustry/Buildings/previews/deployment_assurance_campus.png",
@@ -357,8 +377,8 @@
         },
         {
             "path": "art/RecursiveIndustry/Buildings/previews/orbital_power_array.png",
-            "size_bytes": 30830,
-            "sha256": "931AB0C6A9E5B13DA90ABCBBAEA07D53955ECA5C5AB838A446DF9A9445A77293"
+            "size_bytes": 29075,
+            "sha256": "D4894C5AD36677390E15FFDA13249A3157F9AEB605B80945E35E068B34A71590"
         },
         {
             "path": "art/RecursiveIndustry/Buildings/previews/companion_animal_center.png",
@@ -397,8 +417,13 @@
         },
         {
             "path": "art/RecursiveIndustry/Buildings/previews/precision_metals_works.png",
-            "size_bytes": 37367,
-            "sha256": "2E8EEBE87E97643BE5219806C38F846746A0B71A987CCA91FBDDBA275883C17F"
+            "size_bytes": 37365,
+            "sha256": "9FEEBFD1931567FD8B4D2FC25DC7639A32F86D69EC28117D650F980510461917"
+        },
+        {
+            "path": "art/RecursiveIndustry/Buildings/previews/alloy_glass_works.png",
+            "size_bytes": 30636,
+            "sha256": "F2533F5AA0EAB137B0631F93D07D17A408AE2476D8F4B56053058A1483212A43"
         },
         {
             "path": "art/RecursiveIndustry/Buildings/previews/casting_finishing_works.png",
@@ -407,8 +432,8 @@
         },
         {
             "path": "art/RecursiveIndustry/Buildings/previews/refinery_complex.png",
-            "size_bytes": 39334,
-            "sha256": "2976AE598CFAC8C2EA9FAF3FFA3F6C4A22EB8B5ACAB7ECE335456F428641E2A6"
+            "size_bytes": 41360,
+            "sha256": "01298D97B46C9F5E73EC0C0E003FDA7BE45D3BF8DEDE8CC2E0EAD803DF39E6E4"
         },
         {
             "path": "art/RecursiveIndustry/Buildings/previews/gas_fertilizer_complex.png",
@@ -451,6 +476,11 @@
             "sha256": "2430B7B7CCCD84E8AEE86EB148D4D3BE8D3358A761575C2A5310F052DCA48E8B"
         },
         {
+            "path": "art/RecursiveIndustry/Buildings/previews/process_water_chiller.png",
+            "size_bytes": 42169,
+            "sha256": "9FC2C02BEFC24E75F9DC7728F441A16DF7FDB4726A32B6930B97180C8E3E5F7C"
+        },
+        {
             "path": "art/RecursiveIndustry/Buildings/previews/thermal_desalination_works.png",
             "size_bytes": 30548,
             "sha256": "61C2613F21DFED1FE2F41F2859C56175D399F6DE4AAFD854E0F831AE5D6C3480"
@@ -467,8 +497,8 @@
         },
         {
             "path": "art/RecursiveIndustry/Buildings/previews/nuclear_fuel_complex.png",
-            "size_bytes": 27665,
-            "sha256": "97D6D97DE244194CF09D4B2352227E065352C604AD565CE9DCE536FE7BBFF27B"
+            "size_bytes": 28083,
+            "sha256": "9B62F9D738F8305339012E63DB537BB78A43B19275EA16A78A77A2652C4BAAE4"
         },
         {
             "path": "art/RecursiveIndustry/Buildings/previews/nuclear_reprocessing_center.png",
@@ -556,6 +586,12 @@
         },
         {
             "name": "control_deployment_gateway_47f5",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "local_deployment_controller_0899",
             "dependencies": [
                 "buildings_cfa7"
             ]
@@ -675,6 +711,12 @@
             ]
         },
         {
+            "name": "alloy_glass_works_c092",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
             "name": "casting_finishing_works_a0a4",
             "dependencies": [
                 "buildings_cfa7"
@@ -730,6 +772,12 @@
         },
         {
             "name": "water_utility_dfd0",
+            "dependencies": [
+                "buildings_cfa7"
+            ]
+        },
+        {
+            "name": "process_water_chiller_4d95",
             "dependencies": [
                 "buildings_cfa7"
             ]
@@ -841,6 +889,13 @@
         "assets/recursiveindustry/buildings/ai_science_institute_structure_lod0.asset",
         "assets/recursiveindustry/buildings/ai_science_institute_structure_lod1.asset",
         "assets/recursiveindustry/buildings/ai_science_institute_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/alloy_glass_works.prefab",
+        "assets/recursiveindustry/buildings/alloy_glass_works_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/alloy_glass_works_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/alloy_glass_works_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/alloy_glass_works_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/alloy_glass_works_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/alloy_glass_works_structure_lod2.asset",
         "assets/recursiveindustry/buildings/autonomous_construction_nexus.prefab",
         "assets/recursiveindustry/buildings/autonomous_construction_nexus_illumination_lod0.asset",
         "assets/recursiveindustry/buildings/autonomous_construction_nexus_illumination_lod1.asset",
@@ -982,6 +1037,13 @@
         "assets/recursiveindustry/buildings/general_manufacturing_fab_structure_lod1.asset",
         "assets/recursiveindustry/buildings/general_manufacturing_fab_structure_lod2.asset",
         "assets/recursiveindustry/buildings/greenhouse_glazing.mat",
+        "assets/recursiveindustry/buildings/local_deployment_controller.prefab",
+        "assets/recursiveindustry/buildings/local_deployment_controller_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/local_deployment_controller_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/local_deployment_controller_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/local_deployment_controller_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/local_deployment_controller_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/local_deployment_controller_structure_lod2.asset",
         "assets/recursiveindustry/buildings/materials_chemistry_complex.prefab",
         "assets/recursiveindustry/buildings/materials_chemistry_complex_illumination_lod0.asset",
         "assets/recursiveindustry/buildings/materials_chemistry_complex_illumination_lod1.asset",
@@ -1099,6 +1161,13 @@
         "assets/recursiveindustry/buildings/primary_smelter_structure_lod0.asset",
         "assets/recursiveindustry/buildings/primary_smelter_structure_lod1.asset",
         "assets/recursiveindustry/buildings/primary_smelter_structure_lod2.asset",
+        "assets/recursiveindustry/buildings/process_water_chiller.prefab",
+        "assets/recursiveindustry/buildings/process_water_chiller_illumination_lod0.asset",
+        "assets/recursiveindustry/buildings/process_water_chiller_illumination_lod1.asset",
+        "assets/recursiveindustry/buildings/process_water_chiller_illumination_lod2.asset",
+        "assets/recursiveindustry/buildings/process_water_chiller_structure_lod0.asset",
+        "assets/recursiveindustry/buildings/process_water_chiller_structure_lod1.asset",
+        "assets/recursiveindustry/buildings/process_water_chiller_structure_lod2.asset",
         "assets/recursiveindustry/buildings/recursive_integration_array.prefab",
         "assets/recursiveindustry/buildings/recursive_integration_array_illumination_lod0.asset",
         "assets/recursiveindustry/buildings/recursive_integration_array_illumination_lod1.asset",
@@ -1344,9 +1413,9 @@
                 8.835999488830567
             ],
             "triangles_per_lod": [
-                312,
-                234,
-                156
+                360,
+                282,
+                204
             ],
             "renderers_per_lod": [
                 3,
@@ -1358,9 +1427,9 @@
             "recipe_sign": true,
             "native_animation": false,
             "sampled_animation_motion": false,
-            "geometry_sha256": "CCAA6855DD446FE1A8B5FFF856ED0975EEF046CD55305C8C9C9D0847B438F66A",
+            "geometry_sha256": "92A7479665D85C07566E80E5D56D113F809B976A44925FED01B1669A170A8890",
             "preview_path": "art/RecursiveIndustry/Buildings/previews/electronics_reclaimer.png",
-            "nonblank_pixels": 100918
+            "nonblank_pixels": 104066
         },
         {
             "key": "ai_science_institute",
@@ -1489,9 +1558,9 @@
             "category": "Machines",
             "asset_path": "Assets/RecursiveIndustry/Buildings/control_deployment_gateway.prefab",
             "envelope": [
-                12.0,
                 8.0,
-                10.0
+                8.0,
+                8.0
             ],
             "bounds_center": [
                 0.0,
@@ -1499,12 +1568,12 @@
                 0.0
             ],
             "bounds_size": [
-                11.059199333190918,
+                7.372799873352051,
                 6.241600036621094,
-                8.835999488830567
+                7.06879997253418
             ],
             "triangles_per_lod": [
-                336,
+                312,
                 276,
                 120
             ],
@@ -1518,9 +1587,49 @@
             "recipe_sign": false,
             "native_animation": false,
             "sampled_animation_motion": false,
-            "geometry_sha256": "A65118824C143F4EBD859C0DE2275CBE5CE29BE742797B22BAAB156FDD978EDB",
+            "geometry_sha256": "BBD439BFDA6E09BA23482F54A067508932E882DB53EFEC20A6FCD9778E55B11D",
             "preview_path": "art/RecursiveIndustry/Buildings/previews/control_deployment_gateway.png",
-            "nonblank_pixels": 125337
+            "nonblank_pixels": 93749
+        },
+        {
+            "key": "local_deployment_controller",
+            "family": "gateway",
+            "member": "LocalDeploymentController",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/local_deployment_controller.prefab",
+            "envelope": [
+                6.0,
+                6.0,
+                6.0
+            ],
+            "bounds_center": [
+                0.0,
+                2.143199920654297,
+                0.0
+            ],
+            "bounds_size": [
+                5.529599666595459,
+                4.286399841308594,
+                5.301599979400635
+            ],
+            "triangles_per_lod": [
+                180,
+                150,
+                90
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "6F19B6AE99B734786C768CCE3BF20EA679383D4AA56901488C6E97060421E773",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/local_deployment_controller.png",
+            "nonblank_pixels": 96786
         },
         {
             "key": "deployment_assurance_campus",
@@ -1929,9 +2038,9 @@
             "category": "Power",
             "asset_path": "Assets/RecursiveIndustry/Buildings/orbital_power_array.prefab",
             "envelope": [
-                12.0,
+                20.0,
                 8.0,
-                10.0
+                16.0
             ],
             "bounds_center": [
                 0.0,
@@ -1939,9 +2048,9 @@
                 0.0
             ],
             "bounds_size": [
-                11.059199333190918,
+                18.43199920654297,
                 6.392000198364258,
-                8.835999488830567
+                14.13759994506836
             ],
             "triangles_per_lod": [
                 392,
@@ -1958,9 +2067,9 @@
             "recipe_sign": false,
             "native_animation": false,
             "sampled_animation_motion": false,
-            "geometry_sha256": "84586A18DC7A75A294F6E8DC5E9E8A9328414CD292B98B8C4FF686079C3E2D4B",
+            "geometry_sha256": "592C3AA07A94620AA2174453AEF137E41E7FDD38B3809A13069808D9BE5A66DA",
             "preview_path": "art/RecursiveIndustry/Buildings/previews/orbital_power_array.png",
-            "nonblank_pixels": 111392
+            "nonblank_pixels": 85777
         },
         {
             "key": "companion_animal_center",
@@ -2249,9 +2358,9 @@
             "category": "Machines",
             "asset_path": "Assets/RecursiveIndustry/Buildings/precision_metals_works.prefab",
             "envelope": [
-                12.0,
+                16.0,
                 8.0,
-                10.0
+                12.0
             ],
             "bounds_center": [
                 0.0,
@@ -2259,9 +2368,9 @@
                 0.0
             ],
             "bounds_size": [
-                11.059199333190918,
+                14.745599746704102,
                 5.621200084686279,
-                8.835999488830567
+                10.60319995880127
             ],
             "triangles_per_lod": [
                 420,
@@ -2278,9 +2387,49 @@
             "recipe_sign": false,
             "native_animation": false,
             "sampled_animation_motion": false,
-            "geometry_sha256": "4C68604D3008D4E369BAB2BAA830A529A034D58D4687EEF0359497637EC5464E",
+            "geometry_sha256": "FC89F179EB19032EA5D4EF6A52E47CF5FD2358479B85DAA465AE479E874CCB91",
             "preview_path": "art/RecursiveIndustry/Buildings/previews/precision_metals_works.png",
-            "nonblank_pixels": 105102
+            "nonblank_pixels": 84641
+        },
+        {
+            "key": "alloy_glass_works",
+            "family": "electrolysis",
+            "member": "AlloyGlassWorks",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/alloy_glass_works.prefab",
+            "envelope": [
+                12.0,
+                8.0,
+                10.0
+            ],
+            "bounds_center": [
+                0.0,
+                3.083200216293335,
+                0.0
+            ],
+            "bounds_size": [
+                11.059199333190918,
+                6.16640043258667,
+                8.835999488830567
+            ],
+            "triangles_per_lod": [
+                300,
+                204,
+                132
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "D8359BE0D4DD6C24853F840D0BEE778D5776FE82F0129FD4D4F7E62BB41445ED",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/alloy_glass_works.png",
+            "nonblank_pixels": 103556
         },
         {
             "key": "casting_finishing_works",
@@ -2329,9 +2478,9 @@
             "category": "Machines",
             "asset_path": "Assets/RecursiveIndustry/Buildings/refinery_complex.prefab",
             "envelope": [
-                14.0,
+                16.0,
                 10.0,
-                14.0
+                16.0
             ],
             "bounds_center": [
                 0.0,
@@ -2339,9 +2488,9 @@
                 0.0
             ],
             "bounds_size": [
-                12.902399063110352,
+                14.745599746704102,
                 8.27199935913086,
-                12.370399475097657
+                14.13759994506836
             ],
             "triangles_per_lod": [
                 660,
@@ -2358,9 +2507,9 @@
             "recipe_sign": false,
             "native_animation": false,
             "sampled_animation_motion": false,
-            "geometry_sha256": "213600782ADC1711B894606E6DA4A9441CAB041AC2D798A6184D236C51C87DDE",
+            "geometry_sha256": "4F495E2C4DDDF8A03D7CFBF5AF0E34D8184E4ABE9D3B660878BEEE697D1338F7",
             "preview_path": "art/RecursiveIndustry/Buildings/previews/refinery_complex.png",
-            "nonblank_pixels": 103351
+            "nonblank_pixels": 108641
         },
         {
             "key": "gas_fertilizer_complex",
@@ -2683,6 +2832,46 @@
             "nonblank_pixels": 88782
         },
         {
+            "key": "process_water_chiller",
+            "family": "water",
+            "member": "ProcessWaterChiller",
+            "category": "Machines",
+            "asset_path": "Assets/RecursiveIndustry/Buildings/process_water_chiller.prefab",
+            "envelope": [
+                8.0,
+                8.0,
+                8.0
+            ],
+            "bounds_center": [
+                0.0,
+                2.368800163269043,
+                0.0
+            ],
+            "bounds_size": [
+                7.372799873352051,
+                4.737600326538086,
+                7.06879997253418
+            ],
+            "triangles_per_lod": [
+                480,
+                372,
+                168
+            ],
+            "renderers_per_lod": [
+                2,
+                2,
+                2
+            ],
+            "root_collider": true,
+            "native_emission": true,
+            "recipe_sign": false,
+            "native_animation": false,
+            "sampled_animation_motion": false,
+            "geometry_sha256": "B5326DB03FB22A45816F62374B36F7BD17A01F8685F4DE154401117E0C13D104",
+            "preview_path": "art/RecursiveIndustry/Buildings/previews/process_water_chiller.png",
+            "nonblank_pixels": 136500
+        },
+        {
             "key": "thermal_desalination_works",
             "family": "desalination",
             "member": "ThermalDesalinationWorks",
@@ -2809,9 +2998,9 @@
             "category": "Machines",
             "asset_path": "Assets/RecursiveIndustry/Buildings/nuclear_fuel_complex.prefab",
             "envelope": [
-                14.0,
+                16.0,
                 10.0,
-                14.0
+                16.0
             ],
             "bounds_center": [
                 0.0,
@@ -2819,12 +3008,12 @@
                 0.0
             ],
             "bounds_size": [
-                12.902399063110352,
+                14.745599746704102,
                 7.613999843597412,
-                12.370399475097657
+                14.13759994506836
             ],
             "triangles_per_lod": [
-                444,
+                456,
                 300,
                 114
             ],
@@ -2838,9 +3027,9 @@
             "recipe_sign": false,
             "native_animation": false,
             "sampled_animation_motion": false,
-            "geometry_sha256": "DD5F35D40EDEA3E30C0AABBF99EC133588162CA63042B5CBE7353D0AF737D8A5",
+            "geometry_sha256": "39828F92625EDA401DCED11260885159C3682B78E119F72BEE792CFC9BA5C7F0",
             "preview_path": "art/RecursiveIndustry/Buildings/previews/nuclear_fuel_complex.png",
-            "nonblank_pixels": 137431
+            "nonblank_pixels": 127638
         },
         {
             "key": "nuclear_reprocessing_center",

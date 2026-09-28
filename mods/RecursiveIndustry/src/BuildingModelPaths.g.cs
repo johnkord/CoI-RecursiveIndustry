@@ -14,6 +14,7 @@ internal static class BuildingModelPaths
     public const string PilotScienceComplex = Root + "pilot_science_complex.prefab";
     public const string SystemsIntegrationComplex = Root + "systems_integration_complex.prefab";
     public const string ControlDeploymentGateway = Root + "control_deployment_gateway.prefab";
+    public const string LocalDeploymentController = Root + "local_deployment_controller.prefab";
     public const string DeploymentAssuranceCampus = Root + "deployment_assurance_campus.prefab";
     public const string AutonomousMicrochipComplex = Root + "autonomous_microchip_complex.prefab";
     public const string AutonomousCapitalFabricationMatrix = Root + "capital_fabrication_matrix.prefab";
@@ -33,6 +34,7 @@ internal static class BuildingModelPaths
     public const string PrimarySmelter = Root + "primary_smelter.prefab";
     public const string FuelSmelter = Root + "fuel_smelter.prefab";
     public const string PrecisionMetalsWorks = Root + "precision_metals_works.prefab";
+    public const string AlloyGlassWorks = Root + "alloy_glass_works.prefab";
     public const string CastingFinishingWorks = Root + "casting_finishing_works.prefab";
     public const string RefineryComplex = Root + "refinery_complex.prefab";
     public const string GasFertilizerComplex = Root + "gas_fertilizer_complex.prefab";
@@ -43,6 +45,7 @@ internal static class BuildingModelPaths
     public const string CropSoilBioprocessing = Root + "crop_soil_bioprocessing.prefab";
     public const string BioenergyCenter = Root + "bioenergy_center.prefab";
     public const string WaterUtility = Root + "water_utility.prefab";
+    public const string ProcessWaterChiller = Root + "process_water_chiller.prefab";
     public const string ThermalDesalinationWorks = Root + "thermal_desalination_works.prefab";
     public const string ThermalEmissionsUtility = Root + "thermal_emissions_utility.prefab";
     public const string MaterialsRecoveryCenter = Root + "materials_recovery_center.prefab";
@@ -61,6 +64,7 @@ internal static class BuildingModelPaths
             "primary_smelter" => PrimarySmelter,
             "fuel_smelter" => FuelSmelter,
             "precision_metals_works" => PrecisionMetalsWorks,
+            "alloy_glass_works" => AlloyGlassWorks,
             "casting_finishing_works" => CastingFinishingWorks,
             "refinery_complex" => RefineryComplex,
             "gas_fertilizer_complex" => GasFertilizerComplex,
@@ -71,6 +75,7 @@ internal static class BuildingModelPaths
             "crop_soil_bioprocessing" => CropSoilBioprocessing,
             "bioenergy_center" => BioenergyCenter,
             "water_utility" => WaterUtility,
+            "process_water_chiller" => ProcessWaterChiller,
             "thermal_desalination_works" => ThermalDesalinationWorks,
             "thermal_emissions_utility" => ThermalEmissionsUtility,
             "materials_recovery_center" => MaterialsRecoveryCenter,

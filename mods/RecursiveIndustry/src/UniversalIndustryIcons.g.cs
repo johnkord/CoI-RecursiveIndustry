@@ -8,6 +8,7 @@ internal static partial class RecursiveIndustryIcons
     public const string PrimarySmelter = Root + "primary_smelter.png";
     public const string FuelSmelter = Root + "fuel_smelter.png";
     public const string PrecisionMetalsWorks = Root + "precision_metals_works.png";
+    public const string AlloyGlassWorks = Root + "alloy_glass_works.png";
     public const string CastingFinishingWorks = Root + "casting_finishing_works.png";
     public const string RefineryComplex = Root + "refinery_complex.png";
     public const string GasFertilizerComplex = Root + "gas_fertilizer_complex.png";
@@ -18,6 +19,7 @@ internal static partial class RecursiveIndustryIcons
     public const string CropSoilBioprocessing = Root + "crop_soil_bioprocessing.png";
     public const string BioenergyCenter = Root + "bioenergy_center.png";
     public const string WaterUtility = Root + "water_utility.png";
+    public const string ProcessWaterChiller = Root + "process_water_chiller.png";
     public const string ThermalDesalinationWorks = Root + "thermal_desalination_works.png";
     public const string ThermalEmissionsUtility = Root + "thermal_emissions_utility.png";
     public const string MaterialsRecoveryCenter = Root + "materials_recovery_center.png";

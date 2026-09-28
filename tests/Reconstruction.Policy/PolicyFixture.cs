@@ -10,7 +10,7 @@ using Mafi.Core.UnlockingTree;
 
 namespace Mafi
 {
-    public static class Log { public static void Info(string text) { } }
+    public static class Log { public static void Info(string text) { } public static void Error(string text) { } }
     public struct Vector2i { public int X; public int Y; public Vector2i(int x, int y) { X=x; Y=y; } }
 }
 namespace Mafi.Core.Prototypes
@@ -18,8 +18,11 @@ namespace Mafi.Core.Prototypes
     public interface IProto { }
     public class Proto : IProto
     {
+        public sealed class Localized { public string TranslatedString = "Fixture"; }
+        public sealed class Str { public Localized Name = new(); }
         public class ID { public readonly string Value; public ID(string value) { Value=value; } public override string ToString() => Value; }
         public ID Id; public object Mod;
+        public Str Strings = new();
         public Proto(ID id) { Id=id; }
     }
     public sealed class ProtosDb
@@ -225,6 +228,8 @@ namespace RecursiveIndustry
             Require(duplicate.Target.Parents.SequenceEqual(new[] { duplicate.Native }), "Repeated source prototypes must not duplicate research parents");
             passed++;
 
+            passed += PlannerFixture.Run();
+            passed += PlannerSnapshotFixture.Run();
             Console.WriteLine("PASS: " + passed + " compiled reconstruction policy scenarios (native data stand-ins, not game runtime).");
             return 0;
         }

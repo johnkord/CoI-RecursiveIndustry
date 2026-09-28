@@ -11,6 +11,7 @@ public static partial class RecursiveIndustryIds
         public static readonly ResearchNodeProto.ID AutonomousMetallurgy = Ids.Research.CreateId("RecursiveIndustry_AutonomousMetallurgy");
         public static readonly ResearchNodeProto.ID AutonomousChemistry = Ids.Research.CreateId("RecursiveIndustry_AutonomousChemistry");
         public static readonly ResearchNodeProto.ID AutonomousUtilities = Ids.Research.CreateId("RecursiveIndustry_AutonomousUtilities");
+        public static readonly ResearchNodeProto.ID EfficientWaterProcessing = Ids.Research.CreateId("RecursiveIndustry_EfficientWaterProcessing");
         public static readonly ResearchNodeProto.ID MonitoredPoultrySystems = Ids.Research.CreateId("RecursiveIndustry_MonitoredPoultrySystems");
         public static readonly ResearchNodeProto.ID RecursiveSystemsIntegration = Ids.Research.CreateId("RecursiveIndustry_RecursiveSystemsIntegration");
         public static readonly ResearchNodeProto.ID AutonomousAmphibiousSystems = Ids.Research.CreateId("RecursiveIndustry_AutonomousAmphibiousSystems");

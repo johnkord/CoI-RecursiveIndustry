@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "candidate_version": "0.28.0a",
+  "candidate_version": "0.29.0a",
   "game": {
     "display_version": "0.8.7a",
     "build": 614
@@ -406,7 +406,7 @@
         "owner_key": "water_utility",
         "effective_duration_seconds": 120,
         "stream_quantity": 120,
-        "power_multiplier_percent": 100,
+        "power_multiplier_percent": 180,
         "cancelled_intermediates": [
           "Sludge"
         ]

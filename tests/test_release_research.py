@@ -69,7 +69,7 @@ class ReleaseResearchTests(unittest.TestCase):
         self.assertNotIn("unlockAllRecipes: true", source)
         facilities = [facility for node in self.nodes.values() for facility in node.get("facilities", [])]
         self.assertEqual(len(facilities), len(set(facilities)))
-        self.assertEqual(len(facilities), 25)
+        self.assertEqual(len(facilities), 27)
 
     def test_applications_do_not_require_density_or_other_applications(self):
         for key in ("appliedScience", "physicalValidation", "systemsIntegration", "materials", "metallurgy", "process", "chemistry", "essential", "utilities", "advanced", "nuclear", "civic", "recursiveEpochIV"):

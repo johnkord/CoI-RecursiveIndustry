@@ -1,6 +1,6 @@
 # Research Tree
 
-Candidate: 0.28.0a. New campaigns only.
+Candidate: 0.29.0a. New campaigns only.
 
 The shared foundation is accelerator hardware, curated Models, and validated deployment. Research and physical validation lead to Systems Integration; applications then branch independently.
 
@@ -24,7 +24,7 @@ Costs below are research months before efficiency modifiers, not wall-clock wait
 | --- | ---: | --- |
 | Agentic Hardware and Operations | 216 | Validated Deployment |
 | Recursive Hardware and Operations | 288 | Agentic Hardware and Operations |
-| Algorithmic Co-design | 480 | Physical Validation |
+| Algorithmic Co-design | 240 | Physical Validation |
 
 ## Science
 
@@ -96,6 +96,7 @@ Costs below are research months before efficiency modifiers, not wall-clock wait
 | Research | Months | Mod Parents |
 | --- | ---: | --- |
 | Autonomous Water and Circular Utilities | 300 | Systems Integration |
+| Efficient Water Processing | 240 | Autonomous Water and Circular Utilities |
 | Autonomous Nuclear Fuel Systems | 480 | Systems Integration |
 
 ## Coordination

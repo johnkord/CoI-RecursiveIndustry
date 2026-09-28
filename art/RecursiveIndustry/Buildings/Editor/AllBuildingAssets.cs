@@ -70,7 +70,7 @@ public static class AllBuildingAssets
     {
         public int schema_version = 1;
         public int new_model_count;
-        public int total_building_count = 52;
+        public int total_building_count = 55;
         public FileRecord catalog;
         public FileRecord generator;
         public FileRecord[] bundles;
@@ -206,6 +206,45 @@ public static class AllBuildingAssets
         if(spec.family=="office") { Office(design); return; }
         if(spec.family=="care") { Care(design); return; }
         design.Box(Concrete,0,0.02f,0,0.96f,0.04f,0.94f);
+        if(spec.key=="local_deployment_controller")
+        {
+            design.Box(White,0,0.31f,0.02f,0.70f,0.54f,0.56f);
+            design.Box(Metal,0,0.60f,0.02f,0.76f,0.04f,0.61f);
+            design.Box(Glass,0,0.40f,-0.268f,0.46f,0.22f,0.01f,true);
+            design.Box(Teal,-0.21f,0.20f,-0.274f,0.13f,0.08f,0.014f,true);
+            design.Tank(Steel,0.23f,0.63f,0.17f,0.048f,0.13f);
+            if(detail<2) for(int slot=0;slot<4;slot++) design.Box(Metal,-0.23f+slot*0.15f,0.67f,0,0.04f,0.10f,0.32f);
+            design.ServicePanel();
+            return;
+        }
+        if(spec.key=="alloy_glass_works")
+        {
+            design.Box(White,0,0.16f,0.12f,0.85f,0.24f,0.52f);
+            design.Tank(Red,-0.26f,0.29f,0.12f,0.13f,0.31f);
+            design.Tank(Metal,-0.26f,0.60f,0.12f,0.14f,0.05f);
+            design.Tank(Steel,0.27f,0.29f,0.14f,0.095f,0.47f);
+            design.Tank(Teal,0.27f,0.74f,0.14f,0.085f,0.08f);
+            design.Box(Metal,0,0.15f,-0.28f,0.82f,0.15f,0.18f);
+            design.Box(Glass,0.10f,0.24f,-0.28f,0.55f,0.025f,0.14f,true);
+            if(detail<2) design.Pipe(Copper,0,0.57f,0.36f,0.70f,0.025f);
+            design.ServicePanel();
+            return;
+        }
+        if(spec.key=="process_water_chiller")
+        {
+            design.Box(Metal,0,0.09f,0.06f,0.84f,0.10f,0.66f);
+            for(int side=-1;side<=1;side+=2)
+            {
+                design.Box(White,side*0.23f,0.32f,0.12f,0.33f,0.40f,0.54f);
+                design.Tank(Metal,side*0.23f,0.54f,0.12f,0.13f,0.07f);
+                design.Tank(Steel,side*0.23f,0.61f,0.12f,0.055f,0.02f);
+                if(detail<2) for(int fin=0;fin<6;fin++) design.Box(Steel,side*0.23f,0.17f+fin*0.05f,-0.157f,0.28f,0.012f,0.012f);
+            }
+            design.Pipe(Teal,0,0.14f,-0.32f,0.78f,0.034f);
+            design.Pipe(Copper,0,0.25f,-0.32f,0.78f,0.025f);
+            design.ServicePanel();
+            return;
+        }
         switch(spec.family)
         {
             case "assembly":
@@ -365,6 +404,11 @@ public static class AllBuildingAssets
                     design.Tank(White,0.10f,0.4f,0.05f,0.10f,0.36f);
                     design.Box(Teal,-0.28f,0.54f,0.14f,0.16f,0.30f,0.18f);
                     design.Pipe(Copper,-0.12f,0.62f,0.10f,0.35f,0.025f);
+                    for(int side=-1;side<=1;side+=2)
+                    {
+                        design.Box(White,-0.415f,0.15f,side*0.35f,0.11f,0.22f,0.17f);
+                        design.Box(Teal,-0.473f,0.17f,side*0.35f,0.012f,0.12f,0.10f,true);
+                    }
                 }
                 if(detail==0) for(int index=0;index<3;index++) design.Box(Steel,-0.3f+index*0.23f,0.10f,0.38f,0.16f,0.10f,0.13f);
                 break;
@@ -717,8 +761,8 @@ public static class AllBuildingAssets
         string publicRoot=Environment.GetEnvironmentVariable("RI_PUBLIC_ROOT");
         if(string.IsNullOrEmpty(publicRoot)) throw new InvalidOperationException("RI_PUBLIC_ROOT is required");
         Catalog catalog=JsonUtility.FromJson<Catalog>(File.ReadAllText(Path.Combine(publicRoot,"data/building-models.json")));
-        if(catalog.schema_version!=1 || catalog.models.Length!=48 || catalog.models.Select(model=>model.key).Distinct().Count()!=48)
-            throw new InvalidOperationException("Expected exact 48-model catalog");
+        if(catalog.schema_version!=1 || catalog.models.Length!=51 || catalog.models.Select(model=>model.key).Distinct().Count()!=51)
+            throw new InvalidOperationException("Expected exact 51-model catalog");
         Directory.CreateDirectory(Root);
         Directory.CreateDirectory(Path.Combine(publicRoot,"art/RecursiveIndustry/Buildings/previews"));
         AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
@@ -809,7 +853,7 @@ public static class AllBuildingAssets
         };
         foreach(AssetBundle bundle in loaded.Reverse()) bundle.Unload(true);
         File.WriteAllText(Path.Combine(publicRoot,"art/RecursiveIndustry/Buildings/asset-manifest.json"),JsonUtility.ToJson(manifest,true)+"\n");
-        Debug.Log("RI_ALL_BUILDING_ART_COMPLETE models="+models.Length+" lods=3 root_colliders=48 emission_contracts=48");
+        Debug.Log("RI_ALL_BUILDING_ART_COMPLETE models="+models.Length+" lods=3 root_colliders="+models.Length+" emission_contracts="+models.Length);
     }
 
     private static FileRecord Identity(string root,string relative)

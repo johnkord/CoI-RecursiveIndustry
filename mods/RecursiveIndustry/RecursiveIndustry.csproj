@@ -22,6 +22,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="System.Numerics" />
     <Reference Include="Mafi">
       <HintPath>$(CoiManagedDir)\Mafi.dll</HintPath>
       <Private>false</Private>
@@ -36,6 +37,18 @@
     </Reference>
     <Reference Include="Mafi.TrainsDlc">
       <HintPath>$(CoiTrainsDlcDir)\Mafi.TrainsDlc.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Mafi.Unity">
+      <HintPath>$(CoiManagedDir)\Mafi.Unity.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(CoiManagedDir)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>$(CoiManagedDir)\UnityEngine.UIElementsModule.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="netstandard">

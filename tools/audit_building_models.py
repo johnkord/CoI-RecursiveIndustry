@@ -24,6 +24,7 @@ OWNERS = {
     "pilot_science_complex": "AppliedScienceData.cs",
     "systems_integration_complex": "SystemsIntegrationData.cs",
     "control_deployment_gateway": "IndustrialControlGatewayData.cs",
+    "local_deployment_controller": "IndustrialControlGatewayData.cs",
     "deployment_assurance_campus": "DeploymentAssuranceData.cs",
     "autonomous_microchip_complex": "AutonomousMicrochipData.cs",
     "capital_fabrication_matrix": "AutonomousCapitalFabricationData.cs",
@@ -56,13 +57,13 @@ def validate_records(catalog: dict, manifest: dict) -> None:
     require(catalog["schema_version"] == manifest["schema_version"] == 1, "Building schema drift")
     expected = {row["key"]: row for row in catalog["models"]}
     models = {row["key"]: row for row in manifest["models"]}
-    require(len(catalog["models"]) == len(expected) == len(manifest["models"]) == 48, "Expected 48 unique new models")
+    require(len(catalog["models"]) == len(expected) == len(manifest["models"]) == 51, "Expected 51 unique generated models")
     require(set(expected) == set(models), "Missing or unassigned building model")
     require(set(catalog["retained_reconstruction_models"]) == RETAINED, "Four accepted model identities changed")
-    require(manifest["new_model_count"] == 48 and manifest["total_building_count"] == 52, "Total building coverage changed")
+    require(manifest["new_model_count"] == 51 and manifest["total_building_count"] == 55, "Total building coverage changed")
     require({row["key"] for row in catalog["models"] if not row.get("universal")} == set(OWNERS), "Non-universal owner inventory drift")
     require({row["key"] for row in catalog["models"] if row.get("animated")} == ANIMATED, "Native animation inventory drift")
-    require(len({row["geometry_sha256"] for row in models.values()}) == 48, "Duplicate building geometry")
+    require(len({row["geometry_sha256"] for row in models.values()}) == 51, "Duplicate building geometry")
     require(expected["monitored_poultry_farm"]["origin_z"] == -2, "Poultry native origin must remain -2 world units")
     asset_paths = set(manifest["asset_paths"])
     require(all(path.startswith("assets/recursiveindustry/buildings/") for path in asset_paths), "Foreign artwork in building bundles")
@@ -88,7 +89,7 @@ def validate_records(catalog: dict, manifest: dict) -> None:
         require(center[1] - size[1] / 2 >= -0.01 and center[1] + size[1] / 2 <= spec["height"] + 0.01, f"Height overhang: {key}")
 
     names = [PurePosixPath(record["path"]).name for record in manifest["bundles"]]
-    require(len(names) == len(set(names)) == 49, "Expected 48 prefab bundles and one shared building bundle")
+    require(len(names) == len(set(names)) == 52, "Expected 51 prefab bundles and one shared building bundle")
     for prefix in ("buildings", *expected):
         require(sum(bool(re.fullmatch(re.escape(prefix) + r"_[0-9a-f]{4}", name)) for name in names) == 1, f"Missing or ambiguous bundle: {prefix}")
     require({row["name"] for row in manifest["dependencies"]} == set(names), "Bundle dependency inventory mismatch")
@@ -120,7 +121,7 @@ def validate_source(root: Path, catalog: dict) -> None:
     require(farm.count("useInstancedRendering:false,useSemiInstancedRendering:false") == 2, "Both farms require full native model rendering")
     combined = "\n".join(path.read_text(encoding="utf-8") for path in (root / "mods/RecursiveIndustry/src").glob("*.cs"))
     machine_bodies = re.findall(r"registrator\.MachineProtoBuilder(.*?)\.BuildAndAdd\(\)", combined, re.S)
-    require(sum(".Start(spec.Name, spec.Id)" not in body for body in machine_bodies) == 18, "Expected 18 non-universal Machine owners; update complete art coverage")
+    require(sum(".Start(spec.Name, spec.Id)" not in body for body in machine_bodies) == 19, "Expected 19 non-universal Machine owners; update complete art coverage")
     require(combined.count("OfficeBuildingFactory.Register(") == 4, "Expected four custom Offices")
     require(combined.count("new FarmProto(") == combined.count("new AnimalFarmProto(") == 1, "Expected two native-family farms")
     require(combined.count("registrator.SettlementModuleProtoBuilder") == 2, "Expected two settlement services")
@@ -161,7 +162,7 @@ def main() -> int:
     if errors:
         print("Building artwork: FAIL\n" + "\n".join(errors))
         return 1
-    print("PASS: all 52 building owners, 48 unique new models, 144 reducing LODs, exact bundles, signs, colliders, emissions, and two native animations")
+    print("PASS: all 55 building owners, 51 unique generated models, 153 reducing LODs, exact bundles, signs, colliders, emissions, and two native animations")
     return 0
 
 

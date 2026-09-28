@@ -65,6 +65,12 @@ DLL and PDB identities.
 
 ## Package
 
+The packager runs the public source/artifact validator and refuses to create an
+archive while selected bundles or their exact receipts are incomplete. Do not
+bypass that gate by copying a development DLL over the published installation.
+The 0.29.0a author-test archive must also match its supplied source snapshot and
+two-location deterministic build/package receipt.
+
 ```powershell
 python tools/package_mod.py mods/RecursiveIndustry
 python tools/audit_release_zip.py
@@ -78,8 +84,9 @@ The deterministic package is written under `dist/` and contains one
 - `readme.txt`;
 - `changelog.txt`;
 - `RecursiveIndustry.dll`; and
-- all 113 verified bundles and the generated `mafi_bundles.manifest`, including
-  dependency-before-root declarations. The normal player package contains 119 files.
+- the complete verified bundle inventory and its generated manifest, including
+  dependency-before-root declarations. Published 0.28.0a has 113 bundles and
+  119 player files; derive successor counts from its completed bundle manifest.
 
 PDB files are excluded unless packaging explicitly requests symbols. Game and
 engine DLL names are rejected.
@@ -108,8 +115,9 @@ dotnet build tests/Reconstruction.Policy/Reconstruction.Policy.csproj -c Release
 python tools/model_civic_knowledge.py --population 1000
 ```
 
-The policy fixtures link the production prerequisite algorithm to small native-data
-stand-ins. They do not run the game. The asset builder creates original geometry,
+The policy fixtures link the production prerequisite algorithm, exact planner, and
+snapshot coordinator to small native-data/event stand-ins. They do not run the game.
+The asset builder creates original geometry,
 renders nonblank previews, and verifies final prefab dependencies. In-game
 rendering remains separate from these offline fixtures. Earlier Civic use was
 reported successful; do not replay that mechanic solely for a research/art change.

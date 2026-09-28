@@ -7,7 +7,12 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System.Numerics" />
     <Compile Include="PolicyFixture.cs" />
+    <Compile Include="PlannerFixture.cs" />
+    <Compile Include="PlannerSnapshotFixture.cs" />
+    <Compile Include="../../mods/RecursiveIndustry/src/Planner/*.cs" Link="Planner/%(Filename)%(Extension)" />
+    <Compile Include="../../mods/RecursiveIndustry/src/Planner/Native/PlannerSnapshots.cs" Link="Planner/PlannerSnapshots.cs" />
     <Compile Include="../../mods/RecursiveIndustry/src/ReconstructionResearchPrerequisites.cs" Link="ReconstructionResearchPrerequisites.cs" />
   </ItemGroup>
 </Project>

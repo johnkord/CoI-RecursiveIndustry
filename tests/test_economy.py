@@ -83,8 +83,8 @@ class EconomyTests(unittest.TestCase):
         self.assertEqual(process.rack_iii, 3)
         self.assertEqual(universal.rack_iii, 14)
         self.assertEqual(universal.rack_coolant, 140)
-        self.assertEqual(universal.gross_power_mw, Fraction(327, 2))
-        self.assertEqual(optimized.gross_power_mw, Fraction(699, 2))
+        self.assertEqual(universal.gross_power_mw, Fraction(341, 2))
+        self.assertEqual(optimized.gross_power_mw, Fraction(709, 2))
 
     def test_composed_modes_set_exact_power_ceiling(self) -> None:
         direct = {
@@ -94,7 +94,7 @@ class EconomyTests(unittest.TestCase):
         self.assertEqual(
             direct["all_universal_optimized"].gross_power_mw
             - direct["all_universal_direct"].gross_power_mw,
-            186,
+            184,
         )
 
     def test_control_topologies_have_exact_capacity_and_package_closure(self) -> None:
